@@ -88,6 +88,7 @@ These are the instructions that repeatedly earned their keep. Put them in the pr
 - **State write boundaries explicitly** when more than one repository is involved: this one is EDIT, that one is READ-ONLY.
 - **No credentialed actions.** Publishing a package, pushing a tag, registering a publisher, uploading to a journal — these stay with you. An agent can prepare all of it and write the checklist; it does not execute it.
 - **State the autonomy budget and the stop conditions** for long-running work: how many hours, how many concurrent processes, what to do when the budget expires.
+- **Expect hard external kills, not just your own stop conditions.** An organizational spend limit, a rate limit, or a crashed session can terminate an agent mid-task with no warning — this is a different failure than a self-imposed budget running out. Commit or checkpoint often enough that a mid-task kill loses minutes, not hours, and treat resuming after one as reconciliation — what actually landed, what's half-done and needs finishing or discarding — not a clean restart.
 - **Review the diff.** Not the summary of the diff. Prefer many small, understandable changes to one large one that passes its tests.
 
 ## 7. Ending a session: the handoff block
@@ -134,6 +135,7 @@ Cheap things worth automating: a check that every internal link resolves; a chec
 - **Put the reasoning in the commit message.** The diff shows what changed; the message is the only place the *why* can live. This matters more with agent-scale changes: a 40-file commit with a one-line message is unreviewable.
 - **Disclose in the paper according to the venue's policy**, and describe what the tools did and did not do. If an agent refactored the numerical methods, that is a methods-section fact, not a copy-editing footnote.
 - **Record the venue-policy check itself** — which policy, which date, what it required. Policies change faster than manuscripts move.
+- **Track review status per unit of content, not just once per document.** A one-time disclosure line ("AI assisted with this manuscript") tells a reader that AI was involved somewhere; it doesn't tell you — or them — which specific sections you've actually checked since the last AI pass. A stronger pattern: give every AI-touched unit (a section, a paragraph, a course page) an explicit state — `unreviewed` / `reviewed` / `reviewed-stale` (content changed after review; needs a fresh look) / `exempt` (not AI-drafted) — and never let a change silently keep a `reviewed` status; force it back to `reviewed-stale` instead. This generalizes past any one kind of document: on a proposal it shows a coauthor exactly which sections you've read since Codex or Claude last touched them; on a manuscript it can gate submission on zero `unreviewed` sections remaining. Where the audience is someone relying on the content in real time — a student, a coauthor — make the status visible to *them*, not only to you.
 
 ## 11. Tool-specific mechanics
 
@@ -180,6 +182,7 @@ Before you stop:
 - [ ] Decisions made this session are in a file, not only in the conversation
 - [ ] New documents are categorized: living, dated, or superseded
 - [ ] Work that another machine needs is pushed
+- [ ] AI-touched content has a review status (§10), not just a one-time disclosure line
 
 ## Anti-patterns
 
@@ -188,6 +191,8 @@ Before you stop:
 - **The plan that stopped being maintained.** A plan file abandoned within days, while the work continued for months in commit messages only.
 - **Attribution that lapses.** Trailers for one month, none for the next three, during the most agent-intensive period.
 - **A rule with no gate.** Every rule you actually need enforced but only wrote down.
+- **Treating a mid-task kill as data loss instead of a checkpoint to reconcile.** The work since the last commit is gone either way; the difference is whether you knew what was in flight.
+- **A disclosure line that doesn't survive an edit.** "AI assisted with this" said once, at the start, while half the document has since changed underneath it.
 - **The big green suite.** A passing test run that says nothing, because it doesn't execute the code you changed (see `scientific_computing_workflow.md`).
 - **Stale absolute paths**, in a document that tells you not to use absolute paths.
 
