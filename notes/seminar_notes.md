@@ -45,7 +45,7 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 
 **Files touched:** `outline.md`, `README.md`, `CLAUDE.md`, `handout/README.md`, `.gitignore`, `notes/open_questions.md`, `notes/seminar_design.md`, `resources/README.md`; deleted `abstract.md`.
 
-**Commit:** first commit for this project made today — see git log.
+**Commit:** `d1f511b` — "Scaffold seminar repo: README, outline, CLAUDE.md, notes, resources plan".
 
 **Open questions raised:** none new beyond what's already in [open_questions.md](open_questions.md); start time and room are still needed.
 
