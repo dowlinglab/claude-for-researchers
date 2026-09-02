@@ -31,7 +31,7 @@ Verify and Write keep their full time on purpose — they're the most differenti
 
 **Supporting ideas:**
 - State the thesis directly: the most powerful uses of GenAI in research go beyond asking a chatbot questions or polishing prose.
-- Name-drop the frame story once, to be resolved at the close (candidate: "finishing a paper after the student who wrote the code has graduated" — see [notes/demo_ideas.md](notes/demo_ideas.md)).
+- Name-drop the frame story once, to be resolved at the close: helping a project cross the finish line when a graduate student is graduating — sometimes with them still around to help, sometimes after they've gone. Real, anonymized project; no student identified. See [notes/demo_ideas.md](notes/demo_ideas.md) story #5.
 - One sentence on why now: Anthropic's academic Team plan means many in the room have (or can soon get) a Claude seat.
 
 **Demo/example:** none — this is framing only.
@@ -47,12 +47,12 @@ Verify and Write keep their full time on purpose — they're the most differenti
 **Supporting ideas:**
 - One compact table: Google (Gemini, NotebookLM) / OpenAI (ChatGPT, ChatGPT Projects, Codex) / Anthropic (Claude, Claude Projects, Claude Code, Team for Scientists).
 - Notre Dame's data-classification rule, confirmed directly on `ai.nd.edu` (see [notes/references.md](notes/references.md)): Gemini, ChatGPT EDU, and NotebookLM are cleared for Public/Internal/Sensitive data; **Claude is currently approved for Public data only** — an Enterprise Claude license is "coming soon" but not yet available. Say this plainly rather than glossing over it — it's real, useful, and slightly complicates "Why Claude?"
-- One-line compliance caveat, quoted directly from `ai.nd.edu`: researchers with DoD/DoW-funded contracts or agreements are currently prohibited from using any Anthropic products (Claude.ai, API, Claude Code) — contact `researchsecurity@nd.edu` with questions.
+- One-line compliance caveat, quoted directly from `ai.nd.edu`: researchers with DoD/DoW-funded contracts or agreements are currently prohibited from using any Anthropic products (Claude.ai, API, Claude Code) — contact `researchsecurity@nd.edu` with questions. Generalize it: if you're a grad student or postdoc, check with your PI or project lead about any special considerations on your specific project (DoD/DoW, export control, sponsor data terms) before adopting any AI tool — don't assume what's fine for one project is fine for another.
 - Capabilities and rankings will keep changing regardless of any of the above.
 
 **Demo/example:** the ecosystem table as a single slide, plus the ND data-classification tiers (🟢🟡🟠🔴) as a second small graphic — strong, concrete, institution-specific.
 
-**Students should remember:** Pick tools by task and access, not brand loyalty — and at Notre Dame specifically, don't put non-public research data into Claude yet, and check with `researchsecurity@nd.edu` if you have DoD/DoW-funded work.
+**Students should remember:** Pick tools by task and access, not brand loyalty. At Notre Dame specifically, don't put non-public research data into Claude yet — and whatever your institution, check with your PI about project-specific restrictions before you adopt any AI tool.
 
 ---
 
@@ -81,6 +81,7 @@ Verify and Write keep their full time on purpose — they're the most differenti
 - The failure mode: treating brainstorming output as literature evidence.
 - Once you have an actual corpus, AI gets much more useful when it's grounded in it — summarizing, comparing methods, building a literature matrix, flagging apparent tensions or untested assumptions. The evidence-first prompt pattern: ask the model to show what in the provided papers caused it to flag something, not just assert a conclusion.
 - One-line pointer to the literature-folder workflow (renaming, dedup, `literature.md`) as a takeaway resource rather than a live walkthrough.
+- Brief aside (a few seconds, with a link on the slide): the same "curate source material → structured, purpose-built artifact" pattern is how Alex built a study guide for an Amateur Radio license exam — [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book). Not a research example; included only to show the pattern generalizes.
 
 **Demo/example:** one prompt shown on-screen — "Based only on these papers, identify apparent tensions, unanswered questions, and combinations of ideas that haven't been explored. For each, show the evidence." Show real (or realistic) output with citations back to specific papers.
 
@@ -127,6 +128,7 @@ Verify and Write keep their full time on purpose — they're the most differenti
 - Treat the manuscript as files (`main.tex`, `sections/*.tex`, `bibliography.bib`), not a blob — this is what lets AI do notation checks, undefined-acronym checks, and reference hygiene without seeing "the whole paper" as one intimidating unit.
 - Name the recognizable AI-prose failure modes briefly (inflated importance, generic transitions, homogeneous rhythm) — goal is preserving the researcher's actual voice, not making AI writing undetectable. Point to the personal writing-style-guide resource.
 - Group/journal-specific instruction files (`WRITING_STYLE.md`, `FIGURE_GUIDELINES.md`, `JOURNAL_GUIDELINES.md`) as a second example of the "context, not conversation" idea from Section 2, now applied to writing: *"Check this manuscript against the journal instructions and report violations with the specific rule cited."*
+- One bullet on journal selection: AI can help build a comparison (scope, audience, methodological fit) across candidate journals from their scope statements and a few representative papers — a support tool for the decision, not a substitute for it.
 
 **Demo/example:** one prompt + one guideline file + one flagged violation, shown as a compact before/after.
 
@@ -161,7 +163,7 @@ Verify and Write keep their full time on purpose — they're the most differenti
 
 **Supporting ideas:**
 - Compress the recurring principles into a short, spoken list (not a bullet-dump slide): scientific judgment stays with the researcher; AI output is not evidence; generated citations need verification; code changes need review; sensitive/restricted data only in institutionally approved systems.
-- Return to the frame story from the open and resolve it — name what would have gone differently with a research log, an auditable repo, and a claim-tracing pass in place.
+- Return to the frame story from the open and resolve it — name what got faster or safer for that graduating student's project with a research log, an auditable repo, and a claim-tracing pass in place. Keep it about *expediting a finish*, not just recovering from someone leaving.
 - Point once, clearly, to the handout and `resources/` as where the reusable material lives, and to the Anthropic Team-for-Scientists application link for anyone who wants a Claude seat.
 
 **Demo/example:** none — this is the synthesis.
@@ -172,13 +174,13 @@ Verify and Write keep their full time on purpose — they're the most differenti
 
 ## Cut from the live talk (handout / `resources/` only)
 
-These were in the original charter but don't fit in 45 minutes without diluting the lifecycle narrative above. Each still becomes a polished resource or a handout section — see [resources/README.md](resources/README.md) and [notes/seminar_design.md](notes/seminar_design.md) for where each one landed and why.
+These were in the original charter but don't fit in 40 minutes as full sections without diluting the lifecycle narrative above. Each still becomes a polished resource or a handout section (or, for two items, a single confirmed one-liner in the live talk) — see [resources/README.md](resources/README.md) and [notes/seminar_design.md](notes/seminar_design.md) for where each one landed and why.
 
 - Full literature-folder processing workflow (metadata inspection, renaming, dedup) — handout + `resources/prompts/literature_workflow.md`.
-- DOI checker — mentioned in passing in Section 3 at most; full capability description lives in `resources/scripts/doi_checker/`.
-- Journal-selection decision matrix — handout only, or dropped (open question — see [notes/open_questions.md](notes/open_questions.md)).
+- DOI checker — mentioned in passing in Section 3 at most; full capability description lives in `resources/scripts/doi_checker/` (to be adapted from an existing Alex script, not built from scratch).
+- Journal-selection decision matrix — resolved: kept as one bullet in Section 6, full matrix workflow (if built at all) stays handout/resource-only.
 - LaTeX/Overleaf mechanics (label checking, acronym consistency details) — folded into one line of Section 6; details in handout.
 - Full results/provenance manifest example and single-repo vs. split-repo tradeoff discussion — handout + `resources/examples/repository_patterns/`.
 - Methods-vs-code and figure-vs-text audits, in full — `resources/prompts/manuscript_audit.md` (bundled with the quantitative-claim audit as one toolkit).
-- The Amateur Radio textbook anecdote — candidate for a single spoken aside in Section 3 or 6 if time allows; otherwise handout-only. Not a case study in the live talk. See [notes/open_questions.md](notes/open_questions.md).
+- The Amateur Radio textbook anecdote — resolved: a single spoken aside with a link, in Section 3. Not a case study in the live talk.
 - The research-repository organization prompt (Section 8 of the charter) — not walked through live; it's a takeaway resource (`resources/prompts/organize_research_repo.md`), referenced once in Section 4.

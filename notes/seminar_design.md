@@ -26,7 +26,7 @@ Organizing around the research lifecycle (Explore → Ground → Build → Recor
 | 9. Writing papers / AI slop / style guide | 6 | Style-guide derivation process is handout material; live talk shows the pattern, not the method |
 | 10. LaTeX/Overleaf/Git | 6 (one line) | Mechanics are handout-only |
 | 11. Group/journal-specific instruction files | 6 | Framed explicitly as the Section 2 pattern applied to writing |
-| 12. Journal selection | cut | See "Cut" below |
+| 12. Journal selection | 6 (one bullet) | Resolved 2026-09-02: kept as a single bullet, not cut, not handout-only — see [open_questions.md](open_questions.md) |
 | 13. Scientific auditing | 7 | This is the intended climax — see below |
 | 14. Responsible AI use | 8 (+ woven throughout) | Compressed at the close; individual principles surface inline elsewhere rather than saved for one ethics slide |
 
@@ -38,9 +38,9 @@ Organizing around the research lifecycle (Explore → Ground → Build → Recor
 
 ## Cut entirely (or reduced to a handout line) from the live talk, with rationale
 
-- **Journal selection (charter §12).** Interesting, but it's a decision-support workflow adjacent to the writing stage rather than part of the core "AI reads/writes/checks your artifacts" narrative. Risks feeling like a tangent right when the talk should be building toward the audit climax. Recommendation: drop from the live talk; keep as an optional handout paragraph only if there's clearly room. Open question — see [open_questions.md](open_questions.md).
+- **Journal selection (charter §12).** Originally recommended for a full cut as a decision-support workflow adjacent to, but not part of, the core "AI reads/writes/checks your artifacts" narrative. Alex's call (2026-09-02): keep it, but only as a single bullet in Section 6 — cheap enough not to dilute the climax, and it rounds out the writing stage.
 - **Full LaTeX/Overleaf mechanics (charter §10).** Useful, but mechanical enough that a slide walkthrough adds little beyond "AI can check labels and acronyms too" — better delivered as a handout checklist.
-- **Amateur Radio textbook anecdote (charter, personal experiences #4).** Excellent illustration of "AI transforms a curated source corpus into a new structured artifact," but it's not an academic-research example, and the talk already has five strong candidate stories from real research (see [demo_ideas.md](demo_ideas.md)). Use only as a single spoken aside if a natural opening appears (e.g., right after Section 3's grounding discussion) — never as a standalone case study competing for slide time.
+- **Amateur Radio textbook anecdote (charter, personal experiences #4).** Excellent illustration of "AI transforms a curated source corpus into a new structured artifact," but it's not an academic-research example, and the talk already has five strong candidate stories from real research (see [demo_ideas.md](demo_ideas.md)). Resolved (2026-09-02): a single spoken aside in Section 3, with a link to the now-public repo — never a standalone case study competing for slide time.
 
 ## The verify section as climax
 

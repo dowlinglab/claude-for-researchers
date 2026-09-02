@@ -7,7 +7,7 @@ Working notes on the personal examples this seminar draws from, kept separate fr
 **Supports:** Outline Section 4 (Build).
 **Shape:** Organically-grown research code → reorganized files, deduplicated logic, notebook logic separated into reusable modules, `pip install`-able package, docs, tests, reproducible install/run, better Git hygiene.
 **Core line:** "The student's code works" → "the research software is an auditable artifact someone else can install, understand, test, and extend."
-**Status:** Needs a concrete before/after file tree (real or realistic-composite). If real, needs anonymization/permission check — see open questions.
+**Status:** Resolved (2026-09-02) — will use a real, anonymized Dowling-lab project (Alex has two candidates). No student named or otherwise identifiable; keep file trees/descriptions generic enough to avoid implication.
 
 ## 2. Moving beyond Jupyter notebooks
 
@@ -25,17 +25,17 @@ Working notes on the personal examples this seminar draws from, kept separate fr
 
 ## 4. Creating a custom Amateur Radio exam study guide
 
-**Supports:** Not core research lifecycle — candidate for a single spoken aside near Section 3 or 6, or handout-only.
+**Supports:** Not core research lifecycle — a short spoken aside in Section 3 (grounding a generative task in curated source material), with a link on the slide.
 **Shape:** Curated source material (exam question pool, regulations) → structured, purpose-built study resource via iterative generation, verified against authoritative sources.
 **Core line:** "AI can transform a curated body of source material into a new structured artifact tailored to a specific purpose" — a preview, in miniature, of what Section 3 (grounding) and Section 6 (structured writing) do for research.
-**Status:** Not a research example, so it competes for time against stronger research-specific stories. See [open_questions.md](open_questions.md) for the go/no-go decision.
+**Status:** Resolved (2026-09-02) — one-line aside, not a case study. Repo is public: [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book). Link it directly on the Section 3 slide.
 
 ## 5. Finishing papers after students graduate
 
-**Supports:** Candidate frame story for Outline Section 0 (open) and Section 8 (close) — bookending the talk.
+**Supports:** Confirmed frame story for Outline Section 0 (open) and Section 8 (close) — bookending the talk.
 **Shape:** Inheriting a project after the person who wrote the analysis has moved on — using AI to understand unfamiliar code, reconstruct how analyses work, trace outputs back to scripts, understand undocumented design decisions, refactor enough to finish the manuscript, and check the paper against the actual implementation.
 **Core line:** Preserving context in files/repos/logs/docs matters far more than preserving it inside an AI chat — because the person who *had* that context is gone, and so is any chat history they had with an AI about it.
-**Status:** Strongest candidate for the frame story — it motivates nearly every other section (context files, the log, reproducible code, the audit) at once. Needs a decision on how much identifying detail to include (which project, whether the student is named even implicitly) — see [open_questions.md](open_questions.md).
+**Status:** Resolved (2026-09-02). Confirmed as the bookend, reframed around *expediting* completion rather than only "recovery after abandonment" — e.g., "helping a graduating student (or their advisor) get a project across the finish line," which reads as proactive and applies more broadly to the audience than pure salvage work. Uses a real, anonymized project; no student named or identifiable. Open at Section 0 with the premise, resolve it at Section 8 once every practice (context files, the log, reproducible code, the audit) has been introduced.
 
 ## ND data-classification chart (new, 2026-09-02)
 

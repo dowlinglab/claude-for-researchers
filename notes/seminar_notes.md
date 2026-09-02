@@ -73,4 +73,26 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 
 **Files touched:** `README.md`, `notes/open_questions.md`.
 
+---
+
+## 2026-09-02 (processed Alex's open-questions answers)
+
+Alex answered most of [open_questions.md](open_questions.md) directly in the file (committed verbatim in `0c6f477` before processing, per his instruction to commit first). Decisions below; full detail in the individual files linked.
+
+**Decisions:**
+- **Room AV:** Alex presents from his own laptop; room A/V is reasonable but won't support audience-interactive activities. Live, presenter-driven demos are workable; no interactive exercises planned.
+- **Handout:** rescoped hard, from a multi-section leave-behind to a **printed one-sheet, front and back (~1.5 pages)** so Alex can get copies made. See the rewritten [handout/README.md](../handout/README.md) — most planned content (full prompts, full checklists, repo-pattern write-ups) moves online-only into `resources/`; the handout becomes a reference card plus a pointer back to the repo.
+- **Amateur Radio anecdote:** confirmed as a short spoken aside with a link, added to Outline Section 3. The book repo is already public: [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book) (Alex shared the URL directly).
+- **Frame story:** confirmed "finishing a paper after a student graduates" as the open/close bookend, reframed around *expediting* a finish (e.g., helping a graduating student wrap up) rather than only "recovery after someone left" — updated in [demo_ideas.md](demo_ideas.md) story #5 and Outline Sections 0 and 8.
+- **Journal selection:** un-cut — kept as one bullet in Outline Section 6 (was previously slated to drop). Updated the charter-mapping table and "cut" list in [seminar_design.md](seminar_design.md).
+- **Real vs. composite examples:** confirmed real, anonymized Dowling-lab projects for the code-maturity story and the frame story (two candidates already in hand) — no student named or identifiable, ever.
+- **DoD/DoW and export-control guidance:** added as a generalized bullet in Outline Section 1 (extends the ND-specific DoD/DoW caveat into "check with your PI about project-specific restrictions," applicable beyond ND).
+- **Manuscript-audit scope:** bundling plan stands; next step is a joint working session with Alex over 1–2 real recent projects to scope/test the prompt — not yet scheduled.
+- **DOI checker:** Alex already built one in a recent project — plan changed from "build new" to "locate and adapt his existing script." Needs Alex to identify which project.
+- **Still open:** the writing-style-guide source file (Alex will send it — his answer was cut off mid-sentence, "We have developed it" — worth a quick check on what he meant to say); the Beamer white-vs-default/logo question (no answer given yet).
+
+**Files touched:** `notes/open_questions.md`, `notes/demo_ideas.md`, `notes/seminar_design.md`, `outline.md`, `handout/README.md`, `resources/README.md`, this file.
+
+**Next:** confirm the writing-style-guide note wasn't cut off accidentally; schedule the manuscript-audit and DOI-checker working sessions; then start drafting the top-priority `resources/` files.
+
 **Next:** unchanged — begin drafting `resources/` files.
