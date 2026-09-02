@@ -74,9 +74,31 @@ Pass `sources=[...]` with the data files the figure was built from. `git_dirty: 
 
 Disable with `provenance=False` for throwaway plots.
 
-## Size checking
+## Validation
 
-`save_fig` warns if the figure is not one of the standard sizes, checking **both** dimensions. Checking only the width is a real bug that has shipped: a figure at the right width and the wrong height passes silently and prints at the wrong scale. Pass `check_size=False` when a non-standard size is deliberate.
+`save_fig` runs two checks before writing. Both warn rather than raise, and both can be disabled when you mean it.
+
+**Size (`check_size`)** — warns if the figure is not one of the standard sizes, checking **both** dimensions. Checking only the width is a real bug that has shipped: a figure at the right width and the wrong height passes silently and prints at the wrong scale.
+
+**Legend overlap (`check_layout`)** — warns if the legend sits on top of plotted data:
+
+```
+UserWarning: legend on the axes covers 83 plotted data point(s). A legend must
+not sit on top of the data. Move it outside the axes (bbox_to_anchor), extend
+the axis limits to make room, or label the series directly.
+```
+
+This is a correctness issue rather than a matter of taste — a legend over the curves hides the evidence the figure exists to show. Note that **`loc="best"` does not save you**: it minimises overlap and then gives up silently when the axes are full. On a five-series damped oscillation it still covered 131 points in testing.
+
+The fix used in `example.py`:
+
+```python
+ax.legend(ncol=5, loc="lower center", bbox_to_anchor=(0.5, 1.02), frameon=False)
+```
+
+There is deliberately **no** check for a legend extending past the axes, because anchoring it outside is the recommended fix and `bbox_inches="tight"` includes it. A check that fired on the correct fix would train people to pass `check_layout=False`, taking the overlap check with it.
+
+Run your figure scripts with `python -W error::UserWarning` to make these fail rather than warn — useful in CI.
 
 ## Greyscale check
 
@@ -93,7 +115,7 @@ fs.grayscale_preview(fig, "figures/fig3_concentration")   # writes ..._grayscale
 | `apply_style(force=False)` | Apply the rcParams. Called automatically on import. |
 | `figure(size=SINGLE, **kw)` | `plt.subplots` at a standard size. Returns `(fig, ax)`. |
 | `color(i)` | Palette colour `i`, cycling. |
-| `save_fig(fig, path_no_ext, sources=None, formats=("png","pdf"), close=True, check_size=True, provenance=True, notes=None)` | Save + record. Returns paths written. |
+| `save_fig(fig, path_no_ext, sources=None, formats=("png","pdf"), close=True, check_size=True, check_layout=True, provenance=True, notes=None)` | Save + validate + record. Returns paths written. |
 | `grayscale_preview(fig, path_no_ext)` | Write a desaturated copy. |
 | `PALETTE`, `SEQUENTIAL`, `DIVERGING` | Colour definitions. |
 | `SINGLE`, `TALL`, `WIDE`, `TWO_PANEL`, `NAMED_SIZES` | Sizes in inches. |
@@ -102,7 +124,7 @@ fs.grayscale_preview(fig, "figures/fig3_concentration")   # writes ..._grayscale
 
 This is a starting point, not a rule. Fork it for your project and change the constants — the value is that there is **one** place to change them. If your venue wants 3.5-inch single-column figures or serif fonts, edit `apply_style` and every figure in the project follows.
 
-What to keep if you change everything else: one central module, `save_fig` writing provenance, and both dimensions checked.
+What to keep if you change everything else: one central module, `save_fig` writing provenance, both dimensions checked, and the legend-overlap check.
 
 ## Not included
 

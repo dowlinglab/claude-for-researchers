@@ -166,6 +166,74 @@ def _check_size(fig) -> None:
     )
 
 
+def _artist_points_display(ax):
+    """Vertices of the plotted data in display coordinates."""
+    chunks = []
+    for line in ax.get_lines():
+        xy = line.get_xydata()
+        if xy is not None and len(xy):
+            chunks.append(ax.transData.transform(xy))
+    for coll in ax.collections:
+        try:
+            off = coll.get_offsets()
+        except Exception:  # pragma: no cover - artist without offsets
+            continue
+        if off is not None and len(off):
+            chunks.append(ax.transData.transform(off))
+    return chunks
+
+
+def _check_legend(fig, margin: float = 2.0) -> None:
+    """Warn if a legend sits on top of the data, or runs outside its axes.
+
+    A legend covering plotted data is a figure-quality violation, not a matter
+    of taste -- it hides the evidence the figure exists to show. `loc="best"`
+    minimises overlap but does not eliminate it, and it silently gives up when
+    the axes are full.
+
+    Fixes, in rough order of preference: move the legend outside the axes with
+    `bbox_to_anchor`; extend the axis limits to open up space; reduce the number
+    of plotted series; or label series directly instead of using a legend.
+    """
+    try:
+        fig.canvas.draw()
+        renderer = fig.canvas.get_renderer()
+    except Exception:  # pragma: no cover - backend without a renderer
+        return
+
+    for i, ax in enumerate(fig.get_axes()):
+        leg = ax.get_legend()
+        if leg is None:
+            continue
+        try:
+            bb = leg.get_window_extent(renderer)
+        except Exception:  # pragma: no cover
+            continue
+        # Shrink slightly so a curve merely grazing the border does not trip it.
+        box = bb.expanded(1.0, 1.0).padded(-margin)
+
+        covered = 0
+        for pts in _artist_points_display(ax):
+            inside = ((pts[:, 0] >= box.x0) & (pts[:, 0] <= box.x1) &
+                      (pts[:, 1] >= box.y0) & (pts[:, 1] <= box.y1))
+            covered += int(inside.sum())
+
+        if covered:
+            where = f"axes {i}" if len(fig.get_axes()) > 1 else "the axes"
+            warnings.warn(
+                f"legend on {where} covers {covered} plotted data point(s). "
+                "A legend must not sit on top of the data. Move it outside the "
+                "axes (bbox_to_anchor), extend the axis limits to make room, or "
+                "label the series directly. Pass check_layout=False to override.",
+                stacklevel=4,
+            )
+
+    # Deliberately no "legend extends past the axes" check: anchoring a legend
+    # outside the axes is the recommended fix above, and savefig(bbox_inches=
+    # "tight") includes it. A check that fired on the correct fix would train
+    # people to disable check_layout, taking the overlap check with it.
+
+
 def _git_state(path: str) -> dict:
     """Commit and dirty flag for the repository containing `path`, if any."""
     d = os.path.dirname(os.path.abspath(path)) or "."
@@ -184,7 +252,8 @@ def _git_state(path: str) -> dict:
 
 def save_fig(fig, path_no_ext: str, sources=None, formats=("png", "pdf"),
              close: bool = True, check_size: bool = True,
-             provenance: bool = True, notes: str = None):
+             check_layout: bool = True, provenance: bool = True,
+             notes: str = None):
     """Save a figure at publication settings and record where it came from.
 
     Parameters
@@ -202,6 +271,8 @@ def save_fig(fig, path_no_ext: str, sources=None, formats=("png", "pdf"),
         accumulate open figures.
     check_size : bool
         Warn if the figure is not a standard size (both dimensions).
+    check_layout : bool
+        Warn if a legend covers plotted data or is clipped by the axes.
     provenance : bool
         Write `<path>.provenance.json`. On by default, deliberately: figure
         provenance is skipped by default everywhere else, and that is exactly
@@ -214,6 +285,8 @@ def save_fig(fig, path_no_ext: str, sources=None, formats=("png", "pdf"),
     """
     if check_size:
         _check_size(fig)
+    if check_layout:
+        _check_legend(fig)
 
     out_dir = os.path.dirname(os.path.abspath(path_no_ext))
     os.makedirs(out_dir, exist_ok=True)

@@ -253,3 +253,20 @@ Context: Alex had ten parallel workers inventory a year of his own AI-assisted r
 **Files touched:** `resources/scripts/doi_checker/{check_dois.py,README.md}`, `resources/scripts/figure_style/{figure_style.py,example.py,README.md,example.*}` (all new), `resources/practices/scientific_figures_tables.md`, `resources/README.md`, this file.
 
 **Next:** the three templates (`project_entry_point.md`, `research_log.md`, `results_manifest.md`), then `scripts/check_docs.py`, then the prompts.
+
+---
+
+## 2026-09-02 (templates built; legend-overlap check added after a real catch)
+
+**Decisions:**
+- Built the three templates. Design constraint throughout: **a template too elaborate to fill in doesn't get used**, so each has a minimal required core, optional fields marked as optional, and a worked example — the example is what makes a template usable.
+  - `project_entry_point.md` — the tool-neutral `PROJECT.md` plus three-line `CLAUDE.md`/`AGENTS.md` pointer files, so switching tools or collaborating with someone on a different one costs nothing. Emphasizes rewriting "Current state" in place rather than appending, with the staleness-pointer trick offered only as a repair for files that already went chronological.
+  - `research_log.md` — append-only, corrections as later entries, with the "Didn't work" field explicitly prompted because it is the one people skip and the one that saves the most time. Includes guidance that the *Interpretation* field stays human: an assistant can summarize what happened and verify that citations resolve, but what a result means is the part that has to come from whoever will defend it.
+  - `results_manifest.md` — figures, tables, and every quantitative claim in the text, plus a run record and a draft data-availability statement kept in the same file so it stays in sync. `cannot_verify` is a legitimate recorded status. Integrates with the figure-style provenance sidecars so the manifest summarizes files that already exist rather than being reconstructed from memory.
+- **Alex spotted that the shipped `example.png` had its legend overlapping the curves** — a genuine figure-quality violation in the very artifact demonstrating the figure standard. Rather than just fixing the example, added a real check: `save_fig` now warns when a legend covers plotted data, computed by transforming line and collection vertices into display coordinates and testing containment in the legend's bounding box. It catches `loc="best"` too, which people assume is safe (131 covered points on the five-series demo). The example now anchors the legend above the axes and passes under `python -W error::UserWarning`.
+- **Deliberately did not add a "legend extends past the axes" check.** It fired on the *recommended fix* (anchoring outside with `bbox_to_anchor`, which `bbox_inches="tight"` then includes). A gate that cries wolf on correct usage trains people to disable it — taking the valuable overlap check with it. Recorded in the code and the README so it doesn't get "fixed" later.
+- Added the legend rule to the figures practice file in three places: the readability checklist (with the fix hierarchy), the per-figure checklist, and the anti-patterns list, noting it is usually invisible to whoever made the figure because they already know what the data looks like.
+
+**Files touched:** `resources/templates/{project_entry_point,research_log,results_manifest}.md` (new), `resources/scripts/figure_style/{figure_style.py,example.py,README.md,example.*}`, `resources/practices/scientific_figures_tables.md`, this file.
+
+**Next:** `scripts/check_docs.py`, then the prompts (`organize_research_repo.md`, `manuscript_audit.md`, `literature_workflow.md`). After that: slides and handout.

@@ -3,7 +3,7 @@
   "example.png",
   "example.pdf"
  ],
- "created": "2026-09-02T14:43:21-05:00",
+ "created": "2026-09-02T15:42:56-05:00",
  "script": "/Users/adowling/GitHub/Teaching/claude-for-researchers/resources/scripts/figure_style/example.py",
  "size_inches": [
   6.4,
@@ -15,6 +15,6 @@
  "python": "3.12.7",
  "matplotlib": "3.9.2",
  "notes": "figure_style demo; synthetic data",
- "git_commit": "898997de0473dcf14900e2375b162bac0d39c26c",
+ "git_commit": "6d7d65e7d6222e42041430fcd55992e6ab3c5f4f",
  "git_dirty": true
 }

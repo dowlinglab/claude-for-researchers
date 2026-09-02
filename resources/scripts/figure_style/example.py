@@ -24,7 +24,12 @@ def main():
                 label=f"case {i + 1}")
     ax.set_xlabel("Time (s)")
     ax.set_ylabel(r"Signal (mol m$^{-3}$)")
-    ax.legend(ncol=2)
+
+    # Anchored above the axes, not inside them. A legend placed inside would sit
+    # on top of the curves -- save_fig warns about exactly that. `loc="best"` is
+    # not a fix here: with five damped oscillations there is no empty corner.
+    ax.legend(ncol=5, loc="lower center", bbox_to_anchor=(0.5, 1.02),
+              frameon=False, columnspacing=1.2, handlelength=1.6)
 
     out = os.path.join(HERE, "example")
     written = fs.save_fig(
