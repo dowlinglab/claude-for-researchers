@@ -108,3 +108,31 @@ Alex answered most of [open_questions.md](open_questions.md) directly in the fil
 **Files touched:** `outline.md`, `notes/demo_ideas.md`, `notes/seminar_design.md`, `notes/open_questions.md`, this file.
 
 **Next:** get the 3D-printing LinkedIn post from Alex to finish Section 9; still waiting on the writing-style file and a Beamer white/default + logo decision; then begin drafting the top-priority `resources/` files.
+
+---
+
+## 2026-09-02 (3D-printing story received; Section 9 finished)
+
+**Decisions:**
+- Alex provided the 3D-printing LinkedIn post (ChatGPT + OpenSCAD, ~7 months prior) plus a photo collage (sketch → 3D-printed kitchen organizer, and a Dobsonian telescope shelf with a compass holder). He flagged the post's own prose as "a little too AI sounding" — deliberately did not reuse its emoji-listicle structure when writing it into [demo_ideas.md](demo_ideas.md) #4b; extracted the substance in plain prose instead, consistent with the seminar's own Section 6 teaching on avoiding generic AI-writing patterns.
+- This story's two best lines turned out to reinforce material already planned elsewhere, so Section 9 was written to echo rather than repeat: the "generate → render → screenshot → targeted feedback, small patches over regeneration" workflow lesson matches Section 4's "review the diff, prefer small changes" almost exactly; the "speed vs. understanding" tradeoff echoes the Section 8 training-model tension from a low-stakes domain. Both call-backs are meant to be brief, not re-explained.
+- Section 9 in [outline.md](../outline.md) is now fully specified — Amateur Radio link plus the 3D-printing collage, one slide.
+- Flagged one production to-do: the collage image exists (Alex has it) but isn't yet a file in this repo — needs to be added to `slides/figures/` when slides are built; not something extractable from the conversation automatically.
+
+**Files touched:** `notes/demo_ideas.md`, `outline.md`, `notes/open_questions.md`, this file.
+
+**Next:** Section 9 is done. Still waiting on the writing-style file and the Beamer white/default + logo decision. Then begin drafting the top-priority `resources/` files.
+
+---
+
+## 2026-09-02 (earlier 3D-printing post added; Section 9 recurated)
+
+**Decisions:**
+- Alex sent a second, chronologically *earlier* 3D-printing post: the "boot dryer octopus" — a glove/boot dryer built from a $10 inline fan and a 3D-printed PVC adapter, ChatGPT's first-ever OpenSCAD project for him, including it catching a hairdryer fire-hazard risk and recommending the fan instead. Ends with a genuine open question about 3D printing as experiential learning in CBE courses (turbulent-mixing baffles; vehicles for teaching thermo/polymers/transport/reactions/controls).
+- With three hobby examples now competing for Section 9's 1 minute (radio book, boot-dryer-octopus, kitchen-organizer/telescope), recurated rather than piling all three in equally: boot-dryer-octopus becomes the spoken anchor (best narrative arc, names real ND resources — Hesburgh Libraries 3D printing, the Innovation Hub, credited Adam Heet), the other two become link-only slide mentions with no spoken narration, and the section now closes on the boot-dryer post's own CBE-course question rather than a generic "try this yourself" line — a genuine unresolved question, and a natural bridge into Q&A that specifically engages faculty in the room.
+- Flagged explicitly (not silently decided) that fitting three examples into 60 seconds is ambitious — recommended Alex time it out loud in rehearsal and be ready to cut Post B (kitchen organizer/telescope) to a bare link if it runs long.
+- Second collage image (OpenSCAD editor + render + printed part + fan) also needs manual addition to `slides/figures/` later — same limitation as the first image.
+
+**Files touched:** `notes/demo_ideas.md`, `outline.md`, this file.
+
+**Next:** Alex to confirm (or adjust) the anchor-story choice for Section 9 above; still waiting on the writing-style file and the Beamer white/default + logo decision. Then begin drafting the top-priority `resources/` files.

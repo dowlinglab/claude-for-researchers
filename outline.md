@@ -179,14 +179,14 @@ Verify and Write keep their full time on purpose — they're the most differenti
 
 **Teaching point:** Everything today applies outside the lab too — a lighter, human closing note before Q&A, not a new argument.
 
-**Supporting ideas:**
-- The Amateur Radio exam study guide, as a one-line story with a link: curated source material → structured, purpose-built artifact, same pattern as Section 3's grounding and Section 6's structured writing, just applied for fun. Repo: [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book).
-- A second hobby example, pending: a LinkedIn post from ~7 months prior on using AI for 3D printing (Alex to provide — see [notes/open_questions.md](notes/open_questions.md)).
-- Explicit framing: the same habits — ground it in real sources, keep files not just chat history, review before trusting — pay off just as much in a hobby project as in a research project. It's a fun, low-stakes place to actually practice them.
+**Supporting ideas (tight for 1 minute — see the design note in [notes/demo_ideas.md](notes/demo_ideas.md) #4b; time this out loud before committing to all three):**
+- **Anchor story — the "boot dryer octopus":** wanted a home version of a glove dryer, brainstormed with ChatGPT, which flagged a hairdryer as a fire hazard and steered him to a $10 inline fan instead — AI catching a real safety issue, not just generating code. Needed a custom fan-to-PVC adapter; ~30 minutes of CAD experience ever, no 3D-printing experience. ChatGPT introduced OpenSCAD and generated the script; the loop that worked was render → screenshot → targeted feedback → repeat — *the same lesson as Section 4's "review the diff, prefer small changes,"* independently rediscovered. Printed via Notre Dame's own Hesburgh Libraries 3D printing service and the Innovation Hub — real, usable campus resources worth naming for this room.
+- **Brief mention, links only, no narration:** the kitchen organizer / Dobsonian telescope shelf story (same workflow, easy case vs. hard case) and the Amateur Radio exam guide — [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book). On the slide, not spoken.
+- Close on the question the boot-dryer story actually raised for Alex, not a generic wrap-up: where could 3D printing become an experiential-learning vehicle in CBE courses — thermodynamics, polymers, transport, reactions, controls? Genuine and unresolved, and a natural bridge into Q&A, especially for faculty in the room.
 
-**Demo/example:** one slide, two links (radio book + 3D-printing post), minimal text.
+**Demo/example:** one slide — the boot-dryer-octopus collage as the main image (OpenSCAD render, printed part, the fan), with the organizer/telescope/radio-book as small linked thumbnails. Images in hand; need adding to `slides/figures/` when slides are built.
 
-**Students should remember:** Try one of today's habits on something low-stakes and fun first — a hobby project is a great place to build the muscle memory before you trust it on your research.
+**Students should remember:** (faculty-leaning close) If this sparks a course idea — a 3D-printed baffle for turbulent mixing, a hands-on vehicle for teaching thermo, transport, or controls — that's an open question Alex would genuinely like to work through with you. (Everyone else: try one of today's habits on something low-stakes and fun first.)
 
 ---
 
