@@ -19,10 +19,10 @@ All seven are tool-agnostic, with tool-specific mechanics confined to one clearl
 |---|---|---|---|
 | `working_with_ai_agents.md` | 2, 5 | Session conduct, roles, guardrails, project memory, document lifecycle, portability across tools and machines | **Drafted** |
 | `scientific_computing_workflow.md` | 4 | Notebooks → modules, baseline-then-refactor, phase-matched verification, run provenance | **Drafted** |
-| `manuscript_audit.md` | 7 | Claim tracing, status vocabularies, standards of evidence, retraction | Next |
-| `technical_writing.md` | 6 | Structure, notation, submission readiness, AI-prose drift signals | Planned |
-| `writing_style_guide.md` | 6 | How to derive and refine a style guide; the Dowling Lab register as the worked instance and group standard | Planned |
-| `scientific_figures_tables.md` | 6 | Figure standards, reproducible figures, tables generated not retyped | Planned |
+| `manuscript_audit.md` | 7 | Claim tracing, status vocabularies, standards of evidence, retraction | **Drafted** |
+| `technical_writing.md` | 6 | Structure, notation, submission readiness, AI-prose drift signals | **Drafted** |
+| `writing_style_guide.md` | 6 | How to derive and refine a style guide; the Dowling Lab register as the worked instance and group standard | **Drafted** |
+| `scientific_figures_tables.md` | 6 | Figure standards, reproducible figures, tables generated not retyped | **Drafted** |
 | `private_code_to_public_package.md` | 4 | Packaging, isolating private data, release engineering, human-only steps | Planned |
 
 Three naming and scope decisions worth recording:

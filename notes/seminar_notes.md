@@ -210,3 +210,17 @@ Context: Alex had ten parallel workers inventory a year of his own AI-assisted r
 **Files touched:** `resources/practices/manuscript_audit.md` (new), `resources/README.md`, this file.
 
 **Next:** the writing trio (`technical_writing.md`, `writing_style_guide.md`, `scientific_figures_tables.md`), then `private_code_to_public_package.md`, then the scripts.
+
+---
+
+## 2026-09-02 (writing trio drafted — six of seven practice files done)
+
+**Decisions:**
+- `technical_writing.md` — structure before sentences; manuscript as files not a blob; the notation/equation/prose conventions worth enforcing because they are checkable; "never cite what you haven't read" with literature notes kept as a *claim audit* (what a source can and cannot support) rather than summaries; editing against a written standard instead of against taste; §6 on recognizing AI drift, whose two structural safeguards are protecting inconvenient results and carrying integrity constraints in the style file; review comments captured verbatim as a numbered work list before any editing; three graded submission-readiness gates.
+- `writing_style_guide.md` — the three-part structure Alex asked for. **Part I** is the transferable method: derive from three to six named exemplars weighted by authorship role, commit the exemplars so they travel, extract what is observably true rather than inventing principles, and **mark confidence** (argument structure emerges reliably from a few documents; word-level preferences need a much larger sample). **Part II** is the group register, binding for group papers. **Part III** is how to rebuild it elsewhere. §3 carries the genuinely novel idea from the source material — a style guide that freezes *integrity constraints* alongside voice, so a later prose pass cannot quietly re-inflate a claim an audit had narrowed. §4 makes it checkable with a one-paragraph litmus test.
+- `scientific_figures_tables.md` — lopsided by design, as expected: the figure-quality checklist consolidates guidance the group already has (with a placeholder for the canonical published link, which I did not want to guess at), while §3–§5 add the reproducibility layer that was missing — central styling so a later standard is enforceable, compute/plot separation, and a figure manifest, motivated by the specific failure where provenance exists in a staging directory and the copy into the manuscript destroys it. Tables are written fresh around one rule: **regenerate, never retype**, with the generating script formatting only and holding no state.
+- Fixed a stale status row: `manuscript_audit.md` was marked "Next" in `resources/README.md` after it had been drafted and committed — exactly the class of drift `check_docs.py` is meant to catch.
+
+**Files touched:** `resources/practices/technical_writing.md`, `writing_style_guide.md`, `scientific_figures_tables.md` (all new), `resources/README.md`, this file.
+
+**Next:** `private_code_to_public_package.md` (last of the seven), then the tools — starting with the two Alex asked for as adoptable defaults, `scripts/doi_checker/` and `scripts/figure_style/`.
