@@ -7,9 +7,8 @@ A seminar for graduate students and faculty in Chemical and Biomolecular Enginee
 | | |
 |---|---|
 | **Date** | September 17, 2026 |
-| **Format** | 1-hour slot: 40-minute talk + 20 minutes of questions |
-| **Time** | TBD |
-| **Location** | TBD |
+| **Time** | 11:00 AM – 12:00 PM (40-minute talk + 20 minutes of questions) |
+| **Location** | Carey Auditorium, 107 Hesburgh Library, University of Notre Dame |
 | **Audience** | CBE graduate students and faculty, Notre Dame (faculty from other departments welcome) |
 | **Speaker** | Alex Dowling |
 
@@ -53,7 +52,7 @@ claude-for-research/
 
 ## Status
 
-Early scaffolding stage (as of September 2, 2026). Abstract and outline are drafted; slides and handout have not been written yet. See [notes/open_questions.md](notes/open_questions.md) for what's still undecided, including the seminar time and location above.
+Early scaffolding stage (as of September 2, 2026). Abstract, outline, and event details are set; slides and handout have not been written yet. See [notes/open_questions.md](notes/open_questions.md) for what's still undecided.
 
 ## License
 

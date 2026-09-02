@@ -37,6 +37,13 @@ Working notes on the personal examples this seminar draws from, kept separate fr
 **Core line:** Preserving context in files/repos/logs/docs matters far more than preserving it inside an AI chat — because the person who *had* that context is gone, and so is any chat history they had with an AI about it.
 **Status:** Strongest candidate for the frame story — it motivates nearly every other section (context files, the log, reproducible code, the audit) at once. Needs a decision on how much identifying detail to include (which project, whether the student is named even implicitly) — see [open_questions.md](open_questions.md).
 
+## ND data-classification chart (new, 2026-09-02)
+
+**Supports:** Outline Section 1 (Ecosystem), possibly echoed in Section 8 (Responsible use).
+**Shape:** Notre Dame's own 🟢 Public / 🟡 Internal / 🟠 Sensitive / 🔴 Restricted data tiers, confirmed directly from `ai.nd.edu`, paired with which tools are currently cleared at which tier — Gemini/ChatGPT EDU/NotebookLM through Sensitive, Claude currently Public-only. See [references.md](references.md) for full quotes.
+**Core line:** Institution-specific, concrete, and slightly uncomfortable for a Claude-titled talk to say out loud — which is exactly why it's worth saying: the talk should model the honesty it's asking students to bring to their own work.
+**Status:** Ready to build as a slide once verified once more close to the talk date (see [open_questions.md](open_questions.md)).
+
 ## Other demo material referenced in the outline (not full "stories," just artifacts to build)
 
 - **Section 2:** a short `CLAUDE.md`-style file vs. a chat that has lost track of project conventions. This repository's own [CLAUDE.md](../CLAUDE.md) can serve as the real example.

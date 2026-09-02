@@ -50,3 +50,27 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 **Open questions raised:** none new beyond what's already in [open_questions.md](open_questions.md); start time and room are still needed.
 
 **Next:** draft the top-priority `resources/` files, starting with `prompts/organize_research_repo.md` and `prompts/manuscript_audit.md`.
+
+---
+
+## 2026-09-02 (verified ND policy directly)
+
+**Decisions:**
+- Verified Notre Dame's AI policy/tool-approval pages directly (Alex asked whether I could review `ai.nd.edu/ai-in-action/policies-and-guidelines/` and `.../approved-ai-tools/`). `WebFetch` fails on this domain (TLS error), but the in-app Browser tool loads it fine — noted in [references.md](references.md) for future sessions.
+- Confirmed, with exact quotes: Claude is currently approved at ND for **Public data only**; Gemini, ChatGPT EDU, and NotebookLM are cleared through Sensitive; an Enterprise Claude license is "coming soon" (needs a departmental FOAPAL); DoD/DoW-funded researchers are prohibited from using any Anthropic product, contact `researchsecurity@nd.edu`.
+- This resolves the two "verify before the talk" items in [open_questions.md](open_questions.md) and upgrades outline.md Section 1 from a hedged caveat to a stated fact — decided to say it plainly on the ecosystem slide rather than soften it, since the seminar should model the same honesty about limitations it asks of students.
+- Added the ND data-classification chart as a new candidate demo in [demo_ideas.md](demo_ideas.md).
+
+**Files touched:** `notes/references.md`, `outline.md`, `notes/open_questions.md`, `notes/demo_ideas.md`.
+
+**Next:** one more quick re-check of the `ai.nd.edu` Claude/tools pages close to September 17 in case anything changed, then proceed to drafting `resources/` files.
+
+---
+
+## 2026-09-02 (event logistics confirmed)
+
+**Decisions:** Alex confirmed the seminar is 11:00 AM–12:00 PM in Carey Auditorium, 107 Hesburgh Library. Event-details block in [README.md](../README.md) is now complete; the "start time and location" item in [open_questions.md](open_questions.md) is resolved. Remaining logistics open item: room AV/internet reliability, which determines whether live demos are feasible.
+
+**Files touched:** `README.md`, `notes/open_questions.md`.
+
+**Next:** unchanged — begin drafting `resources/` files.

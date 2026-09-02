@@ -46,12 +46,13 @@ Verify and Write keep their full time on purpose — they're the most differenti
 
 **Supporting ideas:**
 - One compact table: Google (Gemini, NotebookLM) / OpenAI (ChatGPT, ChatGPT Projects, Codex) / Anthropic (Claude, Claude Projects, Claude Code, Team for Scientists).
-- Notre Dame-specific access, stated carefully and dated (see [notes/references.md](notes/references.md)): Gemini is available campus-wide via Google Workspace SSO; Magai gives some faculty access to many models including Claude; a direct Claude pilot is in progress separately from the Anthropic academic Team plan. **Verify current status before the talk** — this changes quickly.
-- One-line compliance caveat for this specific audience (researchers with DoD/DoW-funded work should confirm current tool restrictions with OIT — flagged as unverified via primary source, see [notes/references.md](notes/references.md)), plus the reminder that capabilities and rankings will keep changing regardless.
+- Notre Dame's data-classification rule, confirmed directly on `ai.nd.edu` (see [notes/references.md](notes/references.md)): Gemini, ChatGPT EDU, and NotebookLM are cleared for Public/Internal/Sensitive data; **Claude is currently approved for Public data only** — an Enterprise Claude license is "coming soon" but not yet available. Say this plainly rather than glossing over it — it's real, useful, and slightly complicates "Why Claude?"
+- One-line compliance caveat, quoted directly from `ai.nd.edu`: researchers with DoD/DoW-funded contracts or agreements are currently prohibited from using any Anthropic products (Claude.ai, API, Claude Code) — contact `researchsecurity@nd.edu` with questions.
+- Capabilities and rankings will keep changing regardless of any of the above.
 
-**Demo/example:** the ecosystem table as a single slide. No live demo here.
+**Demo/example:** the ecosystem table as a single slide, plus the ND data-classification tiers (🟢🟡🟠🔴) as a second small graphic — strong, concrete, institution-specific.
 
-**Students should remember:** Pick tools by task and access, not brand loyalty — and check with OIT before putting non-public data or DoD-restricted work into any of them.
+**Students should remember:** Pick tools by task and access, not brand loyalty — and at Notre Dame specifically, don't put non-public research data into Claude yet, and check with `researchsecurity@nd.edu` if you have DoD/DoW-funded work.
 
 ---
 
