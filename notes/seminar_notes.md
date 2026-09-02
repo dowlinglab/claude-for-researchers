@@ -159,3 +159,29 @@ Alex answered most of [open_questions.md](open_questions.md) directly in the fil
 **Files touched:** `slides/figures/boot_dryer_octopus.jpeg` (renamed), `slides/figures/kitchen_organizer_telescope_shelf.jpeg` (renamed), `outline.md`, `notes/demo_ideas.md`, `notes/open_questions.md`.
 
 **Next:** unchanged — writing-style file and Beamer theme details still open; otherwise ready to start drafting `resources/` files.
+
+---
+
+## 2026-09-02 (practice-file structure decided; drafting begun)
+
+Context: Alex had ten parallel workers inventory a year of his own AI-assisted research projects (code refactors, package migrations, manuscript audits, method development). Findings stay out of this repo by his explicit instruction — nothing project-identifying, no references to former group members, no "this project was in bad shape" framing. What lands here is generalized doctrine only.
+
+**Decisions:**
+- **`resources/` now has two layers:** `practices/` (seven best-practice files = the doctrine) and `prompts/`/`templates/`/`scripts/` (the tools, which cite the practice files by section rather than restating them). [resources/README.md](../resources/README.md) rewritten accordingly.
+- **Seven practice files**, each mapped to a seminar section, each following the same shape: what it is → numbered stable sections → checklist → anti-patterns → how to use it with an AI assistant. Target 150–300 lines.
+- Two of Alex's five proposed filenames changed: added `manuscript_audit.md` (the seminar's climax had no takeaway resource, and it has the deepest evidence base), and renamed the personal style guide to `personal_style_guide.md` — a file named for one author teaches students to adopt that author's voice, which inverts the goal. It becomes a worked example plus "derive your own."
+- **Tool-agnostic by default**, with tool-specific mechanics quarantined in one clearly marked section per file carrying an explicit staleness warning. Rationale: vendor conventions (`CLAUDE.md`, `AGENTS.md`, settings files) will drift, and neither major tool reads the other's config, so the durable layer has to be tool-neutral markdown.
+
+**Four pain points Alex raised, and how each is being handled:**
+1. *Switching between tools and between computers.* Treated as a portability problem, not a tool problem — tool-neutral entry point, repo-relative paths, push-before-switch, and a "handoff block" convention recording verified git state literally. Cross-tool review is presented as a deliberate technique (adversarial second audit), not a friction.
+2. *Agents create many markdown files that go stale.* Addressed with a living/dated/superseded taxonomy, a cap of three or four living documents per project, supersession banners naming a successor, append-only logs, and one rule aimed squarely at the cause: an agent may append to the log and create dated records, but may not create a new living document unless asked.
+3. *Would a context file enforce rules like keeping docs current?* Answered honestly in the file: less than hoped. Written instructions are advisory and degrade. Anything that must hold needs a mechanical failure mode — hence the new `scripts/check_docs.py` and the §9 principle "determine status from evidence, not recollection."
+4. *Tests help when refactoring but obstruct discovery; "more tests is better" is not a universal rule.* This reshapes `scientific_computing_workflow.md` around a **phase-matched verification** table (discovery / consolidation / refactor / publication), with the explicit warning that a green suite is evidence only about the code it executes, and that pinned-value tests are counterproductive during discovery because every legitimate change breaks them.
+
+**New resource added to the plan:** `scripts/check_docs.py` (~40 lines) — internal-link resolution, stale living documents, supersession banners pointing at files that don't exist.
+
+**Also resolved:** the writing-style-guide blocker in [open_questions.md](open_questions.md) — source material exists and is no longer needed from Alex separately.
+
+**Files touched:** `resources/practices/working_with_ai_agents.md` (new), `resources/README.md`, this file.
+
+**Next:** draft the remaining six practice files in the agreed order — `scientific_computing_workflow.md`, `manuscript_audit.md`, then the writing trio, then packaging.

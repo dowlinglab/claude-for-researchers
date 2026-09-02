@@ -1,49 +1,92 @@
 # Resources
 
-The actual takeaways: polished, reusable artifacts students can apply to their own research on Monday morning. Per [CLAUDE.md](../CLAUDE.md), this is a deliberately small set of well-built resources rather than a large prompt library — each entry below earns its place by being something a working researcher would plausibly reuse without heavy editing.
+The actual takeaways: polished, reusable artifacts students can apply to their own research on Monday morning. Per [CLAUDE.md](../CLAUDE.md), this is a deliberately small set of well-built resources rather than a large prompt library.
 
-Design principle for every prompt in here (from the project charter, see [notes/seminar_design.md](../notes/seminar_design.md)): inspect before editing, distinguish fact from inference, report uncertainty, preserve provenance, never invent missing information, make small auditable changes, verify after changing anything, and summarize what changed and what's unresolved.
+Resources come in two layers:
 
-## Build first (priority order)
+- **`practices/`** — the doctrine. Seven best-practice files, each mapped to a seminar section, written to be used *with* an AI assistant (as repo context, as a task prompt, or as an audit checklist) rather than just read.
+- **`prompts/`, `templates/`, `scripts/`** — the tools. Runnable or copy-pasteable things that operationalize the practices and cite them by section rather than restating them.
 
-1. **`prompts/organize_research_repo.md`** — Examine an existing research repository and propose a target architecture (single repo vs. split code/manuscript, staged migration plan) without touching anything until a human approves the plan. Flagship resource — most broadly applicable, and it's the one referenced in Outline Section 4.
-2. **`prompts/manuscript_audit.md`** — The audit toolkit: quantitative-claim tracing, methods-vs-code comparison, figure-vs-text comparison, and journal/guideline compliance, as modes of one prompt rather than four separate files (see [seminar_design.md](../notes/seminar_design.md) on why these were consolidated). This is the resource tied to the talk's climax (Outline Section 7). Plan (2026-09-02): scope and test it together against 1–2 real recent Dowling-lab papers/projects rather than writing it in the abstract — not yet scheduled.
-3. **`prompts/literature_workflow.md`** — Process a folder of PDFs: inspect metadata, determine the real citation and DOI, rename consistently, flag duplicates and uncertain metadata (never guess), generate/update `literature.md` and BibTeX. Addresses a near-universal, tedious pain point.
-4. **`scripts/doi_checker/`** — A small deterministic script (not just a prompt) that extracts DOIs from BibTeX/manuscripts, normalizes them, queries authoritative metadata, and flags mismatches — the seminar's concrete example of combining a script, authoritative external data, and AI judgment instead of asking a model to "just check my references." Update (2026-09-02): Alex already built one of these in a recent project — plan is to locate and adapt it rather than write one from scratch. Next step: identify which project it's in.
-5. **`templates/research_log.md`** — The persistent-log template from Outline Section 5: date, question, experiment, commit, config, datasets, outputs, interpretation, failed approaches, next questions. Low effort to adopt, high payoff.
-6. **`templates/results_manifest.md`** — The results/provenance manifest pattern for connecting a manuscript to the exact code commit, script, config, and output behind each figure/table — pairs with the split-repo pattern in `examples/repository_patterns/`.
-7. **`templates/CLAUDE.md.example`** — A stripped-down, annotated version of this repo's own [`CLAUDE.md`](../CLAUDE.md), showing the persistent-project-context pattern from Outline Section 2 in a form a student can drop into their own repo and adapt.
+Design principle for everything here: inspect before editing, distinguish fact from inference, report uncertainty, preserve provenance, never invent missing information, make small auditable changes, verify after changing anything, and summarize what changed and what's unresolved.
 
-## Also planned (lower priority / blocked)
+## Layer 1: `practices/` — the seven best-practice files
 
-- **`checklists/reproducibility_and_handoff_checklist.md`** — One combined checklist covering general reproducibility and the "handing off a project after a student graduates" scenario, since both are really the same test (can someone else install, understand, and extend this?).
-- **`examples/repository_patterns/single_repo.md`** and **`split_code_paper_repos.md`** — Worked, opinionated examples of both patterns from the charter, with the provenance-manifest connection explained for the split case.
-- **`style/alex_dowling_writing_style.md`** — Blocked on Alex supplying the underlying style-analysis material (see [notes/open_questions.md](../notes/open_questions.md)). Doubles as a worked example of how a student could derive a style guide from their own prior writing.
+Each file uses the same shape: what it is and when to use it → numbered practice sections (stable, so a prompt can cite `§5`) → checklist → anti-patterns → how to use it with an AI assistant. Target length is 150–300 lines; anything longer stops being loaded and starts being skimmed.
 
-## Deliberately not building separately
+All seven are tool-agnostic, with tool-specific mechanics confined to one clearly marked section carrying a staleness warning.
 
-- A project-README template and a computational-research `.gitignore` — genuinely useful, but not distinctive enough to warrant their own polished resource; point to existing well-maintained templates (e.g., GitHub's own `.gitignore` collection) in the handout instead.
-- A journal-selection decision-matrix generator — see [notes/seminar_design.md](../notes/seminar_design.md) for why this was cut from the live talk; not currently planned as a resource either, pending the open question there.
+| File | Seminar section | Scope | Status |
+|---|---|---|---|
+| `working_with_ai_agents.md` | 2, 5 | Session conduct, roles, guardrails, project memory, document lifecycle, portability across tools and machines | **Drafted** |
+| `scientific_computing_workflow.md` | 4 | Notebooks → modules, baseline-then-refactor, phase-matched verification, run provenance | Next |
+| `manuscript_audit.md` | 7 | Claim tracing, status vocabularies, standards of evidence, retraction | Next |
+| `technical_writing.md` | 6 | Structure, notation, submission readiness, AI-prose drift signals | Planned |
+| `personal_style_guide.md` | 6 | A worked example of a personal voice spec, plus how to derive your own | Planned |
+| `scientific_figures_tables.md` | 6 | Figure standards, reproducible figures, tables generated not retyped | Planned |
+| `private_code_to_public_package.md` | 4 | Packaging, isolating private data, release engineering, human-only steps | Planned |
+
+Two naming decisions worth recording:
+
+- **`personal_style_guide.md`, not a named personal one.** A file named for one author teaches students to adopt that author's voice, which is the opposite of the goal. It presents one worked example, clearly labeled as one person's, and closes with how to derive your own from prior writing.
+- **`manuscript_audit.md` is a practice file, not only a prompt.** The audit is the seminar's climax and has the deepest evidence base; the prompt version (below) operationalizes it.
+
+## Layer 2: tools
+
+**Prompts** (`prompts/`)
+
+1. **`organize_research_repo.md`** — Examine an existing research repository and propose a target architecture (single repo vs. split code/manuscript, staged migration plan) without touching anything until a human approves the plan.
+2. **`manuscript_audit.md`** — The audit toolkit as one prompt with modes: quantitative-claim tracing, methods-vs-code, figure-vs-text, journal-guideline compliance. Cites `practices/manuscript_audit.md` rather than repeating it.
+3. **`literature_workflow.md`** — Process a folder of PDFs: inspect metadata, determine the real citation and DOI, rename consistently, flag duplicates and uncertain metadata (never guess), generate/update `literature.md` and BibTeX.
+
+**Templates** (`templates/`)
+
+4. **`research_log.md`** — The persistent-log template from Outline Section 5.
+5. **`results_manifest.md`** — Connecting a manuscript to the exact commit, script, config, and output behind each figure and table.
+6. **`project_entry_point.md`** — A tool-neutral project context file, per `practices/working_with_ai_agents.md` §2, with thin `CLAUDE.md`/`AGENTS.md` pointer files.
+
+**Scripts** (`scripts/`)
+
+7. **`doi_checker/`** — Verifies DOIs against Crossref in two passes kept deliberately apart: does an existing DOI resolve to the work the entry describes, and does Crossref know one for entries lacking it. Proposes, never writes. Adapted from an existing working script; the main work is parameterizing hardcoded paths into `--bib` / `--tex` / `--mailto` arguments.
+8. **`check_margins.py`** — Geometric overfull-box detection from a rendered PDF, because a clean LaTeX build does not reliably surface them. Already general-purpose; needs packaging and a README.
+9. **`check_docs.py`** — New, ~40 lines. Flags internal links that don't resolve, living documents older than the commits that changed what they describe, and supersession banners naming files that don't exist. Turns `practices/working_with_ai_agents.md` §9 from advice into a gate.
+
+## Also planned (lower priority)
+
+- **`checklists/reproducibility_and_handoff_checklist.md`** — Reproducibility and "handing a project to the next person" combined, since both are the same test: can someone else install, understand, and extend this?
+- **`examples/repository_patterns/single_repo.md`** and **`split_code_paper_repos.md`** — Worked examples of both patterns, with the provenance-manifest connection explained for the split case.
+
+## Deliberately not building
+
+- A project-README template and a computational-research `.gitignore` — useful but not distinctive; point to well-maintained existing templates in the handout instead.
+- A journal-selection decision-matrix generator — see [notes/seminar_design.md](../notes/seminar_design.md); journal selection is one bullet in the live talk.
 
 ## Layout
 
 ```
 resources/
-├── README.md              this file
+├── README.md                          this file
+├── practices/                          the seven best-practice files
+│   ├── working_with_ai_agents.md
+│   ├── scientific_computing_workflow.md
+│   ├── manuscript_audit.md
+│   ├── technical_writing.md
+│   ├── personal_style_guide.md
+│   ├── scientific_figures_tables.md
+│   └── private_code_to_public_package.md
 ├── prompts/
 │   ├── organize_research_repo.md
-│   ├── literature_workflow.md
-│   └── manuscript_audit.md
-├── scripts/
-│   └── doi_checker/
+│   ├── manuscript_audit.md
+│   └── literature_workflow.md
 ├── templates/
 │   ├── research_log.md
 │   ├── results_manifest.md
-│   └── CLAUDE.md.example
+│   └── project_entry_point.md
+├── scripts/
+│   ├── doi_checker/
+│   ├── check_margins.py
+│   └── check_docs.py
 ├── checklists/
 │   └── reproducibility_and_handoff_checklist.md
-├── style/
-│   └── alex_dowling_writing_style.md
 └── examples/
     └── repository_patterns/
         ├── single_repo.md
