@@ -136,3 +136,26 @@ Alex answered most of [open_questions.md](open_questions.md) directly in the fil
 **Files touched:** `notes/demo_ideas.md`, `outline.md`, this file.
 
 **Next:** Alex to confirm (or adjust) the anchor-story choice for Section 9 above; still waiting on the writing-style file and the Beamer white/default + logo decision. Then begin drafting the top-priority `resources/` files.
+
+---
+
+## 2026-09-02 (Section 9 confirmed as two slides)
+
+**Decisions:**
+- Alex confirmed the boot-dryer anchor and expanded Section 9 to **two slides**: 9a, the boot-dryer story as a hook/encouragement to "tinker, think about possibilities," closing on its own CBE-course question; 9b, a pure hobbies gallery (kitchen organizer, telescope shelf, ham radio book) with no repeated argument — deliberately not restating Section 8's training-model tension a second time, so the talk ends on curiosity rather than another caveat.
+- Section 9's time doubled from 1→2 minutes. To hold the 40-minute total, trimmed Section 4 (Build) from 7→6 min — it already gives `grad-visit-scheduler` the full story and treats `bits_for_gaps`/`emcal` as brief mentions, so this was a light cut, not a real loss of content.
+- Updated the at-a-glance table's running totals and the "why these cuts" note in [outline.md](../outline.md) accordingly.
+
+**Files touched:** `outline.md`, `notes/demo_ideas.md`, this file.
+
+**Next:** still waiting on the writing-style file and the Beamer white/default + logo decision. Outline is otherwise feature-complete — next major step is drafting the top-priority `resources/` files.
+
+---
+
+## 2026-09-02 (hobby-project images added and renamed)
+
+**Decisions:** Alex added the two photo collages to `slides/figures/` (arriving with generic upload-timestamp filenames). Renamed for clarity/consistency: `1765462525518.jpeg` → `boot_dryer_octopus.jpeg`, `1769434741290.jpeg` → `kitchen_organizer_telescope_shelf.jpeg`. Updated [outline.md](../outline.md) Section 9 and [demo_ideas.md](demo_ideas.md) #4b to link the real files instead of noting them as pending; resolved the corresponding [open_questions.md](open_questions.md) item fully.
+
+**Files touched:** `slides/figures/boot_dryer_octopus.jpeg` (renamed), `slides/figures/kitchen_organizer_telescope_shelf.jpeg` (renamed), `outline.md`, `notes/demo_ideas.md`, `notes/open_questions.md`.
+
+**Next:** unchanged — writing-style file and Beamer theme details still open; otherwise ready to start drafting `resources/` files.

@@ -14,14 +14,14 @@ This outline follows the research lifecycle — **Explore → Ground → Build �
 | 1 | AI ecosystem, briefly | 3 min | 0:05 |
 | 2 | The core shift: context, not conversation | 5 min | 0:10 |
 | 3 | Explore & Ground: literature | 4 min | 0:14 |
-| 4 | Build: notebook → reproducible codebase | 7 min | 0:21 |
-| 5 | Record: the research log | 3 min | 0:24 |
-| 6 | Write: manuscripts as structured artifacts | 5 min | 0:29 |
-| 7 | Verify: audit before the reviewers do | 6 min | 0:35 |
-| 8 | Responsible use & closing | 4 min | 0:39 |
-| 9 | Unleash Your Curiosity: AI and your hobbies | 1 min | 0:40 |
+| 4 | Build: notebook → reproducible codebase | 6 min | 0:20 |
+| 5 | Record: the research log | 3 min | 0:23 |
+| 6 | Write: manuscripts as structured artifacts | 5 min | 0:28 |
+| 7 | Verify: audit before the reviewers do | 6 min | 0:34 |
+| 8 | Responsible use & closing | 4 min | 0:38 |
+| 9 | Unleash Your Curiosity: AI and your hobbies (2 slides) | 2 min | 0:40 |
 
-Verify and Write keep their full time on purpose — they're the most differentiated content. The cuts to reach 40 minutes came out of the more expository early sections (1, 2, 3, 5), one minute each; see [notes/seminar_notes.md](notes/seminar_notes.md) for when this was decided. Section 9 doubles as the time buffer — it's the first thing to compress or cut on the day if earlier sections ran long, since it's a fun closer, not load-bearing teaching content.
+Verify and Write keep their full time on purpose — they're the most differentiated content. The cuts to reach 40 minutes came out of the more expository early sections (1, 2, 3, 5), one minute each, plus one more minute out of Section 4 (2026-09-02) to make room for Section 9's second slide; see [notes/seminar_notes.md](notes/seminar_notes.md) for when each was decided. Section 9 is the first thing to compress on the day if earlier sections ran long — e.g., trim slide 9b to a bare image with no narration.
 
 ---
 
@@ -88,7 +88,7 @@ Verify and Write keep their full time on purpose — they're the most differenti
 
 ---
 
-## 4. Build: notebook → reproducible codebase (7 min)
+## 4. Build: notebook → reproducible codebase (6 min)
 
 **Teaching point:** "The student's code works" is a different claim from "the research software is an auditable artifact someone else can install, understand, test, and extend."
 
@@ -98,10 +98,7 @@ Verify and Write keep their full time on purpose — they're the most differenti
 - Git as the actual audit trail: diffs, commit messages, `.gitignore` hygiene. The explicit warning — **review the diff; don't accept a large AI refactor just because the tests pass.** Prefer small, understandable changes.
 - Briefly surface the one-repo vs. split-repo (code + Overleaf manuscript) decision and point to the resource rather than resolving it live — there is no universally correct answer. (`emcal` is a real instance: the paper's reproducible-research workflow lives in a separate archived repo from the general-purpose package.)
 
-**Demo/example:** three real, public, verified examples — no anonymized composites needed:
-- **[grad-visit-scheduler](https://github.com/dowlinglab/grad-visit-scheduler)** as the primary story: an internal Jupyter-centric scheduling tool, converted end-to-end with Codex into a tested, documented, CI/CD-backed PyPI package (`grad-visitor-scheduler`) — with dates and version numbers (v0.1.2 → v0.3.1, Feb 11–17, 2026), a live 20-minute feature-add demo, and Alex's own "5x productivity, but I'd touched every stage of this before" reflection. Built with Codex, not Claude — an explicit callback to Section 1.
-- **[bits_for_gaps](https://github.com/dowlinglab/bits_for_gaps)** and **[emcal](https://github.com/dowlinglab/emcal)** as the "graduate-student code → package" instances — both public, tested, documented, on PyPI or pip-installable, each tied to a peer-reviewed paper. `bits_for_gaps`'s own README states the thesis almost verbatim: *"The research code behind the paper was originally developed in a private repository... then migrated here and reorganized into an installable, tested package."*
-- See [notes/demo_ideas.md](notes/demo_ideas.md) stories #1–2 for full detail and exact quotes.
+**Demo/example:** real, public, verified examples — no anonymized composites needed. Give **[grad-visit-scheduler](https://github.com/dowlinglab/grad-visit-scheduler)** the full story (internal Jupyter-centric tool, converted end-to-end with Codex into a tested, documented, CI/CD-backed PyPI package `grad-visitor-scheduler`, with real dates and version numbers, v0.1.2→v0.3.1, Feb 11–17, 2026, plus Alex's "5x productivity, but I'd touched every stage of this before" reflection — an explicit callback to Section 1, since this one used Codex, not Claude). Mention **[bits_for_gaps](https://github.com/dowlinglab/bits_for_gaps)** and **[emcal](https://github.com/dowlinglab/emcal)** more briefly as the "graduate-student code → package" instances, each tied to a peer-reviewed paper — `bits_for_gaps`'s own README states the thesis almost verbatim: *"The research code behind the paper was originally developed in a private repository... then migrated here and reorganized into an installable, tested package."* See [notes/demo_ideas.md](notes/demo_ideas.md) stories #1–2 for full detail and exact quotes.
 
 **Students should remember:** Treat "AI made my code work" and "AI made my code reviewable, testable, and installable by someone else" as two different, both-worth-pursuing goals — and always read the diff.
 
@@ -177,16 +174,19 @@ Verify and Write keep their full time on purpose — they're the most differenti
 
 ## 9. Unleash Your Curiosity: AI and your hobbies (1 min)
 
-**Teaching point:** Everything today applies outside the lab too — a lighter, human closing note before Q&A, not a new argument.
+**Teaching point:** Everything today applies outside the lab too — a lighter, human closing note before Q&A, not a new argument. Two slides.
 
-**Supporting ideas (tight for 1 minute — see the design note in [notes/demo_ideas.md](notes/demo_ideas.md) #4b; time this out loud before committing to all three):**
-- **Anchor story — the "boot dryer octopus":** wanted a home version of a glove dryer, brainstormed with ChatGPT, which flagged a hairdryer as a fire hazard and steered him to a $10 inline fan instead — AI catching a real safety issue, not just generating code. Needed a custom fan-to-PVC adapter; ~30 minutes of CAD experience ever, no 3D-printing experience. ChatGPT introduced OpenSCAD and generated the script; the loop that worked was render → screenshot → targeted feedback → repeat — *the same lesson as Section 4's "review the diff, prefer small changes,"* independently rediscovered. Printed via Notre Dame's own Hesburgh Libraries 3D printing service and the Innovation Hub — real, usable campus resources worth naming for this room.
-- **Brief mention, links only, no narration:** the kitchen organizer / Dobsonian telescope shelf story (same workflow, easy case vs. hard case) and the Amateur Radio exam guide — [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book). On the slide, not spoken.
-- Close on the question the boot-dryer story actually raised for Alex, not a generic wrap-up: where could 3D printing become an experiential-learning vehicle in CBE courses — thermodynamics, polymers, transport, reactions, controls? Genuine and unresolved, and a natural bridge into Q&A, especially for faculty in the room.
+**Slide 9a — the hook (~1 min):** the "boot dryer octopus," told as encouragement to tinker and think about possibilities, not as a technical case study.
+- Wanted a home version of a glove dryer on sale at Aldi; brainstormed with ChatGPT, which flagged a hairdryer as a fire hazard and steered him to a $10 inline fan instead — AI catching a real safety issue, not just generating code.
+- Needed a custom fan-to-PVC adapter; ~30 minutes of CAD experience ever, no 3D-printing experience. ChatGPT introduced OpenSCAD and generated the script; the loop that worked was render → screenshot → targeted feedback → repeat — a light, one-clause callback to Section 4's "review the diff, prefer small changes," not a re-explanation.
+- Printed via Notre Dame's own Hesburgh Libraries 3D printing service and the College of Engineering Innovation Hub — name these as real, usable campus resources for this room.
+- Close the slide on the question the story actually raised for Alex: where could 3D printing become an experiential-learning vehicle in CBE courses — thermodynamics, polymers, transport, reactions, controls? Genuine and unresolved, not a rhetorical question — a hook into "think about possibilities," and a natural bridge toward Q&A for faculty in the room.
 
-**Demo/example:** one slide — the boot-dryer-octopus collage as the main image (OpenSCAD render, printed part, the fan), with the organizer/telescope/radio-book as small linked thumbnails. Images in hand; need adding to `slides/figures/` when slides are built.
+**Slide 9b — hobbies gallery (~1 min):** three images, minimal text, upbeat close. Kitchen drawer organizer, the Dobsonian telescope shelf with its custom compass holder, and the Amateur Radio exam guide — [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book). No new argument here and no repeat of Section 8's training-model tension — that beat already landed once; this slide's job is to end the talk on curiosity, not another caveat.
 
-**Students should remember:** (faculty-leaning close) If this sparks a course idea — a 3D-printed baffle for turbulent mixing, a hands-on vehicle for teaching thermo, transport, or controls — that's an open question Alex would genuinely like to work through with you. (Everyone else: try one of today's habits on something low-stakes and fun first.)
+**Demo/example:** 9a — [`slides/figures/boot_dryer_octopus.jpeg`](slides/figures/boot_dryer_octopus.jpeg) (OpenSCAD render, printed green part, the fan). 9b — [`slides/figures/kitchen_organizer_telescope_shelf.jpeg`](slides/figures/kitchen_organizer_telescope_shelf.jpeg), plus the radio-book link. Both images are in the repo already.
+
+**Students should remember:** Try one of today's habits on something low-stakes and fun first — and if the boot-dryer story sparked a course idea, that's a conversation Alex would genuinely like to have.
 
 ---
 

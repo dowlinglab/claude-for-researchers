@@ -9,7 +9,7 @@ Decisions not yet made. Once resolved, move the outcome into [seminar_notes.md](
 
 ## Content
 - ~~Amateur Radio anecdote~~ — resolved, then revised: moved from a Section 3 aside into its own new closing Section 9, "Unleash Your Curiosity: AI and your hobbies," alongside a second hobby example. Book repo: [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book).
-- ~~3D-printing example for Section 9~~ — resolved: received (kitchen organizer + Dobsonian telescope shelf, ChatGPT + OpenSCAD). See [demo_ideas.md](demo_ideas.md) #4b. One residual to-do: the photo collage Alex has needs to actually be added to `slides/figures/` when slides are built — not extractable from chat automatically.
+- ~~3D-printing examples for Section 9~~ — fully resolved: both stories received and both image collages are in the repo at `slides/figures/boot_dryer_octopus.jpeg` and `slides/figures/kitchen_organizer_telescope_shelf.jpeg`. See [demo_ideas.md](demo_ideas.md) #4b.
 - ~~Frame story~~ — resolved: keep "finishing a paper after the student graduated" (story #5) as the open/close bookend, reframed around *expediting* completion (e.g., helping a graduating student wrap up) rather than only "recovery after someone left." See updated [demo_ideas.md](demo_ideas.md).
 - ~~Journal-selection workflow~~ — resolved: one bullet point in the live talk (Outline Section 6), not dropped, not handout-only.
 - ~~Real vs. composite examples~~ — resolved: use real (anonymized) Dowling-lab projects — Alex has two in mind already — with no student identified by name or implication.
