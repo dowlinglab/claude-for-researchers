@@ -6,7 +6,7 @@
 
 **How to read it.** §2 is the quality standard; §3–§5 are about reproducibility; §6–§7 cover tables, which are usually treated as an afterthought and shouldn't be. Sections are numbered and stable for citing in a prompt.
 
-> **Note.** If your group already publishes figure guidelines, those are canonical for content and aesthetics — this file consolidates them and adds the reproducibility layer. Fill in the pointer to your group's version here.
+> **Note.** For Dowling Lab work, the canonical guidance on figure content and aesthetics is [Publication-Quality Figures](https://ndcbe.github.io/data-and-computing/notebooks/01/Publication-Quality-Figures.html); this file consolidates it and adds the reproducibility layer. A working implementation of that standard lives in [`../scripts/figure_style/`](../scripts/figure_style/). If your group publishes its own guidelines, substitute them — §3–§8 apply either way.
 
 ---
 

@@ -239,3 +239,17 @@ Context: Alex had ten parallel workers inventory a year of his own AI-assisted r
 **Files touched:** `resources/practices/private_code_to_public_package.md` (new), `resources/practices/README.md` (new), `resources/README.md`, this file.
 
 **Next:** the tools layer. Priority order: `scripts/doi_checker/` and `scripts/figure_style/` (the two adoptable defaults Alex asked for), then `templates/project_entry_point.md`, `templates/research_log.md`, `templates/results_manifest.md`, then `scripts/check_docs.py` and the prompts.
+
+---
+
+## 2026-09-02 (both default scripts built and tested)
+
+**Decisions:**
+- **`scripts/doi_checker/`** — adapted from an existing working script rather than rewritten, preserving the two hard-won parts: the brace-counting BibTeX parser (a regex truncates entries to their title whenever a title contains nested braces, silently, making everything downstream look like a mismatch) and the two-pass structure kept separate *because the passes fail differently*. Added for distribution: `argparse` (`--bib`, `--tex`, `--mailto`, `--json`, tunable thresholds), `urllib` instead of shelling out to `curl` so it is pure standard library, graceful degradation on network failure, and **exit codes so it can gate CI** — 1 on any `UNRESOLVED`/`MISMATCH`, 0 when only `CHECK` items remain, since those need a human rather than a build failure. It still never edits a bibliography.
+- **`scripts/figure_style/`** — built on the existing `pubfig.py` specification (Okabe-Ito palette, the four standard sizes, 300/1200 dpi, bold 16 pt labels, ticks in with top/right on). Two additions beyond a restyle: it **fixes a real shipped bug** by checking *both* figure dimensions rather than width only (a right-width/wrong-height figure otherwise passes silently and prints at the wrong scale), and `save_fig` writes a **provenance sidecar by default** — script, git commit, dirty flag, input files, library versions — which operationalizes `practices/scientific_figures_tables.md` §5. Provenance defaults to on deliberately: it is skipped by default everywhere else, and that is precisely why figures become untraceable. Also added a one-line greyscale preview, since the accessibility checklist item is universally listed and almost never actually tested.
+- Both were **tested, not just written**: the DOI checker against a synthetic bibliography exercising MATCH, MISMATCH, UNRESOLVED, a nested-brace title, a cited-but-missing key, and a below-threshold proposal (correctly declined at 0.63); the figure module end to end, including git provenance capture inside a repository, graceful degradation outside one, and warnings on both a wrong-height and a wrong-width figure. A runnable `example.py` ships with the module.
+- Filled in the canonical figure-guidelines URL in `practices/scientific_figures_tables.md`, which had been left as a placeholder rather than guessed at. It was recovered from the existing implementation's own docstring.
+
+**Files touched:** `resources/scripts/doi_checker/{check_dois.py,README.md}`, `resources/scripts/figure_style/{figure_style.py,example.py,README.md,example.*}` (all new), `resources/practices/scientific_figures_tables.md`, `resources/README.md`, this file.
+
+**Next:** the three templates (`project_entry_point.md`, `research_log.md`, `results_manifest.md`), then `scripts/check_docs.py`, then the prompts.
