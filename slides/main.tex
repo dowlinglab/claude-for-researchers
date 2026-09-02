@@ -99,33 +99,42 @@
 \lstset{style=plain}
 
 % ---------------------------------------------------------------------
-% The recurring motif: the research lifecycle, with one stage active.
-% Usage: \lifecycle{3}  (0 = none active, for the overview slide)
+% The recurring motif: the talk's five-beat structure, with one lit.
+% Usage: \actstrip{3}  (0 = none lit, for the roadmap/overview slide)
+%
+% Renamed from an earlier six-stage "lifecycle" framing (Explore, Ground,
+% Build, Record, Write, Verify) when the talk restructured around a three-act
+% story (Tinker / Understand / Build / Challenge / Trust). Kept the macro
+% shape so \stagedivider below didn't need to change. Old name \lifecycle is
+% aliased to it so the two calls already in sections/00_open.tex still
+% compile; retire the alias once that file is reconciled with the new
+% structure (tracked in slides/storyboard.md).
 % ---------------------------------------------------------------------
-\newcommand{\lifecycle}[1]{%
-\begin{tikzpicture}[x=1.95cm, font=\scriptsize\sffamily]
-  \foreach \n [count=\i from 1] in {Explore, Ground, Build, Record, Write, Verify} {
+\newcommand{\actstrip}[1]{%
+\begin{tikzpicture}[x=2.3cm, font=\scriptsize\sffamily]
+  \foreach \n [count=\i from 1] in {Tinker, Understand, Build, Challenge, Trust} {
     \pgfmathparse{int(\i == #1)}
     \ifnum\pgfmathresult=1
       \node[fill=NDGold, text=black, rounded corners=2pt,
-            inner sep=4pt, minimum width=1.7cm, align=center] at (\i,0) {\textbf{\n}};
+            inner sep=4pt, minimum width=2.0cm, align=center] at (\i,0) {\textbf{\n}};
     \else
       \node[fill=black!6, text=Muted, rounded corners=2pt,
-            inner sep=4pt, minimum width=1.7cm, align=center] at (\i,0) {\n};
+            inner sep=4pt, minimum width=2.0cm, align=center] at (\i,0) {\n};
     \fi
-    \ifnum\i<6
+    \ifnum\i<5
       \draw[-{Stealth[length=4pt]}, Muted, thick]
-        ($(\i,0)+(0.88cm,0)$) -- ($(\i,0)+(1.07cm,0)$);
+        ($(\i,0)+(1.02cm,0)$) -- ($(\i,0)+(1.24cm,0)$);
     \fi
   }
 \end{tikzpicture}}
+\newcommand{\lifecycle}[1]{\actstrip{#1}} % TODO(storyboard): remove once 00_open.tex is rewritten
 
-% A stage divider: the lifecycle with one stage lit, plus the stage's question.
+% A stage divider: the act strip with one stage lit, plus the stage's question.
 \newcommand{\stagedivider}[3]{%
 \begin{frame}[plain]
   \vfill
   \begin{center}
-    \lifecycle{#1}\\[1.6em]
+    \actstrip{#1}\\[1.6em]
     {\LARGE\color{NDBlue}\textbf{#2}}\\[0.7em]
     {\large\color{Muted}#3}
   \end{center}
@@ -165,7 +174,11 @@
 \end{frame}
 
 \input{sections/00_open}
+\input{sections/00b_roadmap}
 \input{sections/01_ecosystem}
 \input{sections/02_context}
+% TODO(storyboard): 00_open / 01_ecosystem / 02_context predate the
+% Prologue/Act/Epilogue structure in slides/storyboard.md and need
+% reconciling with it -- see that file's "status" note.
 
 \end{document}
