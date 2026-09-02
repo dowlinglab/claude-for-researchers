@@ -4,33 +4,26 @@
 
 **What this file is for.** The Acts are meant to be a *collection of concrete tasks an academic actually performs*, each grounded in a real project, with a general principle extracted from it — not one flagship story per act. This is the map from raw evidence (17 projects/repos inventoried, most already generalized into `resources/practices/`) to which act each concrete task belongs in, and what principle it earns its place by demonstrating.
 
-**Naming convention**, consistent with `resources/practices/`: **public repos are named** (Alex's own or fully public, no student exposure — `emcal`, `bits_for_gaps`, `grad-visit-scheduler`, `radio-extra-book`, `optimization`/`optimization-private`). **Private, unpublished, or student-adjacent work stays generic** — a domain descriptor ("a hybrid-modeling project," "a membrane-transport project," "a returning-sponsor proposal"), never a repo name or a student reference. No exceptions either direction.
+**Naming convention — confirmed 2026-09-02, per example type (see below).** Public repos stay named regardless of type. Everything else follows the decision recorded for its type; nothing is named by default.
 
-**Status:** all 17 projects inventoried.
+**Status:** all 17 projects inventoried; example roster and naming confirmed; both this file and `storyboard.md` updated to match.
 
 ---
 
-## Master inventory
+## The six example types
 
-| Project | Public? | Domain | Primary act |
+The confirmed roster. Every concrete task below belongs to one of these.
+
+| # | Type | Examples | Named? |
 |---|---|---|---|
-| CDSE hybrid-modeling project | private | hybrid modeling (adsorption) | Act I (support), Act III |
-| BITS for GAPS / `bits_for_gaps` | **public** | Bayesian experimental design | Act II |
-| GPBO / `emcal` | **public** | Bayesian optimization for calibration | Act I, Act II |
-| First manuscript audit (ESS-FO-Audit) | private | force-field / thermophysical properties | Act III |
-| SAF Brazil manuscript audit | private | sustainable aviation fuel policy | Act III |
-| Grey-box identifiability paper | private | hybrid model identifiability | Act I, Act III |
-| Crystallization / Pyomo.DoE project | private | crystallization, design of experiments | Act II, Act III |
-| Membrane transport project (data3) | private | membrane transport / diafiltration | Act II, Act III |
-| `grad-visit-scheduler` | **public** | admissions-visit scheduling (MILP) | Prologue, Act II |
-| Chromatography digital-twin proposal | private | chromatography + digital twins | Act I |
-| Watershed decision-support project | private | watershed modeling, sensor design | Act I |
-| Coastal desalination onboarding project | private | desalination process design | Act I |
-| A returning-sponsor proposal (Genesis) | private | materials/energy (unspecified) | Act II |
-| A multi-year proposal program (CPM) | private | AI-agent-based process tools | Act II |
-| `radio-extra-book` | **public** | amateur radio exam study guide | Epilogue |
-| 3D-printing hobby projects | personal | boot-dryer, kitchen organizer | Prologue, Epilogue |
-| `optimization-private` / `optimization` | course dev. (private/public pair) | optimization course materials | Act I, Act II, Act III |
+| 1 | Inherited material maturing toward a manuscript | a hybrid-modeling adsorption project; a crystallization/design-of-experiments project; a membrane-transport project — inherited MATLAB code, spreadsheets, PowerPoint decks, and draft documents, reconstructed | **No** |
+| 2 | Auditing a manuscript's final version | a first attempt at a manuscript audit (force-field properties); a sustainability-policy manuscript audit | **No** |
+| 3 | Turning code into a released software product | `bits_for_gaps`, `emcal`, `grad-visit-scheduler` | **Yes** — public packages, no exposure |
+| 4 | Literature review → project getting-started guide | a watershed decision-support project; a coastal desalination onboarding project | No *(assumed, not explicitly asked — flag if wrong; same conservative default as 1–2, both are sponsored/private)* |
+| 5 | Crafting a proposal | a returning-sponsor proposal; a recurring sponsor program; a chromatography/digital-twin proposal | **No** — confirmed 2026-09-02: kept generic, same treatment as 1–2, since these may be live or competitively sensitive |
+| 6 | Retooling and refreshing a course | **"Optimization for Decision Science"** (`ndcbe.github.io/optimization`) | **Yes** — confirmed 2026-09-02: Alex's own class, already-public course website |
+
+Outside this taxonomy by design: the Prologue/Epilogue hobby material (`grad-visit-scheduler`'s teaser, the boot-dryer-octopus and kitchen-organizer stories, `radio-extra-book`) — deliberately a different, lower-stakes register, not another professional task type.
 
 ---
 
@@ -38,64 +31,78 @@
 
 | Concrete task | Example | Principle |
 |---|---|---|
-| Turn a personal annual chore into a published tool | `grad-visit-scheduler` (teased here, resolved in Act II) | The habits that work on a weekend project are the same ones that work on research — tinkering is where you build the muscle memory cheaply |
+| Turn a personal annual chore into a published tool | `grad-visit-scheduler` — teased here (type 3), resolved in full in Act II | The habits that work on a weekend project are the same ones that work on research |
 | Tinker with a hobby project using AI for the first time | boot-dryer-octopus, kitchen organizer | Curiosity and low stakes are a feature, not a consolation prize |
 
-## Act I — Understand: it explains things to me
+## Act I — Understand: conversation → living context, with git
 
-| Concrete task | Example | Principle | Practice file |
-|---|---|---|---|
-| Get inherited/old code running again before restructuring it | CDSE project; grey-box identifiability | Run it before you refactor it — you cannot restructure code you haven't watched execute | `scientific_computing_workflow.md` §3 |
-| Reconstruct a project's history from files, not memory | CDSE's group report, built from README + running notes + git log, explicitly credited as "evidence, not memory" | The repository is the source of truth; a conversation about the project is not | `working_with_ai_agents.md` §1 |
-| Explore a new research idea by crossing two literatures on purpose | Chromatography digital-twin proposal (chromatography literature + a second, deliberate pass on LLM-agents-in-chemistry) | Bring in a second literature specifically to pressure-test an idea, not incidentally | `literature_review.md` §2 |
-| Turn a collected literature folder into an onboarding report for the next person | Watershed project; desalination project | Interpret how the evidence changes a project decision — don't copy the abstract | `literature_review.md` §4, §9 |
-| Verify a stated claim against a primary source before teaching it | Optimization course: lecture-note claims checked against a textbook + its own errata sheet, with an independent adversarial second pass that isn't the same agent that wrote the lecture | The same discipline that audits a manuscript claim audits a lecture-note claim — the audience doesn't change the method | `manuscript_audit.md` §4, §5 |
-| A context file that stays current, for once | Optimization course `CLAUDE.md`: every rule is attached to a dated, named incident, and corrections are kept in place rather than deleted | Rules with no incident record read as boilerplate and rot; a rule with "here is the day this cost real work" attached gets re-verified | `working_with_ai_agents.md` §2, §9 |
-| Fact-check an institutional policy claim against its primary source | (Meta-example: this talk's own ND AI-policy slide, verified against `ai.nd.edu` directly rather than trusted from a search summary) | Authoritative claims get checked at the source, even when — especially when — the claim is about your own institution | `notes/references.md` |
+**The organizing device**, confirmed 2026-09-02: two parallel transitions, both "an ephemeral, unbacked-up thing becomes a durable, versioned one." A chat conversation → a repository of literature with validated claims. A local notebook with no backup → git.
 
-## Act II — Build: it changes my artifacts
+**Act I's role, sharpened 2026-09-02: a sell, not a payoff.** Its one argument is that version control is the prerequisite that unlocks what Codex/Claude Code can do — not a demonstrated outcome. The mature-example slide (originally planned here, showing "Optimization for Decision Science"'s well-kept `CLAUDE.md`) was **cut from Act I entirely** rather than kept as an early teaser, so the act doesn't dilute its own sell with a taste of the payoff. That example now appears fresh in Act III's capstone instead of being planted here first.
 
-| Concrete task | Example | Principle | Practice file |
-|---|---|---|---|
-| Convert an internal tool into a tested, documented, released package | `grad-visit-scheduler` (the hook, resolved in full: Codex, real dates/versions, a 20-minute live feature add) | Ship the skeleton early; TODO notes committed into the docs are a durable review mechanism | `private_code_to_public_package.md` |
-| The same conversion, on published research code, not a personal tool | `emcal`, `bits_for_gaps` | Split by audience (package vs. archive), not by code quality | `private_code_to_public_package.md` §1 |
-| Capture a numerical baseline before refactoring, then prove the refactor didn't change the science | Membrane transport project; crystallization project; grey-box identifiability project — three independent instances of the same pattern | Freeze the science, move the code — never both at once | `scientific_computing_workflow.md` §3–§4 |
-| Convert handwritten source material into a structured digital artifact | Optimization course: handwritten lecture notes → transcribed → typeset LaTeX, with duplicate scans verified byte-identical before deletion | The same "promote what matures" move, applied to a medium change instead of a language change | `scientific_computing_workflow.md` §2 |
-| Migrate a whole toolchain, not just a codebase | Optimization course website: JupyterBook v1 → MyST v2, cutover compressed into one afternoon | Keep the old path alive for exactly one safety-net commit, then delete it deliberately once the new one is verified — not a long parallel-build period | `scientific_computing_workflow.md` §4 |
-| Generate two versions of one document, safely, from one source | Optimization course: instructor/student coursepack from one `.tex` file, with a redaction macro that measures the answer text and replaces it with an identically-sized invisible rule — plus a mechanical leak-checker, because a prior year's white-on-white redaction left the answer text copyable | Never redact by color; measure and replace, then verify mechanically, not visually | `scientific_figures_tables.md` (redaction as a figure/document-integrity problem) |
-| Share one figure/code source across two repositories without duplicating it | Optimization course: TikZ and matplotlib sources live once in the public repo, `\input`/extracted into the private repo's LaTeX handouts; a git submodule was considered and explicitly rejected (a pointer-bump commit per edit, an empty directory for students). A real bug this caught: a TikZ figure rendered fine standalone but broke the actual handout, because a required `\usetikzlibrary` was only loaded by the standalone wrapper, not the shared source | "Generation alone guarantees nothing... without a checker, 'single source of truth' is a claim; with one, it is an invariant" | `scientific_figures_tables.md` §5 |
-| Keep one "golden" copy of code that appears in two places (a notebook and a document) | Optimization course: the Pyomo model lives once in the notebook; the LaTeX handout extracts it, gated by a content-hash staleness check | Regenerate, don't retype — extended from tables to embedded code | `scientific_figures_tables.md` §6 |
-| Track, and disclose to the audience, which content is AI-drafted and not yet reviewed | Optimization course: a maintained per-item status (`unreviewed`/`reviewed`/`reviewed-stale`/`exempt`) drives a live banner shown to students on any AI-drafted page the instructor hasn't signed off on yet | Disclosure can be a running, visible state, not just a one-time statement — practiced on students the same way it's asked of researchers with reviewers | *(candidate for a new resource — see notes below)* |
-| Guard against an AI's voice contaminating content that should stay human | Optimization course: a check specifically watches for the AI-heavy lecture-note prose "leaking backward" into the notebooks' pre-existing human-voice corpus | A style guide isn't just what to write toward — it's also a boundary to actively defend | `writing_style_guide.md` §3 |
-| Publish a concrete, per-assignment AI-use policy to the people whose work you're grading | Optimization course syllabus: per-assignment labels (no AI / AI after an independent attempt / AI required), plus a required "AI and independent-work report" on every homework | State the policy at the level of the actual assignment, not once in a syllabus paragraph nobody rereads | group manual GenAI section; `working_with_ai_agents.md` §10 |
-| Draft a proposal against a sponsor's own form, then restore its exact wording | The Genesis proposal; the multi-year CPM program | Draft tersely against the form first; restore the sponsor's own language before submission | `grant_proposal_writing.md` §2 |
-| Verify a revision with a word-level diff before committing | The Genesis proposal (reconstructed practice, now a real script) | A normal re-read misses a softened claim; `latexdiff` doesn't | `grant_proposal_writing.md` §5, `resources/scripts/latexdiff_check.sh` |
+| # | Concrete task | Example | Principle | Practice file |
+|---|---|---|---|---|
+| 1 | Open on the failure: a plan that lived only in a conversation | The real, verified commit: `dowlinglab/emcal` `31184f4` — "See conversation for the full KEEP/REMOVE inventory" | The repository is the source of truth; a conversation about the project is not | `working_with_ai_agents.md` §1 |
+| 2 | State the shift | Conversation vs. repository, generally | The filesystem is the source of truth | `working_with_ai_agents.md` §1 |
+| 3 | Explain what git/GitHub actually give you | Anchored to the same `emcal` commit — what a commit is, what a repository is, what GitHub adds (hosted, shared, backed up) | The fix to slide 1's failure is a specific, nameable thing, not a vague "be better organized" | — |
+| 4 | Parallel A, idea-first: a chat conversation crossing two literatures on purpose | Type 5 — the chromatography/digital-twin proposal (generic) | Bring in a second literature specifically to pressure-test an idea, not incidentally | `literature_review.md` §2 |
+| 5 | Parallel A, corpus-first: a folder of PDFs → an onboarding report, claims validated | Type 4 — the watershed and desalination projects (generic) | Interpret how the evidence changes a project decision — don't copy the abstract | `literature_review.md` §4, §9 |
+| 6 | Parallel B, closing the act: a local notebook with no backup → git | Generic "inherited project" case — a departed collaborator's unversioned work | Version control is the prerequisite — what it unlocks is the rest of this talk | `scientific_computing_workflow.md` §2 |
+
+## Act II — Build: it changes what you keep
+
+No structural change from the prior pass. Confirms which types ground which slides.
+
+| # | Concrete task | Example | Principle | Practice file |
+|---|---|---|---|---|
+| 1 | The hook, in full | Type 3 — `grad-visit-scheduler`: Codex, real dates/versions, a 20-minute live feature add | Ship the skeleton early; TODO notes committed into the docs are a durable review mechanism | `private_code_to_public_package.md` |
+| 2 | Prototype → promote | Generic | Prototype in notebooks; promote what matures | `scientific_computing_workflow.md` §2 |
+| 3 | Run it, pin it, baseline it | Type 1 — the hybrid-modeling, crystallization, and membrane-transport projects (generic); the last of these reconstructed from inherited MATLAB code, spreadsheets, PowerPoint decks, and draft documents, not just notebooks | Run it before you refactor it — and "it" may not be code at all | `scientific_computing_workflow.md` §3 |
+| 4 | Freeze the science, move the code | Type 1, same three examples | Never change both at once | `scientific_computing_workflow.md` §4 |
+| 5 | A regression harness is what made a reversed conclusion believable | Type 1 — the hybrid-modeling project's isotherm correction (generic); reinforced by the membrane-transport project's independent dual-implementation cross-check (faithful port vs. corrected port, validated against each other) | The harness is what makes a reversal attributable rather than suspicious | `scientific_computing_workflow.md` §3–§4 |
+| 6 | Not just a hobby-adjacent tool | Type 3 — `emcal`, `bits_for_gaps`, named | Split by audience (package vs. archive), not by code quality | `private_code_to_public_package.md` §1 |
+| 7 | Review the diff, not the summary | Generic | — | `working_with_ai_agents.md` §6 |
+| 8 | The same discipline, on a document instead of code | Type 5 — a returning-sponsor proposal and a recurring sponsor program (generic): draft against the form, restore its wording, `\foacomment{}`-style inline review | AI as a compliance reviewer, findings inline, flagged → fixed → removed | `grant_proposal_writing.md` §2, §4 |
+| 9 | Verify every revision before you commit | Type 5, same examples: `latexdiff`-against-last-commit, word-level | A normal re-read misses a softened claim; `latexdiff` doesn't | `grant_proposal_writing.md` §5, `resources/scripts/latexdiff_check.sh` |
 
 ## Act III — Challenge: it tells me I'm wrong
 
-| Concrete task | Example | Principle | Practice file |
-|---|---|---|---|
-| Audit every quantitative claim in a manuscript against its results | First manuscript audit; SAF Brazil audit | Separate arithmetic, method, and transcription — merging them reads as an attack | `manuscript_audit.md` §1, §4 |
-| Discover a "scientific finding" was actually a software bug, and retract it in writing | CDSE (a temperature-dependent isotherm correction); BITS for GAPS (a mutated-kernel-state bug); crystallization (a measurement-tool bug) — three independent instances | Verify the instrument before believing the finding; retract in place when you're wrong, don't quietly edit it away | `manuscript_audit.md` §10 |
-| Catch a silent failure a clean build/exit-code hid | SAF Brazil (an empty nomenclature table rendered in every reviewer's copy; five other silent defects, all exit-code 0); the optimization course website (a stale `.gitignore` rule silently dropped a required build artifact from every commit for 1.5 days — CI stayed green the whole time) | The countermeasure that works is reading the rendered output, never the log or the exit status | `manuscript_audit.md` §8 |
-| Discover a checker was measuring the wrong thing entirely | Optimization course: an execution-only audit reported the site "healthy" while two published notebooks were functionally empty; separately, a `grep`-based leak checker missed a real leak because it checked cell *source* while the leak was in cell *output* | Verifying that something ran is not the same as verifying it did the right thing — the metric has to match the actual risk | `manuscript_audit.md` §6, `scientific_computing_workflow.md` §6 |
-| Discover your own status report was wrong, and fix the *process*, not just the mistake | SAF Brazil (a status claim wrong for 11 of 17 items, reported from memory) | Determine status from evidence, never recollection — the fix is a script, not "being more careful" | `manuscript_audit.md` §7 |
-| Cross-check a literature or verification claim independently, and let it correct you | The optimization course's adversarial verification pass, which found a real sign/dimension error in a decade-old lecture and, separately, that one of the *verifier's* three checks needed correcting | The second, independent pass is not optional — the checker needs checking too | `manuscript_audit.md` §10 |
+Six slides plus a two-part capstone, confirmed 2026-09-02 as the strongest structural addition this round: rather than scattering the course's Act II/III material as separate small beats, it closes the act as one integrated example.
+
+| # | Concrete task | Example | Principle | Practice file |
+|---|---|---|---|---|
+| 1 | Separate arithmetic, method, transcription | Type 2 — both manuscript audits (generic) | Merging them reads as an attack | `manuscript_audit.md` §1 |
+| 2 | Trace every number back to the file that produced it | Type 2, same examples | The claim-tracing table | `manuscript_audit.md` §4 |
+| 3 | "Cannot verify" is a result you want to get | Type 2, same examples | — | `manuscript_audit.md` §5 |
+| 4 | A clean build hid a silent failure | Type 2 (an empty nomenclature table, exit code 0) **and** type 6 (a stale `.gitignore` rule dropped a build artifact for 1.5 days, CI stayed green) — two domains with nothing in common | Read the rendered output, never the log or the exit status | `manuscript_audit.md` §8 |
+| 5 | My own status report was wrong; the fix was a script | Type 2, same audit | Determine status from evidence, never recollection | `manuscript_audit.md` §7 |
+| 6 | **Capstone, part 1** — the Act I argument, taken all the way | Type 6, named: the same course, now converted (handwritten notes → LaTeX, the coursepack) and challenged (an adversarial verification pass catches a real, decade-old sign error) | One project, watched end to end, across Understand → Build → Challenge | `manuscript_audit.md` §10 |
+| 7 | **Capstone, part 2** — the verifier needed verifying too | Type 6, same course: one of the verification pass's own three checks needed correcting | The checker needs checking — same principle as the audit's own self-correction appendix, now a second domain | `manuscript_audit.md` §10 |
 
 ## Epilogue — Trust
 
-| Concrete task | Example | Principle |
-|---|---|---|
-| Return to the hook's unresolved question | grad-visit-scheduler's own "how do we train the next generation" line | Sit with the tension; don't resolve it artificially |
-| Apply the same habits somewhere low-stakes and fun | boot-dryer-octopus; kitchen organizer/telescope; `radio-extra-book` | The same discipline — ground it, iterate in small steps, verify — pays off outside the lab too |
+| # | Concrete task | Example | Principle |
+|---|---|---|---|
+| 1 | Return to the hook's unresolved question | `grad-visit-scheduler`'s own "how do we train the next generation" line | Sit with the tension; don't resolve it artificially |
+| 2 | **The summary matrix** — projects × acts, visualized | A simplified grid built from the six-types table above | A handful of real projects recur across every act; this isn't asserted, it's shown |
+| 3 | You own every claim, whatever helped you make it | Generic, group-manual GenAI section | — |
+| 4 | The hobby stories, as the final example | boot-dryer-octopus; kitchen organizer/telescope; `radio-extra-book` | The same discipline pays off outside the lab too |
+| 5 | One thing to change Monday morning | Pointer to the repo | — |
 
 ---
 
-## Notes for building slides from this
+## Resolved this round (2026-09-02)
 
-- **The optimization course now grounds all three acts**, not research examples — worth featuring prominently. It needs zero anonymization, and it's instantly relatable to a grad-student audience who have all sat through a lecture course (several as a TA, which makes "would you trust this pipeline on your own course" land even closer to home).
-- **The "retraction" principle now has three independent research instances plus one teaching instance** (a decade-old lecture error caught by an adversarial pass). Four is enough to say "this keeps happening independently" without naming any of them.
-- **The "silent failure" and "wrong verification metric" principles are now each grounded in two independent projects** across two completely different domains (a manuscript audit; a course website) — the strongest repeated-pattern evidence in the whole inventory, and worth stating explicitly as "this is not a one-off."
-- ~~The multi-agent spend-limit-kills-agents-mid-task incident~~ — resolved 2026-09-02: added to `working_with_ai_agents.md` §6 as a guardrail (expect hard external kills, not just self-imposed stop conditions; checkpoint often enough that a kill loses minutes, not hours; treat resuming as reconciliation, not a clean restart).
-- ~~The `\fillin` redaction mechanism~~ — resolved: out of scope. It's lecture-material-specific and doesn't generalize; stays a slide-only example, not a practice-file addition.
-- ~~The AI-review-status disclosure tracker~~ — resolved: genuinely useful, and generalizes beyond course material. Added to `working_with_ai_agents.md` §10 as a per-unit review-status pattern (`unreviewed`/`reviewed`/`reviewed-stale`/`exempt`, never silently reverting to `reviewed`), explicitly extended to proposals and manuscripts, not just course pages.
+- ~~The multi-agent spend-limit-kills-agents-mid-task incident~~ — added to `working_with_ai_agents.md` §6.
+- ~~The `\fillin` redaction mechanism~~ — out of scope, lecture-specific, stays slide-only.
+- ~~The AI-review-status disclosure tracker~~ — generalized into `working_with_ai_agents.md` §10.
+- ~~Act II's "what else" candidates from the teaching sweep~~ — resolved: none added. Act II's existing 9 slides already cover the Build principle set; the teaching-sweep material is better spent as the Act III capstone.
+- ~~Where does the course material go~~ — resolved, then revised 2026-09-02: Act III alone carries it, as the two-part capstone. The originally planned Act I plant (the `CLAUDE.md`) was cut once Act I was reframed as a sell, not a payoff — the course now appears fresh in Act III instead of being teased earlier.
+- ~~Naming for types 5 and 6~~ — resolved: type 5 generic, type 6 named ("Optimization for Decision Science").
+- ~~Act I's role~~ — resolved 2026-09-02: a sell (git as the prerequisite that unlocks Codex/Claude Code), not a payoff. 7 slides → 6.
+- ~~Type 1's roster~~ — resolved 2026-09-02: added a third example, the membrane-transport project (`data3`), kept generic like its two siblings — naming it alone would have created an unhelpful asymmetry with no real narrative gain.
+
+## Still open
+
+- **Type 4's naming** was not explicitly asked about; assumed generic by the same conservative default as types 1–2. Confirm or correct.
+- **Slide count vs. budget**, per `storyboard.md`: current total is 35 (Prologue 7, Act I 6, Act II 9, Act III 7, Epilogue 5), ~41.5 min. Needs a real per-minute check once `sections/*.tex` are rewritten against this structure.

@@ -270,3 +270,21 @@ Context: Alex had ten parallel workers inventory a year of his own AI-assisted r
 **Files touched:** `resources/templates/{project_entry_point,research_log,results_manifest}.md` (new), `resources/scripts/figure_style/{figure_style.py,example.py,README.md,example.*}`, `resources/practices/scientific_figures_tables.md`, this file.
 
 **Next:** `scripts/check_docs.py`, then the prompts (`organize_research_repo.md`, `manuscript_audit.md`, `literature_workflow.md`). After that: slides and handout.
+
+---
+
+## 2026-09-02 (six example types confirmed; Act I reframed as a sell; demo_ideas.md reconciled)
+
+Context: since the previous entry, the talk was restructured from the six-stage lifecycle framing into the three-act story (Prologue "Tinker" / Act I "Understand" / Act II "Build" / Act III "Challenge" / Epilogue "Trust"), locked in `slides/storyboard.md` (commit `c049173`), and the resources layer, DOI checker, figure-style module, `check_docs.py`, and Beamer deck scaffold were all built and committed (see commit log; this log fell behind that work and picks back up here).
+
+**Decisions:**
+- **Confirmed the roster of six example types** (full table in [demo_ideas.md](demo_ideas.md)): (1) inherited material maturing toward a manuscript, generic; (2) auditing a manuscript's final version, generic; (3) code → released software product, named (`bits_for_gaps`, `emcal`, `grad-visit-scheduler` — public, no exposure); (4) literature review → getting-started guide, generic; (5) proposal writing, generic (kept consistent with 1–2 rather than named, since these may be live/competitively sensitive); (6) course retooling, named ("Optimization for Decision Science" — Alex's own, already-public course).
+- **Added a third Type-1 example**, the membrane-transport project (`data3`) — inherited MATLAB code, spreadsheets, PowerPoint decks, and draft documents, reconstructed. Alex offered to name it despite the pattern, since naming it alone wouldn't expose anything sensitive; decided against it, because the value of an internal codename is low and naming one of three otherwise-generic Type-1 siblings would create a visible, unexplained asymmetry for the audience with no real narrative payoff.
+- **Reframed Act I's job**: it is a sell, not a payoff. Its only argument is that version control is the prerequisite that unlocks what Codex/Claude Code can do — Alex's explicit framing ("version control is essential for unlocking the power of Codex or Claude Code"). The previously planned mature-example slide (the well-kept `CLAUDE.md` from "Optimization for Decision Science," originally planted in Act I to pay off later) was cut from Act I entirely rather than kept as an early teaser, so the act doesn't dilute its own sell with a taste of the payoff. Act I drops from 7 slides to 6; the course material now appears for the first time in Act III's two-part capstone rather than being planted earlier.
+- Reconciled `notes/demo_ideas.md` against `slides/storyboard.md` to remove the now-stale references to the cut Act I plant (the old row 7 and its "deliberately a plant" note, and the capstone's "the plant from Act I pays off" language, now "the Act I argument, taken all the way").
+
+**Files touched:** `notes/demo_ideas.md`, `slides/storyboard.md`, this file.
+
+**Open questions raised:** Type 4's naming (watershed/desalination) was assumed generic by the same conservative default as types 1–2, not explicitly confirmed — flagged in `demo_ideas.md` "Still open." Slide count (35, ~41.5 min) still needs a real per-minute check once `slides/sections/*.tex` are rewritten against the current structure — tracked in `storyboard.md`.
+
+**Next:** rewrite `slides/sections/00_open.tex`, `01_ecosystem.tex`, `02_context.tex` against the locked Prologue/Act structure (currently stale, predate the restructure); then draft new section files for Act II, Act III, and the Epilogue; get outline feedback at least 8 days before the talk per the group manual (not yet done).

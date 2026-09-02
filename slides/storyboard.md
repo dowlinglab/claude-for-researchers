@@ -26,15 +26,17 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 
 ## At a glance
 
-| Beat | Name | Job | Rough time |
-|---|---|---|---|
-| — | Title | | 0.5 min |
-| Prologue | **Tinker** | Hook (teased), orient, show the toolkit | 6 min |
-| Act I | **Understand** | It explains things to me | 9 min |
-| Act II | **Build** | It changes my artifacts (hook resolved in full) | 13 min |
-| Act III | **Challenge** | It tells me I'm wrong | 9 min |
-| Epilogue | **Trust** | Return to the open question; close on curiosity | 4 min |
-| | | **Total** | **~41.5 min**, trim ~1.5 in drafting |
+| Beat | Name | Job | Slides | Rough time |
+|---|---|---|---|---|
+| — | Title | | 1 | 0.5 min |
+| Prologue | **Tinker** | Hook (teased), orient, show the toolkit | 7 | 6 min |
+| Act I | **Understand** | A sell: git is the prerequisite, not the payoff | 6 | 8 min |
+| Act II | **Build** | It changes my artifacts (hook resolved in full) | 9 | 13 min |
+| Act III | **Challenge** | It tells me I'm wrong, closing on a capstone | 7 | 10 min |
+| Epilogue | **Trust** | Return to the open question; close on curiosity | 5 | 4 min |
+| | | **Total** | **35** | **~41.5 min**, trim ~1.5 in drafting |
+
+See [`../notes/demo_ideas.md`](../notes/demo_ideas.md) for the confirmed six example types, which projects ground which slide, and the naming decision per type — this file only has slide titles; that one has the full mapping.
 
 ---
 
@@ -52,22 +54,20 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 
 *(2, 4–6 are largely built already in `01_ecosystem.tex` under the old numbering; 3 is built; 2 and 7 are new.)*
 
-## Act I — Understand
+## Act I — Understand: conversation → living context, with git
 
-**Job:** AI as something that explains an existing situation back to you, before you trust it to change anything. Where the graduating-student "inherited project" story now lives — supporting material, not the frame.
+**Job, sharpened 2026-09-02:** Act I is a **sell, not a payoff**. Its one argument is that version control is the prerequisite that unlocks what Codex/Claude Code can actually do — not a demonstrated outcome in itself. The mature, sophisticated result (a project that took this all the way) is deliberately *not* shown here; it's held for Act III's capstone, so Act I stays tight and single-minded instead of trying to also prove the payoff.
 
-**Threads:** project memory (the enabling condition — nothing later works without it); understanding inherited code; literature review, both idea-first (crossing two fields to pressure-test an idea) and corpus-first (turning a collected folder into an onboarding report).
+Organized around two parallel transitions, both "an ephemeral, unbacked-up thing becomes durable and versioned": a chat conversation → a repository of literature with validated claims; a local notebook with no backup → git. The graduating-student "inherited project" story lives here as the generic case behind the second parallel.
 
-1. **The shift that matters most** — a conversation vs. a repository; the filesystem is the source of truth.
-2. **"See conversation for the plan"** — the real commit message; the conversation no longer exists.
-3. **A context file orients; only a check enforces** — the honest limit (both of my own context files are stale).
-4. **A student is graduating, the code runs on their laptop** — the inherited-project case, generic.
-5. **Never cite a paper because an AI said it exists** — the verification chain.
-6. **Cross two literatures on purpose** — idea-first pressure-testing an idea against an adjacent field.
-7. **The corpus becomes someone else's starting point** — corpus-first: a getting-started report, the fixed annotation schema, "interpret, don't copy the abstract."
-8. **Correct in place; never delete** — the struck-through, dated correction as a habit that shows up again in Act III.
+1. **Open on the failure** — "See conversation for the plan," the real, verified commit (`dowlinglab/emcal` `31184f4`, word for word).
+2. **State the shift** — a conversation vs. a repository; the filesystem is the source of truth.
+3. **What git and GitHub actually give you** — a short, concrete explainer, anchored to the same `emcal` commit, motivated by slide 1's failure rather than delivered cold. Audience calibration: not everyone in the room is a software engineer.
+4. **Parallel A, idea-first** — a chat conversation crossing two literatures on purpose to pressure-test an idea (a chromatography/digital-twin proposal, generic).
+5. **Parallel A, corpus-first** — a folder of PDFs becomes an onboarding report, claims validated (a watershed project and a desalination project, generic). "Interpret, don't copy the abstract."
+6. **Parallel B, closing the act** — a departed collaborator's local notebook, no backup, no version control → git. The inherited-project case, generic. Close on the forward pointer: *version control is the prerequisite — what it unlocks is the rest of this talk.*
 
-*(Roughly maps to the old `02_context.tex` plus new material from `literature_review.md`.)*
+*(Maps to the old `02_context.tex` plus new material from `literature_review.md`; see `notes/demo_ideas.md` Act I table for exactly which project grounds each slide. Down from 7 slides to 6 — the mature-example slide moved out entirely rather than staying as a planted teaser, so the act doesn't dilute its own sell with an early taste of the payoff.)*
 
 ## Act II — Build
 
@@ -85,29 +85,32 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 
 ## Act III — Challenge
 
-**Job:** AI tells you that you're wrong, and you have to decide whether to believe it. The climax.
+**Job:** AI tells you that you're wrong, and you have to decide whether to believe it. Six slides on manuscript audits, then a two-part capstone (confirmed 2026-09-02) that closes the act as one integrated example instead of scattering it.
 
 1. **Arithmetic, method, transcription: separate them** — merging them reads as an attack; separating them is what makes criticism land as methodology.
 2. **Trace every number back to the file that produced it** — the claim-tracing table.
 3. **"Cannot verify" is a result you want to get.**
-4. **A clean build printed an empty table for every reviewer** — the silent-failure-mode slide; "a request to enumerate beats a request to confirm."
+4. **A clean build hid a silent failure** — two independent instances, two unrelated domains: a manuscript's empty nomenclature table (exit code 0) and "Optimization for Decision Science"'s stale `.gitignore` rule that silently dropped a build artifact for 1.5 days while CI stayed green. "A request to enumerate beats a request to confirm."
 5. **My status report was wrong about eleven items; the fix was a script** — deriving status from evidence, not memory.
-6. **Retract in place** — the callback to Act I's correction habit, now in a manuscript instead of a literature review.
+6. **Capstone, part 1 — the Act I plant pays off** — "Optimization for Decision Science," named: the `CLAUDE.md` from Act I, now converted (handwritten notes → LaTeX, the coursepack) and challenged (an adversarial verification pass catches a real, decade-old sign error). One project, watched end to end.
+7. **Capstone, part 2 — the verifier needed verifying too** — same course: one of the verification pass's own three checks needed correcting. The same self-correction principle as the manuscript audits, now from a second domain — closes the act.
 
 ## Epilogue — Trust
 
 **Job:** return to the hook's question, land the responsible-use synthesis, close on curiosity.
 
 1. **Back to the question** — "how do we train the next generation" — not answered, sat with.
-2. **You own every claim, whatever helped you make it** — the compressed responsible-use list.
-3. **The boot-dryer octopus** — the hook/tinkering story, closing on its own open question about CBE coursework.
-4. **The hobbies gallery** — organizer, telescope shelf, radio book. No repeated argument. Ends on curiosity, not a caveat.
+2. **The summary matrix** — a simplified projects-×-acts grid built from `notes/demo_ideas.md`'s six-types table: a handful of real projects recur across every act, shown rather than asserted.
+3. **You own every claim, whatever helped you make it** — the compressed responsible-use list.
+4. **The hobby stories, as the final example** — the boot-dryer octopus and the hobbies gallery (organizer, telescope shelf, radio book). No repeated argument. Ends on curiosity, not a caveat.
 5. **One thing to change Monday morning** — pointer to the repo, close.
 
 ---
 
 ## Open questions
 
-- ~~Where does the proposal-writing material live~~ — resolved 2026-09-02: literature review stays in Act I, proposal writing goes in Act II (§8–9 above), as a second document-shaped instance of "AI changes what you keep," alongside the code-shaped instance the hook already carries.
-- **Slide count vs. budget.** At-a-glance table above assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue. Act II grew by one slide when the proposal-writing bridge line split into two dedicated slides (§8–9) — recheck the total against the 13-minute budget once section files are rewritten. Needs a real count once `00_open.tex`/`01_ecosystem.tex`/`02_context.tex` are rewritten against this structure — the group-manual algorithm's step 4 ("check you have ~1 slide per minute") hasn't been re-run since the restructure.
+- ~~Where does the proposal-writing material live~~ — resolved: literature review in Act I, proposal writing in Act II (§8–9), as a document-shaped instance of "AI changes what you keep" alongside the code-shaped instance the hook already carries.
+- ~~Act I's role~~ — resolved 2026-09-02: Act I is a sell (git is the prerequisite that unlocks Codex/Claude Code), not a payoff. The mature-example slide was cut entirely rather than kept as an early teaser, so the act doesn't dilute its own argument. 7 slides → 6.
+- ~~The example roster and naming per type~~ — resolved 2026-09-02, recorded in `notes/demo_ideas.md`'s six-types table: types 3 and 6 named (`bits_for_gaps`/`emcal`/`grad-visit-scheduler`; "Optimization for Decision Science"), everything else generic, no exceptions — including `data3` (membrane-transport), deliberately not named alongside its two generic Type-1 siblings even though naming it in isolation would have been low-risk, because the asymmetry would draw more attention than the name would add.
+- **Slide count vs. budget.** Current total: 35 (was 36, then 35 again after Act I's cut). At-a-glance table assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue. Still needs a real count once `00_open.tex`/`01_ecosystem.tex`/`02_context.tex` are rewritten against this structure — the group-manual algorithm's step 4 ("check you have ~1 slide per minute") hasn't been re-run since the restructure.
 - **Feedback pass.** Per the group manual: get outline feedback at least 8 days before the talk. Not yet done.
