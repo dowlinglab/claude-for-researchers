@@ -23,7 +23,9 @@ All seven are tool-agnostic, with tool-specific mechanics confined to one clearl
 | `technical_writing.md` | 6 | Structure, notation, submission readiness, AI-prose drift signals | **Drafted** |
 | `writing_style_guide.md` | 6 | How to derive and refine a style guide; the Dowling Lab register as the worked instance and group standard | **Drafted** |
 | `scientific_figures_tables.md` | 6 | Figure standards, reproducible figures, tables generated not retyped | **Drafted** |
-| `private_code_to_public_package.md` | 4 | Packaging, isolating private data, release engineering, human-only steps | Planned |
+| `private_code_to_public_package.md` | 4 | Packaging, isolating private data, release engineering, human-only steps | **Drafted** |
+
+All seven are drafted. See [practices/README.md](practices/README.md) for the "which file do I want?" index.
 
 Three naming and scope decisions worth recording:
 

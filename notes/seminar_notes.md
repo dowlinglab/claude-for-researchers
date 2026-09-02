@@ -224,3 +224,18 @@ Context: Alex had ten parallel workers inventory a year of his own AI-assisted r
 **Files touched:** `resources/practices/technical_writing.md`, `writing_style_guide.md`, `scientific_figures_tables.md` (all new), `resources/README.md`, this file.
 
 **Next:** `private_code_to_public_package.md` (last of the seven), then the tools — starting with the two Alex asked for as adoptable defaults, `scripts/doi_checker/` and `scripts/figure_style/`.
+
+---
+
+## 2026-09-02 (all seven practice files drafted)
+
+**Decisions:**
+- Drafted `private_code_to_public_package.md`, the last of the seven. Its §1 leads with the idea that organized every successful instance in the evidence: **split by audience, not by code quality** — the package is the method plus what a general user needs; the research archive is the paper's reproduction workflow. Splitting by quality (ship what you're proud of) produces both an incomplete package and an incomplete archive.
+- §2 carries the other genuinely transferable move: **isolate non-public content by parameterizing it, not by scrubbing it.** Institution or sponsor specifics become input files; publishing then means shipping synthetic instances of those same files, so there is no scrubbing pass and no stray identifier surviving in a default. And the real data keeps earning its keep privately as a dogfooding harness — migrating it onto the public API is what surfaces the API defects synthetic examples hide.
+- §9 and §10 encode the most consistent gap found across every project inventoried: provenance stops at the repository boundary. The rule is stated as a two-way test — hand someone only the PDF, can they find the code; hand them only the repository, can they find the paper — plus the point that a private repository, a shared drive, or an unpushed branch is not an archive.
+- §10 also records the one place a "clean up before release" pass went too far: stripping development scaffolding from user-facing docs is right, deleting it outright is a loss, because that material is the most reusable thing produced for the next project. Move it to the archive rather than out of history.
+- Added `resources/practices/README.md` — a "which file do I want?" table, a diagram of how the seven relate across a project arc, the shared conventions, and copy-paste text for pointing an assistant at them from another repository.
+
+**Files touched:** `resources/practices/private_code_to_public_package.md` (new), `resources/practices/README.md` (new), `resources/README.md`, this file.
+
+**Next:** the tools layer. Priority order: `scripts/doi_checker/` and `scripts/figure_style/` (the two adoptable defaults Alex asked for), then `templates/project_entry_point.md`, `templates/research_log.md`, `templates/results_manifest.md`, then `scripts/check_docs.py` and the prompts.
