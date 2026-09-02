@@ -15,6 +15,8 @@ They are written to be **used with an AI assistant**, not just read. Each has st
 | Write in the group's voice, or derive a style guide of my own | [writing_style_guide.md](writing_style_guide.md) |
 | Make figures and tables that are correct, readable, and traceable to what produced them | [scientific_figures_tables.md](scientific_figures_tables.md) |
 | Check a paper against its code, data, and results before reviewers do | [manuscript_audit.md](manuscript_audit.md) |
+| Explore a new research idea, or process a corpus of papers into an onboarding document | [literature_review.md](literature_review.md) |
+| Draft or revise a grant proposal against a sponsor's form | [grant_proposal_writing.md](grant_proposal_writing.md) |
 
 ## How they fit together
 

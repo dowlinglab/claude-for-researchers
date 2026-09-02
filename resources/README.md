@@ -24,8 +24,10 @@ All seven are tool-agnostic, with tool-specific mechanics confined to one clearl
 | `writing_style_guide.md` | 6 | How to derive and refine a style guide; the Dowling Lab register as the worked instance and group standard | **Drafted** |
 | `scientific_figures_tables.md` | 6 | Figure standards, reproducible figures, tables generated not retyped | **Drafted** |
 | `private_code_to_public_package.md` | 4 | Packaging, isolating private data, release engineering, human-only steps | **Drafted** |
+| `literature_review.md` | 3 (Understand) | Idea-first vs. corpus-first, batch ingestion, two-pass verification, correction logs, getting-started reports | **Drafted** |
+| `grant_proposal_writing.md` | Prologue/Act I | Drafting against sponsor forms, inline compliance review, latexdiff verification, template reuse across cycles | **Drafted** |
 
-All seven are drafted. See [practices/README.md](practices/README.md) for the "which file do I want?" index.
+Nine practice files total, added to as the underlying project inventory grew. See [practices/README.md](practices/README.md) for the "which file do I want?" index.
 
 Three naming and scope decisions worth recording:
 
@@ -54,7 +56,8 @@ These are meant to be **working defaults** that the group and others can drop in
 7. **`doi_checker/`** — ✅ **Built and tested.** The nominal default DOI checker. Verifies references against Crossref in two passes kept deliberately apart *because they fail differently*: (1) for entries that have a DOI, does it resolve to the work the entry actually describes — fuzzy title match plus author-surname check, graded `MATCH` / `CHECK` / `MISMATCH`; (2) for entries lacking one, does Crossref know a DOI, proposed only above a stricter threshold. **It proposes and never writes**, because a DOI that resolves to the wrong paper is worse than a missing one and looks identical on the page. Adapted from a working script; the work is parameterizing paths into `--bib` / `--tex` / `--mailto` and restricting checks to keys actually cited.
 8. **`figure_style/`** — ✅ **Built and tested.** The nominal default Python figure style. A small module implementing the group's publication-quality figure guidelines as matplotlib settings, plus a `save_fig` helper that enforces size, resolution, and format, and a short set of standard plot helpers. The point is that a project fixes figure conventions **centrally, once**, so later work inherits them — two separate projects independently discovered that scattering plot styling across dozens of scripts makes any later standard unenforceable. Ships with the compliance checklist from `practices/scientific_figures_tables.md` so a figure set can be audited against it.
 9. **`check_margins.py`** — Geometric overfull-box detection from a rendered PDF, because a clean LaTeX build does not reliably surface them. Already general-purpose; needs packaging and a README.
-10. **`check_docs.py`** — ✅ **Built and tested.** Flags markdown links that don't resolve, living documents the repository has moved past (measured in commits behind `HEAD`), and supersession banners naming a successor file that doesn't exist. Exits non-zero, so it can gate a commit or CI. This is `practices/working_with_ai_agents.md` §9 applied to the repository's own documentation — the rule that written instructions degrade unless something fails when they do.
+10. **`latexdiff_check.sh`** — ✅ **Built and tested.** Diffs the working copy of a `.tex` file against its last committed version (or any ref — a submitted tag, say), compiles a word-level tracked-changes PDF, and cleans up its own build byproducts. Formalizes a habit found only as a reconstructed shell command in one of the projects surveyed — it existed nowhere as an actual tool before this.
+11. **`check_docs.py`** — ✅ **Built and tested.** Flags markdown links that don't resolve, living documents the repository has moved past (measured in commits behind `HEAD`), and supersession banners naming a successor file that doesn't exist. Exits non-zero, so it can gate a commit or CI. This is `practices/working_with_ai_agents.md` §9 applied to the repository's own documentation — the rule that written instructions degrade unless something fails when they do.
 
 ## Also planned (lower priority)
 
