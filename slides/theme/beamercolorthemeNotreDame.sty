@@ -1,0 +1,55 @@
+\ProvidesPackage{beamercolorthemeNotreDame}
+% Adapted from the default crane style
+
+\mode<presentation>
+
+% Suggestion from Jeff Ballard to help Beamer correctly draw shaded text.
+\beamersetaveragebackground{black}
+
+\definecolor{EmphColor}{RGB}{170,50,50}
+\definecolor{HighlightBackground}{RGB}{150,80,10}
+\definecolor{KeywordColor}{RGB}{50,50,150}
+
+% Color definitions
+\definecolor{NDBlue}{RGB}{12,35,64}
+\definecolor{NDGold}{RGB}{174,143,64}
+\definecolor{NDGold_sec}{RGB}{88,96,26}
+
+\setbeamercolor*{normal text}{fg=white}
+\setbeamercolor*{alerted text}{fg=red}
+\setbeamercolor*{section text}{fg=white!80!gray}
+\setbeamercolor{background canvas}{parent=normal text,bg=black}
+
+\setbeamercolor{item projected}{bg=NDGold}
+\setbeamercolor{itemize item}{fg=NDGold}
+\setbeamercolor{itemize subitem}{fg=NDBlue}
+\setbeamercolor{description item}{fg=NDGold}
+\setbeamercolor{enumerate item}{fg=NDGold}
+\setbeamercolor{enumerate subitem}{fg=NDBlue}
+
+\setbeamercolor{palette primary}{fg=white,bg=black}
+\setbeamercolor{palette secondary}{fg=black,bg=NDGold}
+\setbeamercolor{palette tertiary}{fg=white,bg=NDBlue}
+\setbeamercolor{palette quaternary}{fg=black,bg=NDGold}
+
+\setbeamercolor{titlelike}{parent=palette secondary}
+
+\setbeamercolor{block title}{parent=palette secondary}
+\setbeamercolor{block title alerted}{use=alerted text,fg=red,bg=alerted text.fg}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=NDGold_sec}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=NDGold_sec}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=NDGold_sec}
+
+% This ends up applying to most navigation-related things
+\setbeamercolor{sidebar}{bg=NDGold}
+
+\setbeamercolor{palette sidebar primary}{fg=white}
+\setbeamercolor{palette sidebar secondary}{fg=NDBlue}
+
+\setbeamercolor*{separation line}{bg=NDBlue}
+\setbeamercolor*{fine separation line}{bg=NDBlue}
+
+\mode
+<all>

@@ -1,0 +1,69 @@
+% ======================= 1. ECOSYSTEM (3 min) =======================
+
+\begin{frame}{The landscape, briefly}
+  \vfill
+  \begin{center}
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+    & \textbf{Chat} & \textbf{Coding agent} & \textbf{Grounded on your files} \\
+    \midrule
+    Google    & Gemini  & ---    & NotebookLM \\
+    OpenAI    & ChatGPT & Codex  & ChatGPT Projects \\
+    Anthropic & Claude  & Claude Code & Claude Projects \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vfill
+  \begin{center}
+    {\large\color{NDBlue}\textbf{Do not become loyal to a model.\\
+     Become good at working with models.}}
+  \end{center}
+  \vfill
+  \takeaway{Rankings change every few months. The workflow habits in the rest of this talk do not.}
+\end{frame}
+
+\begin{frame}{At Notre Dame: know your data classification}
+  \vfill
+  \begin{center}
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Tier} & \textbf{Examples} & \textbf{AI use} \\
+    \midrule
+    \textcolor{OkGreen}{$\bullet$}~Public    & published, press-released & safe \\
+    \textcolor{NDGold!80!black}{$\bullet$}~Internal  & routine business data & safe \emph{in approved tools} \\
+    \textcolor{OkVermillion}{$\bullet$}~Sensitive & role-restricted       & safe \emph{in approved tools} \\
+    \textcolor{black}{$\blacksquare$}~Restricted & SSN, health, payment  & \bad{never, in any tool} \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vfill
+  \begin{center}
+  \begin{tabular}{@{}lc@{}}
+    \toprule
+    \textbf{Tool} & \textbf{Approved through} \\
+    \midrule
+    Gemini, ChatGPT EDU, NotebookLM & Sensitive \\
+    \textbf{Claude} & \textbf{Public only} \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vfill
+  \takeaway{Today, don't put unpublished research data into Claude. An enterprise license is in progress; verify before you rely on this slide.}
+\end{frame}
+
+\begin{frame}{Two things to check before you start}
+  \vfill
+  \begin{itemize}\setlength\itemsep{1.2em}
+    \item \textbf{DoD / DoW funding?}\\
+      Researchers with Department of Defense contracts are currently
+      \textcolor{OkVermillion}{prohibited} from using Anthropic products ---
+      Claude.ai, the API, Claude Code.\\[0.3em]
+      {\small\color{Muted}Questions: \texttt{researchsecurity@nd.edu}}
+    \item \textbf{Everyone else: ask your PI.}\\
+      Export control, sponsor data terms, and IRB conditions differ
+      \emph{per project}. What is fine on one is not automatically fine
+      on another.
+  \end{itemize}
+  \vfill
+  \takeaway{Thirty seconds of checking, once per project, before the tool touches anything that matters.}
+\end{frame}

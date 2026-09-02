@@ -1,0 +1,49 @@
+\ProvidesPackage{beamercolorthemeNotreDameWhite}
+% Adapted from the default crane style
+
+\mode<presentation>
+
+\definecolor{EmphColor}{RGB}{153,1,0}
+\definecolor{HighlightBackground}{RGB}{255,255,0}
+\definecolor{KeywordColor}{RGB}{0,0,95}
+
+% Color definitions
+\definecolor{NDBlue}{RGB}{12,35,64}
+\definecolor{NDGold}{RGB}{174,143,64}
+\definecolor{NDGold_sec}{RGB}{230,212,124}
+
+\setbeamercolor*{section text}{fg=white!80!gray}
+
+\setbeamercolor{item projected}{bg=NDBlue}
+\setbeamercolor{itemize item}{fg=NDBlue}
+\setbeamercolor{itemize subitem}{fg=NDGold}
+\setbeamercolor{description item}{fg=NDBlue}
+\setbeamercolor{enumerate item}{fg=NDBlue}
+\setbeamercolor{enumerate subitem}{fg=NDGold}
+
+\setbeamercolor{palette secondary}{fg=white,bg=NDBlue}
+\setbeamercolor{palette tertiary}{fg=black,bg=NDGold}
+\setbeamercolor{palette quaternary}{fg=white,bg=NDBlue}
+
+\setbeamercolor{titlelike}{parent=palette secondary}
+
+\setbeamercolor{block title}{parent=palette secondary}
+\setbeamercolor{block title alerted}{use=alerted text,fg=red,bg=alerted text.fg}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=NDGold_sec}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=NDGold_sec}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=NDGold_sec}
+
+% This ends up applying to most navigation-related things
+\setbeamercolor{sidebar}{bg=NDBlue}
+
+\setbeamercolor{palette sidebar primary}{fg=white}
+\setbeamercolor{palette sidebar secondary}{fg=NDGold}
+
+\setbeamercolor*{separation line}{bg=NDGold}
+\setbeamercolor*{fine separation line}{bg=NDGold}
+
+
+\mode
+<all>

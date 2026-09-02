@@ -1,0 +1,3 @@
+# Built deck: regenerate with `make`. Not tracked while the deck is in flux;
+# we can start committing it once the content settles, so attendees can grab a PDF.
+main.pdf

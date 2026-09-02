@@ -1,0 +1,171 @@
+% =====================================================================
+% Claude for Research: Beyond the Chatbot
+% CBE seminar, University of Notre Dame -- 17 September 2026
+%
+% Build:  make          (or: latexmk -pdf main.tex)
+% Theme:  vendored in theme/ -- see theme/README.md for provenance.
+% =====================================================================
+\documentclass[aspectratio=169, 11pt]{beamer}
+
+% white  -- white background. The default theme is white-on-black, which is
+%           wrong for this talk: nearly every artifact shown (file trees,
+%           diffs, tables, a matplotlib figure, two photo collages) is on a
+%           white ground and would punch a glare hole in a dark deck.
+% nologo -- no per-slide logo. It appears once, on the title slide.
+% No `nav` and no `sections`: nine sections in forty minutes do not justify
+% spending vertical space on every slide. Orientation comes from the lifecycle
+% divider instead (\lifecycle below).
+% theme/ is put on TEXINPUTS by .latexmkrc, so the theme and its colour theme
+% resolve by name. Build with `make` or `latexmk -pdf main.tex`.
+\usetheme[white, nologo]{NotreDame}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+
+% ---------------------------------------------------------------------
+% Colour
+%
+% NDBlue and NDGold are defined by the theme, but the theme's gold
+% (RGB 174,143,64) is NOT the University's Dome Gold. Override it.
+% Verified 2026-09-02 against the branding pages; re-confirm before the talk,
+% since onmessage.nd.edu could not be read directly.
+%
+%   ND Blue     #0C2340   PMS 289   contrast on white 15.79:1
+%   Dome Gold   #C99700   PMS 117   contrast on white  2.65:1  <- ACCENT ONLY
+%   Irish Green #00843D   PMS 348   contrast on white  4.81:1
+%
+% Dome Gold must never carry text on white: 2.65:1 fails WCAG (needs 4.5:1).
+% Use it for rules, fills, and the active lifecycle stage. On ND Blue it is
+% fine (5.95:1).
+% ---------------------------------------------------------------------
+\definecolor{NDGold}{HTML}{C99700}      % official Dome Gold, overriding theme
+\definecolor{NDBlue}{HTML}{0C2340}
+\definecolor{IrishGreen}{HTML}{00843D}
+
+% Semantic colours, taken from the Okabe-Ito palette that
+% resources/scripts/figure_style/ recommends -- so the deck uses the
+% colour-blind-safe palette the seminar tells people to use.
+\definecolor{OkGreen}{HTML}{009E73}     % the practice / verified
+\definecolor{OkVermillion}{HTML}{D55E00}% the failure mode  (not red: CB-safe)
+\definecolor{OkSky}{HTML}{56B4E9}
+\definecolor{Muted}{HTML}{7A7A7A}
+\definecolor{CodeBg}{HTML}{F4F4F2}
+
+% Do NOT override `frametitle`: the white theme already renders it white on an
+% ND Blue bar (15.79:1). Setting fg=NDBlue here put navy text on a navy bar.
+\setbeamercolor{structure}{fg=NDBlue}
+\setbeamercolor{itemize item}{fg=NDBlue}
+\setbeamercolor{itemize subitem}{fg=Muted}
+\setbeamertemplate{navigation symbols}{}
+
+% ---------------------------------------------------------------------
+% Semantic macros. Meaning is never carried by colour alone -- each pairs the
+% colour with a mark or a word, so the deck survives greyscale and colour
+% vision deficiency, which is what we ask of figures.
+% ---------------------------------------------------------------------
+\newcommand{\good}[1]{\textcolor{OkGreen}{\faCheck~#1}}
+\newcommand{\bad}[1]{\textcolor{OkVermillion}{\faTimes~#1}}
+\newcommand{\unknown}[1]{\textcolor{Muted}{\faQuestion~#1}}
+\newcommand{\keyterm}[1]{\textcolor{NDBlue}{\textbf{#1}}}
+
+% The one-line takeaway that closes a section. Gold rule, dark text -- gold as
+% a rule is fine, gold as text on white is not.
+\newcommand{\takeaway}[1]{%
+  \vfill
+  {\color{NDGold}\rule{\textwidth}{1.2pt}}\\[0.35em]
+  {\small\textbf{#1}}\par}
+
+% ---------------------------------------------------------------------
+% Code / file trees. `listings`, not `minted`: minted needs -shell-escape and
+% Pygments, which is a portability liability for a deck in a public repo.
+% ---------------------------------------------------------------------
+\lstdefinestyle{plain}{
+  basicstyle=\ttfamily\scriptsize,
+  backgroundcolor=\color{CodeBg},
+  keywordstyle=\color{NDBlue}\bfseries,
+  commentstyle=\color{Muted}\itshape,
+  stringstyle=\color{IrishGreen},
+  frame=leftline, framerule=1.2pt, rulecolor=\color{NDGold},
+  framexleftmargin=4pt, xleftmargin=6pt,
+  breaklines=true, showstringspaces=false,
+  aboveskip=0.6em, belowskip=0.4em,
+}
+\lstset{style=plain}
+
+% ---------------------------------------------------------------------
+% The recurring motif: the research lifecycle, with one stage active.
+% Usage: \lifecycle{3}  (0 = none active, for the overview slide)
+% ---------------------------------------------------------------------
+\newcommand{\lifecycle}[1]{%
+\begin{tikzpicture}[x=1.95cm, font=\scriptsize\sffamily]
+  \foreach \n [count=\i from 1] in {Explore, Ground, Build, Record, Write, Verify} {
+    \pgfmathparse{int(\i == #1)}
+    \ifnum\pgfmathresult=1
+      \node[fill=NDGold, text=black, rounded corners=2pt,
+            inner sep=4pt, minimum width=1.7cm, align=center] at (\i,0) {\textbf{\n}};
+    \else
+      \node[fill=black!6, text=Muted, rounded corners=2pt,
+            inner sep=4pt, minimum width=1.7cm, align=center] at (\i,0) {\n};
+    \fi
+    \ifnum\i<6
+      \draw[-{Stealth[length=4pt]}, Muted, thick]
+        ($(\i,0)+(0.88cm,0)$) -- ($(\i,0)+(1.07cm,0)$);
+    \fi
+  }
+\end{tikzpicture}}
+
+% A stage divider: the lifecycle with one stage lit, plus the stage's question.
+\newcommand{\stagedivider}[3]{%
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    \lifecycle{#1}\\[1.6em]
+    {\LARGE\color{NDBlue}\textbf{#2}}\\[0.7em]
+    {\large\color{Muted}#3}
+  \end{center}
+  \vfill
+\end{frame}}
+
+% ---------------------------------------------------------------------
+\title{Claude for Research}
+\subtitle{Beyond the Chatbot}
+\author{Alex Dowling}
+\institute{Chemical and Biomolecular Engineering \\ University of Notre Dame}
+\date{17 September 2026}
+
+\begin{document}
+
+% ---- Title ----------------------------------------------------------
+% The academic wordmark is a wide lockup (~2.4:1), so it sits on its own line
+% under the rule rather than squeezed into a side column.
+\begin{frame}[plain]
+  \vfill
+  {\fontsize{30}{34}\selectfont\color{NDBlue}\textbf{Claude for Research}}\\[0.35em]
+  {\fontsize{20}{24}\selectfont\color{NDGold!75!black}\textbf{Beyond the Chatbot}}\\[2.2em]
+  {\large\color{black}\textbf{Alex Dowling}}\\[0.3em]
+  {\small\color{Muted}Chemical and Biomolecular Engineering}
+  \vfill
+  {\color{NDGold}\rule{\textwidth}{1.5pt}}\\[0.7em]
+  \begin{columns}[c]
+    \begin{column}{0.46\textwidth}
+      \includegraphics[width=0.86\textwidth]{figures/nd_logo.png}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \raggedleft
+      {\small\color{Muted}17 September 2026\\ Carey Auditorium, Hesburgh Library}
+    \end{column}
+  \end{columns}
+  \vspace{0.3em}
+\end{frame}
+
+\input{sections/00_open}
+\input{sections/01_ecosystem}
+\input{sections/02_context}
+
+\end{document}
