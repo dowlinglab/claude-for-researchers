@@ -7,14 +7,25 @@ Working notes on the personal examples this seminar draws from, kept separate fr
 **Supports:** Outline Section 4 (Build).
 **Shape:** Organically-grown research code → reorganized files, deduplicated logic, notebook logic separated into reusable modules, `pip install`-able package, docs, tests, reproducible install/run, better Git hygiene.
 **Core line:** "The student's code works" → "the research software is an auditable artifact someone else can install, understand, test, and extend."
-**Status:** Resolved (2026-09-02) — will use a real, anonymized Dowling-lab project (Alex has two candidates). No student named or otherwise identifiable; keep file trees/descriptions generic enough to avoid implication.
+**Status:** Resolved (2026-09-02) — two real, public examples, verified directly against their repos:
+  - **[emcal](https://github.com/dowlinglab/emcal)** — Gaussian-process Bayesian optimization for calibrating nonlinear computational models. BSD-3, unit tests, GitHub Actions CI. Accompanies a peer-reviewed paper ("Bayesian Optimization Methods for Nonlinear Model Calibration," *Ind. Eng. Chem. Res.*, 2025). Notably, the reproducible-research workflow for the paper stays in a separate *archived research repository* — a real instance of the split-repo pattern from Outline Section 4/[seminar_design.md](seminar_design.md).
+  - **[bits_for_gaps](https://github.com/dowlinglab/bits_for_gaps)** — information-theoretic sequential experimental design with Bayesian hierarchical GP surrogates. BSD-3, `pip install bits_for_gaps`, unit/integration/regression tests with coverage, Sphinx docs on ReadTheDocs. Published in *Computers & Chemical Engineering* (2026). Its README states, almost verbatim what this talk argues: *"The research code behind the paper was originally developed in a private repository... then migrated here and reorganized into an installable, tested package."* Strong candidate for a direct quote on the slide.
+  - Both repos are public, so cite them by name and link freely — but don't name or otherwise identify the student who wrote the original code in the spoken narrative, even though it's discoverable from commit history.
 
-## 2. Moving beyond Jupyter notebooks
+## 2. Moving beyond Jupyter notebooks — and end-to-end with Codex
 
-**Supports:** Outline Section 4 (Build), as the conceptual setup before the package story.
-**Shape:** Exploratory notebooks (hidden state, duplicated cells, manual execution order, hard-coded paths) → functions, modules, scripts, config files, tests, explicit inputs/outputs.
-**Core line:** "Prototype in notebooks; promote mature logic into an auditable codebase." Not "notebooks are bad."
-**Status:** Likely folded into Story #1's before/after rather than shown separately — avoids two file-tree slides back to back.
+**Supports:** Outline Section 4 (Build) — now the primary demo for the whole section, not just a conceptual setup.
+**Shape:** An internal, Jupyter-centric scheduling tool (built with a colleague, refined over years) → converted end-to-end into a tested, documented, CI/CD-backed PyPI package, then generalized, using ChatGPT/Codex.
+**Real example:** **[grad-visit-scheduler](https://github.com/dowlinglab/grad-visit-scheduler)** — optimizes meeting schedules between prospective grad students and faculty at a departmental open house, formulated as a MILP in Pyomo. "Created by Alex Dowling and Jeff Kantor... the meeting scheduler used by Notre Dame Chemical and Biomolecular Engineering, released as a general-purpose, open-source tool." BSD-3; pip-installable as **`grad-visitor-scheduler`** on PyPI (note the repo/package name mismatch — worth double-checking on the slide rather than trusting memory); GitHub Actions test suite + Codecov + tag-driven automated PyPI releases; docs on ReadTheDocs; multi-building support (`travel_time`, `nonoverlap_time`) and top-N ranked schedules (`schedule_visitors_top_n()`).
+**Narrative arc, from Alex's own LinkedIn posts (his to quote/paraphrase freely):**
+  1. Originally 10 hours of manual scheduling → a Jupyter tool built with Jeff Kantor, refined over years.
+  2. On sabbatical, used Codex to go from internal tool to a first PyPI release in about 2 days total (vs. an estimated 2+ weeks solo) — isolating ND-specific data, adding examples/tests/docs, identifying edge cases, improving error handling, and writing out the MILP formulation from the code itself.
+  3. Live demo with his grad student and postdoc: added a top-N no-good-cut feature in ~20 minutes, including real back-and-forth on software design, not just code generation.
+  4. From v0.1.2 (Feb 11, 2026) to v0.3.1 (Feb 17, 2026): generalized from a 2-building, ND-specific tool to arbitrary buildings with configurable travel times, plus automated release workflows and stronger CI/coverage.
+  5. Self-assessed productivity: "easily a 5x productivity multiplier" — **with an explicit caveat, in his own words**, worth using directly: *"I've touched every stage of the software pipeline before. This is the first project where I did it end-to-end solo, and my prior context made the tool dramatically more effective."*
+**Core line:** "Prototype in notebooks; promote mature logic into an auditable codebase" — and this is what it looks like end-to-end, with dates, versions, and a public, checkable result, not an anonymized composite.
+**Model-independence bonus:** This flagship example used ChatGPT/Codex, not Claude — a natural, honest callback to Section 1's "don't become loyal to one model."
+**Status:** Ready — richest, most concrete, fully public material in the whole talk. See also the "training-model tension" entry below for the self-critical reflection this story sets up for Section 8.
 
 ## 3. Maintaining a running research/results log
 
@@ -25,10 +36,10 @@ Working notes on the personal examples this seminar draws from, kept separate fr
 
 ## 4. Creating a custom Amateur Radio exam study guide
 
-**Supports:** Not core research lifecycle — a short spoken aside in Section 3 (grounding a generative task in curated source material), with a link on the slide.
+**Supports:** Not core research lifecycle — moved (2026-09-02) to the new closing Section 9, "Unleash Your Curiosity: AI and your hobbies," rather than a Section 3 aside.
 **Shape:** Curated source material (exam question pool, regulations) → structured, purpose-built study resource via iterative generation, verified against authoritative sources.
-**Core line:** "AI can transform a curated body of source material into a new structured artifact tailored to a specific purpose" — a preview, in miniature, of what Section 3 (grounding) and Section 6 (structured writing) do for research.
-**Status:** Resolved (2026-09-02) — one-line aside, not a case study. Repo is public: [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book). Link it directly on the Section 3 slide.
+**Core line:** "AI can transform a curated body of source material into a new structured artifact tailored to a specific purpose" — the same pattern as Section 3 (grounding) and Section 6 (structured writing), applied outside of research.
+**Status:** Resolved — one-line story with a link, in Section 9. Repo is public: [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book). Paired with a second hobby example (3D printing, LinkedIn post from ~7 months ago) that Alex is providing — see [open_questions.md](open_questions.md).
 
 ## 5. Finishing papers after students graduate
 
@@ -36,6 +47,13 @@ Working notes on the personal examples this seminar draws from, kept separate fr
 **Shape:** Inheriting a project after the person who wrote the analysis has moved on — using AI to understand unfamiliar code, reconstruct how analyses work, trace outputs back to scripts, understand undocumented design decisions, refactor enough to finish the manuscript, and check the paper against the actual implementation.
 **Core line:** Preserving context in files/repos/logs/docs matters far more than preserving it inside an AI chat — because the person who *had* that context is gone, and so is any chat history they had with an AI about it.
 **Status:** Resolved (2026-09-02). Confirmed as the bookend, reframed around *expediting* completion rather than only "recovery after abandonment" — e.g., "helping a graduating student (or their advisor) get a project across the finish line," which reads as proactive and applies more broadly to the audience than pure salvage work. Uses a real, anonymized project; no student named or identifiable. Open at Section 0 with the premise, resolve it at Section 8 once every practice (context files, the log, reproducible code, the audit) has been introduced.
+
+## The training-model tension (new, 2026-09-02)
+
+**Supports:** Outline Section 8 (Responsible use & closing), as an honest, unresolved question rather than a wrap-up bullet.
+**Shape:** Straight from the grad-visit-scheduler LinkedIn posts (Story #2): Alex got a 5x productivity multiplier with Codex, but attributes much of that to already having "touched every stage of the software pipeline before." His own question, asked twice across the three posts: *"how do we train future scientists and engineers to use GenAI tools for major productivity gains while still developing deep technical expertise?"*
+**Core line:** This is the single best piece of material in the whole charter for the "not a celebration of AI for its own sake" guardrail (see [seminar_design.md](seminar_design.md)) — it's Alex's own genuine reflection, not a manufactured caveat, and it directly reinforces the closing teaching point that scientific/technical judgment stays with the researcher.
+**Status:** Ready. Candidate use: close Section 8 with this question rather than an answer — consistent with "the goal is not to have AI do your research," and a good bridge into the 20-minute Q&A.
 
 ## ND data-classification chart (new, 2026-09-02)
 

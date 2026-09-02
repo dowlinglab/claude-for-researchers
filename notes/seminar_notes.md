@@ -95,4 +95,16 @@ Alex answered most of [open_questions.md](open_questions.md) directly in the fil
 
 **Next:** confirm the writing-style-guide note wasn't cut off accidentally; schedule the manuscript-audit and DOI-checker working sessions; then start drafting the top-priority `resources/` files.
 
-**Next:** unchanged — begin drafting `resources/` files.
+---
+
+## 2026-09-02 (real code-maturity examples + new closing section)
+
+**Decisions:**
+- Replaced the planned anonymized-composite examples in Outline Section 4 with three real, public, verified repos: [emcal](https://github.com/dowlinglab/emcal) and [bits_for_gaps](https://github.com/dowlinglab/bits_for_gaps) (graduate-student research code → package, each tied to a peer-reviewed paper) and [grad-visit-scheduler](https://github.com/dowlinglab/grad-visit-scheduler) (Alex's own notebook-to-package story, now the section's primary demo, sourced from three of his LinkedIn posts). Verified all three directly against their READMEs before writing them into the outline, rather than trusting the LinkedIn summaries alone. Convention: cite the repos by name freely (public), but don't name/identify the student who wrote the original `emcal`/`bits_for_gaps` code in the spoken narrative.
+- `grad-visit-scheduler`'s real, dated narrative (Codex, not Claude; v0.1.2→v0.3.1 Feb 11–17, 2026; "5x productivity" with Alex's own caveat about prior expertise) is strong enough that it replaces the generic before/after file-tree demo entirely.
+- Added Alex's own "how do we train future scientists and engineers..." reflection (from the same LinkedIn posts) as a new, deliberately unresolved question closing Outline Section 8 — see [demo_ideas.md](demo_ideas.md) "training-model tension."
+- New: a one-minute closing **Section 9, "Unleash Your Curiosity: AI and your hobbies,"** added after Section 8 and before Q&A, at Alex's request. Moved the Amateur Radio anecdote out of Section 3 into this new section, paired with a second hobby example (AI + 3D printing, a LinkedIn post from ~7 months ago) that Alex is still providing. This section doubles as the talk's time buffer — first thing to compress if running long.
+
+**Files touched:** `outline.md`, `notes/demo_ideas.md`, `notes/seminar_design.md`, `notes/open_questions.md`, this file.
+
+**Next:** get the 3D-printing LinkedIn post from Alex to finish Section 9; still waiting on the writing-style file and a Beamer white/default + logo decision; then begin drafting the top-priority `resources/` files.

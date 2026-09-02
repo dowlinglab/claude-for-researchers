@@ -4,7 +4,7 @@ Status: draft, timed, not yet built into slides. See [notes/seminar_design.md](n
 
 The seminar slot is 1 hour: 40 minutes of talk, 20 minutes of questions. This outline covers the 40-minute talk only.
 
-This outline follows the research lifecycle — **Explore → Ground → Build → Record → Write → Verify** — rather than a tour of AI products. Every section not listed here (journal selection, the full DOI checker walkthrough, LaTeX/Overleaf mechanics, the Amateur Radio anecdote, etc.) has been deliberately pushed to the handout and `resources/`. See "Cut from the live talk" at the end.
+This outline follows the research lifecycle — **Explore → Ground → Build → Record → Write → Verify** — rather than a tour of AI products, then closes with a short, deliberately lighter coda. Every section not listed here (the full DOI checker walkthrough, LaTeX/Overleaf mechanics, etc.) has been deliberately pushed to the handout and `resources/`. See "Cut from the live talk" at the end.
 
 ## At a glance
 
@@ -19,9 +19,9 @@ This outline follows the research lifecycle — **Explore → Ground → Build �
 | 6 | Write: manuscripts as structured artifacts | 5 min | 0:29 |
 | 7 | Verify: audit before the reviewers do | 6 min | 0:35 |
 | 8 | Responsible use & closing | 4 min | 0:39 |
-| — | Buffer | 1 min | 0:40 |
+| 9 | Unleash Your Curiosity: AI and your hobbies | 1 min | 0:40 |
 
-Verify and Write keep their full time on purpose — they're the most differentiated content. The cuts to reach 40 minutes came out of the more expository early sections (1, 2, 3, 5), one minute each; see [notes/seminar_notes.md](notes/seminar_notes.md) for when this was decided.
+Verify and Write keep their full time on purpose — they're the most differentiated content. The cuts to reach 40 minutes came out of the more expository early sections (1, 2, 3, 5), one minute each; see [notes/seminar_notes.md](notes/seminar_notes.md) for when this was decided. Section 9 doubles as the time buffer — it's the first thing to compress or cut on the day if earlier sections ran long, since it's a fun closer, not load-bearing teaching content.
 
 ---
 
@@ -81,7 +81,6 @@ Verify and Write keep their full time on purpose — they're the most differenti
 - The failure mode: treating brainstorming output as literature evidence.
 - Once you have an actual corpus, AI gets much more useful when it's grounded in it — summarizing, comparing methods, building a literature matrix, flagging apparent tensions or untested assumptions. The evidence-first prompt pattern: ask the model to show what in the provided papers caused it to flag something, not just assert a conclusion.
 - One-line pointer to the literature-folder workflow (renaming, dedup, `literature.md`) as a takeaway resource rather than a live walkthrough.
-- Brief aside (a few seconds, with a link on the slide): the same "curate source material → structured, purpose-built artifact" pattern is how Alex built a study guide for an Amateur Radio license exam — [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book). Not a research example; included only to show the pattern generalizes.
 
 **Demo/example:** one prompt shown on-screen — "Based only on these papers, identify apparent tensions, unanswered questions, and combinations of ideas that haven't been explored. For each, show the evidence." Show real (or realistic) output with citations back to specific papers.
 
@@ -97,9 +96,12 @@ Verify and Write keep their full time on purpose — they're the most differenti
 - Notebooks are excellent for exploration, poor as a long-term repository of scientific logic (hidden state, duplicated cells, manual execution order, hard-coded paths). The point is not "notebooks are bad" — it's *prototype in notebooks, promote mature logic into modules*.
 - What "maturing" a project looks like concretely: extract functions, separate plotting from calculation, add a config file, add tests, make it `pip install`-able.
 - Git as the actual audit trail: diffs, commit messages, `.gitignore` hygiene. The explicit warning — **review the diff; don't accept a large AI refactor just because the tests pass.** Prefer small, understandable changes.
-- Briefly surface the one-repo vs. split-repo (code + Overleaf manuscript) decision and point to the resource rather than resolving it live — there is no universally correct answer.
+- Briefly surface the one-repo vs. split-repo (code + Overleaf manuscript) decision and point to the resource rather than resolving it live — there is no universally correct answer. (`emcal` is a real instance: the paper's reproducible-research workflow lives in a separate archived repo from the general-purpose package.)
 
-**Demo/example:** the graduate-student-code-to-package story — a before/after file tree (organically-grown scripts vs. `src/`, `tests/`, `pyproject.toml`) shown as a single slide, not a live refactor.
+**Demo/example:** three real, public, verified examples — no anonymized composites needed:
+- **[grad-visit-scheduler](https://github.com/dowlinglab/grad-visit-scheduler)** as the primary story: an internal Jupyter-centric scheduling tool, converted end-to-end with Codex into a tested, documented, CI/CD-backed PyPI package (`grad-visitor-scheduler`) — with dates and version numbers (v0.1.2 → v0.3.1, Feb 11–17, 2026), a live 20-minute feature-add demo, and Alex's own "5x productivity, but I'd touched every stage of this before" reflection. Built with Codex, not Claude — an explicit callback to Section 1.
+- **[bits_for_gaps](https://github.com/dowlinglab/bits_for_gaps)** and **[emcal](https://github.com/dowlinglab/emcal)** as the "graduate-student code → package" instances — both public, tested, documented, on PyPI or pip-installable, each tied to a peer-reviewed paper. `bits_for_gaps`'s own README states the thesis almost verbatim: *"The research code behind the paper was originally developed in a private repository... then migrated here and reorganized into an installable, tested package."*
+- See [notes/demo_ideas.md](notes/demo_ideas.md) stories #1–2 for full detail and exact quotes.
 
 **Students should remember:** Treat "AI made my code work" and "AI made my code reviewable, testable, and installable by someone else" as two different, both-worth-pursuing goals — and always read the diff.
 
@@ -164,11 +166,27 @@ Verify and Write keep their full time on purpose — they're the most differenti
 **Supporting ideas:**
 - Compress the recurring principles into a short, spoken list (not a bullet-dump slide): scientific judgment stays with the researcher; AI output is not evidence; generated citations need verification; code changes need review; sensitive/restricted data only in institutionally approved systems.
 - Return to the frame story from the open and resolve it — name what got faster or safer for that graduating student's project with a research log, an auditable repo, and a claim-tracing pass in place. Keep it about *expediting a finish*, not just recovering from someone leaving.
+- Name the training-model tension from the Section 4 story out loud, as an open question rather than a resolved one: real productivity gains (Alex's own "5x") came from AI plus years of already having done every step by hand — so how do we train the next generation to get both the productivity *and* the underlying expertise? Don't answer it — let it sit. See [notes/demo_ideas.md](notes/demo_ideas.md) "training-model tension."
 - Point once, clearly, to the handout and `resources/` as where the reusable material lives, and to the Anthropic Team-for-Scientists application link for anyone who wants a Claude seat.
 
 **Demo/example:** none — this is the synthesis.
 
 **Students should remember:** The one thing to change Monday morning: pick *one* practice from today (a `CLAUDE.md` file, a research log, or a claim-audit pass on a paper you're finishing) and try it on a real project this week.
+
+---
+
+## 9. Unleash Your Curiosity: AI and your hobbies (1 min)
+
+**Teaching point:** Everything today applies outside the lab too — a lighter, human closing note before Q&A, not a new argument.
+
+**Supporting ideas:**
+- The Amateur Radio exam study guide, as a one-line story with a link: curated source material → structured, purpose-built artifact, same pattern as Section 3's grounding and Section 6's structured writing, just applied for fun. Repo: [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book).
+- A second hobby example, pending: a LinkedIn post from ~7 months prior on using AI for 3D printing (Alex to provide — see [notes/open_questions.md](notes/open_questions.md)).
+- Explicit framing: the same habits — ground it in real sources, keep files not just chat history, review before trusting — pay off just as much in a hobby project as in a research project. It's a fun, low-stakes place to actually practice them.
+
+**Demo/example:** one slide, two links (radio book + 3D-printing post), minimal text.
+
+**Students should remember:** Try one of today's habits on something low-stakes and fun first — a hobby project is a great place to build the muscle memory before you trust it on your research.
 
 ---
 
@@ -182,5 +200,4 @@ These were in the original charter but don't fit in 40 minutes as full sections 
 - LaTeX/Overleaf mechanics (label checking, acronym consistency details) — folded into one line of Section 6; details in handout.
 - Full results/provenance manifest example and single-repo vs. split-repo tradeoff discussion — handout + `resources/examples/repository_patterns/`.
 - Methods-vs-code and figure-vs-text audits, in full — `resources/prompts/manuscript_audit.md` (bundled with the quantitative-claim audit as one toolkit).
-- The Amateur Radio textbook anecdote — resolved: a single spoken aside with a link, in Section 3. Not a case study in the live talk.
 - The research-repository organization prompt (Section 8 of the charter) — not walked through live; it's a takeaway resource (`resources/prompts/organize_research_repo.md`), referenced once in Section 4.
