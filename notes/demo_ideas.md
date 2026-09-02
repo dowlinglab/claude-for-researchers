@@ -1,84 +1,100 @@
-# Demo ideas — candidate stories and examples
+# Demo ideas — the project inventory, mapped to acts
 
-Working notes on the personal examples this seminar draws from, kept separate from polished content. See [seminar_design.md](seminar_design.md) for how each maps into [outline.md](../outline.md), and [open_questions.md](open_questions.md) for what's still undecided about each.
+**Supersedes the pre-restructure version of this file**, which was written for the six-stage lifecycle framing (Explore/Ground/Build/Record/Write/Verify) before the talk became a three-act story (`storyboard.md`). That framing is gone; the underlying evidence isn't — this file re-maps it.
 
-## 1. Turning graduate-student research code into a real Python package
+**What this file is for.** The Acts are meant to be a *collection of concrete tasks an academic actually performs*, each grounded in a real project, with a general principle extracted from it — not one flagship story per act. This is the map from raw evidence (17 projects/repos inventoried, most already generalized into `resources/practices/`) to which act each concrete task belongs in, and what principle it earns its place by demonstrating.
 
-**Supports:** Outline Section 4 (Build).
-**Shape:** Organically-grown research code → reorganized files, deduplicated logic, notebook logic separated into reusable modules, `pip install`-able package, docs, tests, reproducible install/run, better Git hygiene.
-**Core line:** "The student's code works" → "the research software is an auditable artifact someone else can install, understand, test, and extend."
-**Status:** Resolved (2026-09-02) — two real, public examples, verified directly against their repos:
-  - **[emcal](https://github.com/dowlinglab/emcal)** — Gaussian-process Bayesian optimization for calibrating nonlinear computational models. BSD-3, unit tests, GitHub Actions CI. Accompanies a peer-reviewed paper ("Bayesian Optimization Methods for Nonlinear Model Calibration," *Ind. Eng. Chem. Res.*, 2025). Notably, the reproducible-research workflow for the paper stays in a separate *archived research repository* — a real instance of the split-repo pattern from Outline Section 4/[seminar_design.md](seminar_design.md).
-  - **[bits_for_gaps](https://github.com/dowlinglab/bits_for_gaps)** — information-theoretic sequential experimental design with Bayesian hierarchical GP surrogates. BSD-3, `pip install bits_for_gaps`, unit/integration/regression tests with coverage, Sphinx docs on ReadTheDocs. Published in *Computers & Chemical Engineering* (2026). Its README states, almost verbatim what this talk argues: *"The research code behind the paper was originally developed in a private repository... then migrated here and reorganized into an installable, tested package."* Strong candidate for a direct quote on the slide.
-  - Both repos are public, so cite them by name and link freely — but don't name or otherwise identify the student who wrote the original code in the spoken narrative, even though it's discoverable from commit history.
+**Naming convention**, consistent with `resources/practices/`: **public repos are named** (Alex's own or fully public, no student exposure — `emcal`, `bits_for_gaps`, `grad-visit-scheduler`, `radio-extra-book`, `optimization`/`optimization-private`). **Private, unpublished, or student-adjacent work stays generic** — a domain descriptor ("a hybrid-modeling project," "a membrane-transport project," "a returning-sponsor proposal"), never a repo name or a student reference. No exceptions either direction.
 
-## 2. Moving beyond Jupyter notebooks — and end-to-end with Codex
+**Status:** all 17 projects inventoried.
 
-**Supports:** Outline Section 4 (Build) — now the primary demo for the whole section, not just a conceptual setup.
-**Shape:** An internal, Jupyter-centric scheduling tool (built with a colleague, refined over years) → converted end-to-end into a tested, documented, CI/CD-backed PyPI package, then generalized, using ChatGPT/Codex.
-**Real example:** **[grad-visit-scheduler](https://github.com/dowlinglab/grad-visit-scheduler)** — optimizes meeting schedules between prospective grad students and faculty at a departmental open house, formulated as a MILP in Pyomo. "Created by Alex Dowling and Jeff Kantor... the meeting scheduler used by Notre Dame Chemical and Biomolecular Engineering, released as a general-purpose, open-source tool." BSD-3; pip-installable as **`grad-visitor-scheduler`** on PyPI (note the repo/package name mismatch — worth double-checking on the slide rather than trusting memory); GitHub Actions test suite + Codecov + tag-driven automated PyPI releases; docs on ReadTheDocs; multi-building support (`travel_time`, `nonoverlap_time`) and top-N ranked schedules (`schedule_visitors_top_n()`).
-**Narrative arc, from Alex's own LinkedIn posts (his to quote/paraphrase freely):**
-  1. Originally 10 hours of manual scheduling → a Jupyter tool built with Jeff Kantor, refined over years.
-  2. On sabbatical, used Codex to go from internal tool to a first PyPI release in about 2 days total (vs. an estimated 2+ weeks solo) — isolating ND-specific data, adding examples/tests/docs, identifying edge cases, improving error handling, and writing out the MILP formulation from the code itself.
-  3. Live demo with his grad student and postdoc: added a top-N no-good-cut feature in ~20 minutes, including real back-and-forth on software design, not just code generation.
-  4. From v0.1.2 (Feb 11, 2026) to v0.3.1 (Feb 17, 2026): generalized from a 2-building, ND-specific tool to arbitrary buildings with configurable travel times, plus automated release workflows and stronger CI/coverage.
-  5. Self-assessed productivity: "easily a 5x productivity multiplier" — **with an explicit caveat, in his own words**, worth using directly: *"I've touched every stage of the software pipeline before. This is the first project where I did it end-to-end solo, and my prior context made the tool dramatically more effective."*
-**Core line:** "Prototype in notebooks; promote mature logic into an auditable codebase" — and this is what it looks like end-to-end, with dates, versions, and a public, checkable result, not an anonymized composite.
-**Model-independence bonus:** This flagship example used ChatGPT/Codex, not Claude — a natural, honest callback to Section 1's "don't become loyal to one model."
-**Status:** Ready — richest, most concrete, fully public material in the whole talk. See also the "training-model tension" entry below for the self-critical reflection this story sets up for Section 8.
+---
 
-## 3. Maintaining a running research/results log
+## Master inventory
 
-**Supports:** Outline Section 5 (Record) directly — and this project's own [seminar_notes.md](seminar_notes.md) is now a live instance of the pattern, worth mentioning as a meta-example.
-**Shape:** Persistent Markdown log — date, question, experiment, commit, config, datasets, outputs, interpretation, failed approaches, next questions.
-**Core line:** Lets AI answer "what did we learn from experiments 14–27?" without relying on memory or a huge chat history.
-**Status:** Ready. Need one realistic sample entry for the slide (can be synthetic/representative rather than from a real project).
+| Project | Public? | Domain | Primary act |
+|---|---|---|---|
+| CDSE hybrid-modeling project | private | hybrid modeling (adsorption) | Act I (support), Act III |
+| BITS for GAPS / `bits_for_gaps` | **public** | Bayesian experimental design | Act II |
+| GPBO / `emcal` | **public** | Bayesian optimization for calibration | Act I, Act II |
+| First manuscript audit (ESS-FO-Audit) | private | force-field / thermophysical properties | Act III |
+| SAF Brazil manuscript audit | private | sustainable aviation fuel policy | Act III |
+| Grey-box identifiability paper | private | hybrid model identifiability | Act I, Act III |
+| Crystallization / Pyomo.DoE project | private | crystallization, design of experiments | Act II, Act III |
+| Membrane transport project (data3) | private | membrane transport / diafiltration | Act II, Act III |
+| `grad-visit-scheduler` | **public** | admissions-visit scheduling (MILP) | Prologue, Act II |
+| Chromatography digital-twin proposal | private | chromatography + digital twins | Act I |
+| Watershed decision-support project | private | watershed modeling, sensor design | Act I |
+| Coastal desalination onboarding project | private | desalination process design | Act I |
+| A returning-sponsor proposal (Genesis) | private | materials/energy (unspecified) | Act II |
+| A multi-year proposal program (CPM) | private | AI-agent-based process tools | Act II |
+| `radio-extra-book` | **public** | amateur radio exam study guide | Epilogue |
+| 3D-printing hobby projects | personal | boot-dryer, kitchen organizer | Prologue, Epilogue |
+| `optimization-private` / `optimization` | course dev. (private/public pair) | optimization course materials | Act I, Act II, Act III |
 
-## 4. Creating a custom Amateur Radio exam study guide
+---
 
-**Supports:** Not core research lifecycle — moved (2026-09-02) to the new closing Section 9, "Unleash Your Curiosity: AI and your hobbies," rather than a Section 3 aside.
-**Shape:** Curated source material (exam question pool, regulations) → structured, purpose-built study resource via iterative generation, verified against authoritative sources.
-**Core line:** "AI can transform a curated body of source material into a new structured artifact tailored to a specific purpose" — the same pattern as Section 3 (grounding) and Section 6 (structured writing), applied outside of research.
-**Status:** Resolved — one-line story with a link, in Section 9. Repo is public: [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book). Paired with the 3D-printing story below.
+## Prologue — Tinker
 
-## 4b. 3D printing with ChatGPT + OpenSCAD (new, 2026-09-02; expanded same day with an earlier post)
+| Concrete task | Example | Principle |
+|---|---|---|
+| Turn a personal annual chore into a published tool | `grad-visit-scheduler` (teased here, resolved in Act II) | The habits that work on a weekend project are the same ones that work on research — tinkering is where you build the muscle memory cheaply |
+| Tinker with a hobby project using AI for the first time | boot-dryer-octopus, kitchen organizer | Curiosity and low stakes are a feature, not a consolation prize |
 
-**Supports:** Outline Section 9, paired with the Amateur Radio story — and its "iterate, don't regenerate" and "speed vs. understanding" lessons double back to reinforce Sections 4 and 8. Alex supplied two LinkedIn posts, chronologically in this order:
+## Act I — Understand: it explains things to me
 
-**Post A (earlier, first-ever attempt) — the "boot dryer octopus."** Aldi had a glove dryer on sale; Alex wondered whether he could build one at home for wet snow gear. Late at night, he brainstormed with ChatGPT, which surfaced DIY PVC+hairdryer designs, then *flagged the hairdryer as a fire hazard* and recommended a $10 inline 4" ventilation fan instead — a nice, concrete example of AI catching a real safety issue, not just generating code. The hard part: adapting a 4" fan to 2" PVC (boots) and 1.25" PVC (gloves) — no off-the-shelf part fit. With ~30 minutes of CAD experience ever and no prior 3D-printing experience, he asked ChatGPT, which introduced OpenSCAD (install: under 5 minutes) and generated the script. The loop that worked: render in OpenSCAD (seconds to a minute) → screenshot → hand ChatGPT the screenshot plus a bulleted list of refinements → repeat. He then used Notre Dame's own **Hesburgh Libraries 3D printing service** and the **College of Engineering Innovation Hub** to get the part checked and printed — a same-day email exchange with library staff (credited: Adam Heet). Ends with a genuine, forward-looking question for CBE specifically: where could 3D printing become an experiential-learning vehicle in the department's courses (e.g., a turbulent-mixing baffle; a vehicle for teaching thermodynamics, polymers, transport, reactions, controls)?
-**Post B (later, ~7 months before this seminar) — kitchen organizer and telescope shelf.** Two more projects, over two months: a kitchen drawer organizer (~15-minute dimensioned sketch, photographed, ~45 minutes to a submitted print — the easy case) and a Dobsonian telescope shelf with a custom compass holder (30+ iterations, ChatGPT struggling with geometric reasoning on underside supports and cutouts — the hard case). Alex flagged this post's own prose as "a little too AI sounding" (emoji-numbered listicle) — this write-up deliberately doesn't reuse that structure, extracting the substance in plain prose instead, consistent with Section 6's own teaching.
-**Images:** both collages are now in the repo — [`slides/figures/boot_dryer_octopus.jpeg`](../slides/figures/boot_dryer_octopus.jpeg) (OpenSCAD editor + render + printed green "octopus" fitting + the fan, Post A) and [`slides/figures/kitchen_organizer_telescope_shelf.jpeg`](../slides/figures/kitchen_organizer_telescope_shelf.jpeg) (sketch + printed organizer + telescope shelf, Post B).
-**Core lines (in Alex's own words, lightly compressed):**
-  - *Workflow, demonstrated vividly in Post A and stated explicitly in Post B:* generate code → render → screenshot → give targeted feedback beat regenerating the whole script from scratch, which tended to introduce new errors; small patches worked better than full rewrites, and re-sharing the full script in each prompt cut down on hallucination. This is the *exact same lesson* as Section 4's "review the diff, prefer small changes over large AI refactors" — independently rediscovered in a completely different domain.
-  - *The tradeoff, stated plainly (Post B):* "there's always a tradeoff between speed and understanding." Alex lost count of how many versions ChatGPT named `final`, `final_final`, `final_final_final` — and reflected that this gave him new empathy for how students might use these tools to finish faster at the expense of deeper learning.
-  - *Without irony (Post A):* ChatGPT "empowered me to tinker for an afternoon" on something he'd never have attempted otherwise.
-**Design, confirmed by Alex (2026-09-02):** Section 9 is now two slides, ~1 min each, not one. **9a** is Post A (boot-dryer-octopus) told as a hook/encouragement to tinker and think about possibilities, closing on its own CBE-course question. **9b** is a pure hobbies gallery — kitchen organizer, telescope shelf, radio book — upbeat and visual, deliberately *not* repeating Section 8's training-model tension a second time (that beat already landed once; this slide's job is to end on curiosity).
-**Status:** Ready. 9a deliberately echoes the Section 4 "small changes, review before trusting" lesson in one light clause (not re-explained) and reinforces Section 1's model-independence point (ChatGPT + OpenSCAD, not Claude). 9b intentionally carries no argument — just three real, human, finished things.
+| Concrete task | Example | Principle | Practice file |
+|---|---|---|---|
+| Get inherited/old code running again before restructuring it | CDSE project; grey-box identifiability | Run it before you refactor it — you cannot restructure code you haven't watched execute | `scientific_computing_workflow.md` §3 |
+| Reconstruct a project's history from files, not memory | CDSE's group report, built from README + running notes + git log, explicitly credited as "evidence, not memory" | The repository is the source of truth; a conversation about the project is not | `working_with_ai_agents.md` §1 |
+| Explore a new research idea by crossing two literatures on purpose | Chromatography digital-twin proposal (chromatography literature + a second, deliberate pass on LLM-agents-in-chemistry) | Bring in a second literature specifically to pressure-test an idea, not incidentally | `literature_review.md` §2 |
+| Turn a collected literature folder into an onboarding report for the next person | Watershed project; desalination project | Interpret how the evidence changes a project decision — don't copy the abstract | `literature_review.md` §4, §9 |
+| Verify a stated claim against a primary source before teaching it | Optimization course: lecture-note claims checked against a textbook + its own errata sheet, with an independent adversarial second pass that isn't the same agent that wrote the lecture | The same discipline that audits a manuscript claim audits a lecture-note claim — the audience doesn't change the method | `manuscript_audit.md` §4, §5 |
+| A context file that stays current, for once | Optimization course `CLAUDE.md`: every rule is attached to a dated, named incident, and corrections are kept in place rather than deleted | Rules with no incident record read as boilerplate and rot; a rule with "here is the day this cost real work" attached gets re-verified | `working_with_ai_agents.md` §2, §9 |
+| Fact-check an institutional policy claim against its primary source | (Meta-example: this talk's own ND AI-policy slide, verified against `ai.nd.edu` directly rather than trusted from a search summary) | Authoritative claims get checked at the source, even when — especially when — the claim is about your own institution | `notes/references.md` |
 
-## 5. Finishing papers after students graduate
+## Act II — Build: it changes my artifacts
 
-**Supports:** Confirmed frame story for Outline Section 0 (open) and Section 8 (close) — bookending the talk.
-**Shape:** Inheriting a project after the person who wrote the analysis has moved on — using AI to understand unfamiliar code, reconstruct how analyses work, trace outputs back to scripts, understand undocumented design decisions, refactor enough to finish the manuscript, and check the paper against the actual implementation.
-**Core line:** Preserving context in files/repos/logs/docs matters far more than preserving it inside an AI chat — because the person who *had* that context is gone, and so is any chat history they had with an AI about it.
-**Status:** Resolved (2026-09-02). Confirmed as the bookend, reframed around *expediting* completion rather than only "recovery after abandonment" — e.g., "helping a graduating student (or their advisor) get a project across the finish line," which reads as proactive and applies more broadly to the audience than pure salvage work. Uses a real, anonymized project; no student named or identifiable. Open at Section 0 with the premise, resolve it at Section 8 once every practice (context files, the log, reproducible code, the audit) has been introduced.
+| Concrete task | Example | Principle | Practice file |
+|---|---|---|---|
+| Convert an internal tool into a tested, documented, released package | `grad-visit-scheduler` (the hook, resolved in full: Codex, real dates/versions, a 20-minute live feature add) | Ship the skeleton early; TODO notes committed into the docs are a durable review mechanism | `private_code_to_public_package.md` |
+| The same conversion, on published research code, not a personal tool | `emcal`, `bits_for_gaps` | Split by audience (package vs. archive), not by code quality | `private_code_to_public_package.md` §1 |
+| Capture a numerical baseline before refactoring, then prove the refactor didn't change the science | Membrane transport project; crystallization project; grey-box identifiability project — three independent instances of the same pattern | Freeze the science, move the code — never both at once | `scientific_computing_workflow.md` §3–§4 |
+| Convert handwritten source material into a structured digital artifact | Optimization course: handwritten lecture notes → transcribed → typeset LaTeX, with duplicate scans verified byte-identical before deletion | The same "promote what matures" move, applied to a medium change instead of a language change | `scientific_computing_workflow.md` §2 |
+| Migrate a whole toolchain, not just a codebase | Optimization course website: JupyterBook v1 → MyST v2, cutover compressed into one afternoon | Keep the old path alive for exactly one safety-net commit, then delete it deliberately once the new one is verified — not a long parallel-build period | `scientific_computing_workflow.md` §4 |
+| Generate two versions of one document, safely, from one source | Optimization course: instructor/student coursepack from one `.tex` file, with a redaction macro that measures the answer text and replaces it with an identically-sized invisible rule — plus a mechanical leak-checker, because a prior year's white-on-white redaction left the answer text copyable | Never redact by color; measure and replace, then verify mechanically, not visually | `scientific_figures_tables.md` (redaction as a figure/document-integrity problem) |
+| Share one figure/code source across two repositories without duplicating it | Optimization course: TikZ and matplotlib sources live once in the public repo, `\input`/extracted into the private repo's LaTeX handouts; a git submodule was considered and explicitly rejected (a pointer-bump commit per edit, an empty directory for students). A real bug this caught: a TikZ figure rendered fine standalone but broke the actual handout, because a required `\usetikzlibrary` was only loaded by the standalone wrapper, not the shared source | "Generation alone guarantees nothing... without a checker, 'single source of truth' is a claim; with one, it is an invariant" | `scientific_figures_tables.md` §5 |
+| Keep one "golden" copy of code that appears in two places (a notebook and a document) | Optimization course: the Pyomo model lives once in the notebook; the LaTeX handout extracts it, gated by a content-hash staleness check | Regenerate, don't retype — extended from tables to embedded code | `scientific_figures_tables.md` §6 |
+| Track, and disclose to the audience, which content is AI-drafted and not yet reviewed | Optimization course: a maintained per-item status (`unreviewed`/`reviewed`/`reviewed-stale`/`exempt`) drives a live banner shown to students on any AI-drafted page the instructor hasn't signed off on yet | Disclosure can be a running, visible state, not just a one-time statement — practiced on students the same way it's asked of researchers with reviewers | *(candidate for a new resource — see notes below)* |
+| Guard against an AI's voice contaminating content that should stay human | Optimization course: a check specifically watches for the AI-heavy lecture-note prose "leaking backward" into the notebooks' pre-existing human-voice corpus | A style guide isn't just what to write toward — it's also a boundary to actively defend | `writing_style_guide.md` §3 |
+| Publish a concrete, per-assignment AI-use policy to the people whose work you're grading | Optimization course syllabus: per-assignment labels (no AI / AI after an independent attempt / AI required), plus a required "AI and independent-work report" on every homework | State the policy at the level of the actual assignment, not once in a syllabus paragraph nobody rereads | group manual GenAI section; `working_with_ai_agents.md` §10 |
+| Draft a proposal against a sponsor's own form, then restore its exact wording | The Genesis proposal; the multi-year CPM program | Draft tersely against the form first; restore the sponsor's own language before submission | `grant_proposal_writing.md` §2 |
+| Verify a revision with a word-level diff before committing | The Genesis proposal (reconstructed practice, now a real script) | A normal re-read misses a softened claim; `latexdiff` doesn't | `grant_proposal_writing.md` §5, `resources/scripts/latexdiff_check.sh` |
 
-## The training-model tension (new, 2026-09-02)
+## Act III — Challenge: it tells me I'm wrong
 
-**Supports:** Outline Section 8 (Responsible use & closing), as an honest, unresolved question rather than a wrap-up bullet.
-**Shape:** Straight from the grad-visit-scheduler LinkedIn posts (Story #2): Alex got a 5x productivity multiplier with Codex, but attributes much of that to already having "touched every stage of the software pipeline before." His own question, asked twice across the three posts: *"how do we train future scientists and engineers to use GenAI tools for major productivity gains while still developing deep technical expertise?"*
-**Core line:** This is the single best piece of material in the whole charter for the "not a celebration of AI for its own sake" guardrail (see [seminar_design.md](seminar_design.md)) — it's Alex's own genuine reflection, not a manufactured caveat, and it directly reinforces the closing teaching point that scientific/technical judgment stays with the researcher.
-**Status:** Ready. Candidate use: close Section 8 with this question rather than an answer — consistent with "the goal is not to have AI do your research," and a good bridge into the 20-minute Q&A. Echoed a second time, in miniature, by the 3D-printing story (#4b) in Section 9 — don't over-explain the callback when it happens; let the audience make the connection.
+| Concrete task | Example | Principle | Practice file |
+|---|---|---|---|
+| Audit every quantitative claim in a manuscript against its results | First manuscript audit; SAF Brazil audit | Separate arithmetic, method, and transcription — merging them reads as an attack | `manuscript_audit.md` §1, §4 |
+| Discover a "scientific finding" was actually a software bug, and retract it in writing | CDSE (a temperature-dependent isotherm correction); BITS for GAPS (a mutated-kernel-state bug); crystallization (a measurement-tool bug) — three independent instances | Verify the instrument before believing the finding; retract in place when you're wrong, don't quietly edit it away | `manuscript_audit.md` §10 |
+| Catch a silent failure a clean build/exit-code hid | SAF Brazil (an empty nomenclature table rendered in every reviewer's copy; five other silent defects, all exit-code 0); the optimization course website (a stale `.gitignore` rule silently dropped a required build artifact from every commit for 1.5 days — CI stayed green the whole time) | The countermeasure that works is reading the rendered output, never the log or the exit status | `manuscript_audit.md` §8 |
+| Discover a checker was measuring the wrong thing entirely | Optimization course: an execution-only audit reported the site "healthy" while two published notebooks were functionally empty; separately, a `grep`-based leak checker missed a real leak because it checked cell *source* while the leak was in cell *output* | Verifying that something ran is not the same as verifying it did the right thing — the metric has to match the actual risk | `manuscript_audit.md` §6, `scientific_computing_workflow.md` §6 |
+| Discover your own status report was wrong, and fix the *process*, not just the mistake | SAF Brazil (a status claim wrong for 11 of 17 items, reported from memory) | Determine status from evidence, never recollection — the fix is a script, not "being more careful" | `manuscript_audit.md` §7 |
+| Cross-check a literature or verification claim independently, and let it correct you | The optimization course's adversarial verification pass, which found a real sign/dimension error in a decade-old lecture and, separately, that one of the *verifier's* three checks needed correcting | The second, independent pass is not optional — the checker needs checking too | `manuscript_audit.md` §10 |
 
-## ND data-classification chart (new, 2026-09-02)
+## Epilogue — Trust
 
-**Supports:** Outline Section 1 (Ecosystem), possibly echoed in Section 8 (Responsible use).
-**Shape:** Notre Dame's own 🟢 Public / 🟡 Internal / 🟠 Sensitive / 🔴 Restricted data tiers, confirmed directly from `ai.nd.edu`, paired with which tools are currently cleared at which tier — Gemini/ChatGPT EDU/NotebookLM through Sensitive, Claude currently Public-only. See [references.md](references.md) for full quotes.
-**Core line:** Institution-specific, concrete, and slightly uncomfortable for a Claude-titled talk to say out loud — which is exactly why it's worth saying: the talk should model the honesty it's asking students to bring to their own work.
-**Status:** Ready to build as a slide once verified once more close to the talk date (see [open_questions.md](open_questions.md)).
+| Concrete task | Example | Principle |
+|---|---|---|
+| Return to the hook's unresolved question | grad-visit-scheduler's own "how do we train the next generation" line | Sit with the tension; don't resolve it artificially |
+| Apply the same habits somewhere low-stakes and fun | boot-dryer-octopus; kitchen organizer/telescope; `radio-extra-book` | The same discipline — ground it, iterate in small steps, verify — pays off outside the lab too |
 
-## Other demo material referenced in the outline (not full "stories," just artifacts to build)
+---
 
-- **Section 2:** a short `CLAUDE.md`-style file vs. a chat that has lost track of project conventions. This repository's own [CLAUDE.md](../CLAUDE.md) can serve as the real example.
-- **Section 3:** one evidence-seeking literature prompt with realistic output, citations traceable to specific (real or representative) papers.
-- **Section 6:** one guideline file (`FIGURE_GUIDELINES.md` or similar) plus one flagged violation.
-- **Section 7:** the claim-tracing table (see outline.md) — needs one "verified" row and one "cannot verify" row to make the point that both outcomes are useful.
+## Notes for building slides from this
+
+- **The optimization course now grounds all three acts**, not research examples — worth featuring prominently. It needs zero anonymization, and it's instantly relatable to a grad-student audience who have all sat through a lecture course (several as a TA, which makes "would you trust this pipeline on your own course" land even closer to home).
+- **The "retraction" principle now has three independent research instances plus one teaching instance** (a decade-old lecture error caught by an adversarial pass). Four is enough to say "this keeps happening independently" without naming any of them.
+- **The "silent failure" and "wrong verification metric" principles are now each grounded in two independent projects** across two completely different domains (a manuscript audit; a course website) — the strongest repeated-pattern evidence in the whole inventory, and worth stating explicitly as "this is not a one-off."
+- **The multi-agent spend-limit-kills-agents-mid-task incident appears in both course repos independently** (the private repo's 6-agent cap, raised after 19 died at once; the public repo's "Preserve the figure work from the agents killed by the spend limit" commit) — a real, recurring operational constraint worth one line in `working_with_ai_agents.md` §6 if it isn't there already.
+- **Two things found here don't fit cleanly into any existing practice file** and need a decision: (1) redaction-as-a-document-integrity-problem (the `\fillin` mechanism) — fold into `scientific_figures_tables.md` as a document-generation aside, or leave slide-only; (2) the AI-review-status disclosure tracker — possibly its own small addition to `working_with_ai_agents.md` §10, since it operationalizes disclosure as a live state rather than a one-time statement, which nothing currently in the practices covers.
