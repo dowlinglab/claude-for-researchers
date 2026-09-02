@@ -2,7 +2,7 @@
 
 The talk's structure, locked 2026-09-02, following the Dowling Lab presentation-planning algorithm (group manual §Presentations): question → main points → outline → slide budget → slide titles → feedback → slides. This file is steps 3–6.
 
-**Status:** structure locked; slide titles drafted below; `slides/sections/00_open.tex`, `01_ecosystem.tex`, `02_context.tex` predate this and still use the old ten-section framing (Explore/Ground/Build/Record/Write/Verify). They need rewriting to match the acts below — tracked as the immediate next step, not yet done. `00b_roadmap.tex` is the first slide built against this structure.
+**Status:** structure locked; slide titles drafted below; `slides/sections/00_open.tex`, `01_ecosystem.tex`, `02_context.tex` predate this and still use the old ten-section framing (Explore/Ground/Build/Record/Write/Verify). They need rewriting to match the acts below — tracked as the immediate next step, not yet done. `00b_roadmap.tex` is the first slide built against this structure. See [`image_plan.md`](image_plan.md) for how every slide's visuals get sourced, before drafting goes further.
 
 ---
 
