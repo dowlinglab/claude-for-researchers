@@ -71,7 +71,7 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 
 ## Act II — Build
 
-**Job:** AI changes what you keep. The hook resolves here in full, then widens to show the same discipline in research code, not just a personal tool.
+**Job:** AI changes what you keep — code, and the documents that describe your work. The hook resolves here in full, then widens twice: to research code that isn't just a personal tool, and to a proposal instead of a codebase.
 
 1. **The hook, in full** — the internal tool → Codex-assisted → tested, documented, CI-backed PyPI package. Real dates, real version numbers (v0.1.2 → v0.3.1, Feb 11–17), the 20-minute live feature-add demo.
 2. **Prototype in notebooks; promote what matures.**
@@ -80,7 +80,8 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 5. **A regression harness is what made a reversed conclusion believable** — the isotherm-correction story, generic.
 6. **Not just a hobby-adjacent tool** — one line each on emcal / bits_for_gaps: the same discipline, in published research code.
 7. **Review the diff, not the summary.**
-8. **The same discipline, applied to a proposal** — draft against the sponsor's form, restore its wording, `latexdiff` before every commit. *(Bridges into Act III's audit theme; could move there instead — see open question below.)*
+8. **The same discipline, on a document instead of code** — draft tersely against the sponsor's own form, restore its exact wording before submission; AI as a compliance reviewer with findings written inline (`\foacomment{}`-style) rather than in a separate comments doc, flagged → fixed → removed.
+9. **Verify every revision before you commit** — the `latexdiff`-against-last-commit habit, word-level, catching a softened claim or a changed number a normal re-read misses. Point to `resources/scripts/latexdiff_check.sh`.
 
 ## Act III — Challenge
 
@@ -92,7 +93,6 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 4. **A clean build printed an empty table for every reviewer** — the silent-failure-mode slide; "a request to enumerate beats a request to confirm."
 5. **My status report was wrong about eleven items; the fix was a script** — deriving status from evidence, not memory.
 6. **Retract in place** — the callback to Act I's correction habit, now in a manuscript instead of a literature review.
-7. **The compliance review, inline** — `\foacomment{}`-style AI-as-reviewer on a proposal, structurally identical to the manuscript audit, applied before submission instead of after a result exists. *(If §8 of Act II moves here instead, this is where it lands.)*
 
 ## Epilogue — Trust
 
@@ -108,6 +108,6 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 
 ## Open questions
 
-- **Where does the proposal-writing material live** — Act II (as a "build" of a document) or Act III (as an audit applied pre-submission)? Leaning Act III; not settled. See `resources/practices/grant_proposal_writing.md`.
-- **Slide count vs. budget.** At-a-glance table above assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue. Needs a real count once `00_open.tex`/`01_ecosystem.tex`/`02_context.tex` are rewritten against this structure — the group-manual algorithm's step 4 ("check you have ~1 slide per minute") hasn't been re-run since the restructure.
+- ~~Where does the proposal-writing material live~~ — resolved 2026-09-02: literature review stays in Act I, proposal writing goes in Act II (§8–9 above), as a second document-shaped instance of "AI changes what you keep," alongside the code-shaped instance the hook already carries.
+- **Slide count vs. budget.** At-a-glance table above assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue. Act II grew by one slide when the proposal-writing bridge line split into two dedicated slides (§8–9) — recheck the total against the 13-minute budget once section files are rewritten. Needs a real count once `00_open.tex`/`01_ecosystem.tex`/`02_context.tex` are rewritten against this structure — the group-manual algorithm's step 4 ("check you have ~1 slide per minute") hasn't been re-run since the restructure.
 - **Feedback pass.** Per the group manual: get outline feedback at least 8 days before the talk. Not yet done.
