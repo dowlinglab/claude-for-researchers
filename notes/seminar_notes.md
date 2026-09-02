@@ -185,3 +185,15 @@ Context: Alex had ten parallel workers inventory a year of his own AI-assisted r
 **Files touched:** `resources/practices/working_with_ai_agents.md` (new), `resources/README.md`, this file.
 
 **Next:** draft the remaining six practice files in the agreed order — `scientific_computing_workflow.md`, `manuscript_audit.md`, then the writing trio, then packaging.
+
+---
+
+## 2026-09-02 (workflow file drafted; style guide rescoped)
+
+**Decisions:**
+- Drafted `resources/practices/scientific_computing_workflow.md`. Its §1 is the phase-matched verification table (discovery / consolidation / refactor / publication), which is the direct answer to Alex's concern that "more pytests is better" is not a universal rule. Two rules carry that section: a green suite is evidence only about the code it executes, and tests are for code you intend *not* to change — during discovery, pinned-value tests are counterproductive because every legitimate change breaks them and you stop reading failures.
+- **`personal_style_guide.md` renamed to `writing_style_guide.md` and rescoped** at Alex's request. It now does three jobs rather than one: the transferable method for deriving and refining a style guide from prior writing; the Dowling Lab register spelled out as the worked instance; and a standard students can write group papers against going forward. Kept as one file because the method and the instance teach each other, and because in an academic group the "group register" and the PI's register are legitimately the same thing — the source material says so directly. The file will mark which parts are group standard versus one author's habits, and close with how to adapt when writing outside the group.
+
+**Files touched:** `resources/practices/scientific_computing_workflow.md` (new), `resources/README.md`, this file.
+
+**Next:** `manuscript_audit.md`, then `technical_writing.md`, `writing_style_guide.md`, `scientific_figures_tables.md`, `private_code_to_public_package.md`.

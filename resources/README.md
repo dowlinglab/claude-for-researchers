@@ -18,16 +18,17 @@ All seven are tool-agnostic, with tool-specific mechanics confined to one clearl
 | File | Seminar section | Scope | Status |
 |---|---|---|---|
 | `working_with_ai_agents.md` | 2, 5 | Session conduct, roles, guardrails, project memory, document lifecycle, portability across tools and machines | **Drafted** |
-| `scientific_computing_workflow.md` | 4 | Notebooks → modules, baseline-then-refactor, phase-matched verification, run provenance | Next |
+| `scientific_computing_workflow.md` | 4 | Notebooks → modules, baseline-then-refactor, phase-matched verification, run provenance | **Drafted** |
 | `manuscript_audit.md` | 7 | Claim tracing, status vocabularies, standards of evidence, retraction | Next |
 | `technical_writing.md` | 6 | Structure, notation, submission readiness, AI-prose drift signals | Planned |
-| `personal_style_guide.md` | 6 | A worked example of a personal voice spec, plus how to derive your own | Planned |
+| `writing_style_guide.md` | 6 | How to derive and refine a style guide; the Dowling Lab register as the worked instance and group standard | Planned |
 | `scientific_figures_tables.md` | 6 | Figure standards, reproducible figures, tables generated not retyped | Planned |
 | `private_code_to_public_package.md` | 4 | Packaging, isolating private data, release engineering, human-only steps | Planned |
 
-Two naming decisions worth recording:
+Three naming and scope decisions worth recording:
 
-- **`personal_style_guide.md`, not a named personal one.** A file named for one author teaches students to adopt that author's voice, which is the opposite of the goal. It presents one worked example, clearly labeled as one person's, and closes with how to derive your own from prior writing.
+- **`writing_style_guide.md` does three jobs** (revised 2026-09-02, at Alex's request): (1) the transferable *method* for deriving and refining a style guide from your own prior writing, (2) the Dowling Lab register spelled out as the worked instance, and (3) a standard students can actually write group papers against going forward. One file rather than three, because the method and the instance teach each other — and because the group register and the PI's register are legitimately the same thing in an academic group, which the source material already says explicitly ("the prose pass should read as the first author writing in the group's established register").
+- **Not named for one person.** A filename carrying an author's name teaches students to imitate a voice rather than to derive one. The file is explicit about which parts are the group standard and which are one author's habits, and closes with how to adapt it when writing outside the group.
 - **`manuscript_audit.md` is a practice file, not only a prompt.** The audit is the seminar's climax and has the deepest evidence base; the prompt version (below) operationalizes it.
 
 ## Layer 2: tools
@@ -70,7 +71,7 @@ resources/
 │   ├── scientific_computing_workflow.md
 │   ├── manuscript_audit.md
 │   ├── technical_writing.md
-│   ├── personal_style_guide.md
+│   ├── writing_style_guide.md
 │   ├── scientific_figures_tables.md
 │   └── private_code_to_public_package.md
 ├── prompts/
