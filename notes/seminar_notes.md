@@ -197,3 +197,16 @@ Context: Alex had ten parallel workers inventory a year of his own AI-assisted r
 **Files touched:** `resources/practices/scientific_computing_workflow.md` (new), `resources/README.md`, this file.
 
 **Next:** `manuscript_audit.md`, then `technical_writing.md`, `writing_style_guide.md`, `scientific_figures_tables.md`, `private_code_to_public_package.md`.
+
+---
+
+## 2026-09-02 (audit file drafted; scripts promoted to real deliverables)
+
+**Decisions:**
+- Drafted `resources/practices/manuscript_audit.md` — the deepest file, 12 sections. Its organizing idea is §1: separate *is the arithmetic right* from *is the method right* from *is the transcription right*, and report them in that order, because merging them guarantees a defensive reading from co-authors. Other load-bearing sections: §3 (state the standard of evidence, **including when not to change something** — that is what makes the changes credible), §5 ("cannot verify" as a first-class status), §7 (determine status from evidence, never recollection), §8 (read the rendered artifact, not the build log; "a request to enumerate is worth more than a request to confirm"), and §10 (audit the audit; retract in place).
+- **`scripts/` are now working defaults, not illustrations**, at Alex's request: a nominal default **DOI checker** and a nominal default **Python figure style module**, both intended for the group and anyone else to adopt on new projects. Each ships with a README, real arguments instead of hardcoded paths, and minimal dependencies.
+- The figure-style module exists because the same lesson was learned twice independently in different projects: plot styling scattered across dozens of scripts makes any later standard unenforceable, so conventions must be fixed centrally once and inherited. It pairs with the compliance checklist in `practices/scientific_figures_tables.md`.
+
+**Files touched:** `resources/practices/manuscript_audit.md` (new), `resources/README.md`, this file.
+
+**Next:** the writing trio (`technical_writing.md`, `writing_style_guide.md`, `scientific_figures_tables.md`), then `private_code_to_public_package.md`, then the scripts.
