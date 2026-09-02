@@ -28,7 +28,11 @@ def main():
     # Anchored above the axes, not inside them. A legend placed inside would sit
     # on top of the curves -- save_fig warns about exactly that. `loc="best"` is
     # not a fix here: with five damped oscillations there is no empty corner.
-    ax.legend(ncol=5, loc="lower center", bbox_to_anchor=(0.5, 1.02),
+    #
+    # ncol=3 rather than 5: at five columns the legend is wider than the plot it
+    # labels, which save_fig also warns about. Three columns wraps to two rows
+    # and stays inside the axes width.
+    ax.legend(ncol=3, loc="lower center", bbox_to_anchor=(0.5, 1.02),
               frameon=False, columnspacing=1.2, handlelength=1.6)
 
     out = os.path.join(HERE, "example")

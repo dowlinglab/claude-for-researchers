@@ -90,13 +90,15 @@ the axis limits to make room, or label the series directly.
 
 This is a correctness issue rather than a matter of taste — a legend over the curves hides the evidence the figure exists to show. Note that **`loc="best"` does not save you**: it minimises overlap and then gives up silently when the axes are full. On a five-series damped oscillation it still covered 131 points in testing.
 
-The fix used in `example.py`:
+**Legend width (`check_layout`)** — warns if the legend is *wider than the axes it labels*. A full-width legend over a narrower plot reads as unbalanced even though nothing is clipped. Fix by using fewer columns so it wraps, or by widening the figure.
+
+The fix used in `example.py` — anchored above, three columns so it wraps to two rows and stays within the plot width:
 
 ```python
-ax.legend(ncol=5, loc="lower center", bbox_to_anchor=(0.5, 1.02), frameon=False)
+ax.legend(ncol=3, loc="lower center", bbox_to_anchor=(0.5, 1.02), frameon=False)
 ```
 
-There is deliberately **no** check for a legend extending past the axes, because anchoring it outside is the recommended fix and `bbox_inches="tight"` includes it. A check that fired on the correct fix would train people to pass `check_layout=False`, taking the overlap check with it.
+Note the predicate that is deliberately *not* used: "legend extends past the right edge of the axes." That fires on the recommended fix — anchoring outside — and a check that cries wolf on correct usage trains people to disable `check_layout`, taking the overlap check with it. "Wider than the axes" catches the real problem without the false positive.
 
 Run your figure scripts with `python -W error::UserWarning` to make these fail rather than warn — useful in CI.
 

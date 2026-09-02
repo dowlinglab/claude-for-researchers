@@ -37,15 +37,15 @@ Three naming and scope decisions worth recording:
 
 **Prompts** (`prompts/`)
 
-1. **`organize_research_repo.md`** — Examine an existing research repository and propose a target architecture (single repo vs. split code/manuscript, staged migration plan) without touching anything until a human approves the plan.
-2. **`manuscript_audit.md`** — The audit toolkit as one prompt with modes: quantitative-claim tracing, methods-vs-code, figure-vs-text, journal-guideline compliance. Cites `practices/manuscript_audit.md` rather than repeating it.
-3. **`literature_workflow.md`** — Process a folder of PDFs: inspect metadata, determine the real citation and DOI, rename consistently, flag duplicates and uncertain metadata (never guess), generate/update `literature.md` and BibTeX.
+1. **`organize_research_repo.md`** — ✅ Examine an existing research repository and propose a target architecture (single repo vs. split code/manuscript, staged migration plan) without touching anything until a human approves the plan.
+2. **`manuscript_audit.md`** — ✅ The audit toolkit as one prompt with modes: quantitative-claim tracing, methods-vs-code, figure-vs-text, journal-guideline compliance. Cites `practices/manuscript_audit.md` rather than repeating it.
+3. **`literature_workflow.md`** — ✅ Process a folder of PDFs: inspect metadata, determine the real citation and DOI, rename consistently, flag duplicates and uncertain metadata (never guess), generate/update `literature.md` and BibTeX.
 
 **Templates** (`templates/`)
 
-4. **`research_log.md`** — The persistent-log template from Outline Section 5.
-5. **`results_manifest.md`** — Connecting a manuscript to the exact commit, script, config, and output behind each figure and table.
-6. **`project_entry_point.md`** — A tool-neutral project context file, per `practices/working_with_ai_agents.md` §2, with thin `CLAUDE.md`/`AGENTS.md` pointer files.
+4. **`research_log.md`** — ✅ The persistent-log template from Outline Section 5.
+5. **`results_manifest.md`** — ✅ Connecting a manuscript to the exact commit, script, config, and output behind each figure and table.
+6. **`project_entry_point.md`** — ✅ A tool-neutral project context file, per `practices/working_with_ai_agents.md` §2, with thin `CLAUDE.md`/`AGENTS.md` pointer files.
 
 **Scripts** (`scripts/`)
 
@@ -54,7 +54,7 @@ These are meant to be **working defaults** that the group and others can drop in
 7. **`doi_checker/`** — ✅ **Built and tested.** The nominal default DOI checker. Verifies references against Crossref in two passes kept deliberately apart *because they fail differently*: (1) for entries that have a DOI, does it resolve to the work the entry actually describes — fuzzy title match plus author-surname check, graded `MATCH` / `CHECK` / `MISMATCH`; (2) for entries lacking one, does Crossref know a DOI, proposed only above a stricter threshold. **It proposes and never writes**, because a DOI that resolves to the wrong paper is worse than a missing one and looks identical on the page. Adapted from a working script; the work is parameterizing paths into `--bib` / `--tex` / `--mailto` and restricting checks to keys actually cited.
 8. **`figure_style/`** — ✅ **Built and tested.** The nominal default Python figure style. A small module implementing the group's publication-quality figure guidelines as matplotlib settings, plus a `save_fig` helper that enforces size, resolution, and format, and a short set of standard plot helpers. The point is that a project fixes figure conventions **centrally, once**, so later work inherits them — two separate projects independently discovered that scattering plot styling across dozens of scripts makes any later standard unenforceable. Ships with the compliance checklist from `practices/scientific_figures_tables.md` so a figure set can be audited against it.
 9. **`check_margins.py`** — Geometric overfull-box detection from a rendered PDF, because a clean LaTeX build does not reliably surface them. Already general-purpose; needs packaging and a README.
-10. **`check_docs.py`** — ~40 lines. Flags internal links that don't resolve, living documents older than the commits that changed what they describe, and supersession banners naming files that don't exist. Turns `practices/working_with_ai_agents.md` §9 from advice into a gate.
+10. **`check_docs.py`** — ✅ **Built and tested.** Flags markdown links that don't resolve, living documents the repository has moved past (measured in commits behind `HEAD`), and supersession banners naming a successor file that doesn't exist. Exits non-zero, so it can gate a commit or CI. This is `practices/working_with_ai_agents.md` §9 applied to the repository's own documentation — the rule that written instructions degrade unless something fails when they do.
 
 ## Also planned (lower priority)
 

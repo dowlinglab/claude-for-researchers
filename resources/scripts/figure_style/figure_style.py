@@ -218,8 +218,8 @@ def _check_legend(fig, margin: float = 2.0) -> None:
                       (pts[:, 1] >= box.y0) & (pts[:, 1] <= box.y1))
             covered += int(inside.sum())
 
+        where = f"axes {i}" if len(fig.get_axes()) > 1 else "the axes"
         if covered:
-            where = f"axes {i}" if len(fig.get_axes()) > 1 else "the axes"
             warnings.warn(
                 f"legend on {where} covers {covered} plotted data point(s). "
                 "A legend must not sit on top of the data. Move it outside the "
@@ -228,10 +228,19 @@ def _check_legend(fig, margin: float = 2.0) -> None:
                 stacklevel=4,
             )
 
-    # Deliberately no "legend extends past the axes" check: anchoring a legend
-    # outside the axes is the recommended fix above, and savefig(bbox_inches=
-    # "tight") includes it. A check that fired on the correct fix would train
-    # people to disable check_layout, taking the overlap check with it.
+        # A legend anchored outside the axes is the recommended fix above, so
+        # "extends past the right edge" is the WRONG predicate -- it fires on
+        # correct usage. The real rule is that the legend should not be wider
+        # than the thing it labels: a full-width legend over a narrower plot
+        # reads as unbalanced even though nothing is clipped.
+        ax_bb = ax.get_window_extent(renderer)
+        if bb.width > ax_bb.width + margin:
+            warnings.warn(
+                f"legend on {where} is wider than the axes "
+                f"({bb.width / fig.dpi:.2f} vs {ax_bb.width / fig.dpi:.2f} in). "
+                "Use fewer columns so it wraps, or widen the figure.",
+                stacklevel=4,
+            )
 
 
 def _git_state(path: str) -> dict:
