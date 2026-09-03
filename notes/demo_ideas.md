@@ -40,7 +40,7 @@ Outside this taxonomy by design: the Prologue/Epilogue hobby material (`grad-vis
 
 **Act I's role, sharpened 2026-09-02: a sell, not a payoff.** Its one argument is that version control is the prerequisite that unlocks what Codex/Claude Code can do — not a demonstrated outcome. The mature-example slide (originally planned here, showing "Optimization for Decision Science"'s well-kept `CLAUDE.md`) was **cut from Act I entirely** rather than kept as an early teaser, so the act doesn't dilute its own sell with a taste of the payoff. That example now appears fresh in Act III's capstone instead of being planted here first.
 
-Slides 4-5 restored 2026-09-02 from `02_context.tex`'s original "three kinds of context" and project-file frames, which predated the three-act restructure and had been dropped when it happened — Alex's call to bring them back rather than treat them as redundant with slide 3. The `02_context.tex` file itself still needs to be split apart and rewritten into this table's slides plus Act III's, not done yet.
+Slides 4-5 restored 2026-09-02 from `02_context.tex`'s original "three kinds of context" and project-file frames, which predated the three-act restructure and had been dropped when it happened — Alex's call to bring them back rather than treat them as redundant with slide 3. Built in `slides/sections/02_act1_understand.tex`, which replaces `02_context.tex` (removed); that file's fifth frame, the "honest limit" story, still needs to land in Act III once that file exists.
 
 | # | Concrete task | Example | Principle | Practice file |
 |---|---|---|---|---|

@@ -4,7 +4,7 @@ Every visual in the deck, planned before more slides get drafted. Companion to [
 
 ## Three kinds of visual, and how each gets made
 
-**A. Typeset text-artifacts** (`lstlisting`, `tabular`, TikZ boxes) — commit messages, file trees, code, macros. **No image file.** Typeset directly, styled with the deck's existing `\lstset{style=plain}`. Crisper than a screenshot at projector resolution, and the pattern is already established (`02_context.tex`'s commit-message slide).
+**A. Typeset text-artifacts** (`lstlisting`, `tabular`, TikZ boxes) — commit messages, file trees, code, macros. **No image file.** Typeset directly, styled with the deck's existing `\lstset{style=plain}`. Crisper than a screenshot at projector resolution, and the pattern is already established (`02_act1_understand.tex`'s commit-message slide).
 
 **B. Constructed diagrams** (TikZ) — the act strip, workflow arrows, the claim-tracing table. Built in LaTeX, not an image file. Same reasoning as A: vector, scales, matches the palette exactly.
 
@@ -42,10 +42,10 @@ Rewritten 2026-09-02 against the current 8-slide list in `storyboard.md` — the
 | 2 | State the shift | the same commit, referenced again, not a fresh generic diagram | A | reuses slide 1's artifact rather than illustrating "conversation vs. repository" in the abstract — keeps the real example doing the work across two slides instead of one |
 | 3 | What git and GitHub actually give you | a real screenshot of the `emcal` repo landing page | C | **ready to capture now**: public repo, no confidentiality concern — already listed under "what needs capturing" below. Shows what a commit/repository/GitHub host actually look like, anchored to the same failure |
 | 4 | Three kinds of context | the membrane-transport project's own persistent/authoritative/task context, named concretely (its conventions; its actual model and data; this run's question) | A | text-artifact, illustrative — Type 1, so generic, no project name; this is the fix for the version of this slide that stated the taxonomy with no example at all |
-| 5 | One file, read at the start of every session | that same project's actual `CLAUDE.md`, shown in full via `lstlisting` (already drafted in the current `02_context.tex`) | A | text-artifact, illustrative, generic — continues slide 4's example rather than switching projects |
-| 6 | Parallel A, idea-first: cross two literatures | a real annotation-schema excerpt | A | text-artifact, generalized (no project name) — matches how `literature_review.md` already handles it |
-| 7 | Parallel A, corpus-first: the corpus becomes someone's starting point | the getting-started report's actual section list | A | text-artifact only — the underlying project is private; show the *structure*, never the content |
-| 8 | Parallel B, closing: a departed collaborator's notebook → git | none | — | generic by design, no artifact to show — the point is the absence of one (no version control existed to screenshot) |
+| 5 | One file, read at the start of every session | that same project's actual `CLAUDE.md`, shown in full via `lstlisting` (built in `02_act1_understand.tex`) | A | text-artifact, illustrative, generic — continues slide 4's example rather than switching projects |
+| 6 | Parallel A, idea-first: cross two literatures | a real annotation-schema excerpt, plus a small generic TikZ diagram: two literature streams (icons or labeled boxes) converging on one idea | A + B | text-artifact, generalized (no project name) — matches how `literature_review.md` already handles it; the diagram gives the slide something to look at beyond the excerpt, without naming the proposal |
+| 7 | Parallel A, corpus-first: the corpus becomes someone's starting point | the getting-started report's actual section list, plus a small generic TikZ diagram: a folder of PDFs -> a report icon | A + B | text-artifact only for the content — the underlying project is private; show the *structure*, never the content. The diagram is process, not content, so it carries no confidentiality risk |
+| 8 | Parallel B, closing: a departed collaborator's notebook → git | a generic TikZ workflow diagram: local notebook (no backup) -> `git init` -> GitHub, three boxes with an arrow each | B | added 2026-09-02, replacing "none" — Alex's note: an anonymized slide should still get a constructed procedure diagram, not go visual-less by default. Diagrams are process, not content, so the name-protection rule doesn't block them |
 
 ## Act II — Build
 

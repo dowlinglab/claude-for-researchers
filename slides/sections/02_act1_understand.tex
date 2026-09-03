@@ -1,0 +1,224 @@
+% ========================= ACT I: UNDERSTAND =========================
+% storyboard.md Act I, all 8 slides. Replaces 02_context.tex entirely (was
+% built against the old ten-section outline and only ever covered 2 of
+% these 8 slides in a form worth keeping -- both reused below almost
+% verbatim: slides 1-2 are 02_context.tex's old "commit message" and
+% "shift" frames, retitled to state their point per style_guide.md rule 5.
+%
+% Job (storyboard.md): a sell, not a payoff. Version control is the
+% prerequisite that unlocks Codex/Claude Code -- not a demonstrated
+% outcome. The mature, sophisticated result stays out of this act entirely
+% (Act III's capstone), so this act argues one thing and stops.
+%
+% Every slide here is grounded in a specific example (Alex's note,
+% 2026-09-02: use cases are what holds the room's attention and the source
+% of the visuals -- no slide should rest on an abstract statement with
+% nothing to look at). Slides 4-5 share one running example (a generic
+% membrane-transport project, Type 1 in demo_ideas.md) rather than 4
+% illustrating the taxonomy in the abstract and 5 switching projects.
+% Slides 6-8 are anonymized by the naming convention (Type 4/5 and a
+% generic "inherited project" case) but still get a constructed workflow
+% diagram each, per the same note: an anonymized example still deserves a
+% visual, just a process diagram instead of real content.
+
+\begin{frame}[fragile]{The easiest mistake in this talk to make}
+  \vfill
+  {\scriptsize A real commit message, verbatim, from one of my own best-run projects.}
+  \begin{lstlisting}
+Trim analysis and plotting to per-run only
+
+  See conversation for the full KEEP/REMOVE inventory
+  and cross-dependency sever plan.
+  \end{lstlisting}
+  \vfill
+  \begin{center}
+    {\large That conversation no longer exists.}\\[0.7em]
+    {The change is still in the repository.\\
+     The reasoning behind it is not.}
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{The filesystem is the source of truth}
+  \vfill
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \begin{center}\textbf{A conversation}\end{center}
+      \begin{itemize}
+        \item not versioned
+        \item not shared with collaborators
+        \item not searchable next year
+        \item gone when the session ends
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{center}\textbf{A repository}\end{center}
+      \begin{itemize}
+        \item versioned
+        \item shared by construction
+        \item greppable
+        \item outlives everyone involved
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+
+% TODO(image_plan.md Act I #3): upgrade to a real screenshot of the
+% dowlinglab/emcal repo landing page (public, ready to capture) once a
+% browser pass runs -- typeset explainer below is the fallback, not final.
+\begin{frame}{What git and GitHub actually give you}
+  \vfill
+  {\scriptsize Same commit as the last slide: \texttt{dowlinglab/emcal}, commit \texttt{31184f4}.}
+  \vspace{0.6em}
+  \begin{columns}[t]
+    \begin{column}{0.31\textwidth}
+      \textbf{A commit}\\[0.4em]
+      {\small A saved, timestamped, attributed snapshot of every file, with a message explaining why.}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \textbf{A repository}\\[0.4em]
+      {\small The full history of every commit. Any past state is one command away.}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \textbf{GitHub}\\[0.4em]
+      {\small Hosts the repository. Makes it shared and backed up by construction, not by discipline.}
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+
+\begin{frame}{A chat history can't hold any of these three}
+  \vfill
+  {\scriptsize A membrane-transport project's actual context, in each of the three kinds.}
+  \vspace{0.4em}
+  \begin{columns}[t]
+    \begin{column}{0.31\textwidth}
+      {\color{NDBlue}\textbf{Persistent}}\\[0.4em]
+      {\small Results are deterministic. A changed number is a finding, not noise.}\\[0.7em]
+      {\scriptsize$\rightarrow$ true across every session}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      {\color{NDBlue}\textbf{Authoritative}}\\[0.4em]
+      {\small The actual model code and experimental data --- not a description of them.}\\[0.7em]
+      {\scriptsize$\rightarrow$ point at it, never summarize it}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      {\color{NDBlue}\textbf{Task}}\\[0.4em]
+      {\small This run's question: replicate weighting, right now.}\\[0.7em]
+      {\scriptsize$\rightarrow$ the prompt (save it if it matters)}
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+
+\begin{frame}[fragile]{Write down what you'd otherwise re-explain every session}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.62\textwidth}
+      \begin{lstlisting}
+# Project
+
+Membrane transport parameter estimation.
+
+## Where things are
+  src/       the model
+  results/   written by scripts; never by hand
+  configs/   every run is a config file
+
+## How to run
+  conda activate diafiltration
+  python -m pytest -m "not slow"
+
+## Conventions
+  Results are deterministic. A change in a
+  number is a finding, not noise.
+
+## Current state
+  Working on: replicate weighting
+  Resume at: notes/log.md, 2026-08-14
+      \end{lstlisting}
+    \end{column}
+    \begin{column}{0.34\textwidth}
+      \small
+      Name it neutrally.\\[0.6em]
+      \texttt{CLAUDE.md} and \texttt{AGENTS.md}\\
+      become three-line pointers to it.\\[1.2em]
+      Neither tool reads the other's file --- so the content lives
+      in one place and the tool files just point.
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+
+\begin{frame}{Bring in a second literature to pressure-test an idea}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[font=\small]
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1cm, align=center]
+          (a) at (0,1.3) {Literature A\\\scriptsize (the home field)};
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1cm, align=center]
+          (b) at (0,-1.3) {Literature B\\\scriptsize (crossed in on purpose)};
+        \node[draw=NDGold, rounded corners=2pt, minimum width=3.1cm, minimum height=1cm, align=center, fill=CodeBg]
+          (c) at (3.6,0) {The idea,\\pressure-tested};
+        \draw[-{Stealth[length=6pt]}, NDBlue, thick] (a) -- (c);
+        \draw[-{Stealth[length=6pt]}, NDBlue, thick] (b) -- (c);
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \small
+      A chromatography project, crossed deliberately with a second field's digital-twin literature.\\[0.8em]
+      Not incidental background reading --- the second literature's whole job is to pressure-test the first idea.
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+
+\begin{frame}{Interpret the evidence --- don't copy the abstract}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[font=\small]
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.4cm, minimum height=1cm, align=center]
+          (a) at (0,1.2) {A folder of PDFs};
+        \draw[-{Stealth[length=6pt]}, NDBlue, thick] (a) -- (0,0.35);
+        \node[draw=NDGold, rounded corners=2pt, minimum width=3.4cm, minimum height=1cm, align=center, fill=CodeBg]
+          (b) at (0,-0.5) {A getting-started report,\\\scriptsize claims validated};
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \small
+      A watershed decision-support project and a coastal desalination project, both onboarded this way.\\[0.8em]
+      The report says what the evidence changes about the project's next decision --- not what each paper already says about itself.
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+
+\begin{frame}{Version control is the prerequisite}
+  \vfill
+  \begin{center}
+  \begin{tikzpicture}[font=\small, node distance=1.4cm]
+    \node[draw=OkVermillion, rounded corners=2pt, minimum width=3.6cm, minimum height=1cm, align=center]
+      (a) {Local notebook\\\scriptsize no backup, no history};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.0cm, minimum height=1cm, align=center, right=of a]
+      (b) {\texttt{git init}};
+    \node[draw=OkGreen, rounded corners=2pt, minimum width=3.6cm, minimum height=1cm, align=center, right=of b, fill=CodeBg]
+      (c) {GitHub\\\scriptsize shared, backed up, versioned};
+    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    A departed collaborator's project, generic. No version control existed --- the first step was making one exist.
+  \end{center}
+  \vfill
+  \begin{center}
+    \slidepoint{Version control is the prerequisite ---\\what it unlocks is the rest of this talk.}
+  \end{center}
+  \vfill
+\end{frame}
