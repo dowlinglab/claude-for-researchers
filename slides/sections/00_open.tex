@@ -1,11 +1,26 @@
 % ======================= PROLOGUE: THE HOOK, THE CLAIM =======================
 % storyboard.md Prologue items 2-3 ("The teaser", "The claim") -- REVAMPED
 % 2026-09-03 at Alex's request: the old single-slide teaser undersold the
-% hook. Now four frames: a real timeline, a real generated schedule, the
-% Codex-conversion story, and "The claim" -- previously the first frame
-% after the title -- now lands after the story as the takeaway, not before
-% it. Item 4 ("Borrowed structure") is 00b_roadmap.tex; item 1 (title) is
-% in main.tex.
+% hook. Now three frames: the timeline + real schedule merged into one
+% opener, the Codex-conversion story, and "The claim" -- previously the
+% first frame after the title -- now lands after the story as the
+% takeaway, not before it. Item 4 ("Borrowed structure") is
+% 00b_roadmap.tex; item 1 (title) is in main.tex.
+%
+% MERGED 2026-09-03 (later the same day), per Alex reading the built deck
+% directly: the timeline frame and the real-schedule frame were two
+% separate slides with one thesis each -- merged into one, sample
+% schedule on the left, the (now vertical) timeline on the right, plus a
+% new "before 2023" box for the DGA's hand-scheduling that used to be a
+% prose sentence. Less text throughout, per his explicit request. The
+% schedule image itself was also remade: the original 9-visitor version's
+% in-bar labels were too small to read (the plotting library hardcodes an
+% 8pt label on a fixed 12x10in canvas regardless of visitor count) --
+% patched a scratch copy of the installed package (fontsize 8 -> 20,
+% bbox_inches="tight" on save) and re-ran with just 3 visitors (Pooh,
+% Piglet, Tigger) for a legible, presentation-sized result. Patch and
+% generation script are throwaway, not checked into this repo; the output
+% PNG (figures/grad_visit_schedule_3.png) is the artifact that matters.
 %
 % VERIFIED 2026-09-03 against git history in both repos (private:
 % ndcbe/grad-visit-scheduling; public: dowlinglab/grad-visit-scheduler),
@@ -57,74 +72,70 @@
 % question stays here as an open hook the rest of the talk answers
 % implicitly; nothing elsewhere echoes it verbatim anymore.
 
-\begin{frame}{Before Codex: a notebook, then years of patches}
+\begin{frame}{Before Codex: a decade of schedules, one real run}
   \vfill
-  \begin{center}
-  \begin{tikzpicture}[font=\small, node distance=1.3cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1.3cm, align=center]
-      (a) {\textbf{2023}\\\scriptsize Jeff Kantor \& I\\build the notebook};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1.3cm, align=center, right=of a]
-      (b) {\textbf{2024--2025}\\\scriptsize I run it alone,\\patch it by hand};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=3.1cm, minimum height=1.3cm, align=center, right=of b, fill=CodeBg]
-      (c) {\textbf{Feb 2026}\\\scriptsize I convert it\\with Codex};
-    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
-    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
-  \end{tikzpicture}
-  \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    \small Before the notebook: hand-built by the DGA, about 10 hours, redone from scratch for every faculty and visitor change.
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    \small 2023: \keyterm{Jeff Kantor} and I formulate it as an optimization problem. 2024--2025, alone: better schedule graphics, break and overlap rules, capacity limits per faculty.
-  \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{What the tool actually produces}
-  \vfill
-  \begin{center}
-    \includegraphics[height=5.6cm]{figures/grad_visit_schedule_demo}
-  \end{center}
-  \vspace{0.3em}
-  \begin{center}
-    {\scriptsize Real optimizer, real ND CBE faculty --- fictional visitors (Winnie-the-Pooh characters), so no real visitor's schedule ships in a public deck.}
-  \end{center}
+  \begin{columns}[c]
+    \begin{column}{0.6\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{figures/grad_visit_schedule_3}\\[0.2em]
+      {\scriptsize Real optimizer, real ND CBE faculty --- fictional visitors.}
+    \end{column}
+    \begin{column}{0.36\textwidth}
+      \centering
+      \begin{tikzpicture}[font=\scriptsize, node distance=0.18cm]
+        \node[draw=OkVermillion, rounded corners=2pt, minimum width=3.1cm, minimum height=0.8cm, align=center]
+          (a) {\textbf{Before 2023}\\DGA: $\sim$10 hrs};
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=0.8cm, align=center, below=of a]
+          (b) {\textbf{2023}\\Jeff Kantor \& I};
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=0.8cm, align=center, below=of b]
+          (c) {\textbf{2024--2025}\\I run it alone};
+        \node[draw=NDGold, rounded corners=2pt, minimum width=3.1cm, minimum height=0.8cm, align=center, below=of c, fill=CodeBg]
+          (d) {\textbf{Feb 2026}\\with Codex};
+        \draw[-{Stealth[length=5pt]}, thick] (a) -- (b);
+        \draw[-{Stealth[length=5pt]}, thick] (b) -- (c);
+        \draw[-{Stealth[length=5pt]}, thick] (c) -- (d);
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% Tightened 2026-09-03 (spacing + trimmed ~15 words) to clear the bigger,
-% corner-tighter logo -- this was the deck's densest slide already; see
-% main.tex's \ndcornerlogo comment for why every content-heavy frame
-% needed a second look after that change, not just this one. Retitled and
-% re-dated the same day per the git-verified corrections above.
+% REVISED 2026-09-03 (later the same day): the horizontal version-dot
+% timeline is gone (it also had a fabricated tag, "v0.2.5" -- the real
+% public repo has no such release; the true tag list is v0.1.1, v0.1.2,
+% v0.2.0, v0.2.1, v0.3.0, v0.3.1, v0.4.0, v0.5.0). Replaced with a column
+% of the four real tags that actually carry a big change, per Alex's
+% request ("focus on just the versions with big changes"), each row
+% verified against the public repo's own CHANGELOG.md, not reconstructed
+% from memory. v0.1.2, v0.2.1, v0.4.0, v0.5.0 (docs-only or later-in-
+% February/March) are left out -- the four shown are the ones inside the
+% Feb 11-17 week this slide is actually about. Also much less prose, per
+% the same request: the "8.5 more hours ... 100% test coverage" sentence
+% is cut (the table's own v0.3.1 row already says "full test coverage"),
+% and the sabbatical/Carla beats are compressed into one sentence.
 \begin{frame}[fragile]{One Monday with Codex, and I kept going}
   \vfill
   \begin{center}
-  \begin{tikzpicture}[font=\scriptsize]
-    \foreach \x/\lbl in {0/v0.1.2, 2.2/v0.2.0, 4.4/v0.2.5, 6.6/v0.3.1} {
-      \fill[NDGold] (\x,0) circle (2pt);
-      \node[below] at (\x,-0.13) {\lbl};
-    }
-    \draw[thick, NDBlue] (0,0) -- (6.6,0);
-    \node[above] at (0,0.18) {Feb 11};
-    \node[above] at (6.6,0.18) {Feb 17};
-  \end{tikzpicture}
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Version} & \textbf{Date} & \textbf{What changed} \\
+    \midrule
+    \texttt{v0.1.1} & Feb 10 & Initial public package release \\
+    \texttt{v0.2.0} & Feb 13 & Top-N schedules; automated PyPI release \\
+    \texttt{v0.3.0} & Feb 13 & Any number of buildings, travel time \\
+    \texttt{v0.3.1} & Feb 17 & Full test coverage; docs complete \\
+    \bottomrule
+  \end{tabular}
   \end{center}
-  \vspace{0.1em}
+  \vspace{0.6em}
   \begin{center}
-    \small On sabbatical this past February, I nearly turned down the ask --- then decided to use it as an excuse to really try Codex.
+    \small On sabbatical this past February, I nearly said no --- then spent 1.5 hours reformatting \keyterm{Carla}'s spreadsheet with Codex, and kept going.
   \end{center}
-  \vspace{0.1em}
+  \vspace{0.4em}
   \begin{center}
-    \small About 1.5 hours: Codex reformatted \keyterm{Carla}'s spreadsheet and regenerated the schedule. I kept going --- 8.5 more hours turned the notebook into a tested, documented, pip-installable package (\texttt{grad-visitor-scheduler}) with 100\% test coverage.
+    {\small\itshape Live today: one feature, start to finish, in about 20 minutes.}
   \end{center}
-  \vspace{0.15em}
-  \begin{center}
-    {\small\itshape Live, right now: adding one feature, start to finish, in about 20 minutes.}
-  \end{center}
-  \vspace{0.15em}
+  \vspace{0.4em}
   \begin{center}
     \slidepoint{How do we train the next generation to get both?}
   \end{center}
