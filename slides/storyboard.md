@@ -2,7 +2,7 @@
 
 The talk's structure, locked 2026-09-02, following the Dowling Lab presentation-planning algorithm (group manual §Presentations): question → main points → outline → slide budget → slide titles → feedback → slides. This file is steps 3–6.
 
-**Status:** structure locked; all of Prologue and Act I built (`00_open.tex`, `00b_roadmap.tex`, `01_ecosystem.tex`, `02_act1_understand.tex` — the last replaces the old `02_context.tex`, whose two salvageable frames it reuses and whose other three are now placed per the "Open questions" entry below). Act II, Act III, and the Epilogue don't have section files yet — building these 2026-09-02 onward. See [`image_plan.md`](image_plan.md) for how every slide's visuals get sourced, before drafting goes further.
+**Status:** structure locked; Prologue, Act I, and Act II built (`00_open.tex`, `00b_roadmap.tex`, `01_ecosystem.tex`, `02_act1_understand.tex`, `03_act2_build.tex`). Act III and the Epilogue don't have section files yet — building these 2026-09-02 onward. Several slides carry a `TODO` comment for a real screenshot not yet captured (grad-visit-scheduler's PyPI/tags/commit-graph, emcal/bits_for_gaps repo pages, a real `latexdiff` output) — a typeset fallback ships in the meantime so no slide is empty. See [`image_plan.md`](image_plan.md) for the full list and sourcing per slide.
 
 ---
 
