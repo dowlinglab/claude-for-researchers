@@ -84,13 +84,42 @@
 % carries one short sentence, not just a year and a fragment -- still
 % grounded in the same git-verified facts as before, just spelled out
 % instead of abbreviated to fit a tighter box.
+%
+% BUG FOUND AND FIXED 2026-09-03 (further feedback, same day): Alex
+% caught it visually -- "Tigger is going from NSH to MCH without a
+% break" -- and asked whether this was a real package bug. Investigated
+% against the installed v0.5.0 source directly: NOT a package bug. The
+% demo's own run config (config_demo.yaml, scratch-only) set
+% `movement: {policy: none}` and `faculty_breaks=0, student_breaks=0`,
+% which explicitly disables the package's real travel-time enforcement
+% -- a setting carried over unchanged from the earlier legibility-only
+% 3-visitor version, never revisited once visitor count/building mix
+% grew. The real package supports three real movement policies (`none`,
+% `travel_time`, `nonoverlap_time`, in
+% grad_visit_scheduler/config.py's load_run_config) with a configurable
+% `min_buffer_minutes`. Regenerated with `policy: travel_time,
+% min_buffer_minutes: 10, travel_slots: auto` -- feasible, and every
+% visitor's building transitions now carry a real gap. Image
+% regenerated at 200dpi (same fontsize/pad/subplots_adjust recipe as
+% before) and swapped in under the same filename
+% (figures/grad_visit_schedule_6.png). Generation scripts remain
+% scratch-only, not checked into this repo, per the pattern established
+% for every image in this file.
+%
+% Left image enlarged 2026-09-03 (further feedback), height 5cm -> 6.0cm,
+% per Alex's request. Also dropped the "Real optimizer, real ND CBE
+% faculty --- fictional visitors." caption under it (Alex: "The schedule
+% on slide 2 does not need a caption") -- that's what made room for a
+% larger size at all; without cutting the caption, anything past ~5.3cm
+% collided with the corner logo. 6.8cm was tried next and still
+% collided (the image's own white canvas background, not just its
+% content, reaches the logo) -- 6.0cm is the largest that clears it.
 \begin{frame}{Before Codex: a decade of schedules, one real run}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.52\textwidth}
       \centering
-      \includegraphics[height=5cm]{figures/grad_visit_schedule_6}\\[0.2em]
-      {\scriptsize Real optimizer, real ND CBE faculty --- fictional visitors.}
+      \includegraphics[height=6.0cm]{figures/grad_visit_schedule_6}
     \end{column}
     \begin{column}{0.44\textwidth}
       \centering
@@ -141,48 +170,79 @@
 % Epilogue-cut precedent rather than contradicting it. New line is
 % Alex's own account of what happened next, lightly tightened for length
 % and a typo fixed ("discusses" -> "discussing" -> compressed out
-% entirely). NOTE: this now overlaps thematically with Act II's opener
-% ("As promised -- and why it mattered": "this success is why he got
-% everyone in the group access to Codex") -- both beats now say "the
-% group got access as a result." Flagged, not resolved -- worth a look
-% at Act II's slide once this one is confirmed, since the two might now
-% be saying the same thing twice.
+% entirely). RESOLVED 2026-09-03 (further feedback, same day): this used
+% to be flagged as overlapping thematically with Act II's old opener
+% ("As promised --- and why it mattered," which said the same "got the
+% group onto Codex" beat) -- moot now, that slide is cut (Alex: "Act II
+% can just [go] right into BITS for GAPS"). This is the only place that
+% beat is told.
 %
-% FIXED 2026-09-03 (same-day follow-up): the two new table rows plus the
-% new closing line overloaded the slide -- the first render after those
-% changes still collided (the two-line slidepoint crowded both itself
-% and the corner logo even after tightening every intermediate vspace).
-% Cut the "Live today: one feature ... 20 minutes" line to reclaim a
-% full line of height -- it's a forward-pointer unique to this slide
-% (grep confirms it appears nowhere else), not part of the git-
-% archaeology story, and can be said aloud when introducing the live
-% demo instead. Also gave the slidepoint's own manual line break
-% \\[0.3em] of extra room so its two lines don't crowd each other at
-% \large size.
-\begin{frame}[fragile]{One Monday with Codex, and I kept going}
-  \vfill
-  \begin{center}
-  \small
-  \begin{tabular}{@{}lll@{}}
-    \toprule
-    \textbf{Version} & \textbf{Date} & \textbf{What changed} \\
-    \midrule
-    \texttt{---} & Feb 9 & Draft 1: Carla's spreadsheet reformatted, schedule regenerated \\
-    \texttt{---} & Feb 9 & Refactor started: notebook $\to$ tested package \\
-    \texttt{v0.1.1} & Feb 10 & Initial public package release \\
-    \texttt{v0.2.0} & Feb 13 & Top-N schedules; automated PyPI release \\
-    \texttt{v0.3.0} & Feb 13 & Any number of buildings, travel time \\
-    \texttt{v0.3.1} & Feb 17 & Full test coverage; docs complete \\
-    \bottomrule
-  \end{tabular}
-  \end{center}
-  \vspace{0.4em}
+% REBUILT 2026-09-03 (further feedback, same day), three changes at
+% once: (1) Title changed to "Jupyter Notebook -> public Python package
+% in 10 hours," Alex's own phrasing -- UNVERIFIED, see the note above
+% the frame below, flag this to Alex before treating it as final. (2)
+% Two columns: the table trimmed to fit the left half (per Alex's
+% suggested shorter phrasing, "Draft 1 of 2026 schedule" / "notebook ->
+% tested package," and every other row shortened the same way to fit);
+% the real Read the Docs screenshot moved here from Act II's now-cut
+% opener slide (figures/grad_scheduler_screenshot_crop.png) fills the
+% right half -- it independently confirms "Created by Alex Dowling and
+% Jeff Kantor," so it does real work here, not just decoration. (3) The
+% closing line no longer bolds the whole sentence -- Alex: "I do not
+% like have an entire sentence in bold. My style is instead to bold a
+% few key words." Rewritten by hand (bypassing \slidepoint, which bolds
+% its whole argument) with only "ND OpenAI seat" and "Codex best
+% practices" bolded. NOTE, not yet resolved: \slidepoint is used the
+% old (whole-sentence-bold) way on every other closing-point slide in
+% the deck -- flag whether Alex wants the same narrower-bold treatment
+% applied everywhere, or just here.
+%
+% UNVERIFIED CLAIM, flag before the talk: "10 hours" in the title. Real
+% timestamps only support two clean endpoints for "notebook -> public
+% package": refactor started (private repo, "Started to restructure as
+% a package," Mon Feb 9, 10:03 PM) to the first public/PyPI release
+% (public repo, tag v0.1.1, Tue Feb 10, 4:39 PM) -- that span is ~18.5
+% elapsed hours, not 10, and it crosses an overnight gap the title's
+% single-day framing doesn't acknowledge. "10 hours" may instead be
+% Alex's own recollection of active hands-on-keyboard time (git commit
+% timestamps can't confirm or rule that out -- gaps between commits
+% aren't necessarily idle time). Left as Alex wrote it; needs his
+% confirmation, not a silent substitution.
+\begin{frame}[fragile]{Jupyter Notebook $\to$ public Python package in 10 hours}
+  \begin{columns}[T]
+    \begin{column}{0.46\textwidth}
+      \begin{minipage}[t]{\linewidth}
+      \centering
+      \footnotesize
+      \begin{tabular}{@{}lll@{}}
+        \toprule
+        \textbf{Ver.} & \textbf{Date} & \textbf{What changed} \\
+        \midrule
+        \texttt{---} & Feb 9 & Draft 1 of 2026 schedule \\
+        \texttt{---} & Feb 9 & notebook $\to$ tested pkg \\
+        \texttt{v0.1.1} & Feb 10 & Initial public release \\
+        \texttt{v0.2.0} & Feb 13 & Top-N schedules \\
+        \texttt{v0.3.0} & Feb 13 & Multi-building, travel time \\
+        \texttt{v0.3.1} & Feb 17 & Full tests, docs complete \\
+        \bottomrule
+      \end{tabular}
+      \end{minipage}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{minipage}[t]{\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{figures/grad_scheduler_screenshot_crop}\\[0.3em]
+      {\scriptsize The package's own Read the Docs page, live today.}
+      \end{minipage}
+    \end{column}
+  \end{columns}
+  \vspace{0.7em}
   \begin{center}
     \small On sabbatical this past February, I nearly said no --- then decided to use it as an excuse to really try Codex.
   \end{center}
-  \vspace{0.5em}
+  \vspace{0.6em}
   \begin{center}
-    \slidepoint{I got everyone in my group an ND OpenAI seat ---\\[0.3em]and we spend part of our weekly meeting on Codex best practices.}
+    \normalsize\color{NDBlue} I got everyone in my group an \textbf{ND OpenAI seat} --- and we spend part of our weekly meeting on \textbf{Codex best practices}.
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
