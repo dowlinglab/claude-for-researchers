@@ -71,8 +71,8 @@ Each act and the Epilogue now opens on a quick, bold `\stagedivider` transition 
 | Act I | **Understand** | A sell: git is the prerequisite, not the payoff. **Rebuilt 2026-09-03**, compiles clean, visually checked | 7 (incl. divider) | 8.5 min |
 | Act II | **Build** | The hook's impact, resolved; Task 4 (BITS for GAPS) in depth; closes on a best-practices takeaway. **Built 2026-09-03**, compiles clean, visually checked | 10 (incl. divider) | 12.5 min |
 | Act III | **Challenge** | It tells me I'm wrong, closing on a capstone. **Rebuilt 2026-09-03**, labeled Task 5/6, plus a setup slide for Task 5 | 8 (incl. divider) | 11 min |
-| Epilogue | **Trust** | The IT-policy "trust" beats; close on curiosity. "Back to the question" **cut 2026-09-03** — Alex's call | 7 (incl. divider) | 5.5 min |
-| | | **Total** | **41 (built)** | **~44.5 min**, all sections built; Alex is now doing a slide-by-slide feedback pass on the built deck (started with the Prologue) |
+| Epilogue | **Trust** | The IT-policy "trust" beats; close on curiosity. "Back to the question" **cut 2026-09-03** — Alex's call. Hobby slide revised (real project list, git-tracked); **new second hobby slide** added — the Ham radio textbook, generalized as "create a textbook customized for you," deliberately not a numbered task (hobby register, per demo_ideas.md's own framing) | 8 (incl. divider) | 6.5 min |
+| | | **Total** | **42 (built)** | **~45.5 min**, Alex's slide-by-slide feedback pass continues (Prologue done; act-strip enlarged and its arrows fixed; Epilogue hobby slides done) |
 
 See [`../notes/demo_ideas.md`](../notes/demo_ideas.md) for the confirmed six example types, which projects ground which slide, and the naming decision per type — this file only has slide titles; that one has the full mapping.
 

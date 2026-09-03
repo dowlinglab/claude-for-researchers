@@ -128,28 +128,93 @@
   \vfill
 \end{frame}
 
-% Image height and spacing tightened 2026-09-03 (was 3.5cm) to clear the
-% bigger, corner-tighter logo -- this was already the tallest image in
-% the deck relative to its frame.
+% REVISED 2026-09-03 at Alex's request: much less text, the figure much
+% larger on the left, the right column now a real project list instead
+% of one paragraph about the first project only. Verified against the
+% real, public adowling2/3d-printing repo (65 commits, Alex alone, Feb
+% 15 - Sep 2, 2026) -- most projects share a first-commit date, Feb 15,
+% 2026, the day the repo (and its workflow/ tooling: init_project.sh,
+% render_views.sh, a STYLE.md, a Codex-iteration-loop convention) was
+% first set up; tablet-car-center was added Aug 8, six months later,
+% same workflow still in use. keychains has by far the most activity
+% (30 commits) -- the most-iterated project, a real number, not an
+% estimate.
 \begin{frame}{Curiosity is a feature, not a consolation prize}
   \vfill
   \begin{columns}[c]
-    \begin{column}{0.42\textwidth}
+    \begin{column}{0.46\textwidth}
       \centering
-      \includegraphics[height=3cm]{figures/boot_dryer_octopus.jpeg}
+      \includegraphics[height=4.2cm]{figures/boot_dryer_octopus.jpeg}\\[0.15em]
+      {\scriptsize Hesburgh Libraries' 3D printing (credit: Adam Heet).}
     \end{column}
-    \begin{column}{0.54\textwidth}
+    \begin{column}{0.48\textwidth}
       \small
-      A \$10 inline fan, a 3D-printed adapter, ChatGPT's first-ever OpenSCAD project --- built with Hesburgh Libraries' 3D printing and the Innovation Hub (credit: Adam Heet). It caught a hairdryer fire-hazard risk before I built it, and suggested the fan instead.
+      Same discipline, git-tracked: a script to start a project, a script to render it, one shared style guide.
+      \begin{itemize}\scriptsize\setlength\itemsep{0.25em}
+        \item boot dryer (the octopus)
+        \item bathroom \& drawer organizers
+        \item telescope shelf \& caps, camera \& binocular mounts
+        \item keychains --- 30 commits and counting
+        \item tablet car mount --- six months later, same workflow
+      \end{itemize}
     \end{column}
   \end{columns}
-  \vspace{0.3em}
-  \begin{center}
-    {\scriptsize Also: a kitchen organizer and a telescope shelf (\texttt{radio-extra-book} too) --- same habits, lower stakes.}
-  \end{center}
-  \vspace{0.3em}
+  \vspace{0.5em}
   \begin{center}
     \slidepoint{What would 3D printing teach in a CBE course ---\\ turbulent-mixing baffles, a vehicle for thermo, transport, controls?}
+  \end{center}
+  \vspace{1.8cm plus 1fill}
+\end{frame}
+
+% NEW 2026-09-03 at Alex's request: a second hobby slide, generalized as
+% "create a textbook customized for you." Verified against the real,
+% public adowling2/radio-extra-book repo (87 commits, Alex alone, Jul 22
+% - Sep 2, 2026): "Circuit Theory for the Amateur Extra Exam" -- 26
+% chapters in 5 real \part{} sections (main.tex), 226 pages. The 5 steps
+% are drawn from the real commit history and PROJECT-STATUS.md, not
+% invented: source drafted chapter by chapter, then a "v2 reorg" into
+% the current part structure, a Python figure pipeline verified to
+% regenerate byte-identically, coverage checked against real ARRL exam
+% question-pool extracts (greppable, not hand-transcribed), and
+% structured revision rounds tracked in a ledger -- "58 done, 0 open" is
+% the real, current count from ARRL-GAP-PROPOSAL.md, not an estimate.
+% Two of those 58 were the book catching its own errors (Ch 22 had the
+% wrong reason for coil Q falling; another mistold push-pull/IMD) --- the
+% closing line's "two were the book's own errors" is real, not a
+% rhetorical flourish. Deliberately not numbered "Task 7": this is hobby
+% material, same register as the slide before it, kept outside the
+% professional six-task taxonomy by design (demo_ideas.md's own framing)
+% -- flag if you actually want it folded into the numbered curriculum,
+% since that would ripple into the Prologue preview and Epilogue matrix.
+\begin{frame}{Create a textbook, customized for you}
+  \vfill
+  \begin{columns}[t]
+    \begin{column}{0.44\textwidth}
+      \small
+      \textbf{Circuit Theory for the Amateur Extra Exam}\\
+      {\scriptsize A control-theory perspective --- Alex Dowling, KE9FZD}\\[0.6em]
+      \begin{enumerate}\scriptsize\setlength\itemsep{0.25em}
+        \item Exam-Ready Reference
+        \item Mathematical \& Control-Theory Foundations
+        \item Circuit Models
+        \item Applying the Circuit Models
+        \item Practice \& Study
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \small
+      \begin{enumerate}\setlength\itemsep{0.35em}
+        \item Draft the source, chapter by chapter
+        \item Reorganize into a coherent part structure
+        \item Build a reproducible figure pipeline
+        \item Verify coverage against the real exam question pools
+        \item Revise in structured rounds --- audit, fix, re-verify
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+  \vfill
+  \begin{center}
+    \slidepoint{58 revisions later, 0 open ---\\two were the book's own errors, caught by its own audit.}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
