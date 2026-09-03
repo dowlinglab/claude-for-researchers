@@ -18,6 +18,8 @@ A screenshot earns its place when the browser/GitHub/PyPI frame around the conte
 
 **Public repos → real screenshots are fair game and preferred** (grad-visit-scheduler, emcal, bits_for_gaps, radio-extra-book — all public under `dowlinglab`/`adowling2`). **Private or unpublished work → illustrative reconstruction only**, same rule as the practice files: synthetic numbers, no project names, nothing that could deanonymize or expose pre-publication content. This hits Act III hardest — the claim-audit table, the empty-nomenclature example, and the eleven-wrong-items status report all come from unpublished audits and manuscripts. None of those get real screenshots. Flagged per-row below.
 
+**Capture constraint, found 2026-09-02:** the in-app browser used for autonomous verification passes can view and read pages but has no way to save a screenshot to disk — only "Claude in Chrome" (the user's real, logged-in browser) can, and connecting that needs the user to click "Connect," which an unattended session can't do. So every "TODO: capture a real screenshot" note in this file is a task for a live session with Alex present, not something a background pass can finish on its own. What a background pass *can* do, and already has: read these same pages to verify the facts on the slide against them (see `notes/seminar_notes.md`/commit history 2026-09-02 for two real corrections this caught) — verification and image capture are different capabilities, don't conflate them when reading "not yet captured" below.
+
 ---
 
 ## Prologue — Tinker
