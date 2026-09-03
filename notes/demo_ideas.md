@@ -33,7 +33,7 @@ Outside this taxonomy by design: the Prologue/Epilogue hobby material (`grad-vis
 
 | Concrete task | Example | Principle |
 |---|---|---|
-| Turn a personal annual chore into a published tool | `grad-visit-scheduler` — told in full here (type 3); Act II covers its group-wide impact | The habits that work on a weekend project are the same ones that work on research |
+| Turn a personal annual chore into a published tool | `grad-visit-scheduler` — told in full here (type 3); Act II covers its group-wide impact | The habits that work on a side project are the same ones that work on research |
 | Preview the six kinds of task before the acts use them | The six-types table above, previewed directly, no new examples — shares a slide with the "not a tool tutorial" scoping content | Every example today is one of six familiar kinds |
 
 ## Act I — Understand: conversation → living context, with git

@@ -1,71 +1,102 @@
 % ======================= PROLOGUE: THE HOOK, THE CLAIM =======================
 % storyboard.md Prologue items 2-3 ("The teaser", "The claim") -- REVAMPED
 % 2026-09-03 at Alex's request: the old single-slide teaser undersold the
-% hook. Now three frames: two tell the grad-visit-scheduler story with real
-% visuals (the "before" artifact, then the Codex conversion), and "The
-% claim" -- previously the first frame after the title -- now lands after
-% the story as the takeaway, not before it. Item 4 ("Borrowed structure")
-% is 00b_roadmap.tex; item 1 (title) is in main.tex.
+% hook. Now four frames: a real timeline, a real generated schedule, the
+% Codex-conversion story, and "The claim" -- previously the first frame
+% after the title -- now lands after the story as the takeaway, not before
+% it. Item 4 ("Borrowed structure") is 00b_roadmap.tex; item 1 (title) is
+% in main.tex.
 %
-% Facts (DGA, Carla, the ~1.5hr/~8.5hr split, 100% test coverage) are
-% Alex's own account, given directly 2026-09-03. Two things deliberately
-% NOT stated because they'd be invented, not sourced:
-%   - The year the Jeff-Kantor notebook was built ("In XYZ" in Alex's own
-%     notes) -- said as "years later" instead. Fill in the real year here
-%     if you want it on the slide.
-%   - DGA is generic (Director of Graduate Admissions), not attributed to
-%     a specific person -- Alex confirmed the title but not whose role it
-%     was historically, so the slide doesn't guess.
+% VERIFIED 2026-09-03 against git history in both repos (private:
+% ndcbe/grad-visit-scheduling; public: dowlinglab/grad-visit-scheduler),
+% not just Alex's recollection -- three real corrections this made to the
+% story as first told:
+%   1. The Codex conversion happened Mon Feb 9 -- Tue Feb 10, 2026 (private-
+%      repo commit timestamps, both weekdays) -- NOT a weekend. Every
+%      "weekend project" phrase in this deck is renamed to "day"/"Monday."
+%   2. It happened THIS February, ~7 months before the talk, not "last
+%      year" -- Alex's own phrasing when he told me the story. Fixed to
+%      "this past February."
+%   3. The MS-Word-per-visitor feature was NOT a pre-2026 ad-hoc addition
+%      (no matching commit anywhere 2023-2025) -- it was built in 2026 as
+%      part of the Codex-era package itself ("Added DOCX writing," 2026-
+%      02-10). Dropped from the "years of patches" list; replaced with
+%      features that really do show up 2023-2025 in the commit log
+%      (schedule graphics, break/overlap rules, per-faculty capacity caps).
+% The 2023/2024-2025/2026 timeline dates (frame 1) are the private repo's
+% own commit history: 2023 is 36 Alex + 37 Jeff commits (co-built); 2024
+% and 2025 are 100% Alex, zero Jeff commits each year (solo); 2026-02-09
+% is the Codex-conversion day. DGA is generic (Director of Graduate
+% Admissions), not attributed to a specific person -- confirmed the title,
+% not whose role it was historically, so the slide doesn't guess.
 %
-% The frame-1 schedule grid is a SYNTHETIC mockup, not a real screenshot --
-% different rule than every other "real artifact" TODO in this deck. A real
-% generated schedule contains visiting students' and faculty's real names
-% and times: that's exactly the kind of personal data this deck's own
-% data-classification slide (now in the Epilogue) says not to publish.
-% Illustrative-only, labelled as such, by design -- not a placeholder
-% waiting on a screenshot pass.
+% Frame 2's schedule image is a REAL run of the real, public package
+% (v0.5.0, installed from PyPI) -- not hand-typeset, not a mockup. Real ND
+% CBE faculty (from the department's own public roster/building
+% assignments); fictional visitors (Winnie-the-Pooh characters, public
+% domain) standing in for real prospective students, so no real visitor's
+% actual schedule ships in a public deck. Generation script and inputs:
+% not checked into this repo (throwaway, scratch-only) -- the output PNG
+% is the artifact that matters. Re-generate by installing
+% grad-visitor-scheduler from PyPI and calling
+% SolutionResult.plot_visitor_schedule() against a custom faculty/visitor
+% config, same pattern as examples/README.md in the public repo.
 %
-% TODO(image_plan.md Prologue #3): frame 2's version-timeline TikZ is
-% real (v0.1.2->v0.3.1, Feb 11-17) -- upgrade the surrounding text to real
-% screenshots (PyPI page, GitHub tags, commit graph) once the browser-
-% capture pass runs; see image_plan.md for exact URLs. The timeline itself
-% moved here from Act II slide 1, which no longer repeats it (see that
-% file's own header comment).
+% TODO(image_plan.md Prologue #3): frame 3's version-timeline TikZ is real
+% (v0.1.2->v0.3.1, Feb 11-17, from the PUBLIC repo's own tags) -- this is
+% the week of polish (tests, docs, PyPI release) that follows the Feb 9-10
+% conversion sprint in frame 1's timeline; the two diagrams are
+% complementary, not redundant. A real ReadTheDocs screenshot is now in
+% hand (figures/grad_scheduler_screenshot_crop.png) and used in Act II
+% instead of here, so the hook stays focused on the schedule artifact.
 %
 % The closing question ("How do we train...") is unchanged text, still the
 % exact line Epilogue slide 1 returns to verbatim -- do not reword either
 % copy without updating the other.
 
-\begin{frame}[fragile]{Before Codex: ten hours, a notebook, then patches}
+\begin{frame}{Before Codex: a notebook, then years of patches}
   \vfill
-  \begin{columns}[c]
-    \begin{column}{0.44\textwidth}
-      \centering
-      {\scriptsize\itshape A visit-day schedule --- illustrative, not real data}\\[0.4em]
-      \begin{tabular}{@{}lccc@{}}
-        \toprule
-        & \textbf{9:00} & \textbf{10:00} & \textbf{11:00} \\
-        \midrule
-        Visitor A & Prof.~1 & Prof.~4 & Prof.~7 \\
-        Visitor B & Prof.~2 & Prof.~5 & Prof.~8 \\
-        Visitor C & Prof.~3 & Prof.~6 & Prof.~9 \\
-        \bottomrule
-      \end{tabular}
-    \end{column}
-    \begin{column}{0.52\textwidth}
-      \small
-      Every visit weekend needs one of these --- who meets whom, when. Years ago, built by hand: about 10 hours for the DGA, redone from scratch for every faculty and visitor change.\\[0.7em]
-      Years later, \keyterm{Jeff Kantor} and I wrote a Python notebook to formulate and solve it as an optimization problem --- then kept bolting on features, like auto-generating each visitor's schedule as a Word document.
-    \end{column}
-  \end{columns}
+  \begin{center}
+  \begin{tikzpicture}[font=\small, node distance=1.3cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1.3cm, align=center]
+      (a) {\textbf{2023}\\\scriptsize Jeff Kantor \& I\\build the notebook};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1.3cm, align=center, right=of a]
+      (b) {\textbf{2024--2025}\\\scriptsize I run it alone,\\patch it by hand};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=3.1cm, minimum height=1.3cm, align=center, right=of b, fill=CodeBg]
+      (c) {\textbf{Feb 2026}\\\scriptsize I convert it\\with Codex};
+    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    \small Before the notebook: hand-built by the DGA, about 10 hours, redone from scratch for every faculty and visitor change.
+  \end{center}
+  \vspace{0.4em}
+  \begin{center}
+    \small 2023: \keyterm{Jeff Kantor} and I formulate it as an optimization problem. 2024--2025, alone: better schedule graphics, break and overlap rules, capacity limits per faculty.
+  \end{center}
   \vfill
+\end{frame}
+
+\begin{frame}{What the tool actually produces}
+  \vfill
+  \begin{center}
+    \includegraphics[height=5.6cm]{figures/grad_visit_schedule_demo}
+  \end{center}
+  \vspace{0.3em}
+  \begin{center}
+    {\scriptsize Real optimizer, real ND CBE faculty --- fictional visitors (Winnie-the-Pooh characters), so no real visitor's schedule ships in a public deck.}
+  \end{center}
+  \vspace{1.8cm plus 1fill}
 \end{frame}
 
 % Tightened 2026-09-03 (spacing + trimmed ~15 words) to clear the bigger,
 % corner-tighter logo -- this was the deck's densest slide already; see
 % main.tex's \ndcornerlogo comment for why every content-heavy frame
-% needed a second look after that change, not just this one.
-\begin{frame}[fragile]{One weekend with Codex, and I kept going}
+% needed a second look after that change, not just this one. Retitled and
+% re-dated the same day per the git-verified corrections above.
+\begin{frame}[fragile]{One Monday with Codex, and I kept going}
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\scriptsize]
@@ -80,7 +111,7 @@
   \end{center}
   \vspace{0.1em}
   \begin{center}
-    \small On sabbatical last year, I nearly turned down the ask --- then decided to use it as an excuse to really try Codex.
+    \small On sabbatical this past February, I nearly turned down the ask --- then decided to use it as an excuse to really try Codex.
   \end{center}
   \vspace{0.1em}
   \begin{center}

@@ -27,19 +27,29 @@
 % repeating it here was pure duplication -- the old "resolved" slide is
 % gone, and this one (was slide 2) is now Act II's opener, one line
 % acknowledging the callback before it gets to the new material: the
-% group-wide impact, which the Prologue doesn't cover.
+% group-wide impact, which the Prologue doesn't cover. "One weekend" ->
+% "One Monday" per the same 2026-09-03 git-verified correction as the
+% Prologue (see 00_open.tex's header comment) -- the conversion happened
+% Mon Feb 9 - Tue Feb 10, 2026, not on a weekend. Real ReadTheDocs
+% screenshot added the same day (figures/grad_scheduler_screenshot_crop),
+% cropped to the title/credit line/badges -- this slide was previously
+% text-only.
 \stagedivider{3}{Act II: Build}{What's worth keeping?}
 
 \begin{frame}{As promised --- and why it mattered}
   \vfill
   \begin{center}
-    \slidepoint{One weekend project was the reason\\to get everyone in the group onto Codex.}
+    \includegraphics[width=0.52\textwidth]{figures/grad_scheduler_screenshot_crop}
   \end{center}
-  \vspace{1em}
+  \vspace{0.5em}
+  \begin{center}
+    \slidepoint{One Monday was the reason\\to get everyone in the group onto Codex.}
+  \end{center}
+  \vspace{0.5em}
   \begin{center}
     \small Ten hours proved the tool worked. That proof is what changed how the group does everything else --- not a mandate, a result.
   \end{center}
-  \vfill
+  \vspace{1.8cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Prototype in notebooks; promote what matures}
@@ -99,29 +109,30 @@
   \vfill
 \end{frame}
 
-% TODO(image_plan.md Act II #6): capture real screenshots -- the emcal
-% GitHub repo page (paper link, README scope statement) and the
-% bits_for_gaps PyPI or ReadTheDocs page (DOI, "improvements over paper"
-% link). Both public, ready now.
+% TODO(image_plan.md Act II #6): still need a real screenshot of the emcal
+% GitHub repo page (paper link, README scope statement) -- public, ready
+% now. bits_for_gaps RESOLVED 2026-09-03: real GitHub README screenshot
+% in hand (figures/bits_for_gaps_screenshot_crop), cropped to the title/
+% badges/contributors row -- the badges (CI passing, codecov 100%, PyPI
+% v0.2.0) and the contributor list (Alex Dowling, and "claude" -- Claude
+% itself shows up as a credited contributor via commit authorship) are
+% the real, verifiable proof this is a maintained package, not a repo
+% dump.
 \begin{frame}{Not just a hobby-adjacent tool}
   \vfill
-  \begin{columns}[t]
-    \begin{column}{0.46\textwidth}
-      \centering
-      \textbf{\texttt{emcal}}\\[0.4em]
-      {\small Research code behind a published paper, migrated into an installable, tested package.}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \centering
-      \textbf{\texttt{bits\_for\_gaps}}\\[0.4em]
-      {\small Same move, same discipline --- a second paper, a second package.}
-    \end{column}
-  \end{columns}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{figures/bits_for_gaps_screenshot_crop}\\[0.3em]
+    {\scriptsize\texttt{bits\_for\_gaps} on GitHub --- real CI, real coverage, a real PyPI release}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    \small \texttt{emcal} is the same move, one repo over: research code behind a published paper, migrated into an installable, tested package.
+  \end{center}
   \vfill
   \begin{center}
     \small Split by audience, not by code quality: the package is the method plus what a user needs; the research archive is the paper's own reproduction trail.
   \end{center}
-  \vfill
+  \vspace{1.8cm plus 1fill}
 \end{frame}
 
 \begin{frame}[fragile]{Review the diff, not the summary}

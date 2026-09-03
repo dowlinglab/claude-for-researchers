@@ -24,19 +24,20 @@ A screenshot earns its place when the browser/GitHub/PyPI frame around the conte
 
 ## Prologue — Tinker
 
-**Revised 2026-09-03, twice.** First pass: the teaser is now two hook slides with real visual plans (was one, text-only); the claim moved from item 2 to item 4; data classification and the two-checks list moved out entirely (now Epilogue items 2-3); the resources slide (item 8) is now a typeset filename list per Alex's explicit request, not a candidate screenshot. Second pass, same day: both act-strip diagrams in this section (items 5 and 6) are cut — Alex's call, now `style_guide.md` rule 9, that a second copy of the same diagram adds nothing once the roadmap slide has already shown the outline. The six-kinds-of-task preview, briefly its own slide, moved into the freed space on item 6 instead.
+**Revised 2026-09-03, three times.** First pass: the teaser became two hook slides with real visual plans (was one, text-only); the claim moved to item 5; data classification and the two-checks list moved out entirely (now Epilogue items 2-3); the resources slide (item 9) is now a typeset filename list per Alex's explicit request, not a candidate screenshot. Second pass, same day: both act-strip diagrams in this section (items 6 and 7) were cut — Alex's call, now `style_guide.md` rule 9 — and the six-kinds-of-task preview moved into the freed space on item 7. Third pass, same day: Alex gave direct access to both repos behind the hook and asked for a git-verified timeline and a real schedule visualization instead of a synthetic mockup and recollection. Item 2's synthetic schedule grid is gone, replaced by a real three-stage timeline (git-verified years); a **new item 3** is a real schedule visualization (the actual public package run against real ND CBE faculty + fictional Winnie-the-Pooh visitors) — Prologue image plan grows by one row.
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
 | 1 | Title | ND wordmark | C | ✅ have (`figures/nd_logo.png`) |
-| 2 | Before Codex: ten hours, a notebook, then patches | a visit-day-schedule grid | B (synthetic) | **built, deliberately synthetic, not a real screenshot** — a real generated schedule carries visiting students' and faculty's actual names/times, which is exactly the personal data the Epilogue's classification slide says not to publish. Illustrative by design, not a placeholder waiting on capture |
-| 3 | One weekend with Codex, and I kept going | version-timeline TikZ (real dates/versions) | B (real data) | built — moved here from Act II 2026-09-03 (see that section's note); **candidate upgrade to real screenshots**: PyPI page, GitHub tag list, commit graph — see "what needs capturing" below |
-| 4 | The claim | none | — | text only, framing slide, deliberately spare — moved here from item 2 |
-| 5 | Borrowed structure | TAL logo | C | ✅ have (`figures/tal_logo.png`); act list is now single-line entries, not a two-line table; the bottom act-strip is cut (redundant with the outline just shown, and was colliding with the corner logo) |
-| 6 | One year of practices, not a tool tutorial | a compact "six kinds of task" grid, typeset (no act-strip) | text | **revised 2026-09-03**: act-strip cut, replaced with the six-archetypes preview (was its own slide, now shares this one) |
-| 7 | Don't become loyal to a model | vendor table | text | no image needed |
-| 8 | Everything today is on GitHub | typeset filename list (all 9+3+3+3 files) + repo link | text | **resolved 2026-09-03**: was a candidate for a real GitHub repo-tree screenshot; Alex asked instead for the actual filenames typeset directly, which fills the space better and needs no capture |
-| 9 | This talk was built the same way | none | — | text only, a numbered list |
+| 2 | Before Codex: a notebook, then years of patches | a three-stage TikZ timeline (2023 / 2024-2025 / Feb 2026) | B (real data) | **revised 2026-09-03**: replaces the earlier synthetic schedule-grid mockup entirely. Dates are git-verified against the private repo's own commit history (`git log --date=format:'%Y'`, per-author counts), not recollection |
+| 3 | What the tool actually produces | a real schedule visualization (`figures/grad_visit_schedule_demo.png`) | C | **new 2026-09-03**: a real run of `grad-visitor-scheduler` v0.5.0 (installed from PyPI) against a real ND CBE faculty roster (from the department's own building/room assignments) and fictional visitors (Winnie-the-Pooh characters, public domain) — real optimizer output, no real visitor's actual schedule. Generation script not checked into this repo (throwaway); the PNG is the artifact |
+| 4 | One Monday with Codex, and I kept going | version-timeline TikZ (real dates/versions) | B (real data) | built — retitled 2026-09-03 ("weekend" → "Monday," git-verified); **candidate upgrade to real screenshots**: PyPI page, GitHub tag list, commit graph — see "what needs capturing" below |
+| 5 | The claim | none | — | text only, framing slide, deliberately spare |
+| 6 | Borrowed structure | TAL logo | C | ✅ have (`figures/tal_logo.png`); act list is now single-line entries, not a two-line table; the bottom act-strip is cut (redundant with the outline just shown, and was colliding with the corner logo) |
+| 7 | One year of practices, not a tool tutorial | a compact "six kinds of task" grid, typeset (no act-strip) | text | **revised 2026-09-03**: act-strip cut, replaced with the six-archetypes preview (was its own slide, now shares this one) |
+| 8 | Don't become loyal to a model | vendor table | text | no image needed |
+| 9 | Everything today is on GitHub | typeset filename list (all 9+3+3+3 files) + repo link | text | **resolved 2026-09-03**: was a candidate for a real GitHub repo-tree screenshot; Alex asked instead for the actual filenames typeset directly, which fills the space better and needs no capture |
+| 10 | This talk was built the same way | none | — | text only, a numbered list |
 
 Moved to the Epilogue, 2026-09-03: "ND data classification" and "Check before you start" — see that section below.
 
@@ -60,20 +61,19 @@ Moved to the Epilogue, 2026-09-03: "ND data classification" and "Check before yo
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
-| 1 | As promised — and why it mattered | none | — | text only, deliberately spare — the point is the causal claim, not an artifact; the version-timeline diagram this slide used to show moved to the Prologue |
+| 1 | As promised — and why it mattered | **real ReadTheDocs screenshot** (`figures/grad_scheduler_screenshot_crop.png`) | C | **resolved 2026-09-03**: Alex's own capture, cropped to the title/credit line/badges — independently confirms "Created by Alex Dowling and Jeff Kantor" |
 | 2 | Prototype → promote | a generic before/after file tree | A | text-artifact, illustrative (no real repo needed — the point is the pattern) |
 | 3 | Run it, pin it, baseline it | none | — | text only |
 | 4 | Freeze the science, move the code | none, or a two-column "old code / new code, science untouched" diagram | B | optional TikZ, not required |
 | 5 | Regression harness enabled a reversal | none | — | generic by design (private project) |
-| 6 | Not just a hobby-adjacent tool | **real screenshots of emcal and bits_for_gaps** — both public | C | see below |
+| 6 | Not just a hobby-adjacent tool | **real GitHub README screenshot of bits\_for\_gaps** (`figures/bits_for_gaps_screenshot_crop.png`); emcal still text only | C (partial) | **bits\_for\_gaps resolved 2026-09-03**: Alex's own capture, cropped to title/badges/contributors — badges (CI passing, codecov 100%, PyPI v0.2.0) plus the contributors row, which lists "claude" (Claude itself, via commit co-authorship) next to Alex. emcal screenshot still not captured — see below |
 | 7 | Review the diff | a generic, illustrative diff excerpt | A | text-artifact — corrected 2026-09-02: originally claimed to reuse the real emcal `31184f4` diff, but that commit's actual diff (a JSON fixture + Python test harness) doesn't support this illustration. Relabeled as illustrative rather than forced to fit |
 | 8 | Proposal compliance review, inline | the `\foacomment{}` macro + one illustrative flagged comment | A | text-artifact, illustrative (real proposal content stays out) |
 | 9 | Verify before you commit | **a real `latexdiff` output** | C | ✅ can generate now — the script produces exactly this, tested this session; use a synthetic example like the one already used to test the script, not real proposal text |
 
 **Slide II.6, "not just a hobby tool":**
-- emcal: screenshot of the GitHub repo page (shows the `Ind. Eng. Chem. Res.` paper link, the README's scope statement)
-- bits_for_gaps: screenshot of the PyPI page or the ReadTheDocs landing page (shows the DOI, the "improvements over paper" link)
-- Both public, capturable now.
+- emcal: still needs a screenshot of the GitHub repo page (shows the `Ind. Eng. Chem. Res.` paper link, the README's scope statement) — public, capturable now.
+- bits_for_gaps: ✅ done — GitHub README screenshot in hand.
 
 ## Act III — Challenge
 
@@ -111,16 +111,22 @@ Rewritten 2026-09-02 against the current 7-slide list (5 regular + a 2-part caps
 
 `figures/nd_logo.png`, `figures/tal_logo.png` (+ source `.svg`), `figures/boot_dryer_octopus.jpeg`, `figures/kitchen_organizer_telescope_shelf.jpeg`. Also usable: `resources/scripts/figure_style/example.png` (the corrected-legend demo) as a small aside anywhere the deck wants to show "even a generated figure needs a check" — not currently slotted, a candidate for Act II's figures-adjacent content if that gets its own beat.
 
+**Added 2026-09-03, Alex's own captures + one generated artifact:**
+- `figures/grad_scheduler_screenshot_crop.png` — the grad-visitor-scheduler ReadTheDocs page (title, credit line, badges), cropped from Alex's full-page screenshot. In use on Act II slide 1.
+- `figures/bits_for_gaps_screenshot_crop.png` — the bits_for_gaps GitHub README (title, badges, contributors), cropped from Alex's full-page screenshot. In use on Act II's "not just a hobby-adjacent tool" slide.
+- `figures/grad_visit_schedule_demo.png` — a real schedule visualization, generated (not captured) by installing `grad-visitor-scheduler` v0.5.0 from PyPI and running it against a real ND CBE faculty roster with fictional Winnie-the-Pooh visitors. In use on the Prologue's new "What the tool actually produces" slide.
+
 ## What needs capturing (public, ready now)
 
-All via the in-app browser, no confidentiality concern:
+All via the in-app browser, no confidentiality concern. Two rows resolved 2026-09-03 (Alex's own captures, marked below) — the rest still open.
 
 1. `pypi.org/project/grad-visitor-scheduler` — package page
 2. `github.com/dowlinglab/grad-visit-scheduler/tags` — version history
 3. `github.com/dowlinglab/emcal/commit/31184f4` — the verified real commit
 4. `github.com/dowlinglab/emcal` — repo landing page
-5. `github.com/dowlinglab/bits_for_gaps` and/or its ReadTheDocs page
+5. ~~`github.com/dowlinglab/bits_for_gaps` and/or its ReadTheDocs page~~ — ✅ resolved 2026-09-03, GitHub README captured
 6. `ai.nd.edu/ai-in-action/approved-ai-tools/` — the data-classification table (re-verify current before capturing)
+7. ~~grad-visitor-scheduler's own ReadTheDocs landing page~~ — ✅ resolved 2026-09-03 (not on the original list, captured anyway)
 
 ## What needs building (no external source, just work)
 
@@ -130,7 +136,7 @@ All via the in-app browser, no confidentiality concern:
 
 ## What must stay illustrative (confidentiality)
 
-Act I §3, §4, §6 (renumbered 2026-09-03 — the membrane-transport context/`CLAUDE.md` pair and the corpus-first parallel); Act II §8 (renumbered same day); Act III §2, §4, §6 — all touch unpublished or private work. Text-artifacts and TikZ only, generalized, no project names — same discipline already applied throughout `resources/practices/`. Also the Prologue's schedule-grid mockup (item 2) — not confidentiality-driven in the same sense (grad-visit-scheduler is public), but the same rule in spirit: a real generated schedule would carry real people's names and times, so it stays synthetic by design, not just until a screenshot pass runs.
+Act I §3, §4, §6 (renumbered 2026-09-03 — the membrane-transport context/`CLAUDE.md` pair and the corpus-first parallel); Act II §8 (renumbered same day); Act III §2, §4, §6 — all touch unpublished or private work. Text-artifacts and TikZ only, generalized, no project names — same discipline already applied throughout `resources/practices/`. Also the Prologue's real schedule visualization (item 3, added 2026-09-03) — not confidentiality-driven in the same sense (grad-visit-scheduler is public, and this is a real optimizer run, not a mockup), but the same rule in spirit: a real generated schedule from an actual visit weekend would carry real people's names and times, so the visitors are fictional (Winnie-the-Pooh characters) by design, not just until a real-event screenshot becomes available.
 
 ## Open question
 
