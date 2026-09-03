@@ -1,36 +1,52 @@
 % ========================= ACT I: UNDERSTAND =========================
-% storyboard.md Act I, all 8 slides. Replaces 02_context.tex entirely (was
-% built against the old ten-section outline and only ever covered 2 of
-% these 8 slides in a form worth keeping -- both reused below almost
-% verbatim: slides 1-2 are 02_context.tex's old "commit message" and
-% "shift" frames, retitled to state their point per style_guide.md rule 5.
+% storyboard.md Act I, confirmed 2026-09-03, rebuilt around three numbered
+% tasks (see storyboard.md's Act I section for the full reasoning). Job:
+% a sell, not a payoff -- version control is the prerequisite that unlocks
+% Codex/Claude Code, not a demonstrated outcome. The mature, sophisticated
+% result stays out of this act entirely (Act III's capstone).
 %
-% Job (storyboard.md): a sell, not a payoff. Version control is the
-% prerequisite that unlocks Codex/Claude Code -- not a demonstrated
-% outcome. The mature, sophisticated result stays out of this act entirely
-% (Act III's capstone), so this act argues one thing and stops.
+% REBUILT 2026-09-03 from the prior 7-slide version. Two structural moves,
+% both Alex's own:
+%   1. Git opens the act, not closes it. Its old closing line ("Version
+%      control is the prerequisite -- what it unlocks is the rest of this
+%      talk") is promoted to a thesis statement instead of a summary --
+%      same sentence, stronger use of it, not a reword.
+%   2. Tasks 2 and 3 (formerly two parallel tracks, "idea-first" and
+%      "corpus-first") collapse into one task. Alex, directly: "all of my
+%      proposal development and literature reviews are idea-first" -- the
+%      corpus enters after an AI-assisted refinement pass, not instead of
+%      one. What were two slides (the chromatography and watershed/
+%      desalination examples) become one, per Alex's own instinct: "I am
+%      not convinced Task 1 needs two slides. I think this is one slide
+%      that shows the steps and gives tips" -- applied to Task 3 too.
 %
-% Every slide here is grounded in a specific example (Alex's note,
-% 2026-09-02: use cases are what holds the room's attention and the source
-% of the visuals -- no slide should rest on an abstract statement with
-% nothing to look at). Slides 4-5 share one running example (a generic
-% membrane-transport project, Type 1 in demo_ideas.md) rather than 4
-% illustrating the taxonomy in the abstract and 5 switching projects.
-% Slides 6-8 are anonymized by the naming convention (Type 4/5 and a
-% generic "inherited project" case) but still get a constructed workflow
-% diagram each, per the same note: an anonymized example still deserves a
-% visual, just a process diagram instead of real content.
+% New slide 2, LLM -> Chatbot -> Agent, is the mechanism Alex asked for:
+% "this idea underpins all the tasks and follows nicely from the
+% introduction of git." Deliberately does not repeat the Prologue's
+% "Don't become loyal to a model" vendor table (01_ecosystem.tex) -- that
+% slide is current offerings; this one is the conceptual distinction
+% between kinds of tool. A one-line callback ties them together instead
+% of a second table.
 %
-% CUT 2026-09-03 at Alex's request: this act opened with a "commit message,
-% then a conversation that no longer exists" slide (the real emcal commit
-% 31184f4 -- see the now-removed comment above this one for its own
-% verification history). Judged too in-the-weeds for the time it cost;
-% more slides now go to visual examples instead. Its point (a repository
-% outlives the conversation about it) is still made by the next slide
-% ("The filesystem is the source of truth"), just without this lead-in.
-% "What git and GitHub actually give you" below used to call back to this
-% slide's commit ("Same commit as the last slide") -- that line is gone
-% too, and the slide now introduces its own commit reference fresh.
+% Task 1 (slide 3) merges the prior "What git and GitHub actually give
+% you" and "Version control is the prerequisite" slides into one -- Alex:
+% "We do not need to include a mention to emcal here," so the real-commit
+% anchor (dowlinglab/emcal 31184f4) is dropped; emcal gets its own moment
+% in Act II's Task 4 instead. Framed as Alex put it: "Now I've convinced
+% you to use git -- how would you get started after our seminar?"
+%
+% Task 2 (slides 4-5) is unchanged in content from the prior build (the
+% membrane-transport project's three kinds of context, then its actual
+% CLAUDE.md) -- just relabeled with the task number, since these are
+% genuinely two steps of one task, not two topics.
+%
+% Task 3 (slide 6) is new: a single slide replacing the prior two
+% ("Bring in a second literature to pressure-test an idea" and "Interpret
+% the evidence -- don't copy the abstract"), which turned out to be the
+% same pipeline told twice under two different framings (idea-first vs.
+% corpus-first) -- see storyboard.md's status section for how that
+% correction happened. Grounded in the same three generic examples
+% (chromatography, watershed, desalination) as before.
 
 \stagedivider{2}{Act I: Understand}{The prerequisite that unlocks everything else.}
 
@@ -59,31 +75,68 @@
   \vfill
 \end{frame}
 
-% TODO(image_plan.md Act I #3): upgrade to a real screenshot of the
-% dowlinglab/emcal repo landing page (public, ready to capture) once a
-% browser pass runs -- typeset explainer below is the fallback, not final.
-\begin{frame}{What git and GitHub actually give you}
+\begin{frame}{An agent can touch your repository --- a chatbot can't}
   \vfill
-  {\scriptsize Anchored to a real commit: \texttt{dowlinglab/emcal}, commit \texttt{31184f4}.}
+  \begin{center}
+  \begin{tikzpicture}[font=\small, node distance=1.1cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center]
+      (a) {\textbf{LLM}\\\scriptsize the model};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.3cm, minimum height=1.3cm, align=center, right=of a]
+      (b) {\textbf{Chatbot}\\\scriptsize LLM + a chat window\\\scriptsize text in, text out};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=3.6cm, minimum height=1.3cm, align=center, right=of b, fill=CodeBg]
+      (c) {\textbf{Agent}\\\scriptsize LLM + tools\\\scriptsize reads and writes your files};
+    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
   \vspace{0.6em}
-  \begin{columns}[t]
-    \begin{column}{0.31\textwidth}
-      \textbf{A commit}\\[0.4em]
-      {\small A saved, timestamped, attributed snapshot of every file, with a message explaining why.}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \textbf{A repository}\\[0.4em]
-      {\small The full history of every commit. Any past state is one command away.}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \textbf{GitHub}\\[0.4em]
-      {\small Hosts the repository. Makes it shared and backed up by construction, not by discipline.}
-    \end{column}
-  \end{columns}
+  \begin{center}
+    \small A chatbot only ever has the conversation. An agent can act on the repository you just built --- read the \texttt{CLAUDE.md}, edit the code, run the tests.
+  \end{center}
+  \vspace{0.4em}
+  \begin{center}
+    {\scriptsize The same tools from the roadmap slide, sorted by kind now, not by brand.}
+  \end{center}
   \vfill
 \end{frame}
 
-\begin{frame}{A chat history can't hold any of these three}
+\begin{frame}[fragile]{Task 1 --- set up git for a project}
+  \vfill
+  \begin{center}
+  \begin{tikzpicture}[font=\small, node distance=1.2cm]
+    \node[draw=OkVermillion, rounded corners=2pt, minimum width=3.4cm, minimum height=1cm, align=center]
+      (a) {Local notebook\\\scriptsize no backup, no history};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.6cm, minimum height=1cm, align=center, right=of a]
+      (b) {\texttt{git init}};
+    \node[draw=OkGreen, rounded corners=2pt, minimum width=3.4cm, minimum height=1cm, align=center, right=of b, fill=CodeBg]
+      (c) {GitHub\\\scriptsize shared, backed up, versioned};
+    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.5em}
+  \begin{columns}[t]
+    \begin{column}{0.31\textwidth}
+      \centering\small\textbf{A commit}\\[0.2em]
+      {\scriptsize a saved, timestamped snapshot, with a message explaining why}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \centering\small\textbf{A repository}\\[0.2em]
+      {\scriptsize the full history --- any past state is one command away}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \centering\small\textbf{GitHub}\\[0.2em]
+      {\scriptsize hosts it --- shared and backed up by construction}
+    \end{column}
+  \end{columns}
+  \vspace{0.5em}
+  \begin{center}
+    \slidepoint{Version control is the prerequisite ---\\what it unlocks is the rest of this talk.}
+  \end{center}
+  \vspace{1.8cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Task 2 --- a chat history can't hold any of these three}
   \vfill
   {\scriptsize A membrane-transport project's actual context, in each of the three kinds.}
   \vspace{0.4em}
@@ -107,7 +160,7 @@
   \vfill
 \end{frame}
 
-\begin{frame}[fragile]{Write down what you'd otherwise re-explain every session}
+\begin{frame}[fragile]{Task 2 --- write down what you'd otherwise re-explain every session}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.62\textwidth}
@@ -146,74 +199,30 @@ Membrane transport parameter estimation.
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Bring in a second literature to pressure-test an idea}
-  \vfill
-  \begin{columns}[c]
-    \begin{column}{0.44\textwidth}
-      \centering
-      \begin{tikzpicture}[font=\small]
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1cm, align=center]
-          (a) at (0,1.3) {Literature A\\\scriptsize (the home field)};
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1cm, align=center]
-          (b) at (0,-1.3) {Literature B\\\scriptsize (crossed in on purpose)};
-        \node[draw=NDGold, rounded corners=2pt, minimum width=3.1cm, minimum height=1cm, align=center, fill=CodeBg]
-          (c) at (3.6,0) {The idea,\\pressure-tested};
-        \draw[-{Stealth[length=6pt]}, NDBlue, thick] (a) -- (c);
-        \draw[-{Stealth[length=6pt]}, NDBlue, thick] (b) -- (c);
-      \end{tikzpicture}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \small
-      A chromatography project, crossed deliberately with a second field's digital-twin literature.\\[0.8em]
-      Not incidental background reading --- the second literature's whole job is to pressure-test the first idea.
-    \end{column}
-  \end{columns}
-  \vfill
-\end{frame}
-
-\begin{frame}{Interpret the evidence --- don't copy the abstract}
-  \vfill
-  \begin{columns}[c]
-    \begin{column}{0.44\textwidth}
-      \centering
-      \begin{tikzpicture}[font=\small]
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.4cm, minimum height=1cm, align=center]
-          (a) at (0,1.2) {A folder of PDFs};
-        \draw[-{Stealth[length=6pt]}, NDBlue, thick] (a) -- (0,0.35);
-        \node[draw=NDGold, rounded corners=2pt, minimum width=3.4cm, minimum height=1cm, align=center, fill=CodeBg]
-          (b) at (0,-0.5) {A getting-started report,\\\scriptsize claims validated};
-      \end{tikzpicture}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \small
-      A watershed decision-support project and a coastal desalination project, both onboarded this way.\\[0.8em]
-      The report says what the evidence changes about the project's next decision --- not what each paper already says about itself.
-    \end{column}
-  \end{columns}
-  \vfill
-\end{frame}
-
-\begin{frame}{Version control is the prerequisite}
+\begin{frame}{Task 3 --- idea first: brainstorm, refine, then bring in the literature}
   \vfill
   \begin{center}
-  \begin{tikzpicture}[font=\small, node distance=1.4cm]
-    \node[draw=OkVermillion, rounded corners=2pt, minimum width=3.6cm, minimum height=1cm, align=center]
-      (a) {Local notebook\\\scriptsize no backup, no history};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.0cm, minimum height=1cm, align=center, right=of a]
-      (b) {\texttt{git init}};
-    \node[draw=OkGreen, rounded corners=2pt, minimum width=3.6cm, minimum height=1cm, align=center, right=of b, fill=CodeBg]
-      (c) {GitHub\\\scriptsize shared, backed up, versioned};
-    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
-    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+  \begin{tikzpicture}[font=\scriptsize, node distance=0.4cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center]
+      (a) {Dictate the\\loose idea};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of a]
+      (b) {AI refines it\\report or prompt};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of b]
+      (c) {Corpus-grounded\\literature review};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of c, fill=CodeBg]
+      (d) {Report or\\proposal};
+    \draw[-{Stealth[length=5pt]}, thick] (a) -- (b);
+    \draw[-{Stealth[length=5pt]}, thick] (b) -- (c);
+    \draw[-{Stealth[length=5pt]}, thick] (c) -- (d);
   \end{tikzpicture}
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    A departed collaborator's project, generic. No version control existed --- the first step was making one exist.
+    \small Chromatography, watershed, desalination --- all three this same pipeline, generic. The corpus arrives to pressure-test an idea already forming, not to generate one.
   \end{center}
-  \vfill
+  \vspace{0.4em}
   \begin{center}
-    \slidepoint{Version control is the prerequisite ---\\what it unlocks is the rest of this talk.}
+    {\scriptsize Tip: interpret the evidence, don't copy the abstract --- say what it changes about the next decision, not what each paper already says about itself.}
   \end{center}
-  \vfill
+  \vspace{1.8cm plus 1fill}
 \end{frame}
