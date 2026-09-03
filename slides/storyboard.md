@@ -30,11 +30,11 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 |---|---|---|---|---|
 | — | Title | | 1 | 0.5 min |
 | Prologue | **Tinker** | Claim, hook (teased), scope, orient, show the toolkit | 9 | 7.5 min |
-| Act I | **Understand** | A sell: git is the prerequisite, not the payoff | 6 | 8 min |
+| Act I | **Understand** | A sell: git is the prerequisite, not the payoff | 8 | 10.5 min |
 | Act II | **Build** | It changes my artifacts (hook resolved in full) | 9 | 13 min |
-| Act III | **Challenge** | It tells me I'm wrong, closing on a capstone | 7 | 10 min |
+| Act III | **Challenge** | It tells me I'm wrong, closing on a capstone | 7 | 10.5 min |
 | Epilogue | **Trust** | Return to the open question; close on curiosity | 5 | 4 min |
-| | | **Total** | **37** | **~43 min**, trim ~3 in drafting |
+| | | **Total** | **39** | **~46 min**, trim ~6 in drafting/rehearsal |
 
 See [`../notes/demo_ideas.md`](../notes/demo_ideas.md) for the confirmed six example types, which projects ground which slide, and the naming decision per type — this file only has slide titles; that one has the full mapping.
 
@@ -67,11 +67,13 @@ Organized around two parallel transitions, both "an ephemeral, unbacked-up thing
 1. **Open on the failure** — "See conversation for the plan," the real, verified commit (`dowlinglab/emcal` `31184f4`, word for word).
 2. **State the shift** — a conversation vs. a repository; the filesystem is the source of truth.
 3. **What git and GitHub actually give you** — a short, concrete explainer, anchored to the same `emcal` commit, motivated by slide 1's failure rather than delivered cold. Audience calibration: not everyone in the room is a software engineer.
-4. **Parallel A, idea-first** — a chat conversation crossing two literatures on purpose to pressure-test an idea (a chromatography/digital-twin proposal, generic).
-5. **Parallel A, corpus-first** — a folder of PDFs becomes an onboarding report, claims validated (a watershed project and a desalination project, generic). "Interpret, don't copy the abstract."
-6. **Parallel B, closing the act** — a departed collaborator's local notebook, no backup, no version control → git. The inherited-project case, generic. Close on the forward pointer: *version control is the prerequisite — what it unlocks is the rest of this talk.*
+4. **Three kinds of context** — persistent, authoritative, task, illustrated with the same membrane-transport project as slide 5 (its conventions; its actual data and model; the question this run is asking), not stated as abstract taxonomy. A chat history is a poor substitute for any of the three.
+5. **One file, read at the start of every session** — that same project's actual `CLAUDE.md`, continuing slide 4's example. Name it neutrally, so `CLAUDE.md`/`AGENTS.md` become three-line pointers to it rather than the content itself.
+6. **Parallel A, idea-first** — a chat conversation crossing two literatures on purpose to pressure-test an idea (a chromatography/digital-twin proposal, generic).
+7. **Parallel A, corpus-first** — a folder of PDFs becomes an onboarding report, claims validated (a watershed project and a desalination project, generic). "Interpret, don't copy the abstract."
+8. **Parallel B, closing the act** — a departed collaborator's local notebook, no backup, no version control → git. The inherited-project case, generic. Close on the forward pointer: *version control is the prerequisite — what it unlocks is the rest of this talk.*
 
-*(Maps to the old `02_context.tex` plus new material from `literature_review.md`; see `notes/demo_ideas.md` Act I table for exactly which project grounds each slide. Down from 7 slides to 6 — the mature-example slide moved out entirely rather than staying as a planted teaser, so the act doesn't dilute its own sell with an early taste of the payoff.)*
+*(Maps to the old `02_context.tex` plus new material from `literature_review.md`; see `notes/demo_ideas.md` Act I table for exactly which project grounds each slide. Slides 4-5 restored 2026-09-02 from `02_context.tex`'s original "three kinds of context" and project-file frames, which had no slot in this list until now — Alex's call, over cutting them as redundant with slide 3. Down from 7 slides to 6, then back up to 8 with that restoration — the mature-example slide is still the one thing that stays out, moved entirely to Act III's capstone rather than staying as a planted teaser, so the act doesn't dilute its own sell with an early taste of the payoff.)*
 
 ## Act II — Build
 
@@ -94,9 +96,9 @@ Organized around two parallel transitions, both "an ephemeral, unbacked-up thing
 1. **Arithmetic, method, transcription: separate them** — merging them reads as an attack; separating them is what makes criticism land as methodology.
 2. **Trace every number back to the file that produced it** — the claim-tracing table.
 3. **"Cannot verify" is a result you want to get.**
-4. **A clean build hid a silent failure** — two independent instances, two unrelated domains: a manuscript's empty nomenclature table (exit code 0) and "Optimization for Decision Science"'s stale `.gitignore` rule that silently dropped a build artifact for 1.5 days while CI stayed green. "A request to enumerate beats a request to confirm."
+4. **A clean build hid a silent failure** — three independent instances, three unrelated domains: a manuscript's empty nomenclature table (exit code 0), "Optimization for Decision Science"'s stale `.gitignore` rule that silently dropped a build artifact for 1.5 days while CI stayed green, and a project's own `CLAUDE.md` warning about stale absolute paths directly above four stale absolute paths (restored 2026-09-02 from `02_context.tex`'s "honest limit" frame, folded in here rather than kept as its own slide, since it's the same lesson as the other two). "A request to enumerate beats a request to confirm."
 5. **My status report was wrong about eleven items; the fix was a script** — deriving status from evidence, not memory.
-6. **Capstone, part 1 — the Act I plant pays off** — "Optimization for Decision Science," named: the `CLAUDE.md` from Act I, now converted (handwritten notes → LaTeX, the coursepack) and challenged (an adversarial verification pass catches a real, decade-old sign error). One project, watched end to end.
+6. **Capstone, part 1 — the Act I argument, taken all the way** — "Optimization for Decision Science," named: the same `CLAUDE.md` pattern Act I explained generically, now a mature, specific instance — converted (handwritten notes → LaTeX, the coursepack) and challenged (an adversarial verification pass catches a real, decade-old sign error). One project, watched end to end.
 7. **Capstone, part 2 — the verifier needed verifying too** — same course: one of the verification pass's own three checks needed correcting. The same self-correction principle as the manuscript audits, now from a second domain — closes the act.
 
 ## Epilogue — Trust
@@ -117,5 +119,6 @@ Organized around two parallel transitions, both "an ephemeral, unbacked-up thing
 - ~~Act I's role~~ — resolved 2026-09-02: Act I is a sell (git is the prerequisite that unlocks Codex/Claude Code), not a payoff. The mature-example slide was cut entirely rather than kept as an early teaser, so the act doesn't dilute its own argument. 7 slides → 6.
 - ~~The example roster and naming per type~~ — resolved 2026-09-02, recorded in `notes/demo_ideas.md`'s six-types table: types 3 and 6 named (`bits_for_gaps`/`emcal`/`grad-visit-scheduler`; "Optimization for Decision Science"), everything else generic, no exceptions — including `data3` (membrane-transport), deliberately not named alongside its two generic Type-1 siblings even though naming it in isolation would have been low-risk, because the asymmetry would draw more attention than the name would add.
 - ~~Whether to restore the cut thesis and scoping slides~~ — resolved 2026-09-02: restored, Alex's call — he's willing to cut elsewhere rather than lose either concept. Prologue 7 → 9 slides, total 35 → 37.
-- **Slide count vs. budget.** Current total: 37 (35, then 37 after restoring the thesis and scoping slides). At-a-glance table assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue — now running about 3 min over that budget, expected to trim in drafting. Still needs a real count once `02_context.tex` is rewritten against this structure — the group-manual algorithm's step 4 ("check you have ~1 slide per minute") hasn't been re-run since the restructure.
+- ~~Where does `02_context.tex`'s orphaned content go~~ — resolved 2026-09-02. Two of its five frames were already Act I in disguise (the `emcal` commit, "the filesystem is the source of truth") and needed no change. The other three: the context taxonomy and a generic project-file example join Act I as new slides 4-5, Alex's call over cutting them as redundant; the "honest limit" staleness story folds into Act III slide 4 as a third silent-failure instance rather than staying its own slide, since it's the same lesson from the same domain (context files) as the other two. Act I 6 → 8 slides, total 37 → 39. `02_context.tex` itself still needs to be split apart and rewritten into its new homes — not done as part of this planning pass.
+- **Slide count vs. budget.** Current total: 39 (35, then 37 after restoring the thesis/scoping slides, then 39 after placing `02_context.tex`'s orphaned material). At-a-glance table assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue — now running about 6 min over that budget. Alex's call, 2026-09-02: accept it for now and trim during rehearsal once real timing is known, rather than pre-optimizing. The group-manual algorithm's step 4 ("check you have ~1 slide per minute") still hasn't been re-run with real content.
 - **Feedback pass.** Per the group manual: get outline feedback at least 8 days before the talk. Not yet done.

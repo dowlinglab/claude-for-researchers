@@ -34,16 +34,18 @@ A screenshot earns its place when the browser/GitHub/PyPI frame around the conte
 
 ## Act I — Understand
 
+Rewritten 2026-09-02 against the current 8-slide list in `storyboard.md` — the previous version of this table predated even the original 6-slide lock and no longer matched it (a numbered "graduating-student case" and "correct in place" slide that no longer exist as such, no rows at all for the two slides restored from `02_context.tex`). Alex's priority stated the same day: every slide's example should be concrete and front-and-center, since the use cases are both what holds the room's attention and the source of the visuals — no slide here should rest on an abstract statement with "none" as its visual.
+
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
-| 1 | The shift that matters most | none | — | text/columns only |
-| 2 | "See conversation for the plan" | the real commit message | A | **verified real**: `dowlinglab/emcal` commit `31184f4`. Exact quoted text confirmed present. Candidate upgrade from typeset (current) to a real screenshot of the GitHub commit page — the chrome proves it's public and dated, which matters for a slide whose point is "this really happened, and you can go check." |
-| 3 | A context file orients; only a check enforces | none, or a small `\lstlisting` excerpt of a stale warning | A | text-artifact; source stays unnamed per the confidentiality rule (the actual stale file is in an unpublished manuscript repo) — reconstruct the line generically, don't screenshot the real file |
-| 4 | Graduating-student case | none | — | generic by design, no artifact to show |
-| 5 | Never cite a paper AI said exists | none, or a small "fabricated citation" callout | text | no image needed |
-| 6 | Cross two literatures | a real annotation-schema excerpt | A | text-artifact, generalized (no project name) — matches how `literature_review.md` already handles it |
-| 7 | The corpus becomes someone's starting point | the getting-started report's actual section list | A | text-artifact only — the underlying project is private; show the *structure*, never the content |
-| 8 | Correct in place | the struck-through correction pattern | A | text-artifact, illustrative — this is the one that must NOT be a real screenshot (unpublished literature review) |
+| 1 | Open on the failure | the real commit message | A | **verified real**: `dowlinglab/emcal` commit `31184f4`. Exact quoted text confirmed present. Candidate upgrade from typeset (current) to a real screenshot of the GitHub commit page — the chrome proves it's public and dated, which matters for a slide whose point is "this really happened, and you can go check." |
+| 2 | State the shift | the same commit, referenced again, not a fresh generic diagram | A | reuses slide 1's artifact rather than illustrating "conversation vs. repository" in the abstract — keeps the real example doing the work across two slides instead of one |
+| 3 | What git and GitHub actually give you | a real screenshot of the `emcal` repo landing page | C | **ready to capture now**: public repo, no confidentiality concern — already listed under "what needs capturing" below. Shows what a commit/repository/GitHub host actually look like, anchored to the same failure |
+| 4 | Three kinds of context | the membrane-transport project's own persistent/authoritative/task context, named concretely (its conventions; its actual model and data; this run's question) | A | text-artifact, illustrative — Type 1, so generic, no project name; this is the fix for the version of this slide that stated the taxonomy with no example at all |
+| 5 | One file, read at the start of every session | that same project's actual `CLAUDE.md`, shown in full via `lstlisting` (already drafted in the current `02_context.tex`) | A | text-artifact, illustrative, generic — continues slide 4's example rather than switching projects |
+| 6 | Parallel A, idea-first: cross two literatures | a real annotation-schema excerpt | A | text-artifact, generalized (no project name) — matches how `literature_review.md` already handles it |
+| 7 | Parallel A, corpus-first: the corpus becomes someone's starting point | the getting-started report's actual section list | A | text-artifact only — the underlying project is private; show the *structure*, never the content |
+| 8 | Parallel B, closing: a departed collaborator's notebook → git | none | — | generic by design, no artifact to show — the point is the absence of one (no version control existed to screenshot) |
 
 ## Act II — Build
 
@@ -118,7 +120,7 @@ All via the in-app browser, no confidentiality concern:
 
 ## What must stay illustrative (confidentiality)
 
-Act I §3, §7, §8; Act II §8; Act III §2, §4, §6 — all touch unpublished or private work. Text-artifacts and TikZ only, generalized, no project names — same discipline already applied throughout `resources/practices/`.
+Act I §4, §5, §7 (renumbered 2026-09-02 — the membrane-transport context/`CLAUDE.md` pair and the corpus-first parallel); Act II §8; Act III §2, §4, §6 — all touch unpublished or private work. Text-artifacts and TikZ only, generalized, no project names — same discipline already applied throughout `resources/practices/`.
 
 ## Open question
 
