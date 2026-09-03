@@ -91,8 +91,18 @@
 % secondary explanation -- uses \small directly, no wrapper needed.
 % \scriptsize/\tiny are not body text: reserved for diagram micro-labels and
 % code (lstlisting already sets \scriptsize).
+%
+% CHANGED 2026-09-03 (Alex's standing style, applied deck-wide): \slidepoint
+% no longer auto-bolds its whole argument. Alex: "I do not like have an
+% entire sentence in bold. My style is instead to bold a few key words in
+% a statement." This actually restores consistency with style_guide.md's
+% own audit finding under "Whitespace and grouping" -- the real talks bold
+% a handful of key phrases within a sentence, never the whole thing; this
+% macro's old whole-sentence \textbf was the outlier, not the rule. Every
+% \slidepoint{...} call site now wraps only its own key word(s) in
+% \textbf{} by hand -- see style_guide.md rule 12.
 % ---------------------------------------------------------------------
-\newcommand{\slidepoint}[1]{{\large\color{NDBlue}\textbf{#1}}}
+\newcommand{\slidepoint}[1]{{\large\color{NDBlue}#1}}
 
 % ---------------------------------------------------------------------
 % Code / file trees. `listings`, not `minted`: minted needs -shell-escape and
