@@ -1,6 +1,6 @@
 # Project instructions: claude-for-research
 
-Persistent context for any AI assistant (Claude, ChatGPT/Codex, Gemini, etc.) working in this repository. This file is itself a live example of the "context, not conversation" pattern taught in [outline.md](outline.md) Section 2 — treat it as a demo candidate, not just internal config.
+Persistent context for any AI assistant (Claude, ChatGPT/Codex, Gemini, etc.) working in this repository. This file is itself a live example of the "context, not conversation" pattern the seminar teaches — treat it as a demo candidate, not just internal config.
 
 ## What this repo is
 
@@ -13,8 +13,8 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 | Path | Contents |
 |---|---|
 | `README.md` | Event details and the abstract (already submitted — final, no separate `abstract.md`) |
-| `outline.md` | Timed talk outline — the live-talk content plan |
-| `slides/` | Beamer deck (ND theme — see `slides/README.md`) |
+| `outline.md` | The original timed content plan, organized around a six-stage research lifecycle (Explore/Ground/Build/Record/Write/Verify). Superseded as the live-talk plan by `slides/storyboard.md`'s three-act structure (Prologue/Understand/Build/Challenge/Trust); kept as a planning-history artifact, not all of its content has a confirmed home in the current structure yet |
+| `slides/` | Beamer deck (ND theme). `storyboard.md` is the current, locked, slide-by-slide plan — the thing to read first. `style_guide.md` has the typography/color/density/logo rules, extracted from Alex's own real talks. `image_plan.md` maps every slide's visuals to a source. See `slides/README.md` for how these fit together |
 | `handout/` | LaTeX leave-behind handout, denser than the slides |
 | `resources/` | Polished, reusable student takeaways (prompts, scripts, templates) |
 | `notes/` | Working memory: design rationale, open questions, references, demo ideas, running decision log |
@@ -30,10 +30,10 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 7. **Don't overfit to Claude.** Claude is the title and hook (academic Team plan access), but most recommendations should be model-independent. Distinguish general practice from Claude-specific, ChatGPT/Codex-specific, and Gemini-specific implementation where it matters.
 8. **Optimize for teaching value, not technical elegance.** The test for any addition: "What should a graduate student remember and actually change about how they work on Monday morning?"
 9. **Prefer a small number of polished resources over a large prompt library.** See [resources/README.md](resources/README.md) for the prioritized list — don't add low-value prompt files beyond it without discussion.
-10. **Git:** only commit when explicitly asked. Create new commits rather than amending. Review `git status`/diff before staging.
+10. **Git:** commit incrementally as coherent units of work land, rather than batching a long session into one commit (Alex's standing preference, 2026-09-02). Create new commits rather than amending. Review `git status`/diff before staging.
 
 ## Content conventions
 
 - Avoid generic AI-writing patterns in seminar content itself (inflated importance, formulaic transitions, excessive three-item lists, vague claims) — the seminar teaches against this, so it should model good practice.
 - No decorative AI/robot/brain imagery. Favor screenshots, repository trees, real workflow diagrams, checklists, before/after examples.
-- Slides: sparse text, strong hierarchy, built on the [ND Beamer template](https://github.com/dphow/ND_Beamer_Template) (public domain). Handout: denser, functions as a standalone reference after the talk.
+- Slides: sparse text, strong hierarchy, built on the [ND Beamer template](https://github.com/dphow/ND_Beamer_Template) (public domain); see `slides/style_guide.md` for the specific rules (word-count targets, two body-text sizes, official colors only, no closing takeaway bar — the frame title states the point). Handout: denser, functions as a standalone reference after the talk.
