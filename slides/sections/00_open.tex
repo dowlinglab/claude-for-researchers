@@ -72,28 +72,37 @@
 % question stays here as an open hook the rest of the talk answers
 % implicitly; nothing elsewhere echoes it verbatim anymore.
 
+% REVISED 2026-09-03 (further feedback on this slide, same day): the
+% schedule regenerated again, now with 6 visitors (Pooh, Piglet, Tigger,
+% Eeyore, Owl, Rabbit) instead of 3, and thicker bars (patched lw 20 ->
+% 34 in the same scratch copy of the installed package) per Alex's
+% request to make the faculty-name boxes taller. The four history boxes
+% are spread out more (node distance 0.18cm -> 0.5cm) and each now
+% carries one short sentence, not just a year and a fragment -- still
+% grounded in the same git-verified facts as before, just spelled out
+% instead of abbreviated to fit a tighter box.
 \begin{frame}{Before Codex: a decade of schedules, one real run}
   \vfill
   \begin{columns}[c]
-    \begin{column}{0.6\textwidth}
+    \begin{column}{0.52\textwidth}
       \centering
-      \includegraphics[width=\textwidth]{figures/grad_visit_schedule_3}\\[0.2em]
+      \includegraphics[height=5cm]{figures/grad_visit_schedule_6}\\[0.2em]
       {\scriptsize Real optimizer, real ND CBE faculty --- fictional visitors.}
     \end{column}
-    \begin{column}{0.36\textwidth}
+    \begin{column}{0.44\textwidth}
       \centering
-      \begin{tikzpicture}[font=\scriptsize, node distance=0.18cm]
-        \node[draw=OkVermillion, rounded corners=2pt, minimum width=3.1cm, minimum height=0.8cm, align=center]
-          (a) {\textbf{Before 2023}\\DGA: $\sim$10 hrs};
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=0.8cm, align=center, below=of a]
-          (b) {\textbf{2023}\\Jeff Kantor \& I};
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=0.8cm, align=center, below=of b]
-          (c) {\textbf{2024--2025}\\I run it alone};
-        \node[draw=NDGold, rounded corners=2pt, minimum width=3.1cm, minimum height=0.8cm, align=center, below=of c, fill=CodeBg]
-          (d) {\textbf{Feb 2026}\\with Codex};
-        \draw[-{Stealth[length=5pt]}, thick] (a) -- (b);
-        \draw[-{Stealth[length=5pt]}, thick] (b) -- (c);
-        \draw[-{Stealth[length=5pt]}, thick] (c) -- (d);
+      \begin{tikzpicture}[font=\scriptsize, node distance=0.5cm]
+        \node[draw=OkVermillion, rounded corners=2pt, minimum width=4.2cm, minimum height=1cm, text width=3.8cm, align=center]
+          (a) {\textbf{Before 2023}\\DGA spent about 10 hours by hand, every time something changed.};
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=4.2cm, minimum height=1cm, text width=3.8cm, align=center, below=of a]
+          (b) {\textbf{2023}\\Jeff Kantor and I built a notebook to formulate it as optimization.};
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=4.2cm, minimum height=1cm, text width=3.8cm, align=center, below=of b]
+          (c) {\textbf{2024--2025}\\I ran it alone, patching it by hand each year.};
+        \node[draw=NDGold, rounded corners=2pt, minimum width=4.2cm, minimum height=1cm, text width=3.8cm, align=center, below=of c, fill=CodeBg]
+          (d) {\textbf{Feb 2026}\\I converted it into a tested, public Python package with Codex.};
+        \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+        \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+        \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
       \end{tikzpicture}
     \end{column}
   \end{columns}
