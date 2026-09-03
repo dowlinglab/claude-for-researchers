@@ -25,18 +25,22 @@
 % to fill the slide's space better -- and the repo link. Filenames read
 % straight off the repo tree (resources/), not retyped from memory.
 %
-% Archetypes slide ADDED 2026-09-03 at Alex's request, placed right before
-% the meta slide, to foreshadow the six example types before the acts
-% start using them. Six types straight from demo_ideas.md's confirmed
-% roster -- no new taxonomy invented here, just a preview of the existing
-% one. Deliberately doesn't name which type shows up in which act (that's
-% the Epilogue's summary-matrix job) or which examples are named vs.
-% generic (that's demo_ideas.md's own naming-convention call) -- this
-% slide only previews the six kinds of task.
+% Archetypes content ADDED 2026-09-03 at Alex's request, first as its own
+% slide right before the meta slide, then FOLDED INTO this slide the same
+% day once he asked to cut this slide's act-strip and use the freed space
+% for the archetype preview instead -- the standalone slide it came from is
+% gone (would have been a pure repeat, against style_guide.md rule 9). Six
+% types straight from demo_ideas.md's confirmed roster -- no new taxonomy
+% invented here, just a preview of the existing one. Deliberately doesn't
+% name which type shows up in which act (that's the Epilogue's summary-
+% matrix job) or which examples are named vs. generic (that's
+% demo_ideas.md's own naming-convention call) -- just a preview.
+%
+% The act-strip itself is cut, not just relocated (Alex's own call,
+% 2026-09-03): a second copy right after the roadmap slide's outline added
+% nothing new, per style_guide.md rule 9.
 
 \begin{frame}{One year of practices, not a tool tutorial}
-  \vfill
-  \begin{center}\actstrip{0}\end{center}
   \vfill
   \begin{columns}[t]
     \begin{column}{0.48\textwidth}
@@ -56,6 +60,16 @@
       \end{itemize}
     \end{column}
   \end{columns}
+  \vspace{0.8em}
+  \begin{center}
+    \textbf{Six kinds of task, all year}\\[0.5em]
+    \small
+    \begin{tabular}{@{}p{4.7cm}p{4.7cm}@{}}
+      Inherited material $\to$ manuscript & Crafting a proposal \\[0.5em]
+      Auditing a manuscript & Code $\to$ released package \\[0.5em]
+      Literature review $\to$ guide & Retooling a course \\
+    \end{tabular}
+  \end{center}
   \vfill
 \end{frame}
 
@@ -124,31 +138,6 @@
   \begin{center}
     \small\texttt{github.com/dowlinglab/claude-for-researchers}\\
     not a summary to remember --- a repo to clone.
-  \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{Six kinds of task, all year, most of them familiar}
-  \vfill
-  \begin{columns}[t]
-    \begin{column}{0.48\textwidth}
-      \begin{itemize}\setlength\itemsep{0.9em}
-        \item Inherited material, matured toward a manuscript
-        \item Auditing a manuscript's final version
-        \item A literature review, turned into a getting-started guide
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{itemize}\setlength\itemsep{0.9em}
-        \item Crafting a proposal
-        \item Code, turned into a released package
-        \item Retooling a course
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \vfill
-  \begin{center}
-    \small Every example today is one of these six --- some named, some not, all real.
   \end{center}
   \vfill
 \end{frame}

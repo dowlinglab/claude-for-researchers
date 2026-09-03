@@ -24,7 +24,7 @@ A screenshot earns its place when the browser/GitHub/PyPI frame around the conte
 
 ## Prologue — Tinker
 
-**Revised 2026-09-03** against the current 10-slide list: the teaser is now two hook slides with real visual plans (was one, text-only); the claim moved from item 2 to item 4; data classification and the two-checks list moved out entirely (now Epilogue items 2-3); a new archetypes slide (item 9) needs no image; the resources slide (item 8) is now a typeset filename list per Alex's explicit request, not a candidate screenshot.
+**Revised 2026-09-03, twice.** First pass: the teaser is now two hook slides with real visual plans (was one, text-only); the claim moved from item 2 to item 4; data classification and the two-checks list moved out entirely (now Epilogue items 2-3); the resources slide (item 8) is now a typeset filename list per Alex's explicit request, not a candidate screenshot. Second pass, same day: both act-strip diagrams in this section (items 5 and 6) are cut — Alex's call, now `style_guide.md` rule 9, that a second copy of the same diagram adds nothing once the roadmap slide has already shown the outline. The six-kinds-of-task preview, briefly its own slide, moved into the freed space on item 6 instead.
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
@@ -32,12 +32,11 @@ A screenshot earns its place when the browser/GitHub/PyPI frame around the conte
 | 2 | Before Codex: ten hours, a notebook, then patches | a visit-day-schedule grid | B (synthetic) | **built, deliberately synthetic, not a real screenshot** — a real generated schedule carries visiting students' and faculty's actual names/times, which is exactly the personal data the Epilogue's classification slide says not to publish. Illustrative by design, not a placeholder waiting on capture |
 | 3 | One weekend with Codex, and I kept going | version-timeline TikZ (real dates/versions) | B (real data) | built — moved here from Act II 2026-09-03 (see that section's note); **candidate upgrade to real screenshots**: PyPI page, GitHub tag list, commit graph — see "what needs capturing" below |
 | 4 | The claim | none | — | text only, framing slide, deliberately spare — moved here from item 2 |
-| 5 | Borrowed structure | TAL logo + act-strip | C + B | ✅ have (`figures/tal_logo.png`) + built; act list is now single-line entries, not a two-line table |
-| 6 | One year of practices, not a tool tutorial | act-strip only | B | built |
+| 5 | Borrowed structure | TAL logo | C | ✅ have (`figures/tal_logo.png`); act list is now single-line entries, not a two-line table; the bottom act-strip is cut (redundant with the outline just shown, and was colliding with the corner logo) |
+| 6 | One year of practices, not a tool tutorial | a compact "six kinds of task" grid, typeset (no act-strip) | text | **revised 2026-09-03**: act-strip cut, replaced with the six-archetypes preview (was its own slide, now shares this one) |
 | 7 | Don't become loyal to a model | vendor table | text | no image needed |
 | 8 | Everything today is on GitHub | typeset filename list (all 9+3+3+3 files) + repo link | text | **resolved 2026-09-03**: was a candidate for a real GitHub repo-tree screenshot; Alex asked instead for the actual filenames typeset directly, which fills the space better and needs no capture |
-| 9 | Six kinds of task, all year, most of them familiar | none | — | text only, new 2026-09-03 — previews the six-types table above, no new visual needed |
-| 10 | This talk was built the same way | none | — | text only, a numbered list |
+| 9 | This talk was built the same way | none | — | text only, a numbered list |
 
 Moved to the Epilogue, 2026-09-03: "ND data classification" and "Check before you start" — see that section below.
 

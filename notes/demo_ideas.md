@@ -29,12 +29,12 @@ Outside this taxonomy by design: the Prologue/Epilogue hobby material (`grad-vis
 
 ## Prologue — Tinker
 
-**Revised 2026-09-03:** the hook (row 1) is now told in full here, across two slides with real visuals — not teased and held for Act II. Act II's own opener is now a one-line callback into the material it still owns exclusively: the group-wide impact. Row 2 below was stale — the hobby stories (boot-dryer-octopus, kitchen organizer) are Epilogue material, not Prologue; see that section.
+**Revised 2026-09-03:** the hook (row 1) is now told in full here, across two slides with real visuals — not teased and held for Act II. Act II's own opener is now a one-line callback into the material it still owns exclusively: the group-wide impact. The archetypes preview (row 2) was briefly its own slide, then folded into the "not a tool tutorial" scoping slide the same day, replacing that slide's act-strip diagram — Alex's call, now `style_guide.md` rule 9: the act-strip repeated the roadmap slide's outline and added nothing, and the freed space was better spent foreshadowing the acts.
 
 | Concrete task | Example | Principle |
 |---|---|---|
 | Turn a personal annual chore into a published tool | `grad-visit-scheduler` — told in full here (type 3); Act II covers its group-wide impact | The habits that work on a weekend project are the same ones that work on research |
-| Preview the six kinds of task before the acts use them | The six-types table above, previewed directly, no new examples | Every example today is one of six familiar kinds |
+| Preview the six kinds of task before the acts use them | The six-types table above, previewed directly, no new examples — shares a slide with the "not a tool tutorial" scoping content | Every example today is one of six familiar kinds |
 
 ## Act I — Understand: conversation → living context, with git
 
@@ -116,4 +116,4 @@ Rows 2-3 moved in from the Prologue 2026-09-03, Alex's suggestion — they read 
 ## Still open
 
 - **Type 4's naming** was not explicitly asked about; assumed generic by the same conservative default as types 1–2. Confirm or correct.
-- ~~Slide count vs. budget~~ — this file no longer tracks the running count; `slides/storyboard.md`'s "At a glance" table is authoritative (currently 44 slides, ~48 min, against a 35-40 slide / ~40-minute-talk target — over budget, rehearsal-driven trimming still pending).
+- ~~Slide count vs. budget~~ — this file no longer tracks the running count; `slides/storyboard.md`'s "At a glance" table is authoritative (currently 43 slides, ~47.5 min, against a 35-40 slide / ~40-minute-talk target — over budget, but Alex confirmed 2026-09-03 he isn't worried about the count while there's still this much editing left; rehearsal-driven trimming still pending).
