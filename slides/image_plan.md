@@ -90,13 +90,15 @@ Rewritten 2026-09-02 against the current 7-slide list (5 regular + a 2-part caps
 
 ## Epilogue — Trust
 
+Updated 2026-09-02 to match the 5-slide list built in `05_epilogue.tex` — adds the summary matrix (not in this table's earlier version) and merges the two hobby slides into one, matching the recuration decided earlier in the project (boot-dryer-octopus as the spoken anchor, the rest as a link-only mention on the same slide, not a second slide).
+
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
-| 1 | Back to the question | none | — | text only |
-| 2 | You own every claim | none | — | text only |
-| 3 | Boot-dryer octopus | ✅ have | C | `figures/boot_dryer_octopus.jpeg` |
-| 4 | Hobbies gallery | ✅ have (2 of 3) | C | `figures/kitchen_organizer_telescope_shelf.jpeg`; radio book has no local image — a screenshot of the public GitHub repo (`adowling2/radio-extra-book`) would work in its place, or a link-only mention as already planned |
-| 5 | Monday morning | none | — | text only |
+| 1 | Back to the question | none | — | text only, deliberately spare |
+| 2 | A handful of projects, recurring | the summary matrix (types × acts, `\good{}` marks) | B | built, typeset tabular — no image file needed |
+| 3 | You own every claim | none | — | text only |
+| 4 | Curiosity is a feature, not a consolation prize | ✅ have, in use | C | `figures/boot_dryer_octopus.jpeg` (the spoken anchor); kitchen organizer/telescope shelf and `radio-extra-book` are a link-only mention on the same slide, no image shown |
+| 5 | One thing to change Monday morning | none | — | text only |
 
 ---
 
