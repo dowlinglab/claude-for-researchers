@@ -14,16 +14,13 @@
 % pinning to the top with unbalanced whitespace below (see style_guide.md
 % rule 8) -- that was the actual cause of the "ugly whitespace on the
 % right," not the column proportions.
+% Columns swapped 2026-09-03 at Alex's request: the TAL logo was sitting
+% bottom-left, the same corner as the ND logo (now bigger and pulled
+% tighter into the corner -- see main.tex). Text list now sits over that
+% corner instead, which collides far less than a second logo would.
 \begin{frame}{Borrowed structure}
   \vfill
   \begin{columns}[c]
-    \begin{column}{0.42\textwidth}
-      \centering
-      \includegraphics[width=0.62\textwidth]{figures/tal_logo}\\[1.1em]
-      {\small\itshape%
-        We will borrow the three-act format --- but to temper
-        expectations, I am not as entertaining as Ira Glass.}
-    \end{column}
     \begin{column}{0.54\textwidth}
       \centering
       \large
@@ -34,6 +31,13 @@
         \color{NDGold!80!black}\textbf{Act III:} \textbf{\color{NDBlue}Challenge} \\[1em]
         \color{NDGold!80!black}\textbf{Epilogue:} \textbf{\color{NDBlue}Trust}
       \end{tabular}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \includegraphics[width=0.62\textwidth]{figures/tal_logo}\\[1.1em]
+      {\small\itshape%
+        We will borrow the three-act format --- but to temper
+        expectations, I am not as entertaining as Ira Glass.}
     \end{column}
   \end{columns}
   \vfill

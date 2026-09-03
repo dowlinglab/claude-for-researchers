@@ -61,36 +61,40 @@
   \vfill
 \end{frame}
 
+% Tightened 2026-09-03 (spacing + trimmed ~15 words) to clear the bigger,
+% corner-tighter logo -- this was the deck's densest slide already; see
+% main.tex's \ndcornerlogo comment for why every content-heavy frame
+% needed a second look after that change, not just this one.
 \begin{frame}[fragile]{One weekend with Codex, and I kept going}
   \vfill
   \begin{center}
-  \begin{tikzpicture}[font=\small]
+  \begin{tikzpicture}[font=\scriptsize]
     \foreach \x/\lbl in {0/v0.1.2, 2.2/v0.2.0, 4.4/v0.2.5, 6.6/v0.3.1} {
-      \fill[NDGold] (\x,0) circle (2.5pt);
-      \node[below] at (\x,-0.15) {\lbl};
+      \fill[NDGold] (\x,0) circle (2pt);
+      \node[below] at (\x,-0.13) {\lbl};
     }
     \draw[thick, NDBlue] (0,0) -- (6.6,0);
-    \node[above] at (0,0.3) {\scriptsize Feb 11};
-    \node[above] at (6.6,0.3) {\scriptsize Feb 17};
+    \node[above] at (0,0.18) {Feb 11};
+    \node[above] at (6.6,0.18) {Feb 17};
   \end{tikzpicture}
   \end{center}
-  \vspace{0.3em}
+  \vspace{0.1em}
   \begin{center}
-    \small On sabbatical last year, I nearly turned down the ask to build the schedule again --- then decided to use it as an excuse to really try Codex.
+    \small On sabbatical last year, I nearly turned down the ask --- then decided to use it as an excuse to really try Codex.
   \end{center}
-  \vspace{0.3em}
+  \vspace{0.1em}
   \begin{center}
-    \small About 1.5 hours: Codex reformatted \keyterm{Carla}'s spreadsheet and regenerated the schedule. I was stunned, so I kept going --- 8.5 more hours turned the notebook into a tested, documented, pip-installable package (\texttt{grad-visitor-scheduler}) with 100\% test coverage, Codex writing the tests and hunting the edge cases.
+    \small About 1.5 hours: Codex reformatted \keyterm{Carla}'s spreadsheet and regenerated the schedule. I kept going --- 8.5 more hours turned the notebook into a tested, documented, pip-installable package (\texttt{grad-visitor-scheduler}) with 100\% test coverage.
   \end{center}
-  \vspace{0.5em}
+  \vspace{0.15em}
   \begin{center}
     {\small\itshape Live, right now: adding one feature, start to finish, in about 20 minutes.}
   \end{center}
-  \vspace{0.6em}
+  \vspace{0.15em}
   \begin{center}
     \slidepoint{How do we train the next generation to get both?}
   \end{center}
-  \vfill
+  \vspace{1.8cm plus 1fill}
 \end{frame}
 
 \begin{frame}{The claim}

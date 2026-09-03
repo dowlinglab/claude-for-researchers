@@ -186,13 +186,16 @@
 % ---------------------------------------------------------------------
 % Small ND logo, bottom-left, on every frame from here on -- reproduces
 % Alex's own real-talk slide master (see slides/style_guide.md: bottom-left,
-% ~1% margin from each edge). Sized at ~16.5% of slide width, 1.5x the ~10%
-% the audit measured -- Alex asked for 150-200% of the audit-matched size on
-% 2026-09-02; picked the low end after 200% collided with centered text on
-% two different frames (00_open.tex's teaser, 01_ecosystem.tex's data-
-% classification frame) -- a bigger logo eats into exactly the corner where
-% centered content's last line often lands. A background template, not
-% \logo{}/frametitle's own logo slot,
+% ~1% margin from each edge). Sized at ~24.75% of slide width as of
+% 2026-09-03 -- a second enlargement, 150% of the 16.5%-of-width size the
+% 2026-09-02 round landed on (itself 1.5x the ~10% the original audit
+% measured), at Alex's explicit request, along with pulling the margin
+% tighter into the corner (xshift/yshift below, was 2mm/4mm). This is now
+% roughly 2.5x the audit-matched size with a smaller margin than the audit
+% itself found -- both moves raise collision risk with bottom-left content
+% on any given frame (see the margin note below), so a full-deck visual
+% QA re-check after this change is not optional. A background template,
+% not \logo{}/frametitle's own logo slot,
 % because those place it top-right and are suppressed on [plain] frames;
 % a background template survives [plain] (only head/foot/sidebar are
 % suppressed there), so the stage dividers below get it too. The title
@@ -209,18 +212,19 @@
 % the node's coordinates collapse to (0,0) and nothing renders. Verified
 % both failure modes in isolation before landing this.
 % ---------------------------------------------------------------------
-% yshift is larger than the ~1% margin the audit measured: a content-heavy
-% frame's last line (e.g. a two-table frame's closing text) can reach close
-% enough to the physical bottom edge to collide with the logo at 1.5mm --
-% caught visually on slides/sections/01_ecosystem.tex's data-classification
-% frame. 4mm clears it with margin for other tall frames, still reads as
-% the corner. Re-check this margin against any new content-heavy frame
-% (visual QA, not just "it compiles") -- the bigger logo makes a collision
-% more visible, not less likely.
+% xshift/yshift tightened twice 2026-09-03 (was 2mm/4mm, then 1mm/1.5mm,
+% now flush against the corner) at Alex's explicit request to pull the
+% logo as far into the corner as reasonably possible -- even though that
+% means less clearance for a bigger logo, the opposite of the 2026-09-02
+% reasoning that widened yshift to 4mm in the first place. Left at
+% 0.5mm/0.5mm rather than 0: some margin avoids a projector/printer edge
+% clipping the logo outright. Re-ran full-deck visual QA after this
+% change (all 43 slides, not a sample) specifically for logo collisions;
+% see storyboard.md/style_guide.md for what was found and fixed.
 \newcommand{\ndcornerlogo}{%
   \begin{tikzpicture}[remember picture, overlay]
-    \node[anchor=south west, xshift=2mm, yshift=4mm] at (current page.south west)
-      {\includegraphics[width=0.165\paperwidth]{figures/nd_logo.png}};
+    \node[anchor=south west, xshift=0.5mm, yshift=0.5mm] at (current page.south west)
+      {\includegraphics[width=0.2475\paperwidth]{figures/nd_logo.png}};
   \end{tikzpicture}}
 \setbeamertemplate{background}{\ndcornerlogo}
 

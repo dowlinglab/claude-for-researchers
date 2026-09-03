@@ -33,8 +33,12 @@
   \vfill
 \end{frame}
 
+% Spacing tightened 2026-09-03 (vfill -> fixed vspace between the two
+% tables) to clear the bigger, corner-tighter logo -- two tables plus a
+% closing line left little room to spare even before that change.
 \begin{frame}{Claude is approved here for public data only}
   \vfill
+  \renewcommand{\arraystretch}{0.9}
   \begin{center}
   \begin{tabular}{@{}lll@{}}
     \toprule
@@ -47,7 +51,7 @@
     \bottomrule
   \end{tabular}
   \end{center}
-  \vfill
+  \vspace{0.5em}
   \begin{center}
   \begin{tabular}{@{}lc@{}}
     \toprule
@@ -58,11 +62,12 @@
     \bottomrule
   \end{tabular}
   \end{center}
-  \vfill
+  \renewcommand{\arraystretch}{1}
+  \vspace{0.5em}
   \begin{center}
     \small An enterprise license is in progress --- verify this before the talk.
   \end{center}
-  \vfill
+  \vspace{1.8cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Two checks, thirty seconds, before you start}
@@ -116,27 +121,30 @@
   \vfill
 \end{frame}
 
+% Image height and spacing tightened 2026-09-03 (was 3.5cm) to clear the
+% bigger, corner-tighter logo -- this was already the tallest image in
+% the deck relative to its frame.
 \begin{frame}{Curiosity is a feature, not a consolation prize}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.42\textwidth}
       \centering
-      \includegraphics[height=3.5cm]{figures/boot_dryer_octopus.jpeg}
+      \includegraphics[height=3cm]{figures/boot_dryer_octopus.jpeg}
     \end{column}
     \begin{column}{0.54\textwidth}
       \small
       A \$10 inline fan, a 3D-printed adapter, ChatGPT's first-ever OpenSCAD project --- built with Hesburgh Libraries' 3D printing and the Innovation Hub (credit: Adam Heet). It caught a hairdryer fire-hazard risk before I built it, and suggested the fan instead.
     \end{column}
   \end{columns}
-  \vspace{0.5em}
+  \vspace{0.3em}
   \begin{center}
     {\scriptsize Also: a kitchen organizer and a telescope shelf (\texttt{radio-extra-book} too) --- same habits, lower stakes.}
   \end{center}
-  \vspace{0.6em}
+  \vspace{0.3em}
   \begin{center}
     \slidepoint{What would 3D printing teach in a CBE course ---\\ turbulent-mixing baffles, a vehicle for thermo, transport, controls?}
   \end{center}
-  \vfill
+  \vspace{1.8cm plus 1fill}
 \end{frame}
 
 \begin{frame}{One thing to change Monday morning}
