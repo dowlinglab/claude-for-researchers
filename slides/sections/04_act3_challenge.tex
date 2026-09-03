@@ -1,10 +1,25 @@
 % ========================= ACT III: CHALLENGE =========================
-% storyboard.md Act III, all 7 slides (5 regular + a 2-part capstone). Job:
+% storyboard.md Act III, revised 2026-09-03 around Task 5 and Task 6. Job:
 % AI tells you that you're wrong, and you have to decide whether to
-% believe it. Slides 1-5 are manuscript audits (Type 2, generic per the
-% naming convention -- unpublished work). The capstone names "Optimization
-% for Decision Science" (Alex's own, already-public course) and watches
-% one project across Understand -> Build -> Challenge.
+% believe it. Task 5 is manuscript audits (Type 2, generic per the naming
+% convention -- unpublished work). Task 6, the capstone, names
+% "Optimization for Decision Science" (Alex's own, already-public course)
+% and watches one project across Understand -> Build -> Challenge.
+%
+% REVISED 2026-09-03, Alex reading the outline directly: "Does Task 5 need
+% that many slides? We need a slide to set up Task 5." Two changes, net
+% slide count unchanged:
+%   1. A new setup slide (below) states the task before any technique
+%      does -- every other task (1-4, in Act I/II) opens with an explicit
+%      "Task N --" framing; Task 5 didn't, it jumped straight into a
+%      method point.
+%   2. "Trace every number back to the file" and "'Cannot verify' is a
+%      result you want to get" merge into one slide -- "cannot verify" is
+%      already one of the claim-tracing table's three row statuses
+%      (alongside verified/mismatch), so a whole separate slide for one
+%      status was more than it needed.
+% All five Task 5 slides now carry the "Task 5 --" prefix, matching the
+% pattern already established in Act I's Task 1-3 and Act II's Task 4.
 %
 % Uses \good/\bad/\unknown for the first time in the deck (main.tex) --
 % the claim-tracing table is exactly the three-way verified/mismatch/
@@ -12,7 +27,19 @@
 
 \stagedivider{4}{Act III: Challenge}{Do you believe it?}
 
-\begin{frame}{Merging three questions reads as an attack}
+\begin{frame}{Task 5 --- audit a manuscript before it's submitted}
+  \vfill
+  \begin{center}
+    \small Before it goes out, someone finds what's wrong with it --- you, now, or a reviewer, later. Grounded here in two real audits, kept generic: unpublished work.
+  \end{center}
+  \vspace{1em}
+  \begin{center}
+    \slidepoint{Three questions, asked separately:\\arithmetic, method, transcription.}
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{Task 5 --- merging three questions reads as an attack}
   \vfill
   \begin{columns}[t]
     \begin{column}{0.31\textwidth}
@@ -41,7 +68,7 @@
 % TODO(image_plan.md Act III #2): numbers are illustrative/synthetic
 % (from outline.md's original example), never sourced from any real
 % unpublished audit -- keep it that way on any future edit of this table.
-\begin{frame}{Trace every number back to the file that produced it}
+\begin{frame}{Task 5 --- trace every number back to the file that produced it}
   \vfill
   \begin{center}
   \begin{tabular}{@{}p{5.4cm}p{2.6cm}p{2.6cm}l@{}}
@@ -54,26 +81,18 @@
     \bottomrule
   \end{tabular}
   \end{center}
-  \vfill
+  \vspace{0.5em}
   \begin{center}
     \small Every claim gets a row before the reviewers make you build one.
   \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{"Cannot verify" is a result you want to get}
-  \vfill
+  \vspace{0.5em}
   \begin{center}
-    \unknown{\large Cannot verify}
-  \end{center}
-  \vspace{0.8em}
-  \begin{center}
-    \small It is not a failure of the audit --- it's the audit finding a real provenance gap. AI should never fill that gap by guessing; a missing source is a bug you just found for free.
+    \slidepoint{\unknown{Cannot verify} is a result you want ---\\a real provenance gap, not a failure of the audit.}
   \end{center}
   \vfill
 \end{frame}
 
-\begin{frame}{A clean build hid a silent failure}
+\begin{frame}{Task 5 --- a clean build hid a silent failure}
   \vfill
   \begin{columns}[t]
     \begin{column}{0.31\textwidth}
@@ -99,7 +118,7 @@
   \vfill
 \end{frame}
 
-\begin{frame}{My status report was wrong about eleven items}
+\begin{frame}{Task 5 --- my status report was wrong about eleven items}
   \vfill
   \begin{center}
     \bad{\large "Everything is up to date."}
@@ -119,7 +138,7 @@
 % ndcbe.github.io/optimization (public course site) and, if available, a
 % page of the converted coursepack showing the corrected sign. Both
 % public -- Alex's own course.
-\begin{frame}{Capstone, part 1 --- the Act I argument, taken all the way}
+\begin{frame}{Task 6, part 1 --- the Act I argument, taken all the way}
   \vfill
   \begin{center}
     \keyterm{Optimization for Decision Science} --- Alex's own course, already public.
@@ -137,12 +156,12 @@
   \end{columns}
   \vfill
   \begin{center}
-    \small The same \texttt{CLAUDE.md} pattern Act I explained generically --- now a mature, specific instance, watched end to end.
+    \small The same \texttt{CLAUDE.md} pattern Task 2 explained generically --- now a mature, specific instance, watched end to end.
   \end{center}
   \vfill
 \end{frame}
 
-\begin{frame}{Capstone, part 2 --- the verifier needed verifying too}
+\begin{frame}{Task 6, part 2 --- the verifier needed verifying too}
   \vfill
   \begin{center}
     \small The verification pass ran three independent checks on the corrected sign.
@@ -153,7 +172,7 @@
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    \small Corrected before it shipped --- the same self-correction principle as the manuscript audits, now from a second domain.
+    \small Corrected before it shipped --- the same self-correction principle as Task 5's audits, now from a second domain.
   \end{center}
   \vfill
   \begin{center}
