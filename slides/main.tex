@@ -56,6 +56,11 @@
 \definecolor{OkGreen}{HTML}{009E73}     % the practice / verified
 \definecolor{OkVermillion}{HTML}{D55E00}% the failure mode  (not red: CB-safe)
 \definecolor{OkSky}{HTML}{56B4E9}
+% Gray, kept only for non-prose UI elements deliberately meant to look
+% inactive/de-emphasized (the act-strip's unlit stage boxes and arrows,
+% lstlisting code comments) -- never for a sentence someone has to read.
+% Removed from all body text, captions, and asides deck-wide 2026-09-02
+% (Alex's call: read as too low-contrast). See style_guide.md rule 4.
 \definecolor{Muted}{HTML}{7A7A7A}
 \definecolor{CodeBg}{HTML}{F4F4F2}
 
@@ -63,7 +68,7 @@
 % ND Blue bar (15.79:1). Setting fg=NDBlue here put navy text on a navy bar.
 \setbeamercolor{structure}{fg=NDBlue}
 \setbeamercolor{itemize item}{fg=NDBlue}
-\setbeamercolor{itemize subitem}{fg=Muted}
+\setbeamercolor{itemize subitem}{fg=NDBlue}
 \setbeamertemplate{navigation symbols}{}
 
 % ---------------------------------------------------------------------
@@ -76,19 +81,6 @@
 \newcommand{\unknown}[1]{\textcolor{Muted}{\faQuestion~#1}}
 \newcommand{\keyterm}[1]{\textcolor{NDBlue}{\textbf{#1}}}
 
-% The one-line takeaway that closes a section. Gold rule, dark text -- gold as
-% a rule is fine, gold as text on white is not.
-%
-% Being phased out (2026-09-02, Alex's call): it tended to just repeat the
-% frame's title in different words. Newer frames put the point in the title
-% instead and use the body purely as evidence -- see 01_ecosystem.tex's
-% comment. Kept defined only because sections/02_context.tex (still stale,
-% not yet rewritten) calls it; remove once that file is rewritten and no
-% caller remains.
-\newcommand{\takeaway}[1]{%
-  \vfill
-  {\color{NDGold}\rule{\textwidth}{1.2pt}}\\[0.35em]
-  {\small\textbf{#1}}\par}
 
 % ---------------------------------------------------------------------
 % Body text: exactly two sizes, per slides/style_guide.md (a 2026-09-02 audit
@@ -153,7 +145,7 @@
   \begin{center}
     \actstrip{#1}\\[1.6em]
     {\LARGE\color{NDBlue}\textbf{#2}}\\[0.7em]
-    {\large\color{Muted}#3}
+    {\large#3}
   \end{center}
   \vfill
 \end{frame}}
@@ -175,7 +167,7 @@
   {\fontsize{30}{34}\selectfont\color{NDBlue}\textbf{Claude for Research}}\\[0.35em]
   {\fontsize{20}{24}\selectfont\color{NDGold!75!black}\textbf{Beyond the Chatbot}}\\[2.2em]
   {\large\color{black}\textbf{Alex Dowling}}\\[0.3em]
-  {\small\color{Muted}Chemical and Biomolecular Engineering}
+  {\small Chemical and Biomolecular Engineering}
   \vfill
   {\color{NDGold}\rule{\textwidth}{1.5pt}}\\[0.7em]
   \begin{columns}[c]
@@ -184,7 +176,7 @@
     \end{column}
     \begin{column}{0.5\textwidth}
       \raggedleft
-      {\small\color{Muted}17 September 2026\\ Carey Auditorium, Hesburgh Library}
+      {\small 17 September 2026\\ Carey Auditorium, Hesburgh Library}
     \end{column}
   \end{columns}
   \vspace{0.3em}

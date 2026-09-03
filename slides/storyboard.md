@@ -2,7 +2,7 @@
 
 The talk's structure, locked 2026-09-02, following the Dowling Lab presentation-planning algorithm (group manual §Presentations): question → main points → outline → slide budget → slide titles → feedback → slides. This file is steps 3–6.
 
-**Status:** structure locked; slide titles drafted below; `slides/sections/02_context.tex` predates this and still uses the old ten-section framing (Explore/Ground/Build/Record/Write/Verify) plus the retired `\takeaway` gold-rule bar. It needs rewriting to match the acts below and `style_guide.md`'s current rules — tracked as the immediate next step, not yet done. `00b_roadmap.tex`, `00_open.tex`, and `01_ecosystem.tex` (rewritten 2026-09-02, against this file and `style_guide.md`) are built against this structure. See [`image_plan.md`](image_plan.md) for how every slide's visuals get sourced, before drafting goes further.
+**Status:** structure locked; slide titles drafted below; `slides/sections/02_context.tex` predates this and still uses the old ten-section framing (Explore/Ground/Build/Record/Write/Verify) — its five frames don't map onto Act I's locked slide list below, so it needs real content work, not a mechanical pass (see `style_guide.md` "Still stale"). Its `Muted`-color and `\takeaway`-bar usage were already brought into line with the current rules on 2026-09-02, independent of that larger question. `00b_roadmap.tex`, `00_open.tex`, and `01_ecosystem.tex` (rewritten 2026-09-02, against this file and `style_guide.md`) are built against this structure. See [`image_plan.md`](image_plan.md) for how every slide's visuals get sourced, before drafting goes further.
 
 ---
 

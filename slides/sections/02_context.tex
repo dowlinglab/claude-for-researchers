@@ -30,8 +30,9 @@
   \vfill
 \end{frame}
 
-\begin{frame}[fragile]{This is a real commit message}
+\begin{frame}[fragile]{The easiest mistake in this talk to make}
   \vfill
+  {\scriptsize A real commit message, verbatim, from one of my own best-run projects.}
   \begin{lstlisting}
 Trim analysis and plotting to per-run only
 
@@ -41,38 +42,36 @@ Trim analysis and plotting to per-run only
   \vfill
   \begin{center}
     {\large That conversation no longer exists.}\\[0.7em]
-    {\color{Muted}The change is still in the repository.\\
+    {The change is still in the repository.\\
      The reasoning behind it is not.}
   \end{center}
   \vfill
-  \takeaway{This is from one of my own best-run projects. It is the easiest mistake in this talk to make.}
 \end{frame}
 
-\begin{frame}{Three kinds of context}
+\begin{frame}{Most frustration is missing context, not a bad model}
   \vfill
   \begin{columns}[t]
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Persistent}}\\[0.4em]
       {\small Goals, conventions, how to run things.\\[0.5em]
       True across sessions.}\\[0.7em]
-      {\scriptsize\color{Muted}$\rightarrow$ a project file}
+      {\scriptsize$\rightarrow$ a project file}
     \end{column}
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Authoritative}}\\[0.4em]
       {\small The papers, code, data, and results that decide what is true.}\\[0.7em]
-      {\scriptsize\color{Muted}$\rightarrow$ point at it, never summarize it}
+      {\scriptsize$\rightarrow$ point at it, never summarize it}
     \end{column}
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Task}}\\[0.4em]
       {\small What you are asking for right now.}\\[0.7em]
-      {\scriptsize\color{Muted}$\rightarrow$ the prompt (save it if it matters)}
+      {\scriptsize$\rightarrow$ the prompt (save it if it matters)}
     \end{column}
   \end{columns}
   \vfill
-  \takeaway{Most frustration with these tools is really the first two kinds of context going missing.}
 \end{frame}
 
-\begin{frame}[fragile]{One file, read at the start of every session}
+\begin{frame}[fragile]{Write down what you'd otherwise re-explain every session}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.62\textwidth}
@@ -104,20 +103,19 @@ Membrane transport parameter estimation.
       Name it neutrally.\\[0.6em]
       \texttt{CLAUDE.md} and \texttt{AGENTS.md}\\
       become three-line pointers to it.\\[1.2em]
-      {\color{Muted}Neither tool reads the other's file --- so the content lives
-      in one place and the tool files just point.}
+      Neither tool reads the other's file --- so the content lives
+      in one place and the tool files just point.
     \end{column}
   \end{columns}
   \vfill
-  \takeaway{Write down the thing you would otherwise re-explain in every session.}
 \end{frame}
 
-\begin{frame}{The honest limit}
+\begin{frame}{Enforce it with a script, not a sentence in a file}
   \vfill
   \begin{center}
     {\large Both of my projects that have one of these files\\
      have a \textbf{stale} one.}\\[1.4em]
-    {\color{Muted}One of them warns about stale absolute paths,\\
+    {One of them warns about stale absolute paths,\\
      directly above four stale absolute paths.}
   \end{center}
   \vfill
@@ -126,5 +124,4 @@ Membrane transport parameter estimation.
      A rule you actually need enforced needs something that fails.}}
   \end{center}
   \vfill
-  \takeaway{A test that exits non-zero. A script that checks. Not a sentence in a file.}
 \end{frame}
