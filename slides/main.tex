@@ -11,10 +11,12 @@
 %           wrong for this talk: nearly every artifact shown (file trees,
 %           diffs, tables, a matplotlib figure, two photo collages) is on a
 %           white ground and would punch a glare hole in a dark deck.
-% nologo -- no per-slide logo. It appears once, on the title slide.
+% nologo -- suppresses the theme's own top-right frametitle logo slot. A
+%           small corner logo still appears on every frame after the title
+%           slide (see \ndcornerlogo below), just not via this theme option.
 % No `nav` and no `sections`: nine sections in forty minutes do not justify
-% spending vertical space on every slide. Orientation comes from the lifecycle
-% divider instead (\lifecycle below).
+% spending vertical space on every slide. Orientation comes from the act-strip
+% divider instead (\actstrip below).
 % theme/ is put on TEXINPUTS by .latexmkrc, so the theme and its colour theme
 % resolve by name. Build with `make` or `latexmk -pdf main.tex`.
 \usetheme[white, nologo]{NotreDame}
@@ -117,10 +119,7 @@
 % Renamed from an earlier six-stage "lifecycle" framing (Explore, Ground,
 % Build, Record, Write, Verify) when the talk restructured around a three-act
 % story (Tinker / Understand / Build / Challenge / Trust). Kept the macro
-% shape so \stagedivider below didn't need to change. Old name \lifecycle is
-% aliased to it so the two calls already in sections/00_open.tex still
-% compile; retire the alias once that file is reconciled with the new
-% structure (tracked in slides/storyboard.md).
+% shape so \stagedivider below didn't need to change.
 % ---------------------------------------------------------------------
 \newcommand{\actstrip}[1]{%
 \begin{tikzpicture}[x=2.3cm, font=\scriptsize\sffamily]
@@ -139,7 +138,6 @@
     \fi
   }
 \end{tikzpicture}}
-\newcommand{\lifecycle}[1]{\actstrip{#1}} % TODO(storyboard): remove once 00_open.tex is rewritten
 
 % A stage divider: the act strip with one stage lit, plus the stage's question.
 \newcommand{\stagedivider}[3]{%
@@ -217,8 +215,8 @@
 \input{sections/00b_roadmap}
 \input{sections/01_ecosystem}
 \input{sections/02_context}
-% TODO(storyboard): 00_open / 01_ecosystem / 02_context predate the
-% Prologue/Act/Epilogue structure in slides/storyboard.md and need
-% reconciling with it -- see that file's "status" note.
+% TODO(storyboard): 01_ecosystem / 02_context predate the Prologue/Act/
+% Epilogue structure in slides/storyboard.md and need reconciling with it
+% -- see that file's "status" note. 00_open.tex was rewritten 2026-09-02.
 
 \end{document}

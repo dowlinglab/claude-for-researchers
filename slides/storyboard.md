@@ -2,7 +2,7 @@
 
 The talk's structure, locked 2026-09-02, following the Dowling Lab presentation-planning algorithm (group manual §Presentations): question → main points → outline → slide budget → slide titles → feedback → slides. This file is steps 3–6.
 
-**Status:** structure locked; slide titles drafted below; `slides/sections/00_open.tex`, `01_ecosystem.tex`, `02_context.tex` predate this and still use the old ten-section framing (Explore/Ground/Build/Record/Write/Verify). They need rewriting to match the acts below — tracked as the immediate next step, not yet done. `00b_roadmap.tex` is the first slide built against this structure. See [`image_plan.md`](image_plan.md) for how every slide's visuals get sourced, before drafting goes further.
+**Status:** structure locked; slide titles drafted below; `slides/sections/01_ecosystem.tex` and `02_context.tex` predate this and still use the old ten-section framing (Explore/Ground/Build/Record/Write/Verify). They need rewriting to match the acts below — tracked as the immediate next step, not yet done. `00b_roadmap.tex` and `00_open.tex` (rewritten 2026-09-02, against this file and `style_guide.md`) are built against this structure. See [`image_plan.md`](image_plan.md) for how every slide's visuals get sourced, before drafting goes further.
 
 ---
 
@@ -45,14 +45,14 @@ See [`../notes/demo_ideas.md`](../notes/demo_ideas.md) for the confirmed six exa
 **Job:** open with the grad-visit-scheduler headline as a teaser (not the full story — that's Act II), leave its closing question hanging, orient the room, and show what they walk away with today.
 
 1. **Title slide**
-2. **The teaser** — "One weekend, an annual scheduling headache, and a package on PyPI." Dates, Codex (not Claude), the 5× line — and the unresolved question left hanging: *"I'd touched every stage of this before. How do we train the next generation to get both?"* Do not answer it here.
+2. **The teaser** — *(built, `00_open.tex`)* "One weekend, an annual scheduling headache, and a package on PyPI." Dates, Codex (not Claude), the 5× line — and the unresolved question left hanging: *"I'd touched every stage of this before. How do we train the next generation to get both?"* Do not answer it here.
 3. **Borrowed structure** — *(built)* the *This American Life* citation + the Prologue/Act/Epilogue outline.
 4. **The landscape, briefly** — pick tools by task, not brand; don't become loyal to a model.
 5. **At Notre Dame: know your data classification** — the 🟢🟡🟠🔴 table + Claude-is-Public-only finding.
 6. **Two things to check before you start** — DoD/DoW, and "ask your PI" generalized.
 7. **What you get today** — a quick look at the resources: nine practice files, three prompts, three working scripts, three templates. This is the "show the resources" beat — a screenshot or a live `ls resources/` moment, not a detailed walkthrough.
 
-*(2, 4–6 are largely built already in `01_ecosystem.tex` under the old numbering; 3 is built; 2 and 7 are new.)*
+*(4–6 are largely built already in `01_ecosystem.tex` under the old numbering, still pending rewrite; 2 and 3 are built; 7 is new.)*
 
 ## Act I — Understand: conversation → living context, with git
 
@@ -112,5 +112,5 @@ Organized around two parallel transitions, both "an ephemeral, unbacked-up thing
 - ~~Where does the proposal-writing material live~~ — resolved: literature review in Act I, proposal writing in Act II (§8–9), as a document-shaped instance of "AI changes what you keep" alongside the code-shaped instance the hook already carries.
 - ~~Act I's role~~ — resolved 2026-09-02: Act I is a sell (git is the prerequisite that unlocks Codex/Claude Code), not a payoff. The mature-example slide was cut entirely rather than kept as an early teaser, so the act doesn't dilute its own argument. 7 slides → 6.
 - ~~The example roster and naming per type~~ — resolved 2026-09-02, recorded in `notes/demo_ideas.md`'s six-types table: types 3 and 6 named (`bits_for_gaps`/`emcal`/`grad-visit-scheduler`; "Optimization for Decision Science"), everything else generic, no exceptions — including `data3` (membrane-transport), deliberately not named alongside its two generic Type-1 siblings even though naming it in isolation would have been low-risk, because the asymmetry would draw more attention than the name would add.
-- **Slide count vs. budget.** Current total: 35 (was 36, then 35 again after Act I's cut). At-a-glance table assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue. Still needs a real count once `00_open.tex`/`01_ecosystem.tex`/`02_context.tex` are rewritten against this structure — the group-manual algorithm's step 4 ("check you have ~1 slide per minute") hasn't been re-run since the restructure.
+- **Slide count vs. budget.** Current total: 35 (was 36, then 35 again after Act I's cut). At-a-glance table assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue. Still needs a real count once `01_ecosystem.tex`/`02_context.tex` are rewritten against this structure — the group-manual algorithm's step 4 ("check you have ~1 slide per minute") hasn't been re-run since the restructure.
 - **Feedback pass.** Per the group manual: get outline feedback at least 8 days before the talk. Not yet done.
