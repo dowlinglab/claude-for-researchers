@@ -119,21 +119,30 @@
 % Build, Record, Write, Verify) when the talk restructured around a three-act
 % story (Tinker / Understand / Build / Challenge / Trust). Kept the macro
 % shape so \stagedivider below didn't need to change.
+%
+% ENLARGED 2026-09-03 at Alex's request ("I like the five-part visual on
+% the transition slides. Let's make it larger. Use the same font size as
+% the text under 'Act I: Understand'"): font scriptsize -> large, matching
+% \stagedivider's own subtitle size below. Safe to change globally --
+% grepped first: \actstrip is only ever called from \stagedivider now (an
+% earlier caller on the "One year of practices" content slide was removed
+% 2026-09-02 along with that slide's own act-strip, per style_guide.md
+% rule 9), so there's no smaller-context usage this could break.
 % ---------------------------------------------------------------------
 \newcommand{\actstrip}[1]{%
-\begin{tikzpicture}[x=2.3cm, font=\scriptsize\sffamily]
+\begin{tikzpicture}[x=3.1cm, font=\large\sffamily]
   \foreach \n [count=\i from 1] in {Tinker, Understand, Build, Challenge, Trust} {
     \pgfmathparse{int(\i == #1)}
     \ifnum\pgfmathresult=1
-      \node[fill=NDGold, text=black, rounded corners=2pt,
-            inner sep=4pt, minimum width=2.0cm, align=center] at (\i,0) {\textbf{\n}};
+      \node[fill=NDGold, text=black, rounded corners=3pt,
+            inner sep=6pt, minimum width=2.6cm, align=center] at (\i,0) {\textbf{\n}};
     \else
-      \node[fill=black!6, text=Muted, rounded corners=2pt,
-            inner sep=4pt, minimum width=2.0cm, align=center] at (\i,0) {\n};
+      \node[fill=black!6, text=Muted, rounded corners=3pt,
+            inner sep=6pt, minimum width=2.6cm, align=center] at (\i,0) {\n};
     \fi
     \ifnum\i<5
-      \draw[-{Stealth[length=4pt]}, Muted, thick]
-        ($(\i,0)+(1.02cm,0)$) -- ($(\i,0)+(1.24cm,0)$);
+      \draw[-{Stealth[length=6pt]}, Muted, thick]
+        ($(\i,0)+(1.32cm,0)$) -- ($(\i,0)+(1.52cm,0)$);
     \fi
   }
 \end{tikzpicture}}
