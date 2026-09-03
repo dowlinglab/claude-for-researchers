@@ -95,10 +95,11 @@ Updated 2026-09-02 to match the 5-slide list built in `05_epilogue.tex` — adds
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
 | 1 | Back to the question | none | — | text only, deliberately spare |
-| 2 | A handful of projects, recurring | the summary matrix (types × acts, `\good{}` marks) | B | built, typeset tabular — no image file needed |
-| 3 | You own every claim | none | — | text only |
-| 4 | Curiosity is a feature, not a consolation prize | ✅ have, in use | C | `figures/boot_dryer_octopus.jpeg` (the spoken anchor); kitchen organizer/telescope shelf and `radio-extra-book` are a link-only mention on the same slide, no image shown |
-| 5 | One thing to change Monday morning | none | — | text only |
+| 2 | This talk was built the same way | none | — | text only, a numbered list — added 2026-09-02; a screenshot of this repo's own commit history or `slides/` tree is a candidate future upgrade, not required |
+| 3 | A handful of projects, recurring | the summary matrix (types × acts, `\good{}` marks) | B | built, typeset tabular — no image file needed |
+| 4 | You own every claim | none | — | text only |
+| 5 | Curiosity is a feature, not a consolation prize | ✅ have, in use | C | `figures/boot_dryer_octopus.jpeg` (the spoken anchor); kitchen organizer/telescope shelf and `radio-extra-book` are a link-only mention on the same slide, no image shown |
+| 6 | One thing to change Monday morning | none | — | text only |
 
 ---
 
