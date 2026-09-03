@@ -82,6 +82,18 @@
   {\small\textbf{#1}}\par}
 
 % ---------------------------------------------------------------------
+% Body text: exactly two sizes, per slides/style_guide.md (a 2026-09-02 audit
+% of Alex's own real talks -- the source deck's own slide master defines one
+% title size and a two-level body hierarchy; our stale draft sections had
+% drifted to four ad hoc sizes with no rule). \slidepoint is \large: the one
+% argument a slide makes. Everything supporting it -- captions, attributions,
+% secondary explanation -- uses \small directly, no wrapper needed.
+% \scriptsize/\tiny are not body text: reserved for diagram micro-labels and
+% code (lstlisting already sets \scriptsize).
+% ---------------------------------------------------------------------
+\newcommand{\slidepoint}[1]{{\large\color{NDBlue}\textbf{#1}}}
+
+% ---------------------------------------------------------------------
 % Code / file trees. `listings`, not `minted`: minted needs -shell-escape and
 % Pygments, which is a portability liability for a deck in a public repo.
 % ---------------------------------------------------------------------
@@ -172,6 +184,34 @@
   \end{columns}
   \vspace{0.3em}
 \end{frame}
+
+% ---------------------------------------------------------------------
+% Small ND logo, bottom-left, on every frame from here on -- reproduces
+% Alex's own real-talk slide master (see slides/style_guide.md: bottom-left,
+% ~10% of slide width, ~1% margin from each edge), not a new stylistic
+% choice. A background template, not \logo{}/frametitle's own logo slot,
+% because those place it top-right and are suppressed on [plain] frames;
+% a background template survives [plain] (only head/foot/sidebar are
+% suppressed there), so the stage dividers below get it too. The title
+% slide above is exempt -- it already carries a full-size logo of its own,
+% and this line runs only for frames that follow it.
+%
+% Use \setbeamertemplate{background}{...}, NOT \usebackgroundtemplate: that
+% compatibility macro sets the *background canvas* template, which the
+% outer theme re-registers with its own (empty) default -- silently
+% discarding this override with no error. "background" is the template
+% actually meant for this (empty by default, drawn on top of the canvas).
+% Also needs `remember picture` and a second compile pass (latexmk does
+% this automatically) for `current page` to resolve -- on a single pass
+% the node's coordinates collapse to (0,0) and nothing renders. Verified
+% both failure modes in isolation before landing this.
+% ---------------------------------------------------------------------
+\newcommand{\ndcornerlogo}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west, xshift=2mm, yshift=1.5mm] at (current page.south west)
+      {\includegraphics[width=0.11\paperwidth]{figures/nd_logo.png}};
+  \end{tikzpicture}}
+\setbeamertemplate{background}{\ndcornerlogo}
 
 \input{sections/00_open}
 \input{sections/00b_roadmap}
