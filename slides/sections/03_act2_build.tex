@@ -1,39 +1,47 @@
 % =========================== ACT II: BUILD ===========================
-% storyboard.md Act II, all 9 slides. Job: AI changes what you keep --
-% code, and the documents that describe your work. The hook (grad-visit-
-% scheduler) is now told in full in the Prologue (00_open.tex, revamped
-% 2026-09-03), so this act no longer re-tells it -- it opens on a one-line
-% callback straight into the payoff the Prologue didn't cover (the group-
-% wide impact), then widens twice: to research code that isn't a personal
-% tool (emcal, bits_for_gaps), and to a proposal instead of a codebase.
+% storyboard.md Act II, rebuilt 2026-09-03 around Task 4. Job: AI changes
+% what you keep -- code, and the documents that describe your work. The
+% hook (grad-visit-scheduler) is told in full in the Prologue, so this act
+% opens on a one-line callback into its payoff, then Task 4 gives "code ->
+% package" real depth with a named, git-verified example, then closes out
+% Task 3's proposal thread with a best-practices takeaway.
 %
-% Real, public examples get a real-screenshot TODO + a typeset fallback so
-% the slide isn't empty until a browser-capture pass runs (image_plan.md
-% has the exact URLs). Anonymized examples (Type 1, Type 5 in
-% demo_ideas.md) get a constructed diagram instead of bare text, same
-% principle applied throughout Act I.
+% Task 4 is BITS for GAPS, Dr. Kyla Jones's published paper (Computers &
+% Chemical Engineering 211, 2026), converted into a public package by
+% Alex after publication. Per Alex directly: "Kyla did great work, being
+% really systematic with Git, and produced great paper results. It is a
+% really nice paper. After the paper was published, I decided to convert
+% her fairly well-organized codebase into a public package." Named the
+% same way Jeff Kantor is named in the Prologue: real credit tied to real
+% public authorship (first author, DOI'd), no invented biographical
+% detail. The six Task 4 slides below are git-verified against the real
+% `dowlinglab/bits_for_gaps` commit history (103 commits, all Alex, July
+% 3 - Aug 7, 2026) and a since-deleted but git-recoverable `HANDOFF.md`
+% that narrated the whole conversion in numbered phases -- not invented,
+% not generic. emcal (Montana Carlozo, also a published first author,
+% Ind. Eng. Chem. Res. 2025) gets one closing line, same pattern, less
+% depth, per Alex's instruction to focus on BITS for GAPS.
 %
-% CORRECTED 2026-09-02: "Review the diff" originally claimed this was
-% "the same real commit as Act I" -- it isn't; the diff content was
-% invented to illustrate the point and has nothing to do with the real
-% emcal commit (verified via browser while capturing that commit's real
-% page: its actual diff is a JSON test-fixture and a Python test-harness
-% addition, not a data-loading change). Relabeled as illustrative.
+% Replaces the prior generic Act II material: "Prototype in notebooks;
+% promote what matures" and "Freeze the science, move the code" (both
+% unnamed, illustrating principles Task 4's real phases now illustrate
+% directly -- Phase 4's decomposition *is* "promote what matures," Phase
+% 9c's behavior-preserving hardening *is* "freeze the science, move the
+% code") and "A regression harness is what made a reversal believable"
+% (the generic isotherm-correction story, replaced by the real, stronger
+% Phase 9b bug story below).
 %
-% REVISED 2026-09-03: this act used to open with its own full retelling of
-% the grad-visit-scheduler story (version timeline, Jeff Kantor credit,
-% the 10-hour package build), split across two slides. That content now
-% lives in the Prologue instead (a stronger hook there, per Alex), so
-% repeating it here was pure duplication -- the old "resolved" slide is
-% gone, and this one (was slide 2) is now Act II's opener, one line
-% acknowledging the callback before it gets to the new material: the
-% group-wide impact, which the Prologue doesn't cover. "One weekend" ->
-% "One Monday" per the same 2026-09-03 git-verified correction as the
-% Prologue (see 00_open.tex's header comment) -- the conversion happened
-% Mon Feb 9 - Tue Feb 10, 2026, not on a weekend. Real ReadTheDocs
-% screenshot added the same day (figures/grad_scheduler_screenshot_crop),
-% cropped to the title/credit line/badges -- this slide was previously
-% text-only.
+% Old placement questions RESOLVED 2026-09-03, Alex's own call, reading
+% the outline directly: "Review the diff, not the summary" and "Verify
+% every revision before you commit" merge into one closing "best
+% practices" slide, explicitly generalized to proposal AND manuscript
+% writing -- not two separate slides, not folded into Task 4.
+%
+% STILL OPEN, not resolved by this build: Alex originally pictured
+% grad-visit-scheduler contained entirely in the Prologue, with no Act II
+% appearance. Slide 1 below (the tease-then-payoff split) is a deviation
+% from that -- he's open to seeing how it reads, hasn't confirmed it.
+% Revisit after this is reviewed, don't treat it as settled.
 \stagedivider{3}{Act II: Build}{What's worth keeping?}
 
 \begin{frame}{As promised --- and why it mattered}
@@ -52,106 +60,103 @@
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Prototype in notebooks; promote what matures}
+% Graphical abstract cropped from the real GitHub README screenshot Alex
+% captured (figures/bits_for_gaps_screenshot.png), CC BY 4.0, (c) 2026 The
+% Authors -- same license terms as the README's own caption.
+\begin{frame}{Task 4 --- the paper comes first}
   \vfill
   \begin{center}
-  \begin{tikzpicture}[font=\small\ttfamily, node distance=0.3cm]
-    \node[align=left] (a) {notebooks/\\ \ \ explore\_v1.ipynb\\ \ \ explore\_v2.ipynb\\ \ \ explore\_v3.ipynb};
-    \node[right=2.2cm of a, align=left] (b) {src/\\ \ \ model.py\\ \ \ pipeline.py\\tests/\\ \ \ test\_model.py};
-    \draw[-{Stealth[length=6pt]}, NDBlue, thick] ($(a.east)+(0.1,0)$) -- ($(b.west)+(-0.1,0)$);
-  \end{tikzpicture}
+    \includegraphics[width=0.56\textwidth]{figures/bits_for_gaps_graphical_abstract}\\[0.15em]
+    {\scriptsize Graphical abstract, \textcopyright\ 2026 The Authors, CC BY 4.0.}
   \end{center}
-  \vspace{0.6em}
+  \vspace{0.35em}
   \begin{center}
-    \small A notebook is where an idea gets tried. Once a piece of it is going to be reused, it earns a real module and a test --- the notebook itself doesn't.
+    \small \keyterm{Dr. Kyla Jones}, first author --- K.~D.~Jones and A.~W.~Dowling, \textit{Computers \& Chemical Engineering} \textbf{211} (2026) 109650.
   \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{Before you refactor: run it, pin it, baseline it}
-  \vfill
+  \vspace{0.3em}
   \begin{center}
-    \small Three projects, same discipline before any code changed: a hybrid-modeling adsorption project, a crystallization project, and a membrane-transport project reconstructed from inherited MATLAB code, spreadsheets, and slide decks --- not just notebooks.
-  \end{center}
-  \vspace{1em}
-  \begin{center}
-    \slidepoint{Run it before you refactor it ---\\and "it" may not even be code.}
-  \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{Freeze the science, move the code --- never both at once}
-  \vfill
-  \begin{center}
-  \begin{tikzpicture}[font=\small]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=4.6cm, minimum height=1.6cm, align=center]
-      (a) at (0,0) {\textbf{Refactor}\\\scriptsize code changes\\\scriptsize science frozen (baseline pinned)};
-    \node[draw=OkGreen, rounded corners=2pt, minimum width=4.6cm, minimum height=1.6cm, align=center, right=1.4cm of a]
-      (b) {\textbf{Improve}\\\scriptsize science changes\\\scriptsize code frozen};
-  \end{tikzpicture}
-  \end{center}
-  \vspace{0.8em}
-  \begin{center}
-    \small A bug found mid-refactor gets queued, not fixed on the spot --- fixing it there mixes the two kinds of change back together.
-  \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{A regression harness is what made a reversal believable}
-  \vfill
-  \begin{center}
-    \small The hybrid-modeling project's isotherm correction: a harness run before and after the fix, on the same inputs, made the changed conclusion attributable to the correction --- not suspicious.
-  \end{center}
-  \vspace{0.8em}
-  \begin{center}
-    \small The membrane-transport project reinforces it independently: a faithful port and a corrected port of the same model, cross-validated against each other before either one was trusted.
-  \end{center}
-  \vfill
-\end{frame}
-
-% TODO(image_plan.md Act II #6): still need a real screenshot of the emcal
-% GitHub repo page (paper link, README scope statement) -- public, ready
-% now. bits_for_gaps RESOLVED 2026-09-03: real GitHub README screenshot
-% in hand (figures/bits_for_gaps_screenshot_crop), cropped to the title/
-% badges/contributors row -- the badges (CI passing, codecov 100%, PyPI
-% v0.2.0) and the contributor list (Alex Dowling, and "claude" -- Claude
-% itself shows up as a credited contributor via commit authorship) are
-% the real, verifiable proof this is a maintained package, not a repo
-% dump.
-\begin{frame}{Not just a hobby-adjacent tool}
-  \vfill
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{figures/bits_for_gaps_screenshot_crop}\\[0.3em]
-    {\scriptsize\texttt{bits\_for\_gaps} on GitHub --- real CI, real coverage, a real PyPI release}
-  \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    \small \texttt{emcal} is the same move, one repo over: research code behind a published paper, migrated into an installable, tested package.
-  \end{center}
-  \vfill
-  \begin{center}
-    \small Split by audience, not by code quality: the package is the method plus what a user needs; the research archive is the paper's own reproduction trail.
+    \slidepoint{After the paper published, I turned her well-organized codebase into a public package.}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}[fragile]{Review the diff, not the summary}
-  \vfill
-  {\scriptsize A generic, illustrative diff --- the shape of the mismatch, not a real commit.}
-  \begin{lstlisting}
-- df_all = pd.concat([load(f) for f in glob("data/*.csv")])
-- fig = plot_everything(df_all)
-+ df_run = load(f"data/{run_id}.csv")
-+ fig = plot_run(df_run)
-  \end{lstlisting}
+\begin{frame}{Task 4 --- baseline before touching anything}
   \vfill
   \begin{center}
-    \small An AI-written summary says "refactored the analysis pipeline." The diff says it now reads one run instead of globbing every file in the directory --- a fact worth catching before it merges.
+    \small Phase 2: a regression harness and a full test suite, built \textit{before} any refactor began.
+  \end{center}
+  \vspace{0.7em}
+  \begin{center}
+    \small Phase 4, STEP 0: an exact-value baseline pinned on \texttt{sampler.py} --- \textit{then} the decomposition started.
+  \end{center}
+  \vspace{1em}
+  \begin{center}
+    \slidepoint{Run it before you refactor it ---\\prove you can reproduce it first.}
   \end{center}
   \vfill
 \end{frame}
 
-\begin{frame}[fragile]{The same discipline, on a document instead of code}
+\begin{frame}[fragile]{Task 4 --- decompose, generalize, port}
+  \vfill
+  \begin{center}
+  \begin{tikzpicture}[font=\small]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.6cm, minimum height=1.1cm, align=center]
+      (a) {\texttt{sampler.py}\\\scriptsize one file, everything};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=4.0cm, minimum height=1.1cm, align=center, right=1.2cm of a, fill=CodeBg]
+      (b) {\texttt{gp.py}, \texttt{mixture.py}\\\texttt{acquisition.py}, \ldots};
+    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.7em}
+  \begin{center}
+    \small Phase 4: decomposed into modules. Phase 5: generalized from 1D/3D to $N$ dimensions. Phase 6: the paper's own VLE/distillation example ported onto the new public API.
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{Task 4 --- the bug the reproduction found}
+  \vfill
+  \begin{center}
+    \small A from-scratch figure reproduction flagged a discrepancy: one equilibrium column wouldn't converge. The first explanation was ---
+  \end{center}
+  \begin{center}
+    \bad{\large wrong.}
+  \end{center}
+  \vspace{0.5em}
+  \begin{center}
+    \small Four hypotheses tested, three rejected. The real cause: a GP kernel mutated in place, then reused --- confirmed to 4 decimal places against a checkpoint.
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}[fragile]{Task 4 --- ship the skeleton, scrub the scaffolding}
+  \vfill
+  \begin{center}
+    \small Trusted publishing via OIDC --- no long-lived credentials in the repository. A real install-and-import gate from a test index, before the real one.
+  \end{center}
+  \vspace{0.9em}
+  \begin{center}
+    \small \texttt{HANDOFF.md}, \texttt{REFACTOR\_PLAN.md}, the bug investigation log --- all removed before release. Recoverable from git history, not gone.
+  \end{center}
+  \vfill
+\end{frame}
+
+% TODO(image_plan.md Act II): still need a real screenshot of the emcal
+% GitHub repo page (paper link, README scope statement) -- public, ready
+% now.
+\begin{frame}{Task 4, closes --- the same process, one repo over}
+  \vfill
+  \begin{center}
+    \small \texttt{emcal} is the same move: \keyterm{Montana Carlozo}'s published paper (\textit{Ind. Eng. Chem. Res.}, 2025), research code migrated into an installable, tested package after the fact.
+  \end{center}
+  \vspace{0.8em}
+  \begin{center}
+    \small Split by audience, not by code quality: the package is the method plus what a user needs; the research archive is the paper's own reproduction trail.
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}[fragile]{Task 3, continued --- the same discipline, on a document instead of code}
   \vfill
   \begin{center}
     \small A returning-sponsor proposal, drafted tersely against the sponsor's own form, then restored to its exact required wording before submission.
@@ -168,21 +173,24 @@
   \vfill
 \end{frame}
 
-% TODO(image_plan.md Act II #9): generate a real latexdiff output using
-% resources/scripts/latexdiff_check.sh's own test fixture -- the excerpt
-% below is a hand-typeset stand-in for that real, reproducible artifact.
-\begin{frame}{Verify every revision before you commit}
+\begin{frame}[fragile]{Best practices: review the diff, verify every revision}
   \vfill
+  {\scriptsize A generic, illustrative diff --- not a real commit.}
+  \begin{lstlisting}
+- df_all = pd.concat([load(f) for f in glob("data/*.csv")])
++ df_run = load(f"data/{run_id}.csv")
+  \end{lstlisting}
+  \vspace{0.4em}
   \begin{center}
-    \large the treatment reduced cost by \textcolor{OkVermillion}{25\%} $\to$ \textcolor{OkGreen}{approximately 17\%}
-  \end{center}
-  \vfill
-  \begin{center}
-    \small A normal re-read skims past a softened number. \texttt{latexdiff} against the last commit, word-level, does not.
+    \small An AI-written summary says ``refactored the pipeline.'' The diff says what actually changed --- read it, not the summary.
   \end{center}
   \vspace{0.6em}
   \begin{center}
+    \small \texttt{latexdiff} against the last commit, word-level, catches what a normal re-read misses --- for a proposal, a manuscript, either one.
+  \end{center}
+  \vspace{0.4em}
+  \begin{center}
     {\scriptsize \texttt{resources/scripts/latexdiff\_check.sh}}
   \end{center}
-  \vfill
+  \vspace{1.8cm plus 1fill}
 \end{frame}
