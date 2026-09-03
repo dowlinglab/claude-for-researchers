@@ -55,19 +55,20 @@ Slides 4-5 restored 2026-09-02 from `02_context.tex`'s original "three kinds of 
 
 ## Act II — Build: it changes what you keep
 
-No structural change from the prior pass. Confirms which types ground which slides.
+Row 1 expanded and row 2 added 2026-09-02 from Alex's own account, given directly: the notebook behind `grad-visit-scheduler` predates the AI story by years, co-created with **Jeff Kantor** for their own use (credited the same way the package's own PyPI page credits him — no added biographical detail). The AI conversion started as a narrow test (could Codex format the input data?) before becoming a full package in ~10 hours, and that success is what got Alex's whole group access to Codex — a direct causal result, not incidental color, so it earns its own slide rather than a passing line.
 
 | # | Concrete task | Example | Principle | Practice file |
 |---|---|---|---|---|
-| 1 | The hook, in full | Type 3 — `grad-visit-scheduler`: Codex, real dates/versions, a 20-minute live feature add | Ship the skeleton early; TODO notes committed into the docs are a durable review mechanism | `private_code_to_public_package.md` |
-| 2 | Prototype → promote | Generic | Prototype in notebooks; promote what matures | `scientific_computing_workflow.md` §2 |
-| 3 | Run it, pin it, baseline it | Type 1 — the hybrid-modeling, crystallization, and membrane-transport projects (generic); the last of these reconstructed from inherited MATLAB code, spreadsheets, PowerPoint decks, and draft documents, not just notebooks | Run it before you refactor it — and "it" may not be code at all | `scientific_computing_workflow.md` §3 |
-| 4 | Freeze the science, move the code | Type 1, same three examples | Never change both at once | `scientific_computing_workflow.md` §4 |
-| 5 | A regression harness is what made a reversed conclusion believable | Type 1 — the hybrid-modeling project's isotherm correction (generic); reinforced by the membrane-transport project's independent dual-implementation cross-check (faithful port vs. corrected port, validated against each other) | The harness is what makes a reversal attributable rather than suspicious | `scientific_computing_workflow.md` §3–§4 |
-| 6 | Not just a hobby-adjacent tool | Type 3 — `emcal`, `bits_for_gaps`, named | Split by audience (package vs. archive), not by code quality | `private_code_to_public_package.md` §1 |
-| 7 | Review the diff, not the summary | Generic | — | `working_with_ai_agents.md` §6 |
-| 8 | The same discipline, on a document instead of code | Type 5 — a returning-sponsor proposal and a recurring sponsor program (generic): draft against the form, restore its wording, `\foacomment{}`-style inline review | AI as a compliance reviewer, findings inline, flagged → fixed → removed | `grant_proposal_writing.md` §2, §4 |
-| 9 | Verify every revision before you commit | Type 5, same examples: `latexdiff`-against-last-commit, word-level | A normal re-read misses a softened claim; `latexdiff` doesn't | `grant_proposal_writing.md` §5, `resources/scripts/latexdiff_check.sh` |
+| 1 | The hook, in full | Type 3 — `grad-visit-scheduler`: co-created with Jeff Kantor, Codex, real dates/versions, a 20-minute live feature add | Ship the skeleton early; TODO notes committed into the docs are a durable review mechanism | `private_code_to_public_package.md` |
+| 2 | This changed how the whole group works | Type 3, same example | A working proof, not a mandate, is what spreads a practice | `private_code_to_public_package.md` |
+| 3 | Prototype → promote | Generic | Prototype in notebooks; promote what matures | `scientific_computing_workflow.md` §2 |
+| 4 | Run it, pin it, baseline it | Type 1 — the hybrid-modeling, crystallization, and membrane-transport projects (generic); the last of these reconstructed from inherited MATLAB code, spreadsheets, PowerPoint decks, and draft documents, not just notebooks | Run it before you refactor it — and "it" may not be code at all | `scientific_computing_workflow.md` §3 |
+| 5 | Freeze the science, move the code | Type 1, same three examples | Never change both at once | `scientific_computing_workflow.md` §4 |
+| 6 | A regression harness is what made a reversed conclusion believable | Type 1 — the hybrid-modeling project's isotherm correction (generic); reinforced by the membrane-transport project's independent dual-implementation cross-check (faithful port vs. corrected port, validated against each other) | The harness is what makes a reversal attributable rather than suspicious | `scientific_computing_workflow.md` §3–§4 |
+| 7 | Not just a hobby-adjacent tool | Type 3 — `emcal`, `bits_for_gaps`, named | Split by audience (package vs. archive), not by code quality | `private_code_to_public_package.md` §1 |
+| 8 | Review the diff, not the summary | Generic | — | `working_with_ai_agents.md` §6 |
+| 9 | The same discipline, on a document instead of code | Type 5 — a returning-sponsor proposal and a recurring sponsor program (generic): draft against the form, restore its wording, `\foacomment{}`-style inline review | AI as a compliance reviewer, findings inline, flagged → fixed → removed | `grant_proposal_writing.md` §2, §4 |
+| 10 | Verify every revision before you commit | Type 5, same examples: `latexdiff`-against-last-commit, word-level | A normal re-read misses a softened claim; `latexdiff` doesn't | `grant_proposal_writing.md` §5, `resources/scripts/latexdiff_check.sh` |
 
 ## Act III — Challenge: it tells me I'm wrong
 

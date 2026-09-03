@@ -56,17 +56,20 @@ Rewritten 2026-09-02 against the current 8-slide list in `storyboard.md` — the
 
 ## Act II — Build
 
+Renumbered 2026-09-02: slide 1 expanded and a new slide 2 inserted (Jeff Kantor's credit, the group-wide impact), shifting everything after down by one.
+
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
 | 1 | The hook, in full | **this slide carries the most real-image weight in the deck** — see below | C | planned in detail below |
-| 2 | Prototype → promote | a generic before/after file tree | A | text-artifact, illustrative (no real repo needed — the point is the pattern) |
-| 3 | Run it, pin it, baseline it | none | — | text only |
-| 4 | Freeze the science, move the code | none, or a two-column "old code / new code, science untouched" diagram | B | optional TikZ, not required |
-| 5 | Regression harness enabled a reversal | none | — | generic by design (private project) |
-| 6 | Not just a hobby-adjacent tool | **real screenshots of emcal and bits_for_gaps** — both public | C | see below |
-| 7 | Review the diff | a real, small diff excerpt | A | text-artifact — use the emcal `31184f4` diff itself (already grounded) rather than inventing one |
-| 8 | Proposal compliance review, inline | the `\foacomment{}` macro + one illustrative flagged comment | A | text-artifact, illustrative (real proposal content stays out) |
-| 9 | Verify before you commit | **a real `latexdiff` output** | C | ✅ can generate now — the script produces exactly this, tested this session; use a synthetic example like the one already used to test the script, not real proposal text |
+| 2 | This changed how the whole group works | none | — | text only, deliberately spare — the point is the causal claim, not an artifact |
+| 3 | Prototype → promote | a generic before/after file tree | A | text-artifact, illustrative (no real repo needed — the point is the pattern) |
+| 4 | Run it, pin it, baseline it | none | — | text only |
+| 5 | Freeze the science, move the code | none, or a two-column "old code / new code, science untouched" diagram | B | optional TikZ, not required |
+| 6 | Regression harness enabled a reversal | none | — | generic by design (private project) |
+| 7 | Not just a hobby-adjacent tool | **real screenshots of emcal and bits_for_gaps** — both public | C | see below |
+| 8 | Review the diff | a generic, illustrative diff excerpt | A | text-artifact — corrected 2026-09-02: originally claimed to reuse the real emcal `31184f4` diff, but that commit's actual diff (a JSON fixture + Python test harness) doesn't support this illustration. Relabeled as illustrative rather than forced to fit |
+| 9 | Proposal compliance review, inline | the `\foacomment{}` macro + one illustrative flagged comment | A | text-artifact, illustrative (real proposal content stays out) |
+| 10 | Verify before you commit | **a real `latexdiff` output** | C | ✅ can generate now — the script produces exactly this, tested this session; use a synthetic example like the one already used to test the script, not real proposal text |
 
 **Slide II.1, "The hook, in full" — the real-image plan:**
 - A screenshot of the **PyPI page** for `grad-visitor-scheduler` (proves it's really published)
@@ -126,13 +129,13 @@ All via the in-app browser, no confidentiality concern:
 
 ## What needs building (no external source, just work)
 
-- A synthetic `latexdiff` output for Act II §9 — reuse the same fixture already used to test `latexdiff_check.sh`
+- A synthetic `latexdiff` output for Act II §10 — reuse the same fixture already used to test `latexdiff_check.sh`
 - A synthetic empty-nomenclature reconstruction for Act III §4
-- A generic before/after file tree for Act II §2 (no real repo needed)
+- A generic before/after file tree for Act II §3 (no real repo needed)
 
 ## What must stay illustrative (confidentiality)
 
-Act I §4, §5, §7 (renumbered 2026-09-02 — the membrane-transport context/`CLAUDE.md` pair and the corpus-first parallel); Act II §8; Act III §2, §4, §6 — all touch unpublished or private work. Text-artifacts and TikZ only, generalized, no project names — same discipline already applied throughout `resources/practices/`.
+Act I §4, §5, §7 (renumbered 2026-09-02 — the membrane-transport context/`CLAUDE.md` pair and the corpus-first parallel); Act II §9 (renumbered same day); Act III §2, §4, §6 — all touch unpublished or private work. Text-artifacts and TikZ only, generalized, no project names — same discipline already applied throughout `resources/practices/`.
 
 ## Open question
 

@@ -2,7 +2,7 @@
 
 The talk's structure, locked 2026-09-02, following the Dowling Lab presentation-planning algorithm (group manual §Presentations): question → main points → outline → slide budget → slide titles → feedback → slides. This file is steps 3–6.
 
-**Status:** structure locked; the entire deck is built and compiles clean, 39 slides end to end (`00_open.tex`, `00b_roadmap.tex`, `01_ecosystem.tex`, `02_act1_understand.tex`, `03_act2_build.tex`, `04_act3_challenge.tex`, `05_epilogue.tex`). A 2026-09-02 confidentiality re-check found no issues — every example matches its locked naming decision in `notes/demo_ideas.md`. That same pass, verifying a real screenshot against its primary source, caught and fixed two fabricated-content bugs (a non-verbatim "verbatim" commit excerpt in Act I, a fabricated diff mislabeled as real in Act II) — see the commit history for detail. Several slides still carry a `TODO` comment for a real screenshot not yet captured (grad-visit-scheduler's PyPI/tags/commit-graph, emcal/bits_for_gaps repo pages, a real `latexdiff` output, the capstone course's website) — a typeset fallback ships in the meantime so no slide is empty. See [`image_plan.md`](image_plan.md) for the full list and sourcing per slide. Next: continue the visual-asset capture pass, and rehearsal-driven trimming toward the ~35-40 slide target for a 60-minute slot.
+**Status:** structure locked; the entire deck is built and compiles clean, 40 slides end to end (`00_open.tex`, `00b_roadmap.tex`, `01_ecosystem.tex`, `02_act1_understand.tex`, `03_act2_build.tex`, `04_act3_challenge.tex`, `05_epilogue.tex`). A 2026-09-02 confidentiality re-check found no issues — every example matches its locked naming decision in `notes/demo_ideas.md`. That same pass, verifying real screenshots against primary sources, caught and fixed two fabricated-content bugs (a non-verbatim "verbatim" commit excerpt in Act I, a fabricated diff mislabeled as real in Act II) and surfaced one real addition: Jeff Kantor co-created the notebook behind `grad-visit-scheduler`, credited on Act II slide 1 with a new slide 2 on the broader impact (Alex getting his whole group onto Codex as a direct result) — see the commit history for detail. Several slides still carry a `TODO` comment for a real screenshot not yet captured (grad-visit-scheduler's PyPI/tags/commit-graph, emcal/bits_for_gaps repo pages, a real `latexdiff` output, the capstone course's website) — needs a live session with Alex present, since the in-app browser used for autonomous passes can't save screenshots to disk (see `image_plan.md`). A typeset fallback ships in the meantime so no slide is empty. Next: the visual-asset capture pass (Alex's own next session), and rehearsal-driven trimming toward the ~35-40 slide target for a 60-minute slot.
 
 ---
 
@@ -29,9 +29,9 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 | Beat | Name | Job | Slides | Rough time |
 |---|---|---|---|---|
 | — | Title | | 1 | 0.5 min |
-| Prologue | **Tinker** | Claim, hook (teased), scope, orient, show the toolkit, prove the thesis is live | 10 | 8.5 min |
+| Prologue | **Tinker** | Claim, hook (teased), scope, orient, show the toolkit, prove the thesis is live | 9 | 7.5 min |
 | Act I | **Understand** | A sell: git is the prerequisite, not the payoff | 8 | 10.5 min |
-| Act II | **Build** | It changes my artifacts (hook resolved in full) | 9 | 13 min |
+| Act II | **Build** | It changes my artifacts (hook resolved in full, plus its impact) | 10 | 14 min |
 | Act III | **Challenge** | It tells me I'm wrong, closing on a capstone | 7 | 10.5 min |
 | Epilogue | **Trust** | Return to the open question; close on curiosity | 5 | 4 min |
 | | | **Total** | **40** | **~47 min**, trim ~7 in drafting/rehearsal |
@@ -80,15 +80,16 @@ Organized around two parallel transitions, both "an ephemeral, unbacked-up thing
 
 **Job:** AI changes what you keep — code, and the documents that describe your work. The hook resolves here in full, then widens twice: to research code that isn't just a personal tool, and to a proposal instead of a codebase.
 
-1. **The hook, in full** — the internal tool → Codex-assisted → tested, documented, CI-backed PyPI package. Real dates, real version numbers (v0.1.2 → v0.3.1, Feb 11–17), the 20-minute live feature-add demo.
-2. **Prototype in notebooks; promote what matures.**
-3. **Before you refactor: run it, pin it, baseline it.**
-4. **Freeze the science, move the code — never both at once** — the controlled-comparison framing, queue-don't-fix for bugs found mid-refactor.
-5. **A regression harness is what made a reversed conclusion believable** — the isotherm-correction story, generic.
-6. **Not just a hobby-adjacent tool** — one line each on emcal / bits_for_gaps: the same discipline, in published research code.
-7. **Review the diff, not the summary.**
-8. **The same discipline, on a document instead of code** — draft tersely against the sponsor's own form, restore its exact wording before submission; AI as a compliance reviewer with findings written inline (`\foacomment{}`-style) rather than in a separate comments doc, flagged → fixed → removed.
-9. **Verify every revision before you commit** — the `latexdiff`-against-last-commit habit, word-level, catching a softened claim or a changed number a normal re-read misses. Point to `resources/scripts/latexdiff_check.sh`.
+1. **The hook, in full** — *(expanded 2026-09-02)* the notebook itself predates this story: built years earlier with **Jeff Kantor**, for their own use, credited the same way `grad-visitor-scheduler`'s own PyPI page credits him ("Created by Alex Dowling and Jeff Kantor") — no added biographical detail. The AI story: a narrow first test (could Codex just format the input data?), then ~10 hours to a tested, documented, CI-backed PyPI package. Real dates, real version numbers (v0.1.2 → v0.3.1, Feb 11–17), the 20-minute live feature-add demo.
+2. **This changed how the whole group works** — *(new, 2026-09-02)* the direct causal result Alex named: this success is why he got everyone in the group access to Codex. Separated from slide 1 so the artifact's resolution and its broader impact each land as their own beat.
+3. **Prototype in notebooks; promote what matures.**
+4. **Before you refactor: run it, pin it, baseline it.**
+5. **Freeze the science, move the code — never both at once** — the controlled-comparison framing, queue-don't-fix for bugs found mid-refactor.
+6. **A regression harness is what made a reversed conclusion believable** — the isotherm-correction story, generic.
+7. **Not just a hobby-adjacent tool** — one line each on emcal / bits_for_gaps: the same discipline, in published research code.
+8. **Review the diff, not the summary.**
+9. **The same discipline, on a document instead of code** — draft tersely against the sponsor's own form, restore its exact wording before submission; AI as a compliance reviewer with findings written inline (`\foacomment{}`-style) rather than in a separate comments doc, flagged → fixed → removed.
+10. **Verify every revision before you commit** — the `latexdiff`-against-last-commit habit, word-level, catching a softened claim or a changed number a normal re-read misses. Point to `resources/scripts/latexdiff_check.sh`.
 
 ## Act III — Challenge
 
@@ -121,5 +122,5 @@ Organized around two parallel transitions, both "an ephemeral, unbacked-up thing
 - ~~The example roster and naming per type~~ — resolved 2026-09-02, recorded in `notes/demo_ideas.md`'s six-types table: types 3 and 6 named (`bits_for_gaps`/`emcal`/`grad-visit-scheduler`; "Optimization for Decision Science"), everything else generic, no exceptions — including `data3` (membrane-transport), deliberately not named alongside its two generic Type-1 siblings even though naming it in isolation would have been low-risk, because the asymmetry would draw more attention than the name would add.
 - ~~Whether to restore the cut thesis and scoping slides~~ — resolved 2026-09-02: restored, Alex's call — he's willing to cut elsewhere rather than lose either concept. Prologue 7 → 9 slides, total 35 → 37.
 - ~~Where does `02_context.tex`'s orphaned content go~~ — resolved and built 2026-09-02. Two of its five frames were already Act I in disguise (the `emcal` commit, "the filesystem is the source of truth") and needed no change beyond a title. The other three: the context taxonomy and a generic project-file example joined Act I as new slides 4-5, Alex's call over cutting them as redundant; the "honest limit" staleness story is earmarked for Act III slide 4 as a third silent-failure instance once that file is built, since it's the same lesson from the same domain (context files) as the other two. Act I 6 → 8 slides, total 37 → 39. `02_context.tex` itself has been removed — its content lives in `02_act1_understand.tex` (Act III's instance still pending that file).
-- **Slide count vs. budget.** Alex confirmed 2026-09-02: a 60-minute slot, targeting 35-40 slides to leave real room for Q&A and discussion. Current total is 39 — right at the top of that range, including a new Prologue slide showing how this deck itself was built (Alex's idea, worth the one extra slide; moved from an initial Epilogue placement to the Prologue on his own second thought, so it foreshadows rather than only pays off). The at-a-glance table's rough-time estimates (~47 min) still run over a 40-minute talk portion. Deliberately not cutting further right now; a rehearsal pass with real timing, not a slide-count target, should drive any further trim.
+- **Slide count vs. budget.** Alex confirmed 2026-09-02: a 60-minute slot, targeting 35-40 slides to leave real room for Q&A and discussion. Current total is 40 — right at the top of that range, including both the Prologue meta-slide and Act II's new impact slide, Alex's own calls to add rather than cuts to make room for. The at-a-glance table's rough-time estimates (~47 min) still run over a 40-minute talk portion. Deliberately not cutting further right now; a rehearsal pass with real timing, not a slide-count target, should drive any further trim.
 - **Feedback pass.** Per the group manual: get outline feedback at least 8 days before the talk. Not yet done.

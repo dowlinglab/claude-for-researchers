@@ -17,6 +17,18 @@
 % emcal commit (verified via browser while capturing that commit's real
 % page: its actual diff is a JSON test-fixture and a Python test-harness
 % addition, not a data-loading change). Relabeled as illustrative.
+%
+% EXPANDED 2026-09-02, Alex's own account: the notebook itself predates
+% this story -- he and Jeff Kantor built it years earlier, for their own
+% use, to help run graduate visit-day scheduling. The Codex conversion
+% (this slide's version timeline) started as a narrow test -- could Codex
+% just format the input data? -- and only became a full package once that
+% worked. Split into two slides (was one): this one resolves the artifact,
+% the next resolves why it mattered beyond the artifact itself (Alex
+% getting his whole group onto Codex as a direct result). Jeff Kantor is
+% credited the same way grad-visitor-scheduler's own PyPI page credits him
+% ("Created by Alex Dowling and Jeff Kantor") -- no additional biographical
+% detail added here.
 
 % TODO(image_plan.md Act II #1): capture 3 real screenshots --
 % pypi.org/project/grad-visitor-scheduler, github.com/dowlinglab/
@@ -38,11 +50,27 @@
   \end{center}
   \vspace{0.4em}
   \begin{center}
-    \small \keyterm{grad-visit-scheduler}: an internal Jupyter tool, converted end to end with Codex --- not Claude --- into a tested, documented, CI-backed PyPI package (\texttt{grad-visitor-scheduler}) in one week.
+    \small A scheduling notebook, built years earlier with \keyterm{Jeff Kantor} for their own use. First test: could Codex just format the input data? Yes --- so I kept going.
+  \end{center}
+  \vspace{0.4em}
+  \begin{center}
+    \small About 10 hours later: a tested, documented, CI-backed PyPI package (\texttt{grad-visitor-scheduler}) --- built with Codex, not Claude.
   \end{center}
   \vfill
   \begin{center}
     {\small\itshape Live, right now: adding one feature, start to finish, in about 20 minutes.}
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{This changed how the whole group works}
+  \vfill
+  \begin{center}
+    \slidepoint{One weekend project was the reason\\to get everyone in the group onto Codex.}
+  \end{center}
+  \vspace{1em}
+  \begin{center}
+    \small Ten hours proved the tool worked. That proof is what changed how the group does everything else --- not a mandate, a result.
   \end{center}
   \vfill
 \end{frame}
