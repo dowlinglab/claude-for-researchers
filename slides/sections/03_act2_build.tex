@@ -1,9 +1,11 @@
 % =========================== ACT II: BUILD ===========================
 % storyboard.md Act II, all 9 slides. Job: AI changes what you keep --
 % code, and the documents that describe your work. The hook (grad-visit-
-% scheduler, teased in the Prologue) resolves here in full, then widens
-% twice: to research code that isn't a personal tool (emcal, bits_for_gaps),
-% and to a proposal instead of a codebase.
+% scheduler) is now told in full in the Prologue (00_open.tex, revamped
+% 2026-09-03), so this act no longer re-tells it -- it opens on a one-line
+% callback straight into the payoff the Prologue didn't cover (the group-
+% wide impact), then widens twice: to research code that isn't a personal
+% tool (emcal, bits_for_gaps), and to a proposal instead of a codebase.
 %
 % Real, public examples get a real-screenshot TODO + a typeset fallback so
 % the slide isn't empty until a browser-capture pass runs (image_plan.md
@@ -18,52 +20,17 @@
 % page: its actual diff is a JSON test-fixture and a Python test-harness
 % addition, not a data-loading change). Relabeled as illustrative.
 %
-% EXPANDED 2026-09-02, Alex's own account: the notebook itself predates
-% this story -- he and Jeff Kantor built it years earlier, for their own
-% use, to help run graduate visit-day scheduling. The Codex conversion
-% (this slide's version timeline) started as a narrow test -- could Codex
-% just format the input data? -- and only became a full package once that
-% worked. Split into two slides (was one): this one resolves the artifact,
-% the next resolves why it mattered beyond the artifact itself (Alex
-% getting his whole group onto Codex as a direct result). Jeff Kantor is
-% credited the same way grad-visitor-scheduler's own PyPI page credits him
-% ("Created by Alex Dowling and Jeff Kantor") -- no additional biographical
-% detail added here.
+% REVISED 2026-09-03: this act used to open with its own full retelling of
+% the grad-visit-scheduler story (version timeline, Jeff Kantor credit,
+% the 10-hour package build), split across two slides. That content now
+% lives in the Prologue instead (a stronger hook there, per Alex), so
+% repeating it here was pure duplication -- the old "resolved" slide is
+% gone, and this one (was slide 2) is now Act II's opener, one line
+% acknowledging the callback before it gets to the new material: the
+% group-wide impact, which the Prologue doesn't cover.
+\stagedivider{3}{Act II: Build}{What's worth keeping?}
 
-% TODO(image_plan.md Act II #1): capture 3 real screenshots --
-% pypi.org/project/grad-visitor-scheduler, github.com/dowlinglab/
-% grad-visit-scheduler/tags, and the commit graph around Feb 12 -- and
-% replace the timeline below with them. All public, no confidentiality
-% concern.
-\begin{frame}[fragile]{The weekend project, resolved}
-  \vfill
-  \begin{center}
-  \begin{tikzpicture}[font=\small]
-    \foreach \x/\lbl in {0/v0.1.2, 2.2/v0.2.0, 4.4/v0.2.5, 6.6/v0.3.1} {
-      \fill[NDGold] (\x,0) circle (2.5pt);
-      \node[below] at (\x,-0.15) {\lbl};
-    }
-    \draw[thick, NDBlue] (0,0) -- (6.6,0);
-    \node[above] at (0,0.3) {\scriptsize Feb 11};
-    \node[above] at (6.6,0.3) {\scriptsize Feb 17};
-  \end{tikzpicture}
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    \small A scheduling notebook, built years earlier with \keyterm{Jeff Kantor} for their own use. First test: could Codex just format the input data? Yes --- so I kept going.
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    \small About 10 hours later: a tested, documented, CI-backed PyPI package (\texttt{grad-visitor-scheduler}) --- built with Codex, not Claude.
-  \end{center}
-  \vfill
-  \begin{center}
-    {\small\itshape Live, right now: adding one feature, start to finish, in about 20 minutes.}
-  \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{This changed how the whole group works}
+\begin{frame}{As promised --- and why it mattered}
   \vfill
   \begin{center}
     \slidepoint{One weekend project was the reason\\to get everyone in the group onto Codex.}

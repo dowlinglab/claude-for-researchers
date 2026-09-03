@@ -24,58 +24,52 @@ A screenshot earns its place when the browser/GitHub/PyPI frame around the conte
 
 ## Prologue — Tinker
 
-Rewritten 2026-09-02 against the current 10-slide list — the previous version predated the thesis/scoping restoration and the resources/meta slides entirely, and only ever numbered 7 items.
+**Revised 2026-09-03** against the current 10-slide list: the teaser is now two hook slides with real visual plans (was one, text-only); the claim moved from item 2 to item 4; data classification and the two-checks list moved out entirely (now Epilogue items 2-3); a new archetypes slide (item 9) needs no image; the resources slide (item 8) is now a typeset filename list per Alex's explicit request, not a candidate screenshot.
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
 | 1 | Title | ND wordmark | C | ✅ have (`figures/nd_logo.png`) |
-| 2 | The claim | none | — | text only, framing slide, deliberately spare |
-| 3 | The teaser (grad-visit-scheduler) | none yet — text only for the tease; save the visual payoff for Act II's full return | — | by design |
-| 4 | Borrowed structure | TAL logo + act-strip | C + B | ✅ have (`figures/tal_logo.png`) + built |
-| 5 | Today | act-strip only | B | built |
-| 6 | The landscape | vendor table | text | no image needed |
-| 7 | ND data classification | the 🟢🟡🟠🔴 table | text/B | **candidate real screenshot**: the actual `ai.nd.edu/ai-in-action/approved-ai-tools/` page, cropped to the tier legend + the Claude row. Proves the "Public data only" finding isn't a paraphrase. Needs the in-app browser (fetch tool can't reach this domain — see `notes/references.md`). Re-verify current before capturing; the page changes. |
-| 8 | Check before you start | none | — | text only |
-| 9 | What you get today | a real `ls resources/` or a cropped repo-tree screenshot of GitHub's own file browser on this repo, once it's pushed | C | **needs the repo pushed to GitHub first** — can't screenshot a page that doesn't exist yet. Built with a typeset tree in the meantime |
-| 10 | This talk was built the same way | none | — | text only, a numbered list — moved here from the Epilogue 2026-09-02 |
+| 2 | Before Codex: ten hours, a notebook, then patches | a visit-day-schedule grid | B (synthetic) | **built, deliberately synthetic, not a real screenshot** — a real generated schedule carries visiting students' and faculty's actual names/times, which is exactly the personal data the Epilogue's classification slide says not to publish. Illustrative by design, not a placeholder waiting on capture |
+| 3 | One weekend with Codex, and I kept going | version-timeline TikZ (real dates/versions) | B (real data) | built — moved here from Act II 2026-09-03 (see that section's note); **candidate upgrade to real screenshots**: PyPI page, GitHub tag list, commit graph — see "what needs capturing" below |
+| 4 | The claim | none | — | text only, framing slide, deliberately spare — moved here from item 2 |
+| 5 | Borrowed structure | TAL logo + act-strip | C + B | ✅ have (`figures/tal_logo.png`) + built; act list is now single-line entries, not a two-line table |
+| 6 | One year of practices, not a tool tutorial | act-strip only | B | built |
+| 7 | Don't become loyal to a model | vendor table | text | no image needed |
+| 8 | Everything today is on GitHub | typeset filename list (all 9+3+3+3 files) + repo link | text | **resolved 2026-09-03**: was a candidate for a real GitHub repo-tree screenshot; Alex asked instead for the actual filenames typeset directly, which fills the space better and needs no capture |
+| 9 | Six kinds of task, all year, most of them familiar | none | — | text only, new 2026-09-03 — previews the six-types table above, no new visual needed |
+| 10 | This talk was built the same way | none | — | text only, a numbered list |
+
+Moved to the Epilogue, 2026-09-03: "ND data classification" and "Check before you start" — see that section below.
 
 ## Act I — Understand
 
-Rewritten 2026-09-02 against the current 8-slide list in `storyboard.md` — the previous version of this table predated even the original 6-slide lock and no longer matched it (a numbered "graduating-student case" and "correct in place" slide that no longer exist as such, no rows at all for the two slides restored from `02_context.tex`). Alex's priority stated the same day: every slide's example should be concrete and front-and-center, since the use cases are both what holds the room's attention and the source of the visuals — no slide here should rest on an abstract statement with "none" as its visual.
+**Revised 2026-09-03**: the old opening slide ("Open on the failure," the real `emcal` commit) is cut entirely — too in-the-weeds for its cost, per Alex, with more room going to visual examples elsewhere. Everything below is renumbered down by one; row 2 ("What git and GitHub give you") now introduces the `emcal` commit fresh rather than referencing a preceding slide. A `\stagedivider` transition slide opens the act (text only, act-strip + question, no row needed here).
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
-| 1 | Open on the failure | the real commit message | A | **verified real**: `dowlinglab/emcal` commit `31184f4`. Exact quoted text confirmed present. Candidate upgrade from typeset (current) to a real screenshot of the GitHub commit page — the chrome proves it's public and dated, which matters for a slide whose point is "this really happened, and you can go check." |
-| 2 | State the shift | the same commit, referenced again, not a fresh generic diagram | A | reuses slide 1's artifact rather than illustrating "conversation vs. repository" in the abstract — keeps the real example doing the work across two slides instead of one |
-| 3 | What git and GitHub actually give you | a real screenshot of the `emcal` repo landing page | C | **ready to capture now**: public repo, no confidentiality concern — already listed under "what needs capturing" below. Shows what a commit/repository/GitHub host actually look like, anchored to the same failure |
-| 4 | Three kinds of context | the membrane-transport project's own persistent/authoritative/task context, named concretely (its conventions; its actual model and data; this run's question) | A | text-artifact, illustrative — Type 1, so generic, no project name; this is the fix for the version of this slide that stated the taxonomy with no example at all |
-| 5 | One file, read at the start of every session | that same project's actual `CLAUDE.md`, shown in full via `lstlisting` (built in `02_act1_understand.tex`) | A | text-artifact, illustrative, generic — continues slide 4's example rather than switching projects |
-| 6 | Parallel A, idea-first: cross two literatures | a real annotation-schema excerpt, plus a small generic TikZ diagram: two literature streams (icons or labeled boxes) converging on one idea | A + B | text-artifact, generalized (no project name) — matches how `literature_review.md` already handles it; the diagram gives the slide something to look at beyond the excerpt, without naming the proposal |
-| 7 | Parallel A, corpus-first: the corpus becomes someone's starting point | the getting-started report's actual section list, plus a small generic TikZ diagram: a folder of PDFs -> a report icon | A + B | text-artifact only for the content — the underlying project is private; show the *structure*, never the content. The diagram is process, not content, so it carries no confidentiality risk |
-| 8 | Parallel B, closing: a departed collaborator's notebook → git | a generic TikZ workflow diagram: local notebook (no backup) -> `git init` -> GitHub, three boxes with an arrow each | B | added 2026-09-02, replacing "none" — Alex's note: an anonymized slide should still get a constructed procedure diagram, not go visual-less by default. Diagrams are process, not content, so the name-protection rule doesn't block them |
+| 1 | State the shift | a conversation vs. a repository, in the abstract | — | text only |
+| 2 | What git and GitHub actually give you | a real screenshot of the `emcal` repo landing page | C | **ready to capture now**: public repo, no confidentiality concern — already listed under "what needs capturing" below. Anchored to the same real commit (`31184f4`), introduced fresh on this slide since the old lead-in slide is gone |
+| 3 | Three kinds of context | the membrane-transport project's own persistent/authoritative/task context, named concretely (its conventions; its actual model and data; this run's question) | A | text-artifact, illustrative — Type 1, so generic, no project name |
+| 4 | One file, read at the start of every session | that same project's actual `CLAUDE.md`, shown in full via `lstlisting` (built in `02_act1_understand.tex`) | A | text-artifact, illustrative, generic — continues row 3's example rather than switching projects |
+| 5 | Parallel A, idea-first: cross two literatures | a real annotation-schema excerpt, plus a small generic TikZ diagram: two literature streams (icons or labeled boxes) converging on one idea | A + B | text-artifact, generalized (no project name) — matches how `literature_review.md` already handles it; the diagram gives the slide something to look at beyond the excerpt, without naming the proposal |
+| 6 | Parallel A, corpus-first: the corpus becomes someone's starting point | the getting-started report's actual section list, plus a small generic TikZ diagram: a folder of PDFs -> a report icon | A + B | text-artifact only for the content — the underlying project is private; show the *structure*, never the content. The diagram is process, not content, so it carries no confidentiality risk |
+| 7 | Parallel B, closing: a departed collaborator's notebook → git | a generic TikZ workflow diagram: local notebook (no backup) -> `git init` -> GitHub, three boxes with an arrow each | B | a constructed procedure diagram, not visual-less by default. Diagrams are process, not content, so the name-protection rule doesn't block them |
 
 ## Act II — Build
 
-Renumbered 2026-09-02: slide 1 expanded and a new slide 2 inserted (Jeff Kantor's credit, the group-wide impact), shifting everything after down by one.
+**Revised 2026-09-03**: the old two-slide opener (the version-timeline "resolved" slide + the group-impact slide) collapsed into one — the full grad-visit-scheduler story, and its real-image plan, moved to the Prologue hook (see that section above), which now tells it with more room. This act's opener is a one-line callback into new material only. A `\stagedivider` transition slide opens the act (text only, no row needed).
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
-| 1 | The hook, in full | **this slide carries the most real-image weight in the deck** — see below | C | planned in detail below |
-| 2 | This changed how the whole group works | none | — | text only, deliberately spare — the point is the causal claim, not an artifact |
-| 3 | Prototype → promote | a generic before/after file tree | A | text-artifact, illustrative (no real repo needed — the point is the pattern) |
-| 4 | Run it, pin it, baseline it | none | — | text only |
-| 5 | Freeze the science, move the code | none, or a two-column "old code / new code, science untouched" diagram | B | optional TikZ, not required |
-| 6 | Regression harness enabled a reversal | none | — | generic by design (private project) |
-| 7 | Not just a hobby-adjacent tool | **real screenshots of emcal and bits_for_gaps** — both public | C | see below |
-| 8 | Review the diff | a generic, illustrative diff excerpt | A | text-artifact — corrected 2026-09-02: originally claimed to reuse the real emcal `31184f4` diff, but that commit's actual diff (a JSON fixture + Python test harness) doesn't support this illustration. Relabeled as illustrative rather than forced to fit |
-| 9 | Proposal compliance review, inline | the `\foacomment{}` macro + one illustrative flagged comment | A | text-artifact, illustrative (real proposal content stays out) |
-| 10 | Verify before you commit | **a real `latexdiff` output** | C | ✅ can generate now — the script produces exactly this, tested this session; use a synthetic example like the one already used to test the script, not real proposal text |
-
-**Slide II.1, "The hook, in full" — the real-image plan:**
-- A screenshot of the **PyPI page** for `grad-visitor-scheduler` (proves it's really published)
-- A screenshot of the **GitHub tag list** (`v0.1.1` → `v0.5.0`) or the releases page (proves the real dates/versions)
-- Optionally, the **GitHub commit graph** around Feb 12 showing the dense single-day cluster (visually makes the "20-minute live demo" claim concrete)
-- All three: public repo, no confidentiality concern, capturable now via the in-app browser.
+| 1 | As promised — and why it mattered | none | — | text only, deliberately spare — the point is the causal claim, not an artifact; the version-timeline diagram this slide used to show moved to the Prologue |
+| 2 | Prototype → promote | a generic before/after file tree | A | text-artifact, illustrative (no real repo needed — the point is the pattern) |
+| 3 | Run it, pin it, baseline it | none | — | text only |
+| 4 | Freeze the science, move the code | none, or a two-column "old code / new code, science untouched" diagram | B | optional TikZ, not required |
+| 5 | Regression harness enabled a reversal | none | — | generic by design (private project) |
+| 6 | Not just a hobby-adjacent tool | **real screenshots of emcal and bits_for_gaps** — both public | C | see below |
+| 7 | Review the diff | a generic, illustrative diff excerpt | A | text-artifact — corrected 2026-09-02: originally claimed to reuse the real emcal `31184f4` diff, but that commit's actual diff (a JSON fixture + Python test harness) doesn't support this illustration. Relabeled as illustrative rather than forced to fit |
+| 8 | Proposal compliance review, inline | the `\foacomment{}` macro + one illustrative flagged comment | A | text-artifact, illustrative (real proposal content stays out) |
+| 9 | Verify before you commit | **a real `latexdiff` output** | C | ✅ can generate now — the script produces exactly this, tested this session; use a synthetic example like the one already used to test the script, not real proposal text |
 
 **Slide II.6, "not just a hobby tool":**
 - emcal: screenshot of the GitHub repo page (shows the `Ind. Eng. Chem. Res.` paper link, the README's scope statement)
@@ -100,15 +94,17 @@ Rewritten 2026-09-02 against the current 7-slide list (5 regular + a 2-part caps
 
 ## Epilogue — Trust
 
-Updated 2026-09-02 to match the current 5-slide list built in `05_epilogue.tex` — the summary matrix now carries a 7th row ("Creating this talk") instead of a dedicated meta-slide, which moved to the Prologue (item 10 there) on Alex's second thought.
+**Revised 2026-09-03**: two IT-policy slides moved in from the Prologue (rows 2-3 below) — Alex's suggestion that they read as "Trust" material. The summary matrix (now row 4) still carries the 7th row ("Creating this talk") from the meta-slide living in the Prologue. A `\stagedivider` transition slide opens the Epilogue (text only, no row needed).
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
 | 1 | Back to the question | none | — | text only, deliberately spare |
-| 2 | A handful of projects, recurring | the summary matrix (types × acts, `\good{}` marks, now 7 rows) | B | built, typeset tabular — no image file needed |
-| 3 | You own every claim | none | — | text only |
-| 4 | Curiosity is a feature, not a consolation prize | ✅ have, in use | C | `figures/boot_dryer_octopus.jpeg` (the spoken anchor); kitchen organizer/telescope shelf and `radio-extra-book` are a link-only mention on the same slide, no image shown |
-| 5 | One thing to change Monday morning | none | — | text only |
+| 2 | ND data classification | the 🟢🟡🟠🔴 table | text/B | moved here from the Prologue 2026-09-03. **candidate real screenshot**: the actual `ai.nd.edu/ai-in-action/approved-ai-tools/` page, cropped to the tier legend + the Claude row. Proves the "Public data only" finding isn't a paraphrase. Needs the in-app browser (fetch tool can't reach this domain — see `notes/references.md`). Re-verify current before capturing; the page changes |
+| 3 | Check before you start | none | — | text only. Moved here from the Prologue 2026-09-03 |
+| 4 | A handful of projects, recurring | the summary matrix (types × acts, `\good{}` marks, 7 rows) | B | built, typeset tabular — no image file needed |
+| 5 | You own every claim | none | — | text only |
+| 6 | Curiosity is a feature, not a consolation prize | ✅ have, in use | C | `figures/boot_dryer_octopus.jpeg` (the spoken anchor); kitchen organizer/telescope shelf and `radio-extra-book` are a link-only mention on the same slide, no image shown |
+| 7 | One thing to change Monday morning | none | — | text only |
 
 ---
 
@@ -135,7 +131,7 @@ All via the in-app browser, no confidentiality concern:
 
 ## What must stay illustrative (confidentiality)
 
-Act I §4, §5, §7 (renumbered 2026-09-02 — the membrane-transport context/`CLAUDE.md` pair and the corpus-first parallel); Act II §9 (renumbered same day); Act III §2, §4, §6 — all touch unpublished or private work. Text-artifacts and TikZ only, generalized, no project names — same discipline already applied throughout `resources/practices/`.
+Act I §3, §4, §6 (renumbered 2026-09-03 — the membrane-transport context/`CLAUDE.md` pair and the corpus-first parallel); Act II §8 (renumbered same day); Act III §2, §4, §6 — all touch unpublished or private work. Text-artifacts and TikZ only, generalized, no project names — same discipline already applied throughout `resources/practices/`. Also the Prologue's schedule-grid mockup (item 2) — not confidentiality-driven in the same sense (grad-visit-scheduler is public), but the same rule in spirit: a real generated schedule would carry real people's names and times, so it stays synthetic by design, not just until a screenshot pass runs.
 
 ## Open question
 

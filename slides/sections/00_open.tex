@@ -1,25 +1,97 @@
-% ======================= PROLOGUE: THE CLAIM, THE TEASER =======================
-% storyboard.md Prologue items 2 ("The claim") and 3 ("The teaser"). Item 1
-% (title) is in main.tex; item 4 ("Borrowed structure") is already built in
-% 00b_roadmap.tex. The graduating-student hook that used to sit between
-% these two predates the three-act restructure and is gone from here; it
-% survives as Act I's generic inherited-project case, not as the opener.
+% ======================= PROLOGUE: THE HOOK, THE CLAIM =======================
+% storyboard.md Prologue items 2-3 ("The teaser", "The claim") -- REVAMPED
+% 2026-09-03 at Alex's request: the old single-slide teaser undersold the
+% hook. Now three frames: two tell the grad-visit-scheduler story with real
+% visuals (the "before" artifact, then the Codex conversion), and "The
+% claim" -- previously the first frame after the title -- now lands after
+% the story as the takeaway, not before it. Item 4 ("Borrowed structure")
+% is 00b_roadmap.tex; item 1 (title) is in main.tex.
 %
-% "The claim" was cut when the talk restructured, on the reasoning that
-% storyboard.md's own Prologue list didn't carry it forward; restored
-% 2026-09-02 at Alex's request (he liked the slide and would rather cut
-% elsewhere). Wording matches the thesis stated in CLAUDE.md and the
-% submitted abstract -- this is the one slide that says it as a claim.
+% Facts (DGA, Carla, the ~1.5hr/~8.5hr split, 100% test coverage) are
+% Alex's own account, given directly 2026-09-03. Two things deliberately
+% NOT stated because they'd be invented, not sourced:
+%   - The year the Jeff-Kantor notebook was built ("In XYZ" in Alex's own
+%     notes) -- said as "years later" instead. Fill in the real year here
+%     if you want it on the slide.
+%   - DGA is generic (Director of Graduate Admissions), not attributed to
+%     a specific person -- Alex confirmed the title but not whose role it
+%     was historically, so the slide doesn't guess.
 %
-% "The teaser": full story deliberately withheld -- the PyPI page, tag list,
-% and commit graph are held for Act II slide 1's full return (image_plan.md),
-% so the visual reveal isn't spent twice. The closing question is left open
-% on purpose; Epilogue slide 1 returns to it verbatim.
+% The frame-1 schedule grid is a SYNTHETIC mockup, not a real screenshot --
+% different rule than every other "real artifact" TODO in this deck. A real
+% generated schedule contains visiting students' and faculty's real names
+% and times: that's exactly the kind of personal data this deck's own
+% data-classification slide (now in the Epilogue) says not to publish.
+% Illustrative-only, labelled as such, by design -- not a placeholder
+% waiting on a screenshot pass.
 %
-% The teaser runs a little over style_guide.md's ~20-25 word narrative
-% guideline (about 45 words): this is the talk's cold open and has to carry
-% real, specific, credibility-establishing facts (dates, versions, which
-% tool) on the way to the question.
+% TODO(image_plan.md Prologue #3): frame 2's version-timeline TikZ is
+% real (v0.1.2->v0.3.1, Feb 11-17) -- upgrade the surrounding text to real
+% screenshots (PyPI page, GitHub tags, commit graph) once the browser-
+% capture pass runs; see image_plan.md for exact URLs. The timeline itself
+% moved here from Act II slide 1, which no longer repeats it (see that
+% file's own header comment).
+%
+% The closing question ("How do we train...") is unchanged text, still the
+% exact line Epilogue slide 1 returns to verbatim -- do not reword either
+% copy without updating the other.
+
+\begin{frame}[fragile]{Before Codex: ten hours, a notebook, then patches}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.44\textwidth}
+      \centering
+      {\scriptsize\itshape A visit-day schedule --- illustrative, not real data}\\[0.4em]
+      \begin{tabular}{@{}lccc@{}}
+        \toprule
+        & \textbf{9:00} & \textbf{10:00} & \textbf{11:00} \\
+        \midrule
+        Visitor A & Prof.~1 & Prof.~4 & Prof.~7 \\
+        Visitor B & Prof.~2 & Prof.~5 & Prof.~8 \\
+        Visitor C & Prof.~3 & Prof.~6 & Prof.~9 \\
+        \bottomrule
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.52\textwidth}
+      \small
+      Every visit weekend needs one of these --- who meets whom, when. Years ago, built by hand: about 10 hours for the DGA, redone from scratch for every faculty and visitor change.\\[0.7em]
+      Years later, \keyterm{Jeff Kantor} and I wrote a Python notebook to formulate and solve it as an optimization problem --- then kept bolting on features, like auto-generating each visitor's schedule as a Word document.
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+
+\begin{frame}[fragile]{One weekend with Codex, and I kept going}
+  \vfill
+  \begin{center}
+  \begin{tikzpicture}[font=\small]
+    \foreach \x/\lbl in {0/v0.1.2, 2.2/v0.2.0, 4.4/v0.2.5, 6.6/v0.3.1} {
+      \fill[NDGold] (\x,0) circle (2.5pt);
+      \node[below] at (\x,-0.15) {\lbl};
+    }
+    \draw[thick, NDBlue] (0,0) -- (6.6,0);
+    \node[above] at (0,0.3) {\scriptsize Feb 11};
+    \node[above] at (6.6,0.3) {\scriptsize Feb 17};
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.3em}
+  \begin{center}
+    \small On sabbatical last year, I nearly turned down the ask to build the schedule again --- then decided to use it as an excuse to really try Codex.
+  \end{center}
+  \vspace{0.3em}
+  \begin{center}
+    \small About 1.5 hours: Codex reformatted \keyterm{Carla}'s spreadsheet and regenerated the schedule. I was stunned, so I kept going --- 8.5 more hours turned the notebook into a tested, documented, pip-installable package (\texttt{grad-visitor-scheduler}) with 100\% test coverage, Codex writing the tests and hunting the edge cases.
+  \end{center}
+  \vspace{0.5em}
+  \begin{center}
+    {\small\itshape Live, right now: adding one feature, start to finish, in about 20 minutes.}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    \slidepoint{How do we train the next generation to get both?}
+  \end{center}
+  \vfill
+\end{frame}
 
 \begin{frame}{The claim}
   \vfill
@@ -31,29 +103,6 @@
   \begin{center}
     \slidepoint{They come from putting AI inside a workflow that is\\
     deliberate, reproducible, and auditable.}
-  \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{A weekend project}
-  \vfill
-  \begin{center}
-    \slidepoint{One weekend, an annual scheduling headache,\\and a package on PyPI.}
-  \end{center}
-  \vspace{1.2em}
-  \begin{center}
-    \small \keyterm{grad-visit-scheduler}: v0.1.2 $\to$ v0.3.1 in a week ---\\
-    built with Codex, not Claude.
-  \end{center}
-  \vfill
-  \begin{center}
-    \small\itshape
-    ``5$\times$ productivity, but I'd already touched every\\
-    stage of this by hand.''
-  \end{center}
-  \vspace{0.8em}
-  \begin{center}
-    \slidepoint{How do we train the next generation to get both?}
   \end{center}
   \vfill
 \end{frame}

@@ -1,5 +1,5 @@
 % ============================ EPILOGUE: TRUST ============================
-% storyboard.md Epilogue, 5 slides. Job: return to the hook's question,
+% storyboard.md Epilogue, now 7 slides. Job: return to the hook's question,
 % land the responsible-use synthesis, close on curiosity rather than a
 % caveat.
 %
@@ -9,6 +9,17 @@
 % acts without revealing their specific content, rather than only paying
 % off at the end. Its summary-matrix row below is what completes the loop
 % here instead.
+%
+% MOVED HERE 2026-09-03 at Alex's suggestion: the two IT-policy slides
+% ("Claude is approved here for public data only", "Two checks, thirty
+% seconds, before you start") used to sit in the Prologue
+% (01_ecosystem.tex); they fit "Trust" better than the Prologue's
+% scoping beats, so they moved. Placed after the hook's question is
+% answered (not before it): they're the practical form of "trust," right
+% before the summary matrix, rather than a compliance interruption before
+% the talk has even started.
+
+\stagedivider{5}{Epilogue: Trust}{What do you trust, and why?}
 
 \begin{frame}{How do we train the next generation to get both?}
   \vfill
@@ -19,6 +30,53 @@
   \begin{center}
     \slidepoint{We do not have a clean answer.\\We are sitting with the question, not resolving it.}
   \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{Claude is approved here for public data only}
+  \vfill
+  \begin{center}
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Tier} & \textbf{Examples} & \textbf{AI use} \\
+    \midrule
+    \textcolor{OkGreen}{$\bullet$}~Public    & published, press-released & safe \\
+    \textcolor{NDGold!80!black}{$\bullet$}~Internal  & routine business data & safe \emph{in approved tools} \\
+    \textcolor{OkVermillion}{$\bullet$}~Sensitive & role-restricted       & safe \emph{in approved tools} \\
+    \textcolor{black}{$\blacksquare$}~Restricted & SSN, health, payment  & \bad{never, in any tool} \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vfill
+  \begin{center}
+  \begin{tabular}{@{}lc@{}}
+    \toprule
+    \textbf{Tool} & \textbf{Approved through} \\
+    \midrule
+    Gemini, ChatGPT EDU, NotebookLM & Sensitive \\
+    \textbf{Claude} & \textbf{Public only} \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vfill
+  \begin{center}
+    \small An enterprise license is in progress --- verify this before the talk.
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{Two checks, thirty seconds, before you start}
+  \vfill
+  \begin{itemize}\setlength\itemsep{1.2em}
+    \item \textbf{DoD / DoW funding?}\\
+      DoD/DoW-funded researchers are currently \bad{prohibited} from
+      using any Anthropic product --- Claude.ai, the API, Claude
+      Code.\\[0.3em]
+      {\small Questions: \texttt{researchsecurity@nd.edu}}
+    \item \textbf{Everyone else: ask your PI.}\\
+      Export control, sponsor terms, and IRB conditions differ per
+      project --- what's fine on one may not be on another.
+  \end{itemize}
   \vfill
 \end{frame}
 

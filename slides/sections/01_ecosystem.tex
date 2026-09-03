@@ -1,18 +1,12 @@
 % ==================== PROLOGUE: TODAY, THE LANDSCAPE ====================
-% storyboard.md Prologue items 5-10 ("Today", "The landscape", "know your data
-% classification", "two things to check", "everything is on GitHub", "this
-% talk was built the same way"). Items 6-8's content already matched the
-% storyboard when it was written (see that file's Prologue note); that part
-% of this pass is a style-guide compliance fix, not a content rewrite:
-% \bad{} replaces two bare \textcolor{OkVermillion} uses for "prohibited"
-% (main.tex's own rule -- meaning is never carried by colour alone), and the
-% two-item checklist on the last frame is trimmed but still runs over the
-% ~20-25 word guideline, noted inline, for the same reason as 00_open.tex's
-% cold open: a compliance checklist needs real, correct wording more than
-% it needs brevity.
-%
-% Items 9-10 (resources overview, the meta slide) close out the Prologue,
-% added/moved here 2026-09-02 -- see the meta slide's own comment below.
+% storyboard.md Prologue items 5, 6, 9, 10 ("Today", "The landscape",
+% "everything is on GitHub", "this talk was built the same way"). Items
+% 7-8 (data classification, the two-checks list) MOVED to the Epilogue
+% 2026-09-03 at Alex's suggestion -- they read as "Trust" material, not a
+% Prologue scoping beat; item 6 ("Don't become loyal to a model") stays
+% here per Alex's own counter-argument: it directly cashes out this file's
+% first slide ("not a product comparison"), so it belongs with the scoping
+% beats, not the policy ones.
 %
 % "Today" (item 5) is new here: the scoping slide cut when the talk
 % restructured, restored 2026-09-02 alongside "The claim" (00_open.tex) at
@@ -24,16 +18,21 @@
 % gold-rule wrap-up bar entirely -- it was repeating each slide's title in
 % different words. Every title below states the frame's point directly
 % instead, so the body (table, list, act-strip) is evidence for a claim
-% already made, not build-up toward one revealed at the bottom. \slidepoint
-% is dropped from "The landscape, briefly" for the same reason -- the title
-% now says what that big NDBlue line used to say.
+% already made, not build-up toward one revealed at the bottom.
 %
-% ND policy claims ("know your data classification", the DoD/DoW bullet)
-% are sourced from notes/references.md, confirmed by direct browser read
-% 2026-09-02 -- not a search snippet. Re-verify against that file's linked
-% pages before the talk; policy pages like this change without notice,
-% which is why that frame keeps its own "verify before the talk" hedge as
-% plain body text rather than stating the policy as permanently fixed.
+% "Everything today is on GitHub" REVISED 2026-09-03: was counts-only
+% ("9 files -- the doctrine"), now the actual filenames, per Alex's request
+% to fill the slide's space better -- and the repo link. Filenames read
+% straight off the repo tree (resources/), not retyped from memory.
+%
+% Archetypes slide ADDED 2026-09-03 at Alex's request, placed right before
+% the meta slide, to foreshadow the six example types before the acts
+% start using them. Six types straight from demo_ideas.md's confirmed
+% roster -- no new taxonomy invented here, just a preview of the existing
+% one. Deliberately doesn't name which type shows up in which act (that's
+% the Epilogue's summary-matrix job) or which examples are named vs.
+% generic (that's demo_ideas.md's own naming-convention call) -- this
+% slide only previews the six kinds of task.
 
 \begin{frame}{One year of practices, not a tool tutorial}
   \vfill
@@ -81,67 +80,75 @@
   \vfill
 \end{frame}
 
-\begin{frame}{Claude is approved here for public data only}
-  \vfill
-  \begin{center}
-  \begin{tabular}{@{}lll@{}}
-    \toprule
-    \textbf{Tier} & \textbf{Examples} & \textbf{AI use} \\
-    \midrule
-    \textcolor{OkGreen}{$\bullet$}~Public    & published, press-released & safe \\
-    \textcolor{NDGold!80!black}{$\bullet$}~Internal  & routine business data & safe \emph{in approved tools} \\
-    \textcolor{OkVermillion}{$\bullet$}~Sensitive & role-restricted       & safe \emph{in approved tools} \\
-    \textcolor{black}{$\blacksquare$}~Restricted & SSN, health, payment  & \bad{never, in any tool} \\
-    \bottomrule
-  \end{tabular}
-  \end{center}
-  \vfill
-  \begin{center}
-  \begin{tabular}{@{}lc@{}}
-    \toprule
-    \textbf{Tool} & \textbf{Approved through} \\
-    \midrule
-    Gemini, ChatGPT EDU, NotebookLM & Sensitive \\
-    \textbf{Claude} & \textbf{Public only} \\
-    \bottomrule
-  \end{tabular}
-  \end{center}
-  \vfill
-  \begin{center}
-    \small An enterprise license is in progress --- verify this before the talk.
-  \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{Two checks, thirty seconds, before you start}
-  \vfill
-  \begin{itemize}\setlength\itemsep{1.2em}
-    \item \textbf{DoD / DoW funding?}\\
-      DoD/DoW-funded researchers are currently \bad{prohibited} from
-      using any Anthropic product --- Claude.ai, the API, Claude
-      Code.\\[0.3em]
-      {\small Questions: \texttt{researchsecurity@nd.edu}}
-    \item \textbf{Everyone else: ask your PI.}\\
-      Export control, sponsor terms, and IRB conditions differ per
-      project --- what's fine on one may not be on another.
-  \end{itemize}
-  \vfill
-\end{frame}
-
 \begin{frame}[fragile]{Everything today is on GitHub}
   \vfill
-  \begin{lstlisting}
-resources/
-  practices/   9 files -- the doctrine
-  prompts/     3 files -- ready to paste in
-  scripts/     3 tools -- DOI checker, figure style,
-               latexdiff-vs-last-commit
-  templates/   3 files -- project file, research log,
-               results manifest
-  \end{lstlisting}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      {\small\textbf{practices/} \scriptsize(9 -- the doctrine)}
+      \begin{itemize}\scriptsize\setlength\itemsep{0.15em}
+        \item grant\_proposal\_writing
+        \item literature\_review
+        \item manuscript\_audit
+        \item private\_code\_to\_public\_package
+        \item scientific\_computing\_workflow
+        \item scientific\_figures\_tables
+        \item technical\_writing
+        \item working\_with\_ai\_agents
+        \item writing\_style\_guide
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      {\small\textbf{prompts/} \scriptsize(3 -- ready to paste in)}
+      \begin{itemize}\scriptsize\setlength\itemsep{0.15em}
+        \item literature\_workflow
+        \item manuscript\_audit
+        \item organize\_research\_repo
+      \end{itemize}
+      \vspace{0.5em}
+      {\small\textbf{scripts/} \scriptsize(3 -- tools)}
+      \begin{itemize}\scriptsize\setlength\itemsep{0.15em}
+        \item doi\_checker
+        \item figure\_style
+        \item latexdiff\_check.sh
+      \end{itemize}
+      \vspace{0.5em}
+      {\small\textbf{templates/} \scriptsize(3 -- fill in and go)}
+      \begin{itemize}\scriptsize\setlength\itemsep{0.15em}
+        \item project\_entry\_point
+        \item research\_log
+        \item results\_manifest
+      \end{itemize}
+    \end{column}
+  \end{columns}
   \vfill
   \begin{center}
-    \small Prompts, checklists, and three scripts you can use as-is today --- not a summary to remember, a repo to clone.
+    \small\texttt{github.com/dowlinglab/claude-for-researchers}\\
+    not a summary to remember --- a repo to clone.
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{Six kinds of task, all year, most of them familiar}
+  \vfill
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}\setlength\itemsep{0.9em}
+        \item Inherited material, matured toward a manuscript
+        \item Auditing a manuscript's final version
+        \item A literature review, turned into a getting-started guide
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}\setlength\itemsep{0.9em}
+        \item Crafting a proposal
+        \item Code, turned into a released package
+        \item Retooling a course
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vfill
+  \begin{center}
+    \small Every example today is one of these six --- some named, some not, all real.
   \end{center}
   \vfill
 \end{frame}
