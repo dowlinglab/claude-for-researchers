@@ -78,6 +78,13 @@
 
 % The one-line takeaway that closes a section. Gold rule, dark text -- gold as
 % a rule is fine, gold as text on white is not.
+%
+% Being phased out (2026-09-02, Alex's call): it tended to just repeat the
+% frame's title in different words. Newer frames put the point in the title
+% instead and use the body purely as evidence -- see 01_ecosystem.tex's
+% comment. Kept defined only because sections/02_context.tex (still stale,
+% not yet rewritten) calls it; remove once that file is rewritten and no
+% caller remains.
 \newcommand{\takeaway}[1]{%
   \vfill
   {\color{NDGold}\rule{\textwidth}{1.2pt}}\\[0.35em]
@@ -186,8 +193,13 @@
 % ---------------------------------------------------------------------
 % Small ND logo, bottom-left, on every frame from here on -- reproduces
 % Alex's own real-talk slide master (see slides/style_guide.md: bottom-left,
-% ~10% of slide width, ~1% margin from each edge), not a new stylistic
-% choice. A background template, not \logo{}/frametitle's own logo slot,
+% ~1% margin from each edge). Sized at ~16.5% of slide width, 1.5x the ~10%
+% the audit measured -- Alex asked for 150-200% of the audit-matched size on
+% 2026-09-02; picked the low end after 200% collided with centered text on
+% two different frames (00_open.tex's teaser, 01_ecosystem.tex's data-
+% classification frame) -- a bigger logo eats into exactly the corner where
+% centered content's last line often lands. A background template, not
+% \logo{}/frametitle's own logo slot,
 % because those place it top-right and are suppressed on [plain] frames;
 % a background template survives [plain] (only head/foot/sidebar are
 % suppressed there), so the stage dividers below get it too. The title
@@ -204,10 +216,18 @@
 % the node's coordinates collapse to (0,0) and nothing renders. Verified
 % both failure modes in isolation before landing this.
 % ---------------------------------------------------------------------
+% yshift is larger than the ~1% margin the audit measured: a content-heavy
+% frame's last line (e.g. a two-table frame's closing text) can reach close
+% enough to the physical bottom edge to collide with the logo at 1.5mm --
+% caught visually on slides/sections/01_ecosystem.tex's data-classification
+% frame. 4mm clears it with margin for other tall frames, still reads as
+% the corner. Re-check this margin against any new content-heavy frame
+% (visual QA, not just "it compiles") -- the bigger logo makes a collision
+% more visible, not less likely.
 \newcommand{\ndcornerlogo}{%
   \begin{tikzpicture}[remember picture, overlay]
-    \node[anchor=south west, xshift=2mm, yshift=1.5mm] at (current page.south west)
-      {\includegraphics[width=0.11\paperwidth]{figures/nd_logo.png}};
+    \node[anchor=south west, xshift=2mm, yshift=4mm] at (current page.south west)
+      {\includegraphics[width=0.165\paperwidth]{figures/nd_logo.png}};
   \end{tikzpicture}}
 \setbeamertemplate{background}{\ndcornerlogo}
 

@@ -1,6 +1,62 @@
-% ======================= 1. ECOSYSTEM (3 min) =======================
+% ==================== PROLOGUE: TODAY, THE LANDSCAPE ====================
+% storyboard.md Prologue items 5-8 ("Today", "The landscape", "know your data
+% classification", "two things to check"). Items 6-8's content already
+% matched the storyboard when it was written (see that file's Prologue
+% note); that part of this pass is a style-guide compliance fix, not a
+% content rewrite: \bad{} replaces two bare \textcolor{OkVermillion} uses
+% for "prohibited" (main.tex's own rule -- meaning is never carried by
+% colour alone), and the two-item checklist on the last frame is trimmed
+% but still runs over the ~20-25 word guideline, noted inline, for the same
+% reason as 00_open.tex's cold open: a compliance checklist needs real,
+% correct wording more than it needs brevity.
+%
+% "Today" (item 5) is new here: the scoping slide cut when the talk
+% restructured, restored 2026-09-02 alongside "The claim" (00_open.tex) at
+% Alex's request. Reuses \actstrip{0} like 00b_roadmap.tex's roadmap slide
+% right before it -- still nothing lit, since we're not yet past the
+% Prologue's own orientation beats.
+%
+% No \takeaway on any frame here: Alex asked (2026-09-02) to drop the
+% gold-rule wrap-up bar entirely -- it was repeating each slide's title in
+% different words. Every title below states the frame's point directly
+% instead, so the body (table, list, act-strip) is evidence for a claim
+% already made, not build-up toward one revealed at the bottom. \slidepoint
+% is dropped from "The landscape, briefly" for the same reason -- the title
+% now says what that big NDBlue line used to say.
+%
+% ND policy claims ("know your data classification", the DoD/DoW bullet)
+% are sourced from notes/references.md, confirmed by direct browser read
+% 2026-09-02 -- not a search snippet. Re-verify against that file's linked
+% pages before the talk; policy pages like this change without notice,
+% which is why that frame keeps its own "verify before the talk" hedge as
+% plain body text rather than stating the policy as permanently fixed.
 
-\begin{frame}{The landscape, briefly}
+\begin{frame}{One year of practices, not a tool tutorial}
+  \vfill
+  \begin{center}\actstrip{0}\end{center}
+  \vfill
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \textbf{This is not}
+      \begin{itemize}
+        \item a Claude tutorial
+        \item a product comparison
+        \item a claim that AI does research
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{This is}
+      \begin{itemize}
+        \item one year of practices, and their failures
+        \item mostly model-independent
+        \item things to change on Monday
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vfill
+\end{frame}
+
+\begin{frame}{Don't become loyal to a model}
   \vfill
   \begin{center}
   \begin{tabular}{@{}llll@{}}
@@ -15,14 +71,13 @@
   \end{center}
   \vfill
   \begin{center}
-    {\large\color{NDBlue}\textbf{Do not become loyal to a model.\\
-     Become good at working with models.}}
+    \small\color{Muted}Become good at working with models instead. Rankings
+    change every few months; the workflow habits in this talk do not.
   \end{center}
   \vfill
-  \takeaway{Rankings change every few months. The workflow habits in the rest of this talk do not.}
 \end{frame}
 
-\begin{frame}{At Notre Dame: know your data classification}
+\begin{frame}{Claude is approved here for public data only}
   \vfill
   \begin{center}
   \begin{tabular}{@{}lll@{}}
@@ -48,22 +103,23 @@
   \end{tabular}
   \end{center}
   \vfill
-  \takeaway{Today, don't put unpublished research data into Claude. An enterprise license is in progress; verify before you rely on this slide.}
+  \begin{center}
+    \small\color{Muted}An enterprise license is in progress --- verify this before the talk.
+  \end{center}
+  \vfill
 \end{frame}
 
-\begin{frame}{Two things to check before you start}
+\begin{frame}{Two checks, thirty seconds, before you start}
   \vfill
   \begin{itemize}\setlength\itemsep{1.2em}
     \item \textbf{DoD / DoW funding?}\\
-      Researchers with Department of Defense contracts are currently
-      \textcolor{OkVermillion}{prohibited} from using Anthropic products ---
-      Claude.ai, the API, Claude Code.\\[0.3em]
+      DoD/DoW-funded researchers are currently \bad{prohibited} from
+      using any Anthropic product --- Claude.ai, the API, Claude
+      Code.\\[0.3em]
       {\small\color{Muted}Questions: \texttt{researchsecurity@nd.edu}}
     \item \textbf{Everyone else: ask your PI.}\\
-      Export control, sponsor data terms, and IRB conditions differ
-      \emph{per project}. What is fine on one is not automatically fine
-      on another.
+      Export control, sponsor terms, and IRB conditions differ per
+      project --- what's fine on one may not be on another.
   \end{itemize}
   \vfill
-  \takeaway{Thirty seconds of checking, once per project, before the tool touches anything that matters.}
 \end{frame}
