@@ -2,7 +2,7 @@
 
 The talk's structure, locked 2026-09-02, following the Dowling Lab presentation-planning algorithm (group manual §Presentations): question → main points → outline → slide budget → slide titles → feedback → slides. This file is steps 3–6.
 
-**Status:** structure locked; the entire deck is built and compiles clean, 38 slides end to end (`00_open.tex`, `00b_roadmap.tex`, `01_ecosystem.tex`, `02_act1_understand.tex`, `03_act2_build.tex`, `04_act3_challenge.tex`, `05_epilogue.tex`). A 2026-09-02 confidentiality re-check found no issues — every example matches its locked naming decision in `notes/demo_ideas.md`. Several slides carry a `TODO` comment for a real screenshot not yet captured (grad-visit-scheduler's PyPI/tags/commit-graph, emcal/bits_for_gaps repo pages, a real `latexdiff` output, the capstone course's website) — a typeset fallback ships in the meantime so no slide is empty. See [`image_plan.md`](image_plan.md) for the full list and sourcing per slide. Next: the visual-asset capture pass, and rehearsal-driven trimming toward the ~35-40 slide target for a 60-minute slot.
+**Status:** structure locked; the entire deck is built and compiles clean, 39 slides end to end (`00_open.tex`, `00b_roadmap.tex`, `01_ecosystem.tex`, `02_act1_understand.tex`, `03_act2_build.tex`, `04_act3_challenge.tex`, `05_epilogue.tex`). A 2026-09-02 confidentiality re-check found no issues — every example matches its locked naming decision in `notes/demo_ideas.md`. That same pass, verifying a real screenshot against its primary source, caught and fixed two fabricated-content bugs (a non-verbatim "verbatim" commit excerpt in Act I, a fabricated diff mislabeled as real in Act II) — see the commit history for detail. Several slides still carry a `TODO` comment for a real screenshot not yet captured (grad-visit-scheduler's PyPI/tags/commit-graph, emcal/bits_for_gaps repo pages, a real `latexdiff` output, the capstone course's website) — a typeset fallback ships in the meantime so no slide is empty. See [`image_plan.md`](image_plan.md) for the full list and sourcing per slide. Next: continue the visual-asset capture pass, and rehearsal-driven trimming toward the ~35-40 slide target for a 60-minute slot.
 
 ---
 
@@ -29,12 +29,12 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 | Beat | Name | Job | Slides | Rough time |
 |---|---|---|---|---|
 | — | Title | | 1 | 0.5 min |
-| Prologue | **Tinker** | Claim, hook (teased), scope, orient, show the toolkit | 9 | 7.5 min |
+| Prologue | **Tinker** | Claim, hook (teased), scope, orient, show the toolkit, prove the thesis is live | 10 | 8.5 min |
 | Act I | **Understand** | A sell: git is the prerequisite, not the payoff | 8 | 10.5 min |
 | Act II | **Build** | It changes my artifacts (hook resolved in full) | 9 | 13 min |
 | Act III | **Challenge** | It tells me I'm wrong, closing on a capstone | 7 | 10.5 min |
-| Epilogue | **Trust** | Return to the open question; close on curiosity | 6 | 4.5 min |
-| | | **Total** | **40** | **~46.5 min**, trim ~6.5 in drafting/rehearsal |
+| Epilogue | **Trust** | Return to the open question; close on curiosity | 5 | 4 min |
+| | | **Total** | **40** | **~47 min**, trim ~7 in drafting/rehearsal |
 
 See [`../notes/demo_ideas.md`](../notes/demo_ideas.md) for the confirmed six example types, which projects ground which slide, and the naming decision per type — this file only has slide titles; that one has the full mapping.
 
@@ -54,9 +54,10 @@ Items 2 and 5 (the claim, the scoping slide) were in the original pre-restructur
 6. **The landscape, briefly** — *(built)* pick tools by task, not brand; don't become loyal to a model.
 7. **At Notre Dame: know your data classification** — *(built)* the 🟢🟡🟠🔴 table + Claude-is-Public-only finding.
 8. **Two things to check before you start** — *(built)* DoD/DoW, and "ask your PI" generalized.
-9. **What you get today** — a quick look at the resources: nine practice files, three prompts, three working scripts, three templates. This is the "show the resources" beat — a screenshot or a live `ls resources/` moment, not a detailed walkthrough. Now also carries the "everything is on GitHub" pointer moved from item 5.
+9. **What you get today** — *(built)* a quick look at the resources: nine practice files, three prompts, three working scripts, three templates, typeset as a repo tree. This is the "show the resources" beat, not a detailed walkthrough. Carries the "everything is on GitHub" pointer moved from item 5.
+10. **This talk was built the same way** — *(built)* added 2026-09-02, Alex's idea, moved here from an original Epilogue placement on his own second thought: the deck itself is a live instance of the thesis — 10+ real projects identified, Claude Opus agents dispatched to examine their history, findings distilled into practice guides, a story arc crafted, slides built iteratively with Claude (including analyzing Alex's own past talks to match his real style). Placed here rather than the Epilogue so it establishes authority and foreshadows the acts early, without revealing their specific content — the Epilogue's summary matrix gets a seventh row ("Creating this talk") to complete the loop instead of repeating the slide.
 
-*(2–8 are built; 9 is new. Items 5-8 also each got new titles that state the frame's point directly, since the closing `\takeaway` bar they used to end on is retired deck-wide — see `style_guide.md` rule 5.)*
+*(2–10 are all built. Items 5-8 each got new titles that state the frame's point directly, since the closing `\takeaway` bar they used to end on is retired deck-wide — see `style_guide.md` rule 5.)*
 
 ## Act I — Understand: conversation → living context, with git
 
@@ -106,11 +107,10 @@ Organized around two parallel transitions, both "an ephemeral, unbacked-up thing
 **Job:** return to the hook's question, land the responsible-use synthesis, close on curiosity.
 
 1. **Back to the question** — "how do we train the next generation" — not answered, sat with.
-2. **This talk was built the same way** — added 2026-09-02, Alex's idea: the deck itself as a live instance of the thesis — 10+ real projects identified, Claude Opus agents dispatched to examine their history, findings distilled into practice guides, a story arc crafted, slides built iteratively with Claude (including analyzing Alex's own past talks to match his real style). Placed right after slide 1 rather than later, so the surprise lands while attention is being re-energized, before the summary matrix zooms out.
-3. **The summary matrix** — a simplified projects-×-acts grid built from `notes/demo_ideas.md`'s six-types table: a handful of real projects recur across every act, shown rather than asserted.
-4. **You own every claim, whatever helped you make it** — the compressed responsible-use list.
-5. **The hobby stories, as the final example** — the boot-dryer octopus and the hobbies gallery (organizer, telescope shelf, radio book). No repeated argument. Ends on curiosity, not a caveat.
-6. **One thing to change Monday morning** — pointer to the repo, close.
+2. **The summary matrix** — a simplified projects-×-acts grid built from `notes/demo_ideas.md`'s six-types table, plus a seventh row, "Creating this talk," checked under Prologue only — the payoff half of the meta-slide now living there (item 10) instead of a second telling of the same slide.
+3. **You own every claim, whatever helped you make it** — the compressed responsible-use list.
+4. **The hobby stories, as the final example** — the boot-dryer octopus and the hobbies gallery (organizer, telescope shelf, radio book). No repeated argument. Ends on curiosity, not a caveat.
+5. **One thing to change Monday morning** — pointer to the repo, close.
 
 ---
 
@@ -121,5 +121,5 @@ Organized around two parallel transitions, both "an ephemeral, unbacked-up thing
 - ~~The example roster and naming per type~~ — resolved 2026-09-02, recorded in `notes/demo_ideas.md`'s six-types table: types 3 and 6 named (`bits_for_gaps`/`emcal`/`grad-visit-scheduler`; "Optimization for Decision Science"), everything else generic, no exceptions — including `data3` (membrane-transport), deliberately not named alongside its two generic Type-1 siblings even though naming it in isolation would have been low-risk, because the asymmetry would draw more attention than the name would add.
 - ~~Whether to restore the cut thesis and scoping slides~~ — resolved 2026-09-02: restored, Alex's call — he's willing to cut elsewhere rather than lose either concept. Prologue 7 → 9 slides, total 35 → 37.
 - ~~Where does `02_context.tex`'s orphaned content go~~ — resolved and built 2026-09-02. Two of its five frames were already Act I in disguise (the `emcal` commit, "the filesystem is the source of truth") and needed no change beyond a title. The other three: the context taxonomy and a generic project-file example joined Act I as new slides 4-5, Alex's call over cutting them as redundant; the "honest limit" staleness story is earmarked for Act III slide 4 as a third silent-failure instance once that file is built, since it's the same lesson from the same domain (context files) as the other two. Act I 6 → 8 slides, total 37 → 39. `02_context.tex` itself has been removed — its content lives in `02_act1_understand.tex` (Act III's instance still pending that file).
-- **Slide count vs. budget.** Alex confirmed 2026-09-02: a 60-minute slot, targeting 35-40 slides to leave real room for Q&A and discussion. Current total is 40 — right at the top of that range, including a new Epilogue slide showing how this deck itself was built (Alex's idea, worth the one extra slide). The at-a-glance table's rough-time estimates (~46.5 min) still run over a 40-minute talk portion. Deliberately not cutting further right now; a rehearsal pass with real timing, not a slide-count target, should drive any further trim.
+- **Slide count vs. budget.** Alex confirmed 2026-09-02: a 60-minute slot, targeting 35-40 slides to leave real room for Q&A and discussion. Current total is 39 — right at the top of that range, including a new Prologue slide showing how this deck itself was built (Alex's idea, worth the one extra slide; moved from an initial Epilogue placement to the Prologue on his own second thought, so it foreshadows rather than only pays off). The at-a-glance table's rough-time estimates (~47 min) still run over a 40-minute talk portion. Deliberately not cutting further right now; a rehearsal pass with real timing, not a slide-count target, should drive any further trim.
 - **Feedback pass.** Per the group manual: get outline feedback at least 8 days before the talk. Not yet done.

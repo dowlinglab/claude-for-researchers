@@ -22,15 +22,20 @@ A screenshot earns its place when the browser/GitHub/PyPI frame around the conte
 
 ## Prologue — Tinker
 
+Rewritten 2026-09-02 against the current 10-slide list — the previous version predated the thesis/scoping restoration and the resources/meta slides entirely, and only ever numbered 7 items.
+
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
 | 1 | Title | ND wordmark | C | ✅ have (`figures/nd_logo.png`) |
-| 2 | The teaser (grad-visit-scheduler) | none yet — text only for the tease; save the visual payoff for Act II's full return | — | by design |
-| 3 | Borrowed structure | TAL logo + act-strip | C + B | ✅ have (`figures/tal_logo.png`) + built |
-| 4 | The landscape | vendor table | text | no image needed |
-| 5 | ND data classification | the 🟢🟡🟠🔴 table | text/B | **candidate real screenshot**: the actual `ai.nd.edu/ai-in-action/approved-ai-tools/` page, cropped to the tier legend + the Claude row. Proves the "Public data only" finding isn't a paraphrase. Needs the in-app browser (fetch tool can't reach this domain — see `notes/references.md`). Re-verify current before capturing; the page changes. |
-| 6 | Check before you start | none | — | text only |
-| 7 | What you get today | a real `ls resources/` or a cropped repo-tree screenshot of GitHub's own file browser on this repo, once it's pushed | C | **needs the repo pushed to GitHub first** — can't screenshot a page that doesn't exist yet. Placeholder: typeset tree until then. |
+| 2 | The claim | none | — | text only, framing slide, deliberately spare |
+| 3 | The teaser (grad-visit-scheduler) | none yet — text only for the tease; save the visual payoff for Act II's full return | — | by design |
+| 4 | Borrowed structure | TAL logo + act-strip | C + B | ✅ have (`figures/tal_logo.png`) + built |
+| 5 | Today | act-strip only | B | built |
+| 6 | The landscape | vendor table | text | no image needed |
+| 7 | ND data classification | the 🟢🟡🟠🔴 table | text/B | **candidate real screenshot**: the actual `ai.nd.edu/ai-in-action/approved-ai-tools/` page, cropped to the tier legend + the Claude row. Proves the "Public data only" finding isn't a paraphrase. Needs the in-app browser (fetch tool can't reach this domain — see `notes/references.md`). Re-verify current before capturing; the page changes. |
+| 8 | Check before you start | none | — | text only |
+| 9 | What you get today | a real `ls resources/` or a cropped repo-tree screenshot of GitHub's own file browser on this repo, once it's pushed | C | **needs the repo pushed to GitHub first** — can't screenshot a page that doesn't exist yet. Built with a typeset tree in the meantime |
+| 10 | This talk was built the same way | none | — | text only, a numbered list — moved here from the Epilogue 2026-09-02 |
 
 ## Act I — Understand
 
@@ -90,16 +95,15 @@ Rewritten 2026-09-02 against the current 7-slide list (5 regular + a 2-part caps
 
 ## Epilogue — Trust
 
-Updated 2026-09-02 to match the 5-slide list built in `05_epilogue.tex` — adds the summary matrix (not in this table's earlier version) and merges the two hobby slides into one, matching the recuration decided earlier in the project (boot-dryer-octopus as the spoken anchor, the rest as a link-only mention on the same slide, not a second slide).
+Updated 2026-09-02 to match the current 5-slide list built in `05_epilogue.tex` — the summary matrix now carries a 7th row ("Creating this talk") instead of a dedicated meta-slide, which moved to the Prologue (item 10 there) on Alex's second thought.
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
 | 1 | Back to the question | none | — | text only, deliberately spare |
-| 2 | This talk was built the same way | none | — | text only, a numbered list — added 2026-09-02; a screenshot of this repo's own commit history or `slides/` tree is a candidate future upgrade, not required |
-| 3 | A handful of projects, recurring | the summary matrix (types × acts, `\good{}` marks) | B | built, typeset tabular — no image file needed |
-| 4 | You own every claim | none | — | text only |
-| 5 | Curiosity is a feature, not a consolation prize | ✅ have, in use | C | `figures/boot_dryer_octopus.jpeg` (the spoken anchor); kitchen organizer/telescope shelf and `radio-extra-book` are a link-only mention on the same slide, no image shown |
-| 6 | One thing to change Monday morning | none | — | text only |
+| 2 | A handful of projects, recurring | the summary matrix (types × acts, `\good{}` marks, now 7 rows) | B | built, typeset tabular — no image file needed |
+| 3 | You own every claim | none | — | text only |
+| 4 | Curiosity is a feature, not a consolation prize | ✅ have, in use | C | `figures/boot_dryer_octopus.jpeg` (the spoken anchor); kitchen organizer/telescope shelf and `radio-extra-book` are a link-only mention on the same slide, no image shown |
+| 5 | One thing to change Monday morning | none | — | text only |
 
 ---
 

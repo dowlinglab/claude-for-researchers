@@ -1,14 +1,18 @@
 % ==================== PROLOGUE: TODAY, THE LANDSCAPE ====================
-% storyboard.md Prologue items 5-8 ("Today", "The landscape", "know your data
-% classification", "two things to check"). Items 6-8's content already
-% matched the storyboard when it was written (see that file's Prologue
-% note); that part of this pass is a style-guide compliance fix, not a
-% content rewrite: \bad{} replaces two bare \textcolor{OkVermillion} uses
-% for "prohibited" (main.tex's own rule -- meaning is never carried by
-% colour alone), and the two-item checklist on the last frame is trimmed
-% but still runs over the ~20-25 word guideline, noted inline, for the same
-% reason as 00_open.tex's cold open: a compliance checklist needs real,
-% correct wording more than it needs brevity.
+% storyboard.md Prologue items 5-10 ("Today", "The landscape", "know your data
+% classification", "two things to check", "everything is on GitHub", "this
+% talk was built the same way"). Items 6-8's content already matched the
+% storyboard when it was written (see that file's Prologue note); that part
+% of this pass is a style-guide compliance fix, not a content rewrite:
+% \bad{} replaces two bare \textcolor{OkVermillion} uses for "prohibited"
+% (main.tex's own rule -- meaning is never carried by colour alone), and the
+% two-item checklist on the last frame is trimmed but still runs over the
+% ~20-25 word guideline, noted inline, for the same reason as 00_open.tex's
+% cold open: a compliance checklist needs real, correct wording more than
+% it needs brevity.
+%
+% Items 9-10 (resources overview, the meta slide) close out the Prologue,
+% added/moved here 2026-09-02 -- see the meta slide's own comment below.
 %
 % "Today" (item 5) is new here: the scoping slide cut when the talk
 % restructured, restored 2026-09-02 alongside "The claim" (00_open.tex) at
@@ -121,5 +125,43 @@
       Export control, sponsor terms, and IRB conditions differ per
       project --- what's fine on one may not be on another.
   \end{itemize}
+  \vfill
+\end{frame}
+
+\begin{frame}[fragile]{Everything today is on GitHub}
+  \vfill
+  \begin{lstlisting}
+resources/
+  practices/   9 files -- the doctrine
+  prompts/     3 files -- ready to paste in
+  scripts/     3 tools -- DOI checker, figure style,
+               latexdiff-vs-last-commit
+  templates/   3 files -- project file, research log,
+               results manifest
+  \end{lstlisting}
+  \vfill
+  \begin{center}
+    \small Prompts, checklists, and three scripts you can use as-is today --- not a summary to remember, a repo to clone.
+  \end{center}
+  \vfill
+\end{frame}
+
+% Meta slide, moved here from the Epilogue 2026-09-02 at Alex's request:
+% placed early so it establishes authority and foreshadows the acts
+% without revealing their specific content, rather than only paying off
+% at the end. Its row in the Epilogue's summary matrix completes the loop.
+\begin{frame}{This talk was built the same way}
+  \vfill
+  \begin{enumerate}\setlength\itemsep{0.6em}
+    \item Identified 10+ AI-accelerated projects from the past year
+    \item Dispatched agents (Claude Opus) to examine each one's full history
+    \item Distilled the findings into actionable practice guides
+    \item Crafted a story arc and outline
+    \item Built these slides iteratively with Claude --- including analyzing my own past talks to match my actual style
+  \end{enumerate}
+  \vfill
+  \begin{center}
+    \slidepoint{You are about to watch the thesis, not just hear it.}
+  \end{center}
   \vfill
 \end{frame}
