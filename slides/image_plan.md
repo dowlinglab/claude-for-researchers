@@ -74,16 +74,19 @@ Rewritten 2026-09-02 against the current 8-slide list in `storyboard.md` — the
 
 ## Act III — Challenge
 
+Rewritten 2026-09-02 against the current 7-slide list (5 regular + a 2-part capstone) — the previous version predated the capstone entirely and only covered 6 slides under different numbers.
+
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
-| 1 | Separate the three questions | none | — | text only |
-| 2 | Trace every number to its file | **the claim-tracing table** | B | **illustrative, built in TikZ/tabular with synthetic numbers** — this is the outline's existing example (17% cost reduction / "approximately doubles") already de-identified. Do not source real numbers from any unpublished audit. |
-| 3 | "Cannot verify" is a result | none | — | text only, or reuse the same table's CANNOT VERIFY row |
-| 4 | Clean build, empty table | an illustrative rendered-vs-log comparison | B | constructed, not a real screenshot — the actual empty-nomenclature case is from an unpublished manuscript. Build a small synthetic LaTeX doc with the same defect class (empty `\printnomenclature`) and screenshot *that*, honestly labeled as a reconstruction, not the real one. |
-| 5 | Status report wrong on 11 items | none | — | text only; the specific number stays but no document is shown |
-| 6 | Retract in place | text-artifact, illustrative | A | same treatment as Act I's correction slide |
+| 1 | Merging three questions reads as an attack | none | — | text/columns only |
+| 2 | Trace every number to its file | **the claim-tracing table**, using `\good`/`\bad`/`\unknown` | B | **illustrative, built in tabular with synthetic numbers** — this is the outline's existing example (17% cost reduction / "approximately doubles") plus one added mismatch row, already de-identified. Do not source real numbers from any unpublished audit. First real use of the `\good`/`\bad`/`\unknown` macros anywhere in the deck |
+| 3 | "Cannot verify" is a result | reuses the same `\unknown{}` mark from slide 2 | — | text only, deliberately spare |
+| 4 | A clean build hid a silent failure | none — three short columns | — | text only; the three instances (nomenclature table, `.gitignore`, `CLAUDE.md`) are all either unpublished or already covered visually elsewhere (the course's own `.gitignore` incident doesn't need re-illustrating) |
+| 5 | Status report wrong on eleven items | none | — | text only; the specific number stays but no document is shown |
+| 6 | Capstone, part 1 | a real screenshot of `ndcbe.github.io/optimization` and, if available, a coursepack page showing the corrected sign | C | **not yet captured** — public, Alex's own course, no confidentiality concern. Typeset fallback ships in the meantime (see `04_act3_challenge.tex`'s TODO) |
+| 7 | Capstone, part 2 | none | — | text only, closes the act |
 
-**Act III is deliberately the most image-light act.** Its evidence is the least reproducible visually without exposing unpublished work, so it leans on typeset tables and TikZ rather than screenshots — that's a feature of the confidentiality boundary working as intended, not a gap to fill.
+**Act III is deliberately the most image-light act** for slides 1-5. Its evidence is the least reproducible visually without exposing unpublished work, so it leans on typeset tables rather than screenshots — that's a feature of the confidentiality boundary working as intended, not a gap to fill. The capstone (6-7) is the exception: a named, public example, so a real screenshot is both possible and worth capturing.
 
 ## Epilogue — Trust
 

@@ -1,0 +1,161 @@
+% ========================= ACT III: CHALLENGE =========================
+% storyboard.md Act III, all 7 slides (5 regular + a 2-part capstone). Job:
+% AI tells you that you're wrong, and you have to decide whether to
+% believe it. Slides 1-5 are manuscript audits (Type 2, generic per the
+% naming convention -- unpublished work). The capstone names "Optimization
+% for Decision Science" (Alex's own, already-public course) and watches
+% one project across Understand -> Build -> Challenge.
+%
+% Uses \good/\bad/\unknown for the first time in the deck (main.tex) --
+% the claim-tracing table is exactly the three-way verified/mismatch/
+% cannot-verify status those macros exist for.
+
+\begin{frame}{Merging three questions reads as an attack}
+  \vfill
+  \begin{columns}[t]
+    \begin{column}{0.31\textwidth}
+      \centering
+      \textbf{Arithmetic}\\[0.4em]
+      {\small Does this number follow from that one?}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \centering
+      \textbf{Method}\\[0.4em]
+      {\small Does the method match what's described?}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \centering
+      \textbf{Transcription}\\[0.4em]
+      {\small Does the manuscript say what the file says?}
+    \end{column}
+  \end{columns}
+  \vfill
+  \begin{center}
+    \small Separating them is what makes the criticism land as methodology, not as an attack on the paper.
+  \end{center}
+  \vfill
+\end{frame}
+
+% TODO(image_plan.md Act III #2): numbers are illustrative/synthetic
+% (from outline.md's original example), never sourced from any real
+% unpublished audit -- keep it that way on any future edit of this table.
+\begin{frame}{Trace every number back to the file that produced it}
+  \vfill
+  \begin{center}
+  \begin{tabular}{@{}p{4.2cm}p{2.6cm}p{2.6cm}l@{}}
+    \toprule
+    \textbf{Manuscript claim} & \textbf{Location} & \textbf{Source} & \textbf{Status} \\
+    \midrule
+    Costs decrease by 17\% & Results \S4.2 & \texttt{cost.csv} & \good{Verified} \\
+    Reaction proceeds in 3 steps & Methods \S2.1 & \texttt{mechanism.py} & \bad{Mismatch (4)} \\
+    Yield approximately doubles & Abstract & unknown & \unknown{Cannot verify} \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vfill
+  \begin{center}
+    \small Every claim gets a row before the reviewers make you build one.
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{"Cannot verify" is a result you want to get}
+  \vfill
+  \begin{center}
+    \unknown{\large Cannot verify}
+  \end{center}
+  \vspace{0.8em}
+  \begin{center}
+    \small It is not a failure of the audit --- it's the audit finding a real provenance gap. AI should never fill that gap by guessing; a missing source is a bug you just found for free.
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{A clean build hid a silent failure}
+  \vfill
+  \begin{columns}[t]
+    \begin{column}{0.31\textwidth}
+      \centering
+      {\small A manuscript's nomenclature table rendered empty.}\\[0.4em]
+      {\scriptsize Build exit code: 0.}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \centering
+      {\small A course's \texttt{.gitignore} rule silently dropped a build artifact.}\\[0.4em]
+      {\scriptsize CI stayed green for 1.5 days.}
+    \end{column}
+    \begin{column}{0.31\textwidth}
+      \centering
+      {\small A project's own \texttt{CLAUDE.md} warned about stale paths.}\\[0.4em]
+      {\scriptsize Directly above four stale paths.}
+    \end{column}
+  \end{columns}
+  \vfill
+  \begin{center}
+    \slidepoint{A request to enumerate beats a request to confirm.}
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{My status report was wrong about eleven items}
+  \vfill
+  \begin{center}
+    \bad{\large "Everything is up to date."}
+  \end{center}
+  \vspace{0.4em}
+  \begin{center}
+    \small That was memory, not evidence. A script that actually checked found eleven items it was wrong about.
+  \end{center}
+  \vfill
+  \begin{center}
+    \slidepoint{Determine status from evidence, never recollection.}
+  \end{center}
+  \vfill
+\end{frame}
+
+% TODO(image_plan.md Act III capstone): capture a real screenshot of
+% ndcbe.github.io/optimization (public course site) and, if available, a
+% page of the converted coursepack showing the corrected sign. Both
+% public -- Alex's own course.
+\begin{frame}{Capstone, part 1 --- the Act I argument, taken all the way}
+  \vfill
+  \begin{center}
+    \keyterm{Optimization for Decision Science} --- Alex's own course, already public.
+  \end{center}
+  \vspace{0.8em}
+  \begin{columns}[t]
+    \begin{column}{0.46\textwidth}
+      \centering \textbf{Converted}\\[0.4em]
+      {\small Handwritten lecture notes $\to$ LaTeX, the coursepack.}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering \textbf{Challenged}\\[0.4em]
+      {\small An adversarial verification pass catches a real, decade-old sign error.}
+    \end{column}
+  \end{columns}
+  \vfill
+  \begin{center}
+    \small The same \texttt{CLAUDE.md} pattern Act I explained generically --- now a mature, specific instance, watched end to end.
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{Capstone, part 2 --- the verifier needed verifying too}
+  \vfill
+  \begin{center}
+    \small The verification pass ran three independent checks on the corrected sign.
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    \unknown{\large One of the three checks was itself wrong.}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    \small Corrected before it shipped --- the same self-correction principle as the manuscript audits, now from a second domain.
+  \end{center}
+  \vfill
+  \begin{center}
+    \slidepoint{The checker needs checking too.}
+  \end{center}
+  \vfill
+\end{frame}
