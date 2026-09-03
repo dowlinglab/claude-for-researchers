@@ -10,6 +10,13 @@
 % has the exact URLs). Anonymized examples (Type 1, Type 5 in
 % demo_ideas.md) get a constructed diagram instead of bare text, same
 % principle applied throughout Act I.
+%
+% CORRECTED 2026-09-02: "Review the diff" originally claimed this was
+% "the same real commit as Act I" -- it isn't; the diff content was
+% invented to illustrate the point and has nothing to do with the real
+% emcal commit (verified via browser while capturing that commit's real
+% page: its actual diff is a JSON test-fixture and a Python test-harness
+% addition, not a data-loading change). Relabeled as illustrative.
 
 % TODO(image_plan.md Act II #1): capture 3 real screenshots --
 % pypi.org/project/grad-visitor-scheduler, github.com/dowlinglab/
@@ -124,7 +131,7 @@
 
 \begin{frame}[fragile]{Review the diff, not the summary}
   \vfill
-  {\scriptsize The same real commit as Act I, viewed as a diff instead of a message.}
+  {\scriptsize A generic, illustrative diff --- the shape of the mismatch, not a real commit.}
   \begin{lstlisting}
 - df_all = pd.concat([load(f) for f in glob("data/*.csv")])
 - fig = plot_everything(df_all)

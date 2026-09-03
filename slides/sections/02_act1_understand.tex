@@ -20,15 +20,30 @@
 % generic "inherited project" case) but still get a constructed workflow
 % diagram each, per the same note: an anonymized example still deserves a
 % visual, just a process diagram instead of real content.
+%
+% CORRECTED 2026-09-02, verified via browser against
+% github.com/dowlinglab/emcal/commit/31184f4: slide 1's original excerpt
+% opened with "Trim analysis and plotting to per-run only", a paraphrase
+% that does not appear anywhere in the real commit -- caught while
+% capturing a screenshot for this same slide. The real title is "Add
+% plotting smoke checks to the analysis net ahead of the 7B trim"; the
+% closing lines quoted below ARE verbatim. Everything after "[...]" is
+% the commit's real, unedited final paragraph, minus one dense
+% parenthetical of internal function names not worth a slide's space.
 
 \begin{frame}[fragile]{The easiest mistake in this talk to make}
   \vfill
-  {\scriptsize A real commit message, verbatim, from one of my own best-run projects.}
+  {\scriptsize A real commit message, from one of my own best-run projects. \texttt{[...]} marks an omitted middle paragraph.}
   \begin{lstlisting}
-Trim analysis and plotting to per-run only
+Add plotting smoke checks to the analysis net
+ahead of the 7B trim
 
-  See conversation for the full KEEP/REMOVE inventory
-  and cross-dependency sever plan.
+  [...]
+
+  No trim yet --- analysis.py/plotting.py are
+  untouched. See conversation for the full
+  KEEP/REMOVE inventory and cross-dependency
+  sever plan.
   \end{lstlisting}
   \vfill
   \begin{center}
