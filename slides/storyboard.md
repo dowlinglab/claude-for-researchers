@@ -29,12 +29,12 @@ Every dramatic *failure* beat in the evidence base is Alex's own (a lost-context
 | Beat | Name | Job | Slides | Rough time |
 |---|---|---|---|---|
 | — | Title | | 1 | 0.5 min |
-| Prologue | **Tinker** | Hook (teased), orient, show the toolkit | 7 | 6 min |
+| Prologue | **Tinker** | Claim, hook (teased), scope, orient, show the toolkit | 9 | 7.5 min |
 | Act I | **Understand** | A sell: git is the prerequisite, not the payoff | 6 | 8 min |
 | Act II | **Build** | It changes my artifacts (hook resolved in full) | 9 | 13 min |
 | Act III | **Challenge** | It tells me I'm wrong, closing on a capstone | 7 | 10 min |
 | Epilogue | **Trust** | Return to the open question; close on curiosity | 5 | 4 min |
-| | | **Total** | **35** | **~41.5 min**, trim ~1.5 in drafting |
+| | | **Total** | **37** | **~43 min**, trim ~3 in drafting |
 
 See [`../notes/demo_ideas.md`](../notes/demo_ideas.md) for the confirmed six example types, which projects ground which slide, and the naming decision per type — this file only has slide titles; that one has the full mapping.
 
@@ -42,17 +42,21 @@ See [`../notes/demo_ideas.md`](../notes/demo_ideas.md) for the confirmed six exa
 
 ## Prologue — Tinker
 
-**Job:** open with the grad-visit-scheduler headline as a teaser (not the full story — that's Act II), leave its closing question hanging, orient the room, and show what they walk away with today.
+**Job:** state the seminar's central claim, open with the grad-visit-scheduler headline as a teaser (not the full story — that's Act II), leave its closing question hanging, scope what the talk is and isn't, orient the room, and show what they walk away with today.
+
+Items 2 and 5 (the claim, the scoping slide) were in the original pre-restructure open and were dropped when the talk moved to the three-act structure, on the reasoning that storyboard.md's own Prologue list didn't carry them forward. Restored 2026-09-02 at Alex's request — he liked both concepts and would rather cut elsewhere than lose them. Slide count: Prologue 7 → 9, total 35 → 37.
 
 1. **Title slide**
-2. **The teaser** — *(built, `00_open.tex`)* "One weekend, an annual scheduling headache, and a package on PyPI." Dates, Codex (not Claude), the 5× line — and the unresolved question left hanging: *"I'd touched every stage of this before. How do we train the next generation to get both?"* Do not answer it here.
-3. **Borrowed structure** — *(built)* the *This American Life* citation + the Prologue/Act/Epilogue outline.
-4. **The landscape, briefly** — pick tools by task, not brand; don't become loyal to a model.
-5. **At Notre Dame: know your data classification** — the 🟢🟡🟠🔴 table + Claude-is-Public-only finding.
-6. **Two things to check before you start** — DoD/DoW, and "ask your PI" generalized.
-7. **What you get today** — a quick look at the resources: nine practice files, three prompts, three working scripts, three templates. This is the "show the resources" beat — a screenshot or a live `ls resources/` moment, not a detailed walkthrough.
+2. **The claim** — *(built, `00_open.tex`)* the seminar's thesis, stated directly: the most powerful uses of generative AI in research go beyond chatbot Q&A, and come from putting AI inside a workflow that is deliberate, reproducible, and auditable. Matches the abstract/`CLAUDE.md` wording — this is the one slide that says it as a claim, not just implies it.
+3. **The teaser** — *(built, `00_open.tex`)* "One weekend, an annual scheduling headache, and a package on PyPI." Dates, Codex (not Claude), the 5× line — and the unresolved question left hanging: *"I'd touched every stage of this before. How do we train the next generation to get both?"* Do not answer it here.
+4. **Borrowed structure** — *(built)* the *This American Life* citation + the Prologue/Act/Epilogue outline.
+5. **Today** — *(built, `01_ecosystem.tex`)* scope the talk: not a Claude tutorial, not a product comparison, not a claim that AI does research; instead one year of practices and their failures, mostly model-independent, things to change on Monday. Closes with the act-strip (still at 0 — nothing lit yet) and the "everything is on GitHub" pointer.
+6. **The landscape, briefly** — pick tools by task, not brand; don't become loyal to a model.
+7. **At Notre Dame: know your data classification** — the 🟢🟡🟠🔴 table + Claude-is-Public-only finding.
+8. **Two things to check before you start** — DoD/DoW, and "ask your PI" generalized.
+9. **What you get today** — a quick look at the resources: nine practice files, three prompts, three working scripts, three templates. This is the "show the resources" beat — a screenshot or a live `ls resources/` moment, not a detailed walkthrough.
 
-*(4–6 are largely built already in `01_ecosystem.tex` under the old numbering, still pending rewrite; 2 and 3 are built; 7 is new.)*
+*(6–8 are largely built already in `01_ecosystem.tex` under the old numbering, still pending rewrite; 2, 3, 4, and 5 are built; 9 is new.)*
 
 ## Act I — Understand: conversation → living context, with git
 
@@ -112,5 +116,6 @@ Organized around two parallel transitions, both "an ephemeral, unbacked-up thing
 - ~~Where does the proposal-writing material live~~ — resolved: literature review in Act I, proposal writing in Act II (§8–9), as a document-shaped instance of "AI changes what you keep" alongside the code-shaped instance the hook already carries.
 - ~~Act I's role~~ — resolved 2026-09-02: Act I is a sell (git is the prerequisite that unlocks Codex/Claude Code), not a payoff. The mature-example slide was cut entirely rather than kept as an early teaser, so the act doesn't dilute its own argument. 7 slides → 6.
 - ~~The example roster and naming per type~~ — resolved 2026-09-02, recorded in `notes/demo_ideas.md`'s six-types table: types 3 and 6 named (`bits_for_gaps`/`emcal`/`grad-visit-scheduler`; "Optimization for Decision Science"), everything else generic, no exceptions — including `data3` (membrane-transport), deliberately not named alongside its two generic Type-1 siblings even though naming it in isolation would have been low-risk, because the asymmetry would draw more attention than the name would add.
-- **Slide count vs. budget.** Current total: 35 (was 36, then 35 again after Act I's cut). At-a-glance table assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue. Still needs a real count once `01_ecosystem.tex`/`02_context.tex` are rewritten against this structure — the group-manual algorithm's step 4 ("check you have ~1 slide per minute") hasn't been re-run since the restructure.
+- ~~Whether to restore the cut thesis and scoping slides~~ — resolved 2026-09-02: restored, Alex's call — he's willing to cut elsewhere rather than lose either concept. Prologue 7 → 9 slides, total 35 → 37.
+- **Slide count vs. budget.** Current total: 37 (35, then 37 after restoring the thesis and scoping slides). At-a-glance table assumes roughly one slide per minute in the acts, less in the Prologue/Epilogue — now running about 3 min over that budget, expected to trim in drafting. Still needs a real count once `01_ecosystem.tex`/`02_context.tex` are rewritten against this structure — the group-manual algorithm's step 4 ("check you have ~1 slide per minute") hasn't been re-run since the restructure.
 - **Feedback pass.** Per the group manual: get outline feedback at least 8 days before the talk. Not yet done.
