@@ -68,9 +68,12 @@
 % The closing question ("How do we train...") used to be returned to
 % verbatim by an Epilogue slide of the same name -- that slide is cut as
 % of 2026-09-03 (Alex's call: its "no clean answer" rhetoric no longer fit
-% once this hook told the full story and Act II resolved its impact). The
-% question stays here as an open hook the rest of the talk answers
-% implicitly; nothing elsewhere echoes it verbatim anymore.
+% once this hook told the full story and Act II resolved its impact).
+% SUPERSEDED, same day: the question itself is gone from this slide too
+% -- Alex: "I do not understand the 'How do we...' question." -- replaced
+% by his own account of the group-wide result instead (see the frame's
+% own comment below). The phrase no longer appears live anywhere in the
+% deck; only in storyboard.md's revision history and this comment.
 
 % REVISED 2026-09-03 (further feedback on this slide, same day): the
 % schedule regenerated again, now with 6 visitors (Pooh, Piglet, Tigger,
@@ -122,13 +125,50 @@
 % the same request: the "8.5 more hours ... 100% test coverage" sentence
 % is cut (the table's own v0.3.1 row already says "full test coverage"),
 % and the sabbatical/Carla beats are compressed into one sentence.
+%
+% REVISED 2026-09-03 (further feedback on this slide, same day): two
+% "--" rows added before the first real tag, showing the pre-release
+% work -- the Carla draft, then the refactor start -- both real,
+% timestamped commits from the private repo (Mon Feb 9, 2026: "Draft 1
+% ready and sent to Carla for feedback" at 14:43; "Started to restructure
+% as a package" at 22:03). The prose sentence below is trimmed further
+% since the table now carries the Carla/reformatting fact instead.
+%
+% Closing line replaced, Alex's call ("I do not understand the 'How do
+% we...' question"): the hook's old closing question is gone from this
+% slide entirely -- it doesn't appear anywhere else in the deck either
+% (only in storyboard.md's revision history now), matching the same-day
+% Epilogue-cut precedent rather than contradicting it. New line is
+% Alex's own account of what happened next, lightly tightened for length
+% and a typo fixed ("discusses" -> "discussing" -> compressed out
+% entirely). NOTE: this now overlaps thematically with Act II's opener
+% ("As promised -- and why it mattered": "this success is why he got
+% everyone in the group access to Codex") -- both beats now say "the
+% group got access as a result." Flagged, not resolved -- worth a look
+% at Act II's slide once this one is confirmed, since the two might now
+% be saying the same thing twice.
+%
+% FIXED 2026-09-03 (same-day follow-up): the two new table rows plus the
+% new closing line overloaded the slide -- the first render after those
+% changes still collided (the two-line slidepoint crowded both itself
+% and the corner logo even after tightening every intermediate vspace).
+% Cut the "Live today: one feature ... 20 minutes" line to reclaim a
+% full line of height -- it's a forward-pointer unique to this slide
+% (grep confirms it appears nowhere else), not part of the git-
+% archaeology story, and can be said aloud when introducing the live
+% demo instead. Also gave the slidepoint's own manual line break
+% \\[0.3em] of extra room so its two lines don't crowd each other at
+% \large size.
 \begin{frame}[fragile]{One Monday with Codex, and I kept going}
   \vfill
   \begin{center}
+  \small
   \begin{tabular}{@{}lll@{}}
     \toprule
     \textbf{Version} & \textbf{Date} & \textbf{What changed} \\
     \midrule
+    \texttt{---} & Feb 9 & Draft 1: Carla's spreadsheet reformatted, schedule regenerated \\
+    \texttt{---} & Feb 9 & Refactor started: notebook $\to$ tested package \\
     \texttt{v0.1.1} & Feb 10 & Initial public package release \\
     \texttt{v0.2.0} & Feb 13 & Top-N schedules; automated PyPI release \\
     \texttt{v0.3.0} & Feb 13 & Any number of buildings, travel time \\
@@ -136,17 +176,13 @@
     \bottomrule
   \end{tabular}
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    \small On sabbatical this past February, I nearly said no --- then spent 1.5 hours reformatting \keyterm{Carla}'s spreadsheet with Codex, and kept going.
-  \end{center}
   \vspace{0.4em}
   \begin{center}
-    {\small\itshape Live today: one feature, start to finish, in about 20 minutes.}
+    \small On sabbatical this past February, I nearly said no --- then decided to use it as an excuse to really try Codex.
   \end{center}
-  \vspace{0.4em}
+  \vspace{0.5em}
   \begin{center}
-    \slidepoint{How do we train the next generation to get both?}
+    \slidepoint{I got everyone in my group an ND OpenAI seat ---\\[0.3em]and we spend part of our weekly meeting on Codex best practices.}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
