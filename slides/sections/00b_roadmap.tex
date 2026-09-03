@@ -6,8 +6,17 @@
 % for the conversion itself). Mark belongs to WBEZ/This American Life;
 % used here for identification/commentary in a non-commercial academic talk.
 
+% REVISED 2026-09-03 at Alex's request: dropped the bottom act-strip -- it
+% repeated the outline already stated in the table above (a five-word
+% relabeling adds nothing) and, at the enlarged 150% logo size, collided
+% with the corner logo. Also switched columns[t] -> columns[c] and added
+% \vfill above/below, so the whole block centers vertically instead of
+% pinning to the top with unbalanced whitespace below (see style_guide.md
+% rule 8) -- that was the actual cause of the "ugly whitespace on the
+% right," not the column proportions.
 \begin{frame}{Borrowed structure}
-  \begin{columns}[t]
+  \vfill
+  \begin{columns}[c]
     \begin{column}{0.42\textwidth}
       \centering
       \includegraphics[width=0.62\textwidth]{figures/tal_logo}\\[1.1em]
@@ -16,6 +25,7 @@
         expectations, I am not as entertaining as Ira Glass.}
     \end{column}
     \begin{column}{0.54\textwidth}
+      \centering
       \large
       \begin{tabular}{@{}l@{}}
         \color{NDGold!80!black}\textbf{Prologue:} \textbf{\color{NDBlue}Tinker} \\[1em]
@@ -27,5 +37,4 @@
     \end{column}
   \end{columns}
   \vfill
-  \begin{center}\actstrip{0}\end{center}
 \end{frame}
