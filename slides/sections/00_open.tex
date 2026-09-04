@@ -114,7 +114,18 @@
 % collided with the corner logo. 6.8cm was tried next and still
 % collided (the image's own white canvas background, not just its
 % content, reaches the logo) -- 6.0cm is the largest that clears it.
-\begin{frame}{Generator faculty-visitors for department recruitment}
+%
+% FIXED 2026-09-03: two issues from Alex's manual edit (commit 2fd659f).
+% (1) The frame title had become "Generator faculty-visitors for
+% department recruitment" -- not intentional, reverted to this frame's
+% real title. (2) Box (b)'s text was missing a connector ("built a
+% Jupyter notebook used discrete optimization" -> "...notebook THAT
+% used discrete optimization"). Box (a)'s bare `~` in "DGA spent ~10
+% hours" is LaTeX's tie/non-breaking-space character, not a printed
+% tilde -- it was rendering as an odd gap ("spent  10 hours") with no
+% visible `~`. Alex confirmed he wants the tilde to actually show, not
+% reworded away -- fixed with `\textasciitilde` rather than a bare `~`.
+\begin{frame}{Before Codex: a decade of schedules, one real run}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.52\textwidth}
@@ -125,9 +136,9 @@
       \centering
       \begin{tikzpicture}[font=\scriptsize, node distance=0.5cm]
         \node[draw=OkVermillion, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center]
-          (a) {\textbf{Before 2023}\\DGA spent ~10 hours (re)making the schedule by hand};
+          (a) {\textbf{Before 2023}\\DGA spent \textasciitilde10 hours (re)making the schedule by hand};
         \node[draw=NDBlue, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of a]
-          (b) {\textbf{2023}\\Jeff Kantor and I built a Jupyter notebook used discrete optimization to create the schedule.};
+          (b) {\textbf{2023}\\Jeff Kantor and I built a Jupyter notebook that used discrete optimization to create the schedule.};
         \node[draw=NDBlue, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of b]
           (c) {\textbf{2024--2025}\\I maintained the code, patching it by hand and inputting data each year.};
         \node[draw=NDGold, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of c, fill=CodeBg]
