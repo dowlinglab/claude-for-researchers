@@ -60,11 +60,19 @@
 \end{frame}
 
 % Table rows are each verified against the public repo's own CHANGELOG.md;
-% docs-only tags are left out. The two "---" rows before the first real
-% tag are real, timestamped private-repo commits (Mon Feb 9, 2026: "Draft
-% 1 ready and sent to Carla for feedback" 14:43; "Started to restructure
-% as a package" 22:03). The Read the Docs screenshot independently
-% confirms "Created by Alex Dowling and Jeff Kantor."
+% docs-only tags (v0.1.2, v0.2.1) are left out. The two "---" rows before
+% the first real tag are real, timestamped private-repo commits (Mon Feb
+% 9, 2026: "Draft 1 ready and sent to Carla for feedback" 14:43; "Started
+% to restructure as a package" 22:03). The Read the Docs screenshot
+% independently confirms "Created by Alex Dowling and Jeff Kantor."
+%
+% v0.5.1 row added 2026-09-04: PR #20 (the auto-sizing fix -- see this
+% file's header comment above and 04_act3_challenge.tex/storyboard.md for
+% the fuller story) merged same day; CHANGELOG.md's own "## [0.5.1] -
+% 2026-09-04" entry exists and a "Release 0.5.1" commit has landed, but no
+% git tag/PyPI publish yet as of this writing -- "cutting now" in the
+% table is accurate, not "released." Update this note (and drop the
+% qualifier) once it actually ships.
 %
 % "10 hours" in the title is Alex's own account of active hands-on-
 % keyboard time, not calendar-elapsed time -- git timestamps alone span
@@ -77,7 +85,7 @@
     \begin{column}{0.46\textwidth}
       \begin{minipage}[t]{\linewidth}
       \centering
-      \footnotesize
+      \scriptsize
       \begin{tabular}{@{}lll@{}}
         \toprule
         \textbf{Ver.} & \textbf{Date} & \textbf{What changed} \\
@@ -88,6 +96,9 @@
         \texttt{v0.2.0} & Feb 13 & Top-N schedules \\
         \texttt{v0.3.0} & Feb 13 & Multi-building, travel time \\
         \texttt{v0.3.1} & Feb 17 & Full tests, docs complete \\
+        \texttt{v0.4.0} & Feb 25 & Hard constraints (advanced API) \\
+        \texttt{v0.5.0} & Mar 11 & Separate faculty/student breaks \\
+        \texttt{v0.5.1} & Sep 4 & Auto-sized plots \textit{(cutting now)} \\
         \bottomrule
       \end{tabular}
       \end{minipage}
