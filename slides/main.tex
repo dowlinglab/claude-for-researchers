@@ -228,6 +228,13 @@
 \renewcommand{\ndcornerlogoheight}{0.839cm}
 \renewcommand{\ndcornerlogomargin}{0.5mm}
 
+% \ndlogonote (used in 01_ecosystem.tex) centers its note on this
+% fraction of \ndcornerlogoheight from the bottom, not the logo's
+% pure geometric center (0.5, the theme's own default) -- measured
+% directly against the primary mark asset, "NOTRE DAME"'s own line
+% sits at 0.518. See theme/README.md for how this was measured.
+\renewcommand{\ndlogonoteanchor}{0.518}
+
 \begin{document}
 
 % ---- Title ----------------------------------------------------------

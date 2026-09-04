@@ -426,19 +426,34 @@
 
   % \ndlogonote[align]{text} -- a note box in the white space to the
   % right of the corner logo: horizontally centered between the logo's
-  % right edge and the slide's right edge, vertically centered on the
-  % logo's own vertical middle. [align] defaults to center; pass
-  % [left] for a reference list. Only defined when [cornerlogo] is not
-  % none, since it positions itself relative to the logo's measured
-  % size.
+  % right edge and the slide's right edge, vertically centered on
+  % \ndlogonoteanchor (default 0.5, the logo's own geometric vertical
+  % middle). [align] defaults to center; pass [left] for a reference
+  % list. Only defined when [cornerlogo] is not none, since it
+  % positions itself relative to the logo's measured size.
+  %
+  % \ndlogonoteanchor exists because the geometric center of the full
+  % logo bounding box (shield + wordmark) isn't necessarily where a
+  % note visually reads as "centered against the wordmark" -- for the
+  % primary mark, the shield's wave-tail element extends further down
+  % than the "NOTRE DAME" text line, pulling the true geometric center
+  % below where the wordmark itself sits. Measured directly against the
+  % primary mark's own asset (not guessed): "NOTRE DAME"'s own vertical
+  % center sits at ~0.518 of the full height from the bottom, not 0.5.
+  % Left at the theme's own safe, mark-agnostic default here (0.5); a
+  % deck using the primary mark and wanting the note aligned
+  % specifically to "NOTRE DAME" should override it, e.g.
+  % \renewcommand{\ndlogonoteanchor}{0.518}. Secondary mark has
+  % different proportions and would need its own measured value.
+  \newcommand{\ndlogonoteanchor}{0.5}
   \newlength{\nd@notegap}
   \setlength{\nd@notegap}{4mm}
   \newlength{\nd@noteRmargin}
   \setlength{\nd@noteRmargin}{3mm}
   \newcommand{\ndlogonote}[2][center]{%
     \begin{tikzpicture}[remember picture, overlay]
-      \coordinate (nd@logoR) at ($(current page.south west) + (\ndcornerlogomargin+\ndcornerlogowidth+\nd@notegap, \ndcornerlogomargin+0.5*\ndcornerlogoheight)$);
-      \coordinate (nd@pageR) at ($(current page.south east) + (-\nd@noteRmargin, \ndcornerlogomargin+0.5*\ndcornerlogoheight)$);
+      \coordinate (nd@logoR) at ($(current page.south west) + (\ndcornerlogomargin+\ndcornerlogowidth+\nd@notegap, \ndcornerlogomargin+\ndlogonoteanchor*\ndcornerlogoheight)$);
+      \coordinate (nd@pageR) at ($(current page.south east) + (-\nd@noteRmargin, \ndcornerlogomargin+\ndlogonoteanchor*\ndcornerlogoheight)$);
       \node[anchor=center, align=#1,
             text width=\dimexpr\paperwidth-\ndcornerlogomargin-\ndcornerlogowidth-\nd@notegap-\nd@noteRmargin\relax]
         at ($(nd@logoR)!0.5!(nd@pageR)$) {#2};
