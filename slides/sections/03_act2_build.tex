@@ -97,25 +97,27 @@
 % Points to scientific_computing_workflow.md, where this same recipe is
 % written out in prose (\S2-4).
 \begin{frame}{Task 4 --- the recipe, in the order it actually happened}
-  \ndlogonote{\scriptsize\texttt{resources/practices/\\scientific\_computing\_workflow.md}}
+  \ndlogonote{\scriptsize\texttt{resources/practices/scientific\_computing\_workflow.md}\\[0.3em]\texttt{bits-for-gaps.readthedocs.io}}
   \begin{center}
-  \begin{enumerate} \small \setlength\itemsep{0.2em}
-    \item Bootstrap the package
-    \item Build a regression harness \textit{before} touching the algorithm
+  \begin{enumerate} \normalsize \setlength\itemsep{0.28em}
+    \item Extract the paper's code into an installable package, not just scripts
+    \item Pin the paper's published numbers as a baseline to test against
     \item Decompose, generalize, and port the paper's example
-    \item Reproduce every figure, then document
+    \item Reproduce every figure, then publish docs to ReadTheDocs
     \item Reproduce every \textit{result} from scratch --- a discrepancy turned up
-    \item Root-cause it: a real bug, confirmed to four decimal places$^\ast$
-    \item Harden for robustness before publishing$^\ast$
-    \item A full pass on hygiene, types, and test coverage$^\ast$
-    \item A last pass on docs, tests, and comments$^\ast$
+    \item \tikz[remember picture, overlay]\coordinate(braceTop);Root-cause it: a real bug, confirmed to four decimal places
+    \item Fix that bug's root cause everywhere it could recur
+    \item A full pass on hygiene, types, and test coverage
+    \item \tikz[remember picture, overlay]\coordinate(braceBot);A last pass on docs, tests, and comments
     \item Release
   \end{enumerate}
   \end{center}
-  \vspace{0.15em}
-  \begin{center}
-    \scriptsize $^\ast$ added to the plan only after the step before it finished
-  \end{center}
+  \begin{tikzpicture}[remember picture, overlay]
+    \coordinate (braceX) at ($(current page.west)+(11.0cm,0)$);
+    \draw[decorate, decoration={brace, amplitude=5pt}, thick, NDGold]
+      ($(braceX|-braceTop)+(0,0.85em)$) -- ($(braceX|-braceBot)+(0,-0.15em)$)
+      node[midway, anchor=west, xshift=0.35cm, align=left, font=\scriptsize\itshape, text width=3.5cm] {added to the plan, on the fly};
+  \end{tikzpicture}
 \end{frame}
 
 \begin{frame}{Task 4 --- baseline before touching anything}
