@@ -27,52 +27,53 @@
 
 \stagedivider{4}{Act III: Challenge}{Do you believe it?}
 
-% TODO: Let's rebuild the first Task 5 slide around the questions in the comments below. Then we should walk through using Claude (or similar) to answer the quetions as part of an audit.
-
+% Combined 2026-09-03 at Alex's request: the old setup slide (just a
+% question list) and the old 3-column "merging reads as an attack" slide
+% merge into one -- the 3-column framing named only arithmetic/method/
+% transcription, narrower than Alex's real 5-question checklist below
+% (which also covers reproducibility and literature-claim fidelity), so
+% the closing point is generalized rather than re-drawn as a 3-box panel.
 \begin{frame}{Task 5 --- audit a manuscript before it's submitted}
   \vfill
   \begin{center}
-    % TODO: Here I want to list out questions:
-    % Do the methods described in the paper match what the code/calcuations did?
-    % Are there any arithmetic mistakes?
-    % Can all of the reported numbers be
-    % traced back to results artifacts?
-    % Can we rerun the analysis or calculations
-    % on a different computer and get the same (deterministic) or similar (non-determinisitc) results?
-    % Do the claims about literature in the manuscript match the contents of the actual papers?
-     
-      \end{center}
-  \vspace{1em}
+  \begin{itemize}\small\setlength\itemsep{0.4em}
+    \item Do the methods described match what the code actually did?
+    \item Are there arithmetic mistakes in any reported number?
+    \item Can every reported number be traced back to a results artifact?
+    \item Does rerunning the analysis reproduce it, on a different machine?
+    \item Do the manuscript's literature claims match the papers themselves?
+  \end{itemize}
+  \end{center}
+  \vspace{0.8em}
   \begin{center}
-  	% TODO: I do not think this is needed
-    \slidepoint{Three questions, \textbf{asked separately}:\\arithmetic, method, transcription.}
+    \slidepoint{Ask these \textbf{separately} ---\\together, they read as an \textbf{attack}, not a method.}
   \end{center}
   \vfill
 \end{frame}
 
-% TODO: Can we merge this with the previous slide?
-\begin{frame}{Task 5 --- merging three questions reads as an attack}
-  \vfill
-  \begin{columns}[t]
-    \begin{column}{0.31\textwidth}
-      \centering
-      \textbf{Arithmetic}\\[0.4em]
-      Does this number follow from that one?
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \centering
-      \textbf{Method}\\[0.4em]
-      Does the method match what's described?
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \centering
-      \textbf{Transcription}\\[0.4em]
-      Does the manuscript say what the file says?
-    \end{column}
-  \end{columns}
+% NEW 2026-09-03 at Alex's request (the other half of the original TODO:
+% "walk through using Claude to answer the questions as part of an
+% audit"). Deliberately mechanics, not a transcript -- Alex's own call,
+% 2026-09-03: no invented "Claude said..." dialogue, since the deck's
+% standard is real/git-verified material and a fabricated exchange would
+% be the one exception to that.
+\begin{frame}{Task 5 --- walk it through, one question at a time}
   \vfill
   \begin{center}
-    Separating them is what makes the criticism land as methodology, not as an attack on the paper.
+    Point Claude at the manuscript PDF and the analysis repo --- not a summary of either, the actual files.
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+  \begin{itemize}\small\setlength\itemsep{0.4em}
+    \item Ask \textit{one} question from the list --- a merged prompt reads as an attack, same as before
+    \item Traceability: grep the repo for the number, report the file --- or say it can't be found
+    \item Method: diff the manuscript's description against what the code actually does
+    \item Arithmetic: recompute from the underlying numbers, don't just re-read them
+  \end{itemize}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    \slidepoint{The audit is only as good as the \textbf{files} you hand it.}
   \end{center}
   \vfill
 \end{frame}
@@ -149,13 +150,20 @@
 % TODO(image_plan.md Act III capstone): capture a real screenshot of
 % ndcbe.github.io/optimization (public course site) and, if available, a
 % page of the converted coursepack showing the corrected sign. Both
-% public -- Alex's own course.
+% public -- Alex's own course. \placeholderimage below stands in until
+% it's captured.
 \begin{frame}{Task 6, part 1 --- the Act I argument, taken all the way}
   \vfill
-  \begin{center}
-    \keyterm{Optimization for Decision Science} --- Alex's own course, already public.
-  \end{center}
-  \vspace{0.8em}
+  \begin{columns}[c]
+    \begin{column}{0.34\textwidth}
+      \centering
+      \placeholderimage{4.0cm}{2.1cm}{screenshot: course site (ndcbe.github.io)}
+    \end{column}
+    \begin{column}{0.62\textwidth}
+      \keyterm{Optimization for Decision Science} --- Alex's own course, already public.
+    \end{column}
+  \end{columns}
+  \vspace{0.6em}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
       \centering \textbf{Converted}\\[0.4em]
