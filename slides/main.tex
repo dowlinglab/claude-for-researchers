@@ -10,8 +10,14 @@
 % background defaults to white (not set below): nearly every artifact shown
 % (file trees, diffs, tables, a matplotlib figure, two photo collages) is on
 % a white ground and would punch a glare hole in a dark deck.
-% cornerlogo=blue -- the small mark, bottom-left, on every frame after the
-% title slide. textcolor=blue -- body text defaults to ND Blue, not black.
+% cornerlogo=fullcolor -- the small mark, bottom-left, on every frame after
+% the title slide; titlepagelogo=fullcolor matches it on the title slide
+% itself (a separate option -- the theme resolves it from [background] by
+% default, which would otherwise give blue here). Changed from the
+% monochrome blue mark 2026-09-04 at Alex's request; the theme already
+% ships a fullcolor asset for both the primary and secondary academic
+% mark, so this is a one-word option change, not a template fix.
+% textcolor=blue -- body text defaults to ND Blue, not black.
 % titlelayout=leftrule -- this deck's own title-slide design (see the title
 % frame below), now a theme option rather than bespoke per-deck code.
 % monogram=none -- no small "ND" mark in the frametitle bar; the corner
@@ -30,7 +36,7 @@
 \def\input@path{{./theme/}}
 \makeatother
 \graphicspath{{./theme/}}
-\usetheme[cornerlogo=blue, textcolor=blue, titlelayout=leftrule, monogram=none]{NotreDame}
+\usetheme[cornerlogo=fullcolor, titlepagelogo=fullcolor, textcolor=blue, titlelayout=leftrule, monogram=none]{NotreDame}
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -218,7 +224,7 @@
 \begin{frame}[plain]
   \titlepage
 \end{frame}
-} %TODO: Let's use the color ND logo, both on the title slide and the other slides. Do NOT use the monogram. This might be a mistake in the template.
+}
 
 \input{sections/00_open}
 \input{sections/00b_roadmap}
