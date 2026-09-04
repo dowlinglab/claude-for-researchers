@@ -86,22 +86,27 @@
 % (2f2730b), 9e (30cf18b) -- Publish (Phase 10) didn't actually happen until
 % 2026-08-06, a month after 9e merged (2026-07-05). Thirteen labeled phases
 % executed against ten planned.
+
+% TODO: Let's drop discussing phases here
+% I would like to expand "three more phases". What did we actually do?
+% This slide reminds me what we did, but I have the context for the project
+% The slide does not do a good job of communicating to the audience
+% a ``recipe'' they can repeat
 \begin{frame}{Task 4 --- the recipe, in the order it actually happened}
   \vfill
   \begin{center}
-  \begin{enumerate}\small\setlength\itemsep{0.4em}
+  \begin{enumerate} \normalsize \setlength\itemsep{0.4em}
     \item Bootstrap the package --- folds in two planned phases that never got their own commit
     \item Regression harness \textit{before} touching the algorithm (Phase 2)
     \item Decompose, generalize, port the paper's example (Phase 4--6)
     \item Reproduce every figure, then document (Phase 7--8)
     \item Reproduce every \textit{result} from scratch --- found a real bug (Phase 9, 9b)
     \item Three more phases, each proposed only after the last one finished (9c--9e)
-    \item Release, a month later (Phase 10)
+    \item Release! (Phase 10)
   \end{enumerate}
   \end{center}
-  \vspace{0.6em}
   \begin{center}
-    \slidepoint{Planned: \textbf{ten} phases. Executed: \textbf{thirteen} ---\\four of them invented \textbf{after} Phase 9 was already done.}
+    \slidepoint{Planned: \textbf{ten} phases. Executed: \textbf{thirteen} ---\\four of them improvised \textbf{after} Phase 9 was already done.}
   \end{center}
   \vfill
 \end{frame}
