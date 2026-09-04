@@ -108,7 +108,7 @@ Rows 2-3 moved in from the Prologue 2026-09-03, Alex's suggestion — they read 
 | 2 | Know your data classification | Notre Dame's tier table + which tools are approved through which tier | Trust the tool the institution has actually vetted, not the one that's fastest |
 | 3 | Two checks before you start | DoD/DoW funding status; "ask your PI" | Institutional trust has real, project-specific limits |
 | 4 | **The summary matrix** — projects × acts, visualized | A simplified grid built from the six-types table above | A handful of real projects recur across every act; this isn't asserted, it's shown |
-| 5 | You own every claim, whatever helped you make it | Generic, group-manual GenAI section | — |
+| 5 | You own every claim, whatever helped you make it | Generic, group-manual GenAI section; the disclosure bullet folds in a real editorial decision (2026-09-04 audit wave: a project's own revision notes record deciding to name AI use as a research method, at the PI's own call) | Journals increasingly expect it, not just tolerate it |
 | 6 | The hobby stories, as the final example | boot-dryer-octopus; kitchen organizer/telescope; `radio-extra-book` | The same discipline pays off outside the lab too |
 | 7 | One thing to change Monday morning | Pointer to the repo | — |
 
