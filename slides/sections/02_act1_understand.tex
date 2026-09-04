@@ -57,7 +57,7 @@
 
 \begin{frame}{An agent can touch your repository --- a chatbot can't}
   \vfill
-  \begin{center}
+  \begin{center} % TODO: Make the text larger in this graphic.
   \begin{tikzpicture}[font=\small, node distance=1.1cm]
     \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center]
       (a) {\textbf{LLM}\\\scriptsize the model};
@@ -71,7 +71,7 @@
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    A chatbot only has the conversation and the files you share (e.g., uploading or attaching a PDF).
+    A chatbot only has the conversation and the files you share (e.g., uploading/attaching a PDF).
   \end{center}
   \vspace{0.6em}
   \begin{center}
@@ -126,18 +126,17 @@
   \begin{columns}[t]
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Persistent}}\\[0.4em]
-      Your data and results don't change between sessions --- a changed number is a finding, not noise from a different chat.\\[0.7em]
-      {\scriptsize$\rightarrow$ true across every session}
+      Your data and results don't change between sessions. \\ A changing number could be a finding or bug. \\[0.7em]
+
     \end{column}
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Authoritative}}\\[0.4em]
-      The actual code and data --- point an agent at the real files, never describe them from memory.\\[0.7em]
-      {\scriptsize$\rightarrow$ point at it, never summarize it}
+      The actual code and data. \\[0.2em] {\footnotesize Point an agent at the real files under (version control!); never describe them from memory.}\\[0.7em]
     \end{column}
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Task}}\\[0.4em]
-      What you're working on right now, defined fresh each session.\\[0.7em]
-      {\scriptsize$\rightarrow$ the prompt (save it if it matters)}
+      What you're working on right now, defined fresh each session.\\[0.2em]
+      {\footnotesize For complex tasks, you may find it helpful to have a coordinator agent (e.g., Opus/Fable, Terra/Sol) draft and save prompts that are sent to workers, then save the text summary created by the worker(s).} \\[0.7em]
     \end{column}
   \end{columns}
   \vfill
@@ -170,9 +169,7 @@ Membrane transport parameter estimation.
     \end{column}
     \begin{column}{0.34\textwidth}
       \small
-      Name it neutrally: \texttt{CLAUDE.md} (Claude Code) or \texttt{AGENTS.md} (Codex, Cursor, Gemini CLI, and 20+ other tools) --- both become three-line pointers to it.\\[0.6em]
-      Neither tool reads the other's file --- so the content lives
-      in one place and the tool files just point.\\[0.6em]
+      Name it neutrally, such as \texttt{START\_HERE.md}. \\[0.6em] Then, add tool-specific files such as \texttt{CLAUDE.md} (Claude Code) or \texttt{AGENTS.md} (Codex, Cursor, Gemini CLI, and 20+ other tools) --- both become three-line pointers to your neutrally named file.\\[0.6em]
       {\scriptsize Review it like any doc: stale instructions mislead. Longer-running notes belong in a separate log.}
     \end{column}
   \end{columns}
@@ -188,7 +185,7 @@ Membrane transport parameter estimation.
     \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center]
       (a) {Dictate the\\loose idea to a chatbot and refine};
     \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of a]
-      (b) {Chatbot outputs a report or prompt or both};
+      (b) {Chatbot outputs a report or \\ prompt or both};
     \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of b]
       (c) {Corpus-grounded\\literature review with agents};
     \node[draw=NDGold, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of c, fill=CodeBg]
