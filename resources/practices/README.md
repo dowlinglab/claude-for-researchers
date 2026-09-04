@@ -6,17 +6,19 @@ They are written to be **used with an AI assistant**, not just read. Each has st
 
 ## Which file do I want?
 
-| I need to… | Read |
-|---|---|
-| Set up a project so an AI agent can work in it — and keep the record straight across sessions, tools, and machines | [working_with_ai_agents.md](working_with_ai_agents.md) |
-| Move from exploratory scripts and notebooks to code someone else can rerun — and know what to verify at each stage | [scientific_computing_workflow.md](scientific_computing_workflow.md) |
-| Release research code as an installable package without leaking private data or breaking my own results | [private_code_to_public_package.md](private_code_to_public_package.md) |
-| Draft or revise a manuscript | [technical_writing.md](technical_writing.md) |
-| Write in the group's voice, or derive a style guide of my own | [writing_style_guide.md](writing_style_guide.md) |
-| Make figures and tables that are correct, readable, and traceable to what produced them | [scientific_figures_tables.md](scientific_figures_tables.md) |
-| Check a paper against its code, data, and results before reviewers do | [manuscript_audit.md](manuscript_audit.md) |
-| Explore a new research idea, or process a corpus of papers into an onboarding document | [literature_review.md](literature_review.md) |
-| Draft or revise a grant proposal against a sponsor's form | [grant_proposal_writing.md](grant_proposal_writing.md) |
+"Used live as" points at the seminar task where the talk actually demonstrates this file (`../../slides/storyboard.md`'s Task 1–7); a file with no live task is still real, checklist-usable doctrine — see `../README.md` for the full status note.
+
+| I need to… | Read | Used live as |
+|---|---|---|
+| Set up a project so an AI agent can work in it — and keep the record straight across sessions, tools, and machines | [working_with_ai_agents.md](working_with_ai_agents.md) | Task 2 |
+| Move from exploratory scripts and notebooks to code someone else can rerun — and know what to verify at each stage | [scientific_computing_workflow.md](scientific_computing_workflow.md) | Task 4 |
+| Release research code as an installable package without leaking private data or breaking my own results | [private_code_to_public_package.md](private_code_to_public_package.md) | Task 4 |
+| Draft or revise a manuscript | [technical_writing.md](technical_writing.md) | Task 6 |
+| Write in the group's voice, or derive a style guide of my own | [writing_style_guide.md](writing_style_guide.md) | Task 6 |
+| Make figures and tables that are correct, readable, and traceable to what produced them | [scientific_figures_tables.md](scientific_figures_tables.md) | Task 6 |
+| Check a paper against its code, data, and results before reviewers do | [manuscript_audit.md](manuscript_audit.md) | Task 5 |
+| Explore a new research idea, or process a corpus of papers into an onboarding document | [literature_review.md](literature_review.md) | Task 3 |
+| Draft or revise a grant proposal against a sponsor's form | [grant_proposal_writing.md](grant_proposal_writing.md) | Task 3, continued |
 
 ## How they fit together
 

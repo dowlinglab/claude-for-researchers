@@ -4,30 +4,34 @@ The actual takeaways: polished, reusable artifacts students can apply to their o
 
 Resources come in two layers:
 
-- **`practices/`** — the doctrine. Seven best-practice files, each mapped to a seminar section, written to be used *with* an AI assistant (as repo context, as a task prompt, or as an audit checklist) rather than just read.
+- **`practices/`** — the doctrine. Nine best-practice files, each mapped to one of the talk's numbered tasks, written to be used *with* an AI assistant (as repo context, as a task prompt, or as an audit checklist) rather than just read.
 - **`prompts/`, `templates/`, `scripts/`** — the tools. Runnable or copy-pasteable things that operationalize the practices and cite them by section rather than restating them.
 
 Design principle for everything here: inspect before editing, distinguish fact from inference, report uncertainty, preserve provenance, never invent missing information, make small auditable changes, verify after changing anything, and summarize what changed and what's unresolved.
 
-## Layer 1: `practices/` — the seven best-practice files
+## Layer 1: `practices/` — the nine best-practice files
 
 Each file uses the same shape: what it is and when to use it → numbered practice sections (stable, so a prompt can cite `§5`) → checklist → anti-patterns → how to use it with an AI assistant. Target length is 150–300 lines; anything longer stops being loaded and starts being skimmed.
 
-All seven are tool-agnostic, with tool-specific mechanics confined to one clearly marked section carrying a staleness warning.
+All nine are tool-agnostic, with tool-specific mechanics confined to one clearly marked section carrying a staleness warning.
 
-| File | Seminar section | Scope | Status |
+**Task column relabeled 2026-09-04** from the old six-stage-lifecycle section numbers (`outline.md`'s framing, which [CLAUDE.md](../CLAUDE.md) itself calls out as no longer the live-talk plan) to the numbered tasks the live talk actually uses ([storyboard.md](../slides/storyboard.md)'s Task 1–7, threaded Prologue → Act I → Act II → Act III → Epilogue). Where a file backs more than one task, the primary one is listed first.
+
+| File | Task | Scope | Status |
 |---|---|---|---|
-| `working_with_ai_agents.md` | 2, 5 | Session conduct, roles, guardrails, project memory, document lifecycle, portability across tools and machines | **Drafted** |
-| `scientific_computing_workflow.md` | 4 | Notebooks → modules, baseline-then-refactor, phase-matched verification, run provenance | **Drafted** |
-| `manuscript_audit.md` | 7 | Claim tracing, status vocabularies, standards of evidence, retraction | **Drafted** |
+| `working_with_ai_agents.md` | 2 (also 7) | Session conduct, roles, guardrails, project memory, document lifecycle, portability across tools and machines | **Drafted** |
+| `scientific_computing_workflow.md` | 4 (also 6) | Notebooks → modules, baseline-then-refactor, phase-matched verification, run provenance | **Drafted** |
+| `manuscript_audit.md` | 5 (also 6, 7) | Claim tracing, status vocabularies, standards of evidence, retraction | **Drafted** |
 | `technical_writing.md` | 6 | Structure, notation, submission readiness, AI-prose drift signals | **Drafted** |
-| `writing_style_guide.md` | 6 | How to derive and refine a style guide; the Dowling Lab register as the worked instance and group standard | **Drafted** |
-| `scientific_figures_tables.md` | 6 | Figure standards, reproducible figures, tables generated not retyped | **Drafted** |
+| `writing_style_guide.md` | 6 (also 7) | How to derive and refine a style guide; the Dowling Lab register as the worked instance and group standard | **Drafted** |
+| `scientific_figures_tables.md` | 6 (also 7) | Figure standards, reproducible figures, tables generated not retyped | **Drafted** |
 | `private_code_to_public_package.md` | 4 | Packaging, isolating private data, release engineering, human-only steps | **Drafted** |
-| `literature_review.md` | 3 (Understand) | Idea-first vs. corpus-first, batch ingestion, two-pass verification, correction logs, getting-started reports | **Drafted** |
-| `grant_proposal_writing.md` | Prologue/Act I | Drafting against sponsor forms, inline compliance review, latexdiff verification, template reuse across cycles | **Drafted** |
+| `literature_review.md` | 3 | Idea-first vs. corpus-first, batch ingestion, two-pass verification, correction logs, getting-started reports | **Drafted** |
+| `grant_proposal_writing.md` | 3, continued (Act II) | Drafting against sponsor forms, inline compliance review, latexdiff verification, template reuse across cycles | **Drafted** |
 
 Nine practice files total, added to as the underlying project inventory grew. See [practices/README.md](practices/README.md) for the "which file do I want?" index.
+
+**Task 6 (added 2026-09-04) is what closed the gap for three of these files.** `technical_writing.md`, `writing_style_guide.md`, and `scientific_figures_tables.md` were fully drafted well before this date but backed by no live task anywhere in the talk — the old six-stage lifecycle's "Write" stage never got a home in the three-act storyboard. Task 6 ("inherit a project → an auditable draft manuscript," Act III) is that home; see `slides/sections/04_act3_challenge.tex`'s own header comment for the full rationale.
 
 Three naming and scope decisions worth recording:
 
@@ -55,7 +59,7 @@ These are meant to be **working defaults** that the group and others can drop in
 
 7. **`doi_checker/`** — ✅ **Built and tested.** The nominal default DOI checker. Verifies references against Crossref in two passes kept deliberately apart *because they fail differently*: (1) for entries that have a DOI, does it resolve to the work the entry actually describes — fuzzy title match plus author-surname check, graded `MATCH` / `CHECK` / `MISMATCH`; (2) for entries lacking one, does Crossref know a DOI, proposed only above a stricter threshold. **It proposes and never writes**, because a DOI that resolves to the wrong paper is worse than a missing one and looks identical on the page. Adapted from a working script; the work is parameterizing paths into `--bib` / `--tex` / `--mailto` and restricting checks to keys actually cited.
 8. **`figure_style/`** — ✅ **Built and tested.** The nominal default Python figure style. A small module implementing the group's publication-quality figure guidelines as matplotlib settings, plus a `save_fig` helper that enforces size, resolution, and format, and a short set of standard plot helpers. The point is that a project fixes figure conventions **centrally, once**, so later work inherits them — two separate projects independently discovered that scattering plot styling across dozens of scripts makes any later standard unenforceable. Ships with the compliance checklist from `practices/scientific_figures_tables.md` so a figure set can be audited against it.
-9. **`check_margins.py`** — Geometric overfull-box detection from a rendered PDF, because a clean LaTeX build does not reliably surface them. Already general-purpose; needs packaging and a README.
+9. **`check_margins.py`** — **Not started.** Geometric overfull-box detection from a rendered PDF, because a clean LaTeX build does not reliably surface them. Design sketch only; not in `resources/scripts/` yet.
 10. **`latexdiff_check.sh`** — ✅ **Built and tested.** Diffs the working copy of a `.tex` file against its last committed version (or any ref — a submitted tag, say), compiles a word-level tracked-changes PDF, and cleans up its own build byproducts. Formalizes a habit found only as a reconstructed shell command in one of the projects surveyed — it existed nowhere as an actual tool before this.
 11. **`check_docs.py`** — ✅ **Built and tested.** Flags markdown links that don't resolve, living documents the repository has moved past (measured in commits behind `HEAD`), and supersession banners naming a successor file that doesn't exist. Exits non-zero, so it can gate a commit or CI. This is `practices/working_with_ai_agents.md` §9 applied to the repository's own documentation — the rule that written instructions degrade unless something fails when they do.
 
@@ -74,14 +78,17 @@ These are meant to be **working defaults** that the group and others can drop in
 ```
 resources/
 ├── README.md                          this file
-├── practices/                          the seven best-practice files
+├── practices/                          the nine best-practice files
+│   ├── README.md
 │   ├── working_with_ai_agents.md
 │   ├── scientific_computing_workflow.md
 │   ├── manuscript_audit.md
 │   ├── technical_writing.md
 │   ├── writing_style_guide.md
 │   ├── scientific_figures_tables.md
-│   └── private_code_to_public_package.md
+│   ├── private_code_to_public_package.md
+│   ├── literature_review.md
+│   └── grant_proposal_writing.md
 ├── prompts/
 │   ├── organize_research_repo.md
 │   ├── manuscript_audit.md
@@ -93,8 +100,7 @@ resources/
 ├── scripts/
 │   ├── doi_checker/
 │   ├── figure_style/
-│   ├── check_margins.py
-│   └── check_docs.py
+│   └── check_docs.py                  check_margins.py (item 9 above): not started
 ├── checklists/
 │   └── reproducibility_and_handoff_checklist.md
 └── examples/
