@@ -151,8 +151,13 @@
 % placed early so it establishes authority and foreshadows the acts
 % without revealing their specific content, rather than only paying off
 % at the end. Its row in the Epilogue's summary matrix completes the loop.
+% PROTOTYPE 2026-09-03, Alex's example of the size/color rethink applied
+% concretely: list stays \normalsize (it already was -- no explicit
+% \small here to begin with), and the tagline moves from a big centered
+% \slidepoint callout to a small caption-style line beside the corner
+% logo, instead of claiming its own large chunk of vertical space.
 \begin{frame}{This talk was built the same way}
-  \vfill
+  \vspace{0.3cm}
   \begin{enumerate}\setlength\itemsep{0.6em}
     \item Identified 10+ AI-accelerated projects from the past year
     \item Dispatched agents (Claude Opus) to examine each one's full history
@@ -161,8 +166,9 @@
     \item Built these slides iteratively with Claude --- including analyzing my own past talks to match my actual style
   \end{enumerate}
   \vfill
-  \begin{center}
-    \slidepoint{You are about to \textbf{watch} the thesis, not just \textbf{hear} it.}
-  \end{center}
-  \vfill
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south west, xshift=3.4cm, yshift=2mm, align=left, text width=8.6cm]
+      at (current page.south west)
+      {\small\itshape You are about to \textbf{watch} the thesis, not just \textbf{hear} it.};
+  \end{tikzpicture}
 \end{frame}

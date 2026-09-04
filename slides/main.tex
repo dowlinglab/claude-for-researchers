@@ -69,6 +69,18 @@
 \setbeamercolor{structure}{fg=NDBlue}
 \setbeamercolor{itemize item}{fg=NDBlue}
 \setbeamercolor{itemize subitem}{fg=NDBlue}
+% PROTOTYPE 2026-09-03, Alex's question: "What if we made everything dark
+% blue?" -- he found the default-black-vs-NDBlue split (e.g. plain body
+% prose next to a \slidepoint or \keyterm) distracting, reading as an
+% unexplained distinction rather than a deliberate one. This single line
+% makes ALL default-colored body text NDBlue instead of black, deck-wide,
+% rather than hunting down every explicit \color{NDBlue} call one by one.
+% Contrast is not a concern: theme/README.md already measured NDBlue on
+% white at 15.79:1 (WCAG needs 4.5:1) -- effectively as dark as black.
+% Section-file overrides that set an explicit color (OkVermillion, Muted,
+% NDGold, etc. via \good/\bad/\unknown/box fills) are unaffected; this
+% only changes what "no explicit color" defaults to.
+\setbeamercolor{normal text}{fg=NDBlue}
 \setbeamertemplate{navigation symbols}{}
 
 % ---------------------------------------------------------------------

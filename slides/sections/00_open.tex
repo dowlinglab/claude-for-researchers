@@ -114,7 +114,7 @@
 % collided with the corner logo. 6.8cm was tried next and still
 % collided (the image's own white canvas background, not just its
 % content, reaches the logo) -- 6.0cm is the largest that clears it.
-\begin{frame}{Before Codex: a decade of schedules, one real run}
+\begin{frame}{Generator faculty-visitors for department recruitment}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.52\textwidth}
@@ -124,13 +124,13 @@
     \begin{column}{0.44\textwidth}
       \centering
       \begin{tikzpicture}[font=\scriptsize, node distance=0.5cm]
-        \node[draw=OkVermillion, rounded corners=2pt, minimum width=4.2cm, minimum height=1cm, text width=3.8cm, align=center]
-          (a) {\textbf{Before 2023}\\DGA spent about 10 hours by hand, every time something changed.};
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=4.2cm, minimum height=1cm, text width=3.8cm, align=center, below=of a]
-          (b) {\textbf{2023}\\Jeff Kantor and I built a notebook to formulate it as optimization.};
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=4.2cm, minimum height=1cm, text width=3.8cm, align=center, below=of b]
-          (c) {\textbf{2024--2025}\\I ran it alone, patching it by hand each year.};
-        \node[draw=NDGold, rounded corners=2pt, minimum width=4.2cm, minimum height=1cm, text width=3.8cm, align=center, below=of c, fill=CodeBg]
+        \node[draw=OkVermillion, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center]
+          (a) {\textbf{Before 2023}\\DGA spent ~10 hours (re)making the schedule by hand};
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of a]
+          (b) {\textbf{2023}\\Jeff Kantor and I built a Jupyter notebook used discrete optimization to create the schedule.};
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of b]
+          (c) {\textbf{2024--2025}\\I maintained the code, patching it by hand and inputting data each year.};
+        \node[draw=NDGold, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of c, fill=CodeBg]
           (d) {\textbf{Feb 2026}\\I converted it into a tested, public Python package with Codex.};
         \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
         \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
@@ -238,16 +238,16 @@
   \end{columns}
   \vspace{0.7em}
   \begin{center}
-    \small On sabbatical this past February, I nearly said no --- then decided to use it as an excuse to really try Codex.
+    On sabbatical this past February, I nearly said no. Then, I decided to use this as an excuse to really try Codex.
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    \normalsize\color{NDBlue} I got everyone in my group an \textbf{ND OpenAI seat} --- and we spend part of our weekly meeting on \textbf{Codex best practices}.
+    After this small project, I got everyone in my group an \textbf{ND OpenAI seat}. We regularly discuss \textbf{AI best wins, traps, and practices} in our weekly meeting.
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}{The claim}
+\begin{frame}{Takeaway message for today}
   \vfill
   \begin{center}
     The most powerful uses of generative AI in research go beyond\\
