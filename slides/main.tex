@@ -72,15 +72,27 @@
 \definecolor{Muted}{HTML}{7A7A7A}
 \definecolor{CodeBg}{HTML}{F4F4F2}
 
-% Frametitle color/background, body text color (NDBlue rather than black --
-% Alex: "What if we made everything dark blue?", finding the default
-% black-vs-NDBlue split distracting next to a \slidepoint or \keyterm), and
-% itemize/enumerate colors are all handled by the theme's own textcolor
-% option (set above) and its background-aware defaults -- no manual
-% \setbeamercolor overrides needed here. Section-file overrides that set an
+% Frametitle color/background and body text color (NDBlue rather than
+% black -- Alex: "What if we made everything dark blue?", finding the
+% default black-vs-NDBlue split distracting next to a \slidepoint or
+% \keyterm) are handled by the theme's own textcolor option (set above)
+% and its background-aware defaults. Section-file overrides that set an
 % explicit color (OkVermillion, Muted, NDGold, etc. via \good/\bad/\unknown/
 % box fills) are unaffected either way.
 \setbeamertemplate{navigation symbols}{}
+
+% Numbered-circle (\begin{enumerate}) color: IrishGreen rather than the
+% theme's own default NDBlue. IrishGreen is already defined by the
+% theme itself (always available, not gated behind an option), so this
+% is a plain per-deck override -- no theme change needed.
+% FOUND BY TESTING: \setbeamercolor{enumerate item}{fg=...} alone does
+% NOT recolor the filled circle -- Beamer's "circles" style numbers use
+% the "item projected" color (fg=white, bg=item.fg), a separate entity
+% enumerate item only feeds indirectly and that the rendered circle
+% never actually reads. bg=... here is what the circle's fill reads.
+\setbeamercolor{enumerate item}{fg=IrishGreen}
+\setbeamercolor{enumerate subitem}{fg=IrishGreen}
+\setbeamercolor{item projected}{bg=IrishGreen}
 
 % ---------------------------------------------------------------------
 % Semantic macros. Meaning is never carried by colour alone -- each pairs the
