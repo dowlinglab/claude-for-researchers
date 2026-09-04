@@ -23,7 +23,7 @@ The confirmed roster. Every concrete task below belongs to one of these.
 | 5 | Crafting a proposal | a returning-sponsor proposal; a recurring sponsor program; a chromatography/digital-twin proposal | **No** — confirmed 2026-09-02: kept generic, same treatment as 1–2, since these may be live or competitively sensitive |
 | 6 | Retooling and refreshing a course | **"Optimization for Decision Science"** (`ndcbe.github.io/optimization`) | **Yes** — confirmed 2026-09-02: Alex's own class, already-public course website |
 
-Outside this taxonomy by design: the Prologue/Epilogue hobby material (`grad-visit-scheduler`'s teaser, the boot-dryer-octopus and kitchen-organizer stories, `radio-extra-book`) — deliberately a different, lower-stakes register, not another professional task type.
+Outside this taxonomy by design: the Prologue's `grad-visit-scheduler` teaser (told in full there, not a numbered task). The Epilogue's hobby material (the boot-dryer-octopus and kitchen-organizer stories, `radio-extra-book`) carries its own real number, **Task 8 (hobbies)** — Alex's own call, 2026-09-04 — but deliberately outside the professional Task 1-7 taxonomy: it doesn't appear in the Prologue's task preview or the Epilogue's summary matrix.
 
 ---
 
@@ -111,7 +111,7 @@ Rows 2-3 moved in from the Prologue 2026-09-03, Alex's suggestion — they read 
 | 3 | Two checks before you start | DoD/DoW funding status; "ask your PI" | Institutional trust has real, project-specific limits |
 | 4 | **The summary matrix** — projects × acts, visualized | A simplified grid built from the six-types table above | A handful of real projects recur across every act; this isn't asserted, it's shown |
 | 5 | You own every claim, whatever helped you make it | Generic, group-manual GenAI section; the disclosure bullet folds in a real editorial decision (2026-09-04 audit wave: a project's own revision notes record deciding to name AI use as a research method, at the PI's own call) | Journals increasingly expect it, not just tolerate it |
-| 6 | The hobby stories, as the final example | boot-dryer-octopus; kitchen organizer/telescope; `radio-extra-book` | The same discipline pays off outside the lab too |
+| 6 | Task 8 (hobbies), the final example | boot-dryer-octopus; kitchen organizer/telescope; `radio-extra-book` | The same discipline pays off outside the lab too |
 | 7 | One thing to change Monday morning | Pointer to the repo | — |
 
 ---
