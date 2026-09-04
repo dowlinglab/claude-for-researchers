@@ -35,6 +35,8 @@ Outside this taxonomy by design: the Prologue's `grad-visit-scheduler` teaser (t
 |---|---|---|
 | Turn a personal annual chore into a published tool | `grad-visit-scheduler` — told in full here (type 3); Act II covers its group-wide impact | The habits that work on a side project are the same ones that work on research |
 | Preview the six kinds of task before the acts use them | The six-types table above, previewed directly, no new examples — shares a slide with the "not a tool tutorial" scoping content | Every example today is one of six familiar kinds |
+| Desktop app, terminal, or editor extension | Generic — no project example, just the three surfaces themselves | Same engine, three doors; pick based on workflow, not mystique |
+| Which model, and how much of it do you get | Generic — current frontier models and how each vendor meters usage, verified via web search 2026-09-04 (re-check before the talk) | Neither publishes a token budget; the mid-tier model is usually the right default |
 
 ## Act I — Understand: conversation → living context, with git
 
@@ -71,8 +73,9 @@ Row 1 expanded 2026-09-02, then **merged into a single callback row 2026-09-03**
 | 5 | The bug the reproduction found | Type 3, same — Phase 9b: a from-scratch figure reproduction flagged a discrepancy, confirmed as a shared-mutable-state bug (a GP kernel mutated in place, then reused) | A regression harness is what makes a reversal attributable rather than suspicious | `scientific_computing_workflow.md` §3–§4 |
 | 6 | Ship the skeleton, scrub the scaffolding | Type 3, same — trusted publishing via OIDC; `HANDOFF.md`/`REFACTOR_PLAN.md` removed before release, recoverable from git history | Move to the archive, not out of history | `private_code_to_public_package.md` §10 |
 | 7 | Not just a hobby-adjacent tool | Type 3 — `emcal`, `bits_for_gaps`, named | Split by audience (package vs. archive), not by code quality | `private_code_to_public_package.md` §1 |
-| 8 | The same discipline, on a document instead of code | Type 5 — a returning-sponsor proposal and a recurring sponsor program (generic): draft against the form, restore its wording, `\foacomment{}`-style inline review | AI as a compliance reviewer, findings inline, flagged → fixed → removed | `grant_proposal_writing.md` §2, §4 |
-| 9 | Best practices: review the diff, verify every revision | Generic — an AI-written summary vs. the actual diff, plus `latexdiff`-against-last-commit, word-level | The diff says what actually changed; a normal re-read misses what `latexdiff` catches | `working_with_ai_agents.md` §6, `grant_proposal_writing.md` §5, `resources/scripts/latexdiff_check.sh` |
+| 8 | One manuscript, three places, one history | Generic — distilled (not quoted) from the Dowling Lab group manual's own Overleaf/LaTeX policy: one Overleaf project per manuscript synced to one GitHub repo, local editing via GitHub sync (never a direct Overleaf download), `todonotes` for open items in the PDF itself | GitHub is the archive; Overleaf is where you draft | — (manual stays lab-internal) |
+| 9 | The same discipline, on a document instead of code | Type 5 — a returning-sponsor proposal and a recurring sponsor program (generic): draft against the form, restore its wording, `\foacomment{}`-style inline review | AI as a compliance reviewer, findings inline, flagged → fixed → removed | `grant_proposal_writing.md` §2, §4 |
+| 10 | Best practices: review the diff, verify every revision | Generic — an AI-written summary vs. the actual diff, plus `latexdiff`-against-last-commit, word-level | The diff says what actually changed; a normal re-read misses what `latexdiff` catches | `working_with_ai_agents.md` §6, `grant_proposal_writing.md` §5, `resources/scripts/latexdiff_check.sh` |
 
 ## Act III — Challenge: it tells me I'm wrong
 
@@ -112,7 +115,8 @@ Rows 2-3 moved in from the Prologue 2026-09-03, Alex's suggestion — they read 
 | 4 | **The summary matrix** — projects × acts, visualized | A simplified grid built from the six-types table above | A handful of real projects recur across every act; this isn't asserted, it's shown |
 | 5 | You own every claim, whatever helped you make it | Generic, group-manual GenAI section; the disclosure bullet folds in a real editorial decision (2026-09-04 audit wave: a project's own revision notes record deciding to name AI use as a research method, at the PI's own call) | Journals increasingly expect it, not just tolerate it |
 | 6 | Task 8 (hobbies), the final example | boot-dryer-octopus; kitchen organizer/telescope; `radio-extra-book` | The same discipline pays off outside the lab too |
-| 7 | One thing to change Monday morning | Pointer to the repo | — |
+| 7 | One thing to change tomorrow morning | Pointer to the repo | — |
+| 8 | So, what now? (final slide) | Generic — the concrete five-step call to action; cites the new `resources/prompts/getting_started.md` | The resources are what your chatbot builds on, not a tutorial to finish |
 
 ---
 

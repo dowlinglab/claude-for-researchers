@@ -162,8 +162,43 @@
   \vfill
 \end{frame}
 
-% TODO: This slide seems out of place. What is it trying to say?
-% TODO: The example seems a little too specific and not clear. Can we update this idea and move it either earlier? 
+% NEW 2026-09-04, Alex's request: distilled from the Dowling Lab group
+% manual's own "Overleaf and LaTeX" section (dowling_lab_manual.tex,
+% \label{latex-tricks}, local source at
+% /Users/adowling/GitHub/group-manual) -- real, standing lab policy, not
+% invented. Generalized to a diagram + three points rather than
+% reproducing the manual's own enumerated lists verbatim. Not linked
+% publicly (the manual itself is lab-internal, not a public resource of
+% this repo) -- the practice is what's shared, not the document.
+\begin{frame}{Task 3, continued --- one manuscript, three places, one history}
+  \vfill
+  \begin{center}
+  \begin{tikzpicture}[font=\small, node distance=1.3cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.2cm, minimum height=1.1cm, align=center]
+      (a) {Overleaf\\\scriptsize collaborative drafting};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=3.2cm, minimum height=1.1cm, align=center, right=of a, fill=CodeBg]
+      (b) {GitHub\\\scriptsize the real history};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.4cm, minimum height=1.1cm, align=center, right=of b]
+      (c) {Local editor + AI\\\scriptsize debug errors, run latexdiff};
+    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+    \draw[{Stealth[length=6pt]}-{Stealth[length=6pt]}, thick] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    One Overleaf project per manuscript, synced to one GitHub repo --- never a new project per draft. GitHub is the archive: it survives losing your university email, and it's what actually preserves history, not duplicate Overleaf projects.
+  \end{center}
+  \vspace{0.5em}
+  \begin{center}
+    Editing locally instead? Sync through GitHub, never download the source from Overleaf directly --- an AI CLI tool is genuinely useful here for debugging \LaTeX{} errors and running \texttt{latexdiff}.
+  \end{center}
+  \vspace{0.4em}
+  \begin{center}
+    \slidepoint{Track open items with \texttt{todonotes} in the \textbf{PDF itself} --- ready to submit once every note is resolved.}
+  \end{center}
+  \vspace{1.8cm plus 1fill}
+\end{frame}
+
 \begin{frame}[fragile]{Task 3, continued --- the same discipline, on a document instead of code}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/proposal_review.md}{\texttt{resources/prompts/proposal\_review.md}}}
   \vfill

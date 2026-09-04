@@ -47,6 +47,7 @@ Three naming and scope decisions worth recording:
 2. **`manuscript_audit.md`** — ✅ The audit toolkit as one prompt with modes: quantitative-claim tracing, methods-vs-code, figure-vs-text, journal-guideline compliance. Cites `practices/manuscript_audit.md` rather than repeating it.
 3. **`literature_workflow.md`** — ✅ Process a folder of PDFs: inspect metadata, determine the real citation and DOI, rename consistently, flag duplicates and uncertain metadata (never guess), generate/update `literature.md` and BibTeX.
 4. **`proposal_review.md`** — ✅ *(added 2026-09-04)* Three modes for `grant_proposal_writing.md` (Task 3, continued): compliance review against a funding call (`\foacomment{}`, inline, flag-don't-fix), restoring the sponsor's exact wording, and expand-then-compress as two separate calls. Closes a parallel-structure gap: every other starring practice file already had a prompt counterpart.
+5. **`getting_started.md`** — ✅ *(added 2026-09-04)* The Epilogue's closing prompt: point any chatbot at this repo after cloning it, answer ten short questions about your actual project, and get 2-4 specific file recommendations back instead of a generic tour. Works even without file access — degrades to "paste in `README.md`."
 
 **Templates** (`templates/`)
 
