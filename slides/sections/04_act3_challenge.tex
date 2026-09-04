@@ -35,9 +35,9 @@
   \vspace{0.6em}
   \begin{center}
   \begin{itemize}\small\setlength\itemsep{0.4em}
-    \item Ask \textit{one} question from the list --- a merged prompt reads as an attack, same as before
-    \item Traceability: grep the repo for the number, report the file --- or say it can't be found
-    \item Method: diff the manuscript's description against what the code actually does
+    \item Ask \textit{one} question from the list
+    \item Traceability: grep (search) the repo for the number, report the file --- or say it can't be found
+    \item Method: diff (compare) the manuscript's description against what the code actually does
     \item Arithmetic: recompute from the underlying numbers, don't just re-read them
   \end{itemize}
   \end{center}
@@ -82,7 +82,10 @@
 % exactly this shape, generalized here with no repo/student names per the
 % standing convention. Same claim-tracing operation as the previous
 % slide's table, applied to a citation instead of a number.
-\begin{frame}{Task 5 --- the same table works on a citation}
+
+% TODO: Please explain how DOI checker works, and what errors it will not check. In what ways does the DOI checker safeguard against hallucinated references?
+% TODO: How does this work with our literature library?
+\begin{frame}{Task 5 --- we can also automate checking references}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/scripts/doi_checker}{\texttt{resources/scripts/doi\_checker/}}}
   \vfill
   \begin{center}
@@ -119,7 +122,7 @@
     \end{column}
   \end{columns}
   \vfill
-  \begin{center}
+  \begin{center} % TODO: What do you mean by enumerate?
     \slidepoint{A request to \textbf{enumerate} beats a request to \textbf{confirm}.}
   \end{center}
   \vfill
@@ -211,12 +214,13 @@
     Once the numbers were locked, the manuscript was restyled to match the group's own established voice from an earlier paper.
   \end{center}
   \vfill
-  \begin{center}
+  \begin{center} % TODO: Does it make sense to mention the DOI checker after this slide?
     \slidepoint{The same discipline as \textbf{Task 3} --- a citation is \textbf{checked}, not \textbf{assumed}.}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
+% TODO: It is not clear to the audience you are talking about a recent project I worked on. Where does the 25 number come from? This is another example of the audience not having enough context for these specific statements. My preference is to either provide more framing OR remove some of these specific references. As written, I do not see the value add in this slide?
 \begin{frame}{Task 6 --- the manuscript audits itself, before anyone else does}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/manuscript_audit.md}{\texttt{resources/practices/manuscript\_audit.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/templates/results_manifest.md}{\texttt{resources/templates/results\_manifest.md}}}
   \vfill
@@ -275,6 +279,9 @@
 %     the brief for the prose-trim task cites two real diffs of Alex's own
 %     hand-edits (c9ec60e, adca23d) and \authored{} span counts (L3: 40,
 %     L4: 63), not a vague "make it shorter" instruction.
+
+
+% TODO: Instead, I think we want to open this slide with the list of everything that I put in scope for my pre-semester sprint. A list of these talks, all AI-accelerated will provide better context and be more impressive. I am okay deferring the screenshot to later in the semester. But we can add the course URL in the footnote spot on the slide.
 \begin{frame}[fragile]{Task 7 --- a week before the semester, at scale}
   \vfill
   \begin{columns}[c]
@@ -297,6 +304,7 @@
   \vfill
 \end{frame}
 
+% TODO: The other Task 7 slides need to be revamped, in a similar spirit to the BITS for GAPS example. For BITS for GAPS, we added a list of the recipe/steps on the first slide. Then the following few slides elaborated on important steps with that are most important or have unexpected pain points or important lessons learned. The audience might not care that much about the JupyterBook upgrade, so that would be a good think include in the list by not elaborate on.
 \begin{frame}{Task 7 --- retire the scan, own the figure}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{resources/practices/scientific\_figures\_tables.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/scripts/figure_style}{\texttt{resources/scripts/figure\_style/}}}
   \vfill
