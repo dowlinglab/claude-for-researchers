@@ -64,10 +64,13 @@ These are meant to be **working defaults** that the group and others can drop in
 11. **`latexdiff_check.sh`** — ✅ **Built and tested.** Diffs the working copy of a `.tex` file against its last committed version (or any ref — a submitted tag, say), compiles a word-level tracked-changes PDF, and cleans up its own build byproducts. Formalizes a habit found only as a reconstructed shell command in one of the projects surveyed — it existed nowhere as an actual tool before this.
 12. **`check_docs.py`** — ✅ **Built and tested.** Flags markdown links that don't resolve, living documents the repository has moved past (measured in commits behind `HEAD`), and supersession banners naming a successor file that doesn't exist. Exits non-zero, so it can gate a commit or CI. This is `practices/working_with_ai_agents.md` §9 applied to the repository's own documentation — the rule that written instructions degrade unless something fails when they do.
 
+**`checklists/reproducibility_and_handoff_checklist.md`** — ✅ *(built 2026-09-04)* Reproducibility and "handing a project to the next person" combined into one checklist with two halves (Receiving / Leaving), since both are the same test: can someone else install, understand, and extend this? Cites the practice files rather than repeating them.
+
+**`examples/repository_patterns/single_repo.md`** — ✅ *(built 2026-09-04)* The one-repo pattern, worked from the real, git-verified `bits_for_gaps` decision (a REFACTOR_PLAN.md's locked day-one call: one repo, no separate paper repo, a curated data subset instead of the full 564 MB archive).
+
 ## Also planned (lower priority)
 
-- **`checklists/reproducibility_and_handoff_checklist.md`** — Reproducibility and "handing a project to the next person" combined, since both are the same test: can someone else install, understand, and extend this?
-- **`examples/repository_patterns/single_repo.md`** and **`split_code_paper_repos.md`** — Worked examples of both patterns, with the provenance-manifest connection explained for the split case.
+- **`examples/repository_patterns/split_code_paper_repos.md`** — The split pattern's worked example, with the provenance-manifest connection explained for that case. Not yet built — no real, git-verified instance of this pattern has turned up in the project inventory the way `single_repo.md`'s did.
 
 ## Deliberately not building
 

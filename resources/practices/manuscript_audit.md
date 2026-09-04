@@ -141,7 +141,8 @@ Where a check can be automated, automate it — geometric detection of overfull 
 Your instruments have bugs too, and an audit that hides its own errors is not worth much.
 
 - **Hold audit scripts to the standard you are applying to the subject.** They are new code written quickly under time pressure — exactly the risk profile you are auditing for.
-- **Run a second, independent pass on anything high-stakes**, ideally with a different tool or model. Cross-model triangulation catches structural mistakes a same-model recheck will reproduce. A second pass has caught a calibration bug in the first that no residual test would have flagged.
+- **Run a second, independent pass on anything high-stakes**, ideally with a different tool or model. Cross-model triangulation catches structural mistakes a same-model recheck will reproduce. A real instance: a first pass's reference values, produced by one tool, were independently re-derived by a second audit and found reliable for most quantities but systematically biased for one — a bias invisible from re-running the same tool twice, and named as a risk before it was resolved rather than smoothed over.
+- **A correct detection is not the same as a correct conclusion.** The sharper failure mode isn't always a missed bug — it can be a right answer, correctly flagged, then explained away in the write-up. One real audit's own comparison script correctly detected a systematic data error; a subsequent editorial pass misclassified that correct signal as an "explained non-issue." The tool was right; the sentence written about the tool's output was wrong. Check whether a flagged anomaly survived into prose as a finding, or got argued away under pressure to reach a clean verdict.
 - **Retract in writing, in place.** When a finding collapses, write the retraction where the claim was, with the mechanism: *"This subsection corrects a wrong conclusion this report previously stated."* Do not silently edit it away.
 - **Keep a self-correction section.** A running list of the audit's own errors, each generalized into a named failure mode, is the single most useful artifact for the next audit — and it makes the rest of the document more credible, not less.
 - **Distinguish a tool bug from a scientific finding before you believe either.** A striking result that rests on a broken tool is not a result. Verify the instrument, then re-derive; the finding may well survive, and it will survive on trustworthy inputs.
@@ -156,13 +157,15 @@ An audit nobody can verify is just an assertion with more pages. Write a short g
 
 **Frame findings for fairness, not for blame.** Where a correction cuts both ways, say so first. A reference error that inflated one method's performance while deflating a competitor's is a fairness fix, not an indictment — and reporting it that way is both more accurate and far more likely to be acted on.
 
+**Ask where a wrong number came from, not just whether it's wrong.** A transcription slip and a value silently overwritten by an earlier, unrelated AI suggestion during data entry look identical once discovered, but they call for different fixes and different scrutiny going forward. As more of a lab's own data entry becomes AI-assisted, "was this number's origin itself an unreviewed AI output" is worth asking as its own question, separate from "is this number right."
+
 ## 12. The same move, in four variants
 
 Every audit in this document is one operation — *trace an artifact back to its authoritative source and report match, mismatch, or cannot-verify.* Four common applications:
 
 - **Quantitative claim audit.** Every number in the prose → the results file that should support it → verified, discrepant, or unverifiable.
 - **Methods-versus-code.** Does the paper describe what the code actually does? Look for assumptions present in code and absent from the methods, parameter values that differ, preprocessing or solver settings omitted, and equations implemented differently from how they are written.
-- **Figure-versus-text.** For each figure: which script produced it, from which data, and does the plotted content support what the caption and text claim about it? Check units and axis labels against the underlying values.
+- **Figure-versus-text.** For each figure: which script produced it, from which data, and does the plotted content support what the caption and text claim about it? Check units and axis labels against the underlying values. A real instance: a figure's axis label claimed one quantity; the code that generated it computed a related but different one. The plotted data was correct throughout — only the label and the prose built on it were wrong. Distinguish "the figure is wrong" from "the figure is mislabeled": the fix and the blast radius are not the same.
 - **Guideline compliance.** Check the manuscript against a named standard — journal instructions, a figure guideline, a nomenclature file — and report each violation *with the specific rule cited*. This is the easiest audit to automate and the easiest to skip.
 
 ---

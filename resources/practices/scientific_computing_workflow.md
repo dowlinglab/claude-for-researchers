@@ -22,6 +22,7 @@ The most common bad advice in AI-assisted development is "write more tests." For
 Two rules follow, and both are load-bearing:
 
 - **A green test suite is evidence only about the code it executes.** A real case: a suite covering 24 of 29 analysis directories reported all-green while the four changes that mattered landed in the five directories it never ran. "All tests pass" was true and carried no information.
+- **A physical-plausibility check outperforms a plausible-looking guess.** A parameter stuck at its bound looked like a bounds problem; relaxing the bound moved the fit just enough to look plausible. Resimulating at the value already known to be true — instead of guessing why the fit avoided it — showed the bound was fine and an internal scaling constant was wrong by orders of magnitude. The guess would have shipped a confidently wrong answer that ran without complaint.
 - **Tests are for code you intend not to change.** During discovery you are *trying* to change behavior. Instrument instead: record inputs and outputs, fix seeds, and check that results are physically sensible.
 
 ## 2. Prototype in notebooks; promote what matures
@@ -98,7 +99,7 @@ Practical notes:
 Verification tools give false confidence when their limits are unstated.
 
 - **Make each instrument declare what it cannot see**, in the instrument. A comparison that checks plotted data but not rendered pixels is blind to styling; one that checks pixels is blind to whether the underlying numbers moved. Report results as "verified for everything this instrument can see, which excludes X," never as "verified."
-- **Two instruments disagreeing about one fact is the signal that matters.** It is worth more attention than either instrument agreeing with itself.
+- **Two instruments disagreeing about one fact is the signal that matters.** It is worth more attention than either instrument agreeing with itself. A real case: three independent ways of computing the same quantity disagreed by seventeen orders of magnitude; the cause was one method silently treating an unmatched name as a zero instead of raising, a failure a bare `except:` had been hiding.
 - **Predict the answer before you read the instrument.** Writing down what you expect, first, is what catches a confidently wrong reading. This is cheap and it works.
 - **Beware numbers that read as success because the measured thing did not happen.** A suite that finishes suspiciously fast may have been refused a lock and run nothing; a comparison may default to "identical" on a shape mismatch. Check that the work occurred before believing the result.
 - **Do not trust reported values from failed runs.** A converged-looking objective on a run that terminated badly is not evidence; check the constraint violation at exit.
@@ -129,7 +130,7 @@ Everything in `working_with_ai_agents.md` applies. These are the additions speci
 - **State the budget and the stop conditions** for long-running work — hours, concurrent processes, what to do when the budget expires — and add the anti-shortcut clause: *do not silently reduce the number of runs or iterations to fit the window; report the last completed stage.*
 - **Do not edit the repository while a measurement is running.** The suite is an instrument; changing the tree mid-run invalidates the measurement, and the failure is confusing rather than obvious.
 - **Record negative results and forbid repeats.** Write down which parameter sweeps, solver options, and formulations were tried and rejected, and instruct the agent not to re-run them. Otherwise settled questions get re-litigated every session.
-- **Reduce an upstream bug to a minimal example with a known answer** before reporting it. A self-contained reproduction with an analytic result is checkable without solver tolerances and can be handed to anyone.
+- **Reduce an upstream bug to a minimal example with a known answer** before reporting it. A self-contained reproduction with an analytic result is checkable without solver tolerances and can be handed to anyone. A real case (the same disagreement noted in §6): a five-line reproduction isolated the exact cause precisely enough to hand to a session that had never seen the original project — and the investigation explicitly retracted two of its own earlier, plausible-sounding explanations once the real cause was found, rather than quietly dropping them.
 - **An agent's numerical claim needs the same verification as your own** — more, if it is surprising. A result that contradicts your physical intuition deserves a second, independent derivation before it changes what you believe.
 
 ## 10. Tool-specific notes
