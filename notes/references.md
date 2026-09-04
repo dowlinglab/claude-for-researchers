@@ -5,15 +5,18 @@ Authoritative sources for claims made in this seminar about AI vendors' products
 ## Anthropic / Claude
 
 - [Claude Team Plan for Scientists](https://claude.com/programs/team-plan-for-scientists) — the program this seminar's "Why Claude?" hook refers to. Fetched 2026-09-02. Key facts: standard seats free for 12 months (regularly $20/mo), premium seats $15/mo (regularly $100/mo, 5x usage); PIs at accredited universities/nonprofit research institutes in natural sciences, math, CS, engineering, and related fields apply via an online attestation form, reviewed in ~5–7 business days; excludes for-profit/CRO/industry R&D; capped at 10,000 scientists globally; 1–25 seats per group without contacting sales; promotional pricing can lapse after 90 days of group inactivity. **Re-check before the talk** — pricing/eligibility programs like this can change terms.
-- Claude Code, Claude Projects — general product documentation, not yet linked here. TODO: add direct doc links when building the ecosystem slide.
+- [Claude Code documentation](https://code.claude.com/docs/en/overview) — official docs (redirected from `docs.claude.com/en/docs/claude-code/overview`; Anthropic has since consolidated Claude Code's docs under `code.claude.com` — re-check this URL if it goes stale). Fetched 2026-09-04: "an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools," available via terminal, IDE extensions, desktop app, and web.
+- [Claude Projects](https://support.claude.com/en/articles/9517075-what-are-projects) — official Claude Help Center article, dated 2026-07-23, fetched 2026-09-04: "self-contained workspaces where you can upload documents and have focused conversations with Claude," with collaboration features on Team/Enterprise plans.
 
 ## OpenAI
 
-- ChatGPT, ChatGPT Projects, Codex — general product documentation, not yet linked here. TODO before the ecosystem slide is finalized.
+- [Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt) — official OpenAI Help Center article on ChatGPT Projects (sharing, collaboration limits, data privacy). Fetched 2026-09-04.
+- [Codex documentation](https://learn.chatgpt.com/docs) — official docs home. Fetched 2026-09-04 via a redirect chain (`developers.openai.com/codex` → `learn.chatgpt.com/docs`) — this product's docs URL has moved at least once already, so re-check before citing a deep link. Codex is OpenAI's coding agent: wraps frontier models with file access, shell execution, sandboxes, approval flows, and code review; available via ChatGPT web, CLI, desktop app, and IDE integrations, guided by repo-level `AGENTS.md` files.
 
 ## Google
 
-- Gemini, NotebookLM — general product documentation, not yet linked here. TODO before the ecosystem slide is finalized.
+- [An overview of the Gemini app](https://support.google.com/gemini/answer/17216260?hl=en) — official Gemini Apps Help Center. Fetched 2026-09-04: "Gemini Apps give you direct access to Google AI, helping you with writing, planning, learning and more."
+- [Learn about NotebookLM](https://support.google.com/notebooklm/answer/16164461) — official Google Help Center page. Fetched 2026-09-04. **Naming flag, not yet resolved:** this help page now consistently calls the product "Gemini Notebook," with "NotebookLM" surfacing only as the legacy URL (`notebooklm.google`) — looks like a mid-rename as of this access date. ND's own AI@ND page (confirmed by direct browser read 2026-09-02, below) still says "NotebookLM." Re-check both names close to the talk and decide which one the slide should use before then — this file is flagging the discrepancy, not resolving it.
 - [Notre Dame gives students access to Google AI tools (Gemini and NotebookLM) — The Observer, April 2025](https://www.ndsmcobserver.com/article/2025/04/notre-dame-gives-students-access-to-google-ai-tools-gemini-and-notebooklm) — student-newspaper reporting, not a primary university source; use for color, verify current status against an ND primary source before citing specifics.
 
 ## Notre Dame — AI access and policy
@@ -39,6 +42,10 @@ Confirmed by direct browser read on 2026-09-02 (superseding the earlier search-s
 - [Undergraduate Academic Code of Honor — Statement on Generative AI (May 2023)](https://honorcode.nd.edu/official-statement-regarding-generative-ai-may-2023/) — student academic-integrity policy; background context only, not directly about research use, but useful for framing "authority to define appropriate use rests with the faculty."
 
 **Bottom line for the talk (now confirmed, not just flagged):** under current ND policy, put non-public research data into Gemini, ChatGPT EDU, or NotebookLM, not into Claude — Claude is approved for Public data only until an Enterprise license lands. This is a genuinely useful, concrete, ND-specific slide (see [seminar_design.md](seminar_design.md) and [demo_ideas.md](demo_ideas.md)) and slightly complicates the "Why Claude?" framing in the abstract — worth a direct, honest acknowledgment on the ecosystem slide rather than glossing over it.
+
+## Tools referenced in this seminar
+
+- [Crossref REST API documentation](https://www.crossref.org/documentation/retrieve-metadata/rest-api/) — official Crossref docs, fetched 2026-09-04: the API "exposes the scholarly metadata that members and trusted sources deposit with Crossref" (bibliographic data, ORCID/ROR identifiers, etc.). This is the external service `resources/scripts/doi_checker/` queries. **What `doi_checker` itself does** (from its own `README.md`, not Crossref's docs — Crossref exposes the metadata, the matching logic is this repo's own code): two passes, kept apart because they fail differently. (1) For entries that already have a DOI: does it resolve, and does the title/first-author on Crossref match the `.bib` entry (`MATCH` ≥0.90 similarity, `CHECK` 0.55–0.90, `MISMATCH` below, `UNRESOLVED` if Crossref doesn't know the DOI). (2) For entries with no DOI: search Crossref by title/author and propose one only above a stricter 0.92 threshold. It only ever reports — it never edits the `.bib` file, and it explicitly does not check whether a citation is used to support the right claim (that's a human/audit-pass question, `manuscript_audit.md` §12) or validate non-Crossref identifiers (arXiv IDs, ISBNs). Adapted from a script Alex had already built in a recent project, not written from scratch.
 
 ## Not yet investigated
 
