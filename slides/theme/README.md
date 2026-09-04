@@ -1,37 +1,35 @@
 # Vendored ND Beamer theme
 
-Source: [github.com/dphow/ND_Beamer_Template](https://github.com/dphow/ND_Beamer_Template), released into the **public domain**. Retrieved 2026-09-02.
+Source: [github.com/dowlinglab/ND_Beamer_Template](https://github.com/dowlinglab/ND_Beamer_Template) (the Dowling Lab's own fork of [dphow/ND_Beamer_Template](https://github.com/dphow/ND_Beamer_Template), public domain). Retrieved 2026-09-03.
 
 Vendored rather than referenced so this repository builds after a clone, with no hunting for dependencies — which is the same argument the seminar makes about pinning anything else a result depends on.
 
 | File | Purpose |
 |---|---|
 | `beamerthemeNotreDame.sty` | The theme; declares the options below |
-| `beamercolorthemeNotreDame.sty` | Default palette (white text on **black**) |
-| `beamercolorthemeNotreDameWhite.sty` | White palette — the one this deck uses |
+| `logos/` | Official Notre Dame academic marks and monogram, vector PDFs, in the colors and shapes the theme's own options select between |
+
+This deck previously vendored the unforked upstream theme (`dphow/ND_Beamer_Template`), which used its own `[white, nologo]` boolean options, a `beamercolorthemeNotreDame*.sty` pair for palette selection, and Notre Dame logos not committed to that repo at all (`../figures/nd_logo.png`, a raster PNG, filled in locally). The fork replaces all of that: every visual element is its own `key=value` option (see below), real vector marks ship with the theme itself, and the previously-required manual gold correction (see "History" below) is now correct in the theme by default.
 
 ## Theme options
 
-`nav`, `white`, `nologo`, `compactlogo`, `sections`, `noslidenumbers`, `fullFooter`.
+See the fork's own [README](https://github.com/dowlinglab/ND_Beamer_Template/blob/master/README.md) for the full, current list. This deck uses:
 
-This deck uses `[white, nologo]`. See the comment block at the top of `../main.tex` for why.
+```latex
+\usetheme[cornerlogo=blue, textcolor=blue, titlelayout=leftrule]{NotreDame}
+```
+
+- `cornerlogo=blue` — the small mark, bottom-left, on every frame after the title slide (replaces this deck's own former hand-rolled `\ndcornerlogo`).
+- `textcolor=blue` — body text defaults to ND Blue rather than black (replaces `\setbeamercolor{normal text}{fg=NDBlue}`).
+- `titlelayout=leftrule` — the left-aligned title-page style this deck's title slide was built around by hand before the fork existed; promoted into the theme itself, so this deck's title slide is now `\titlepage`, not bespoke code (see `../main.tex`).
 
 ## Local modifications
 
-**None.** The `.sty` files are unmodified. Everything specific to this deck — including the gold correction below — lives in `../main.tex`, so the vendored files can be re-pulled from upstream without losing anything.
+**None.** The `.sty` file and `logos/` are unmodified from the fork. Everything specific to this deck lives in `../main.tex`, so the vendored files can be re-pulled from upstream without losing anything.
 
-## One correction applied in `main.tex`, not here
+## History: the gold correction
 
-The theme defines `NDGold` as RGB (174, 143, 64) = `#AE8F40`. That is **not** the University's Dome Gold. `main.tex` overrides it:
-
-| | Theme | Official |
-|---|---|---|
-| ND Blue | `#0C2340` | `#0C2340` ✓ |
-| Gold | `#AE8F40` | `#C99700` (PMS 117) |
-
-The blue matches exactly, which is good corroboration for the rest. Verified 2026-09-02 against Notre Dame branding sources; `onmessage.nd.edu` could not be read directly by any tool available at the time, so **confirm in a browser before the talk**.
-
-Contrast, measured (WCAG needs 4.5:1 for body text):
+The original vendored theme defined `NDGold` as RGB (174, 143, 64) = `#AE8F40` — not the University's Dome Gold — so this deck overrode it locally in `main.tex`. The fork corrects `NDGold` to `#C99700` (PMS 117) directly, so **that override no longer exists in `main.tex`** as of the 2026-09-03 migration. The measurements below still hold; they're just enforced by the theme now, not a per-deck patch.
 
 | Foreground | On white | On ND Blue |
 |---|---|---|

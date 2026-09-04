@@ -1,57 +1,174 @@
 \ProvidesPackage{beamerthemeNotreDame}
 
-% Adapted from the University of Oregon theme (http://ix.cs.uoregon.edu/~peter/uotheme/)
-% and also from some mangled pieces of the default theme.  That probably puts this under
-% GPLv2.
+% Adapted from the University of Oregon theme
+% (http://ix.cs.uoregon.edu/~peter/uotheme/) and pieces of the default
+% Beamer theme. Forked and modernized by the Dowling Lab, September
+% 2026 -- see README.md for the full option list and usage.
 
+\RequirePackage{etoolbox}
+\RequirePackage{xkeyval}
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
 \usepackage{tabularx}
+\RequirePackage{xcolor}
 
-%% The options for this template
+% NDBlue and NDGold are the two official Notre Dame colors every
+% option below maps onto (see \nd@setcolor). The rest support the
+% \Highlight snippet documented in the README appendix.
+\definecolor{NDBlue}{HTML}{0C2340}
+\definecolor{NDGold}{HTML}{C99700}
+\definecolor{IrishGreen}{HTML}{00843D}
+\definecolor{NDGold_sec}{RGB}{230,212,124}
+\definecolor{EmphColor}{RGB}{153,1,0}
+\definecolor{HighlightBackground}{RGB}{255,255,0}
+\definecolor{KeywordColor}{RGB}{0,0,95}
 
-% If this option [nav] is present, include the navigation buttons in
-% the lower right corner.  The default is no navigation buttons
+%% Options -- see README.md for the full table. Implemented with
+%% xkeyval's \define@key, not \DeclareOptionBeamer, since plain
+%% \DeclareOption cannot match "key=value" option strings.
+
 \newif\ifbeamer@nav
 \beamer@navfalse
-\DeclareOptionBeamer{nav}{\beamer@navtrue}
+\define@key{ND}{nav}[true]{\csname beamer@nav#1\endcsname}
 
-% Use a more standard black-on-white scheme.  The option [white] is
-% not enabled by default.
-\newif\ifbeamer@white
-\beamer@whitefalse
-\DeclareOptionBeamer{white}{\beamer@whitetrue}
-
-% If the option [nologo] is provided, the UW logo on the right side of
-% the slide title is suppressed.  The logo is on by default.
-\newif\ifbeamer@nologo
-\beamer@nologofalse
-\DeclareOptionBeamer{nologo}{\beamer@nologotrue}
-
-% The default logo has the crest above the university name, which uses
-% a lot of vertical room.  For a more 'compact' look, use the
-% [compactlogo] option.
-\newif\ifbeamer@compactlogo
-\beamer@compactlogofalse
-\DeclareOptionBeamer{compactlogo}{\beamer@compactlogotrue}
-
-% The option [sections] shows the current section name under the slide
-% title.  There are no sections shown by default.
-\newif\ifbeamer@sections
-\beamer@sectionsfalse
-\DeclareOptionBeamer{sections}{\beamer@sectionstrue}
-
-% The option [noslidenumbers] suppresses the display of slide numbers.
-% Slide numbers are shown by default
 \newif\ifbeamer@noslidenumbers
 \beamer@noslidenumbersfalse
-\DeclareOptionBeamer{noslidenumbers}{\beamer@noslidenumberstrue}
+\define@key{ND}{noslidenumbers}[true]{\csname beamer@noslidenumbers#1\endcsname}
 
 \newif\ifbeamer@fullFooter
 \beamer@fullFooterfalse
-\DeclareOptionBeamer{fullFooter}{\beamer@fullFootertrue}
+\define@key{ND}{fullFooter}[true]{\csname beamer@fullFooter#1\endcsname}
 
-\ProcessOptionsBeamer
+% background: white (default) or blue (NDBlue).
+\def\nd@background{white}
+\define@key{ND}{background}{\def\nd@background{#1}}
+
+% titlebar: blue, gold, or none. Default: contrasts with [background].
+\let\nd@titlebar\undefined
+\define@key{ND}{titlebar}{\def\nd@titlebar{#1}}
+
+% sectionbar: blue, gold, or none (default).
+\def\nd@sectionbar{none}
+\define@key{ND}{sectionbar}{\def\nd@sectionbar{#1}}
+
+% titlecolor: frametitle text color -- blue, gold, black, white.
+% Default: derived from [titlebar], or [background] if titlebar=none.
+\let\nd@titlecolor\undefined
+\define@key{ND}{titlecolor}{\def\nd@titlecolor{#1}}
+
+% textcolor: body text color -- black, blue, gold, white.
+% Default: derived from [background].
+\let\nd@textcolor\undefined
+\define@key{ND}{textcolor}{\def\nd@textcolor{#1}}
+
+% cornerlogo: small mark, bottom-left of every content frame -- blue,
+% gold, black, white, fullcolor, or none (default).
+\def\nd@cornerlogo{none}
+\define@key{ND}{cornerlogo}{\def\nd@cornerlogo{#1}}
+
+% monogram: small "ND" mark inside the frametitle bar -- blue, gold,
+% gold-metallic, white, or none. Default: contrasts with [titlebar];
+% forced to none when [titlebar]=none.
+\let\nd@monogram\undefined
+\define@key{ND}{monogram}{\def\nd@monogram{#1}}
+
+% titlepagelogo: the title-page mark -- blue, gold, black, white,
+% fullcolor, or none. Default: derived from [background]. Always the
+% primary (wide) academic mark regardless of [mark] -- per Notre
+% Dame's own guidelines, the secondary mark/monogram are for when
+% space doesn't allow the primary one, and a title page always has
+% the room.
+\let\nd@titlepagelogo\undefined
+\define@key{ND}{titlepagelogo}{\def\nd@titlepagelogo{#1}}
+
+% mark: which academic-mark shape [cornerlogo] uses -- primary
+% (default, wide lockup) or secondary (compact lockup, tight corners).
+\def\nd@mark{primary}
+\define@key{ND}{mark}{\def\nd@mark{#1}}
+
+% titlelayout: which title-page template to use.
+% classic (default): beamer's centered title/author/institute/date
+% block, plus the bottom-left logo (\ndtitlepagelogodraw below).
+% leftrule: left-aligned title/subtitle/author/institute over a gold
+% rule, with the logo and \insertdate/\ndvenue sharing a footer row.
+\def\nd@titlelayout{classic}
+\define@key{ND}{titlelayout}{\def\nd@titlelayout{#1}}
+
+% highlight: default color for \hl{...} -- gold (default), green,
+% blue, or none.
+\def\nd@highlightdefault{gold}
+\define@key{ND}{highlight}{\def\nd@highlightdefault{#1}}
+
+\ProcessOptionsX<ND>
+
+% Resolve defaults that depend on another option's value (background
+% first, since several others read it).
+\ifx\nd@titlebar\undefined
+  \ifdefstring{\nd@background}{blue}{\def\nd@titlebar{gold}}{\def\nd@titlebar{blue}}
+\fi
+\ifx\nd@textcolor\undefined
+  \ifdefstring{\nd@background}{blue}{\def\nd@textcolor{white}}{\def\nd@textcolor{blue}}
+\fi
+\ifx\nd@titlepagelogo\undefined
+  \ifdefstring{\nd@background}{blue}{\def\nd@titlepagelogo{gold}}{\def\nd@titlepagelogo{blue}}
+\fi
+\ifx\nd@titlecolor\undefined
+  \ifdefstring{\nd@titlelayout}{leftrule}{%
+    \ifdefstring{\nd@background}{blue}{\def\nd@titlecolor{white}}{\def\nd@titlecolor{blue}}%
+  }{%
+  \ifdefstring{\nd@titlebar}{blue}{\def\nd@titlecolor{white}}{%
+  \ifdefstring{\nd@titlebar}{gold}{\def\nd@titlecolor{black}}{%
+  \ifdefstring{\nd@background}{blue}{\def\nd@titlecolor{white}}{\def\nd@titlecolor{blue}}%
+  }}}
+\fi
+\ifx\nd@monogram\undefined
+  \ifdefstring{\nd@titlebar}{blue}{\def\nd@monogram{white}}{%
+  \ifdefstring{\nd@titlebar}{gold}{\def\nd@monogram{blue}}{\def\nd@monogram{none}}%
+  }
+\fi
+\ifdefstring{\nd@titlebar}{none}{\def\nd@monogram{none}}{}
 
 \mode<presentation>
+
+% Map each semantic color name (blue/gold/black/white) to its real
+% \colorlet.
+\newcommand{\nd@setcolor}[2]{% #1 = macro to define, #2 = semantic name
+  \ifdefstring{#2}{blue}{\colorlet{#1}{NDBlue}}{%
+  \ifdefstring{#2}{gold}{\colorlet{#1}{NDGold}}{%
+  \ifdefstring{#2}{black}{\colorlet{#1}{black}}{%
+  \ifdefstring{#2}{white}{\colorlet{#1}{white}}{%
+  \colorlet{#1}{black}% fallback, should not be reached for real values
+  }}}}%
+}
+\nd@setcolor{nd@titlebarcolor}{\nd@titlebar}
+\nd@setcolor{nd@sectionbarcolor}{\nd@sectionbar}
+\nd@setcolor{nd@titlecolorreal}{\nd@titlecolor}
+\nd@setcolor{nd@textcolorreal}{\nd@textcolor}
+\nd@setcolor{nd@backgroundcolor}{\nd@background}
+
+% \hl[color]{text}: bold, optionally colored, emphasis. No [color]
+% argument uses [highlight] (deck-wide default); \hl[none]{...} always
+% just bolds; \hl[gold|green|blue]{...} always uses that color.
+\newcommand{\hl}[2][]{%
+  \def\nd@hlarg{#1}%
+  \ifx\nd@hlarg\@empty
+    \edef\nd@hlcolor{\nd@highlightdefault}%
+  \else
+    \edef\nd@hlcolor{#1}%
+  \fi
+  \ifdefstring{\nd@hlcolor}{none}{\textbf{#2}}{%
+  \ifdefstring{\nd@hlcolor}{gold}{\textbf{\color{NDGold}#2}}{%
+  \ifdefstring{\nd@hlcolor}{green}{\textbf{\color{IrishGreen}#2}}{%
+  \ifdefstring{\nd@hlcolor}{blue}{\textbf{\color{NDBlue}#2}}{%
+  \textbf{#2}% fallback, should not be reached for real values
+  }}}}%
+}
+
+% \ndvenue{text}: stores a venue/location string, like \title/\date
+% do. Shown on the title page by [titlelayout]=leftrule; also defined
+% unconditionally so a deck can reuse it in its own header/footer.
+\newcommand{\nd@venue}{}
+\newcommand{\ndvenue}[1]{\renewcommand{\nd@venue}{#1}}
 
 \setbeamertemplate{frametitle}[default][center]
 % Removes the logo from the lower right so that we can place it less obtrusively
@@ -62,33 +179,50 @@
   \vskip2pt%
 }
 
-% Redefine the frameheader to include a logo
-\defbeamertemplate*{frametitle}{notredame theme}[1][left]
-{
-  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
-  \@tempdima=\textwidth%
-  \advance\@tempdima by\beamer@leftmargin%
-  \advance\@tempdima by\beamer@rightmargin%
-  \begin{beamercolorbox}[sep=0.3cm,#1,wd=\the\@tempdima]{frametitle}
-    \usebeamerfont{frametitle}%
-    \vbox{}\vskip-1ex%
-    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
-    \begin{tabularx}{.95\@tempdima}{lXr}
-      \ifbeamer@nologo
-        \insertframetitle & &
-      \else
-        \insertframetitle & & \insertlogo
-      \fi
-    \end{tabularx}\par%
+% Frametitle: two shapes depending on [titlebar]. none -> plain title
+% text on the canvas, no box, no logo slot. Otherwise -> the colored
+% beamercolorbox with the monogram in its own column.
+\ifdefstring{\nd@titlebar}{none}{%
+  \defbeamertemplate*{frametitle}{notredame theme}[1][left]
+  {
+    \vskip1.4ex%
+    {\usebeamerfont{frametitle}\color{nd@titlecolorreal}\insertframetitle\strut\par}%
     {%
       \ifx\insertframesubtitle\@empty%
       \else%
-      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+      {\usebeamerfont{framesubtitle}\color{nd@titlecolorreal}\insertframesubtitle\strut\par}%
       \fi
     }%
-    \vskip-1ex%
-    \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
-  \end{beamercolorbox}%
+    \vskip0.6ex%
+  }
+}{%
+  \defbeamertemplate*{frametitle}{notredame theme}[1][left]
+  {
+    \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+    \@tempdima=\textwidth%
+    \advance\@tempdima by\beamer@leftmargin%
+    \advance\@tempdima by\beamer@rightmargin%
+    \begin{beamercolorbox}[sep=0.3cm,#1,wd=\the\@tempdima]{frametitle}
+      \usebeamerfont{frametitle}%
+      \vbox{}\vskip-1ex%
+      \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+      \begin{tabularx}{.95\@tempdima}{lXr}
+        \ifdefstring{\nd@monogram}{none}{%
+          \insertframetitle & &
+        }{%
+          \insertframetitle & & \insertlogo
+        }
+      \end{tabularx}\par%
+      {%
+        \ifx\insertframesubtitle\@empty%
+        \else%
+        {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+        \fi
+      }%
+      \vskip-1ex%
+      \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
+    \end{beamercolorbox}%
+  }
 }
 
 
@@ -99,13 +233,6 @@
 % settings as in the rounded theme.
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \setbeamertemplate{blocks}[rounded]
-
-% \setbeamercolor*{author in head/foot}{parent=palette tertiary}
-\setbeamercolor*{title in head/foot}{parent=palette secondary}
-\setbeamercolor*{page in head/foot}{parent=palette primary}
-
-% \setbeamercolor*{section in head/foot}{parent=palette tertiary}
-% \setbeamercolor*{subsection in head/foot}{parent=palette primary}
 
 \defbeamertemplate*{footline}{footTitleAuthorDate}
 {
@@ -119,7 +246,7 @@
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}%
     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
   \end{beamercolorbox}}%
   \vskip0pt%
 }
@@ -134,35 +261,180 @@
 
 \setbeamersize{text margin left=1em,text margin right=1em}
 
-%%%%%% IF SWITCHES %%%%%%
-\ifbeamer@sections
-	\useoutertheme{miniframes}
-\fi
+%%%%%% Apply the resolved colors %%%%%%
 
-\ifbeamer@white
-  \usecolortheme{NotreDameWhite}
-\else
-  \usecolortheme{NotreDame}
-\fi
+% Canvas and body text -- the two colors nearly everything else reads
+% against.
+\setbeamercolor{background canvas}{bg=nd@backgroundcolor}
+\setbeamercolor*{normal text}{fg=nd@textcolorreal}
+\setbeamercolor*{alerted text}{fg=red}
 
-% This logo appears below the date on the title page.
-\ifbeamer@compactlogo
-  \ifbeamer@white
-  	\logo{\includegraphics[height=0.6cm]{ND_Logos/monogram/ND_monogram_gold_metallic}}
-    \titlegraphic{\includegraphics[height=1.5cm]{ND_Logos/college_of_science/science_mark_black}}
-  \else
-  	\logo{\includegraphics[height=0.6cm]{ND_Logos/monogram/ND_monogram_blue}}
-    \titlegraphic{\includegraphics[height=1.5cm]{ND_Logos/college_of_science/science_mark_white}}
-  \fi
-\else
-  \ifbeamer@white
-  	\logo{\includegraphics[height=0.6cm]{ND_Logos/monogram/ND_monogram_gold_metallic}}
-    \titlegraphic{\includegraphics[height=1.5cm]{ND_Logos/college_of_science/science_mark_black}}
-  \else
-  	\logo{\includegraphics[height=0.6cm]{ND_Logos/monogram/ND_monogram_blue}}
-    \titlegraphic{\includegraphics[height=1.5cm]{ND_Logos/college_of_science/science_mark_white}}
-  \fi
-\fi
+% Bullet/list colors: NDBlue and NDGold, whichever isn't the
+% background, so they stay visible regardless of [background].
+\ifdefstring{\nd@background}{blue}{%
+  \setbeamercolor{itemize item}{fg=NDGold}
+  \setbeamercolor{itemize subitem}{fg=NDGold!60!white}
+  \setbeamercolor{enumerate item}{fg=NDGold}
+  \setbeamercolor{enumerate subitem}{fg=NDGold!60!white}
+  \setbeamercolor{description item}{fg=NDGold}
+}{%
+  \setbeamercolor{itemize item}{fg=NDBlue}
+  \setbeamercolor{itemize subitem}{fg=NDGold}
+  \setbeamercolor{enumerate item}{fg=NDBlue}
+  \setbeamercolor{enumerate subitem}{fg=NDGold}
+  \setbeamercolor{description item}{fg=NDBlue}
+}
+
+% Frametitle bar background/text, and titlelike (the title page's own
+% title color) -- both follow [titlebar]/[titlecolor] directly, since
+% neither comes from a preset color theme.
+\ifdefstring{\nd@titlebar}{none}{%
+  \setbeamercolor{titlelike}{bg=,fg=nd@titlecolorreal}
+}{%
+  \setbeamercolor{frametitle}{bg=nd@titlebarcolor,fg=nd@titlecolorreal}
+  \setbeamercolor*{title in head/foot}{bg=nd@titlebarcolor,fg=nd@titlecolorreal}
+  \setbeamercolor{titlelike}{bg=nd@titlebarcolor,fg=nd@titlecolorreal}
+}
+\setbeamercolor*{page in head/foot}{fg=nd@textcolorreal}
+
+% [sectionbar]: show the current section name in its own colored bar
+% above the title. A direct headline template, not miniframes (which
+% doesn't integrate with this theme's own frametitle template).
+\ifdefstring{\nd@sectionbar}{none}{}{%
+  \setbeamercolor{section in head/foot}{bg=nd@sectionbarcolor,fg=nd@titlecolorreal}
+  \setbeamerfont{section in head/foot}{series=\bfseries}
+  \setbeamertemplate{headline}{%
+    \ifx\insertsectionhead\@empty\else
+      \begin{beamercolorbox}[wd=\paperwidth,ht=3.2ex,dp=1.2ex,center]{section in head/foot}
+        \usebeamerfont{section in head/foot}\insertsectionhead
+      \end{beamercolorbox}%
+    \fi
+  }
+}
+
+% --- Logo and title-page graphic --------------------------------------
+% [titlelayout]=classic: \ndtitlepagelogodraw draws the primary mark
+% (color from [titlepagelogo]), bottom-left, via a TikZ overlay
+% anchored to the physical page corner. A deck sets it as the title
+% frame's OWN background, from OUTSIDE \begin{frame} (see README /
+% main.tex): Beamer locks in a frame's background at \begin{frame}
+% time, before the frame's own content runs, so setting it from inside
+% a \titlepage hook doesn't take effect for that same frame.
+% \ndtitlepagelogodraw is always defined (empty when [titlepagelogo]=
+% none, or when [titlelayout]=leftrule, which draws its own logo
+% directly as title-page content instead) so a deck can reference it
+% unconditionally.
+\newcommand{\ndtitlepagelogomargin}{0.15mm}
+\newcommand{\ndtitlepagelogoheight}{2.6cm}
+\newcommand{\ndtitlepagelogodraw}{}
+\ifdefstring{\nd@titlelayout}{leftrule}{}{%
+  \ifdefstring{\nd@titlepagelogo}{none}{}{%
+    \renewcommand{\ndtitlepagelogodraw}{%
+      \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west, xshift=\ndtitlepagelogomargin, yshift=\ndtitlepagelogomargin]
+          at (current page.south west)
+          {\includegraphics[height=\ndtitlepagelogoheight]{logos/academic-mark/primary/\nd@titlepagelogo}};
+      \end{tikzpicture}%
+    }
+  }
+}
+
+% --- [titlelayout]=leftrule: a second title-page template -------------
+% Left-aligned title/subtitle/author/institute block, a gold rule,
+% then the logo and \insertdate/\ndvenue sharing one footer row (logo
+% left, date right, both vertically centered against each other).
+% \raggedright overrides beamer's own default title-page centering,
+% since this template replaces that default outright.
+\ifdefstring{\nd@titlelayout}{leftrule}{%
+  \newcommand{\ndleftrulelogoheight}{1.4cm}
+  \setbeamertemplate{title page}{%
+    \raggedright
+    \vskip 0.3cm
+    {\Huge\bfseries\color{nd@titlecolorreal}\inserttitle\par}%
+    \vskip 0.1cm
+    {\LARGE\bfseries\color{NDGold}\insertsubtitle\par}%
+    \vskip 1.1cm
+    {\large\bfseries\color{nd@textcolorreal}\insertauthor\par}%
+    \vskip 0.2cm
+    {\normalsize\color{nd@textcolorreal}\insertinstitute\par}%
+    \vskip 1.1cm
+    \color{NDGold}\rule{\linewidth}{1.2pt}\par
+    \vskip 0.6cm
+    \noindent\begin{minipage}[c]{0.42\linewidth}
+      \ifdefstring{\nd@titlepagelogo}{none}{}{%
+        \includegraphics[height=\ndleftrulelogoheight]{logos/academic-mark/primary/\nd@titlepagelogo}%
+      }%
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.55\linewidth}
+      \raggedleft\normalsize\color{nd@textcolorreal}\insertdate
+      \ifdefempty{\nd@venue}{}{\\\nd@venue}%
+    \end{minipage}%
+  }
+}{}
+
+% The small monogram inside the frametitle bar (only relevant when
+% [titlebar] != none; forced to none otherwise, resolved above).
+\ifdefstring{\nd@monogram}{none}{%
+  \newif\ifbeamer@nologo \beamer@nologotrue
+}{%
+  \newif\ifbeamer@nologo \beamer@nologofalse
+  \logo{\includegraphics[height=0.6cm]{logos/monogram/\nd@monogram}}
+}
+
+% --- Corner logo and its companion note box ---------------------------
+% A small academic mark in the bottom-left corner of every content
+% frame, independent of the frametitle bar's own monogram above.
+% [cornerlogo]=none (the default) omits it entirely.
+\newcommand{\ndcornerlogomargin}{0.15mm}
+\newcommand{\ndcornerlogoheight}{0.975cm}
+
+\ifdefstring{\nd@cornerlogo}{none}{}{%
+  \newsavebox{\nd@cornerlogobox}
+  \newlength{\ndcornerlogowidth}
+  % Deferred to \AtBeginDocument, not measured immediately here: a
+  % \savebox measures and fixes its content right away, so measuring at
+  % \usetheme's own processing time would freeze in that DEFAULT height
+  % before a deck's own \renewcommand{\ndcornerlogoheight}{...} (which
+  % runs later, per the override instructions above) ever takes effect.
+  \AtBeginDocument{%
+    \savebox{\nd@cornerlogobox}{\includegraphics[height=\ndcornerlogoheight]{logos/academic-mark/\nd@mark/\nd@cornerlogo}}%
+    \settowidth{\ndcornerlogowidth}{\usebox{\nd@cornerlogobox}}%
+  }
+
+  % \ndcornerlogo -- draws the corner logo. Set automatically as the
+  % frame background whenever [cornerlogo] is not none; can also be
+  % called directly (e.g. \setbeamertemplate{background}{\ndcornerlogo})
+  % for more control.
+  \newcommand{\ndcornerlogo}{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[anchor=south west, xshift=\ndcornerlogomargin, yshift=\ndcornerlogomargin]
+        at (current page.south west) {\usebox{\nd@cornerlogobox}};
+    \end{tikzpicture}%
+  }
+  \setbeamertemplate{background}{\ndcornerlogo}
+
+  % \ndlogonote[align]{text} -- a note box in the white space to the
+  % right of the corner logo: horizontally centered between the logo's
+  % right edge and the slide's right edge, vertically centered on the
+  % logo's own vertical middle. [align] defaults to center; pass
+  % [left] for a reference list. Only defined when [cornerlogo] is not
+  % none, since it positions itself relative to the logo's measured
+  % size.
+  \newlength{\nd@notegap}
+  \setlength{\nd@notegap}{4mm}
+  \newlength{\nd@noteRmargin}
+  \setlength{\nd@noteRmargin}{3mm}
+  \newcommand{\ndlogonote}[2][center]{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \coordinate (nd@logoR) at ($(current page.south west) + (\ndcornerlogomargin+\ndcornerlogowidth+\nd@notegap, \ndcornerlogomargin+0.5*\ndcornerlogoheight)$);
+      \coordinate (nd@pageR) at ($(current page.south east) + (-\nd@noteRmargin, \ndcornerlogomargin+0.5*\ndcornerlogoheight)$);
+      \node[anchor=center, align=#1,
+            text width=\dimexpr\paperwidth-\ndcornerlogomargin-\ndcornerlogowidth-\nd@notegap-\nd@noteRmargin\relax]
+        at ($(nd@logoR)!0.5!(nd@pageR)$) {#2};
+    \end{tikzpicture}%
+  }
+}
 
 % Disable the navigation bar unless it was explicitly requested
 \ifbeamer@nav
@@ -175,7 +447,7 @@
 \else
 	\ifbeamer@noslidenumbers
 	\else
-		\setbeamertemplate{footline}[footerSimple]	
+		\setbeamertemplate{footline}[footerSimple]
 	\fi
 \fi
 

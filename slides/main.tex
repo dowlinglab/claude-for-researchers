@@ -7,13 +7,13 @@
 % =====================================================================
 \documentclass[aspectratio=169, 11pt]{beamer}
 
-% white  -- white background. The default theme is white-on-black, which is
-%           wrong for this talk: nearly every artifact shown (file trees,
-%           diffs, tables, a matplotlib figure, two photo collages) is on a
-%           white ground and would punch a glare hole in a dark deck.
-% nologo -- suppresses the theme's own top-right frametitle logo slot. A
-%           small corner logo still appears on every frame after the title
-%           slide (see \ndcornerlogo below), just not via this theme option.
+% background defaults to white (not set below): nearly every artifact shown
+% (file trees, diffs, tables, a matplotlib figure, two photo collages) is on
+% a white ground and would punch a glare hole in a dark deck.
+% cornerlogo=blue -- the small mark, bottom-left, on every frame after the
+% title slide. textcolor=blue -- body text defaults to ND Blue, not black.
+% titlelayout=leftrule -- this deck's own title-slide design (see the title
+% frame below), now a theme option rather than bespoke per-deck code.
 % No `nav` and no `sections`: nine sections in forty minutes do not justify
 % spending vertical space on every slide. Orientation comes from the act-strip
 % divider instead (\actstrip below).
@@ -21,12 +21,14 @@
 % of tool: .latexmkrc sets TEXINPUTS for `make`/`latexmk` builds, and the
 % \input@path line below adds the same directory for any other engine that
 % skips .latexmkrc entirely (e.g. a GUI editor's own "plain pdfLaTeX" mode,
-% which never reads it -- caught 2026-09-03 when Alex hit "File
-% `beamerthemeNotreDame.sty' not found" compiling by hand in Texifier).
+% which never reads it). \graphicspath adds theme/ as a second place
+% \includegraphics looks (needed for the theme's own logos/ references;
+% plain figures/... calls elsewhere in this deck still resolve as before).
 \makeatletter
 \def\input@path{{./theme/}}
 \makeatother
-\usetheme[white, nologo]{NotreDame}
+\graphicspath{{./theme/}}
+\usetheme[cornerlogo=blue, textcolor=blue, titlelayout=leftrule]{NotreDame}
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -40,10 +42,10 @@
 % ---------------------------------------------------------------------
 % Colour
 %
-% NDBlue and NDGold are defined by the theme, but the theme's gold
-% (RGB 174,143,64) is NOT the University's Dome Gold. Override it.
-% Verified 2026-09-02 against the branding pages; re-confirm before the talk,
-% since onmessage.nd.edu could not be read directly.
+% NDBlue, NDGold, and IrishGreen are defined by the theme itself, at the
+% correct official values -- see theme/README.md's History section for why
+% that's worth calling out (this deck used to correct the theme's gold
+% locally; the fork now ships the correct value, so that override is gone).
 %
 %   ND Blue     #0C2340   PMS 289   contrast on white 15.79:1
 %   Dome Gold   #C99700   PMS 117   contrast on white  2.65:1  <- ACCENT ONLY
@@ -53,9 +55,6 @@
 % Use it for rules, fills, and the active lifecycle stage. On ND Blue it is
 % fine (5.95:1).
 % ---------------------------------------------------------------------
-\definecolor{NDGold}{HTML}{C99700}      % official Dome Gold, overriding theme
-\definecolor{NDBlue}{HTML}{0C2340}
-\definecolor{IrishGreen}{HTML}{00843D}
 
 % Semantic colours, taken from the Okabe-Ito palette that
 % resources/scripts/figure_style/ recommends -- so the deck uses the
@@ -71,23 +70,14 @@
 \definecolor{Muted}{HTML}{7A7A7A}
 \definecolor{CodeBg}{HTML}{F4F4F2}
 
-% Do NOT override `frametitle`: the white theme already renders it white on an
-% ND Blue bar (15.79:1). Setting fg=NDBlue here put navy text on a navy bar.
-\setbeamercolor{structure}{fg=NDBlue}
-\setbeamercolor{itemize item}{fg=NDBlue}
-\setbeamercolor{itemize subitem}{fg=NDBlue}
-% PROTOTYPE 2026-09-03, Alex's question: "What if we made everything dark
-% blue?" -- he found the default-black-vs-NDBlue split (e.g. plain body
-% prose next to a \slidepoint or \keyterm) distracting, reading as an
-% unexplained distinction rather than a deliberate one. This single line
-% makes ALL default-colored body text NDBlue instead of black, deck-wide,
-% rather than hunting down every explicit \color{NDBlue} call one by one.
-% Contrast is not a concern: theme/README.md already measured NDBlue on
-% white at 15.79:1 (WCAG needs 4.5:1) -- effectively as dark as black.
-% Section-file overrides that set an explicit color (OkVermillion, Muted,
-% NDGold, etc. via \good/\bad/\unknown/box fills) are unaffected; this
-% only changes what "no explicit color" defaults to.
-\setbeamercolor{normal text}{fg=NDBlue}
+% Frametitle color/background, body text color (NDBlue rather than black --
+% Alex: "What if we made everything dark blue?", finding the default
+% black-vs-NDBlue split distracting next to a \slidepoint or \keyterm), and
+% itemize/enumerate colors are all handled by the theme's own textcolor
+% option (set above) and its background-aware defaults -- no manual
+% \setbeamercolor overrides needed here. Section-file overrides that set an
+% explicit color (OkVermillion, Muted, NDGold, etc. via \good/\bad/\unknown/
+% box fills) are unaffected either way.
 \setbeamertemplate{navigation symbols}{}
 
 % ---------------------------------------------------------------------
@@ -206,79 +196,39 @@
 \title{Claude for Research}
 \subtitle{Beyond the Chatbot}
 \author{Prof. Alexander (Alex) Dowling}
-\institute{Chemical and Biomolecular Engineering \\ University of Notre Dame}
+\institute{Chemical and Biomolecular Engineering \\ adowling@nd.edu}
 \date{17 September 2026}
+\ndvenue{Carey Auditorium, Hesburgh Library}
+
+% Small ND logo, bottom-left, on every frame after the title slide --
+% now the theme's own [cornerlogo] option (set above) rather than this
+% deck's former hand-rolled \ndcornerlogo. Resized here to match the
+% exact size/margin this deck's own logo was tuned to through several
+% rounds of direct feedback (the theme's own default is noticeably
+% smaller): 0.2475*paperwidth wide at the mark's real 219:58 aspect
+% ratio is ~0.839cm tall; margin was 0.5mm. This MUST be in the
+% preamble, before \begin{document} -- the theme measures the logo via
+% \AtBeginDocument, which fires as soon as \begin{document} is reached,
+% before any of the document body (including this override, if it were
+% placed after \begin{document} instead) runs.
+\renewcommand{\ndcornerlogoheight}{0.839cm}
+\renewcommand{\ndcornerlogomargin}{0.5mm}
 
 \begin{document}
 
 % ---- Title ----------------------------------------------------------
-% The academic wordmark is a wide lockup (~2.4:1), so it sits on its own line
-% under the rule rather than squeezed into a side column.
+% \titlepage, using the theme's own titlelayout=leftrule template (set
+% above) -- this deck's own former hand-built title frame was literally
+% the pattern that design was built from. \setbeamertemplate{background}
+% must be set here, outside \begin{frame}, not inside it: see
+% theme/README.md's History note / the fork's own README for why
+% (Beamer locks in a frame's background at \begin{frame} time).
+{
+\setbeamertemplate{background}{\ndtitlepagelogodraw}
 \begin{frame}[plain]
-  \vfill
-  {\fontsize{30}{34}\selectfont\color{NDBlue}\textbf{Claude for Research}}\\[0.35em]
-  {\fontsize{20}{24}\selectfont\color{NDGold!75!black}\textbf{Beyond the Chatbot}}\\[2.2em]
-  {\large\textbf{Prof. Alexander (Alex) Dowling}}\\[0.3em]
-  {\small Chemical and Biomolecular Engineering}\\
-  {\small adowling@nd.edu}
-  \vfill
-  {\color{NDGold}\rule{\textwidth}{1.5pt}}\\[0.7em]
-  \begin{columns}[c]
-    \begin{column}{0.46\textwidth}
-      \includegraphics[width=0.86\textwidth]{figures/nd_logo.png}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \raggedleft
-      {\small 17 September 2026\\ Carey Auditorium, Hesburgh Library}
-    \end{column}
-  \end{columns}
-  \vspace{0.3em}
+  \titlepage
 \end{frame}
-
-% ---------------------------------------------------------------------
-% Small ND logo, bottom-left, on every frame from here on -- reproduces
-% Alex's own real-talk slide master (see slides/style_guide.md: bottom-left,
-% ~1% margin from each edge). Sized at ~24.75% of slide width as of
-% 2026-09-03 -- a second enlargement, 150% of the 16.5%-of-width size the
-% 2026-09-02 round landed on (itself 1.5x the ~10% the original audit
-% measured), at Alex's explicit request, along with pulling the margin
-% tighter into the corner (xshift/yshift below, was 2mm/4mm). This is now
-% roughly 2.5x the audit-matched size with a smaller margin than the audit
-% itself found -- both moves raise collision risk with bottom-left content
-% on any given frame (see the margin note below), so a full-deck visual
-% QA re-check after this change is not optional. A background template,
-% not \logo{}/frametitle's own logo slot,
-% because those place it top-right and are suppressed on [plain] frames;
-% a background template survives [plain] (only head/foot/sidebar are
-% suppressed there), so the stage dividers below get it too. The title
-% slide above is exempt -- it already carries a full-size logo of its own,
-% and this line runs only for frames that follow it.
-%
-% Use \setbeamertemplate{background}{...}, NOT \usebackgroundtemplate: that
-% compatibility macro sets the *background canvas* template, which the
-% outer theme re-registers with its own (empty) default -- silently
-% discarding this override with no error. "background" is the template
-% actually meant for this (empty by default, drawn on top of the canvas).
-% Also needs `remember picture` and a second compile pass (latexmk does
-% this automatically) for `current page` to resolve -- on a single pass
-% the node's coordinates collapse to (0,0) and nothing renders. Verified
-% both failure modes in isolation before landing this.
-% ---------------------------------------------------------------------
-% xshift/yshift tightened twice 2026-09-03 (was 2mm/4mm, then 1mm/1.5mm,
-% now flush against the corner) at Alex's explicit request to pull the
-% logo as far into the corner as reasonably possible -- even though that
-% means less clearance for a bigger logo, the opposite of the 2026-09-02
-% reasoning that widened yshift to 4mm in the first place. Left at
-% 0.5mm/0.5mm rather than 0: some margin avoids a projector/printer edge
-% clipping the logo outright. Re-ran full-deck visual QA after this
-% change (all 43 slides, not a sample) specifically for logo collisions;
-% see storyboard.md/style_guide.md for what was found and fixed.
-\newcommand{\ndcornerlogo}{%
-  \begin{tikzpicture}[remember picture, overlay]
-    \node[anchor=south west, xshift=0.5mm, yshift=0.5mm] at (current page.south west)
-      {\includegraphics[width=0.2475\paperwidth]{figures/nd_logo.png}};
-  \end{tikzpicture}}
-\setbeamertemplate{background}{\ndcornerlogo}
+}
 
 \input{sections/00_open}
 \input{sections/00b_roadmap}
