@@ -1,38 +1,14 @@
 % ========================= ACT III: CHALLENGE =========================
-% storyboard.md Act III, revised 2026-09-03 around Task 5 and Task 6. Job:
-% AI tells you that you're wrong, and you have to decide whether to
-% believe it. Task 5 is manuscript audits (Type 2, generic per the naming
-% convention -- unpublished work). Task 6, the capstone, names
-% "Optimization for Decision Science" (Alex's own, already-public course)
-% and watches one project across Understand -> Build -> Challenge.
-%
-% REVISED 2026-09-03, Alex reading the outline directly: "Does Task 5 need
-% that many slides? We need a slide to set up Task 5." Two changes, net
-% slide count unchanged:
-%   1. A new setup slide (below) states the task before any technique
-%      does -- every other task (1-4, in Act I/II) opens with an explicit
-%      "Task N --" framing; Task 5 didn't, it jumped straight into a
-%      method point.
-%   2. "Trace every number back to the file" and "'Cannot verify' is a
-%      result you want to get" merge into one slide -- "cannot verify" is
-%      already one of the claim-tracing table's three row statuses
-%      (alongside verified/mismatch), so a whole separate slide for one
-%      status was more than it needed.
-% All five Task 5 slides now carry the "Task 5 --" prefix, matching the
-% pattern already established in Act I's Task 1-3 and Act II's Task 4.
-%
-% Uses \good/\bad/\unknown for the first time in the deck (main.tex) --
-% the claim-tracing table is exactly the three-way verified/mismatch/
-% cannot-verify status those macros exist for.
+% storyboard.md Act III. Job: AI tells you that you're wrong, and you have
+% to decide whether to believe it. Task 5 is manuscript audits (Type 2,
+% generic per the naming convention -- unpublished work); Task 6 is a
+% generic inherited-project-to-manuscript synthesis; Task 7, the capstone,
+% names "Optimization for Decision Science" (Alex's own, already-public
+% course). All Task 5 slides carry the "Task 5 --" prefix, matching the
+% pattern established in Act I's Task 1-3 and Act II's Task 4.
 
 \stagedivider{4}{Act III: Challenge}{Do you believe it?}
 
-% Combined 2026-09-03 at Alex's request: the old setup slide (just a
-% question list) and the old 3-column "merging reads as an attack" slide
-% merge into one -- the 3-column framing named only arithmetic/method/
-% transcription, narrower than Alex's real 5-question checklist below
-% (which also covers reproducibility and literature-claim fidelity), so
-% the closing point is generalized rather than re-drawn as a 3-box panel.
 \begin{frame}{Task 5 --- audit a manuscript before it's submitted}
   \vfill
   \begin{center}
@@ -51,12 +27,9 @@
   \vfill
 \end{frame}
 
-% NEW 2026-09-03 at Alex's request (the other half of the original TODO:
-% "walk through using Claude to answer the questions as part of an
-% audit"). Deliberately mechanics, not a transcript -- Alex's own call,
-% 2026-09-03: no invented "Claude said..." dialogue, since the deck's
-% standard is real/git-verified material and a fabricated exchange would
-% be the one exception to that.
+% Deliberately mechanics, not a transcript -- no invented "Claude said..."
+% dialogue, since the deck's standard is real/git-verified material and a
+% fabricated exchange would be the one exception to that.
 \begin{frame}{Task 5 --- walk it through, one question at a time}
   \ndlogonote{\scriptsize\texttt{resources/prompts/manuscript\_audit.md}}
   \vfill
@@ -107,15 +80,11 @@
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% NEW 2026-09-04, from the same overnight audit wave: two independent real
-% manuscript audits (different repos, different domains -- a technical
-% force-field paper and a sustainability-policy paper) each independently
-% turned up a citation-tracing failure of exactly this shape, generalized
-% here with no repo/student names per the standing convention. A DOI
-% checker's "propose, never write" habit (already resources/scripts/
-% doi_checker/'s own design principle) is what caught the false positive;
-% the citation-two-numbers-away case was a self-correction, found and
-% named the next pass. Same claim-tracing operation as the previous
+% Two independent real manuscript audits (different repos, different
+% domains -- a technical force-field paper and a sustainability-policy
+% paper) each independently turned up a citation-tracing failure of
+% exactly this shape, generalized here with no repo/student names per the
+% standing convention. Same claim-tracing operation as the previous
 % slide's table, applied to a citation instead of a number.
 \begin{frame}{Task 5 --- the same table works on a citation}
   \ndlogonote{\scriptsize\texttt{resources/scripts/doi\_checker/}}
@@ -177,55 +146,38 @@
 \end{frame}
 
 % ======================================================================
-% Task 6 (NEW 2026-09-04, REBUILT 2026-09-04 -- "inherit a project -> an
-% auditable draft manuscript." Home for three practice files
-% (technical_writing.md, writing_style_guide.md, scientific_figures_tables.md
-% -- the last also anchored by Task 7) that had no live task in the talk.
-% Generic (Type 1 naming convention).
-%
-% REBUILT at Alex's direction: the original build continued the Task 2
-% membrane-transport project (data3_regression), but that project is still
-% "figuring out the science" -- Task 2 territory, not Task 6's. This
-% project has a real drafted manuscript, so it anchors Task 6 instead, with
-% explicit callbacks to Task 2 (context/reproduction) and Task 3
-% (literature review), per Alex's own framing: "starting the Task 2 [work]
-% to understand the context/reproduce the existing results and then using
-% Task 3 ideas to inform the literature review."
+% Task 6 -- "inherit a project -> an auditable draft manuscript." Home for
+% three practice files (technical_writing.md, writing_style_guide.md,
+% scientific_figures_tables.md -- the last also anchored by Task 7) that
+% had no live task elsewhere in the talk. Generic (Type 1 naming
+% convention), with explicit callbacks to Task 2 (context/reproduction)
+% and Task 3 (literature review). Full rationale: storyboard.md revision
+% #8.
 %
 % Grounded in a real, authorized audit of
 % `/Users/adowling/GitHub/DowlingLab/CDSE_hybrid_modeling_project` (202
 % commits). ANONYMIZATION CAUTION (stronger than usual here): this repo's
 % own git author, a data-directory name, a Python module name, and several
 % docs name real individuals -- never screenshot, never speak the repo
-% name or any path from it aloud, generic/paraphrased only, same as below.
+% name or any path from it aloud, generic/paraphrased only.
 %
-%  - Slide 1 (Task 2 callback): a one-day inheritance (last student commit
-%    2026-05-10, first Alex commit 2026-05-11, `b2db55d`) of a notebook-
-%    and-data dump with no tests or package structure; the following three
-%    weeks reproduced its own ~15 numbered experiments one at a time
-%    (commits 2026-05-11--05-29) before anything was corrected. The actual
-%    bug-found-by-regression-harness story from this repo (a real physics
-%    bug in the *inherited* logic, found and fixed via A/B against a
-%    third-party reference, reversing the paper's best-model conclusion --
-%    commits `66e7574`..`4146244`, 2026-06-25/26) is deliberately NOT
-%    retold here: it's the same shape as Task 4's bits_for_gaps centerpiece
-%    and would read as repetitive back to back. Reserved for
-%    scientific_computing_workflow.md \S4 instead (no worked example there
-%    previously).
-%  - Slide 2 (Task 3 callback): a full-library citation audit, 76 cited
-%    papers checked directly against their own PDFs (not memory), found
-%    six wrong -- including one citation with the source paper's finding
-%    stated backwards (`cc38453`, 2026-07-06); DOI suffixes inferred
-%    rather than read were flagged `% VERIFY` rather than guessed
-%    (`693df12`). Secondary point: a later style pass restyled the
-%    manuscript to the group's own established voice from an earlier
-%    paper, once results were locked (`4bae3a7`, generalized -- no paper
+%  - Slide 1: a one-day inheritance (`b2db55d`) of a notebook-and-data
+%    dump with no tests or package structure; the following three weeks
+%    reproduced its own ~15 numbered experiments one at a time before
+%    anything was corrected. This repo's own regression-harness bug story
+%    (`66e7574`..`4146244`) is deliberately not retold here -- same shape
+%    as Task 4's bits_for_gaps centerpiece. Candidate for a future
+%    scientific_computing_workflow.md \S4 worked example instead.
+%  - Slide 2: a full-library citation audit, 76 cited papers checked
+%    directly against their own PDFs, six wrong -- including one with the
+%    source paper's finding stated backwards (`cc38453`); DOI suffixes
+%    inferred rather than read were flagged `% VERIFY`, not guessed
+%    (`693df12`). A later style pass restyled the manuscript to the
+%    group's own established voice (`4bae3a7`, generalized -- no paper
 %    named).
-%  - Slide 3: the real "audit before anyone else's" moment -- a full
-%    manuscript-vs-code self-audit, 25 discrepancies found, 22 fixed on
-%    the spot, 3 explicitly left flagged for the author to decide
-%    (`0b2e280`/`d5de7bd`, 2026-08-27, `docs/codex_audit_report.md`).
-%    Same shape as Task 5's own audits, one task later, on your own draft.
+%  - Slide 3: a full manuscript-vs-code self-audit, 25 discrepancies
+%    found, 22 fixed on the spot, 3 left explicitly flagged for the
+%    author to decide (`0b2e280`/`d5de7bd`, `docs/codex_audit_report.md`).
 \begin{frame}{Task 6 --- inherited a notebook, understood before it changed (Task 2)}
   \ndlogonote{\scriptsize\texttt{resources/practices/technical\_writing.md}}
   \vfill
@@ -287,16 +239,11 @@
 \end{frame}
 
 % ======================================================================
-% Task 7 (renumbered from Task 6, 2026-09-04) -- "Optimization for Decision
-% Science," rebuilt from scratch. Alex's own call, reviewing the resources
-% audit: replace the old two generic slides (a converted/challenged summary
-% and a "verifier needed verifying too" beat) with real material from a
-% freshly authorized audit of the course's public/private repo pair --
-% local clones at /Users/adowling/GitHub/DowlingLab/Teaching/{optimization,
-% optimization-private}. "Shrink" per Alex's own framing means tighter
-% framing per slide, not less real content: the generic writing/style/
-% figures teaching point moved to Task 6 above, freeing this task to be
-% the dense, specific war story instead of competing for the same space.
+% Task 7 -- "Optimization for Decision Science," Alex's own, already-
+% public course. Grounded in an authorized audit of the course's public/
+% private repo pair -- local clones at
+% /Users/adowling/GitHub/DowlingLab/Teaching/{optimization,
+% optimization-private}.
 %
 % Headline, git-verified: optimization-private has 1,108 commits total;
 % 1,085 of them (98%) landed 2026-08-17 -- 2026-09-02, a ~2.5-week

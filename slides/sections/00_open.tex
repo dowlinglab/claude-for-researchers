@@ -1,130 +1,26 @@
 % ======================= PROLOGUE: THE HOOK, THE CLAIM =======================
-% storyboard.md Prologue items 2-3 ("The teaser", "The claim") -- REVAMPED
-% 2026-09-03 at Alex's request: the old single-slide teaser undersold the
-% hook. Now three frames: the timeline + real schedule merged into one
-% opener, the Codex-conversion story, and "The claim" -- previously the
-% first frame after the title -- now lands after the story as the
-% takeaway, not before it. Item 4 ("Borrowed structure") is
-% 00b_roadmap.tex; item 1 (title) is in main.tex.
+% storyboard.md Prologue items 2-3 ("The teaser", "The claim"). Item 4
+% ("Borrowed structure") is 00b_roadmap.tex; item 1 (title) is in main.tex.
 %
-% MERGED 2026-09-03 (later the same day), per Alex reading the built deck
-% directly: the timeline frame and the real-schedule frame were two
-% separate slides with one thesis each -- merged into one, sample
-% schedule on the left, the (now vertical) timeline on the right, plus a
-% new "before 2023" box for the DGA's hand-scheduling that used to be a
-% prose sentence. Less text throughout, per his explicit request. The
-% schedule image itself was also remade: the original 9-visitor version's
-% in-bar labels were too small to read (the plotting library hardcodes an
-% 8pt label on a fixed 12x10in canvas regardless of visitor count) --
-% patched a scratch copy of the installed package (fontsize 8 -> 20,
-% bbox_inches="tight" on save) and re-ran with just 3 visitors (Pooh,
-% Piglet, Tigger) for a legible, presentation-sized result. Patch and
-% generation script are throwaway, not checked into this repo; the output
-% PNG (figures/grad_visit_schedule_3.png) is the artifact that matters.
+% Every date/fact below is git-verified against both real repos (private:
+% ndcbe/grad-visit-scheduling; public: dowlinglab/grad-visit-scheduler), not
+% recollection: the Codex conversion ran Mon Feb 9 -- Tue Feb 10, 2026
+% (weekdays, not a weekend); DGA is a generic title (Director of Graduate
+% Admissions), not attributed to a specific person. The 2023 box is
+% co-built (36 Alex + 37 Jeff commits); 2024/2025 are solo (100% Alex).
 %
-% VERIFIED 2026-09-03 against git history in both repos (private:
-% ndcbe/grad-visit-scheduling; public: dowlinglab/grad-visit-scheduler),
-% not just Alex's recollection -- three real corrections this made to the
-% story as first told:
-%   1. The Codex conversion happened Mon Feb 9 -- Tue Feb 10, 2026 (private-
-%      repo commit timestamps, both weekdays) -- NOT a weekend. Every
-%      "weekend project" phrase in this deck is renamed to "day"/"Monday."
-%   2. It happened THIS February, ~7 months before the talk, not "last
-%      year" -- Alex's own phrasing when he told me the story. Fixed to
-%      "this past February."
-%   3. The MS-Word-per-visitor feature was NOT a pre-2026 ad-hoc addition
-%      (no matching commit anywhere 2023-2025) -- it was built in 2026 as
-%      part of the Codex-era package itself ("Added DOCX writing," 2026-
-%      02-10). Dropped from the "years of patches" list; replaced with
-%      features that really do show up 2023-2025 in the commit log
-%      (schedule graphics, break/overlap rules, per-faculty capacity caps).
-% The 2023/2024-2025/2026 timeline dates (frame 1) are the private repo's
-% own commit history: 2023 is 36 Alex + 37 Jeff commits (co-built); 2024
-% and 2025 are 100% Alex, zero Jeff commits each year (solo); 2026-02-09
-% is the Codex-conversion day. DGA is generic (Director of Graduate
-% Admissions), not attributed to a specific person -- confirmed the title,
-% not whose role it was historically, so the slide doesn't guess.
-%
-% Frame 2's schedule image is a REAL run of the real, public package
-% (v0.5.0, installed from PyPI) -- not hand-typeset, not a mockup. Real ND
-% CBE faculty (from the department's own public roster/building
-% assignments); fictional visitors (Winnie-the-Pooh characters, public
-% domain) standing in for real prospective students, so no real visitor's
-% actual schedule ships in a public deck. Generation script and inputs:
-% not checked into this repo (throwaway, scratch-only) -- the output PNG
-% is the artifact that matters. Re-generate by installing
-% grad-visitor-scheduler from PyPI and calling
-% SolutionResult.plot_visitor_schedule() against a custom faculty/visitor
-% config, same pattern as examples/README.md in the public repo.
-%
-% TODO(image_plan.md Prologue #3): frame 3's version-timeline TikZ is real
-% (v0.1.2->v0.3.1, Feb 11-17, from the PUBLIC repo's own tags) -- this is
-% the week of polish (tests, docs, PyPI release) that follows the Feb 9-10
-% conversion sprint in frame 1's timeline; the two diagrams are
-% complementary, not redundant. A real ReadTheDocs screenshot is now in
-% hand (figures/grad_scheduler_screenshot_crop.png) and used in Act II
-% instead of here, so the hook stays focused on the schedule artifact.
-%
-% The closing question ("How do we train...") used to be returned to
-% verbatim by an Epilogue slide of the same name -- that slide is cut as
-% of 2026-09-03 (Alex's call: its "no clean answer" rhetoric no longer fit
-% once this hook told the full story and Act II resolved its impact).
-% SUPERSEDED, same day: the question itself is gone from this slide too
-% -- Alex: "I do not understand the 'How do we...' question." -- replaced
-% by his own account of the group-wide result instead (see the frame's
-% own comment below). The phrase no longer appears live anywhere in the
-% deck; only in storyboard.md's revision history and this comment.
-
-% REVISED 2026-09-03 (further feedback on this slide, same day): the
-% schedule regenerated again, now with 6 visitors (Pooh, Piglet, Tigger,
-% Eeyore, Owl, Rabbit) instead of 3, and thicker bars (patched lw 20 ->
-% 34 in the same scratch copy of the installed package) per Alex's
-% request to make the faculty-name boxes taller. The four history boxes
-% are spread out more (node distance 0.18cm -> 0.5cm) and each now
-% carries one short sentence, not just a year and a fragment -- still
-% grounded in the same git-verified facts as before, just spelled out
-% instead of abbreviated to fit a tighter box.
-%
-% BUG FOUND AND FIXED 2026-09-03 (further feedback, same day): Alex
-% caught it visually -- "Tigger is going from NSH to MCH without a
-% break" -- and asked whether this was a real package bug. Investigated
-% against the installed v0.5.0 source directly: NOT a package bug. The
-% demo's own run config (config_demo.yaml, scratch-only) set
-% `movement: {policy: none}` and `faculty_breaks=0, student_breaks=0`,
-% which explicitly disables the package's real travel-time enforcement
-% -- a setting carried over unchanged from the earlier legibility-only
-% 3-visitor version, never revisited once visitor count/building mix
-% grew. The real package supports three real movement policies (`none`,
-% `travel_time`, `nonoverlap_time`, in
-% grad_visit_scheduler/config.py's load_run_config) with a configurable
-% `min_buffer_minutes`. Regenerated with `policy: travel_time,
-% min_buffer_minutes: 10, travel_slots: auto` -- feasible, and every
-% visitor's building transitions now carry a real gap. Image
-% regenerated at 200dpi (same fontsize/pad/subplots_adjust recipe as
-% before) and swapped in under the same filename
-% (figures/grad_visit_schedule_6.png). Generation scripts remain
-% scratch-only, not checked into this repo, per the pattern established
-% for every image in this file.
-%
-% Left image enlarged 2026-09-03 (further feedback), height 5cm -> 6.0cm,
-% per Alex's request. Also dropped the "Real optimizer, real ND CBE
-% faculty --- fictional visitors." caption under it (Alex: "The schedule
-% on slide 2 does not need a caption") -- that's what made room for a
-% larger size at all; without cutting the caption, anything past ~5.3cm
-% collided with the corner logo. 6.8cm was tried next and still
-% collided (the image's own white canvas background, not just its
-% content, reaches the logo) -- 6.0cm is the largest that clears it.
-%
-% FIXED 2026-09-03: two issues from Alex's manual edit (commit 2fd659f).
-% (1) The frame title had become "Generator faculty-visitors for
-% department recruitment" -- not intentional, reverted to this frame's
-% real title. (2) Box (b)'s text was missing a connector ("built a
-% Jupyter notebook used discrete optimization" -> "...notebook THAT
-% used discrete optimization"). Box (a)'s bare `~` in "DGA spent ~10
-% hours" is LaTeX's tie/non-breaking-space character, not a printed
-% tilde -- it was rendering as an odd gap ("spent  10 hours") with no
-% visible `~`. Alex confirmed he wants the tilde to actually show, not
-% reworded away -- fixed with `\textasciitilde` rather than a bare `~`.
+% Frame 1's schedule image is a REAL run of the real, public package
+% (v0.5.0, installed from PyPI) -- real ND CBE faculty (public roster),
+% fictional Winnie-the-Pooh visitors (public domain) standing in for real
+% prospective students. Generation script is throwaway, not checked into
+% this repo; regenerate via grad-visitor-scheduler's
+% SolutionResult.plot_visitor_schedule() (examples/README.md in the public
+% repo has the pattern). The demo config MUST set `movement: {policy:
+% travel_time, min_buffer_minutes: 10}` -- `policy: none` silently
+% disables travel-time enforcement between buildings and produces
+% impossible back-to-back transitions. Image height is capped at 6.0cm:
+% past that, the image's own white canvas (not just its content) collides
+% with the corner logo.
 \begin{frame}{Before Codex: a decade of schedules, one real run}
   \vfill
   \begin{columns}[c]
@@ -152,73 +48,18 @@
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% REVISED 2026-09-03 (later the same day): the horizontal version-dot
-% timeline is gone (it also had a fabricated tag, "v0.2.5" -- the real
-% public repo has no such release; the true tag list is v0.1.1, v0.1.2,
-% v0.2.0, v0.2.1, v0.3.0, v0.3.1, v0.4.0, v0.5.0). Replaced with a column
-% of the four real tags that actually carry a big change, per Alex's
-% request ("focus on just the versions with big changes"), each row
-% verified against the public repo's own CHANGELOG.md, not reconstructed
-% from memory. v0.1.2, v0.2.1, v0.4.0, v0.5.0 (docs-only or later-in-
-% February/March) are left out -- the four shown are the ones inside the
-% Feb 11-17 week this slide is actually about. Also much less prose, per
-% the same request: the "8.5 more hours ... 100% test coverage" sentence
-% is cut (the table's own v0.3.1 row already says "full test coverage"),
-% and the sabbatical/Carla beats are compressed into one sentence.
+% Table rows are each verified against the public repo's own CHANGELOG.md;
+% docs-only tags are left out. The two "---" rows before the first real
+% tag are real, timestamped private-repo commits (Mon Feb 9, 2026: "Draft
+% 1 ready and sent to Carla for feedback" 14:43; "Started to restructure
+% as a package" 22:03). The Read the Docs screenshot independently
+% confirms "Created by Alex Dowling and Jeff Kantor."
 %
-% REVISED 2026-09-03 (further feedback on this slide, same day): two
-% "--" rows added before the first real tag, showing the pre-release
-% work -- the Carla draft, then the refactor start -- both real,
-% timestamped commits from the private repo (Mon Feb 9, 2026: "Draft 1
-% ready and sent to Carla for feedback" at 14:43; "Started to restructure
-% as a package" at 22:03). The prose sentence below is trimmed further
-% since the table now carries the Carla/reformatting fact instead.
-%
-% Closing line replaced, Alex's call ("I do not understand the 'How do
-% we...' question"): the hook's old closing question is gone from this
-% slide entirely -- it doesn't appear anywhere else in the deck either
-% (only in storyboard.md's revision history now), matching the same-day
-% Epilogue-cut precedent rather than contradicting it. New line is
-% Alex's own account of what happened next, lightly tightened for length
-% and a typo fixed ("discusses" -> "discussing" -> compressed out
-% entirely). RESOLVED 2026-09-03 (further feedback, same day): this used
-% to be flagged as overlapping thematically with Act II's old opener
-% ("As promised --- and why it mattered," which said the same "got the
-% group onto Codex" beat) -- moot now, that slide is cut (Alex: "Act II
-% can just [go] right into BITS for GAPS"). This is the only place that
-% beat is told.
-%
-% REBUILT 2026-09-03 (further feedback, same day), three changes at
-% once: (1) Title changed to "Jupyter Notebook -> public Python package
-% in 10 hours," Alex's own phrasing -- UNVERIFIED, see the note above
-% the frame below, flag this to Alex before treating it as final. (2)
-% Two columns: the table trimmed to fit the left half (per Alex's
-% suggested shorter phrasing, "Draft 1 of 2026 schedule" / "notebook ->
-% tested package," and every other row shortened the same way to fit);
-% the real Read the Docs screenshot moved here from Act II's now-cut
-% opener slide (figures/grad_scheduler_screenshot_crop.png) fills the
-% right half -- it independently confirms "Created by Alex Dowling and
-% Jeff Kantor," so it does real work here, not just decoration. (3) The
-% closing line no longer bolds the whole sentence -- Alex: "I do not
-% like have an entire sentence in bold. My style is instead to bold a
-% few key words." Rewritten by hand (bypassing \slidepoint, which bolds
-% its whole argument) with only "ND OpenAI seat" and "Codex best
-% practices" bolded. NOTE, not yet resolved: \slidepoint is used the
-% old (whole-sentence-bold) way on every other closing-point slide in
-% the deck -- flag whether Alex wants the same narrower-bold treatment
-% applied everywhere, or just here.
-%
-% "10 hours" in the title, CONFIRMED 2026-09-03: Alex means ~10 hours of
-% active hands-on-keyboard time, not calendar-elapsed time. Flagged
-% before asking because the two clean endpoints git timestamps DO
-% support -- refactor started (private repo, "Started to restructure as
-% a package," Mon Feb 9, 10:03 PM) to the first public/PyPI release
-% (public repo, tag v0.1.1, Tue Feb 10, 4:39 PM) -- span ~18.5 elapsed
-% hours, crossing an overnight gap, not a clean 10. Commit timestamps
-% can't confirm or rule out hands-on-keyboard time (gaps between
-% commits aren't necessarily idle time), so this rests on Alex's own
-% account, the same way Carla's and Jeff Kantor's roles do elsewhere in
-% this file -- not independently git-verifiable, but not a guess either.
+% "10 hours" in the title is Alex's own account of active hands-on-
+% keyboard time, not calendar-elapsed time -- git timestamps alone span
+% ~18.5 elapsed hours (refactor start, Mon 10:03pm, to first PyPI release,
+% Tue 4:39pm) crossing an overnight gap, which can't confirm or rule out
+% actual working time. Not independently git-verifiable either way.
 \begin{frame}[fragile]{Jupyter Notebook $\to$ public Python package in 10 hours}
   \begin{columns}[T]
     \begin{column}{0.46\textwidth}

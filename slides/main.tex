@@ -45,9 +45,7 @@
 % Colour
 %
 % NDBlue, NDGold, and IrishGreen are defined by the theme itself, at the
-% correct official values -- see theme/README.md's History section for why
-% that's worth calling out (this deck used to correct the theme's gold
-% locally; the fork now ships the correct value, so that override is gone).
+% correct official values.
 %
 %   ND Blue     #0C2340   PMS 289   contrast on white 15.79:1
 %   Dome Gold   #C99700   PMS 117   contrast on white  2.65:1  <- ACCENT ONLY
@@ -66,19 +64,16 @@
 \definecolor{OkSky}{HTML}{56B4E9}
 % Gray, kept only for non-prose UI elements deliberately meant to look
 % inactive/de-emphasized (the act-strip's unlit stage boxes and arrows,
-% lstlisting code comments) -- never for a sentence someone has to read.
-% Removed from all body text, captions, and asides deck-wide 2026-09-02
-% (Alex's call: read as too low-contrast). See style_guide.md rule 4.
+% lstlisting code comments) -- never for a sentence someone has to read
+% (too low-contrast). See style_guide.md rule 4.
 \definecolor{Muted}{HTML}{7A7A7A}
 \definecolor{CodeBg}{HTML}{F4F4F2}
 
-% Frametitle color/background and body text color (NDBlue rather than
-% black -- Alex: "What if we made everything dark blue?", finding the
-% default black-vs-NDBlue split distracting next to a \slidepoint or
-% \keyterm) are handled by the theme's own textcolor option (set above)
-% and its background-aware defaults. Section-file overrides that set an
-% explicit color (OkVermillion, Muted, NDGold, etc. via \good/\bad/\unknown/
-% box fills) are unaffected either way.
+% Frametitle color/background and body text color default to NDBlue rather
+% than black, via the theme's own textcolor option (set above) and its
+% background-aware defaults. Section-file overrides that set an explicit
+% color (OkVermillion, Muted, NDGold, etc. via \good/\bad/\unknown/box
+% fills) are unaffected either way.
 \setbeamertemplate{navigation symbols}{}
 
 % Numbered-circle (\begin{enumerate}) color: IrishGreen rather than the
@@ -120,24 +115,15 @@
 
 
 % ---------------------------------------------------------------------
-% Body text: exactly two sizes, per slides/style_guide.md (a 2026-09-02 audit
-% of Alex's own real talks -- the source deck's own slide master defines one
-% title size and a two-level body hierarchy; our stale draft sections had
-% drifted to four ad hoc sizes with no rule). \slidepoint is \large: the one
-% argument a slide makes. Everything supporting it -- captions, attributions,
-% secondary explanation -- uses \small directly, no wrapper needed.
-% \scriptsize/\tiny are not body text: reserved for diagram micro-labels and
-% code (lstlisting already sets \scriptsize).
+% Body text: exactly two sizes, per slides/style_guide.md. \slidepoint is
+% \large: the one argument a slide makes. Everything supporting it --
+% captions, attributions, secondary explanation -- uses \small directly, no
+% wrapper needed. \scriptsize/\tiny are not body text: reserved for diagram
+% micro-labels and code (lstlisting already sets \scriptsize).
 %
-% CHANGED 2026-09-03 (Alex's standing style, applied deck-wide): \slidepoint
-% no longer auto-bolds its whole argument. Alex: "I do not like have an
-% entire sentence in bold. My style is instead to bold a few key words in
-% a statement." This actually restores consistency with style_guide.md's
-% own audit finding under "Whitespace and grouping" -- the real talks bold
-% a handful of key phrases within a sentence, never the whole thing; this
-% macro's old whole-sentence \textbf was the outlier, not the rule. Every
-% \slidepoint{...} call site now wraps only its own key word(s) in
-% \textbf{} by hand -- see style_guide.md rule 12.
+% \slidepoint does not auto-bold its whole argument -- Alex's standing style
+% is to bold only a few key words by hand within each \slidepoint{...} call,
+% never the full sentence. See style_guide.md rule 12.
 % ---------------------------------------------------------------------
 \newcommand{\slidepoint}[1]{{\large\color{NDBlue}#1}}
 
@@ -161,20 +147,8 @@
 % ---------------------------------------------------------------------
 % The recurring motif: the talk's five-beat structure, with one lit.
 % Usage: \actstrip{3}  (0 = none lit, for the roadmap/overview slide)
-%
-% Renamed from an earlier six-stage "lifecycle" framing (Explore, Ground,
-% Build, Record, Write, Verify) when the talk restructured around a three-act
-% story (Tinker / Understand / Build / Challenge / Trust). Kept the macro
-% shape so \stagedivider below didn't need to change.
-%
-% ENLARGED 2026-09-03 at Alex's request ("I like the five-part visual on
-% the transition slides. Let's make it larger. Use the same font size as
-% the text under 'Act I: Understand'"): font scriptsize -> large, matching
-% \stagedivider's own subtitle size below. Safe to change globally --
-% grepped first: \actstrip is only ever called from \stagedivider now (an
-% earlier caller on the "One year of practices" content slide was removed
-% 2026-09-02 along with that slide's own act-strip, per style_guide.md
-% rule 9), so there's no smaller-context usage this could break.
+% Only ever called from \stagedivider below -- font size (\large) is tuned
+% to match that macro's own subtitle size.
 % ---------------------------------------------------------------------
 \newcommand{\actstrip}[1]{%
 \begin{tikzpicture}[x=3.1cm, font=\large\sffamily]
@@ -214,36 +188,31 @@
 \date{17 September 2026}
 \ndvenue{Carey Auditorium, Hesburgh Library}
 
-% Small ND logo, bottom-left, on every frame after the title slide --
-% now the theme's own [cornerlogo] option (set above) rather than this
-% deck's former hand-rolled \ndcornerlogo. Resized here to match the
-% exact size/margin this deck's own logo was tuned to through several
-% rounds of direct feedback (the theme's own default is noticeably
-% smaller): 0.2475*paperwidth wide at the mark's real 219:58 aspect
-% ratio is ~0.839cm tall; margin was 0.5mm. This MUST be in the
-% preamble, before \begin{document} -- the theme measures the logo via
-% \AtBeginDocument, which fires as soon as \begin{document} is reached,
-% before any of the document body (including this override, if it were
-% placed after \begin{document} instead) runs.
+% Small ND logo, bottom-left, on every frame after the title slide -- via
+% the theme's own [cornerlogo] option (set above). Resized here (the
+% theme's own default is noticeably smaller): 0.2475*paperwidth wide at
+% the mark's real 219:58 aspect ratio is ~0.839cm tall; margin 0.5mm. This
+% MUST be in the preamble, before \begin{document} -- the theme measures
+% the logo via \AtBeginDocument, which fires as soon as \begin{document}
+% is reached, before any of the document body (including this override,
+% if it were placed after \begin{document} instead) runs.
 \renewcommand{\ndcornerlogoheight}{0.839cm}
 \renewcommand{\ndcornerlogomargin}{0.5mm}
 
-% \ndlogonote (used in 01_ecosystem.tex) centers its note on this
-% fraction of \ndcornerlogoheight from the bottom, not the logo's
-% pure geometric center (0.5, the theme's own default) -- measured
-% directly against the primary mark asset, "NOTRE DAME"'s own line
-% sits at 0.518. See theme/README.md for how this was measured.
+% \ndlogonote centers its note on this fraction of \ndcornerlogoheight
+% from the bottom, not the logo's pure geometric center (0.5, the theme's
+% own default) -- measured directly against the primary mark asset,
+% "NOTRE DAME"'s own line sits at 0.518. See theme/README.md for how this
+% was measured.
 \renewcommand{\ndlogonoteanchor}{0.518}
 
 \begin{document}
 
 % ---- Title ----------------------------------------------------------
 % \titlepage, using the theme's own titlelayout=leftrule template (set
-% above) -- this deck's own former hand-built title frame was literally
-% the pattern that design was built from. \setbeamertemplate{background}
-% must be set here, outside \begin{frame}, not inside it: see
-% theme/README.md's History note / the fork's own README for why
-% (Beamer locks in a frame's background at \begin{frame} time).
+% above). \setbeamertemplate{background} must be set here, outside
+% \begin{frame}, not inside it -- Beamer locks in a frame's background at
+% \begin{frame} time.
 {
 \setbeamertemplate{background}{\ndtitlepagelogodraw}
 \begin{frame}[plain]

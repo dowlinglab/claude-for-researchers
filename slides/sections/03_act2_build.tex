@@ -1,53 +1,20 @@
 % =========================== ACT II: BUILD ===========================
-% storyboard.md Act II, rebuilt 2026-09-03 around Task 4. Job: AI changes
-% what you keep -- code, and the documents that describe your work. The
-% hook (grad-visit-scheduler) is told in full in the Prologue, including
-% its payoff (the group getting Codex access), so this act opens directly
-% on Task 4, then gives "code -> package" real depth with a named,
-% git-verified example, then closes out Task 3's proposal thread with a
-% best-practices takeaway.
+% storyboard.md Act II. Job: AI changes what you keep -- code, and the
+% documents that describe your work. Act II opens directly on Task 4, then
+% gives "code -> package" real depth with a named, git-verified example,
+% then closes out Task 3's proposal thread with a best-practices takeaway.
 %
 % Task 4 is BITS for GAPS, Dr. Kyla Jones's published paper (Computers &
 % Chemical Engineering 211, 2026), converted into a public package by
-% Alex after publication. Per Alex directly: "Kyla did great work, being
-% really systematic with Git, and produced great paper results. It is a
-% really nice paper. After the paper was published, I decided to convert
-% her fairly well-organized codebase into a public package." Named the
-% same way Jeff Kantor is named in the Prologue: real credit tied to real
-% public authorship (first author, DOI'd), no invented biographical
-% detail. The six Task 4 slides below are git-verified against the real
-% `dowlinglab/bits_for_gaps` commit history (103 commits, all Alex, July
-% 3 - Aug 7, 2026) and a since-deleted but git-recoverable `HANDOFF.md`
-% that narrated the whole conversion in numbered phases -- not invented,
-% not generic. emcal (Montana Carlozo, also a published first author,
+% Alex after publication. Named the same way Jeff Kantor is named in the
+% Prologue: real credit tied to real public authorship (first author,
+% DOI'd), no invented biographical detail. The six Task 4 slides below are
+% git-verified against the real `dowlinglab/bits_for_gaps` commit history
+% (103 commits, all Alex, July 3 - Aug 7, 2026) and a since-deleted but
+% git-recoverable `HANDOFF.md` that narrated the whole conversion in
+% numbered phases. emcal (Montana Carlozo, also a published first author,
 % Ind. Eng. Chem. Res. 2025) gets one closing line, same pattern, less
-% depth, per Alex's instruction to focus on BITS for GAPS.
-%
-% Replaces the prior generic Act II material: "Prototype in notebooks;
-% promote what matures" and "Freeze the science, move the code" (both
-% unnamed, illustrating principles Task 4's real phases now illustrate
-% directly -- Phase 4's decomposition *is* "promote what matures," Phase
-% 9c's behavior-preserving hardening *is* "freeze the science, move the
-% code") and "A regression harness is what made a reversal believable"
-% (the generic isotherm-correction story, replaced by the real, stronger
-% Phase 9b bug story below).
-%
-% Old placement questions RESOLVED 2026-09-03, Alex's own call, reading
-% the outline directly: "Review the diff, not the summary" and "Verify
-% every revision before you commit" merge into one closing "best
-% practices" slide, explicitly generalized to proposal AND manuscript
-% writing -- not two separate slides, not folded into Task 4.
-%
-% RESOLVED 2026-09-03 (further feedback, same day): the "STILL OPEN" note
-% below used to flag that Alex originally pictured grad-visit-scheduler
-% contained entirely in the Prologue, with no Act II appearance -- and
-% that this act's old opener (the tease-then-payoff split, "As promised
-% --- and why it mattered") was a deviation from that. Alex: "I think
-% Act II can just [go] right into BITS for GAPS" -- so that slide is cut.
-% Its payoff material (the group getting Codex access) already lives on
-% the Prologue's "One Monday" slide now, and its screenshot
-% (figures/grad_scheduler_screenshot_crop.png) moved there too. Act II
-% now opens directly on Task 4, exactly as Alex originally pictured.
+% depth.
 \stagedivider{3}{Act II: Build}{What's worth keeping?}
 
 % Graphical abstract cropped from the real GitHub README screenshot Alex
@@ -67,35 +34,19 @@
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% "Recipe" overview slide, added 2026-09-03 at Alex's request, then rebuilt
-% same day around the REAL execution order (Alex: "present the actual
-% order, not using the on-the-fly phase numbering we adopted"), reconstructed
-% from the public dowlinglab/bits_for_gaps commit history and its
-% since-deleted REFACTOR_PLAN.md (git-recoverable). Verified facts:
+% The recipe list is reconstructed from the public dowlinglab/bits_for_gaps
+% commit history and its since-deleted REFACTOR_PLAN.md (git-recoverable).
 % REFACTOR_PLAN.md originally numbered ten phases, 0-9, with Phase 9 =
-% Publish. Phase 1 (env + reproduce-from-archive) happened earlier, in the
-% private predecessor repo, before bits_for_gaps existed -- no commit for it
-% here. Phase 3 (package scaffold + verbatim move) never got its own commit
-% either -- folded into the single "Bootstrap" commit alongside Phase 0.
-% After Phase 8 (docs) finished, a planning commit (4f74d46, 2026-07-04
-% 09:48) split the old "Phase 9 = Publish" into a new Phase 9 (full
-% stochastic reproduction) and pushed Publish to Phase 10. From there, four
+% Publish. After Phase 8 (docs) finished, a planning commit (4f74d46,
+% 2026-07-04) split the old "Phase 9 = Publish" into a new Phase 9 (full
+% stochastic reproduction) and pushed Publish to Phase 10; from there, four
 % more phases were proposed live, one at a time, each only after the
 % previous one had already merged: 9b (a real bug, found the same day
-% Phase 9 finished), 9c (666267a, "add Phase 9c before publish"), 9d
-% (2f2730b), 9e (30cf18b) -- Publish (Phase 10) didn't actually happen until
-% 2026-08-06, a month after 9e merged (2026-07-05). Thirteen labeled phases
-% executed against ten planned.
-
-% Recipe list, revised 2026-09-04 per Alex's request: drop the "planned
-% ten / executed thirteen" slidepoint (the number was doing work for an
-% earlier framing; this slide is now about the recipe itself, not about
-% how much the plan changed) and expand the four improvised additions
-% (9b/9c/9d/9e) into their own lines instead of one compressed bullet, so
-% the audience can see *what* got improvised, not just *that* something
-% was. Each marked with a trailing asterisk, explained in the caption below.
-% Points to scientific_computing_workflow.md, where this same recipe is
-% written out in prose (\S2-4).
+% Phase 9 finished), 9c, 9d, 9e -- Publish (Phase 10) didn't actually
+% happen until a month after 9e merged. Thirteen labeled phases executed
+% against ten planned; the four improvised ones (9b-9e) are the
+% brace-highlighted items below. Same recipe, written out in prose, in
+% scientific_computing_workflow.md \S2-4.
 \begin{frame}{Task 4 --- the recipe, in the order it actually happened}
   \ndlogonote{\scriptsize\texttt{resources/practices/scientific\_computing\_workflow.md}\\[0.3em]\texttt{bits-for-gaps.readthedocs.io}}
   \begin{center}

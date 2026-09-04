@@ -1,39 +1,16 @@
 % ============================ EPILOGUE: TRUST ============================
 % storyboard.md Epilogue. Job: land the responsible-use synthesis, close
-% on curiosity rather than a caveat.
-%
-% CUT 2026-09-03, Alex's call ("I am leaning towards (b), just cut"): the
-% "How do we train the next generation to get both?" return-to-the-hook
-% slide. Its "we don't have a clean answer" rhetoric was written for a
-% sparse, single-slide hook that stayed open until here -- the hook isn't
-% sparse anymore (the Prologue now resolves it in real depth, and Act II
-% resolves its impact explicitly), so returning to "no clean answer" no
-% longer fit. The Prologue's hook still closes on the same question
-% (00_open.tex) -- that line is untouched, it just no longer has an
-% explicit "we're back to this" answer slide here. It stands as an open
-% hook the rest of the talk answers implicitly, not one this act revisits.
-%
-% The "this talk was built the same way" meta-slide moved to the Prologue
-% (01_ecosystem.tex, after "What you get today") 2026-09-02, Alex's
-% revised call: placed early it establishes authority and foreshadows the
-% acts without revealing their specific content, rather than only paying
-% off at the end. Its summary-matrix row below is what completes the loop
-% here instead.
-%
-% MOVED HERE 2026-09-03 at Alex's suggestion: the two IT-policy slides
-% ("Claude is approved here for public data only", "Two checks, thirty
-% seconds, before you start") used to sit in the Prologue
-% (01_ecosystem.tex); they fit "Trust" better than the Prologue's
-% scoping beats, so they moved. Placed after the hook's question is
-% answered (not before it): they're the practical form of "trust," right
-% before the summary matrix, rather than a compliance interruption before
-% the talk has even started.
+% on curiosity rather than a caveat. The Prologue's hook closes on an open
+% question (00_open.tex) that this act answers implicitly rather than
+% revisiting explicitly. The meta-slide ("this talk was built the same
+% way") lives in the Prologue instead (01_ecosystem.tex); its row in the
+% summary matrix below completes the loop.
 
 \stagedivider{5}{Epilogue: Trust}{What do you trust, and why?}
 
-% Spacing tightened 2026-09-03 (vfill -> fixed vspace between the two
-% tables) to clear the bigger, corner-tighter logo -- two tables plus a
-% closing line left little room to spare even before that change.
+% Spacing between the two tables uses a fixed vspace, not \vfill -- two
+% tables plus a closing line leave little room to spare beside the corner
+% logo.
 \begin{frame}{Currently, Claude is approved for public data only at ND}
   \vfill
   \renewcommand{\arraystretch}{0.9}
@@ -83,21 +60,14 @@
   \vfill
 \end{frame}
 
-% Relabeled 2026-09-03 with the same Task 1-6 numbers used throughout the
-% talk (Prologue preview, Act I/II/III titles) -- was prose descriptions
-% in six-types order, now the actual numbers in order, so this reads as a
-% literal recap rather than a re-derivation. Rows reordered to match.
-% Task 3 spans Act I (idea -> report/proposal) and Act II (the proposal's
-% compliance-review payoff, "Task 3, continued"). Task 4's Prologue check
-% reflects the grad-visit-scheduler hook -- deliberately unnumbered
-% (Alex's call, it's "very similar to Task 4"), but the same kind of task
-% really does recur there, so the checkmark stays honest to that.
-%
-% SEVEN TASKS 2026-09-04: new Task 6 inserted (generic, continues Task 2's
-% membrane-transport project into an auditable draft manuscript -- see
-% 04_act3_challenge.tex's header comment), course capstone renumbered
-% Task 6 -> Task 7. Both live entirely in Act III, so both check only that
-% column, same convention as Task 5.
+% Rows use the same Task 1-7 numbers used throughout the talk (Prologue
+% preview, Act I/II/III titles). Task 3 spans Act I (idea -> report/
+% proposal) and Act II (the proposal's compliance-review payoff, "Task 3,
+% continued"). Task 4's Prologue check reflects the grad-visit-scheduler
+% hook -- deliberately unnumbered there, but the same kind of task
+% recurs, so the checkmark stays honest to that. Tasks 6 and 7 live
+% entirely in Act III, so both check only that column, same convention as
+% Task 5.
 \begin{frame}{A handful of projects, recurring}
   \vfill
   \begin{center}
@@ -135,38 +105,18 @@
   \vfill
 \end{frame}
 
-% REVISED 2026-09-03 at Alex's request: much less text, the figure much
-% larger on the left, the right column now a real project list instead
-% of one paragraph about the first project only. Verified against the
-% real, public adowling2/3d-printing repo (65 commits, Alex alone, Feb
-% 15 - Sep 2, 2026) -- most projects share a first-commit date, Feb 15,
-% 2026, the day the repo (and its workflow/ tooling: init_project.sh,
-% render_views.sh, a STYLE.md, a Codex-iteration-loop convention) was
-% first set up; tablet-car-center was added Aug 8, six months later,
-% same workflow still in use. keychains has by far the most activity
-% (30 commits) -- the most-iterated project, a real number, not an
-% estimate.
-
-% REVISED 2026-09-03, further Alex feedback: bigger photo, swapped to the
-% hand-sketch-to-kitchen-organizer/telescope-shelf image, the point moves
-% from "what would this teach" (cut, per Alex: "I do not want to make that
-% the point of the talk") to the process and the project list themselves --
-% two lists, workflow tooling verified real against the public
-% adowling2/3d-printing repo (see comment above, still accurate).
-% Figure enlarged and caption dropped 2026-09-04, per Alex's TODO -- the
-% image now fills the column at its own aspect ratio (1:1, 1536x1536),
-% ~4.6cm being the most height the 0.42-width column can take without
-% exceeding its own width. Workflow list rewritten the same day, per
-% Alex's second TODO ("describe how I use OpenSCAD and Blender to iterate,
-% connect it back to best practices"): verified against the real, public
-% adowling2/3d-printing repo's workflow/README.md -- design happens in
-% OpenSCAD, iterated with Codex against workflow/STYLE.md;
-% render_views.sh's default PNG path uses OpenSCAD's own offscreen
-% renderer, which the README documents as crashing in headless mode
-% (NSOpenGLContext errors) -- the real, documented fallback is
-% render_stl_views_blender.sh, rendering the exported STL in Blender
-% instead. The tool-for-the-task principle Task 7 tells with Codex/GPT-5.6
-% shows up here too, at hobby scale: know the fallback before you need it.
+% Verified against the real, public adowling2/3d-printing repo (65
+% commits, Alex alone, Feb 15 - Sep 2, 2026): most projects share a
+% first-commit date, Feb 15, 2026, the day the repo's workflow/ tooling
+% (init_project.sh, render_views.sh, a STYLE.md, a Codex-iteration-loop
+% convention) was first set up; keychains has the most activity (30
+% commits). Design happens in OpenSCAD, iterated with Codex against
+% workflow/STYLE.md; render_views.sh's default renderer crashes in
+% headless mode (documented NSOpenGLContext errors), with
+% render_stl_views_blender.sh as the real, documented fallback -- the
+% same tool-for-the-task principle Task 7 tells with Codex/GPT-5.6, at
+% hobby scale. Image height is capped at 4.6cm, the most the 0.42-width
+% column can take without exceeding its own width (1:1 aspect ratio).
 \begin{frame}{Curiosity is a feature, not a consolation prize}
   \vfill
   \begin{columns}[c]
@@ -195,40 +145,23 @@
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% NEW 2026-09-03 at Alex's request: a second hobby slide, generalized as
-% "create a textbook customized for you." Verified against the real,
-% public adowling2/radio-extra-book repo (87 commits, Alex alone, Jul 22
-% - Sep 2, 2026): "Circuit Theory for the Amateur Extra Exam" -- 26
-% chapters in 5 real \part{} sections (main.tex), 226 pages. The 5 steps
-% are drawn from the real commit history and PROJECT-STATUS.md, not
-% invented: source drafted chapter by chapter, then a "v2 reorg" into
-% the current part structure, a Python figure pipeline verified to
-% regenerate byte-identically, coverage checked against real ARRL exam
-% question-pool extracts (greppable, not hand-transcribed), and
-% structured revision rounds tracked in a ledger -- "58 done, 0 open" is
-% the real, current count from ARRL-GAP-PROPOSAL.md, not an estimate.
-% Two of those 58 were the book catching its own errors (Ch 22 had the
-% wrong reason for coil Q falling; another mistold push-pull/IMD) --- the
-% closing line's "two were the book's own errors" is real, not a
-% rhetorical flourish. Deliberately not numbered "Task 7": this is hobby
-% material, same register as the slide before it, kept outside the
-% professional six-task taxonomy by design (demo_ideas.md's own framing)
-% -- flag if you actually want it folded into the numbered curriculum,
-% since that would ripple into the Prologue preview and Epilogue matrix.
-
-% REVISED 2026-09-03, further Alex feedback: top framing added (why the
-% project exists at all), the book's numbered contents column cut, the "58
-% revisions" closing line cut in favor of a real figure from the book
-% itself. GitHub link included inline via \slidepoint (matching the Task 4
-% intro slide's own pattern) until the template's planned corner-box (see
-% the deferred TODO in 03_act2_build.tex) exists to hold it instead.
+% Verified against the real, public adowling2/radio-extra-book repo (87
+% commits, Alex alone, Jul 22 - Sep 2, 2026): "Circuit Theory for the
+% Amateur Extra Exam," 26 chapters, 226 pages. The 5 steps are drawn from
+% the real commit history and PROJECT-STATUS.md: source drafted chapter
+% by chapter, a "v2 reorg" into the current part structure, a figure
+% pipeline verified to regenerate byte-identically, coverage checked
+% against real ARRL exam question-pool extracts, structured revision
+% rounds. Two of the tracked revisions were the book catching its own
+% errors (a wrong reason given for coil Q falling; a mistold push-pull/
+% IMD explanation) -- real, not a rhetorical flourish. Deliberately not
+% numbered "Task 7": hobby material, kept outside the professional
+% task taxonomy by design (demo_ideas.md's own framing) -- OPEN QUESTION:
+% flag if you actually want it folded into the numbered curriculum, since
+% that would ripple into the Prologue preview and Epilogue matrix.
 %
-% Figure swapped 2026-09-04 per Alex's TODO ("replace this with a schematic
-% of a filter"): was figures/oscillator_loopgain.pdf (a Barkhausen-
-% criterion loop-gain/phase Bode plot), now figures/filter_families.pdf --
-% both sourced directly from the public, real adowling2/radio-extra-book
-% repo, both real figures from the book, not invented for the slide. This
-% one is chapters/15_filters_and_matching.tex's \label{fig:filter-families}:
+% Figure is real, from the book itself:
+% chapters/15_filters_and_matching.tex's \label{fig:filter-families} --
 % order-5 low-pass responses (Butterworth/Chebyshev/elliptic/Bessel),
 % normalized to the same cutoff, trading flatness against transition
 % sharpness against passband ripple.
