@@ -113,6 +113,36 @@
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
+% NEW 2026-09-04, from the same overnight audit wave: two independent real
+% manuscript audits (different repos, different domains -- a technical
+% force-field paper and a sustainability-policy paper) each independently
+% turned up a citation-tracing failure of exactly this shape, generalized
+% here with no repo/student names per the standing convention. A DOI
+% checker's "propose, never write" habit (already resources/scripts/
+% doi_checker/'s own design principle) is what caught the false positive;
+% the citation-two-numbers-away case was a self-correction, found and
+% named the next pass. Same claim-tracing operation as the previous
+% slide's table, applied to a citation instead of a number.
+\begin{frame}{Task 5 --- the same table works on a citation}
+  \vfill
+  \begin{center}
+    A DOI checker proposed a fix at a perfect title match --- to a completely unrelated document. Rejected by hand, before it looked exactly like the correct ones beside it.
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    A citation one reference number off looked identical, until someone actually opened both papers.
+  \end{center}
+  \vfill
+  \begin{center}
+    \slidepoint{A citation is a \textbf{claim} too --- \textbf{verified} or \textbf{wrong}, not close enough.}
+  \end{center}
+  \vspace{0.4em}
+  \begin{center}
+    {\scriptsize \texttt{resources/scripts/doi\_checker/}}
+  \end{center}
+  \vspace{1.8cm plus 1fill}
+\end{frame}
+
 \begin{frame}{Task 5 --- a clean build hid a silent failure}
   \vfill
   \begin{columns}[t]

@@ -99,6 +99,8 @@ Track a status per item, and keep `decided` distinct from `closed`:
 
 That distinction is where audits quietly fail. A long conversation resolves twenty questions, everyone feels finished, and nothing has been applied.
 
+**When items get renumbered, reconcile a reply by content, not by label.** Restructuring an audit's open items (chronological to topical, say) silently changes what each number points to. A reply keyed to the old numbering is a real hazard — check what each number actually referred to before acting on it, every time, not only when something looks off.
+
 ## 7. Determine status from evidence, not memory
 
 Do not report which items are applied from recollection — yours or an agent's. Test for it.
@@ -130,7 +132,7 @@ Where a check can be automated, automate it — geometric detection of overfull 
 
 ## 9. Apply changes safely
 
-- **Propose, don't write, for anything a false positive would corrupt.** Bibliographies especially: a DOI that resolves to the wrong paper is worse than a missing one and looks identical on the page. Have the tool report candidates; apply them by hand after checking title, authors, year, and venue.
+- **Propose, don't write, for anything a false positive would corrupt.** Bibliographies especially: a DOI that resolves to the wrong paper is worse than a missing one and looks identical on the page. Have the tool report candidates; apply them by hand after checking title, authors, year, and venue. A real instance: an automated proposal came back at a perfect title-similarity match — to a completely unrelated document that happened to share a one-word title. Caught only because the tool proposed instead of writing; had it applied automatically, it would have looked exactly like the correct proposals next to it.
 - **Edit by exact single-match replacement, aborting on any other count.** If the pattern matches zero times or twice, nothing is written and you look at it. This guard catches stale patterns and near-duplicates that a fuzzy replace would silently mangle.
 - **Verify after applying.** Regenerate a diff against the pinned baseline and trace *every* flagged change back to a recorded entry. Unexplained changes are the point of the exercise; this is also how you find an edit applied to the main text but not the supplement.
 - **Regenerate, don't retype.** Any table that appears in both a results file and the manuscript should be generated from the results file by a script that only formats and holds no state. One hand-transcription error is enough to justify this permanently.
@@ -163,10 +165,10 @@ An audit nobody can verify is just an assertion with more pages. Write a short g
 
 Every audit in this document is one operation — *trace an artifact back to its authoritative source and report match, mismatch, or cannot-verify.* Four common applications:
 
-- **Quantitative claim audit.** Every number in the prose → the results file that should support it → verified, discrepant, or unverifiable.
+- **Quantitative claim audit.** Every number in the prose → the results file that should support it → verified, discrepant, or unverifiable. The same operation works on a citation, not just a number: does it resolve to the source it's claimed to cite, or to a different document with a similar title, or to a reference a position away from the one actually meant? A citation error one entry off in the bibliography is the citation equivalent of a transposed digit — as silent, and as easy to miss on a normal read.
 - **Methods-versus-code.** Does the paper describe what the code actually does? Look for assumptions present in code and absent from the methods, parameter values that differ, preprocessing or solver settings omitted, and equations implemented differently from how they are written.
 - **Figure-versus-text.** For each figure: which script produced it, from which data, and does the plotted content support what the caption and text claim about it? Check units and axis labels against the underlying values. A real instance: a figure's axis label claimed one quantity; the code that generated it computed a related but different one. The plotted data was correct throughout — only the label and the prose built on it were wrong. Distinguish "the figure is wrong" from "the figure is mislabeled": the fix and the blast radius are not the same.
-- **Guideline compliance.** Check the manuscript against a named standard — journal instructions, a figure guideline, a nomenclature file — and report each violation *with the specific rule cited*. This is the easiest audit to automate and the easiest to skip.
+- **Guideline compliance.** Check the manuscript against a named standard — journal instructions, a figure guideline, a nomenclature file — and report each violation *with the specific rule cited*. This is the easiest audit to automate and the easiest to skip. A real instance: a publisher's own formatting letter, logged item by item into a status table and closed one at a time — including one item that resolved to "already compliant," which only counts once you've actually checked, not assumed.
 
 ---
 
@@ -206,6 +208,7 @@ Every audit in this document is one operation — *trace an artifact back to its
 - **Trusting the exit code.** A clean build that renders an empty table.
 - **Auto-applying reference fixes.** A confidently wrong DOI is worse than a missing one.
 - **The audit that exempts itself.** New code, written fast, checking everything but itself.
+- **Propagation by self-consistency.** A fact asserted once, then copied by every later sentence matching its own most recent usage instead of the authoritative source. Cheap when it's a name; identical in mechanism to the cases that aren't.
 
 ## Using this file with an AI assistant
 

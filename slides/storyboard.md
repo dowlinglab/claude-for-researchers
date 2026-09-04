@@ -79,9 +79,9 @@ Each act and the Epilogue now opens on a quick, bold `\stagedivider` transition 
 | Prologue | **Tinker** | Hook in full (real dates, visuals), the claim, scope, orient, show the toolkit and the numbered tasks, prove the thesis is live. **Revised 2026-09-03** per Alex's detailed slide-by-slide feedback: the timeline and real-schedule slides merged into one | 8 | 7.5 min |
 | Act I | **Understand** | A sell: git is the prerequisite, not the payoff. **Rebuilt 2026-09-03**, compiles clean, visually checked | 7 (incl. divider) | 8.5 min |
 | Act II | **Build** | Opens directly on Task 4 (BITS for GAPS) in depth; closes on a best-practices takeaway. **Built 2026-09-03, opener cut same day** — the hook's impact now resolves entirely in the Prologue, so Act II no longer repeats it. **+1 slide 2026-09-03/04**: a "recipe" slide reconstructing Task 4's real phase-by-phase execution order from `bits_for_gaps`' own git history | 10 (incl. divider) | 12.5 min |
-| Act III | **Challenge** | It tells me I'm wrong, closing on a capstone. **Rebuilt 2026-09-03**, labeled Task 5/6, plus a setup slide for Task 5. **Rebuilt again 2026-09-04** (revision #7 above): Task 5 gains a walkthrough slide (6 slides now, was 5); new Task 6 (3 slides); the old two-slide Task 6 capstone is cut and replaced by a six-slide Task 7, built from a real course-prep-sprint audit | 15 (incl. divider) | ~19 min |
+| Act III | **Challenge** | It tells me I'm wrong, closing on a capstone. **Rebuilt 2026-09-03**, labeled Task 5/6, plus a setup slide for Task 5. **Rebuilt again 2026-09-04** (revision #7 above): Task 5 gains a walkthrough slide and (from a same-night audit wave) a citation-tracing slide (7 slides now, was 5); new Task 6 (3 slides); the old two-slide Task 6 capstone is cut and replaced by a six-slide Task 7, built from a real course-prep-sprint audit | 16 (incl. divider) | ~20 min |
 | Epilogue | **Trust** | The IT-policy "trust" beats; close on curiosity. "Back to the question" **cut 2026-09-03** — Alex's call. Hobby slide revised (real project list, git-tracked); **new second hobby slide** added — the Ham radio textbook, generalized as "create a textbook customized for you," deliberately not a numbered task (hobby register, per demo_ideas.md's own framing) | 8 (incl. divider) | 6.5 min |
-| | | **Total** | **49 (built)** | **~54.5 min** — over the 40-minute talk portion; no slide-count ceiling per Alex's 2026-09-04 call (revision #7), rehearsal-driven trimming still pending and now more clearly needed |
+| | | **Total** | **50 (built)** | **~55.5 min** — over the 40-minute talk portion; no slide-count ceiling per Alex's 2026-09-04 call (revision #7), rehearsal-driven trimming still pending and now more clearly needed |
 
 See [`../notes/demo_ideas.md`](../notes/demo_ideas.md) for the confirmed six example types, which projects ground which slide, and the naming decision per type — this file only has slide titles; that one has the full mapping.
 
@@ -160,19 +160,20 @@ Built 2026-09-03, revised same day — 9 slides total (8 content + divider), com
 1. **Task 5 — Audit a manuscript before it's submitted** — the setup slide: five real audit questions (method-vs-code, arithmetic, traceability, reproducibility, literature fidelity), closing on "ask these separately, together they read as an attack."
 2. **Task 5 — walk it through, one question at a time** — the audit's mechanics: point Claude at the manuscript and the repo, ask one question at a time; what each question type actually requires (grep for traceability, diff for method, recompute for arithmetic).
 3. **Task 5 — trace every number back to the file that produced it** — the claim-tracing table, all three statuses (verified / mismatch / cannot verify) on one slide.
-4. **Task 5 — a clean build hid a silent failure** — three independent instances, three unrelated domains: a manuscript's empty nomenclature table (exit code 0), a course's stale `.gitignore` rule, a project's own `CLAUDE.md` warning about stale paths directly above stale paths.
-5. **Task 5 — my status report was wrong about eleven items** — deriving status from evidence, not memory.
-6. **Task 6 — from an inherited project to a draft manuscript** — *(new)* generic, continues Task 2's membrane-transport project: context reconstructed, computation baselined, now the results become a paper.
-7. **Task 6 — draft against a structure, in a stated voice** — `technical_writing.md` and `writing_style_guide.md`, live for the first time in the talk.
-8. **Task 6 — figures that trace back, an audit before anyone else's** — `scientific_figures_tables.md` and `results_manifest.md`; closes by running Task 5's own audit against the draft.
-9. **Task 7 — a week before the semester, at scale** — "Optimization for Decision Science," named: ~1,450 commits in 2.5 weeks across the course's public/private repo pair, 98% of the private repo's entire history.
-10. **Task 7 — retire the scan, own the figure** — JupyterBook 1→2, and the running thread of textbook scans replaced by native, regeneratable figures.
-11. **Task 7 — ink to LaTeX, verified page by page** — the 45-page annotated-PDF transcription that caught a real page-map error and a real contradiction in Alex's own annotations.
-12. **Task 7 — an overnight report, self-auditing as it went** — a false journal citation caught, a refused invented page number, a self-corrected citation count (79 → 75).
-13. **Task 7 — close the flag where the flag lives** — the course's own `CLAUDE.md` postmortem on recording completion where the next reader will actually look.
-14. **Task 7 — pick the tool for the task, grounded in evidence** — a prose-trim job handed to Codex/GPT-5.6, briefed with real diffs of Alex's own hand-edits rather than a vague instruction — closes the act.
+4. **Task 5 — the same table works on a citation** — *(new, same night, from a parallel audit wave)* a DOI checker's perfect-title-match-wrong-document catch, and a citation one reference number off — the claim-tracing operation applied to a citation instead of a number.
+5. **Task 5 — a clean build hid a silent failure** — three independent instances, three unrelated domains: a manuscript's empty nomenclature table (exit code 0), a course's stale `.gitignore` rule, a project's own `CLAUDE.md` warning about stale paths directly above stale paths.
+6. **Task 5 — my status report was wrong about eleven items** — deriving status from evidence, not memory.
+7. **Task 6 — from an inherited project to a draft manuscript** — *(new)* generic, continues Task 2's membrane-transport project: context reconstructed, computation baselined, now the results become a paper.
+8. **Task 6 — draft against a structure, in a stated voice** — `technical_writing.md` and `writing_style_guide.md`, live for the first time in the talk.
+9. **Task 6 — figures that trace back, an audit before anyone else's** — `scientific_figures_tables.md` and `results_manifest.md`; closes by running Task 5's own audit against the draft.
+10. **Task 7 — a week before the semester, at scale** — "Optimization for Decision Science," named: ~1,450 commits in 2.5 weeks across the course's public/private repo pair, 98% of the private repo's entire history.
+11. **Task 7 — retire the scan, own the figure** — JupyterBook 1→2, and the running thread of textbook scans replaced by native, regeneratable figures.
+12. **Task 7 — ink to LaTeX, verified page by page** — the 45-page annotated-PDF transcription that caught a real page-map error and a real contradiction in Alex's own annotations.
+13. **Task 7 — an overnight report, self-auditing as it went** — a false journal citation caught, a refused invented page number, a self-corrected citation count (79 → 75).
+14. **Task 7 — close the flag where the flag lives** — the course's own `CLAUDE.md` postmortem on recording completion where the next reader will actually look.
+15. **Task 7 — pick the tool for the task, grounded in evidence** — a prose-trim job handed to Codex/GPT-5.6, briefed with real diffs of Alex's own hand-edits rather than a vague instruction — closes the act.
 
-Rebuilt 2026-09-04 — 15 slides total (14 content + divider), up from 8. Compiles clean, every touched/new slide visually checked (`pdftoppm` render pass, per `style_guide.md` rule 10).
+Rebuilt 2026-09-04 — 16 slides total (15 content + divider), up from 8. Compiles clean, every touched/new slide visually checked (`pdftoppm` render pass, per `style_guide.md` rule 10).
 
 ## Epilogue — Trust
 
