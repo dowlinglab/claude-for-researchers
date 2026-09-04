@@ -9,23 +9,25 @@
 % Admissions), not attributed to a specific person. The 2023 box is
 % co-built (36 Alex + 37 Jeff commits); 2024/2025 are solo (100% Alex).
 %
-% Frame 1's schedule image is a REAL run of the real, public package
-% (v0.5.0, installed from PyPI) -- real ND CBE faculty (public roster),
-% fictional Winnie-the-Pooh visitors (public domain) standing in for real
-% prospective students. Generation script is throwaway, not checked into
-% this repo; regenerate via grad-visitor-scheduler's
-% SolutionResult.plot_visitor_schedule() (examples/README.md in the public
-% repo has the pattern). The demo config MUST set `movement: {policy:
-% travel_time, min_buffer_minutes: 10}` -- `policy: none` silently
-% disables travel-time enforcement between buildings and produces
-% impossible back-to-back transitions. Faculty-name boxes overrun if you
-% only bump fontsize: box width derives from figsize, not the label, so
-% figsize must scale with fontsize together (figsize=(18,15), fontsize=20,
-% lw=51 is the verified-clear combination for 6 visitors) -- see
-% grad_visit_scheduler_box_fix_notes.md in the scratchpad for the full
-% root-cause writeup and an upstream-fix recommendation, not yet applied
-% anywhere. Image height is capped at 6.0cm: past that, the image's own
-% white canvas (not just its content) collides with the corner logo.
+% Frame 1's schedule image is a REAL run of the real, public package --
+% real ND CBE faculty (public roster), fictional Winnie-the-Pooh visitors
+% (public domain) standing in for real prospective students. Generated
+% from branch `fix/schedule-plot-label-overrun-and-autosize` (PR open,
+% not yet merged/released to PyPI as of 2026-09-04) at
+% /Users/adowling/GitHub/DowlingLab/Service/grad-visit-scheduler, which
+% upstreams the box-overrun/fixed-whitespace fix this deck first patched
+% locally: `plot_visitor_schedule(..., fontsize=20, tight=True)` now
+% auto-sizes the figure from row count, time-slot count, and the longest
+% rendered label -- no more manual figsize/lw tuning. `tight=True` is
+% what fixes the excess vertical whitespace between rows; the aspect
+% ratio this produces is ~2.2:1 (wide), a sharp change from the old
+% hardcoded ~1.2:1, so the image is now sized by width
+% (0.98\linewidth in its column), not a fixed height -- at this aspect
+% ratio a height cap for the corner-logo collision no longer applies.
+% Generation script is throwaway, not checked into this repo; the demo
+% config MUST set `movement: {policy: travel_time, min_buffer_minutes:
+% 10}` -- `policy: none` silently disables travel-time enforcement
+% between buildings and produces impossible back-to-back transitions.
 %
 %
 \begin{frame}{Creating faculty-visitor schedules for graduate student recruitment}
@@ -34,7 +36,7 @@
   \begin{columns}[c]
     \begin{column}{0.52\textwidth}
       \centering
-      \includegraphics[height=7.5cm]{figures/grad_visit_schedule_6}
+      \includegraphics[width=0.98\linewidth]{figures/grad_visit_schedule_6}
     \end{column}
     \begin{column}{0.44\textwidth}
       \centering
