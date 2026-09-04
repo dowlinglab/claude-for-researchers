@@ -113,14 +113,23 @@
   \ifdefstring{\nd@background}{blue}{\def\nd@titlepagelogo{gold}}{\def\nd@titlepagelogo{blue}}
 \fi
 \ifx\nd@titlecolor\undefined
-  \ifdefstring{\nd@titlelayout}{leftrule}{%
-    \ifdefstring{\nd@background}{blue}{\def\nd@titlecolor{white}}{\def\nd@titlecolor{blue}}%
-  }{%
   \ifdefstring{\nd@titlebar}{blue}{\def\nd@titlecolor{white}}{%
   \ifdefstring{\nd@titlebar}{gold}{\def\nd@titlecolor{black}}{%
   \ifdefstring{\nd@background}{blue}{\def\nd@titlecolor{white}}{\def\nd@titlecolor{blue}}%
-  }}}
+  }}
 \fi
+% [titlelayout]=leftrule's title-PAGE title sits directly on the
+% canvas, with no bar behind it -- a genuinely different context from
+% the per-slide frametitle bar [titlecolor] means (see above), so it
+% gets its own color, always background-aware, never bar-aware. FOUND
+% BY TESTING (a real deck's rendered slide, not a synthetic case): an
+% earlier version of this file branched [titlecolor]'s OWN default on
+% [titlelayout], which fixed the title page but broke every content
+% frame's frametitle bar text for any leftrule deck using
+% [titlecolor]'s default (e.g. background=white -> titlebar defaults
+% to blue -> titlecolor defaulted to blue too under that branch ->
+% blue text on a blue bar, invisible).
+\ifdefstring{\nd@background}{blue}{\def\nd@titlepagetitlecolor{white}}{\def\nd@titlepagetitlecolor{blue}}
 \ifx\nd@monogram\undefined
   \ifdefstring{\nd@titlebar}{blue}{\def\nd@monogram{white}}{%
   \ifdefstring{\nd@titlebar}{gold}{\def\nd@monogram{blue}}{\def\nd@monogram{none}}%
@@ -145,6 +154,7 @@
 \nd@setcolor{nd@titlecolorreal}{\nd@titlecolor}
 \nd@setcolor{nd@textcolorreal}{\nd@textcolor}
 \nd@setcolor{nd@backgroundcolor}{\nd@background}
+\nd@setcolor{nd@titlepagetitlecolorreal}{\nd@titlepagetitlecolor}
 
 % \hl[color]{text}: bold, optionally colored, emphasis. No [color]
 % argument uses [highlight] (deck-wide default); \hl[none]{...} always
@@ -350,7 +360,7 @@
   \setbeamertemplate{title page}{%
     \raggedright
     \vskip 0.3cm
-    {\Huge\bfseries\color{nd@titlecolorreal}\inserttitle\par}%
+    {\Huge\bfseries\color{nd@titlepagetitlecolorreal}\inserttitle\par}%
     \vskip 0.1cm
     {\LARGE\bfseries\color{NDGold}\insertsubtitle\par}%
     \vskip 1.1cm

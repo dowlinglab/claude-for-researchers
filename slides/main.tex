@@ -14,6 +14,8 @@
 % title slide. textcolor=blue -- body text defaults to ND Blue, not black.
 % titlelayout=leftrule -- this deck's own title-slide design (see the title
 % frame below), now a theme option rather than bespoke per-deck code.
+% monogram=none -- no small "ND" mark in the frametitle bar; the corner
+% logo on every frame is enough branding without doubling up.
 % No `nav` and no `sections`: nine sections in forty minutes do not justify
 % spending vertical space on every slide. Orientation comes from the act-strip
 % divider instead (\actstrip below).
@@ -28,7 +30,7 @@
 \def\input@path{{./theme/}}
 \makeatother
 \graphicspath{{./theme/}}
-\usetheme[cornerlogo=blue, textcolor=blue, titlelayout=leftrule]{NotreDame}
+\usetheme[cornerlogo=blue, textcolor=blue, titlelayout=leftrule, monogram=none]{NotreDame}
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
