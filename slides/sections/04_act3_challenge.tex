@@ -83,17 +83,18 @@
 % standing convention. Same claim-tracing operation as the previous
 % slide's table, applied to a citation instead of a number.
 
-% TODO: Please explain how DOI checker works, and what errors it will not check. In what ways does the DOI checker safeguard against hallucinated references?
-% TODO: How does this work with our literature library?
 \begin{frame}{Task 5 --- we can also automate checking references}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/scripts/doi_checker}{\texttt{resources/scripts/doi\_checker/}}}
   \vfill
-  \begin{center}
-    A DOI checker proposed a fix at a perfect title match --- to a completely unrelated document. Rejected by hand, before it looked exactly like the correct ones beside it.
+  \begin{center}\small
+    Checks every entry in the library's own versioned \texttt{.bib} file --- the one Task 3's corpus-grounded review builds --- against Crossref: does the DOI resolve, and to \textbf{the paper the entry actually describes}. It reports, never edits, and can't tell you a citation supports the claim it's attached to --- that still needs a human.
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    A citation one reference number off looked identical, until someone actually opened both papers.
+  \vspace{0.5em}
+  \begin{center}\small
+  \begin{itemize}\setlength\itemsep{0.3em}
+    \item A perfect title match, proposed for a completely unrelated document --- rejected by hand.
+    \item A citation one reference number off, identical until someone actually opened both papers.
+  \end{itemize}
   \end{center}
   \vfill
   \begin{center}
@@ -122,8 +123,8 @@
     \end{column}
   \end{columns}
   \vfill
-  \begin{center} % TODO: What do you mean by enumerate?
-    \slidepoint{A request to \textbf{enumerate} beats a request to \textbf{confirm}.}
+  \begin{center}
+    \slidepoint{Ask an agent to \textbf{list every instance} --- not just \textbf{confirm} it looks fine.}
   \end{center}
   \vfill
 \end{frame}
@@ -214,18 +215,23 @@
     Once the numbers were locked, the manuscript was restyled to match the group's own established voice from an earlier paper.
   \end{center}
   \vfill
-  \begin{center} % TODO: Does it make sense to mention the DOI checker after this slide?
+  % doi_checker (already cited on Task 5) verifies a DOI resolves to the
+  % right paper -- a different failure mode than this slide's own finding
+  % (a citation resolving fine but stating the source's result backwards).
+  % Not re-cited here: adding a third ndlogonote line risks the box-height
+  % overflow already seen elsewhere in this deck, and the two tools solve
+  % different problems, so naming both would blur rather than reinforce.
+  \begin{center}
     \slidepoint{The same discipline as \textbf{Task 3} --- a citation is \textbf{checked}, not \textbf{assumed}.}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% TODO: It is not clear to the audience you are talking about a recent project I worked on. Where does the 25 number come from? This is another example of the audience not having enough context for these specific statements. My preference is to either provide more framing OR remove some of these specific references. As written, I do not see the value add in this slide?
 \begin{frame}{Task 6 --- the manuscript audits itself, before anyone else does}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/manuscript_audit.md}{\texttt{resources/practices/manuscript\_audit.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/templates/results_manifest.md}{\texttt{resources/templates/results\_manifest.md}}}
   \vfill
   \begin{center}
-    A full self-audit checked the manuscript against its own code and data: twenty-five discrepancies found, twenty-two fixed on the spot.
+    The same manuscript, one more pass before it left the group: a full self-audit checked it against its own code and data --- twenty-five discrepancies found, twenty-two fixed on the spot.
   \end{center}
   \vspace{0.6em}
   \begin{center}
@@ -281,39 +287,53 @@
 %     L4: 63), not a vague "make it shorter" instruction.
 
 
-% TODO: Instead, I think we want to open this slide with the list of everything that I put in scope for my pre-semester sprint. A list of these talks, all AI-accelerated will provide better context and be more impressive. I am okay deferring the screenshot to later in the semester. But we can add the course URL in the footnote spot on the slide.
+% Opening slide rebuilt 2026-09-04, same spirit as Act II's Task 4 recipe
+% slide: a numbered list of everything in scope up front, so downstream
+% slides can elaborate selectively (only where there's a real lesson) rather
+% than narrate the whole sprint in order. Alex's own call: the audience
+% should see the full scope immediately, not just the two threads that get
+% their own slide. Screenshot deliberately deferred (image_plan.md Act III
+% #6, still "not yet captured") -- the course URL fills the footnote spot
+% instead, real and immediately checkable.
 \begin{frame}[fragile]{Task 7 --- a week before the semester, at scale}
-  \vfill
-  \begin{columns}[c]
-    \begin{column}{0.34\textwidth}
-      \centering
-      \placeholderimage{4.0cm}{2.1cm}{screenshot: course site (ndcbe.github.io)}
-    \end{column}
-    \begin{column}{0.62\textwidth}
-      \keyterm{Optimization for Decision Science} --- Alex's own course, already public, small manual pushes since 2023.
-    \end{column}
-  \end{columns}
-  \vspace{0.6em}
-  \begin{center}
-    One pre-semester sprint, across the public course repo and its private companion: \textbf{$\sim$1{,}450 commits in 2.5 weeks} --- 98\% of the private repo's \textit{entire} history.
+  \ndlogonote{\scriptsize\href{https://ndcbe.github.io/optimization}{\texttt{ndcbe.github.io/optimization}}}
+  \vspace{-1.1cm}
+  \begin{center}\small
+    \keyterm{Optimization for Decision Science} --- Alex's own course, already public, small manual pushes since 2023.
   \end{center}
-  \vfill
+  \vspace{0.2em}
+  \begin{center}
+  \begin{enumerate}\small\setlength\itemsep{0.05em}
+    \item Migrate the course site, JupyterBook 1 $\to$ 2
+    \item Retire textbook scans for figures the repo can regenerate
+    \item Transcribe 45 pages of handwritten annotations, verified page by page
+    \item Write an overnight report that audited itself as it went
+    \item Fix a recurring habit: close the flag where the flag lives
+    \item Pick the tool for the task --- some work moved to Codex, grounded in evidence
+  \end{enumerate}
+  \end{center}
+  \vspace{0.2em}
+  \begin{center}\small
+    Across the public course repo and its private companion: \textbf{$\sim$1{,}450 commits in 2.5 weeks} --- 98\% of the private repo's \textit{entire} history.
+  \end{center}
+  \vspace{0.3em}
   \begin{center}
     \slidepoint{The same shape as the Prologue's hook --- \textbf{years of patches}, then a \textbf{burst}.}
   \end{center}
-  \vfill
 \end{frame}
 
-% TODO: The other Task 7 slides need to be revamped, in a similar spirit to the BITS for GAPS example. For BITS for GAPS, we added a list of the recipe/steps on the first slide. Then the following few slides elaborated on important steps with that are most important or have unexpected pain points or important lessons learned. The audience might not care that much about the JupyterBook upgrade, so that would be a good think include in the list by not elaborate on.
+% JupyterBook migration trimmed to one clause -- it's already named on the
+% opening list (item 1) and, per Alex's own call, isn't worth a slide of its
+% own; the scan-retirement thread is where this slide's real content lives.
 \begin{frame}{Task 7 --- retire the scan, own the figure}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{resources/practices/scientific\_figures\_tables.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/scripts/figure_style}{\texttt{resources/scripts/figure\_style/}}}
   \vfill
   \begin{center}
-    JupyterBook 1 $\to$ 2, migrated and republished in one day.
+    The site migration is a day of work. The habit that outlasts it, running through the whole sprint: retire the textbook scan for a figure the repo can regenerate.
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    Then, running through the whole sprint: eight orphaned textbook scans deleted, three textbook figures redrawn in TikZ, five book-table scans replaced with native Markdown.
+    Eight orphaned textbook scans deleted, three textbook figures redrawn in TikZ, five book-table scans replaced with native Markdown.
   \end{center}
   \vfill
   \begin{center}
