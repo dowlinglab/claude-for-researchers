@@ -58,6 +58,7 @@
 % standard is real/git-verified material and a fabricated exchange would
 % be the one exception to that.
 \begin{frame}{Task 5 --- walk it through, one question at a time}
+  \ndlogonote{\scriptsize\texttt{resources/prompts/manuscript\_audit.md}}
   \vfill
   \begin{center}
     Point Claude at the manuscript source files (LaTeX in Overleaf synced via GitHub ;) and the analysis repo.
@@ -75,10 +76,6 @@
   \begin{center}
     \slidepoint{The audit is only as good as the \textbf{files} you hand it.}
   \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/prompts/manuscript\_audit.md}}
-  \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
@@ -86,6 +83,7 @@
 % (from outline.md's original example), never sourced from any real
 % unpublished audit -- keep it that way on any future edit of this table.
 \begin{frame}{Task 5 --- trace every number back to the file that produced it}
+  \ndlogonote{\scriptsize\texttt{resources/templates/results\_manifest.md}}
   \vfill
   \begin{center}
   \begin{tabular}{@{}p{5.4cm}p{2.6cm}p{2.6cm}l@{}}
@@ -106,10 +104,6 @@
   \begin{center}
     \slidepoint{\unknown{Cannot verify} is a result you want ---\\a real \textbf{provenance gap}, not a failure of the audit.}
   \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/templates/results\_manifest.md}}
-  \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
@@ -124,6 +118,7 @@
 % named the next pass. Same claim-tracing operation as the previous
 % slide's table, applied to a citation instead of a number.
 \begin{frame}{Task 5 --- the same table works on a citation}
+  \ndlogonote{\scriptsize\texttt{resources/scripts/doi\_checker/}}
   \vfill
   \begin{center}
     A DOI checker proposed a fix at a perfect title match --- to a completely unrelated document. Rejected by hand, before it looked exactly like the correct ones beside it.
@@ -135,10 +130,6 @@
   \vfill
   \begin{center}
     \slidepoint{A citation is a \textbf{claim} too --- \textbf{verified} or \textbf{wrong}, not close enough.}
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/scripts/doi\_checker/}}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
@@ -247,6 +238,7 @@
 \end{frame}
 
 \begin{frame}{Task 6 --- draft against a structure, in a stated voice}
+  \ndlogonote{\scriptsize\texttt{resources/practices/technical\_writing.md}\\\texttt{writing\_style\_guide.md}}
   \vfill
   \begin{center}
     A real report was recast, on the PI's instruction, from a changelog into a current-state snapshot --- history moved to git, structure became a deliberate choice.
@@ -259,14 +251,11 @@
   \begin{center}
     \slidepoint{Structure and voice: both \textbf{stated}, neither \textbf{assumed}.}
   \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/practices/technical\_writing.md}, \texttt{writing\_style\_guide.md}}
-  \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Task 6 --- figures that trace back, an audit before anyone else's}
+  \ndlogonote{\scriptsize\texttt{resources/practices/scientific\_figures\_tables.md}\\\texttt{resources/templates/results\_manifest.md}}
   \vfill
   \begin{center}
     A data-level check compared 119 figures against baseline after a rewrite: 773 raw findings, all explained by one intended change --- not a new bug.
@@ -278,10 +267,6 @@
   \vfill
   \begin{center}
     \slidepoint{The loop \textbf{closes} on itself --- the project audits its own paper.}
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/practices/scientific\_figures\_tables.md}, \texttt{resources/templates/results\_manifest.md}}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
@@ -355,6 +340,7 @@
 \end{frame}
 
 \begin{frame}{Task 7 --- retire the scan, own the figure}
+  \ndlogonote{\scriptsize\texttt{resources/practices/scientific\_figures\_tables.md}\\\texttt{resources/scripts/figure\_style/}}
   \vfill
   \begin{center}
     JupyterBook 1 $\to$ 2, migrated and republished in one day.
@@ -366,10 +352,6 @@
   \vfill
   \begin{center}
     \slidepoint{A figure the repo can \textbf{regenerate} beats one it can only \textbf{redisplay}.}
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/practices/scientific\_figures\_tables.md}, \texttt{resources/scripts/figure\_style/}}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
@@ -407,6 +389,7 @@
 \end{frame}
 
 \begin{frame}{Task 7 --- close the flag where the flag lives}
+  \ndlogonote{\scriptsize\texttt{resources/practices/working\_with\_ai\_agents.md} \S9}
   \vfill
   \begin{center}
     One day, four separate fixes recorded somewhere nobody would re-read: a follow-up buried in a table, a stale source comment, a caption fix noted only in a commit message, an invisible tag.
@@ -418,10 +401,6 @@
   \vfill
   \begin{center}
     \slidepoint{A commit message is a \textbf{record}, not a \textbf{notification}.}
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/practices/working\_with\_ai\_agents.md} \S9}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}

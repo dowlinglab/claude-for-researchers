@@ -54,6 +54,7 @@
 % captured (figures/bits_for_gaps_screenshot.png), CC BY 4.0, (c) 2026 The
 % Authors -- same license terms as the README's own caption.
 \begin{frame}{Task 4 --- convert code from a published paper into a package}
+  \ndlogonote{\scriptsize\texttt{github.com/dowlinglab/bits\_for\_gaps}}
   \vfill
   \begin{center}
     \includegraphics[width=0.56\textwidth]{figures/bits_for_gaps_graphical_abstract}\\[0.15em]
@@ -61,11 +62,10 @@
   \end{center}
   \vspace{0.35em}
   \begin{center}
-    \slidepoint{After Kyla defended her thesis, I turned her well-organized private codebase into a \textbf{public, pip-installable package} using Claude Code! \\ \url{https://github.com/dowlinglab/bits_for_gaps}}
+    \slidepoint{After Kyla defended her thesis, I turned her well-organized private codebase into a \textbf{public, pip-installable package} using Claude Code!}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
-% TODO: Let's move the URL for the git repo into the space to the right of the ND logo near the bottom. I want to add this to the template.
 
 % "Recipe" overview slide, added 2026-09-03 at Alex's request, then rebuilt
 % same day around the REAL execution order (Alex: "present the actual
@@ -87,28 +87,35 @@
 % 2026-08-06, a month after 9e merged (2026-07-05). Thirteen labeled phases
 % executed against ten planned.
 
-% TODO: Let's drop discussing phases here
-% I would like to expand "three more phases". What did we actually do?
-% This slide reminds me what we did, but I have the context for the project
-% The slide does not do a good job of communicating to the audience
-% a ``recipe'' they can repeat
+% Recipe list, revised 2026-09-04 per Alex's request: drop the "planned
+% ten / executed thirteen" slidepoint (the number was doing work for an
+% earlier framing; this slide is now about the recipe itself, not about
+% how much the plan changed) and expand the four improvised additions
+% (9b/9c/9d/9e) into their own lines instead of one compressed bullet, so
+% the audience can see *what* got improvised, not just *that* something
+% was. Each marked with a trailing asterisk, explained in the caption below.
+% Points to scientific_computing_workflow.md, where this same recipe is
+% written out in prose (\S2-4).
 \begin{frame}{Task 4 --- the recipe, in the order it actually happened}
-  \vfill
+  \ndlogonote{\scriptsize\texttt{resources/practices/\\scientific\_computing\_workflow.md}}
   \begin{center}
-  \begin{enumerate} \normalsize \setlength\itemsep{0.4em}
-    \item Bootstrap the package --- folds in two planned phases that never got their own commit
-    \item Regression harness \textit{before} touching the algorithm (Phase 2)
-    \item Decompose, generalize, port the paper's example (Phase 4--6)
-    \item Reproduce every figure, then document (Phase 7--8)
-    \item Reproduce every \textit{result} from scratch --- found a real bug (Phase 9, 9b)
-    \item Three more phases, each proposed only after the last one finished (9c--9e)
-    \item Release! (Phase 10)
+  \begin{enumerate} \small \setlength\itemsep{0.2em}
+    \item Bootstrap the package
+    \item Build a regression harness \textit{before} touching the algorithm
+    \item Decompose, generalize, and port the paper's example
+    \item Reproduce every figure, then document
+    \item Reproduce every \textit{result} from scratch --- a discrepancy turned up
+    \item Root-cause it: a real bug, confirmed to four decimal places$^\ast$
+    \item Harden for robustness before publishing$^\ast$
+    \item A full pass on hygiene, types, and test coverage$^\ast$
+    \item A last pass on docs, tests, and comments$^\ast$
+    \item Release
   \end{enumerate}
   \end{center}
+  \vspace{0.15em}
   \begin{center}
-    \slidepoint{Planned: \textbf{ten} phases. Executed: \textbf{thirteen} ---\\four of them improvised \textbf{after} Phase 9 was already done.}
+    \scriptsize $^\ast$ added to the plan only after the step before it finished
   \end{center}
-  \vfill
 \end{frame}
 
 \begin{frame}{Task 4 --- baseline before touching anything}
@@ -161,6 +168,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Task 4 --- ship the skeleton, scrub the scaffolding}
+  \ndlogonote{\scriptsize\texttt{resources/practices/private\_code\_to\_public\_package.md} \S10}
   \vfill
   \begin{center}
     Trusted publishing via OIDC --- no long-lived credentials in the repository. A real install-and-import gate from a test index, before the real one.
@@ -168,10 +176,6 @@
   \vspace{0.9em}
   \begin{center}
     \texttt{HANDOFF.md}, \texttt{REFACTOR\_PLAN.md}, the bug investigation log --- all removed before release. Recoverable from git history, not gone.
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/practices/private\_code\_to\_public\_package.md} \S10}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
@@ -198,6 +202,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Task 3, continued --- the same discipline, on a document instead of code}
+  \ndlogonote{\scriptsize\texttt{resources/prompts/proposal\_review.md}}
   \vfill
   \begin{center}
     A returning-sponsor proposal, drafted tersely against the sponsor's own form, then restored to its exact required wording before submission.
@@ -211,14 +216,11 @@
   \begin{center}
     AI as a compliance reviewer, findings written inline, not in a separate comments document: flagged, fixed, then removed --- never left in the submitted file.
   \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/prompts/proposal\_review.md}}
-  \end{center}
   \vfill
 \end{frame}
 
 \begin{frame}[fragile]{Best practices: review the diff, verify every revision}
+  \ndlogonote{\scriptsize\texttt{resources/scripts/latexdiff\_check.sh}}
   \vfill
   {\scriptsize A generic, illustrative diff --- not a real commit.}
   \begin{lstlisting}
@@ -232,10 +234,6 @@
   \vspace{0.6em}
   \begin{center}
     \texttt{latexdiff} against the last commit, word-level, catches what a normal re-read misses --- for a proposal, a manuscript, either one.
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize \texttt{resources/scripts/latexdiff\_check.sh}}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
