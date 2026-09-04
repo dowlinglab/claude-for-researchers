@@ -140,34 +140,38 @@
 % (30 commits) -- the most-iterated project, a real number, not an
 % estimate.
 
-% TODO: Here are edits to the slide
-% - I want the 3D printing picture to be much larger
-% - I prefer the other 3D printing picture. The one that shows going from the hand sketch to the kitchen organizer and the telescope shelf
-% - Let's have two lists on the slide. List one (numbered): My final new workflow.
-% - List two (bullets): 3D printing projects
-% - Let's kill the "What would 3D printing..." I do not want to make that the point of the talk. Instead, I want to emphasize my process, the cool projects, and show a picture.
+% REVISED 2026-09-03, further Alex feedback: bigger photo, swapped to the
+% hand-sketch-to-kitchen-organizer/telescope-shelf image, the point moves
+% from "what would this teach" (cut, per Alex: "I do not want to make that
+% the point of the talk") to the process and the project list themselves --
+% two lists, workflow tooling verified real against the public
+% adowling2/3d-printing repo (see comment above, still accurate).
 \begin{frame}{Curiosity is a feature, not a consolation prize}
   \vfill
   \begin{columns}[c]
-    \begin{column}{0.46\textwidth}
+    \begin{column}{0.42\textwidth}
       \centering
-      \includegraphics[height=4.2cm]{figures/boot_dryer_octopus.jpeg}\\[0.15em]
-      {\scriptsize Hesburgh Libraries' 3D printing (credit: Adam Heet).}
+      \includegraphics[height=4.1cm]{figures/kitchen_organizer_telescope_shelf.jpeg}\\[0.1em]
+      {\scriptsize Hand sketch to kitchen organizer and telescope shelf.}
     \end{column}
-    \begin{column}{0.48\textwidth}
-      Same discipline, git-tracked: a script to start a project, a script to render it, one shared style guide.
-      \begin{itemize}\scriptsize\setlength\itemsep{0.25em}
+    \begin{column}{0.52\textwidth}
+      \textbf{\small My workflow}
+      \begin{enumerate}\small\setlength\itemsep{0.1em}
+        \item \texttt{init\_project.sh} to start
+        \item Iterate with Codex against one shared \texttt{STYLE.md}
+        \item \texttt{render\_views.sh} for the final views
+      \end{enumerate}
+      \vspace{0.4em}
+      \textbf{\small Projects}
+      \begin{itemize}\small\setlength\itemsep{0.1em}
         \item boot dryer (the octopus)
         \item bathroom \& drawer organizers
         \item telescope shelf \& caps, camera \& binocular mounts
         \item personalized CBE keychains (recruitment)
-        \item tablet car mount (kids)      \end{itemize}
+        \item tablet car mount (kids)
+      \end{itemize}
     \end{column}
   \end{columns}
-  \vspace{0.5em}
-  \begin{center}
-    \slidepoint{What would 3D printing \textbf{teach} in a CBE course ---\\ turbulent-mixing baffles, a vehicle for thermo, transport, controls?}
-  \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
@@ -192,45 +196,45 @@
 % -- flag if you actually want it folded into the numbered curriculum,
 % since that would ripple into the Prologue preview and Epilogue matrix.
 
-% TODO: On the ham radio slide, please make the following edits
-% - Across the top, we need to provide context. "This summer, I earned my amateur radio license!
-% - Instead of memorizing answers for the top-level license, I wanted to learn the underlying AC circuit theory.
-% - Solution: With Claude, I created a text, customized to my background (chemical engineering professor, teaches dynamics and control)
-% - Here is my approach: (then list the steps)
-% Let's cut the 58 revisions... line
-% Instead, help me find a graphic from the textbook that helps explain a topic, such as Smith charts or filters, and LCR oscillators from a controls perspective
-% I am okay cutting the numbered contents of the book
-% We should include the public github link, perhaps in the to-be-created bottom box
-
-
+% REVISED 2026-09-03, further Alex feedback: top framing added (why the
+% project exists at all), the book's numbered contents column cut, the "58
+% revisions" closing line cut in favor of a real figure from the book
+% itself. Figure sourced 2026-09-03 directly from the public, real
+% adowling2/radio-extra-book repo: figures/oscillator_loopgain.pdf, a
+% Barkhausen-criterion loop-gain/phase Bode plot for an LC oscillator
+% (chapters/17_active_circuits.tex, \label{fig:oscillator-loopgain}) --
+% exactly the "LCR oscillator from a controls perspective" Alex asked for,
+% not invented for the slide. GitHub link included inline via
+% \slidepoint (matching the Task 4 intro slide's own pattern) until the
+% template's planned corner-box (see the deferred TODO in
+% 03_act2_build.tex) exists to hold it instead.
 \begin{frame}{Create a textbook, customized for you}
   \vfill
-  \begin{columns}[t]
+  \begin{center}
+    This summer, I earned my amateur radio license --- and wanted the real AC theory, not memorized answers. Solution: a text from Claude, customized to my background.
+  \end{center}
+  \vspace{0.35em}
+  \begin{columns}[c]
     \begin{column}{0.44\textwidth}
-      \small
-      \textbf{Circuit Theory for the Amateur Extra Exam}\\
-      {\scriptsize A control-theory perspective --- Alex Dowling, KE9FZD}\\[0.6em]
-      \begin{enumerate}\scriptsize\setlength\itemsep{0.25em}
-        \item Exam-Ready Reference
-        \item Mathematical \& Control-Theory Foundations
-        \item Circuit Models
-        \item Applying the Circuit Models
-        \item Practice \& Study
-      \end{enumerate}
-    \end{column}
-    \begin{column}{0.52\textwidth}
-      \begin{enumerate}\setlength\itemsep{0.35em}
+      \textbf{\small My approach}
+      \begin{enumerate}\small\setlength\itemsep{0.1em}
         \item Draft the source, chapter by chapter
         \item Reorganize into a coherent part structure
         \item Build a reproducible figure pipeline
-        \item Verify coverage against the real exam question pools
-        \item Revise in structured rounds --- audit, fix, re-verify, read on my iPad and gave Claude my markups
+        \item Verify coverage against real exam question pools
+        \item Revise in structured rounds
       \end{enumerate}
     \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \includegraphics[height=2.9cm]{figures/oscillator_loopgain}\\[0.05em]
+      {\scriptsize An LC oscillator, explained the way I actually teach it: loop gain and phase margin.}
+    \end{column}
   \end{columns}
-  \vfill
+  \vspace{0.35em}
   \begin{center}
-    \slidepoint{58 revisions later, \textbf{0 open} ---\\two were the book's \textbf{own errors}, caught by its own audit.}
+    \slidepoint{Same habit, a different domain --- \textbf{customized for you}.}\\[0.3em]
+    {\small\url{https://github.com/adowling2/radio-extra-book}}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
