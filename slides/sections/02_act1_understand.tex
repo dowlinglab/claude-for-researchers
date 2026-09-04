@@ -23,8 +23,8 @@
 \begin{frame}{The filesystem is the source of truth}
   \begin{center}
     New to research software? Start here --- everything else in this talk builds on this one habit.
-   % TODO: Help me reduce the white space betewen the top of the columns and the bottom of the line above.
   \end{center}
+  \vspace{-0.3em}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
       \begin{center}\textbf{A conversation}\end{center}
@@ -48,21 +48,25 @@
   \vspace{0.4em}
   \begin{center}\small
     Most important advice for today, whether you write code or just run experiments --- use \textbf{version control}. Something stopped working? It becomes a time machine. \\
-  \vspace{0.2em} % Can we move these linked URLs to numbered references at the bottom of the slide? Right now, it is not clear these are hyperlinks. 
-    Getting started is easy: create a GitHub account, apply for \href{https://github.com/education}{education free upgrades}, watch a \href{https://youtu.be/a9u2yZvsqHA?si=Tose1lV36yNAaf-q}{YouTube tutorial}, install \href{https://desktop.github.com/download/}{GitHub Desktop}.
+  \vspace{0.2em}
+    Getting started is easy: create a GitHub account, apply for education free upgrades\textsuperscript{1}, watch a tutorial\textsuperscript{2}, install GitHub Desktop\textsuperscript{3}.
+  \end{center}
+  \vspace{0.3em}
+  \begin{center}
+    {\tiny \textsuperscript{1}~\texttt{github.com/education} \quad \textsuperscript{2}~\texttt{youtu.be/a9u2yZvsqHA} \quad \textsuperscript{3}~\texttt{desktop.github.com/download}}
   \end{center}
 \end{frame}
 
 \begin{frame}{An agent can touch your repository --- a chatbot can't}
   \vfill
-  \begin{center} % TODO: Make the text larger in this graphic.
-  \begin{tikzpicture}[font=\small, node distance=1.1cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center]
-      (a) {\textbf{LLM}\\\scriptsize the model};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.3cm, minimum height=1.3cm, align=center, right=of a]
-      (b) {\textbf{Chatbot}\\\scriptsize LLM + a chat window\\\scriptsize text in, text out};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=3.6cm, minimum height=1.3cm, align=center, right=of b, fill=CodeBg]
-      (c) {\textbf{Agent}\\\scriptsize LLM + tools\\\scriptsize reads, writes, and executes your files};
+  \begin{center}
+  \begin{tikzpicture}[font=\normalsize, node distance=1.3cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1.6cm, align=center]
+      (a) {\textbf{LLM}\\\small the model};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.9cm, minimum height=1.6cm, align=center, right=of a]
+      (b) {\textbf{Chatbot}\\\small LLM + a chat window\\\small text in, text out};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=4.2cm, minimum height=1.6cm, align=center, right=of b, fill=CodeBg]
+      (c) {\textbf{Agent}\\\small LLM + tools\\\small reads, writes, and executes your files};
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
     \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
   \end{tikzpicture}
@@ -194,13 +198,14 @@ Membrane transport parameter estimation.
   \end{tikzpicture}}
   \end{center}
   \vspace{0.5em}
-  \begin{center} % TODO Let's make these numbered steps for performing a corpus-grounded literature review. One of the steps will be downloading papers.
-  \begin{itemize}\small\setlength\itemsep{0.25em}
+  \begin{center}
+  \begin{enumerate}\small\setlength\itemsep{0.25em}
     \item Search a second, adjacent field on purpose --- not just your own topic
-    \item Process papers in small batches, each with a checkpoint before the next starts
+    \item Download papers in small batches, not one large dump
+    \item Process each batch, with a checkpoint before the next one starts
     \item Judge relevance to your project, don't just summarize the abstract
     \item Recheck every quantitative claim against the source, in a second pass
-  \end{itemize}
+  \end{enumerate}
   \end{center}
   \vspace{0.4em}
   \begin{center}
