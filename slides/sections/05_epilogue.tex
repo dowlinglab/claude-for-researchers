@@ -118,34 +118,40 @@
 % hobby scale. Image height is capped at 4.6cm, the most the 0.42-width
 % column can take without exceeding its own width (1:1 aspect ratio).
 
-% TODO: Please help me enlarge the figure. I want it to fill most of the white space on the left.
-% TODO: I think we are underselling my cool 3D printing workflow. I want to elaborate on how I start with a pencil and paper sketch or more recently photos with a tape measure. Likewise, in the workflow, we need to explain how/where I provide feedback to the loop.
+% Image enlarged 2026-09-04 (Alex's request) -- column widened 0.42->0.48
+% and height 4.6cm->5.6cm together, so the 1:1-ish source image still fits
+% its own column width (same constraint noted in the header comment above:
+% a height cap keyed to column width, not an arbitrary number). Workflow
+% list expanded from 3 to 5 steps at Alex's own direction, from his
+% first-person account of the real process: a sketch/photo step at the
+% front (not previously shown at all) and an explicit feedback-loop step at
+% the end (previously implied, never named) -- treated as authoritative
+% without separate git verification, same as other direct first-person
+% process statements elsewhere in this deck.
 \begin{frame}{Task 8 (hobbies) --- curiosity is a feature, not a consolation prize}
   \vfill
   \begin{columns}[c]
-    \begin{column}{0.42\textwidth}
+    \begin{column}{0.48\textwidth}
       \centering
-      \includegraphics[height=4.6cm]{figures/kitchen_organizer_telescope_shelf.jpeg}
+      \includegraphics[height=5.2cm]{figures/kitchen_organizer_telescope_shelf.jpeg}
     \end{column}
-    \begin{column}{0.52\textwidth}
+    \begin{column}{0.46\textwidth}
       \textbf{\small My workflow}
-      \begin{enumerate}\small\setlength\itemsep{0.1em}
-        \item \texttt{init\_project.sh} to start
-        \item Design in OpenSCAD, iterating with Codex against one shared \texttt{STYLE.md}
-        \item \texttt{render\_views.sh} for the views --- falls back to Blender when OpenSCAD's own offscreen renderer crashes
+      \begin{enumerate}\small\setlength\itemsep{0.05em}
+        \item Sketch on paper, or lately, photos with a tape measure
+        \item \texttt{init\_project.sh}; design in OpenSCAD, iterating with Codex against \texttt{STYLE.md}
+        \item \texttt{render\_views.sh} for views --- falls back to Blender on OpenSCAD crashes
+        \item Look at the views, tell Codex what's wrong, repeat until it matches the sketch
       \end{enumerate}
-      \vspace{0.4em}
+      \vspace{0.1em}
       \textbf{\small Projects}
-      \begin{itemize}\small\setlength\itemsep{0.1em}
-        \item boot dryer
-        \item bathroom \& drawer organizers
-        \item telescope shelf \& caps, camera \& binocular mounts
-        \item personalized CBE keychains (recruitment)
-        \item tablet car mount (kids)
+      \begin{itemize}\small\setlength\itemsep{0.05em}
+        \item boot dryer, bathroom \& drawer organizers, telescope shelf \& caps
+        \item camera \& binocular mounts, CBE keychains (recruitment), tablet car mount (kids)
       \end{itemize}
     \end{column}
   \end{columns}
-  \vspace{1.8cm plus 1fill}
+  \vspace{0.1cm plus 1fill}
 \end{frame}
 
 % Verified against the real, public adowling2/radio-extra-book repo (87
@@ -175,7 +181,7 @@
   \end{center}
   \vspace{0.35em}
   \begin{columns}[c]
-    \begin{column}{0.44\textwidth}
+    \begin{column}{0.40\textwidth}
       \textbf{\small My approach}
       \begin{enumerate}\small\setlength\itemsep{0.1em}
         \item Brainstorm with ChatGPT the connections between AC circuit theory and my background
@@ -186,27 +192,21 @@
         \item Revise in structured rounds
       \end{enumerate}
     \end{column}
-    \begin{column}{0.48\textwidth}
-      \centering % TODO: Let's make this figure larger, it is too small to read and there is too much white space
-      \includegraphics[height=2.9cm]{figures/filter_families}\\[0.05em]
+    \begin{column}{0.56\textwidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{figures/filter_families}\\[0.05em]
       {\scriptsize I want to understand the math behind filters on the Amerature Extra exam.}
     \end{column}
   \end{columns}
-  \vspace{1.8cm plus 1fill}
+  \vspace{0.6cm plus 1fill}
 \end{frame}
 
-% TODO: Is this slide needed? I added a sentence to the next slide. I think we can remove it.
-\begin{frame}{One thing to change tomorrow morning}
-  \vfill
-  \begin{center}
-    \large Put your project's goals, conventions, and authoritative sources\\ in a file an AI can read --- don't re-explain them in every chat.
-  \end{center}
-  \vfill
-  \begin{center}
-    Everything in this talk --- prompts, checklists, scripts, this deck's own source --- is on GitHub.
-  \end{center}
-  \vfill
-\end{frame}
+% "One thing to change tomorrow morning" (its own frame) removed
+% 2026-09-04, Alex's call: its message (put goals/conventions in an
+% AI-readable file) is already made in Act I's Task 2, and its second line
+% ("everything in this talk is on GitHub") is now folded into the "So, what
+% now?" frame below instead -- that frame carries the action-oriented close
+% this one used to lead into, so keeping both was redundant.
 
 % NEW 2026-09-04, Alex's request, the literal final slide: a concrete
 % physical call to action rather than another idea to remember. The
