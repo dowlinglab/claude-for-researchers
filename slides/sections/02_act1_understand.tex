@@ -23,8 +23,8 @@
 \begin{frame}{The filesystem is the source of truth}
   \begin{center}
     New to research software? Start here --- everything else in this talk builds on this one habit.
+   % TODO: Help me reduce the white space betewen the top of the columns and the bottom of the line above.
   \end{center}
-  \vspace{0.4em}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
       \begin{center}\textbf{A conversation}\end{center}
@@ -47,10 +47,8 @@
   \end{columns}
   \vspace{0.4em}
   \begin{center}\small
-    Most important advice for today, whether you write code or just run experiments --- use \textbf{version control}. Something stopped working? It becomes a time machine.
-  \end{center}
-  \vspace{0.4em}
-  \begin{center}\small
+    Most important advice for today, whether you write code or just run experiments --- use \textbf{version control}. Something stopped working? It becomes a time machine. \\
+  \vspace{0.2em} % Can we move these linked URLs to numbered references at the bottom of the slide? Right now, it is not clear these are hyperlinks. 
     Getting started is easy: create a GitHub account, apply for \href{https://github.com/education}{education free upgrades}, watch a \href{https://youtu.be/a9u2yZvsqHA?si=Tose1lV36yNAaf-q}{YouTube tutorial}, install \href{https://desktop.github.com/download/}{GitHub Desktop}.
   \end{center}
 \end{frame}
@@ -64,7 +62,7 @@
     \node[draw=NDBlue, rounded corners=2pt, minimum width=3.3cm, minimum height=1.3cm, align=center, right=of a]
       (b) {\textbf{Chatbot}\\\scriptsize LLM + a chat window\\\scriptsize text in, text out};
     \node[draw=NDGold, rounded corners=2pt, minimum width=3.6cm, minimum height=1.3cm, align=center, right=of b, fill=CodeBg]
-      (c) {\textbf{Agent}\\\scriptsize LLM + tools\\\scriptsize reads and writes your files};
+      (c) {\textbf{Agent}\\\scriptsize LLM + tools\\\scriptsize reads, writes, and executes your files};
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
     \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
   \end{tikzpicture}
@@ -126,16 +124,16 @@
   \begin{columns}[t]
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Persistent}}\\[0.4em]
-      Your data and results don't change between sessions. \\ A changing number could be a finding or bug. \\[0.7em]
-
+      Your data and results don't change between sessions. \\[0.4em] 
+      {\footnotesize A changing number could be a finding or a bug.} \\[0.7em]
     \end{column}
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Authoritative}}\\[0.4em]
-      The actual code and data. \\[0.2em] {\footnotesize Point an agent at the real files under (version control!); never describe them from memory.}\\[0.7em]
+      The actual code and data. \\[0.4em] {\footnotesize Point an agent at the real files under (version control!); never describe them from memory.}\\[0.7em]
     \end{column}
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Task}}\\[0.4em]
-      What you're working on right now, defined fresh each session.\\[0.2em]
+      What you're working on right now, defined fresh each session.\\[0.4em]
       {\footnotesize For complex tasks, you may find it helpful to have a coordinator agent (e.g., Opus/Fable, Terra/Sol) draft and save prompts that are sent to workers, then save the text summary created by the worker(s).} \\[0.7em]
     \end{column}
   \end{columns}
@@ -196,7 +194,7 @@ Membrane transport parameter estimation.
   \end{tikzpicture}}
   \end{center}
   \vspace{0.5em}
-  \begin{center}
+  \begin{center} % TODO Let's make these numbered steps for performing a corpus-grounded literature review. One of the steps will be downloading papers.
   \begin{itemize}\small\setlength\itemsep{0.25em}
     \item Search a second, adjacent field on purpose --- not just your own topic
     \item Process papers in small batches, each with a checkpoint before the next starts

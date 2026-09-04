@@ -47,8 +47,10 @@
 % against ten planned; the four improvised ones (9b-9e) are the
 % brace-highlighted items below. Same recipe, written out in prose, in
 % scientific_computing_workflow.md \S2-4.
-\begin{frame}{Task 4 --- the recipe, in the order it actually happened}
+\begin{frame}{Task 4 --- the recipe, final paper code $\to$ generalized, published package}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{resources/practices/scientific\_computing\_workflow.md}}\\[0.3em]\href{https://bits-for-gaps.readthedocs.io}{\texttt{bits-for-gaps.readthedocs.io}}}
+  
+  % TODO: Help me reduce the white space at the top of the slide
   \begin{center}
   \begin{enumerate} \normalsize \setlength\itemsep{0.28em}
     \item Extract the paper's code into an installable package, not just scripts
@@ -67,10 +69,11 @@
     \coordinate (braceX) at ($(current page.west)+(11.0cm,0)$);
     \draw[decorate, decoration={brace, amplitude=5pt}, thick, NDGold]
       ($(braceX|-braceTop)+(0,0.85em)$) -- ($(braceX|-braceBot)+(0,-0.15em)$)
-      node[midway, anchor=west, xshift=0.35cm, align=left, font=\scriptsize\itshape, text width=3.5cm] {added to the plan, on the fly};
+      node[midway, anchor=west, xshift=0.35cm, align=left, font=\scriptsize\itshape, text width=3.5cm] {added on-the-fly \\ by me to the plan};
   \end{tikzpicture}
 \end{frame}
 
+% TODO: This slide needs to be refactored to be more accessible to a graduate student. For example, the numbered phases and steps do not make sense. Instead, we need to explain (1) why this is important, (2) important transferable details / gotchas, (3) how we know it is done and correct
 \begin{frame}{Task 4 --- baseline before touching anything}
   \vfill
   \begin{center}
@@ -87,6 +90,7 @@
   \vfill
 \end{frame}
 
+% TODO: This slide needs to be refactored to be more accessible to a graduate student. For example, the numbered phases and steps do not make sense. Instead, we need to explain (1) why this is important, (2) important transferable details / gotchas, (3) how we know it is done and correct
 \begin{frame}[fragile]{Task 4 --- decompose, generalize, port}
   \vfill
   \begin{center}
@@ -105,6 +109,8 @@
   \vfill
 \end{frame}
 
+% TODO: This slide needs to be refactored to be more accessible to a graduate student. For example, the numbered phases and steps do not make sense. Instead, we need to explain (1) why this is important, (2) important transferable details / gotchas, (3) how we know it is done and correct
+% TODO: Please look into the history more. Did we confirm this bug did not impact the published results? That is important to clarify. I do want this to be precieved as me finding something that needs a correction.
 \begin{frame}{Task 4 --- the bug the reproduction found}
   \vfill
   \begin{center}
@@ -120,6 +126,7 @@
   \vfill
 \end{frame}
 
+% TODO: This slide needs to be refactored to be more accessible to a graduate student. For example, the numbered phases and steps do not make sense. Instead, we need to explain (1) why this is important, (2) important transferable details / gotchas, (3) how we know it is done and correct
 \begin{frame}[fragile]{Task 4 --- ship the skeleton, scrub the scaffolding}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/private_code_to_public_package.md}{\texttt{resources/practices/private\_code\_to\_public\_package.md}} \S10}
   \vfill
@@ -136,6 +143,7 @@
 % TODO(image_plan.md Act II): still need a real screenshot of the emcal
 % GitHub repo page (paper link, README scope statement) -- public, ready
 % now. \placeholderimage below stands in until it's captured.
+% TODO: Let's cut this for time. The emcal package is not complete yet, and we need to make space.
 \begin{frame}{Task 4, closes --- the same process, one repo over}
   \vfill
   \begin{columns}[c]
@@ -154,6 +162,8 @@
   \vfill
 \end{frame}
 
+% TODO: This slide seems out of place. What is it trying to say?
+% TODO: The example seems a little too specific and not clear. Can we update this idea and move it either earlier? 
 \begin{frame}[fragile]{Task 3, continued --- the same discipline, on a document instead of code}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/proposal_review.md}{\texttt{resources/prompts/proposal\_review.md}}}
   \vfill
@@ -172,6 +182,9 @@
   \vfill
 \end{frame}
 
+% TODO: Let's be more explicit here:
+% - How to view diffs for code
+% - How to review diffs for LaTeX
 \begin{frame}[fragile]{Best practices: review the diff, verify every revision}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/latexdiff_check.sh}{\texttt{resources/scripts/latexdiff\_check.sh}}}
   \vfill
