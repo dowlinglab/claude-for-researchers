@@ -67,7 +67,45 @@
 \end{frame}
 % TODO: Let's move the URL for the git repo into the space to the right of the ND logo near the bottom. I want to add this to the template.
 
-% TODO: Let's have a slide where I write out my phased approach. We might need to renumber phases to match what actually happened. That is fine. This slide is going to act as the "recipe" for the refactor. Subsequent slides can then touch on the most important points.
+% "Recipe" overview slide, added 2026-09-03 at Alex's request, then rebuilt
+% same day around the REAL execution order (Alex: "present the actual
+% order, not using the on-the-fly phase numbering we adopted"), reconstructed
+% from the public dowlinglab/bits_for_gaps commit history and its
+% since-deleted REFACTOR_PLAN.md (git-recoverable). Verified facts:
+% REFACTOR_PLAN.md originally numbered ten phases, 0-9, with Phase 9 =
+% Publish. Phase 1 (env + reproduce-from-archive) happened earlier, in the
+% private predecessor repo, before bits_for_gaps existed -- no commit for it
+% here. Phase 3 (package scaffold + verbatim move) never got its own commit
+% either -- folded into the single "Bootstrap" commit alongside Phase 0.
+% After Phase 8 (docs) finished, a planning commit (4f74d46, 2026-07-04
+% 09:48) split the old "Phase 9 = Publish" into a new Phase 9 (full
+% stochastic reproduction) and pushed Publish to Phase 10. From there, four
+% more phases were proposed live, one at a time, each only after the
+% previous one had already merged: 9b (a real bug, found the same day
+% Phase 9 finished), 9c (666267a, "add Phase 9c before publish"), 9d
+% (2f2730b), 9e (30cf18b) -- Publish (Phase 10) didn't actually happen until
+% 2026-08-06, a month after 9e merged (2026-07-05). Thirteen labeled phases
+% executed against ten planned.
+\begin{frame}{Task 4 --- the recipe, in the order it actually happened}
+  \vfill
+  \begin{center}
+  \begin{enumerate}\small\setlength\itemsep{0.4em}
+    \item Bootstrap the package --- folds in two planned phases that never got their own commit
+    \item Regression harness \textit{before} touching the algorithm (Phase 2)
+    \item Decompose, generalize, port the paper's example (Phase 4--6)
+    \item Reproduce every figure, then document (Phase 7--8)
+    \item Reproduce every \textit{result} from scratch --- found a real bug (Phase 9, 9b)
+    \item Three more phases, each proposed only after the last one finished (9c--9e)
+    \item Release, a month later (Phase 10)
+  \end{enumerate}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    \slidepoint{Planned: \textbf{ten} phases. Executed: \textbf{thirteen} ---\\four of them invented \textbf{after} Phase 9 was already done.}
+  \end{center}
+  \vfill
+\end{frame}
+
 \begin{frame}{Task 4 --- baseline before touching anything}
   \vfill
   \begin{center}
@@ -131,12 +169,18 @@
 
 % TODO(image_plan.md Act II): still need a real screenshot of the emcal
 % GitHub repo page (paper link, README scope statement) -- public, ready
-% now.
+% now. \placeholderimage below stands in until it's captured.
 \begin{frame}{Task 4, closes --- the same process, one repo over}
   \vfill
-  \begin{center}
-    \texttt{emcal} is the same move: \keyterm{Montana Carlozo}'s published paper (\textit{Ind. Eng. Chem. Res.}, 2025), research code migrated into an installable, tested package after the fact.
-  \end{center}
+  \begin{columns}[c]
+    \begin{column}{0.42\textwidth}
+      \centering
+      \placeholderimage{4.4cm}{2.8cm}{screenshot: emcal GitHub repo page (paper link, README scope statement)}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \texttt{emcal} is the same move: \keyterm{Montana Carlozo}'s published paper (\textit{Ind. Eng. Chem. Res.}, 2025), research code migrated into an installable, tested package after the fact.
+    \end{column}
+  \end{columns}
   \vspace{0.8em}
   \begin{center}
     Split by audience, not by code quality: the package is the method plus what a user needs; the research archive is the paper's own reproduction trail.

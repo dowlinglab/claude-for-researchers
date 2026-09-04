@@ -100,6 +100,20 @@
 \newcommand{\unknown}[1]{\textcolor{Muted}{\faQuestion~#1}}
 \newcommand{\keyterm}[1]{\textcolor{NDBlue}{\textbf{#1}}}
 
+% Placeholder for a real screenshot not yet captured (image_plan.md tracks
+% these). Deliberately looks inactive -- Muted gray, dashed -- the same
+% register as the act-strip's unlit stage boxes: a reminder to swap in the
+% real asset, not content to read. #1 width, #2 height, #3 caption (what to
+% go capture).
+\newcommand{\placeholderimage}[3]{%
+  \begin{tikzpicture}
+    \node[draw=Muted, dashed, thick, rounded corners=3pt,
+          minimum width=#1, minimum height=#2, align=center,
+          text width=#1-1cm, color=Muted]
+      {\faCamera\\[0.4em]\scriptsize\itshape #3};
+  \end{tikzpicture}%
+}
+
 
 % ---------------------------------------------------------------------
 % Body text: exactly two sizes, per slides/style_guide.md (a 2026-09-02 audit
