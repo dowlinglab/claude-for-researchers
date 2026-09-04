@@ -17,8 +17,15 @@
 % No `nav` and no `sections`: nine sections in forty minutes do not justify
 % spending vertical space on every slide. Orientation comes from the act-strip
 % divider instead (\actstrip below).
-% theme/ is put on TEXINPUTS by .latexmkrc, so the theme and its colour theme
-% resolve by name. Build with `make` or `latexmk -pdf main.tex`.
+% theme/ is on the search path two ways, so this builds the same regardless
+% of tool: .latexmkrc sets TEXINPUTS for `make`/`latexmk` builds, and the
+% \input@path line below adds the same directory for any other engine that
+% skips .latexmkrc entirely (e.g. a GUI editor's own "plain pdfLaTeX" mode,
+% which never reads it -- caught 2026-09-03 when Alex hit "File
+% `beamerthemeNotreDame.sty' not found" compiling by hand in Texifier).
+\makeatletter
+\def\input@path{{./theme/}}
+\makeatother
 \usetheme[white, nologo]{NotreDame}
 
 \usepackage[T1]{fontenc}
