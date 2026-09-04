@@ -8,13 +8,15 @@
 % Chemical Engineering 211, 2026), converted into a public package by
 % Alex after publication. Named the same way Jeff Kantor is named in the
 % Prologue: real credit tied to real public authorship (first author,
-% DOI'd), no invented biographical detail. The six Task 4 slides below are
-% git-verified against the real `dowlinglab/bits_for_gaps` commit history
-% (103 commits, all Alex, July 3 - Aug 7, 2026) and a since-deleted but
-% git-recoverable `HANDOFF.md` that narrated the whole conversion in
-% numbered phases. emcal (Montana Carlozo, also a published first author,
-% Ind. Eng. Chem. Res. 2025) gets one closing line, same pattern, less
-% depth.
+% DOI'd), no invented biographical detail. The five Task 4 slides below
+% are git-verified against the real `dowlinglab/bits_for_gaps` commit
+% history (103 commits, all Alex, July 3 - Aug 7, 2026) and a since-
+% deleted but git-recoverable `HANDOFF.md` that narrated the whole
+% conversion in numbered phases (kept as sourcing evidence only -- the
+% slides themselves no longer narrate by phase number, per Alex's own
+% 2026-09-04 accessibility pass). emcal's own closing slide was cut the
+% same day (package not complete yet, Act II needed the time back) -- see
+% the comment where it used to sit, below.
 \stagedivider{3}{Act II: Build}{What's worth keeping?}
 
 % Graphical abstract cropped from the real GitHub README screenshot Alex
@@ -72,24 +74,22 @@
   \end{tikzpicture}
 \end{frame}
 
-% TODO: This slide needs to be refactored to be more accessible to a graduate student. For example, the numbered phases and steps do not make sense. Instead, we need to explain (1) why this is important, (2) important transferable details / gotchas, (3) how we know it is done and correct
 \begin{frame}{Task 4 --- baseline before touching anything}
   \vfill
   \begin{center}
-    Phase 2: a regression harness and a full test suite, built \textit{before} any refactor began.
+    Refactoring code behind a published result, with no safety net, means you can never prove the answer didn't move.
   \end{center}
-  \vspace{0.7em}
+  \vspace{0.6em}
   \begin{center}
-    Phase 4, STEP 0: an exact-value baseline pinned on \texttt{sampler.py} --- \textit{then} the decomposition started.
+    The gotcha: pin the \textit{original} code's exact output as a regression test \textbf{before} touching a single line of the new structure --- not partway through, once refactoring has already started.
   \end{center}
-  \vspace{1em}
+  \vspace{0.6em}
   \begin{center}
-    \slidepoint{Run it before you \textbf{refactor} it ---\\prove you can \textbf{reproduce} it first.}
+    \slidepoint{Every future change either matches the pinned value, or it doesn't --- no ``looks about right.''}
   \end{center}
   \vfill
 \end{frame}
 
-% TODO: This slide needs to be refactored to be more accessible to a graduate student. For example, the numbered phases and steps do not make sense. Instead, we need to explain (1) why this is important, (2) important transferable details / gotchas, (3) how we know it is done and correct
 \begin{frame}[fragile]{Task 4 --- decompose, generalize, port}
   \vfill
   \begin{center}
@@ -101,66 +101,59 @@
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
   \end{tikzpicture}
   \end{center}
-  \vspace{0.7em}
+  \vspace{0.6em}
   \begin{center}
-    Phase 4: decomposed into modules. Phase 5: generalized from 1D/3D to $N$ dimensions. Phase 6: the paper's own VLE/distillation example ported onto the new public API.
-  \end{center}
-  \vfill
-\end{frame}
-
-% TODO: This slide needs to be refactored to be more accessible to a graduate student. For example, the numbered phases and steps do not make sense. Instead, we need to explain (1) why this is important, (2) important transferable details / gotchas, (3) how we know it is done and correct
-% TODO: Please look into the history more. Did we confirm this bug did not impact the published results? That is important to clarify. I do want this to be precieved as me finding something that needs a correction.
-\begin{frame}{Task 4 --- the bug the reproduction found}
-  \vfill
-  \begin{center}
-    A from-scratch figure reproduction flagged a discrepancy: one equilibrium column wouldn't converge. The first explanation was ---
-  \end{center}
-  \begin{center}
-    \bad{\large wrong.}
+    One file that does everything can't be tested in isolation, reused, or extended past the paper's own one example.
   \end{center}
   \vspace{0.5em}
   \begin{center}
-    Four hypotheses tested, three rejected. The real cause: a GP kernel mutated in place, then reused --- confirmed to 4 decimal places against a checkpoint.
+    The gotcha: split, generalize, and port \textit{in that order} --- and re-run the pinned baseline after every step, so a break is caught the moment it happens, not three steps later.
+  \end{center}
+  \vspace{0.5em}
+  \begin{center}
+    \slidepoint{Same output, five files not one --- reusable now, not just readable.}
   \end{center}
   \vfill
 \end{frame}
 
-% TODO: This slide needs to be refactored to be more accessible to a graduate student. For example, the numbered phases and steps do not make sense. Instead, we need to explain (1) why this is important, (2) important transferable details / gotchas, (3) how we know it is done and correct
+\begin{frame}{Task 4 --- the bug the reproduction found}
+  \vfill
+  \begin{center}
+    Reproducing a paper's own figures from scratch is the strongest test there is --- strong enough to catch a bug in \textit{new} verification code, not just the ported package.
+  \end{center}
+  \vspace{0.5em}
+  \begin{center}
+    One equilibrium column wouldn't converge. Four hypotheses tested, three rejected. The gotcha: a GP model object, mutated in place by one computation, then reused by another --- a classic silent-corruption trap, confirmed to four decimal places against a checkpoint.
+  \end{center}
+  \vspace{0.5em}
+  \begin{center}
+    \slidepoint{The published paper was never at risk --- this bug lived only in reproduction code written \textbf{during} the refactor.}
+  \end{center}
+  \vfill
+\end{frame}
+
 \begin{frame}[fragile]{Task 4 --- ship the skeleton, scrub the scaffolding}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/private_code_to_public_package.md}{\texttt{resources/practices/private\_code\_to\_public\_package.md}} \S10}
   \vfill
   \begin{center}
-    Trusted publishing via OIDC --- no long-lived credentials in the repository. A real install-and-import gate from a test index, before the real one.
+    Releasing a package means someone else can now run your code --- a leaked long-lived credential is how that goes wrong. The fix: trusted publishing (OIDC), no password or token stored anywhere.
   \end{center}
-  \vspace{0.9em}
+  \vspace{0.7em}
   \begin{center}
-    \texttt{HANDOFF.md}, \texttt{REFACTOR\_PLAN.md}, the bug investigation log --- all removed before release. Recoverable from git history, not gone.
+    \texttt{HANDOFF.md}, \texttt{REFACTOR\_PLAN.md}, the bug investigation log --- don't ship your working notes either. The gotcha: move them out of the user-facing repo, not out of existence --- still recoverable from git history.
+  \end{center}
+  \vspace{0.5em}
+  \begin{center}
+    \slidepoint{A real install, from a test index, in a clean environment --- before the real one.}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% TODO(image_plan.md Act II): still need a real screenshot of the emcal
-% GitHub repo page (paper link, README scope statement) -- public, ready
-% now. \placeholderimage below stands in until it's captured.
-
-% TODO: Let's cut this for time. The emcal package is not complete yet, and we need to make space.
-\begin{frame}{Task 4, closes --- the same process, one repo over}
-  \vfill
-  \begin{columns}[c]
-    \begin{column}{0.42\textwidth}
-      \centering
-      \placeholderimage{4.4cm}{2.8cm}{screenshot: emcal GitHub repo page (paper link, README scope statement)}
-    \end{column}
-    \begin{column}{0.54\textwidth}
-      \texttt{emcal} is the same move: \keyterm{Montana Carlozo}'s published paper (\textit{Ind. Eng. Chem. Res.}, 2025), research code migrated into an installable, tested package after the fact.
-    \end{column}
-  \end{columns}
-  \vspace{0.8em}
-  \begin{center}
-    Split by audience, not by code quality: the package is the method plus what a user needs; the research archive is the paper's own reproduction trail.
-  \end{center}
-  \vfill
-\end{frame}
+% CUT 2026-09-04, Alex's call: emcal's own package isn't complete yet, and
+% Act II needed the time back. The "split by audience, not by code
+% quality" principle this slide carried (private_code_to_public_package.md
+% §1) isn't restated elsewhere in Task 4 -- available if a future slide
+% needs it, but not currently taught anywhere else in the deck.
 
 % NEW 2026-09-04, Alex's request: distilled from the Dowling Lab group
 % manual's own "Overleaf and LaTeX" section (dowling_lab_manual.tex,
@@ -174,10 +167,19 @@
 % cited below -- that file, not the manual, is what a student can
 % actually open.
 
-% TODO: This is out of order. Why are we going from Task 4 back to Task 3?
+% The return to Task 3 (after Task 4's five slides) is deliberate, not a
+% sequencing slip -- see this file's header comment: Act II opens on Task 4
+% for impact, then closes out Task 3's proposal thread. The frame title's
+% own "continued" was judged insufficient signposting on its own (Alex's
+% 2026-09-04 read of the built deck), so the opening line below now names
+% the callback explicitly rather than reordering the act.
 \begin{frame}{Task 3, continued --- one manuscript, three places, one history}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/latex_overleaf_workflow.md}{\texttt{resources/practices/latex\_overleaf\_workflow.md}}}
-  \vfill
+  \vspace{-0.3cm}
+  \begin{center}\small
+    Back to Task 3's proposal --- the same discipline that made Task 4 safe applies just as well to a document.
+  \end{center}
+  \vspace{0.3em}
   \begin{center}
   \begin{tikzpicture}[font=\small, node distance=1.3cm]
     \node[draw=NDBlue, rounded corners=2pt, minimum width=3.2cm, minimum height=1.1cm, align=center]
@@ -190,19 +192,19 @@
     \draw[{Stealth[length=6pt]}-{Stealth[length=6pt]}, thick] (b) -- (c);
   \end{tikzpicture}
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
+  \vspace{0.3em}
+  \begin{center}\small
     One Overleaf project per manuscript, synced to one GitHub repo --- never a new project per draft. GitHub is the archive: it survives losing your university email, and it's what actually preserves history, not duplicate Overleaf projects.
   \end{center}
-  \vspace{0.5em}
-  \begin{center}
+  \vspace{0.2em}
+  \begin{center}\small
     Editing locally instead? Sync through GitHub, never download the source from Overleaf directly --- an AI CLI tool is genuinely useful here for debugging \LaTeX{} errors and running \texttt{latexdiff}.
   \end{center}
-  \vspace{0.4em}
+  \vspace{0.3em}
   \begin{center}
     \slidepoint{Track open items with \texttt{todonotes} in the \textbf{PDF itself} --- ready to submit once every note is resolved.}
   \end{center}
-  \vspace{1.8cm plus 1fill}
+  \vspace{0.3cm plus 1fill}
 \end{frame}
 
 \begin{frame}[fragile]{Task 3, continued --- the same discipline, on a document instead of code}
@@ -223,9 +225,6 @@
   \vfill
 \end{frame}
 
-% TODO: Let's be more explicit here:
-% - How to view diffs for code
-% - How to review diffs for LaTeX
 \begin{frame}[fragile]{Best practices: review the diff, verify every revision}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/latexdiff_check.sh}{\texttt{resources/scripts/latexdiff\_check.sh}}}
   \vfill
@@ -234,13 +233,13 @@
 - df_all = pd.concat([load(f) for f in glob("data/*.csv")])
 + df_run = load(f"data/{run_id}.csv")
   \end{lstlisting}
+  \vspace{0.3em}
+  \begin{center}
+    \textbf{Code:} \texttt{git diff}, GitHub Desktop, or the diff your AI CLI tool shows before you approve an edit --- an AI summary says ``refactored the pipeline''; the diff says what actually changed.
+  \end{center}
   \vspace{0.4em}
   \begin{center}
-    An AI-written summary says ``refactored the pipeline.'' The diff says what actually changed --- read it, not the summary.
+    \textbf{Prose:} a line diff just marks the whole line changed, not \emph{which words} moved --- \texttt{latexdiff} compiles a colored, word-level markup PDF against the last commit instead, so a softened claim or a quietly tightened number becomes visible on the page.
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    \texttt{latexdiff} against the last commit, word-level, catches what a normal re-read misses --- for a proposal, a manuscript, either one.
-  \end{center}
-  \vspace{1.8cm plus 1fill}
+  \vspace{1.2cm plus 1fill}
 \end{frame}
