@@ -1,12 +1,74 @@
-# Prompt: organize a research repository
+# Prompt: get a research project under version control
 
-For pointing an AI agent at a research repository that grew organically — inherited code, a project that outgrew its structure, or something you need to hand to someone else.
+Two different starting points, two different prompts below:
 
-**What it does not do:** reorganize anything on the first pass. The agent inspects, reports what it found, and proposes a plan. You approve the plan before a single file moves. That ordering is the whole design: a large restructuring you did not review is worse than a messy repository you understand.
+- **[Starting from scratch](#path-1-starting-from-scratch)** — a folder of files that grew locally with no version control at all, and you just want it under git, cleanly.
+- **[Reorganizing an existing repository](#path-2-reorganizing-an-existing-repository)** — inherited code, a project that outgrew its structure, or something you need to hand to someone else, where a git history already exists.
+
+Both share the same discipline: an AI agent inspects and proposes before it touches anything. **What neither prompt does is reorganize on the first pass.** You approve a plan before a single file moves. That ordering is the whole design: a large restructuring you did not review is worse than a messy repository you understand.
 
 **Companion reading:** [`../practices/scientific_computing_workflow.md`](../practices/scientific_computing_workflow.md) (especially §3–§4 on baselining before refactoring) and [`../practices/private_code_to_public_package.md`](../practices/private_code_to_public_package.md) §1–§2 if this is heading toward a release.
 
 ---
+
+## Path 1: starting from scratch
+
+For a folder of scripts, notebooks, or data that has never been under version control — the very first `git init` on a project, not a restructuring.
+
+```markdown
+# Task: set up version control for this project
+
+Folder: <absolute path>
+
+## How we work
+
+Look, propose, and stop before committing anything you have not shown me.
+
+## Ground rules
+
+- Read the files here before proposing anything — don't assume a generic
+  layout without checking what's actually in the folder.
+- Never delete or overwrite a file. If something looks disposable (cache
+  output, a stray duplicate), flag it — don't remove it yourself.
+- Show me the full `git status` and `git diff --stat` before running
+  `git commit`, not after.
+
+## What to do
+
+1. **Look at what's here.** List every file, what each one is (script,
+   notebook, data, config, generated output), and a one-line guess at
+   what the project does.
+2. **Propose a `.gitignore`.** Exclude anything regenerable (outputs,
+   caches, environment directories) and anything that should never be
+   committed (credentials, large raw data better tracked elsewhere). Do
+   not exclude anything that is the only copy of real work.
+3. **Propose a minimal structure**, only if the current flat folder would
+   genuinely be clearer with a few subdirectories (e.g. separating a
+   model from its outputs). Don't restructure for its own sake — a
+   handful of files in one folder is often fine exactly as it is.
+4. **Run `git init`, add the proposed `.gitignore`, and stage everything
+   that should be tracked** — then stop and show me the full `git
+   status` and `git diff --stat` before the first `git commit`.
+5. After I approve, make the first commit with a message describing the
+   project's actual starting state, not just "initial commit."
+
+## Report back
+
+- What's in the folder and what each piece does.
+- The proposed `.gitignore`, with a reason for each exclusion.
+- Whether a subdirectory structure is actually warranted, and why (or
+  why not).
+- The exact `git status` / `git diff --stat` you're about to commit,
+  shown before you commit it.
+```
+
+**Companion reading:** the "Task 2" pattern right after this one — once the repository exists, [`../templates/project_entry_point.md`](../templates/project_entry_point.md) and a `CLAUDE.md`/`AGENTS.md` pointer file are usually the next thing worth adding, before the details of how to run the project live only in your memory.
+
+---
+
+## Path 2: reorganizing an existing repository
+
+For a research repository that grew organically and already has some git history to inspect.
 
 ## The prompt
 
@@ -104,8 +166,12 @@ Then **stop** for approval.
 
 ## Notes on using it
 
-**The Phase 1 report is the deliverable, even if you stop there.** For an inherited project, a written account of how it actually runs is often worth more than any reorganization — and it is the thing that does not exist anywhere else.
+**Which path, if you're not sure:** if `git log` would show anything, you're reorganizing (Path 2), even if the history is short or messy. Path 1 is only for the moment before any commit exists.
+
+**The inspection report is the deliverable, even if you stop there.** For an inherited project, a written account of how it actually runs is often worth more than any reorganization — and it is the thing that does not exist anywhere else. For a from-scratch setup, the file-by-file list plays the same role: it is the first time anyone has written down what is actually in the folder.
 
 **"I cannot tell how this runs" is a finding, not a failure.** If the agent cannot determine the entry point, neither can the next student.
 
-**Do not skip the baseline.** The prompt asks for it in Phase 2 deliberately. Restructuring research code without a numerical baseline means you cannot prove afterward that the results are the same ones the paper reported — see [`../practices/scientific_computing_workflow.md`](../practices/scientific_computing_workflow.md) §3.
+**Do not skip the baseline (Path 2).** The prompt asks for it in Phase 2 deliberately. Restructuring research code without a numerical baseline means you cannot prove afterward that the results are the same ones the paper reported — see [`../practices/scientific_computing_workflow.md`](../practices/scientific_computing_workflow.md) §3.
+
+**Resist restructuring a folder that doesn't need it (Path 1).** The most common failure mode here isn't a messy repo — it's over-organizing three files into five folders before there's any reason to. Version control is the win; subdirectories can wait until there's something to separate.

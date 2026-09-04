@@ -43,7 +43,7 @@ Three naming and scope decisions worth recording:
 
 **Prompts** (`prompts/`)
 
-1. **`organize_research_repo.md`** — ✅ Examine an existing research repository and propose a target architecture (single repo vs. split code/manuscript, staged migration plan) without touching anything until a human approves the plan.
+1. **`organize_research_repo.md`** — ✅ Two prompts: get a from-scratch, never-versioned folder under git cleanly, or examine an existing research repository and propose a target architecture (single repo vs. split code/manuscript, staged migration plan). Neither touches anything until a human approves the plan.
 2. **`manuscript_audit.md`** — ✅ The audit toolkit as one prompt with modes: quantitative-claim tracing, methods-vs-code, figure-vs-text, journal-guideline compliance. Cites `practices/manuscript_audit.md` rather than repeating it.
 3. **`literature_workflow.md`** — ✅ Process a folder of PDFs: inspect metadata, determine the real citation and DOI, rename consistently, flag duplicates and uncertain metadata (never guess), generate/update `literature.md` and BibTeX.
 4. **`proposal_review.md`** — ✅ *(added 2026-09-04)* Three modes for `grant_proposal_writing.md` (Task 3, continued): compliance review against a funding call (`\foacomment{}`, inline, flag-don't-fix), restoring the sponsor's exact wording, and expand-then-compress as two separate calls. Closes a parallel-structure gap: every other starring practice file already had a prompt counterpart.
