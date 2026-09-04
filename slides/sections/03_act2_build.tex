@@ -73,11 +73,11 @@
 \begin{frame}{Task 4 --- baseline before touching anything}
   \vfill
   \begin{center}
-    \small Phase 2: a regression harness and a full test suite, built \textit{before} any refactor began.
+    Phase 2: a regression harness and a full test suite, built \textit{before} any refactor began.
   \end{center}
   \vspace{0.7em}
   \begin{center}
-    \small Phase 4, STEP 0: an exact-value baseline pinned on \texttt{sampler.py} --- \textit{then} the decomposition started.
+    Phase 4, STEP 0: an exact-value baseline pinned on \texttt{sampler.py} --- \textit{then} the decomposition started.
   \end{center}
   \vspace{1em}
   \begin{center}
@@ -99,7 +99,7 @@
   \end{center}
   \vspace{0.7em}
   \begin{center}
-    \small Phase 4: decomposed into modules. Phase 5: generalized from 1D/3D to $N$ dimensions. Phase 6: the paper's own VLE/distillation example ported onto the new public API.
+    Phase 4: decomposed into modules. Phase 5: generalized from 1D/3D to $N$ dimensions. Phase 6: the paper's own VLE/distillation example ported onto the new public API.
   \end{center}
   \vfill
 \end{frame}
@@ -107,14 +107,14 @@
 \begin{frame}{Task 4 --- the bug the reproduction found}
   \vfill
   \begin{center}
-    \small A from-scratch figure reproduction flagged a discrepancy: one equilibrium column wouldn't converge. The first explanation was ---
+    A from-scratch figure reproduction flagged a discrepancy: one equilibrium column wouldn't converge. The first explanation was ---
   \end{center}
   \begin{center}
     \bad{\large wrong.}
   \end{center}
   \vspace{0.5em}
   \begin{center}
-    \small Four hypotheses tested, three rejected. The real cause: a GP kernel mutated in place, then reused --- confirmed to 4 decimal places against a checkpoint.
+    Four hypotheses tested, three rejected. The real cause: a GP kernel mutated in place, then reused --- confirmed to 4 decimal places against a checkpoint.
   \end{center}
   \vfill
 \end{frame}
@@ -122,11 +122,11 @@
 \begin{frame}[fragile]{Task 4 --- ship the skeleton, scrub the scaffolding}
   \vfill
   \begin{center}
-    \small Trusted publishing via OIDC --- no long-lived credentials in the repository. A real install-and-import gate from a test index, before the real one.
+    Trusted publishing via OIDC --- no long-lived credentials in the repository. A real install-and-import gate from a test index, before the real one.
   \end{center}
   \vspace{0.9em}
   \begin{center}
-    \small \texttt{HANDOFF.md}, \texttt{REFACTOR\_PLAN.md}, the bug investigation log --- all removed before release. Recoverable from git history, not gone.
+    \texttt{HANDOFF.md}, \texttt{REFACTOR\_PLAN.md}, the bug investigation log --- all removed before release. Recoverable from git history, not gone.
   \end{center}
   \vfill
 \end{frame}
@@ -137,11 +137,11 @@
 \begin{frame}{Task 4, closes --- the same process, one repo over}
   \vfill
   \begin{center}
-    \small \texttt{emcal} is the same move: \keyterm{Montana Carlozo}'s published paper (\textit{Ind. Eng. Chem. Res.}, 2025), research code migrated into an installable, tested package after the fact.
+    \texttt{emcal} is the same move: \keyterm{Montana Carlozo}'s published paper (\textit{Ind. Eng. Chem. Res.}, 2025), research code migrated into an installable, tested package after the fact.
   \end{center}
   \vspace{0.8em}
   \begin{center}
-    \small Split by audience, not by code quality: the package is the method plus what a user needs; the research archive is the paper's own reproduction trail.
+    Split by audience, not by code quality: the package is the method plus what a user needs; the research archive is the paper's own reproduction trail.
   \end{center}
   \vfill
 \end{frame}
@@ -149,7 +149,7 @@
 \begin{frame}[fragile]{Task 3, continued --- the same discipline, on a document instead of code}
   \vfill
   \begin{center}
-    \small A returning-sponsor proposal, drafted tersely against the sponsor's own form, then restored to its exact required wording before submission.
+    A returning-sponsor proposal, drafted tersely against the sponsor's own form, then restored to its exact required wording before submission.
   \end{center}
   \vspace{0.6em}
   \begin{lstlisting}
@@ -158,7 +158,7 @@
   \end{lstlisting}
   \vfill
   \begin{center}
-    \small AI as a compliance reviewer, findings written inline, not in a separate comments document: flagged, fixed, then removed --- never left in the submitted file.
+    AI as a compliance reviewer, findings written inline, not in a separate comments document: flagged, fixed, then removed --- never left in the submitted file.
   \end{center}
   \vfill
 \end{frame}
@@ -172,11 +172,11 @@
   \end{lstlisting}
   \vspace{0.4em}
   \begin{center}
-    \small An AI-written summary says ``refactored the pipeline.'' The diff says what actually changed --- read it, not the summary.
+    An AI-written summary says ``refactored the pipeline.'' The diff says what actually changed --- read it, not the summary.
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    \small \texttt{latexdiff} against the last commit, word-level, catches what a normal re-read misses --- for a proposal, a manuscript, either one.
+    \texttt{latexdiff} against the last commit, word-level, catches what a normal re-read misses --- for a proposal, a manuscript, either one.
   \end{center}
   \vspace{0.4em}
   \begin{center}
