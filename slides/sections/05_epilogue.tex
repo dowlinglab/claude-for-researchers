@@ -92,6 +92,12 @@
 % reflects the grad-visit-scheduler hook -- deliberately unnumbered
 % (Alex's call, it's "very similar to Task 4"), but the same kind of task
 % really does recur there, so the checkmark stays honest to that.
+%
+% SEVEN TASKS 2026-09-04: new Task 6 inserted (generic, continues Task 2's
+% membrane-transport project into an auditable draft manuscript -- see
+% 04_act3_challenge.tex's header comment), course capstone renumbered
+% Task 6 -> Task 7. Both live entirely in Act III, so both check only that
+% column, same convention as Task 5.
 \begin{frame}{A handful of projects, recurring}
   \vfill
   \begin{center}
@@ -105,14 +111,15 @@
     Task 3 --- idea $\to$ report or proposal & & \good{} & \good{} & \\
     Task 4 --- paper code $\to$ package & \good{} & & \good{} & \\
     Task 5 --- audit a manuscript & & & & \good{} \\
-    Task 6 --- audit a course, end to end & & & & \good{} \\
+    Task 6 --- inherit a project $\to$ manuscript & & & & \good{} \\
+    Task 7 --- audit a course, end to end & & & & \good{} \\
     Creating this talk & \good{} & & & \\
     \bottomrule
   \end{tabular}
   \end{center}
   \vfill
   \begin{center}
-    Six numbered tasks, plus this talk itself --- a handful of real projects, recurring across every act, shown not asserted.
+    Seven numbered tasks, plus this talk itself --- a handful of real projects, recurring across every act, shown not asserted.
   \end{center}
   \vfill
 \end{frame}
@@ -146,22 +153,33 @@
 % the point of the talk") to the process and the project list themselves --
 % two lists, workflow tooling verified real against the public
 % adowling2/3d-printing repo (see comment above, still accurate).
+% Figure enlarged and caption dropped 2026-09-04, per Alex's TODO -- the
+% image now fills the column at its own aspect ratio (1:1, 1536x1536),
+% ~4.6cm being the most height the 0.42-width column can take without
+% exceeding its own width. Workflow list rewritten the same day, per
+% Alex's second TODO ("describe how I use OpenSCAD and Blender to iterate,
+% connect it back to best practices"): verified against the real, public
+% adowling2/3d-printing repo's workflow/README.md -- design happens in
+% OpenSCAD, iterated with Codex against workflow/STYLE.md;
+% render_views.sh's default PNG path uses OpenSCAD's own offscreen
+% renderer, which the README documents as crashing in headless mode
+% (NSOpenGLContext errors) -- the real, documented fallback is
+% render_stl_views_blender.sh, rendering the exported STL in Blender
+% instead. The tool-for-the-task principle Task 7 tells with Codex/GPT-5.6
+% shows up here too, at hobby scale: know the fallback before you need it.
 \begin{frame}{Curiosity is a feature, not a consolation prize}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.42\textwidth}
       \centering
-      % TODO: Make this figure larger and drop the caption.
-      \includegraphics[height=4.1cm]{figures/kitchen_organizer_telescope_shelf.jpeg}\\[0.1em]
-      {\scriptsize Hand sketch to kitchen organizer and telescope shelf.}
+      \includegraphics[height=4.6cm]{figures/kitchen_organizer_telescope_shelf.jpeg}
     \end{column}
     \begin{column}{0.52\textwidth}
-      % TODO: Update this workflow to describe how I use OpenSCAD and Blender to iterate. Connect it back to best practices we discussed.
       \textbf{\small My workflow}
       \begin{enumerate}\small\setlength\itemsep{0.1em}
         \item \texttt{init\_project.sh} to start
-        \item Iterate with Codex against one shared \texttt{STYLE.md}
-        \item \texttt{render\_views.sh} for the final views
+        \item Design in OpenSCAD, iterating with Codex against one shared \texttt{STYLE.md}
+        \item \texttt{render\_views.sh} for the views --- falls back to Blender when OpenSCAD's own offscreen renderer crashes
       \end{enumerate}
       \vspace{0.4em}
       \textbf{\small Projects}
@@ -201,15 +219,19 @@
 % REVISED 2026-09-03, further Alex feedback: top framing added (why the
 % project exists at all), the book's numbered contents column cut, the "58
 % revisions" closing line cut in favor of a real figure from the book
-% itself. Figure sourced 2026-09-03 directly from the public, real
-% adowling2/radio-extra-book repo: figures/oscillator_loopgain.pdf, a
-% Barkhausen-criterion loop-gain/phase Bode plot for an LC oscillator
-% (chapters/17_active_circuits.tex, \label{fig:oscillator-loopgain}) --
-% exactly the "LCR oscillator from a controls perspective" Alex asked for,
-% not invented for the slide. GitHub link included inline via
-% \slidepoint (matching the Task 4 intro slide's own pattern) until the
-% template's planned corner-box (see the deferred TODO in
-% 03_act2_build.tex) exists to hold it instead.
+% itself. GitHub link included inline via \slidepoint (matching the Task 4
+% intro slide's own pattern) until the template's planned corner-box (see
+% the deferred TODO in 03_act2_build.tex) exists to hold it instead.
+%
+% Figure swapped 2026-09-04 per Alex's TODO ("replace this with a schematic
+% of a filter"): was figures/oscillator_loopgain.pdf (a Barkhausen-
+% criterion loop-gain/phase Bode plot), now figures/filter_families.pdf --
+% both sourced directly from the public, real adowling2/radio-extra-book
+% repo, both real figures from the book, not invented for the slide. This
+% one is chapters/15_filters_and_matching.tex's \label{fig:filter-families}:
+% order-5 low-pass responses (Butterworth/Chebyshev/elliptic/Bessel),
+% normalized to the same cutoff, trading flatness against transition
+% sharpness against passband ripple.
 \begin{frame}{Create a textbook, customized for you}
   \vfill
   \begin{center}
@@ -230,9 +252,8 @@
     \end{column}
     \begin{column}{0.48\textwidth}
       \centering
-      % TODO: replace this with a schematic of a filter
-      \includegraphics[height=2.9cm]{figures/oscillator_loopgain}\\[0.05em]
-      {\scriptsize Connecting important circuits to loop gain, phase margin, and other concepts in classical control theory. }
+      \includegraphics[height=2.9cm]{figures/filter_families}\\[0.05em]
+      {\scriptsize Order-5 low-pass filter families --- flatness, sharpness, and ripple, traded three ways.}
     \end{column}
   \end{columns}
   \vspace{0.35em}
