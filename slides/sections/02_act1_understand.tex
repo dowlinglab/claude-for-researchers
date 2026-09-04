@@ -20,16 +20,15 @@
 
 \stagedivider{2}{Act I: Understand}{Go from brainstorming or search with a chatbot to deeper engagement}
 
-% TODO: Please help me make this slide more welcoming for beginners
-% I will be presenting to graduate students who perhaps primarily run experiments or are new to computational research
-% TODO: After editing the slide content, please adjust the white spaces
-% TODO: Is there a good way to show the linked URLs in the white space at the bottom of the slide, to the right of the ND logo?
 \begin{frame}{The filesystem is the source of truth}
-  \vfill
+  \begin{center}
+    New to research software? Start here --- everything else in this talk builds on this one habit.
+  \end{center}
+  \vspace{0.4em}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
       \begin{center}\textbf{A conversation}\end{center}
-      \begin{itemize}
+      \begin{itemize}\small
         \item not versioned
         \item not shared with collaborators
         \item not searchable next year
@@ -38,21 +37,22 @@
     \end{column}
     \begin{column}{0.46\textwidth}
       \begin{center}\textbf{A repository}\end{center}
-      \begin{itemize}
+      \begin{itemize}\small
         \item versioned
         \item shared by construction
-        \item greppable % Instead say "searchable history"?
+        \item searchable history
         \item outlives everyone involved
       \end{itemize}
     \end{column}
   \end{columns}
-  Most important advice for today --- use \textbf{version control}:
-  \begin{itemize}
-  	\item Provides an auditable history of your code
-  	\item Code stopped working? Version control becomes a time machine
-  	\item Getting started is easy: create a GitHub account, apply for \href{https://github.com/education}{education free upgrades}, watch a \href{https://youtu.be/a9u2yZvsqHA?si=Tose1lV36yNAaf-q}{YouTube tutorial}, install \href{https://desktop.github.com/download/}{GitHub Desktop}.
-  \end{itemize}
-  \vfill
+  \vspace{0.4em}
+  \begin{center}\small
+    Most important advice for today, whether you write code or just run experiments --- use \textbf{version control}. Something stopped working? It becomes a time machine.
+  \end{center}
+  \vspace{0.4em}
+  \begin{center}\small
+    Getting started is easy: create a GitHub account, apply for \href{https://github.com/education}{education free upgrades}, watch a \href{https://youtu.be/a9u2yZvsqHA?si=Tose1lV36yNAaf-q}{YouTube tutorial}, install \href{https://desktop.github.com/download/}{GitHub Desktop}.
+  \end{center}
 \end{frame}
 
 \begin{frame}{An agent can touch your repository --- a chatbot can't}
@@ -71,16 +71,15 @@
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    A chatbot only has the conversation and the files you share (e.g., uploading or attaching a PDF). \\ % TODO: please help me add a space
-    
-    An agent can \textbf{interact with your repository}: follow instructions with \texttt{CLAUDE.md} or \texttt{Agents.md}, edit the code, debug errors, run the tests, maintain logs, search history, and commit.
+    A chatbot only has the conversation and the files you share (e.g., uploading or attaching a PDF).
   \end{center}
-
+  \vspace{0.6em}
+  \begin{center}
+    An agent can \textbf{interact with your repository}: follow instructions with \texttt{CLAUDE.md} or \texttt{AGENTS.md}, edit the code, debug errors, run the tests, maintain logs, search history, and commit.
+  \end{center}
   \vfill
 \end{frame}
 
-% TODO: Do we have resource(s) we can link at the bottom of the slide?
-% TODO: Please help me adjust the white space on the slide
 \begin{frame}[fragile]{Task 1 --- use an agent to set up git for a project}
   \vfill
   \begin{center}
@@ -112,48 +111,43 @@
   \end{columns}
   \vspace{0.5em}
   \begin{center}
-    \slidepoint{Version control is a \textbf{prerequisite} that \textbf{unlocks} is the rest of this talk.}
+    \slidepoint{Version control is a \textbf{prerequisite} that \textbf{unlocks} the rest of this talk.}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% TODO: Please help me edit this slide to make it more informative for
-% an engineering graduate student who has never used version control
-% or an agent before
 \begin{frame}{Task 2 --- a chat history can't hold any of these three}
   \vfill
-  \vspace{0.4em}
+  \begin{center}
+    Every new chat starts from zero. Three things a project needs that a conversation can't hold on its own:
+  \end{center}
+  \vspace{0.5em}
   \begin{columns}[t]
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Persistent}}\\[0.4em]
-      Results are deterministic. A changed number is a finding, not noise.\\[0.7em]
+      Your data and results don't change between sessions --- a changed number is a finding, not noise from a different chat.\\[0.7em]
       {\scriptsize$\rightarrow$ true across every session}
     \end{column}
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Authoritative}}\\[0.4em]
-      The actual model code and experimental data --- not a description of them.\\[0.7em]
+      The actual code and data --- point an agent at the real files, never describe them from memory.\\[0.7em]
       {\scriptsize$\rightarrow$ point at it, never summarize it}
     \end{column}
     \begin{column}{0.31\textwidth}
       {\color{NDBlue}\textbf{Task}}\\[0.4em]
-      This run's question: replicate weighting, right now.\\[0.7em]
+      What you're working on right now, defined fresh each session.\\[0.7em]
       {\scriptsize$\rightarrow$ the prompt (save it if it matters)}
     \end{column}
   \end{columns}
   \vfill
 \end{frame}
 
-% TODO: Please help me adjust the white spaces.
-% TODO: Please help me explain more clearly which tools use AGENTS.md. Please recommend some neutral names.
-% TODO: Please increase the size of the font in the text file example
-% TODO: Should we say anything about this getting out of date?
-% What about my recommendations to have longer persistent notes/logs?
-% Let's link to resource(s) we are distributing with the talk.
 \begin{frame}[fragile]{Task 2 --- write down what you'd otherwise re-explain every session}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/templates/research_log.md}{\texttt{resources/templates/research\_log.md}}}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.62\textwidth}
-      \begin{lstlisting}[basicstyle=\ttfamily\tiny]
+      \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
 # Project
 
 Membrane transport parameter estimation.
@@ -162,37 +156,33 @@ Membrane transport parameter estimation.
   src/       the model
   results/   written by scripts; never by hand
   configs/   every run is a config file
-
 ## How to run
   conda activate diafiltration
   python -m pytest -m "not slow"
-
 ## Conventions
   Results are deterministic. A change in a
   number is a finding, not noise.
-
 ## Current state
   Working on: replicate weighting
   Resume at: notes/log.md, 2026-08-14
       \end{lstlisting}
     \end{column}
     \begin{column}{0.34\textwidth}
-      Name it neutrally.\\[0.6em]
-      \texttt{CLAUDE.md} and \texttt{AGENTS.md}\\
-      become three-line pointers to it.\\[1.2em]
+      \small
+      Name it neutrally: \texttt{CLAUDE.md} (Claude Code) or \texttt{AGENTS.md} (Codex, Cursor, Gemini CLI, and 20+ other tools) --- both become three-line pointers to it.\\[0.6em]
       Neither tool reads the other's file --- so the content lives
-      in one place and the tool files just point.
+      in one place and the tool files just point.\\[0.6em]
+      {\scriptsize Review it like any doc: stale instructions mislead. Longer-running notes belong in a separate log.}
     \end{column}
   \end{columns}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% TODO: I am concerned this slide does not offer enough actionable advice.
-% I like the graphic at the top
-% I think we should have a list of steps for the corpus-grounded literature review
 \begin{frame}{Task 3 --- idea first: brainstorm, refine, then bring in the literature}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/literature_review.md}{\texttt{resources/practices/literature\_review.md}}}
   \vfill
   \begin{center}
+  \resizebox{0.97\textwidth}{!}{%
   \begin{tikzpicture}[font=\scriptsize, node distance=0.4cm]
     \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center]
       (a) {Dictate the\\loose idea to a chatbot and refine};
@@ -205,15 +195,20 @@ Membrane transport parameter estimation.
     \draw[-{Stealth[length=5pt]}, thick] (a) -- (b);
     \draw[-{Stealth[length=5pt]}, thick] (b) -- (c);
     \draw[-{Stealth[length=5pt]}, thick] (c) -- (d);
-  \end{tikzpicture}
+  \end{tikzpicture}}
   \end{center}
-  \vspace{0.6em}
-  \begin{center} % TODO: please remove the references to specific applications. Instead, update this text to be more clear
-    Chromatography, watershed, desalination --- all three this same pipeline, generic. The corpus arrives to pressure-test an idea already forming, not to generate one.
+  \vspace{0.5em}
+  \begin{center}
+  \begin{itemize}\small\setlength\itemsep{0.25em}
+    \item Search a second, adjacent field on purpose --- not just your own topic
+    \item Process papers in small batches, each with a checkpoint before the next starts
+    \item Judge relevance to your project, don't just summarize the abstract
+    \item Recheck every quantitative claim against the source, in a second pass
+  \end{itemize}
   \end{center}
   \vspace{0.4em}
   \begin{center}
-    {\scriptsize Tip: interpret the evidence, don't copy the abstract --- say what it changes about the next decision, not what each paper already says about itself.}
+    {\scriptsize The corpus arrives to pressure-test an idea already forming, not to generate one.}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
