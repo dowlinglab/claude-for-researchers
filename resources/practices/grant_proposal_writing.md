@@ -4,7 +4,7 @@
 
 **When to reach for it.** Drafting a new proposal, revising against reviewer or program-officer feedback, or preparing a proposal for a program you've submitted to before.
 
-**Companion resources.** [`../practices/literature_review.md`](literature_review.md) for grounding the proposal's claims before you write; [`../practices/technical_writing.md`](technical_writing.md) for the prose conventions that apply here too; [`../scripts/latexdiff_check.sh`](../scripts/latexdiff_check.sh) automates §5 below.
+**Companion resources.** [`../practices/literature_review.md`](literature_review.md) for grounding the proposal's claims before you write; [`../practices/technical_writing.md`](technical_writing.md) for the prose conventions that apply here too; [`../scripts/latexdiff_check.sh`](../scripts/latexdiff_check.sh) automates §5 below; [`../prompts/proposal_review.md`](../prompts/proposal_review.md) turns §2, §4, and §6 into ready-to-paste prompts.
 
 **How to read it.** Sections are numbered and stable, so a prompt can cite one (`follow §4`).
 

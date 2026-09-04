@@ -46,22 +46,23 @@ Three naming and scope decisions worth recording:
 1. **`organize_research_repo.md`** — ✅ Examine an existing research repository and propose a target architecture (single repo vs. split code/manuscript, staged migration plan) without touching anything until a human approves the plan.
 2. **`manuscript_audit.md`** — ✅ The audit toolkit as one prompt with modes: quantitative-claim tracing, methods-vs-code, figure-vs-text, journal-guideline compliance. Cites `practices/manuscript_audit.md` rather than repeating it.
 3. **`literature_workflow.md`** — ✅ Process a folder of PDFs: inspect metadata, determine the real citation and DOI, rename consistently, flag duplicates and uncertain metadata (never guess), generate/update `literature.md` and BibTeX.
+4. **`proposal_review.md`** — ✅ *(added 2026-09-04)* Three modes for `grant_proposal_writing.md` (Task 3, continued): compliance review against a funding call (`\foacomment{}`, inline, flag-don't-fix), restoring the sponsor's exact wording, and expand-then-compress as two separate calls. Closes a parallel-structure gap: every other starring practice file already had a prompt counterpart.
 
 **Templates** (`templates/`)
 
-4. **`research_log.md`** — ✅ The persistent-log template from Outline Section 5.
-5. **`results_manifest.md`** — ✅ Connecting a manuscript to the exact commit, script, config, and output behind each figure and table.
-6. **`project_entry_point.md`** — ✅ A tool-neutral project context file, per `practices/working_with_ai_agents.md` §2, with thin `CLAUDE.md`/`AGENTS.md` pointer files.
+5. **`research_log.md`** — ✅ The persistent-log template for the project-memory habit `practices/working_with_ai_agents.md` describes.
+6. **`results_manifest.md`** — ✅ Connecting a manuscript to the exact commit, script, config, and output behind each figure and table.
+7. **`project_entry_point.md`** — ✅ A tool-neutral project context file, per `practices/working_with_ai_agents.md` §2, with thin `CLAUDE.md`/`AGENTS.md` pointer files.
 
 **Scripts** (`scripts/`)
 
 These are meant to be **working defaults** that the group and others can drop into a project, not illustrations. Each ships with a README, arguments instead of hardcoded paths, and no dependencies beyond what the task genuinely needs.
 
-7. **`doi_checker/`** — ✅ **Built and tested.** The nominal default DOI checker. Verifies references against Crossref in two passes kept deliberately apart *because they fail differently*: (1) for entries that have a DOI, does it resolve to the work the entry actually describes — fuzzy title match plus author-surname check, graded `MATCH` / `CHECK` / `MISMATCH`; (2) for entries lacking one, does Crossref know a DOI, proposed only above a stricter threshold. **It proposes and never writes**, because a DOI that resolves to the wrong paper is worse than a missing one and looks identical on the page. Adapted from a working script; the work is parameterizing paths into `--bib` / `--tex` / `--mailto` and restricting checks to keys actually cited.
-8. **`figure_style/`** — ✅ **Built and tested.** The nominal default Python figure style. A small module implementing the group's publication-quality figure guidelines as matplotlib settings, plus a `save_fig` helper that enforces size, resolution, and format, and a short set of standard plot helpers. The point is that a project fixes figure conventions **centrally, once**, so later work inherits them — two separate projects independently discovered that scattering plot styling across dozens of scripts makes any later standard unenforceable. Ships with the compliance checklist from `practices/scientific_figures_tables.md` so a figure set can be audited against it.
-9. **`check_margins.py`** — **Not started.** Geometric overfull-box detection from a rendered PDF, because a clean LaTeX build does not reliably surface them. Design sketch only; not in `resources/scripts/` yet.
-10. **`latexdiff_check.sh`** — ✅ **Built and tested.** Diffs the working copy of a `.tex` file against its last committed version (or any ref — a submitted tag, say), compiles a word-level tracked-changes PDF, and cleans up its own build byproducts. Formalizes a habit found only as a reconstructed shell command in one of the projects surveyed — it existed nowhere as an actual tool before this.
-11. **`check_docs.py`** — ✅ **Built and tested.** Flags markdown links that don't resolve, living documents the repository has moved past (measured in commits behind `HEAD`), and supersession banners naming a successor file that doesn't exist. Exits non-zero, so it can gate a commit or CI. This is `practices/working_with_ai_agents.md` §9 applied to the repository's own documentation — the rule that written instructions degrade unless something fails when they do.
+8. **`doi_checker/`** — ✅ **Built and tested.** The nominal default DOI checker. Verifies references against Crossref in two passes kept deliberately apart *because they fail differently*: (1) for entries that have a DOI, does it resolve to the work the entry actually describes — fuzzy title match plus author-surname check, graded `MATCH` / `CHECK` / `MISMATCH`; (2) for entries lacking one, does Crossref know a DOI, proposed only above a stricter threshold. **It proposes and never writes**, because a DOI that resolves to the wrong paper is worse than a missing one and looks identical on the page. Adapted from a working script; the work is parameterizing paths into `--bib` / `--tex` / `--mailto` and restricting checks to keys actually cited.
+9. **`figure_style/`** — ✅ **Built and tested.** The nominal default Python figure style. A small module implementing the group's publication-quality figure guidelines as matplotlib settings, plus a `save_fig` helper that enforces size, resolution, and format, and a short set of standard plot helpers. The point is that a project fixes figure conventions **centrally, once**, so later work inherits them — two separate projects independently discovered that scattering plot styling across dozens of scripts makes any later standard unenforceable. Ships with the compliance checklist from `practices/scientific_figures_tables.md` so a figure set can be audited against it.
+10. **`check_margins.py`** — **Not started.** Geometric overfull-box detection from a rendered PDF, because a clean LaTeX build does not reliably surface them. Design sketch only; not in `resources/scripts/` yet.
+11. **`latexdiff_check.sh`** — ✅ **Built and tested.** Diffs the working copy of a `.tex` file against its last committed version (or any ref — a submitted tag, say), compiles a word-level tracked-changes PDF, and cleans up its own build byproducts. Formalizes a habit found only as a reconstructed shell command in one of the projects surveyed — it existed nowhere as an actual tool before this.
+12. **`check_docs.py`** — ✅ **Built and tested.** Flags markdown links that don't resolve, living documents the repository has moved past (measured in commits behind `HEAD`), and supersession banners naming a successor file that doesn't exist. Exits non-zero, so it can gate a commit or CI. This is `practices/working_with_ai_agents.md` §9 applied to the repository's own documentation — the rule that written instructions degrade unless something fails when they do.
 
 ## Also planned (lower priority)
 
@@ -92,7 +93,8 @@ resources/
 ├── prompts/
 │   ├── organize_research_repo.md
 │   ├── manuscript_audit.md
-│   └── literature_workflow.md
+│   ├── literature_workflow.md
+│   └── proposal_review.md
 ├── templates/
 │   ├── research_log.md
 │   ├── results_manifest.md

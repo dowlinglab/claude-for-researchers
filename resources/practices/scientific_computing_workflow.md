@@ -74,6 +74,7 @@ Supporting habits:
 - **Regenerating a baseline requires a documented reason in the same commit.** Regenerating one to make a failing test pass defeats the entire mechanism.
 - **Add coverage before deleting.** If you are about to remove code, first make sure something would notice if the removal broke a path you meant to keep.
 - **Archive rather than delete.** Move superseded code to `legacy/` with a note. Deleting the script that produced a number leaves the claim without its working.
+- **A phase plan discovers scope as it runs — budget for that, don't fight it.** A ten-phase plan can reasonably become thirteen: a from-scratch reproduction turns up a real bug, the bug motivates a hardening pass, the hardening pass turns up enough drift to justify a full polish pass. That is different from scope creep as long as each addition is proposed only *after* the previous one finished — a response to what execution actually revealed, not work queued speculatively up front. Track the plan as a dated, append-only log (new phases get new entries, not edits to old ones) so the gap between "planned" and "executed" stays visible instead of getting silently absorbed into a renumbered plan that reads as if it were right the first time.
 
 ## 5. Tests for research code: invariants, not magic numbers
 
