@@ -16,7 +16,7 @@ This deck previously vendored the unforked upstream theme (`dphow/ND_Beamer_Temp
 See the fork's own [README](https://github.com/dowlinglab/ND_Beamer_Template/blob/master/README.md) for the full, current list. This deck uses:
 
 ```latex
-\usetheme[cornerlogo=blue, textcolor=blue, titlelayout=leftrule]{NotreDame}
+\usetheme[cornerlogo=blue, textcolor=blue, titlelayout=leftrule, monogram=none]{NotreDame}
 ```
 
 - `cornerlogo=blue` — the small mark, bottom-left, on every frame after the title slide (replaces this deck's own former hand-rolled `\ndcornerlogo`).
@@ -26,6 +26,22 @@ See the fork's own [README](https://github.com/dowlinglab/ND_Beamer_Template/blo
 ## Local modifications
 
 **None.** The `.sty` file and `logos/` are unmodified from the fork. Everything specific to this deck lives in `../main.tex`, so the vendored files can be re-pulled from upstream without losing anything.
+
+## Build requirements
+
+No `latexmk` requirement — vanilla `pdflatex` works fine. Two things worth knowing:
+
+- **Multiple passes are needed either way**, not because of `latexmk` specifically, but because of TikZ's `remember picture, overlay` (used throughout: the corner logo, the title-page logo, `\ndlogonote`). Node positions get written to `.aux` on one pass and read back on the next, so a single `pdflatex` run shows them misplaced at `(0,0)`. Plain `pdflatex main.tex && pdflatex main.tex` resolves this exactly as well as `latexmk` — its only advantage is automating "keep rerunning until stable" instead of doing that by hand.
+- **Path discovery for the vendored files works with vanilla `pdflatex` on purpose.** `../.latexmkrc` sets `TEXINPUTS` for `make`/`latexmk` builds, but `../main.tex` *also* sets `\input@path` and `\graphicspath` directly at the top of the file — specifically so a bare `pdflatex main.tex` (command line, or a GUI editor's plain "compile" button) still finds `beamerthemeNotreDame.sty` and `logos/...` without `.latexmkrc` ever being read.
+
+Separately, this deck's own use of `biblatex`/`biber` for citations needs `biber` run between passes regardless of build tool — unrelated to the theme itself. The full vanilla-`pdflatex` recipe:
+
+```sh
+pdflatex main.tex
+biber main
+pdflatex main.tex
+pdflatex main.tex
+```
 
 ## History: the gold correction
 
