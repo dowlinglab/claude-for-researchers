@@ -20,6 +20,10 @@
 
 \stagedivider{2}{Act I: Understand}{Go from brainstorming or search with a chatbot to deeper engagement}
 
+% TODO: Please help me make this slide more welcoming for beginners
+% I will be presenting to graduate students who perhaps primarily run experiments or are new to computational research
+% TODO: After editing the slide content, please adjust the white spaces
+% TODO: Is there a good way to show the linked URLs in the white space at the bottom of the slide, to the right of the ND logo?
 \begin{frame}{The filesystem is the source of truth}
   \vfill
   \begin{columns}[t]
@@ -37,11 +41,17 @@
       \begin{itemize}
         \item versioned
         \item shared by construction
-        \item greppable
+        \item greppable % Instead say "searchable history"?
         \item outlives everyone involved
       \end{itemize}
     \end{column}
   \end{columns}
+  Most important advice for today --- use \textbf{version control}:
+  \begin{itemize}
+  	\item Provides an auditable history of your code
+  	\item Code stopped working? Version control becomes a time machine
+  	\item Getting started is easy: create a GitHub account, apply for \href{https://github.com/education}{education free upgrades}, watch a \href{https://youtu.be/a9u2yZvsqHA?si=Tose1lV36yNAaf-q}{YouTube tutorial}, install \href{https://desktop.github.com/download/}{GitHub Desktop}.
+  \end{itemize}
   \vfill
 \end{frame}
 
@@ -61,16 +71,17 @@
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    A chatbot only ever has the conversation. An agent can act on the repository you just built --- read the \texttt{CLAUDE.md}, edit the code, run the tests.
+    A chatbot only has the conversation and the files you share (e.g., uploading or attaching a PDF). \\ % TODO: please help me add a space
+    
+    An agent can \textbf{interact with your repository}: follow instructions with \texttt{CLAUDE.md} or \texttt{Agents.md}, edit the code, debug errors, run the tests, maintain logs, search history, and commit.
   \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    {\scriptsize The same tools from the roadmap slide, sorted by kind now, not by brand.}
-  \end{center}
+
   \vfill
 \end{frame}
 
-\begin{frame}[fragile]{Task 1 --- set up git for a project}
+% TODO: Do we have resource(s) we can link at the bottom of the slide?
+% TODO: Please help me adjust the white space on the slide
+\begin{frame}[fragile]{Task 1 --- use an agent to set up git for a project}
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\small, node distance=1.2cm]
@@ -101,14 +112,16 @@
   \end{columns}
   \vspace{0.5em}
   \begin{center}
-    \slidepoint{Version control is the \textbf{prerequisite} ---\\what it \textbf{unlocks} is the rest of this talk.}
+    \slidepoint{Version control is a \textbf{prerequisite} that \textbf{unlocks} is the rest of this talk.}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
+% TODO: Please help me edit this slide to make it more informative for
+% an engineering graduate student who has never used version control
+% or an agent before
 \begin{frame}{Task 2 --- a chat history can't hold any of these three}
   \vfill
-  {\scriptsize A membrane-transport project's actual context, in each of the three kinds.}
   \vspace{0.4em}
   \begin{columns}[t]
     \begin{column}{0.31\textwidth}
@@ -130,6 +143,12 @@
   \vfill
 \end{frame}
 
+% TODO: Please help me adjust the white spaces.
+% TODO: Please help me explain more clearly which tools use AGENTS.md. Please recommend some neutral names.
+% TODO: Please increase the size of the font in the text file example
+% TODO: Should we say anything about this getting out of date?
+% What about my recommendations to have longer persistent notes/logs?
+% Let's link to resource(s) we are distributing with the talk.
 \begin{frame}[fragile]{Task 2 --- write down what you'd otherwise re-explain every session}
   \vfill
   \begin{columns}[c]
@@ -168,16 +187,19 @@ Membrane transport parameter estimation.
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
+% TODO: I am concerned this slide does not offer enough actionable advice.
+% I like the graphic at the top
+% I think we should have a list of steps for the corpus-grounded literature review
 \begin{frame}{Task 3 --- idea first: brainstorm, refine, then bring in the literature}
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\scriptsize, node distance=0.4cm]
     \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center]
-      (a) {Dictate the\\loose idea};
+      (a) {Dictate the\\loose idea to a chatbot and refine};
     \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of a]
-      (b) {AI refines it\\report or prompt};
+      (b) {Chatbot outputs a report or prompt or both};
     \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of b]
-      (c) {Corpus-grounded\\literature review};
+      (c) {Corpus-grounded\\literature review with agents};
     \node[draw=NDGold, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of c, fill=CodeBg]
       (d) {Report or\\proposal};
     \draw[-{Stealth[length=5pt]}, thick] (a) -- (b);
@@ -186,7 +208,7 @@ Membrane transport parameter estimation.
   \end{tikzpicture}
   \end{center}
   \vspace{0.6em}
-  \begin{center}
+  \begin{center} % TODO: please remove the references to specific applications. Instead, update this text to be more clear
     Chromatography, watershed, desalination --- all three this same pipeline, generic. The corpus arrives to pressure-test an idea already forming, not to generate one.
   \end{center}
   \vspace{0.4em}

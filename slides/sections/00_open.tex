@@ -21,24 +21,29 @@
 % impossible back-to-back transitions. Image height is capped at 6.0cm:
 % past that, the image's own white canvas (not just its content) collides
 % with the corner logo.
-\begin{frame}{Before Codex: a decade of schedules, one real run}
+%
+%
+\begin{frame}{Creating faculty-visitor for graduate student recruitment}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.52\textwidth}
       \centering
+      % TODO: Please make this figure larger. Also, please make the faculty name boxes both longer and taller. The faculty names overrun the boxes. This will be a nice enhancement you can contribute to the scheduling package. This would be a great task for a worker.
       \includegraphics[height=6.0cm]{figures/grad_visit_schedule_6}
     \end{column}
     \begin{column}{0.44\textwidth}
       \centering
+      % TODO: Please add white space above the diagram such that there is
+      % equal white space between the top and bottom
       \begin{tikzpicture}[font=\scriptsize, node distance=0.5cm]
         \node[draw=OkVermillion, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center]
           (a) {\textbf{Before 2023}\\DGA spent \textasciitilde10 hours (re)making the schedule by hand};
         \node[draw=NDBlue, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of a]
           (b) {\textbf{2023}\\Jeff Kantor and I built a Jupyter notebook that used discrete optimization to create the schedule.};
         \node[draw=NDBlue, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of b]
-          (c) {\textbf{2024--2025}\\I maintained the code, patching it by hand and inputting data each year.};
+          (c) {\textbf{2024--2025}\\I maintained the notebook, patching it by hand, inputting data, and creating schedules each year.};
         \node[draw=NDGold, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of c, fill=CodeBg]
-          (d) {\textbf{Feb 2026}\\I converted it into a tested, public Python package with Codex.};
+          (d) {\textbf{Feb 2026}\\Using Codex, I converted the schedule optimization code into a tested, public Python package.};
         \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
         \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
         \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
@@ -46,6 +51,7 @@
     \end{column}
   \end{columns}
   \vspace{1.8cm plus 1fill}
+  % TODO: Add the GitHub package url in the slide footer (part of our temlate)
 \end{frame}
 
 % Table rows are each verified against the public repo's own CHANGELOG.md;
@@ -60,7 +66,7 @@
 % ~18.5 elapsed hours (refactor start, Mon 10:03pm, to first PyPI release,
 % Tue 4:39pm) crossing an overnight gap, which can't confirm or rule out
 % actual working time. Not independently git-verifiable either way.
-\begin{frame}[fragile]{Jupyter Notebook $\to$ public Python package in 10 hours}
+\begin{frame}[fragile]{Jupyter Notebook $\to$ public Python package in ~10 hours}
   \begin{columns}[T]
     \begin{column}{0.46\textwidth}
       \begin{minipage}[t]{\linewidth}
@@ -83,6 +89,7 @@
     \begin{column}{0.5\textwidth}
       \begin{minipage}[t]{\linewidth}
       \centering
+      % TODO: This image does not need a caption
       \includegraphics[width=\linewidth]{figures/grad_scheduler_screenshot_crop}\\[0.3em]
       {\scriptsize The package's own Read the Docs page, live today.}
       \end{minipage}
@@ -97,11 +104,14 @@
     After this small project, I got everyone in my group an \textbf{ND OpenAI seat}. We regularly discuss \textbf{AI best wins, traps, and practices} in our weekly meeting.
   \end{center}
   \vspace{1.8cm plus 1fill}
+  % TODO: Pleaes add the URL to the ReadTheDocs documentation in the footer option defined in the custom beamer template
 \end{frame}
 
 \begin{frame}{Takeaway message for today}
   \vfill
   \begin{center}
+  	% TODO: Update this to the slidepoint. I want it to be the larger
+  	% font similar to the the other slides
     The most powerful uses of generative AI in research go beyond\\
     asking a chatbot questions or polishing prose.
   \end{center}
