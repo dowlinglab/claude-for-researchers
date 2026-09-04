@@ -9,11 +9,11 @@ Resources come in two layers:
 
 Design principle for everything here: inspect before editing, distinguish fact from inference, report uncertainty, preserve provenance, never invent missing information, make small auditable changes, verify after changing anything, and summarize what changed and what's unresolved.
 
-## Layer 1: `practices/` — the nine best-practice files
+## Layer 1: `practices/` — the ten best-practice files
 
 Each file uses the same shape: what it is and when to use it → numbered practice sections (stable, so a prompt can cite `§5`) → checklist → anti-patterns → how to use it with an AI assistant. Target length is 150–300 lines; anything longer stops being loaded and starts being skimmed.
 
-All nine are tool-agnostic, with tool-specific mechanics confined to one clearly marked section carrying a staleness warning.
+All ten are tool-agnostic, with tool-specific mechanics confined to one clearly marked section carrying a staleness warning.
 
 **Task column relabeled 2026-09-04** from the old six-stage-lifecycle section numbers (`outline.md`'s framing, which [CLAUDE.md](../CLAUDE.md) itself calls out as no longer the live-talk plan) to the numbered tasks the live talk actually uses ([storyboard.md](../slides/storyboard.md)'s Task 1–7, threaded Prologue → Act I → Act II → Act III → Epilogue). Where a file backs more than one task, the primary one is listed first.
 
@@ -28,8 +28,9 @@ All nine are tool-agnostic, with tool-specific mechanics confined to one clearly
 | `private_code_to_public_package.md` | 4 | Packaging, isolating private data, release engineering, human-only steps | **Drafted** |
 | `literature_review.md` | 3 | Idea-first vs. corpus-first, batch ingestion, two-pass verification, correction logs, getting-started reports | **Drafted** |
 | `grant_proposal_writing.md` | 3, continued (Act II) | Drafting against sponsor forms, inline compliance review, latexdiff verification, template reuse across cycles | **Drafted** |
+| `latex_overleaf_workflow.md` | 3, continued (Act II) | *(added 2026-09-04)* Overleaf ↔ GitHub ↔ local editor as one synced history, `todonotes` for open items, what to send when sharing a draft | **Drafted** |
 
-Nine practice files total, added to as the underlying project inventory grew. See [practices/README.md](practices/README.md) for the "which file do I want?" index.
+Ten practice files total, added to as the underlying project inventory grew. See [practices/README.md](practices/README.md) for the "which file do I want?" index.
 
 **Task 6 (added 2026-09-04) is what closed the gap for three of these files.** `technical_writing.md`, `writing_style_guide.md`, and `scientific_figures_tables.md` were fully drafted well before this date but backed by no live task anywhere in the talk — the old six-stage lifecycle's "Write" stage never got a home in the three-act storyboard. Task 6 ("inherit a project → an auditable draft manuscript," Act III) is that home; see `slides/sections/04_act3_challenge.tex`'s own header comment for the full rationale.
 
@@ -83,7 +84,7 @@ These are meant to be **working defaults** that the group and others can drop in
 ```
 resources/
 ├── README.md                          this file
-├── practices/                          the nine best-practice files
+├── practices/                          the ten best-practice files
 │   ├── README.md
 │   ├── working_with_ai_agents.md
 │   ├── scientific_computing_workflow.md

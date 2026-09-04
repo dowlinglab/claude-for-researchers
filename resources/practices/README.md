@@ -1,6 +1,6 @@
 # Practices
 
-Seven best-practice files distilled from a year of AI-assisted research work — refactors, package releases, manuscript audits, method development — including the parts that did not work.
+Ten best-practice files distilled from a year of AI-assisted research work — refactors, package releases, manuscript audits, method development — including the parts that did not work.
 
 They are written to be **used with an AI assistant**, not just read. Each has stable numbered sections so a prompt can cite one (`follow §4 of manuscript_audit.md`), a checklist, a list of anti-patterns, and paste-ready invocations at the end.
 
@@ -19,6 +19,7 @@ They are written to be **used with an AI assistant**, not just read. Each has st
 | Check a paper against its code, data, and results before reviewers do | [manuscript_audit.md](manuscript_audit.md) | Task 5 |
 | Explore a new research idea, or process a corpus of papers into an onboarding document | [literature_review.md](literature_review.md) | Task 3 |
 | Draft or revise a grant proposal against a sponsor's form | [grant_proposal_writing.md](grant_proposal_writing.md) | Task 3, continued |
+| Keep one real history for a LaTeX manuscript edited in Overleaf and locally | [latex_overleaf_workflow.md](latex_overleaf_workflow.md) | Task 3, continued |
 
 ## How they fit together
 

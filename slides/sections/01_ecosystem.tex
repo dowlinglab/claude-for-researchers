@@ -105,12 +105,19 @@
 % use-count ranges on a 5hr rolling window (ChatGPT's plain text-chat caps
 % were dropped entirely Aug 2026; images/voice/Deep Research/Agent mode/
 % Codex windows remain capped). Frontier models as of Sept 2026: Anthropic
-% Opus 5 / Sonnet 5 / Haiku 4.5; OpenAI GPT-5.6 in three sizes, Sol/Terra/
-% Luna. Sonnet 5 is 2-3x cheaper than Sol and the more practical daily
-% default for coding/writing/agents; Sol leads on the hardest agentic/
-% tool-calling benchmarks. Complements (does not repeat) "Don't become
-% loyal to a model" above -- that slide is vendor/product-category; this
-% one is specific models and what they cost you to use.
+% Haiku 4.5 / Sonnet 5 / Opus 5, plus Fable 5.1 (released 2026-09-01, three
+% days before this slide was written) -- Fable is a "Mythos-class" tier
+% ABOVE Opus, not a same-ladder step up: Anthropic's own announcement
+% states Fable 5's capabilities "exceed those of any model we've ever made
+% generally available," with the largest lead over Opus on the longest,
+% most complex, most autonomous tasks; Mythos 5 is the same underlying
+% model with safeguards lifted for authorized users (e.g. cybersecurity
+% research). OpenAI GPT-5.6 in three sizes, Sol/Terra/Luna. Sonnet 5 is
+% 2-3x cheaper than Sol and the more practical daily default for coding/
+% writing/agents; Sol leads on the hardest agentic/tool-calling
+% benchmarks. Complements (does not repeat) "Don't become loyal to a
+% model" above -- that slide is vendor/product-category; this one is
+% specific models and what they cost you to use.
 \begin{frame}{Which model, and how much of it do you get}
   \vfill
   \begin{center}
@@ -118,7 +125,7 @@
     \toprule
     & \textbf{Frontier models, small $\to$ large} & \textbf{Usage meter} \\
     \midrule
-    Anthropic & Haiku 4.5, Sonnet 5, Opus 5 & 5-hour session + weekly cap \\
+    Anthropic & Haiku 4.5, Sonnet 5, Opus 5, Fable 5.1 & 5-hour session + weekly cap \\
     OpenAI & GPT-5.6 Luna, Terra, Sol & per-model 5-hour window \\
     \bottomrule
   \end{tabular}
@@ -139,9 +146,10 @@
   \vfill
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
-      {\small\textbf{practices/} \scriptsize(9 -- the doctrine)}
+      {\small\textbf{practices/} \scriptsize(10 -- the doctrine)}
       \begin{itemize}\scriptsize\setlength\itemsep{0.15em}
         \item grant\_proposal\_writing
+        \item latex\_overleaf\_workflow
         \item literature\_review
         \item manuscript\_audit
         \item private\_code\_to\_public\_package
