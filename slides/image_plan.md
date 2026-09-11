@@ -77,7 +77,7 @@ Moved to the Epilogue, 2026-09-03: "ND data classification" and "Check before yo
 
 ## Act III — Challenge
 
-Task 7 was rebuilt 2026-09-11 as a six-slide course-design story. Its opening now uses a real Fall 2018 handwritten lecture page beside a constructed five-offering timeline; the old deferred course-website screenshot is no longer needed. Slides 2–6 use native text, tables, and workflow structure because their job is to expose the system, not prove a webpage exists.
+Task 7 was rebuilt 2026-09-11 as a six-slide course-design story. Its opening uses a compact five-offering horizontal timeline, running right-to-left from Fall 2018 to Fall 2026; the old deferred course-website screenshot is no longer needed. Slides 2–6 use native text, tables, and workflow structure because their job is to expose the system, not prove a webpage exists.
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
@@ -86,7 +86,7 @@ Task 7 was rebuilt 2026-09-11 as a six-slide course-design story. Its opening no
 | 3 | "Cannot verify" is a result | reuses the same `\unknown{}` mark from slide 2 | — | text only, deliberately spare |
 | 4 | A clean build hid a silent failure | none — three short columns | — | text only; the three instances (nomenclature table, `.gitignore`, `CLAUDE.md`) are all either unpublished or already covered visually elsewhere (the course's own `.gitignore` incident doesn't need re-illustrating) |
 | 5 | Status report wrong on eleven items | none | — | text only; the specific number stays but no document is shown |
-| 6 | Task 7 history | real Fall 2018 handwritten lecture page + five-offering TikZ timeline | C + B | **resolved 2026-09-11** — `figures/fall2018_handwritten_notes.png`, rendered from Alex's own Fall 2018 L9 PDF; dates/system changes verified against the retired/current sites and git history |
+| 6 | Task 7 history | five-offering horizontal timeline + applications-first pivot | B | **revised 2026-09-11** — five compact boxes run right-to-left, with one defining change per offering; dates/system changes verified against the retired/current sites and git history |
 | 7 | Task 7 redesign goals | numbered list | text | no image needed — the four goals are the visual hierarchy |
 | 8 | Task 7 source architecture | source → derived artifact → gate table | A/B | native vector/text, editable and projector-readable |
 | 9 | Task 7 verification gates | three-mode table + check categories | A | native text/code artifact; a browser screenshot would obscure the reusable pattern |

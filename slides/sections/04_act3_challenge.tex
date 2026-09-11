@@ -251,8 +251,6 @@
 %
 % History, verified from the retired/current sites and both repos:
 %  - Fall 2018: handwritten notes plus a few Jupyter notebooks in Sakai.
-%    The image on slide 1 is a real page from L9, "Motivate Pyomo and
-%    Constrained Opt.," in optimization-private/handwritten_notes/.
 %  - Spring 2021: Jeff Kantor's pre-JupyterBook nbpages system. Its generated
 %    TOC already puts Getting Started with Pyomo and Modeling/Applications
 %    before theory and algorithms -- this is the applications-first pivot.
@@ -272,32 +270,30 @@
 \begin{frame}{Task 7 --- five offerings, one evolving course}
   \ndlogonote{\scriptsize\href{https://ndcbe.github.io/CBE60499/}{\texttt{retired site (Spring 2021)}}\\\href{https://ndcbe.github.io/optimization/}{\texttt{current site}}}
   \vfill
-  \begin{columns}[c]
-    \begin{column}{0.34\textwidth}
-      \centering
-      \includegraphics[height=4.75cm,trim=38 55 38 55,clip]{figures/fall2018_handwritten_notes}
-    \end{column}
-    \begin{column}{0.62\textwidth}
-      \centering
-      \resizebox{!}{4.75cm}{%
-      \begin{tikzpicture}[font=\scriptsize, node distance=0.22cm]
-        \node[draw=OkVermillion, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center]
-          (a) {\textbf{Fall 2018} --- handwritten notes + a few notebooks in Sakai};
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center, below=of a]
-          (b) {\textbf{Spring 2021} --- \texttt{nbpages} website; applications move before theory + algorithms};
-        \node[draw=NDGold, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center, below=of b, fill=CodeBg]
-          (c) {\textbf{Spring 2023} --- sprint-like JupyterBook rebuild + student contributions};
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center, below=of c]
-          (d) {\textbf{Fall 2024} --- refine notebooks, assignments, and handouts};
-        \node[draw=NDGold, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center, below=of d, fill=CodeBg]
-          (e) {\textbf{Fall 2026} --- coursepack + AI-forward assessment + verification};
-        \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
-        \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
-        \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
-        \draw[-{Stealth[length=6pt]}, thick] (d) -- (e);
-      \end{tikzpicture}}
-    \end{column}
-  \end{columns}
+  \begin{center}
+  \resizebox{0.96\textwidth}{!}{%
+  \begin{tikzpicture}[font=\scriptsize, node distance=0.32cm]
+    \node[draw=NDGold, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, fill=CodeBg]
+      (y2026) {\textbf{Fall 2026}\\coursepack\\AI-forward redesign};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, right=of y2026]
+      (y2024) {\textbf{Fall 2024}\\iterative refinement};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, right=of y2024, fill=CodeBg]
+      (y2023) {\textbf{Spring 2023}\\JupyterBook rebuild\\sprint semester};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, right=of y2023]
+      (y2021) {\textbf{Spring 2021}\\\texttt{nbpages} website\\applications first};
+    \node[draw=OkVermillion, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, right=of y2021]
+      (y2018) {\textbf{Fall 2018}\\notes + notebooks\\shared in Sakai};
+    \draw[-{Stealth[length=6pt]}, thick] (y2018) -- (y2021);
+    \draw[-{Stealth[length=6pt]}, thick] (y2021) -- (y2023);
+    \draw[-{Stealth[length=6pt]}, thick] (y2023) -- (y2024);
+    \draw[-{Stealth[length=6pt]}, thick] (y2024) -- (y2026);
+  \end{tikzpicture}}
+  \end{center}
+  \vspace{0.8em}
+  \begin{center}
+    {\small Fall 2018: theory + algorithms $\longrightarrow$ applications}\\[0.45em]
+    \slidepoint{Since Spring 2021: \textbf{applications} $\longrightarrow$ theory + algorithms}
+  \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
