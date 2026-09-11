@@ -8,17 +8,22 @@ For right after you clone this repo. Point any chatbot or coding assistant at it
 
 ---
 
-## A five-minute first run
+## Explore the repo, then connect it to your research
 
-For a low-friction trial, clone this public repository, open it in a local agent, and paste:
+Create a Claude or ChatGPT account and a GitHub account. Install GitHub Desktop
+and your choice of Claude or ChatGPT. Clone this repository with GitHub Desktop,
+then open the folder in an agent that can read local files and paste:
 
 ```text
-Read resources/README.md. Run the documentation check.
-Explain one useful guide and point to its source file.
-Do not edit anything yet.
+Explore this repository and explain its main resources.
+Then use "The prompt" in resources/prompts/getting_started.md
+to interview me about my research and recommend where to start.
+Do not edit any files yet.
 ```
 
-The check is `python3 resources/scripts/check_docs.py`. Inspect the command output and the file the agent points to. This trial is an invitation to try the tools, not a timed performance promise. Then use the project-specific conversation below.
+Inspect the resources the agent points to, then answer its questions about your
+project. The goal is to leave with a few resources that fit your next work session.
+If you use a chat window without file access, follow the file-pasting instructions below.
 
 ## The prompt
 

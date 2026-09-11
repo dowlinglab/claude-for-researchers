@@ -395,3 +395,8 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 
 - Renamed slide 52 to “Getting started later today.” Added creating Claude and GitHub accounts and installing GitHub Desktop plus Claude or ChatGPT as step 1; retained the previous steps as steps 2–4.
 - Rebuilt and visually checked slide 52; no layout warnings.
+
+### 2026-09-11: Project-specific first activity
+
+- Slide 52 now explicitly offers Claude/ChatGPT for both accounts and installation. The activity explores this repository, then uses the getting-started interview to recommend resources for the participant's own research.
+- Updated the companion prompt's introductory activity to match. Rebuilt and visually checked slide 52; no layout warnings.
