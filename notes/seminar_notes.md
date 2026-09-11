@@ -380,3 +380,7 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 ### 2026-09-11: Larger manuscript integration text
 
 - Increased slide 37 diagram text from scriptsize to small, preserving the centered, content-sized boxes, plus signs, and top-down order. Rebuilt and visually checked the slide; no layout warnings.
+
+### 2026-09-11: Slide 38 agent contributions
+
+- Replaced the project paragraph with “The agent can help...” and six bullets, preserving all contributions. Ended with the requested researcher decision statement. Rebuilt and visually checked slide 38.
