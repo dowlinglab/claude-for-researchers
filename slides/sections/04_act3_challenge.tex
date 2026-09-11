@@ -268,21 +268,21 @@
 % workflow that made them possible.
 
 \begin{frame}{Task 7 --- five offerings, one evolving course}
-  \ndlogonote{\scriptsize\href{https://ndcbe.github.io/CBE60499/}{\texttt{retired site (Spring 2021)}}\\\href{https://ndcbe.github.io/optimization/}{\texttt{current site}}}
+  \ndlogonote{\scriptsize retired: \href{https://ndcbe.github.io/CBE60499/}{\texttt{ndcbe.github.io/CBE60499/}}\\current: \href{https://ndcbe.github.io/optimization/}{\texttt{ndcbe.github.io/optimization/}}}
   \vfill
   \begin{center}
   \resizebox{0.96\textwidth}{!}{%
-  \begin{tikzpicture}[font=\scriptsize, node distance=0.32cm]
-    \node[draw=NDGold, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, fill=CodeBg]
-      (y2026) {\textbf{Fall 2026}\\coursepack\\AI-forward redesign};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, right=of y2026]
-      (y2024) {\textbf{Fall 2024}\\iterative refinement};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, right=of y2024, fill=CodeBg]
-      (y2023) {\textbf{Spring 2023}\\JupyterBook rebuild\\sprint semester};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, right=of y2023]
-      (y2021) {\textbf{Spring 2021}\\\texttt{nbpages} website\\applications first};
-    \node[draw=OkVermillion, rounded corners=2pt, minimum width=2.4cm, minimum height=1.55cm, text width=2.1cm, align=center, right=of y2021]
-      (y2018) {\textbf{Fall 2018}\\notes + notebooks\\shared in Sakai};
+  \begin{tikzpicture}[font=\small, node distance=0.32cm]
+    \node[draw=OkVermillion, rounded corners=2pt, minimum width=2.4cm, minimum height=1.9cm, text width=2.1cm, align=center]
+      (y2018) {\textbf{Fall 2018}\\[0.3em]handwritten notes\\[0.22em]Sakai notebooks};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.4cm, minimum height=1.9cm, text width=2.1cm, align=center, right=of y2018]
+      (y2021) {\textbf{Spring 2021}\\[0.3em]\texttt{nbpages} website\\[0.22em]applications first};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=2.4cm, minimum height=1.9cm, text width=2.1cm, align=center, right=of y2021, fill=CodeBg]
+      (y2023) {\textbf{Spring 2023}\\[0.3em]JupyterBook\\[0.22em]sprint rebuild};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.4cm, minimum height=1.9cm, text width=2.1cm, align=center, right=of y2023]
+      (y2024) {\textbf{Fall 2024}\\[0.3em]iterative refinement};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=2.4cm, minimum height=1.9cm, text width=2.1cm, align=center, right=of y2024, fill=CodeBg]
+      (y2026) {\textbf{Fall 2026}\\[0.3em]coursepack\\[0.22em]AI-forward redesign};
     \draw[-{Stealth[length=6pt]}, thick] (y2018) -- (y2021);
     \draw[-{Stealth[length=6pt]}, thick] (y2021) -- (y2023);
     \draw[-{Stealth[length=6pt]}, thick] (y2023) -- (y2024);
@@ -292,7 +292,7 @@
   \vspace{0.8em}
   \begin{center}
     {\small Fall 2018: theory + algorithms $\longrightarrow$ applications}\\[0.45em]
-    \slidepoint{Since Spring 2021: \textbf{applications} $\longrightarrow$ theory + algorithms}
+    {\small\color{NDBlue}Since Spring 2021: \textbf{applications} $\longrightarrow$ theory + algorithms}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
