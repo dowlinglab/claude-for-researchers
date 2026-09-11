@@ -140,4 +140,4 @@ Act I §3, §4, §6 (renumbered 2026-09-03 — the membrane-transport context/`C
 
 ## Open question
 
-**Should I go capture the six "ready now" screenshots today**, or hold until the corresponding sections are actually being drafted? Capturing now risks a page changing before the talk (the ND policy page especially); capturing at draft-time means fewer round trips but interrupts drafting flow. My default would be to capture the six now, save them into `slides/figures/` with a note recording the URL and capture date (same provenance discipline as the TAL logo), and re-verify anything policy-related closer to September 17.
+**Should I go capture the six "ready now" screenshots today**, or hold until the corresponding sections are actually being drafted? Capturing now risks a page changing before the talk (the ND policy page especially); capturing at draft-time means fewer round trips but interrupts drafting flow. My default would be to capture the six now, save them into `slides/figures/` with a note recording the URL and capture date (same provenance discipline as the TAL logo), and re-verify anything policy-related closer to October 15.

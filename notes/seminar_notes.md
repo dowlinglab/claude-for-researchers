@@ -288,3 +288,11 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 **Open questions raised:** Type 4's naming (watershed/desalination) was assumed generic by the same conservative default as types 1–2, not explicitly confirmed — flagged in `demo_ideas.md` "Still open." Slide count (35, ~41.5 min) still needs a real per-minute check once `slides/sections/*.tex` are rewritten against the current structure — tracked in `storyboard.md`.
 
 **Next:** rewrite `slides/sections/00_open.tex`, `01_ecosystem.tex`, `02_context.tex` against the locked Prologue/Act structure (currently stale, predate the restructure); then draft new section files for Act II, Act III, and the Epilogue; get outline feedback at least 8 days before the talk per the group manual (not yet done).
+
+---
+
+## 2026-09-11 (seminar rescheduled)
+
+**Decision:** The seminar date moved from September 17 to October 15, 2026. The time and location are unchanged. Until the next polishing pass is complete, the title slide carries a red `DRAFT` label in its upper-right whitespace.
+
+**Actions taken:** Updated the date in the deck and current project metadata, adjusted the policy re-check deadline, rebuilt the 52-page PDF, and visually verified the revised title slide.

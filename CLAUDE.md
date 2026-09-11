@@ -4,7 +4,7 @@ Persistent context for any AI assistant (Claude, ChatGPT/Codex, Gemini, etc.) wo
 
 ## What this repo is
 
-Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delivered to CBE graduate students and faculty at Notre Dame on September 17, 2026 in a 1-hour slot (40-minute talk + 20 minutes of questions) — see [README.md](README.md) for event details. The seminar's thesis: the most powerful uses of GenAI in research go beyond chatbot Q&A, and come from integrating AI into a deliberate, reproducible, auditable workflow. Full charter/rationale: [notes/seminar_design.md](notes/seminar_design.md).
+Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delivered to CBE graduate students and faculty at Notre Dame on October 15, 2026 in a 1-hour slot (40-minute talk + 20 minutes of questions) — see [README.md](README.md) for event details. The seminar's thesis: the most powerful uses of GenAI in research go beyond chatbot Q&A, and come from integrating AI into a deliberate, reproducible, auditable workflow. Full charter/rationale: [notes/seminar_design.md](notes/seminar_design.md).
 
 **This repository is the source of truth for the project.** Decisions, rationale, and content belong in files here, not only in chat history.
 

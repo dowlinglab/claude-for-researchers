@@ -6,7 +6,7 @@ A seminar for graduate students and faculty in Chemical and Biomolecular Enginee
 
 | | |
 |---|---|
-| **Date** | September 17, 2026 |
+| **Date** | October 15, 2026 |
 | **Time** | 11:00 AM – 12:00 PM (40-minute talk + 20 minutes of questions) |
 | **Location** | Carey Auditorium, 107 Hesburgh Library, University of Notre Dame |
 | **Audience** | CBE graduate students and faculty, Notre Dame (faculty from other departments welcome) |

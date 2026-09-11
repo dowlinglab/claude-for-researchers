@@ -1,6 +1,6 @@
 % =====================================================================
 % Claude for Research: Beyond the Chatbot
-% CBE seminar, University of Notre Dame -- 17 September 2026
+% CBE seminar, University of Notre Dame -- 15 October 2026
 %
 % Build:  make          (or: latexmk -pdf main.tex)
 % Theme:  vendored in theme/ -- see theme/README.md for provenance.
@@ -191,7 +191,7 @@
 \subtitle{Beyond the Chatbot}
 \author{Prof. Alexander (Alex) Dowling}
 \institute{Chemical and Biomolecular Engineering \\ adowling@nd.edu}
-\date{17 September 2026}
+\date{15 October 2026}
 \ndvenue{Carey Auditorium, Hesburgh Library}
 
 % Small ND logo, bottom-left, on every frame after the title slide -- via
@@ -223,6 +223,10 @@
 \setbeamertemplate{background}{\ndtitlepagelogodraw}
 \begin{frame}[plain]
   \titlepage
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east, text=red, font=\bfseries\Huge]
+      at ([xshift=-1.0cm,yshift=-1.1cm]current page.north east) {DRAFT};
+  \end{tikzpicture}
 \end{frame}
 }
 
