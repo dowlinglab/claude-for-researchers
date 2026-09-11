@@ -390,3 +390,8 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 - Renamed slide 39 to “Modernize my graduate elective” and removed bold emphasis from “applications.”
 - Adopted its white interiors, 0.8pt ND gold outlines, rounded corners, and ND blue text across editable diagram and section-divider boxes. Highlighted boxes now use ND green outlines.
 - Centralized the treatment in `nd box` / `nd highlight` TikZ styles and updated the style guide. Rebuilt the deck and visually reviewed all 12 affected slides; no LaTeX layout warnings.
+
+### 2026-09-11: Getting started slide
+
+- Renamed slide 52 to “Getting started later today.” Added creating Claude and GitHub accounts and installing GitHub Desktop plus Claude or ChatGPT as step 1; retained the previous steps as steps 2–4.
+- Rebuilt and visually checked slide 52; no layout warnings.

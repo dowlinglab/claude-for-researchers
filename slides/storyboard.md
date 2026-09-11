@@ -69,7 +69,7 @@ Task 1 establishes the workspace. Tasks 2–3 build software and literature-grou
 49. You own every claim, whatever helped you make it
 50. Hobbies: AI can amplify your curiosity
 51. Hobbies: Create a textbook customized for you
-52. Try one useful task before tomorrow
+52. Getting started later today
 
 ## Narrative and pacing
 
