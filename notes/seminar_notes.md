@@ -371,3 +371,8 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 ### 2026-09-11: Audit goals heading
 
 - Added “Audit Goals” above slide 34’s numbered questions, matching the prerequisites heading. Rebuilt and visually checked the layout.
+
+### 2026-09-11: Larger audit slide text
+
+- Increased slide 34 prerequisites from small to normal size and audit goals from normal to large. Tightened wording and spacing to preserve every check while keeping the larger text on single lines.
+- Rebuilt and visually checked slide 34; content clears the footer and the build has no layout warnings.
