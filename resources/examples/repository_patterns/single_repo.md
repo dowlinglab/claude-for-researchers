@@ -8,7 +8,7 @@
 
 ## The real decision this is built from
 
-Task 4 of the seminar this repo supports (`slides/sections/03_act2_build.tex`) is a git-verified conversion of a paper's research code into a public package. The repository layout decision behind it, locked on day one and never revisited, was:
+Task 2 of the seminar this repo supports (`slides/sections/03_act2_build.tex`) is a git-verified conversion of a paper's research code into a public package. The repository layout decision behind it, locked on day one and never revisited, was:
 
 - **One repo, no separate paper repo.** The private, pre-conversion research repo (bloated git history, large intermediate files) stays private as the archive of record. The paper's reproduction code migrates *into* the new public package repo — it does not get a third repo of its own.
 - **Examples and paper-reproduction are repo-only, not shipped in the installed package.** Only the importable library ships in the built wheel. `examples/` holds a reusable case study built on the public API; `paper/` holds thin reproduction scripts that *import from* `examples/` rather than duplicating logic, plus a `golden/` directory of regression values and a `DATA.md` describing what's committed and what isn't. Both directories are importable in development and CI via a `sys.path` insert in `tests/conftest.py` — not via installing the package.
@@ -28,7 +28,7 @@ The result: one clone gets you the installable library, a runnable example, and 
 - The manuscript itself (LaTeX source, journal-specific formatting, submission history) needs a lifecycle independent of the software's — different collaborators, different release cadence, a different license.
 - The full data archive is required for reproduction and is too large or too sensitive to curate down to a committed subset.
 
-*(A worked example of the split pattern, with the provenance-manifest connection that keeps a manuscript repo and a code repo honestly linked, is planned but not yet built — see the main [`../../README.md`](../../README.md)'s "Also planned" section.)*
+For the broader private-code / private-writing / public-release arrangement, see [the LaTeX and Overleaf workflow](../../practices/latex_overleaf_workflow.md) §1. This example answers a narrower question: where the public package and its reproduction scripts belong. The private writing repository can remain separate.
 
 ## Checklist
 

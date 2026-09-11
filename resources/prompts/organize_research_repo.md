@@ -62,7 +62,7 @@ Look, propose, and stop before committing anything you have not shown me.
   shown before you commit it.
 ```
 
-**Companion reading:** the "Task 2" pattern right after this one — once the repository exists, [`../templates/project_entry_point.md`](../templates/project_entry_point.md) and a `CLAUDE.md`/`AGENTS.md` pointer file are usually the next thing worth adding, before the details of how to run the project live only in your memory.
+**Companion reading:** the existing-repository pattern below — once the repository exists, [`../templates/project_entry_point.md`](../templates/project_entry_point.md) and a `CLAUDE.md`/`AGENTS.md` pointer file are usually the next thing worth adding, before the details of how to run the project live only in your memory.
 
 ---
 
@@ -175,3 +175,22 @@ Then **stop** for approval.
 **Do not skip the baseline (Path 2).** The prompt asks for it in Phase 2 deliberately. Restructuring research code without a numerical baseline means you cannot prove afterward that the results are the same ones the paper reported — see [`../practices/scientific_computing_workflow.md`](../practices/scientific_computing_workflow.md) §3.
 
 **Resist restructuring a folder that doesn't need it (Path 1).** The most common failure mode here isn't a messy repo — it's over-organizing three files into five folders before there's any reason to. Version control is the win; subdirectories can wait until there's something to separate.
+
+
+## Complete the agent workspace after the initial inventory
+
+Once version control is established, use this continuation before asking for substantive research changes:
+
+```text
+Set up this project so an agent and a new researcher can reproduce it.
+Inspect existing instructions and dependency files first.
+1. Record the current branch and commit; preserve uncommitted work.
+2. Create or verify the project environment using the declared dependencies.
+   Record exact setup and execution commands. Report missing dependencies.
+3. Draft concise AGENTS.md / CLAUDE.md guidance with source paths,
+   verification commands, and write boundaries. Reuse existing guidance.
+4. Reproduce the easiest existing result without refactoring the method.
+5. Record the result, output path, command, and any discrepancy in a handoff.
+Stop for scientific choices or unavailable source data; do not fill gaps
+with invented results. Show the baseline before proposing a reorganization.
+```

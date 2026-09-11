@@ -2,13 +2,13 @@
 
 **The one test both halves of this checklist share:** can someone else — a labmate inheriting your project, a reviewer, your own future self after six months away — install it, understand it, and extend it, using only what's in the repository?
 
-**Two directions, one test.** Task 2's problem ("inherit a messy project, reconstruct its context") is Task 4's problem in reverse ("release something someone else can pick up"). The checklist is the same either way; only which end of it you're standing on changes. Use the **Receiving** half when you're the one inheriting; use the **Leaving** half before you hand something off, archive it, or release it.
+**Two directions, one test.** Task 1's problem ("inherit a messy project, reconstruct its context") is Task 2's problem in reverse ("release something someone else can pick up"). The checklist is the same either way; only which end of it you're standing on changes. Use the **Receiving** half when you're the one inheriting; use the **Leaving** half before you hand something off, archive it, or release it.
 
 This is a checklist, not a practice file — it doesn't re-argue the reasoning. Each item cites the practice file that does: [`../practices/working_with_ai_agents.md`](../practices/working_with_ai_agents.md), [`../practices/scientific_computing_workflow.md`](../practices/scientific_computing_workflow.md), [`../practices/private_code_to_public_package.md`](../practices/private_code_to_public_package.md).
 
 ---
 
-## Receiving (Task 2: inheriting a project)
+## Receiving (Task 1: inheriting a project)
 
 **Before you change anything:**
 
@@ -23,7 +23,7 @@ This is a checklist, not a practice file — it doesn't re-argue the reasoning. 
 - [ ] A numerical baseline exists (or you've captured one) from the code as you found it, before any refactor (`scientific_computing_workflow.md` §3)
 - [ ] You know what the last person actually verified versus what they assumed — these are usually not the same list
 
-## Leaving (Task 4: releasing or handing off)
+## Leaving (Task 2: releasing or handing off)
 
 **Before someone else opens this:**
 

@@ -18,6 +18,22 @@ Instead: **one writing project gets one Overleaf project, synced to one GitHub r
 
 GitHub, not Overleaf's own version history, is what you rely on for a distinct, navigable edit history — Overleaf's history is real but harder to search and doesn't survive account changes the way a repository does.
 
+### Three repositories for a research project
+
+Alex's working pattern separates three kinds of history:
+
+| Repository | Contents | History and audience |
+|---|---|---|
+| Private code development | Experiments, input data, analysis, failed approaches, generated results where appropriate | Rich working history; Alex's projects often occupy roughly 10–500 MB, depending on data and outputs |
+| Private writing, linked from Overleaf | LaTeX source, bibliography, selected figures, small literature notes | Compact history shared with coauthors |
+| Public paper release | Reusable code, permitted data or acquisition instructions, exact reproduction commands | Curated near-final history corresponding to a manuscript or published paper |
+
+This is a useful pattern, not a requirement to split every small project. Keep one authority for code and generated results. Copy or export the selected figures into the writing repo with a manifest recording their source commit and generating command. Do not maintain two hand-edited copies of the analysis. Prepare a public release explicitly; do not change a private repository's visibility and assume its old history is suitable for release.
+
+**Why keep writing separate?** Large data, cached results, and a long binary history make cloning and synchronization cumbersome. Overleaf [recommends](https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization) synced projects below 100 MB and commits changing fewer than 100 files; projects above those recommendations may work. Its [plan limits](https://docs.overleaf.com/getting-started/free-and-premium-plans/plan-limits) do not state an enforced total-project size limit. Git LFS and submodules are not supported inside Overleaf projects. GitHub synchronization is a premium feature and is explicitly triggered, not continuous background synchronization. Checked September 11, 2026.
+
+**File-size rule:** Alex avoids individual Git files above about 10 MB. That is a working convention, not GitHub's platform limit: [GitHub warns above 50 MiB and blocks ordinary Git files above 100 MiB](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github). Large PDF collections can live in a Google Drive folder or reference manager. Keep `literature.md`, `ref.bib`, source-location mappings, and processing status in Git. Moving a large file out of the latest version does not remove its earlier copies from Git history.
+
 ## 2. Sync often, and know what it buys you
 
 Push from Overleaf to GitHub every time you create a real new version of a file, not just before submission. This is worth doing consistently for three concrete reasons, not just "good practice":
@@ -28,11 +44,21 @@ Push from Overleaf to GitHub every time you create a real new version of a file,
 
 Keep an `archive/` (or `graveyard/`) folder inside the project for superseded source files and figures, rather than deleting them — the same instinct as `scientific_computing_workflow.md`'s "correct in place, don't silently delete."
 
-## 3. Editing locally: sync through GitHub, never download from Overleaf
+## 3. Editing locally on a branch
 
-If you prefer a local LaTeX editor to Overleaf's web interface, that's fine — but the sync direction matters. **Pull the current source from GitHub, edit locally, push back to GitHub, and let that flow into Overleaf** — don't download a one-time snapshot from Overleaf and edit it in isolation, which forks the history the moment you save.
+LaTeX stores document content as text and compiles it into a PDF. Agents can search its source, edit sections, update citations, run the build, and generate diffs. The PDF still needs visual inspection: a successful build can hide clipped text or a wrong scientific claim.
 
-This is exactly where an AI coding assistant earns its keep on a writing project, not just a code one: debugging a cryptic LaTeX compile error, or generating and reviewing a `latexdiff` between two versions, are both mechanical, evidence-checkable tasks a CLI-based assistant handles well — see `resources/scripts/latexdiff_check.sh` for a scriptable version of the second one.
+Use a feature branch for a local agent revision while collaborators work in Overleaf:
+
+1. Explicitly push the latest Overleaf edits to GitHub; fetch and pull that version locally.
+2. Create a branch for one revision. Record the starting commit for `latexdiff`.
+3. Let the agent edit there. Compile the clean PDF, generate `latexdiff`, and inspect both. Review the source diff in GitHub Desktop too.
+4. Before merging, synchronize collaborators' latest Overleaf edits to the shared GitHub branch again. Fetch them and incorporate them into the feature branch; resolve conflicts and rebuild.
+5. Review the pull request, merge the agreed revision, then explicitly pull the merged GitHub version into Overleaf. Inspect the resulting PDF and confirm that collaborators' edits survived.
+
+A branch isolates work; it cannot prevent conflicts when two people edit the same passage. Coordinate sync points. Overleaf's GitHub integration does not offer arbitrary feature-branch editing inside its web editor; the branches and pull request live in GitHub/local Git. Also coordinate use of Overleaf comments and Track Changes: pulling from GitHub can displace those annotations. See the [integration limitations](https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization).
+
+Use [`../scripts/latexdiff_check.sh`](../scripts/latexdiff_check.sh) for a repository-based comparison. The small [manuscript revision example](../examples/manuscript_revision/README.md) lets a new user inspect actual `latexdiff` output without a private manuscript.
 
 ## 4. Track open items where the reader will actually look
 

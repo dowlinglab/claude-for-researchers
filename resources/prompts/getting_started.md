@@ -8,6 +8,18 @@ For right after you clone this repo. Point any chatbot or coding assistant at it
 
 ---
 
+## A five-minute first run
+
+For a low-friction trial, clone this public repository, open it in a local agent, and paste:
+
+```text
+Read resources/README.md. Run the documentation check.
+Explain one useful guide and point to its source file.
+Do not edit anything yet.
+```
+
+The check is `python3 resources/scripts/check_docs.py`. Inspect the command output and the file the agent points to. This trial is an invitation to try the tools, not a timed performance promise. Then use the project-specific conversation below.
+
 ## The prompt
 
 ```markdown

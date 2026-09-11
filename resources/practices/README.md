@@ -6,20 +6,20 @@ They are written to be **used with an AI assistant**, not just read. Each has st
 
 ## Which file do I want?
 
-"Used live as" points at the seminar task where the talk actually demonstrates this file (`../../slides/storyboard.md`'s Task 1–7); a file with no live task is still real, checklist-usable doctrine — see `../README.md` for the full status note.
+"Used live as" points at the seminar task where the talk actually demonstrates this file (`../../slides/storyboard.md`'s Task 1–6); a file with no live task is still real, checklist-usable doctrine — see `../README.md` for the full status note.
 
 | I need to… | Read | Used live as |
 |---|---|---|
-| Set up a project so an AI agent can work in it — and keep the record straight across sessions, tools, and machines | [working_with_ai_agents.md](working_with_ai_agents.md) | Task 2 |
-| Move from exploratory scripts and notebooks to code someone else can rerun — and know what to verify at each stage | [scientific_computing_workflow.md](scientific_computing_workflow.md) | Task 4 |
-| Release research code as an installable package without leaking private data or breaking my own results | [private_code_to_public_package.md](private_code_to_public_package.md) | Task 4 |
-| Draft or revise a manuscript | [technical_writing.md](technical_writing.md) | Task 6 |
-| Write in the group's voice, or derive a style guide of my own | [writing_style_guide.md](writing_style_guide.md) | Task 6 |
-| Make figures and tables that are correct, readable, and traceable to what produced them | [scientific_figures_tables.md](scientific_figures_tables.md) | Task 6 |
-| Check a paper against its code, data, and results before reviewers do | [manuscript_audit.md](manuscript_audit.md) | Task 5 |
+| Set up a project so an AI agent can work in it — and keep the record straight across sessions, tools, and machines | [working_with_ai_agents.md](working_with_ai_agents.md) | Tasks 1 and 6 |
+| Move from exploratory scripts and notebooks to code someone else can rerun — and know what to verify at each stage | [scientific_computing_workflow.md](scientific_computing_workflow.md) | Tasks 2 and 6 |
+| Release research code as an installable package without leaking private data or breaking my own results | [private_code_to_public_package.md](private_code_to_public_package.md) | Task 2 |
+| Draft or revise a manuscript | [technical_writing.md](technical_writing.md) | Task 5 |
+| Write in the group's voice, or derive a style guide of my own | [writing_style_guide.md](writing_style_guide.md) | Task 5 |
+| Make figures and tables that are correct, readable, and traceable to what produced them | [scientific_figures_tables.md](scientific_figures_tables.md) | Tasks 5 and 6 |
+| Check a paper against its code, data, and results before reviewers do | [manuscript_audit.md](manuscript_audit.md) | Task 4 |
 | Explore a new research idea, or process a corpus of papers into an onboarding document | [literature_review.md](literature_review.md) | Task 3 |
-| Draft or revise a grant proposal against a sponsor's form | [grant_proposal_writing.md](grant_proposal_writing.md) | Task 3, continued |
-| Keep one real history for a LaTeX manuscript edited in Overleaf and locally | [latex_overleaf_workflow.md](latex_overleaf_workflow.md) | Task 3, continued |
+| Draft or revise a grant proposal against a sponsor's form | [grant_proposal_writing.md](grant_proposal_writing.md) | Task 3 |
+| Keep one real history for a LaTeX manuscript edited in Overleaf and locally | [latex_overleaf_workflow.md](latex_overleaf_workflow.md) | Task 3 |
 
 ## How they fit together
 
@@ -43,7 +43,7 @@ technical_writing ──► writing_style_guide                           │
 
 ## Conventions
 
-- **Tool-agnostic**, with tool-specific mechanics confined to one clearly marked section per file carrying a staleness warning. Vendor conventions drift, and no assistant reads another's configuration file.
+- **Tool-agnostic**, with tool-specific mechanics marked and dated. Vendor conventions drift; share instruction content explicitly rather than assuming every tool discovers the same files.
 - **Every rule carries its reason.** Rules without reasons get discarded the first time they are inconvenient.
 - **Rules that must hold have a way to fail.** Written instructions are advisory; see `working_with_ai_agents.md` §9. The tools in [`../scripts/`](../scripts/) exist to turn some of these into gates.
 - **Practices, not projects.** These are generalized. Nothing here identifies a specific paper, repository, or person.

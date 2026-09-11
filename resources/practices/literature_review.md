@@ -24,11 +24,15 @@ The most productive idea-first move is not "find papers about my topic." It's **
 
 Do this as two visibly separate passes — first field, then the crossing field — so each can be evaluated on its own before you claim the combination is new.
 
+### Search, read, and search again
+
+Start with a chatbot to develop terminology, synonyms, and search strings. Use Google Scholar and disciplinary databases to locate review papers, primary studies, citation trails, and competing terminology. After each processed batch, ask the agent to recommend specific missing sources and explain which gap each would address. Verify those recommendations and download the papers you can identify and use under the applicable license. Repeat; do not let the first search define the entire corpus.
+
 ## 3. Batch ingestion, with a checkpoint per batch
 
 Process literature in small topical batches rather than one large dump: collect PDFs for one sub-topic, synthesize them, and only then consider that batch done. Each batch should leave behind a checkpoint — a note, a section, a commit — before the next one starts. This keeps each step reviewable and makes it obvious which topics have actually been processed versus merely collected.
 
-A concrete mechanism: keep new PDFs excluded from version control by default, and un-exclude each batch's files only once you've written its synthesis. The exclusion list itself then becomes a visible record of what's been processed.
+Keep large PDF collections outside Git throughout the workflow. Track processing status in `literature.md` (collected, processed, verified), with the filename and source location for every entry. A checkpoint should commit the updated text artifacts; it need not commit the PDFs.
 
 ## 4. One fixed annotation schema, applied to every paper
 
@@ -101,6 +105,12 @@ Three checks that catch fabrication, all cheap:
 ## 11. Where the PDFs live is a separate decision from where the notes live
 
 Notes, summaries, and BibTeX are small, text, and belong under version control. A large PDF collection often does not — particularly in a repository that syncs with a collaborative editor. Whichever you choose (reference manager, shared drive, a git-ignored local folder), write the policy down: a filename convention, where the files actually are, and a note field in the bibliography recording which file backs which entry, so the citation can always be traced to its source.
+
+For a large project, a Google Drive folder can hold the PDFs while the writing repo tracks `ref.bib`, `literature.md`, and a mapping from citation keys to PDF filenames/locations. Record the access arrangements so collaborators can retrieve the same sources. Follow the roughly 10 MB individual-file convention and Overleaf synchronization guidance in [`latex_overleaf_workflow.md`](latex_overleaf_workflow.md) §1.
+
+### Turn the corpus into a report or proposal
+
+Build an outline that pairs each proposed claim with source PDFs and page/equation locations. Draft one section at a time against that map. Verify quotations, numerical values, qualifications, and conflicting evidence in the actual papers before polishing. Use sponsor instructions for a proposal and the journal's author instructions for a manuscript; the literature corpus supplies evidence, not the formatting rules. Review the compiled PDF and a tracked-changes version before accepting revisions.
 
 ## 12. Working with an AI assistant
 

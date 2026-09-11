@@ -4,7 +4,7 @@
 
 **When to reach for it.** Before your first agent session on a project, and again whenever a project starts sprawling: too many notes files, a stale plan, work you can't hand to another machine or another tool.
 
-**How to read it.** Sections are numbered and stable, so you can point an agent at a specific one (`follow §5 of working_with_ai_agents.md`). Everything except §11 is tool-agnostic.
+**How to read it.** Sections are numbered and stable, so you can point an agent at a specific one (`follow §5 of working_with_ai_agents.md`). Sections 11–12 include dated tool-specific details.
 
 ---
 
@@ -141,22 +141,70 @@ Cheap things worth automating: a check that every internal link resolves; a chec
 
 > ⚠️ **This section dates fastest.** It describes tools as of September 2026 and will drift. Everything in §1–§10 is meant to outlive it. Check the vendor's current documentation before relying on any detail here.
 
-Current conventions:
+A project instruction file is a **startup briefing**: text supplied to the model before the task. “Pre-context” is a useful informal analogy, but it is still part of the context window, not a separate training stage or an enforcement mechanism. Instructions do not grant filesystem access or override tool permissions.
 
-- **Claude Code** reads `CLAUDE.md` from the project root automatically, and permissions live in `.claude/settings.json` (or `settings.local.json`, which is usually untracked — so anything a collaborator needs must be in the tracked file).
-- **Codex** uses `AGENTS.md` by the same convention, with configuration in `~/.codex/config.toml`.
-- **Neither tool reads the other's file.** This is the whole reason for §2 and §8.
+| Mechanism | Claude Code | Codex |
+|---|---|---|
+| Project file | `CLAUDE.md` | `AGENTS.md` |
+| Discovery | Ancestor guidance at startup; nested guidance when those files are read | Global guidance, then project-root-to-working-directory guidance at startup; nearer guidance takes precedence |
+| Setup helper | `/init` drafts instructions; `/memory` inspects loaded files | `/init` scaffolds `AGENTS.md`; review the result against the actual project |
+| Sharing rules | `@AGENTS.md` in `CLAUDE.md` imports a shared file | Reads `AGENTS.md` by default; other filenames require explicit configuration or instructions |
 
-The portable arrangement: keep the content in a tool-neutral file, and make each tool's file a thin pointer.
+Checked September 11, 2026: [Claude memory](https://code.claude.com/docs/en/memory), [Codex instructions](https://learn.chatgpt.com/docs/agent-configuration/agents-md), and [Codex commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli).
+
+Keep the root file short: purpose, paths, verified setup/build commands, conventions that matter, and write boundaries. Put task plans and detailed history elsewhere and link to them. Claude recommends under 200 lines per `CLAUDE.md`; Codex defaults to a 32 KiB combined project-instruction limit. These are different measures, neither a target to fill. After setup, ask the agent to identify its loaded guidance and run one listed verification command. Correct incorrect commands before adding more rules.
+
+For this repo's portable template, either keep a tool-neutral `PROJECT.md` with thin pointers from both files, or use `AGENTS.md` as the shared core and import it from `CLAUDE.md`:
 
 ```markdown
-<!-- CLAUDE.md / AGENTS.md -->
-Read `PROJECT.md` first — it is the source of truth for this repository.
-Then follow `practices/working_with_ai_agents.md` §5 (standing rules)
-and §6 (guardrails).
+@AGENTS.md
 ```
 
-Both ecosystems also support user-level configuration for conventions you repeat across every project. If you find yourself retyping the same standing rules, that is the signal to promote them.
+Imports load the referenced content too; splitting a large file into imports does not make its startup context smaller. A normal pointer to background documentation lets the agent read that material when the task needs it.
+
+### Claude hooks
+
+Hooks respond to lifecycle events. A command hook executes a script; prompt or agent hooks can evaluate conditions. They are configured in `.claude/settings.json` and can be inspected with `/hooks`.
+
+| Event | Research example |
+|---|---|
+| `PreToolUse` | Inspect a proposed edit and reject it if it targets a protected baseline. |
+| `PostToolUse` | Run a formatter or focused check after an edit. |
+| `Stop` | Check whether the required evidence exists before accepting completion. |
+
+For example, a command hook can receive the proposed tool call as JSON on standard input. In a `PreToolUse` command hook, exit code 2 blocks the action and returns the script's error message. Ordinary test exit code 1 is **not** automatically equivalent to a blocking hook: write the adapter for the documented event semantics and test it. A hook that watches `Edit|Write` alone will not catch every possible file mutation through shell commands. Keep filesystem permissions and final verification in place. Guard Stop hooks against endless retries.
+
+Use [Anthropic's hooks guide](https://code.claude.com/docs/en/hooks-guide) for the current event schema and examples. Hooks run with the process's access; inspect a script before enabling it. Do not enable a new hook just because it was suggested by a repository you downloaded.
+
+## 12. Independent work overnight or over a weekend
+
+Before leaving, save an execution plan in the repository. A usable plan names the intended artifact, completion evidence, source authority, permitted edits, reversible decisions, checks between phases, resource/time budget, and conditions that require your judgment. Agree on the review point before starting. “Work for 12 hours” alone does not define success.
+
+The seminar's examples use a 12-hour lecture revision plan and a 24-hour feasibility-study plan. The lecture plan reserves ambiguous annotations and major teaching changes for instructor review. The study plan reserves changes to the scientific question and baseline discrepancies for researcher review. These are planning budgets, not claims that a service guarantees uninterrupted runtime.
+
+An adaptable task brief:
+
+```text
+Objective: Reproduce the selected result and prepare a reviewable revision.
+Authority: Use the specified paper, input data, and committed baseline.
+Write scope: This feature branch; do not edit reference outputs.
+Phases: inventory -> baseline -> bounded revision -> verification -> handoff.
+Gate: Compare each changed result with its saved reference before continuing.
+Autonomy: Fix reversible implementation defects within the agreed scope.
+Stop: Ambiguous data, scientific choices, changed scope, or budget exhaustion.
+Budget: Up to 12 hours; record work remaining instead of weakening checks.
+Handoff: Commit verified changes; list commands, artifacts, failures, and
+         decisions for me. Do not push or publish unless authorized.
+```
+
+Choose the mechanism for the job:
+
+- **Codex Goal** pursues a persistent objective across turns. Set a concrete completion condition; current app commands include `/goal`. Availability depends on the installed surface. See [Codex commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli).
+- **Claude Code `/goal`** checks a condition after each turn and can continue the current session. Its evaluator judges the evidence surfaced by the agent; it is not an independent reproduction of the result. See [goals](https://code.claude.com/docs/en/goal).
+- **Claude Code `/loop`** repeats a prompt at an interval, useful for polling a running computation. It needs a running session; it is not a guarantee of continuous progress toward a research outcome. See [scheduling](https://code.claude.com/docs/en/scheduled-tasks).
+- **Scheduled tasks** are for starting work later or on a recurring schedule. Local execution requires a machine that remains available; cloud jobs need the right repository, dependencies, and authorized data access.
+
+Before an unattended local run, verify the environment, usage allowance, permissions, machine wakefulness, checkpoint location, and resume procedure with one short trial. Do not bypass approval or data-access controls to make it run unattended. Review the actual diffs and output artifacts in the morning; a completion message is not sufficient evidence.
 
 ---
 
