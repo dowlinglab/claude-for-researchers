@@ -91,18 +91,23 @@
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/technical_writing.md}{\texttt{resources/practices/technical\_writing.md}}}
   \vfill
   \begin{center}
-  \begin{tikzpicture}[font=\scriptsize, node distance=0.18cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=10.5cm, minimum height=0.68cm, align=center, fill=black!2]
+  \begin{tikzpicture}[font=\scriptsize, node distance=0.30cm,
+      task box/.style={draw=NDBlue, rounded corners=2pt, minimum height=0.68cm,
+        inner xsep=0.18cm, align=center, fill=black!2}]
+    \node[task box]
       (a) {\textbf{Task 1}: versioned workspace, environment, instructions, reproducible baseline};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=10.5cm, minimum height=0.68cm, align=center, above=of a, fill=black!2]
+    \node[task box, below=of a]
       (b) {\textbf{Task 2}: trustworthy software, figures, and results};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=10.5cm, minimum height=0.68cm, align=center, above=of b, fill=black!2]
+    \node[task box, below=of b]
       (c) {\textbf{Task 3}: curated literature, bibliography, and claim-evidence outline};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=10.5cm, minimum height=0.68cm, align=center, above=of c, fill=black!2]
+    \node[task box, below=of c]
       (d) {\textbf{Task 4}: audit questions and traceability checks};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=5.8cm, minimum height=0.76cm, align=center, above=0.32cm of d, fill=CodeBg]
+    \node[font=\small, inner sep=0pt] at ($(a.south)!0.5!(b.north)$) {$+$};
+    \node[font=\small, inner sep=0pt] at ($(b.south)!0.5!(c.north)$) {$+$};
+    \node[font=\small, inner sep=0pt] at ($(c.south)!0.5!(d.north)$) {$+$};
+    \node[task box, draw=NDGold, minimum height=0.76cm, below=0.38cm of d, fill=CodeBg]
       (e) {\textbf{Task 5}: a manuscript with evidence attached};
-    \draw[-{Stealth[length=7pt]}, thick] (d) -- (e);
+    \draw[-{Stealth[length=7pt]}, thick] (d.south) -- (e.north);
   \end{tikzpicture}
   \end{center}
   \vspace{0.25em}

@@ -357,3 +357,9 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 - Slide 34: split prerequisites into small-font bullets and number the five audit questions.
 - Slide 36: give Existing DOI and Missing DOI a shared fixed text width and minimum height, wrap supporting text, and use aligned right-angle branching/merging connectors.
 - Rebuilt the 52-slide deck and visually checked both affected slides; no LaTeX layout warnings.
+
+### 2026-09-11: Manuscript integration diagram
+
+- Slide 37 now reads from Task 1 at the top to Task 5 at the bottom, with centered boxes sized to their text.
+- Plus signs between Tasks 1–4 emphasize that their outputs combine; the downward arrow leads to the manuscript.
+- Rebuilt and visually checked slide 37; no LaTeX layout warnings.
