@@ -176,36 +176,26 @@
 % the callback explicitly rather than reordering the act.
 \begin{frame}{Task 3, continued --- one manuscript, three places, one history}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/latex_overleaf_workflow.md}{\texttt{resources/practices/latex\_overleaf\_workflow.md}}}
-  \vspace{-0.3cm}
-  \begin{center}\small
-    Back to Task 3's proposal --- the same discipline that made Task 4 safe applies just as well to a document.
-  \end{center}
-  \vspace{0.3em}
+  \vfill
   \begin{center}
-  \begin{tikzpicture}[font=\small, node distance=1.3cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.2cm, minimum height=1.1cm, align=center]
-      (a) {Overleaf\\\scriptsize collaborative drafting};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=3.2cm, minimum height=1.1cm, align=center, right=of a, fill=CodeBg]
-      (b) {GitHub\\\scriptsize the real history};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.4cm, minimum height=1.1cm, align=center, right=of b]
-      (c) {Local editor + AI\\\scriptsize debug errors, run latexdiff};
+  \begin{tikzpicture}[font=\normalsize, node distance=1.3cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.2cm, minimum height=1.35cm, align=center]
+      (a) {Overleaf\\draft together};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=3.2cm, minimum height=1.35cm, align=center, right=of a, fill=CodeBg]
+      (b) {GitHub\\version history};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.4cm, minimum height=1.35cm, align=center, right=of b]
+      (c) {Local editor + AI\\debug and compare};
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
     \draw[{Stealth[length=6pt]}-{Stealth[length=6pt]}, thick] (b) -- (c);
   \end{tikzpicture}
   \end{center}
-  \vspace{0.3em}
-  \begin{center}\small
-    One Overleaf project per manuscript, synced to one GitHub repo --- never a new project per draft. GitHub is the archive: it survives losing your university email, and it's what actually preserves history, not duplicate Overleaf projects.
-  \end{center}
-  \vspace{0.2em}
-  \begin{center}\small
-    Editing locally instead? Sync through GitHub, never download the source from Overleaf directly --- an AI CLI tool is genuinely useful here for debugging \LaTeX{} errors and running \texttt{latexdiff}.
-  \end{center}
-  \vspace{0.3em}
-  \begin{center}
-    \slidepoint{Track open items with \texttt{todonotes} in the \textbf{PDF itself} --- ready to submit once every note is resolved.}
-  \end{center}
-  \vspace{0.3cm plus 1fill}
+  \vspace{0.7em}
+  \begin{enumerate}\setlength\itemsep{0.55em}
+    \item One manuscript = one Overleaf project + one GitHub repository
+    \item GitHub holds the history and connects Overleaf to local tools
+    \item Locally, debug \LaTeX{}, run \texttt{latexdiff}, and resolve every \texttt{todonote} before submission
+  \end{enumerate}
+  \vspace{1.8cm plus 1fill}
 \end{frame}
 
 \begin{frame}[fragile]{Task 3, continued --- the same discipline, on a document instead of code}
