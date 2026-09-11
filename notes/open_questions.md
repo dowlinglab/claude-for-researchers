@@ -1,37 +1,9 @@
 # Open questions
 
-Decisions not yet made. Once resolved, move the outcome into [seminar_notes.md](seminar_notes.md) (as a dated decision) and, if it changes the plan, update [outline.md](../outline.md) or [seminar_design.md](seminar_design.md), then delete the item from this list.
+The final slide audit on September 11, 2026 found no unresolved content or layout issues in the 52-slide deck. Historical questions and their resolutions remain available in Git history through commit `2c55c74`.
 
-## Hand-off, 2026-09-11 (resuming on a different computer)
+The remaining follow-up items are:
 
-Talk is **15 October 2026** — 34 days out as of this note. Last commit on this machine: `93ea871` (2026-09-04), "Clean up stale open questions; fill in vendor-doc references; document doi_checker." Working tree was clean at hand-off; `main` was up to date with `origin/main`. As of 2026-09-04, every `% TODO` comment in `slides/sections/*.tex` had been resolved except one durable sourcing note kept on purpose (`04_act3_challenge.tex:51`, "numbers are illustrative/synthetic" — not an action item). The deck compiled clean, 52 pages, zero LaTeX warnings, and every touched slide was visually re-rendered and checked (style_guide.md rule 10).
-
-Four things still genuinely open, in rough priority order:
-
-1. **NotebookLM vs. "Gemini Notebook" naming — needs a decision.** While sourcing `references.md`, found Google's help center now says "Gemini Notebook" where it used to say "NotebookLM." ND's own AI@ND page (confirmed by direct browser read 2026-09-02) still says "NotebookLM," and that's what the Epilogue's approved-tools table currently uses. Full flag: [references.md](references.md), "Google" section. Action: re-check `ai.nd.edu` close to the talk (the `WebFetch` tool can't reach it — TLS error, noted in that file; the in-app Browser tool worked on 2026-09-02) and decide which name the slide should use.
-2. **Task 7's course-site screenshot still not captured** (`ndcbe.github.io/optimization`). The opening slide ships with a typeset scope-list instead in the meantime (intentional fallback), but `slides/image_plan.md` row 6 still marks the real screenshot "not yet captured." Needs a live session with Alex present and Chrome connected — a background pass can't do this step (see that file's own capture-constraint note).
-3. **Handout not yet built.** `handout/` only has its scope `README.md` (1.5-page, front-and-back target) — no actual content. Deliberately deferred until the slides were finalized; the slides are now effectively final, so this is likely the next real body of work.
-4. **`notes/seminar_notes.md` is stale** — last touched 2026-09-02. The 2026-09-04 TODO sweep and the reference/open-questions cleanup are logged in `slides/storyboard.md`'s revision log instead, not there. Not urgent, just a gap if `seminar_notes.md` is being relied on as the master decision log.
-
-## Logistics
-- ~~Start time and location~~ — resolved: 11:00 AM–12:00 PM, Carey Auditorium, 107 Hesburgh Library.
-- ~~Room AV / internet access~~ — resolved: Alex presents from his own laptop; room A/V is reasonable, but the room does not support audience-interactive activities (e.g., live polling). Live, presenter-driven demos are workable; no interactive exercises planned.
-- ~~Handout distribution~~ — resolved: printed, target length **1.5 pages (one sheet, front and back)** — see the [handout/](../handout/README.md) rescope. Also publish the same PDF in this repo once built, at no extra cost.
-
-## Content
-- ~~Amateur Radio anecdote~~ — resolved, then revised: moved from a Section 3 aside into its own new closing Section 9, "Unleash Your Curiosity: AI and your hobbies," alongside a second hobby example. Book repo: [github.com/adowling2/radio-extra-book](https://github.com/adowling2/radio-extra-book).
-- ~~3D-printing examples for Section 9~~ — fully resolved: both stories received and both image collages are in the repo at `slides/figures/boot_dryer_octopus.jpeg` and `slides/figures/kitchen_organizer_telescope_shelf.jpeg`. See [demo_ideas.md](demo_ideas.md) #4b.
-- ~~Frame story~~ — resolved: keep "finishing a paper after the student graduated" (story #5) as the open/close bookend, reframed around *expediting* completion (e.g., helping a graduating student wrap up) rather than only "recovery after someone left." See updated [demo_ideas.md](demo_ideas.md).
-- ~~Journal-selection workflow~~ — resolved: one bullet point in the live talk (Outline Section 6), not dropped, not handout-only.
-- ~~Real vs. composite examples~~ — resolved: use real (anonymized) Dowling-lab projects — Alex has two in mind already — with no student identified by name or implication.
-- ~~Writing-style guide source material~~ — unblocked: two existing style guides were located during the project inventory (one derived empirically from a large corpus of the group's own papers, one anchored to named exemplar documents and carrying scientific-integrity constraints alongside voice rules). `resources/practices/personal_style_guide.md` will merge them into a worked example plus a "derive your own" section. Nothing further needed from Alex.
-
-## Institutional facts to verify before the talk (do not state live without confirming)
-- ~~ND Claude access path(s) and DoD/DoW restriction~~ — resolved via direct browser read of `ai.nd.edu` on 2026-09-02. Confirmed: Claude is currently approved at ND for Public data only (Gemini/ChatGPT EDU/NotebookLM are cleared through Sensitive); an Enterprise Claude license is "coming soon" pending a FOAPAL; DoD/DoW-funded researchers are prohibited from using any Anthropic products (contact `researchsecurity@nd.edu`). Full quotes in [references.md](references.md). Residual risk: re-check once more close to October 15 in case the page changed again.
-- ~~CBE-specific data-sensitivity / export-control considerations~~ — resolved as a general-guidance bullet rather than a specific investigation: the talk will tell grad students/postdocs to check with their PI or project lead about special considerations (DoD/DoW, export control, etc.) before using any AI tool on their project. Added to Outline Section 1/8.
-
-## Design/production
-- ~~Beamer theme details~~ — resolved: [ND Beamer Template](https://github.com/dphow/ND_Beamer_Template) as the base, white background (not the dark variant), no navigation symbols, no frametitle-bar monogram, colored corner logo (`cornerlogo=fullcolor`) on every frame after the title slide. See `slides/main.tex`'s own preamble comments.
-- ~~Two slide-content TODOs deferred pending the theme refactor~~ — resolved: the theme now ships `\ndlogonote`, a macro placing a citation note to the right of the corner logo on any frame. Both deferred items (the BITS-for-GAPS repo URL, the ecosystem slide's overlay text) and the ham radio slide's stopgap link now use it, along with every other resource/URL citation deck-wide.
-- ~~Manuscript-audit resource scope~~ — bundling plan (quantitative-claim, methods-vs-code, figure-vs-text, journal-guideline compliance as one `resources/prompts/manuscript_audit.md`) stands, and the file is written and cited live on Task 5/6 slides. The "co-review 1-2 real projects together" step was never logged as a scheduled event in this repo's own notes — leaving this line here rather than marking it fully resolved, since that specific step's completion isn't independently verifiable from the repo alone.
-- ~~DOI checker scope~~ — resolved: built at `resources/scripts/doi_checker/` (own `README.md`; sourcing also now tracked in [references.md](references.md)'s new "Tools referenced in this seminar" section), adapted from Alex's earlier script rather than written from scratch. Two-pass Crossref verification (resolve-and-match for entries with a DOI, propose-above-threshold for entries without); reports only, never edits.
+1. **Recheck time-sensitive claims immediately before October 15.** Product names, model availability and limits, Notre Dame AI approvals, and research-security restrictions can change. Use the primary sources tracked in [references.md](references.md).
+2. **Decide when to remove the title-slide `DRAFT` label.** It remains because Alex explicitly requested it for the practice version.
+3. **Build the separate handout, if still desired.** The scope is recorded in [handout/README.md](../handout/README.md); no handout source has been created.

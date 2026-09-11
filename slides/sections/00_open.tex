@@ -1,35 +1,3 @@
-% ======================= PROLOGUE: THE HOOK, THE CLAIM =======================
-% storyboard.md Prologue items 2-3 ("The teaser", "The claim"). Item 4
-% ("Borrowed structure") is 00b_roadmap.tex; item 1 (title) is in main.tex.
-%
-% Every date/fact below is git-verified against both real repos (private:
-% ndcbe/grad-visit-scheduling; public: dowlinglab/grad-visit-scheduler), not
-% recollection: the Codex conversion ran Mon Feb 9 -- Tue Feb 10, 2026
-% (weekdays, not a weekend); DGA is a generic title (Director of Graduate
-% Admissions), not attributed to a specific person. The 2023 box is
-% co-built (36 Alex + 37 Jeff commits); 2024/2025 are solo (100% Alex).
-%
-% Frame 1's schedule image is a REAL run of the real, public package --
-% real ND CBE faculty (public roster), fictional Winnie-the-Pooh visitors
-% (public domain) standing in for real prospective students. Generated
-% from branch `fix/schedule-plot-label-overrun-and-autosize` (PR open,
-% not yet merged/released to PyPI as of 2026-09-04) at
-% /Users/adowling/GitHub/DowlingLab/Service/grad-visit-scheduler, which
-% upstreams the box-overrun/fixed-whitespace fix this deck first patched
-% locally: `plot_visitor_schedule(..., fontsize=20, tight=True)` now
-% auto-sizes the figure from row count, time-slot count, and the longest
-% rendered label -- no more manual figsize/lw tuning. `tight=True` is
-% what fixes the excess vertical whitespace between rows; the aspect
-% ratio this produces is ~2.2:1 (wide), a sharp change from the old
-% hardcoded ~1.2:1, so the image is now sized by width
-% (0.98\linewidth in its column), not a fixed height -- at this aspect
-% ratio a height cap for the corner-logo collision no longer applies.
-% Generation script is throwaway, not checked into this repo; the demo
-% config MUST set `movement: {policy: travel_time, min_buffer_minutes:
-% 10}` -- `policy: none` silently disables travel-time enforcement
-% between buildings and produces impossible back-to-back transitions.
-%
-%
 \begin{frame}{Creating faculty-visitor schedules for graduate student recruitment}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/grad-visit-scheduler}{\texttt{github.com/dowlinglab/grad-visit-scheduler}}}
   \vfill
@@ -59,26 +27,6 @@
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% Table rows are each verified against the public repo's own CHANGELOG.md;
-% docs-only tags (v0.1.2, v0.2.1) are left out. The two "---" rows before
-% the first real tag are real, timestamped private-repo commits (Mon Feb
-% 9, 2026: "Draft 1 ready and sent to Carla for feedback" 14:43; "Started
-% to restructure as a package" 22:03). The Read the Docs screenshot
-% independently confirms "Created by Alex Dowling and Jeff Kantor."
-%
-% v0.5.1 row added 2026-09-04: PR #20 (the auto-sizing fix -- see this
-% file's header comment above and 04_act3_challenge.tex/storyboard.md for
-% the fuller story) merged same day; CHANGELOG.md's own "## [0.5.1] -
-% 2026-09-04" entry exists and a "Release 0.5.1" commit has landed, but no
-% git tag/PyPI publish yet as of this writing -- "cutting now" in the
-% table is accurate, not "released." Update this note (and drop the
-% qualifier) once it actually ships.
-%
-% "10 hours" in the title is Alex's own account of active hands-on-
-% keyboard time, not calendar-elapsed time -- git timestamps alone span
-% ~18.5 elapsed hours (refactor start, Mon 10:03pm, to first PyPI release,
-% Tue 4:39pm) crossing an overnight gap, which can't confirm or rule out
-% actual working time. Not independently git-verifiable either way.
 \begin{frame}[fragile]{Jupyter Notebook $\to$ public Python package in \textasciitilde10 hours}
   \ndlogonote{\scriptsize\href{https://grad-visit-scheduler.readthedocs.io}{\texttt{grad-visit-scheduler.readthedocs.io}}}
   \begin{columns}[T]

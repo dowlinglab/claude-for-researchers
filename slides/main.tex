@@ -1,37 +1,5 @@
-% =====================================================================
-% Claude for Research: Beyond the Chatbot
-% CBE seminar, University of Notre Dame -- 15 October 2026
-%
-% Build:  make          (or: latexmk -pdf main.tex)
-% Theme:  vendored in theme/ -- see theme/README.md for provenance.
-% =====================================================================
 \documentclass[aspectratio=169, 11pt]{beamer}
 
-% background defaults to white (not set below): nearly every artifact shown
-% (file trees, diffs, tables, a matplotlib figure, two photo collages) is on
-% a white ground and would punch a glare hole in a dark deck.
-% cornerlogo=fullcolor -- the small mark, bottom-left, on every frame after
-% the title slide; titlepagelogo=fullcolor matches it on the title slide
-% itself (a separate option -- the theme resolves it from [background] by
-% default, which would otherwise give blue here). Changed from the
-% monochrome blue mark 2026-09-04 at Alex's request; the theme already
-% ships a fullcolor asset for both the primary and secondary academic
-% mark, so this is a one-word option change, not a template fix.
-% textcolor=blue -- body text defaults to ND Blue, not black.
-% titlelayout=leftrule -- this deck's own title-slide design (see the title
-% frame below), now a theme option rather than bespoke per-deck code.
-% monogram=none -- no small "ND" mark in the frametitle bar; the corner
-% logo on every frame is enough branding without doubling up.
-% No `nav` and no `sections`: nine sections in forty minutes do not justify
-% spending vertical space on every slide. Orientation comes from the act-strip
-% divider instead (\actstrip below).
-% theme/ is on the search path two ways, so this builds the same regardless
-% of tool: .latexmkrc sets TEXINPUTS for `make`/`latexmk` builds, and the
-% \input@path line below adds the same directory for any other engine that
-% skips .latexmkrc entirely (e.g. a GUI editor's own "plain pdfLaTeX" mode,
-% which never reads it). \graphicspath adds theme/ as a second place
-% \includegraphics looks (needed for the theme's own logos/ references;
-% plain figures/... calls elsewhere in this deck still resolve as before).
 \makeatletter
 \def\input@path{{./theme/}}
 \makeatother
@@ -47,69 +15,23 @@
 \usepackage{xcolor}
 \usepackage{fontawesome5}
 
-% ---------------------------------------------------------------------
-% Colour
-%
-% NDBlue, NDGold, and IrishGreen are defined by the theme itself, at the
-% correct official values.
-%
-%   ND Blue     #0C2340   PMS 289   contrast on white 15.79:1
-%   Dome Gold   #C99700   PMS 117   contrast on white  2.65:1  <- ACCENT ONLY
-%   Irish Green #00843D   PMS 348   contrast on white  4.81:1
-%
-% Dome Gold must never carry text on white: 2.65:1 fails WCAG (needs 4.5:1).
-% Use it for rules, fills, and the active lifecycle stage. On ND Blue it is
-% fine (5.95:1).
-% ---------------------------------------------------------------------
-
-% Semantic colours, taken from the Okabe-Ito palette that
-% resources/scripts/figure_style/ recommends -- so the deck uses the
-% colour-blind-safe palette the seminar tells people to use.
-\definecolor{OkGreen}{HTML}{009E73}     % the practice / verified
-\definecolor{OkVermillion}{HTML}{D55E00}% the failure mode  (not red: CB-safe)
+\definecolor{OkGreen}{HTML}{009E73}
+\definecolor{OkVermillion}{HTML}{D55E00}
 \definecolor{OkSky}{HTML}{56B4E9}
-% Gray, kept only for non-prose UI elements deliberately meant to look
-% inactive/de-emphasized (the act-strip's unlit stage boxes and arrows,
-% lstlisting code comments) -- never for a sentence someone has to read
-% (too low-contrast). See style_guide.md rule 4.
 \definecolor{Muted}{HTML}{7A7A7A}
 \definecolor{CodeBg}{HTML}{F4F4F2}
 
-% Frametitle color/background and body text color default to NDBlue rather
-% than black, via the theme's own textcolor option (set above) and its
-% background-aware defaults. Section-file overrides that set an explicit
-% color (OkVermillion, Muted, NDGold, etc. via \good/\bad/\unknown/box
-% fills) are unaffected either way.
 \setbeamertemplate{navigation symbols}{}
 
-% Numbered-circle (\begin{enumerate}) color: IrishGreen rather than the
-% theme's own default NDBlue. IrishGreen is already defined by the
-% theme itself (always available, not gated behind an option), so this
-% is a plain per-deck override -- no theme change needed.
-% FOUND BY TESTING: \setbeamercolor{enumerate item}{fg=...} alone does
-% NOT recolor the filled circle -- Beamer's "circles" style numbers use
-% the "item projected" color (fg=white, bg=item.fg), a separate entity
-% enumerate item only feeds indirectly and that the rendered circle
-% never actually reads. bg=... here is what the circle's fill reads.
 \setbeamercolor{enumerate item}{fg=IrishGreen}
 \setbeamercolor{enumerate subitem}{fg=IrishGreen}
 \setbeamercolor{item projected}{bg=IrishGreen}
 
-% ---------------------------------------------------------------------
-% Semantic macros. Meaning is never carried by colour alone -- each pairs the
-% colour with a mark or a word, so the deck survives greyscale and colour
-% vision deficiency, which is what we ask of figures.
-% ---------------------------------------------------------------------
 \newcommand{\good}[1]{\textcolor{OkGreen}{\faCheck~#1}}
 \newcommand{\bad}[1]{\textcolor{OkVermillion}{\faTimes~#1}}
 \newcommand{\unknown}[1]{\textcolor{Muted}{\faQuestion~#1}}
 \newcommand{\keyterm}[1]{\textcolor{NDBlue}{\textbf{#1}}}
 
-% Placeholder for a real screenshot not yet captured (image_plan.md tracks
-% these). Deliberately looks inactive -- Muted gray, dashed -- the same
-% register as the act-strip's unlit stage boxes: a reminder to swap in the
-% real asset, not content to read. #1 width, #2 height, #3 caption (what to
-% go capture).
 \newcommand{\placeholderimage}[3]{%
   \begin{tikzpicture}
     \node[draw=Muted, dashed, thick, rounded corners=3pt,
@@ -119,24 +41,8 @@
   \end{tikzpicture}%
 }
 
-
-% ---------------------------------------------------------------------
-% Body text: exactly two sizes, per slides/style_guide.md. \slidepoint is
-% \large: the one argument a slide makes. Everything supporting it --
-% captions, attributions, secondary explanation -- uses \small directly, no
-% wrapper needed. \scriptsize/\tiny are not body text: reserved for diagram
-% micro-labels and code (lstlisting already sets \scriptsize).
-%
-% \slidepoint does not auto-bold its whole argument -- Alex's standing style
-% is to bold only a few key words by hand within each \slidepoint{...} call,
-% never the full sentence. See style_guide.md rule 12.
-% ---------------------------------------------------------------------
 \newcommand{\slidepoint}[1]{{\large\color{NDBlue}#1}}
 
-% ---------------------------------------------------------------------
-% Code / file trees. `listings`, not `minted`: minted needs -shell-escape and
-% Pygments, which is a portability liability for a deck in a public repo.
-% ---------------------------------------------------------------------
 \lstdefinestyle{plain}{
   basicstyle=\ttfamily\scriptsize,
   backgroundcolor=\color{CodeBg},
@@ -150,12 +56,6 @@
 }
 \lstset{style=plain}
 
-% ---------------------------------------------------------------------
-% The recurring motif: the talk's five-beat structure, with one lit.
-% Usage: \actstrip{3}  (0 = none lit, for the roadmap/overview slide)
-% Only ever called from \stagedivider below -- font size (\large) is tuned
-% to match that macro's own subtitle size.
-% ---------------------------------------------------------------------
 \newcommand{\actstrip}[1]{%
 \begin{tikzpicture}[x=3.1cm, font=\large\sffamily]
   \foreach \n [count=\i from 1] in {Tinker, Understand, Build, Challenge, Trust} {
@@ -174,7 +74,6 @@
   }
 \end{tikzpicture}}
 
-% A stage divider: the act strip with one stage lit, plus the stage's question.
 \newcommand{\stagedivider}[3]{%
 \begin{frame}[plain]
   \vfill
@@ -186,7 +85,6 @@
   \vfill
 \end{frame}}
 
-% ---------------------------------------------------------------------
 \title{Claude for Research}
 \subtitle{Beyond the Chatbot}
 \author{Prof. Alexander (Alex) Dowling}
@@ -194,31 +92,13 @@
 \date{15 October 2026}
 \ndvenue{Carey Auditorium, Hesburgh Library}
 
-% Small ND logo, bottom-left, on every frame after the title slide -- via
-% the theme's own [cornerlogo] option (set above). Resized here (the
-% theme's own default is noticeably smaller): 0.2475*paperwidth wide at
-% the mark's real 219:58 aspect ratio is ~0.839cm tall; margin 0.5mm. This
-% MUST be in the preamble, before \begin{document} -- the theme measures
-% the logo via \AtBeginDocument, which fires as soon as \begin{document}
-% is reached, before any of the document body (including this override,
-% if it were placed after \begin{document} instead) runs.
 \renewcommand{\ndcornerlogoheight}{0.839cm}
 \renewcommand{\ndcornerlogomargin}{0.5mm}
 
-% \ndlogonote centers its note on this fraction of \ndcornerlogoheight
-% from the bottom, not the logo's pure geometric center (0.5, the theme's
-% own default) -- measured directly against the primary mark asset,
-% "NOTRE DAME"'s own line sits at 0.518. See theme/README.md for how this
-% was measured.
 \renewcommand{\ndlogonoteanchor}{0.518}
 
 \begin{document}
 
-% ---- Title ----------------------------------------------------------
-% \titlepage, using the theme's own titlelayout=leftrule template (set
-% above). \setbeamertemplate{background} must be set here, outside
-% \begin{frame}, not inside it -- Beamer locks in a frame's background at
-% \begin{frame} time.
 {
 \setbeamertemplate{background}{\ndtitlepagelogodraw}
 \begin{frame}[plain]

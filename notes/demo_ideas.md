@@ -133,4 +133,4 @@ Rows 2-3 moved in from the Prologue 2026-09-03, Alex's suggestion — they read 
 ## Still open
 
 - **Type 4's naming** was not explicitly asked about; assumed generic by the same conservative default as types 1–2. Confirm or correct.
-- ~~Slide count vs. budget~~ — this file no longer tracks the running count; `slides/storyboard.md`'s "At a glance" table is authoritative (currently 43 slides, ~47.5 min, against a 35-40 slide / ~40-minute-talk target — over budget, but Alex confirmed 2026-09-03 he isn't worried about the count while there's still this much editing left; rehearsal-driven trimming still pending).
+- ~~Slide count vs. budget~~ — resolved: the final practice-talk deck contains 52 slides for a 40-minute talk. The current sequence is recorded in `slides/storyboard.md`; earlier count and timing debates remain in Git history.

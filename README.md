@@ -32,27 +32,27 @@ This repository is the source of truth for the seminar. Decisions, rationale, an
 
 ```
 claude-for-research/
-├── outline.md       timed 40-minute talk outline
-├── slides/          Beamer slide source (not yet built)
+├── outline.md       current high-level talk outline
+├── slides/          final 52-slide Beamer deck and source
 ├── handout/         LaTeX leave-behind handout (not yet built)
-├── resources/       polished, reusable student takeaways (prompts, scripts, templates)
-├── notes/           design rationale, open questions, references, demo ideas
+├── resources/       companion guides, prompts, scripts, templates, and checks
+├── notes/           decisions, source references, and planning history
 └── README.md        this file
 ```
 
-- **[outline.md](outline.md)** — the timed talk structure: sections, teaching points, demos, and what students should remember.
+- **[outline.md](outline.md)** — the current act-level structure and narrative through-line.
 - **[`slides/`](slides/README.md)** — the live-talk Beamer deck. Sparse text, worked examples, file trees, workflow diagrams.
 - **[`handout/`](handout/README.md)** — a denser LaTeX leave-behind: checklists, prompts, and reference material that doesn't fit in the 40-minute talk.
-- **[`resources/`](resources/README.md)** — the actual takeaways: reusable prompts, a DOI checker, templates, and example repository structures. See [resources/README.md](resources/README.md) for what's planned and in what priority.
-- **`notes/`** — working memory for this project:
+- **[`resources/`](resources/README.md)** — reusable practice guides, prompts, scripts, templates, a checklist, and a repository example.
+- **`notes/`** — project memory and source tracking:
   - [notes/seminar_design.md](notes/seminar_design.md) — deeper rationale and the bank of candidate stories/examples
-  - [notes/open_questions.md](notes/open_questions.md) — decisions not yet made
+  - [notes/open_questions.md](notes/open_questions.md) — remaining follow-up items
   - [notes/references.md](notes/references.md) — authoritative sources for claims about Anthropic/OpenAI/Google products and Notre Dame policy
   - [notes/demo_ideas.md](notes/demo_ideas.md) — candidate live-demo material, including personal examples this talk draws on
 
 ## Status
 
-Early scaffolding stage (as of September 2, 2026). Abstract, outline, and event details are set; slides and handout have not been written yet. See [notes/open_questions.md](notes/open_questions.md) for what's still undecided.
+The 52-slide practice-talk deck was audited, rebuilt, and finalized on September 11, 2026. The title slide still says **DRAFT** by request. The companion resources are complete and cross-referenced from the talk; the separate handout remains unbuilt. See [notes/open_questions.md](notes/open_questions.md) for the small number of remaining follow-up items.
 
 ## License
 

@@ -1,16 +1,6 @@
-% ============================ EPILOGUE: TRUST ============================
-% storyboard.md Epilogue. Job: land the responsible-use synthesis, close
-% on curiosity rather than a caveat. The Prologue's hook closes on an open
-% question (00_open.tex) that this act answers implicitly rather than
-% revisiting explicitly. The meta-slide ("this talk was built the same
-% way") lives in the Prologue instead (01_ecosystem.tex); its row in the
-% summary matrix below completes the loop.
 
 \stagedivider{5}{Epilogue: Trust}{What do you trust, and why?}
 
-% Spacing between the two tables uses a fixed vspace, not \vfill -- two
-% tables plus a closing line leave little room to spare beside the corner
-% logo.
 \begin{frame}{Currently, Claude is approved for public data only at ND}
   \vfill
   \renewcommand{\arraystretch}{0.9}
@@ -60,14 +50,6 @@
   \vfill
 \end{frame}
 
-% Rows use the same Task 1-7 numbers used throughout the talk (Prologue
-% preview, Act I/II/III titles). Task 3 spans Act I (idea -> report/
-% proposal) and Act II (the proposal's compliance-review payoff, "Task 3,
-% continued"). Task 4's Prologue check reflects the grad-visit-scheduler
-% hook -- deliberately unnumbered there, but the same kind of task
-% recurs, so the checkmark stays honest to that. Tasks 6 and 7 live
-% entirely in Act III, so both check only that column, same convention as
-% Task 5.
 \begin{frame}{The same tasks recur across projects and acts}
   \vfill
   \begin{center}
@@ -105,35 +87,12 @@
   \vfill
 \end{frame}
 
-% Verified against the real, public adowling2/3d-printing repo (65
-% commits, Alex alone, Feb 15 - Sep 2, 2026): most projects share a
-% first-commit date, Feb 15, 2026, the day the repo's workflow/ tooling
-% (init_project.sh, render_views.sh, a STYLE.md, a Codex-iteration-loop
-% convention) was first set up; keychains has the most activity (30
-% commits). Design happens in OpenSCAD, iterated with Codex against
-% workflow/STYLE.md; render_views.sh's default renderer crashes in
-% headless mode (documented NSOpenGLContext errors), with
-% render_stl_views_blender.sh as the real, documented fallback -- the
-% same tool-for-the-task principle Task 7 tells with Codex/GPT-5.6, at
-% hobby scale. Image height is capped at 4.6cm, the most the 0.42-width
-% column can take without exceeding its own width (1:1 aspect ratio).
-
-% Image enlarged 2026-09-04 (Alex's request) -- column widened 0.42->0.48
-% and height 4.6cm->5.6cm together, so the 1:1-ish source image still fits
-% its own column width (same constraint noted in the header comment above:
-% a height cap keyed to column width, not an arbitrary number). Workflow
-% list expanded from 3 to 5 steps at Alex's own direction, from his
-% first-person account of the real process: a sketch/photo step at the
-% front (not previously shown at all) and an explicit feedback-loop step at
-% the end (previously implied, never named) -- treated as authoritative
-% without separate git verification, same as other direct first-person
-% process statements elsewhere in this deck.
 \begin{frame}{Task 8 (hobbies) --- using AI to amplify your curiosity}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \centering
-      \includegraphics[height=5.2cm]{figures/kitchen_organizer_telescope_shelf.jpeg} % TODO: Make this image larger to fill white space
+      \includegraphics[height=5.2cm]{figures/kitchen_organizer_telescope_shelf.jpeg}
     \end{column}
     \begin{column}{0.46\textwidth}
       \textbf{\small My workflow}
@@ -154,25 +113,6 @@
   \vspace{0.1cm plus 1fill}
 \end{frame}
 
-% Verified against the real, public adowling2/radio-extra-book repo (87
-% commits, Alex alone, Jul 22 - Sep 2, 2026): "Circuit Theory for the
-% Amateur Extra Exam," 26 chapters, 226 pages. The 5 steps are drawn from
-% the real commit history and PROJECT-STATUS.md: source drafted chapter
-% by chapter, a "v2 reorg" into the current part structure, a figure
-% pipeline verified to regenerate byte-identically, coverage checked
-% against real ARRL exam question-pool extracts, structured revision
-% rounds. Two of the tracked revisions were the book catching its own
-% errors (a wrong reason given for coil Q falling; a mistold push-pull/
-% IMD explanation) -- real, not a rhetorical flourish. Labeled "Task 8
-% (hobbies)" -- Alex's own call: a real number, but deliberately outside
-% the professional Task 1-7 taxonomy, so it does not appear in the
-% Prologue's task preview or the Epilogue's summary matrix.
-%
-% Figure is real, from the book itself:
-% chapters/15_filters_and_matching.tex's \label{fig:filter-families} --
-% order-5 low-pass responses (Butterworth/Chebyshev/elliptic/Bessel),
-% normalized to the same cutoff, trading flatness against transition
-% sharpness against passband ripple.
 \begin{frame}{Task 8 (hobbies) --- create a textbook, customized for you}
   \ndlogonote{\scriptsize\href{https://github.com/adowling2/radio-extra-book}{\texttt{github.com/adowling2/radio-extra-book}}}
   \vfill
@@ -201,19 +141,6 @@
   \vspace{0.6cm plus 1fill}
 \end{frame}
 
-% "One thing to change tomorrow morning" (its own frame) removed
-% 2026-09-04, Alex's call: its message (put goals/conventions in an
-% AI-readable file) is already made in Act I's Task 2, and its second line
-% ("everything in this talk is on GitHub") is now folded into the "So, what
-% now?" frame below instead -- that frame carries the action-oriented close
-% this one used to lead into, so keeping both was redundant.
-
-% NEW 2026-09-04, Alex's request, the literal final slide: a concrete
-% physical call to action rather than another idea to remember. The
-% getting-started prompt is a new resource (resources/prompts/
-% getting_started.md), built for this slide specifically -- see that
-% file for the actual ten questions and its own notes on using it
-% (works even if the student's chatbot can't read files directly).
 \begin{frame}[fragile]{So, what now?}
   \vfill
   \begin{center}

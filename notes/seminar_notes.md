@@ -6,6 +6,25 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 
 ---
 
+## 2026-09-11 — final slide audit and source cleanup
+
+**Decisions:**
+
+- The live deck is final at 52 slides, with `DRAFT` retained on the title slide for the practice talk.
+- The narrative now moves from the research context and tool ecosystem through seven research tasks, then uses the optimization-course example to show how artifacts and gate/tests make an AI-assisted workflow progressively more robust. The hobby examples are explicitly framed as an eighth, optional extension.
+- Companion resources should be discoverable twice: as a complete inventory and as links on the slides where each guide is useful.
+- Detailed LaTeX editorial comments were removed after the final audit. They were valuable during iterative refinement, but the final source is easier to scan without them. The comments remain recoverable in Git history through commit `2c55c74`; durable implementation constraints belong in [style_guide.md](../slides/style_guide.md) or this decision log.
+
+**Actions taken:**
+
+- Audited formatting, narrative continuity, claims, terminology, and all companion-resource references.
+- Rebuilt the deck and ran the documentation checks.
+- Updated the storyboard, visual inventory, outline, repository READMEs, current follow-up list, style guide, and project instructions to match the final deck.
+
+**Remaining follow-up:** recheck time-sensitive vendor and Notre Dame policy claims immediately before October 15; decide when to remove `DRAFT`; build the separate handout if desired. See [open_questions.md](open_questions.md).
+
+---
+
 ## 2026-09-02
 
 **Decisions:**
@@ -13,7 +32,7 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 - Talk structure follows the research lifecycle (Explore → Ground → Build → Record → Write → Verify) rather than a product-by-product tour; full rationale in [seminar_design.md](seminar_design.md).
 - Consolidated the three manuscript-audit prompts (quantitative-claim, methods-vs-code, figure-vs-text) plus the journal-guideline compliance prompt into a single `resources/prompts/manuscript_audit.md` with multiple modes, rather than four separate files — per the "small number of polished resources" preference.
 - Expanded `resources/` beyond the charter's original tree to add `templates/` (research log, results manifest, `CLAUDE.md` example) and `checklists/` (reproducibility + graduation handoff, combined).
-- Slides will be built on the [ND Beamer template](https://github.com/dphow/ND_Beamer_Template) (public domain, ND colors/logo, `\usetheme{NotreDame}`).
+- Slides will be built on the [ND Beamer template](https://github.com/dowlinglab/ND_Beamer_Template) (ND colors/logo, `\usetheme{NotreDame}`).
 - Created a project-level `CLAUDE.md` as persistent context for AI assistants working in this repo — and as a live demo candidate for the "context, not conversation" section of the talk.
 - Started this file, `notes/seminar_notes.md`, as the running decision log for the project itself.
 
@@ -41,7 +60,7 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 - Alex authorized committing to git as work proceeds in this project going forward, rather than only on request.
 - Added a Python/OS/editor section to `.gitignore` ahead of the planned `resources/scripts/doi_checker/`.
 - Finalized the resources priority list (7 "build first" resources; see [resources/README.md](../resources/README.md)) and the improved `resources/` subtree (`templates/`, `checklists/` added beyond the original charter tree).
-- Confirmed the Beamer base template: [ND Beamer Template](https://github.com/dphow/ND_Beamer_Template) (public domain, `\usetheme{NotreDame}`).
+- Confirmed the Beamer base template: [ND Beamer Template](https://github.com/dowlinglab/ND_Beamer_Template) (`\usetheme{NotreDame}`).
 
 **Files touched:** `outline.md`, `README.md`, `CLAUDE.md`, `handout/README.md`, `.gitignore`, `notes/open_questions.md`, `notes/seminar_design.md`, `resources/README.md`; deleted `abstract.md`.
 

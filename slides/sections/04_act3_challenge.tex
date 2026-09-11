@@ -1,11 +1,3 @@
-% ========================= ACT III: CHALLENGE =========================
-% storyboard.md Act III. Job: AI tells you that you're wrong, and you have
-% to decide whether to believe it. Task 5 is manuscript audits (Type 2,
-% generic per the naming convention -- unpublished work); Task 6 is a
-% generic inherited-project-to-manuscript synthesis; Task 7, the capstone,
-% names "Optimization for Decision Science" (Alex's own, already-public
-% course). All Task 5 slides carry the "Task 5 --" prefix, matching the
-% pattern established in Act I's Task 1-3 and Act II's Task 4.
 
 \stagedivider{4}{Act III: Challenge}{Do you believe it?}
 
@@ -23,9 +15,6 @@
   \vfill
 \end{frame}
 
-% Deliberately mechanics, not a transcript -- no invented "Claude said..."
-% dialogue, since the deck's standard is real/git-verified material and a
-% fabricated exchange would be the one exception to that.
 \begin{frame}{Task 5 --- walk it through, one question at a time}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/manuscript_audit.md}{\texttt{resources/prompts/manuscript\_audit.md}}}
   \vfill
@@ -48,9 +37,6 @@
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-% TODO(image_plan.md Act III #2): numbers are illustrative/synthetic
-% (from outline.md's original example), never sourced from any real
-% unpublished audit -- keep it that way on any future edit of this table.
 \begin{frame}{Task 5 --- trace every number back to the file that produced it}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/templates/results_manifest.md}{\texttt{resources/templates/results\_manifest.md}}}
   \vfill
@@ -75,13 +61,6 @@
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
-
-% Two independent real manuscript audits (different repos, different
-% domains -- a technical force-field paper and a sustainability-policy
-% paper) each independently turned up a citation-tracing failure of
-% exactly this shape, generalized here with no repo/student names per the
-% standing convention. Same claim-tracing operation as the previous
-% slide's table, applied to a citation instead of a number.
 
 \begin{frame}{Task 5 --- we can also automate checking references}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/scripts/doi_checker}{\texttt{resources/scripts/doi\_checker/}}}
@@ -145,39 +124,6 @@
   \vfill
 \end{frame}
 
-% ======================================================================
-% Task 6 -- "inherit a project -> an auditable draft manuscript." Home for
-% three practice files (technical_writing.md, writing_style_guide.md,
-% scientific_figures_tables.md -- the last also anchored by Task 7) that
-% had no live task elsewhere in the talk. Generic (Type 1 naming
-% convention), with explicit callbacks to Task 2 (context/reproduction)
-% and Task 3 (literature review). Full rationale: storyboard.md revision
-% #8.
-%
-% Grounded in a real, authorized audit of
-% `/Users/adowling/GitHub/DowlingLab/CDSE_hybrid_modeling_project` (202
-% commits). ANONYMIZATION CAUTION (stronger than usual here): this repo's
-% own git author, a data-directory name, a Python module name, and several
-% docs name real individuals -- never screenshot, never speak the repo
-% name or any path from it aloud, generic/paraphrased only.
-%
-%  - Slide 1: a one-day inheritance (`b2db55d`) of a notebook-and-data
-%    dump with no tests or package structure; the following three weeks
-%    reproduced its own ~15 numbered experiments one at a time before
-%    anything was corrected. This repo's own regression-harness bug story
-%    (`66e7574`..`4146244`) is deliberately not retold here -- same shape
-%    as Task 4's bits_for_gaps centerpiece. Candidate for a future
-%    scientific_computing_workflow.md \S4 worked example instead.
-%  - Slide 2: a full-library citation audit, 76 cited papers checked
-%    directly against their own PDFs, six wrong -- including one with the
-%    source paper's finding stated backwards (`cc38453`); DOI suffixes
-%    inferred rather than read were flagged `% VERIFY`, not guessed
-%    (`693df12`). A later style pass restyled the manuscript to the
-%    group's own established voice (`4bae3a7`, generalized -- no paper
-%    named).
-%  - Slide 3: a full manuscript-vs-code self-audit, 25 discrepancies
-%    found, 22 fixed on the spot, 3 left explicitly flagged for the
-%    author to decide (`0b2e280`/`d5de7bd`, `docs/codex_audit_report.md`).
 \begin{frame}{Task 6 --- inherited a notebook, understood before it changed (Task 2)}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/technical_writing.md}{\texttt{resources/practices/technical\_writing.md}}}
   \vfill
@@ -215,12 +161,6 @@
     Once the numbers were locked, the manuscript was restyled to match the group's own established voice from an earlier paper.
   \end{center}
   \vfill
-  % doi_checker (already cited on Task 5) verifies a DOI resolves to the
-  % right paper -- a different failure mode than this slide's own finding
-  % (a citation resolving fine but stating the source's result backwards).
-  % Not re-cited here: adding a third ndlogonote line risks the box-height
-  % overflow already seen elsewhere in this deck, and the two tools solve
-  % different problems, so naming both would blur rather than reinforce.
   \begin{center}
     \slidepoint{The same discipline as \textbf{Task 3} --- a citation is \textbf{checked}, not \textbf{assumed}.}
   \end{center}
@@ -243,29 +183,6 @@
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}
-
-% ======================================================================
-% Task 7 -- "Optimization for Decision Science," Alex's own public/private
-% course system. Rebuilt 2026-09-11 around the course's multi-offering
-% history and six portable habits, rather than six disconnected incidents.
-%
-% History, verified from the retired/current sites and both repos:
-%  - Fall 2018: handwritten notes plus a few Jupyter notebooks in Sakai.
-%  - Spring 2021: Jeff Kantor's pre-JupyterBook nbpages system. Its generated
-%    TOC already puts Getting Started with Pyomo and Modeling/Applications
-%    before theory and algorithms -- this is the applications-first pivot.
-%  - Spring 2023: sprint-like rebuild in JupyterBook, plus student
-%    contributions. Fall 2024: iterative refinement of notebooks,
-%    assignments, and handouts. Fall 2026: coursepack, AI-forward
-%    assessment, and systematic maintenance/verification.
-%
-% Current-state evidence comes from optimization-private/claude/
-% CODEX_HANDOFF.md and the two verification entry points. At the audit on
-% 2026-09-11: 27 lectures, 68 development notebooks, a 103-page site, and
-% a 463/426/426-page instructor/student/alignment coursepack gate with 693
-% checkable citations and zero wrong/unresolved locators. Those volatile
-% counts stay in this source note rather than on-slide; the slides teach the
-% workflow that made them possible.
 
 \begin{frame}{Task 7 --- five offerings, one evolving course}
   \ndlogonote{\scriptsize retired: \href{https://ndcbe.github.io/CBE60499/}{\texttt{ndcbe.github.io/CBE60499/}}\\current: \href{https://ndcbe.github.io/optimization/}{\texttt{ndcbe.github.io/optimization/}}}
