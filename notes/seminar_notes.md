@@ -376,3 +376,7 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 
 - Increased slide 34 prerequisites from small to normal size and audit goals from normal to large. Tightened wording and spacing to preserve every check while keeping the larger text on single lines.
 - Rebuilt and visually checked slide 34; content clears the footer and the build has no layout warnings.
+
+### 2026-09-11: Larger manuscript integration text
+
+- Increased slide 37 diagram text from scriptsize to small, preserving the centered, content-sized boxes, plus signs, and top-down order. Rebuilt and visually checked the slide; no layout warnings.
