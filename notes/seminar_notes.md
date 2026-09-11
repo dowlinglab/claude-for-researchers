@@ -296,3 +296,15 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 **Decision:** The seminar date moved from September 17 to October 15, 2026. The time and location are unchanged. Until the next polishing pass is complete, the title slide carries a red `DRAFT` label in its upper-right whitespace.
 
 **Actions taken:** Updated the date in the deck and current project metadata, adjusted the policy re-check deadline, rebuilt the 52-page PDF, and visually verified the revised title slide.
+
+---
+
+## 2026-09-11 (Task 7 reframed around the course's evolution)
+
+**Decision:** Replace the six disconnected course-audit incidents with one six-slide narrative: course history, Fall 2026 goals, authoritative-source architecture, verification gates, bounded autonomy plus instructor review, and a minimal four-artifact version the audience can adopt using this repository's resources.
+
+**Evidence:** The retired Spring 2021 `nbpages` site already orders Getting Started with Pyomo and Modeling/Applications before theory and algorithms. Git history shows Spring 2023 as the sprint-like JupyterBook conversion; later offerings are iterative refinement. The current public/private course handoff and verification entry points supply the source-map, gate, and review-loop details.
+
+**Resource integration:** Task 7 now directly names or links the scientific-computing and figure practices, manuscript audit, agent and writing-style practices, project-entry and research-log templates, documentation/figure checks, and reproducibility/handoff checklist.
+
+**Verification:** Rebuilt the full 52-page deck, ran `resources/scripts/check_docs.py` with no issues, and rendered/inspected all six revised Task 7 slides (pages 39–44). The revised frames add no overfull boxes.

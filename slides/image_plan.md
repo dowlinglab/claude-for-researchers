@@ -77,7 +77,7 @@ Moved to the Epilogue, 2026-09-03: "ND data classification" and "Check before yo
 
 ## Act III — Challenge
 
-Rewritten 2026-09-02 against the current 7-slide list (5 regular + a 2-part capstone) — the previous version predated the capstone entirely and only covered 6 slides under different numbers.
+Task 7 was rebuilt 2026-09-11 as a six-slide course-design story. Its opening now uses a real Fall 2018 handwritten lecture page beside a constructed five-offering timeline; the old deferred course-website screenshot is no longer needed. Slides 2–6 use native text, tables, and workflow structure because their job is to expose the system, not prove a webpage exists.
 
 | # | Slide | Visual | Type | Status |
 |---|---|---|---|---|
@@ -86,10 +86,14 @@ Rewritten 2026-09-02 against the current 7-slide list (5 regular + a 2-part caps
 | 3 | "Cannot verify" is a result | reuses the same `\unknown{}` mark from slide 2 | — | text only, deliberately spare |
 | 4 | A clean build hid a silent failure | none — three short columns | — | text only; the three instances (nomenclature table, `.gitignore`, `CLAUDE.md`) are all either unpublished or already covered visually elsewhere (the course's own `.gitignore` incident doesn't need re-illustrating) |
 | 5 | Status report wrong on eleven items | none | — | text only; the specific number stays but no document is shown |
-| 6 | Capstone, part 1 | a real screenshot of `ndcbe.github.io/optimization` and, if available, a coursepack page showing the corrected sign | C | **not yet captured** — public, Alex's own course, no confidentiality concern. Typeset fallback ships in the meantime (see `04_act3_challenge.tex`'s TODO) |
-| 7 | Capstone, part 2 | none | — | text only, closes the act |
+| 6 | Task 7 history | real Fall 2018 handwritten lecture page + five-offering TikZ timeline | C + B | **resolved 2026-09-11** — `figures/fall2018_handwritten_notes.png`, rendered from Alex's own Fall 2018 L9 PDF; dates/system changes verified against the retired/current sites and git history |
+| 7 | Task 7 redesign goals | numbered list | text | no image needed — the four goals are the visual hierarchy |
+| 8 | Task 7 source architecture | source → derived artifact → gate table | A/B | native vector/text, editable and projector-readable |
+| 9 | Task 7 verification gates | three-mode table + check categories | A | native text/code artifact; a browser screenshot would obscure the reusable pattern |
+| 10 | Task 7 bounded autonomy | five-step audit/review sequence | A | native text sequence; evidence lives in the source comments and handoff |
+| 11 | Task 7 starter kit | project habit → purpose → distributed resource table | A | native text with real repository filenames |
 
-**Act III is deliberately the most image-light act** for slides 1-5. Its evidence is the least reproducible visually without exposing unpublished work, so it leans on typeset tables rather than screenshots — that's a feature of the confidentiality boundary working as intended, not a gap to fill. The capstone (6-7) is the exception: a named, public example, so a real screenshot is both possible and worth capturing.
+**Act III is deliberately image-light.** Slides 1–5 protect unpublished work with typeset reconstructions. Task 7 is the named, public exception, but only its historical handwritten artifact benefits from being shown as an image; the rest is clearer as an editable system diagram.
 
 ## Epilogue — Trust
 

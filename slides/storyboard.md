@@ -2,6 +2,8 @@
 
 The talk's structure, locked 2026-09-02, following the Dowling Lab presentation-planning algorithm (group manual §Presentations): question → main points → outline → slide budget → slide titles → feedback → slides. This file is steps 3–6.
 
+**2026-09-11 revision #13 (Task 7 rebuilt as a course-design story).** Alex rejected the incident-by-incident Task 7 sequence as non-cohesive and reframed the capstone around five offerings of Optimization for Decision Science. The new six-slide sequence starts with a history modeled on the Prologue hook: Fall 2018 handwritten notes/Sakai; Spring 2021 `nbpages`, where Pyomo and applications already moved before theory and algorithms; Spring 2023's sprint-like JupyterBook rebuild; Fall 2024's iterative refinement; and Fall 2026's coursepack, AI-forward assessment, and systematic verification. The remaining slides generalize the current redesign into portable habits: coordinate goals as one course system; name the authoritative source for every derived artifact; turn recurring failures into self-testing gates; give agents bounded blocks followed by instructor review; and start a research project with four small artifacts drawn directly from the distributed resources. A real Fall 2018 handwritten lecture page replaces the previously deferred website screenshot. Full sourcing lives beside the frames in `04_act3_challenge.tex`.
+
 **2026-09-04 revision #12 (full-deck TODO sweep — every remaining `% TODO` comment resolved).** Following revision #11, Alex asked to process every outstanding TODO left in the deck (`grep -rn "TODO" slides/sections/`, 15 items across four files). Non-mechanical fixes:
 - **Act II's "Task 3, continued" resequencing.** Alex read the built deck and found returning to Task 3 after five Task 4 slides disorienting, even though the act opening directly on Task 4 for impact was itself a deliberate earlier call (this file's own header rationale). Resolved with an explicit transition line ("Back to Task 3's proposal...") rather than reordering the act.
 - **Act II's closing "review the diff" slide** now explicitly splits code-diff review (`git diff`, GitHub Desktop, an AI CLI tool's own pre-approval diff view) from prose-diff review (`latexdiff`'s word-level markup — a line diff can't show which words moved) — Alex's own "let's be more explicit" request.
@@ -196,14 +198,14 @@ Built 2026-09-03, revised same day — 9 slides total (8 content + divider), com
 7. **Task 6 — inherited a notebook, understood before it changed (Task 2)** — *(rebuilt 2026-09-04)* a real project, generic: a one-day handoff from a notebook-and-data dump to the person who'd write the paper, three weeks reproducing its own fifteen numbered experiments before anything was corrected — explicit Task 2 callback, `technical_writing.md`.
 8. **Task 6 — verify the literature the same way you verify the code (Task 3)** — 76 cited papers checked against their own PDFs, six wrong (one with the finding stated backwards); a later style pass restyled the draft to the group's own established voice — explicit Task 3 callback, `literature_review.md` and `writing_style_guide.md`.
 9. **Task 6 — the manuscript audits itself, before anyone else does** — a real self-audit: 25 discrepancies against the manuscript's own code and data, 22 fixed on the spot, 3 left explicitly flagged — `manuscript_audit.md` and `results_manifest.md`, closing the loop one task after Task 5.
-10. **Task 7 — a week before the semester, at scale** — "Optimization for Decision Science," named: ~1,450 commits in 2.5 weeks across the course's public/private repo pair, 98% of the private repo's entire history.
-11. **Task 7 — retire the scan, own the figure** — JupyterBook 1→2, and the running thread of textbook scans replaced by native, regeneratable figures.
-12. **Task 7 — ink to LaTeX, verified page by page** — the 45-page annotated-PDF transcription that caught a real page-map error and a real contradiction in Alex's own annotations.
-13. **Task 7 — an overnight report, self-auditing as it went** — a false journal citation caught, a refused invented page number, a self-corrected citation count (79 → 75).
-14. **Task 7 — close the flag where the flag lives** — the course's own `CLAUDE.md` postmortem on recording completion where the next reader will actually look.
-15. **Task 7 — pick the tool for the task, grounded in evidence** — a prose-trim job handed to Codex/GPT-5.6, briefed with real diffs of Alex's own hand-edits rather than a vague instruction — closes the act.
+10. **Task 7 — five offerings, one evolving course** — a real Fall 2018 handwritten page beside the 2018→2026 course timeline; the applications-first pivot appears in Spring 2021, the JupyterBook rebuild in Spring 2023, then iterative refinement.
+11. **Task 7 — four goals for Fall 2026** — deferred maintenance; a coursepack with strategic gaps; AI-forward assessment; more in-class open-coursebook exams.
+12. **Task 7 — name the authoritative source** — private LaTeX, development notebooks, and figure scripts/data each map to derived artifacts and an explicit gate.
+13. **Task 7 — every recurring failure became a check** — `--selftest`, `--fast`, and `--full`; citations, clipping, code sync, leaks, execution, routes, figure freshness, and greyscale.
+14. **Task 7 — bounded autonomy, followed by instructor review** — hand-edited exemplars → written rules → one bounded audit block → full gate → pedagogical decisions returned to Alex.
+15. **Task 7 — start with four small project artifacts** — a source map, research log, verification gate, and handoff, each linked directly to a distributed template/checklist/script — closes the act with an immediately adoptable version.
 
-Rebuilt 2026-09-04 — 16 slides total (15 content + divider), up from 8. Compiles clean, every touched/new slide visually checked (`pdftoppm` render pass, per `style_guide.md` rule 10).
+Rebuilt again 2026-09-11 — still 16 slides total (15 content + divider); Task 7 remains six slides but now forms one course-design story. Compile and visual-check status is recorded in `notes/seminar_notes.md`.
 
 ## Epilogue — Trust
 

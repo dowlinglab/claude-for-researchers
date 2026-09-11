@@ -245,164 +245,183 @@
 \end{frame}
 
 % ======================================================================
-% Task 7 -- "Optimization for Decision Science," Alex's own, already-
-% public course. Grounded in an authorized audit of the course's public/
-% private repo pair -- local clones at
-% /Users/adowling/GitHub/DowlingLab/Teaching/{optimization,
-% optimization-private}.
+% Task 7 -- "Optimization for Decision Science," Alex's own public/private
+% course system. Rebuilt 2026-09-11 around the course's multi-offering
+% history and six portable habits, rather than six disconnected incidents.
 %
-% Headline, git-verified: optimization-private has 1,108 commits total;
-% 1,085 of them (98%) landed 2026-08-17 -- 2026-09-02, a ~2.5-week
-% pre-semester sprint (the repo itself dates to 2023-01-13, with only 23
-% sparse commits before the sprint -- a burst in early 2023, then near-
-% silence through 2024, the same "years of patches, then a burst" shape as
-% the Prologue's grad-visit-scheduler hook). optimization (public) adds
-% another 368 commits in the same window. The private repo's specifics
-% (assignments, solutions, exam content) stay unnamed and unquoted --
-% only Alex's own process is described, matching the deck's existing
-% convention for private material.
+% History, verified from the retired/current sites and both repos:
+%  - Fall 2018: handwritten notes plus a few Jupyter notebooks in Sakai.
+%    The image on slide 1 is a real page from L9, "Motivate Pyomo and
+%    Constrained Opt.," in optimization-private/handwritten_notes/.
+%  - Spring 2021: Jeff Kantor's pre-JupyterBook nbpages system. Its generated
+%    TOC already puts Getting Started with Pyomo and Modeling/Applications
+%    before theory and algorithms -- this is the applications-first pivot.
+%  - Spring 2023: sprint-like rebuild in JupyterBook, plus student
+%    contributions. Fall 2024: iterative refinement of notebooks,
+%    assignments, and handouts. Fall 2026: coursepack, AI-forward
+%    assessment, and systematic maintenance/verification.
 %
-% Slide-by-slide sourcing:
-%  1. JupyterBook migration + the sprint's scale -- 67e200c/c4e9622/feb00d2
-%     (optimization, 2026-08-17); commit-count arithmetic above.
-%  2. Scan-retirement thread -- fa05519, c25c592, e4c291d/34bcb01/288e683,
-%     8f9a080 (optimization); dowling.mplstyle already ships in
-%     resources/scripts/figure_style/.
-%  3. INK_TRANSCRIPTION_2026-08-22.md (optimization-private/claude/
-%     lecture-feedback/) -- the 45-page annotated-PDF transcription.
-%  4. OVERNIGHT_REPORT_2026-08-22.md (same directory) -- the false-
-%     Digital-Discovery-citation catch (cross-checked against Alex's own
-%     MyPublications.bib), the refused Simon-1960 page number, the
-%     self-corrected citation count (79 claimed, 75 real).
-%  5. optimization-private/CLAUDE.md, "Record COMPLETION where the reader
-%     will look -- four instances in one day" (2026-08-22) -- close
-%     parallel to Task 5's own "clean build hid a silent failure" slide;
-%     kept as a separate, sharper instance rather than merged, since it
-%     names the operating rule ("close the flag where the flag lives")
-%     that slide only illustrates.
-%  6. CODEX_HANDOFF.md (d9f6e35, 2026-08-26) -- confirmed directly by Alex
-%     ("In the past ~2 weeks, I started using Codex with GPT-5.6 models");
-%     the brief for the prose-trim task cites two real diffs of Alex's own
-%     hand-edits (c9ec60e, adca23d) and \authored{} span counts (L3: 40,
-%     L4: 63), not a vague "make it shorter" instruction.
+% Current-state evidence comes from optimization-private/claude/
+% CODEX_HANDOFF.md and the two verification entry points. At the audit on
+% 2026-09-11: 27 lectures, 68 development notebooks, a 103-page site, and
+% a 463/426/426-page instructor/student/alignment coursepack gate with 693
+% checkable citations and zero wrong/unresolved locators. Those volatile
+% counts stay in this source note rather than on-slide; the slides teach the
+% workflow that made them possible.
 
+\begin{frame}{Task 7 --- five offerings, one evolving course}
+  \ndlogonote{\scriptsize\href{https://ndcbe.github.io/CBE60499/}{\texttt{retired site (Spring 2021)}}\\\href{https://ndcbe.github.io/optimization/}{\texttt{current site}}}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.34\textwidth}
+      \centering
+      \includegraphics[height=4.75cm,trim=38 55 38 55,clip]{figures/fall2018_handwritten_notes}
+    \end{column}
+    \begin{column}{0.62\textwidth}
+      \centering
+      \resizebox{!}{4.75cm}{%
+      \begin{tikzpicture}[font=\scriptsize, node distance=0.22cm]
+        \node[draw=OkVermillion, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center]
+          (a) {\textbf{Fall 2018} --- handwritten notes + a few notebooks in Sakai};
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center, below=of a]
+          (b) {\textbf{Spring 2021} --- \texttt{nbpages} website; applications move before theory + algorithms};
+        \node[draw=NDGold, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center, below=of b, fill=CodeBg]
+          (c) {\textbf{Spring 2023} --- sprint-like JupyterBook rebuild + student contributions};
+        \node[draw=NDBlue, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center, below=of c]
+          (d) {\textbf{Fall 2024} --- refine notebooks, assignments, and handouts};
+        \node[draw=NDGold, rounded corners=2pt, minimum width=7.2cm, minimum height=0.8cm, text width=6.8cm, align=center, below=of d, fill=CodeBg]
+          (e) {\textbf{Fall 2026} --- coursepack + AI-forward assessment + verification};
+        \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+        \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+        \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
+        \draw[-{Stealth[length=6pt]}, thick] (d) -- (e);
+      \end{tikzpicture}}
+    \end{column}
+  \end{columns}
+  \vspace{1.8cm plus 1fill}
+\end{frame}
 
-% Opening slide rebuilt 2026-09-04, same spirit as Act II's Task 4 recipe
-% slide: a numbered list of everything in scope up front, so downstream
-% slides can elaborate selectively (only where there's a real lesson) rather
-% than narrate the whole sprint in order. Alex's own call: the audience
-% should see the full scope immediately, not just the two threads that get
-% their own slide. Screenshot deliberately deferred (image_plan.md Act III
-% #6, still "not yet captured") -- the course URL fills the footnote spot
-% instead, real and immediately checkable.
-\begin{frame}[fragile]{Task 7 --- a week before the semester, at scale}
-  \ndlogonote{\scriptsize\href{https://ndcbe.github.io/optimization}{\texttt{ndcbe.github.io/optimization}}}
-  \vspace{-1.1cm}
-  \begin{center}\small
-    \keyterm{Optimization for Decision Science} --- Alex's own course, already public, small manual pushes since 2023.
-  \end{center}
-  \vspace{0.2em}
-  \begin{center}
-  \begin{enumerate}\small\setlength\itemsep{0.05em}
-    \item Migrate the course site, JupyterBook 1 $\to$ 2
-    \item Retire textbook scans for figures the repo can regenerate
-    \item Transcribe 45 pages of handwritten annotations, verified page by page
-    \item Write an overnight report that audited itself as it went
-    \item Fix a recurring habit: close the flag where the flag lives
-    \item Pick the tool for the task --- some work moved to Codex, grounded in evidence
+\begin{frame}{Task 7 --- four goals for Fall 2026}
+  \vfill
+  \begin{enumerate}\setlength\itemsep{0.55em}
+    \item Catch up on \textbf{deferred maintenance} for the website and computational examples.
+    \item Build a \textbf{coursepack with strategic gaps}: less math copying, more active learning, and a reference students can keep.
+    \item Make assessment \textbf{AI-forward}: an explicit homework policy, completion-based grading with better instructor analytics, and an AI-forward project.
+    \item Use more \textbf{in-class, open-coursebook exams}.
   \end{enumerate}
+  \vfill
+  \begin{center}
+    \slidepoint{Four goals, one coordinated \textbf{course system}.}
   \end{center}
-  \vspace{0.2em}
+  \vfill
+\end{frame}
+
+\begin{frame}{Task 7 --- name the authoritative source}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{scientific\_computing\_workflow.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{scientific\_figures\_tables.md}}}
+  \vfill
   \begin{center}\small
-    Across the public course repo and its private companion: \textbf{$\sim$1{,}450 commits in 2.5 weeks} --- 98\% of the private repo's \textit{entire} history.
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.25cm}>{\centering\arraybackslash}p{0.65cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{3.35cm}@{}}
+    \toprule
+    \textbf{Authoritative source} & & \textbf{Derived artifacts} & \textbf{Gate} \\
+    \midrule
+    Private LaTeX & $\longrightarrow$ & instructor, student, and alignment coursepacks & citations, clipping, pagination \\
+    Development notebooks & $\longrightarrow$ & published notebooks + course website & leaks, code sync, execution, routes \\
+    Figure scripts + data & $\longrightarrow$ & coursepack + website figures & freshness, media, greyscale \\
+    \bottomrule
+  \end{tabular}
   \end{center}
-  \vspace{0.3em}
+  \vspace{0.55em}
+  \begin{center}\small
+    The private/public boundary is explicit; the leak checker enforces it.
+  \end{center}
+  \vfill
   \begin{center}
-    \slidepoint{The same shape as the Prologue's hook --- \textbf{years of patches}, then a \textbf{burst}.}
+    \slidepoint{Name the \textbf{source} before an agent changes its connected artifacts.}
   \end{center}
+  \vspace{1.0cm plus 1fill}
 \end{frame}
 
-% JupyterBook migration trimmed to one clause -- it's already named on the
-% opening list (item 1) and, per Alex's own call, isn't worth a slide of its
-% own; the scan-retirement thread is where this slide's real content lives.
-\begin{frame}{Task 7 --- retire the scan, own the figure}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{resources/practices/scientific\_figures\_tables.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/scripts/figure_style}{\texttt{resources/scripts/figure\_style/}}}
+\begin{frame}[fragile]{Task 7 --- every recurring failure became a check}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/manuscript_audit.md}{\texttt{manuscript\_audit.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/check_docs.py}{\texttt{resources/scripts/check\_docs.py}}}
+  \vfill
+  \begin{columns}[T]
+    \begin{column}{0.43\textwidth}
+      \small
+      \begin{tabular}{@{}ll@{}}
+        \toprule
+        \textbf{Mode} & \textbf{When} \\
+        \midrule
+        \texttt{--selftest} & prove checks can fail \\
+        \texttt{--fast} & ordinary change \\
+        \texttt{--full} & release / handoff \\
+        \bottomrule
+      \end{tabular}
+      \vspace{0.55em}
+
+      \begin{beamercolorbox}[sep=0.55em,wd=\linewidth]{codeblock}
+      \ttfamily\scriptsize
+      ./scripts/verify\_all.sh --fast
+      \end{beamercolorbox}
+    \end{column}
+    \begin{column}{0.51\textwidth}
+      \small
+      \begin{itemize}\setlength\itemsep{0.38em}
+        \item citations + locators
+        \item clipping + pagination
+        \item code sync + answer leaks
+        \item notebook execution + site routes
+        \item figure freshness + greyscale
+      \end{itemize}
+    \end{column}
+  \end{columns}
   \vfill
   \begin{center}
-    The site migration is a day of work. The habit that outlasts it, running through the whole sprint: retire the textbook scan for a figure the repo can regenerate.
+    \slidepoint{The checks narrow human review to what still requires \textbf{judgment}.}
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    Eight orphaned textbook scans deleted, three textbook figures redrawn in TikZ, five book-table scans replaced with native Markdown.
-  \end{center}
-  \vfill
-  \begin{center}
-    \slidepoint{A figure the repo can \textbf{regenerate} beats one it can only \textbf{redisplay}.}
-  \end{center}
-  \vspace{1.8cm plus 1fill}
+  \vspace{1.55cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 7 --- ink to LaTeX, verified page by page}
+\begin{frame}{Task 7 --- bounded autonomy, followed by instructor review}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{working\_with\_ai\_agents.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/writing_style_guide.md}{\texttt{writing\_style\_guide.md}}}
+  \vfill
+  \begin{enumerate}\small\setlength\itemsep{0.42em}
+    \item \textbf{Edit exemplars by hand} until the intended style is visible.
+    \item \textbf{Turn the diffs into rules} an agent can follow.
+    \item \textbf{Audit one bounded lecture block}; record evidence and unresolved choices.
+    \item \textbf{Run the full gate}, then repeat on the next block.
+    \item \textbf{Return pedagogical choices} to the instructor; update the handoff where the next session will read it.
+  \end{enumerate}
+  \vspace{0.45em}
+  \begin{center}\small
+    This year: unconstrained optimization $\to$ constrained optimization $\to$ a cross-course style pass.
+  \end{center}
   \vfill
   \begin{center}
-    A 45-page annotated instructor PDF, rendered and read one page at a time --- not skimmed from the typed notes alone.
+    \slidepoint{Correctness follows \textbf{evidence}; pedagogy stays with the \textbf{instructor}.}
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    Caught: an unnumbered page (a hand sketch) that had thrown off every page count after it, and a genuine contradiction between two of Alex's own annotations --- resolved to the one reading that made both true.
-  \end{center}
-  \vfill
-  \begin{center}
-    \slidepoint{The \textbf{ink}, not just the \textbf{typing that describes it}.}
-  \end{center}
-  \vfill
+  \vspace{1.55cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 7 --- an overnight report, self-auditing as it went}
+\begin{frame}{Task 7 --- start with four small project artifacts}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources}{\texttt{github.com/dowlinglab/claude-for-researchers/resources}}}
   \vfill
-  \begin{center}
-  \begin{itemize}\small\setlength\itemsep{0.5em}
-    \item \bad{A false citation}, caught: a paper cited as published --- Alex's own \texttt{MyPublications.bib} says \textit{under review}. Corrected.
-    \item \unknown{No page number invented} for a 1960 book not on hand --- a citation with a known gap beats a plausible guess.
-    \item \bad{Its own citation count was wrong} --- 79 reported, 75 real. Recounted and corrected before it shipped.
-  \end{itemize}
-  \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    \slidepoint{Written \textbf{as} the work happened --- and it audited \textbf{itself}.}
-  \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}{Task 7 --- close the flag where the flag lives}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{resources/practices/working\_with\_ai\_agents.md}} \S9}
-  \vfill
-  \begin{center}
-    One day, four separate fixes recorded somewhere nobody would re-read: a follow-up buried in a table, a stale source comment, a caption fix noted only in a commit message, an invisible tag.
-  \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    Each cost real rework --- one left open for three days, in the file that loads every session; another redone from scratch a day later.
+  \begin{center}\small
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{@{}p{3.0cm}p{4.1cm}p{5.05cm}@{}}
+    \toprule
+    \textbf{Project habit} & \textbf{What it records} & \textbf{Starting resource} \\
+    \midrule
+    Source map & files, commands, boundaries & \texttt{project\_entry\_point.md} \\
+    Research log & decisions, dead ends, evidence & \texttt{research\_log.md} \\
+    One verification gate & repeatable checks before review & \texttt{check\_docs.py} + \texttt{figure\_style/} \\
+    Handoff & verified state + human decisions & reproducibility + handoff checklist \\
+    \bottomrule
+  \end{tabular}
   \end{center}
   \vfill
   \begin{center}
-    \slidepoint{A commit message is a \textbf{record}, not a \textbf{notification}.}
+    \slidepoint{Start with one \textbf{source map}, one \textbf{log}, one \textbf{gate}, and one \textbf{handoff}.}
   \end{center}
-  \vspace{1.8cm plus 1fill}
-\end{frame}
-
-\begin{frame}{Task 7 --- pick the tool for the task, grounded in evidence}
-  \vfill
-  \begin{center}
-    Partway through, some of this work moved to Codex with GPT-5.6 --- not a wholesale switch, a choice per task.
-  \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    The brief for a prose trim wasn't ``make it shorter'' --- it was two real diffs of Alex's own hand-edits, and a count of exactly how much of each lecture was new exposition, not transcribed from an old scan.
-  \end{center}
-  \vfill
-  \begin{center}
-    \slidepoint{The \textbf{brief} came from evidence --- the \textbf{tool} came second.}
-  \end{center}
-  \vfill
+  \vspace{1.3cm plus 1fill}
 \end{frame}
