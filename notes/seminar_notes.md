@@ -367,3 +367,7 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 ### 2026-09-11: Slide 40 title
 
 - Adopted “Four Goals... Starting One Week Before the First Lecture.” The requested title fits on one line at the existing title size; rebuilt and visually checked slide 40.
+
+### 2026-09-11: Audit goals heading
+
+- Added “Audit Goals” above slide 34’s numbered questions, matching the prerequisites heading. Rebuilt and visually checked the layout.
