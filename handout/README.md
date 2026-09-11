@@ -8,9 +8,9 @@ Given the length limit, the handout's job is to be memorable and to get someone 
 
 **Front:**
 - Title, one-line thesis, event footer (title/date optional depending on final layout)
-- The lifecycle diagram — Explore → Ground → Build → Record → Write → Verify — with one short line per stage (the core teaching point from each [outline.md](../outline.md) section, not the supporting detail)
+- The current talk arc — Tinker → Understand → Build → Challenge → Trust — with the six research tasks grouped as in [outline.md](../outline.md)
 - The one callout that has to land: *"The filesystem/repository is the source of truth. The AI conversation is not."*
-- The claim-audit table (Outline Section 7) as the single worked example — it's the most memorable image in the talk and earns the space
+- The claim-audit table (Task 4) as the single worked example — it's the most memorable image in the talk and earns the space
 
 **Back:**
 - A short "Monday morning" checklist (4–6 items, one line each): keep a project-instructions file, keep a research log, ground literature claims in real sources you've read, review every AI-generated diff before accepting it, run a claim-audit pass before submitting a paper

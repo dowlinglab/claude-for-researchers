@@ -335,3 +335,19 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 **Corrections:** Added GPT-6 Astra, announced September 3, to the OpenAI model sequence. Corrected the Codex usage description from only a five-hour window to five-hour and weekly windows, with a plan-dependent qualifier.
 
 **Evidence:** OpenAI's current developer model catalog lists Astra as the flagship for the hardest end-to-end work. The signed-in EDU account's usage meter reports 300-minute and 10,080-minute windows, confirming a seven-day window alongside the five-hour window.
+
+---
+
+## 2026-09-11 (practice-talk feedback implemented)
+
+**Decision:** Consolidate the talk into six research tasks. Act I now covers workspace setup and inheritance; Act II covers packaging then literature-grounded writing; Act III covers audit, manuscript drafting, and course modernization. The first slide of each task states its goal. The existing uncommitted partial revision was carried forward rather than replaced.
+
+**Changes:** Added instruction-file helpers and a concise example, independent-work guidance, and Claude hooks. Completed the three-repository and Overleaf/branch workflow, with official documentation links in the slide footer and distributed Markdown. Replaced the simulated diff with actual compiled `latexdiff`; added attributed GitHub Desktop and Overleaf screenshots. Retained tangible audit checks and rebuilt the manuscript sequence around accumulated evidence. Enlarged the relevant coursepack excerpts and the hobby visual, and closed with a runnable first task in this public repository. Removed the requested bug/cleanup/audit detours. Companion guides, task indexes, storyboard, and handout plan now agree.
+
+**Access correction:** Alex confirmed Antigravity is not included in Notre Dame's Google plan and supplied a screenshot of his ND account's ineligibility message. The slide and reference log now state that conclusion rather than treating access as unknown.
+
+**Rationale and coverage:** [Practice-feedback implementation record](practice_feedback_2026-09-11.md). [Source verification](references.md). [Visual provenance](../slides/image_plan.md). Private examples were inspected read-only; no private scientific topic or student identity was added to the manuscript case.
+
+**Verification:** Rebuilt the 52-page PDF, rendered and inspected the complete deck, then re-rendered the final coursepack and radio-book changes. The final LaTeX log has no overfull/underfull boxes or warning messages. Confirmed the compiled slide 31 contains the direct Overleaf documentation hyperlink, slide 7 contains the ND Antigravity correction, and the submitted abstract is unchanged. The documentation checker and Git whitespace check pass. Reproduced the illustrative `latexdiff` from the distributed source pair.
+
+**Remaining:** A timed rehearsal of the revised sequence, a pre-event product/policy recheck, optional handout production, and removing DRAFT when requested. No timed rehearsal or handout build was performed. Changes are committed locally; nothing was pushed.

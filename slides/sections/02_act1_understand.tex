@@ -1,5 +1,4 @@
-
-\stagedivider{2}{Act I: Understand}{Go from brainstorming or search with a chatbot to deeper engagement}
+\stagedivider{2}{Act I: Understand}{Set up the workspace before asking for work}
 
 \begin{frame}{The filesystem is the source of truth}
   \vspace{0.45cm}
@@ -9,7 +8,7 @@
       \begin{itemize}\small
         \item tied to one session
         \item difficult to share or search
-        \item disappears with the tool
+        \item useful context can disappear with the tool
       \end{itemize}
     \end{column}
     \begin{column}{0.46\textwidth}
@@ -17,7 +16,7 @@
       \begin{itemize}\small
         \item versioned and shared
         \item searchable history
-        \item survives tools, people, and time
+        \item survives tools, people, and computers
       \end{itemize}
     \end{column}
   \end{columns}
@@ -35,155 +34,177 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{An agent can touch your repository --- a chatbot can't}
+\begin{frame}{An agent can act on a repository}
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\normalsize, node distance=1.3cm]
     \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1.6cm, align=center]
       (a) {\textbf{LLM}\\\small the model};
     \node[draw=NDBlue, rounded corners=2pt, minimum width=3.9cm, minimum height=1.6cm, align=center, right=of a]
-      (b) {\textbf{Chatbot}\\\small LLM + a chat window\\\small text in, text out};
+      (b) {\textbf{Chatbot}\\\small conversation + attachments};
     \node[draw=NDGold, rounded corners=2pt, minimum width=4.2cm, minimum height=1.6cm, align=center, right=of b, fill=CodeBg]
-      (c) {\textbf{Agent}\\\small LLM + tools\\\small reads, writes, and executes your files};
+      (c) {\textbf{Agent}\\\small model + tools + workspace};
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
     \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
   \end{tikzpicture}
   \end{center}
-  \vspace{0.6em}
+  \vspace{0.7em}
   \begin{center}
-    A chatbot only has the conversation and the files you share (e.g., uploading/attaching a PDF).
+    An agent can inspect the real files, edit them, run code and tests, search Git history, and prepare commits.
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    An agent can \textbf{interact with your repository}: follow instructions with \texttt{CLAUDE.md} or \texttt{AGENTS.md}, edit the code, debug errors, run the tests, maintain logs, search history, and commit.
+    \slidepoint{The useful shift is from \textbf{describing} a project to letting an agent \textbf{inspect} it.}
   \end{center}
   \vfill
 \end{frame}
 
-\begin{frame}[fragile]{Task 1 --- use an agent to set up git for a project}
+\begin{frame}{Task 1: Set up an agent workspace and inherit a project}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/organize_research_repo.md}{\texttt{resources/prompts/organize\_research\_repo.md}}}
   \vfill
-  \begin{center}
-  \begin{tikzpicture}[font=\small, node distance=1.2cm]
-    \node[draw=OkVermillion, rounded corners=2pt, minimum width=3.4cm, minimum height=1cm, align=center]
-      (a) {Local notebook\\\scriptsize no backup, no history};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.6cm, minimum height=1cm, align=center, right=of a]
-      (b) {\texttt{git init}};
-    \node[draw=OkGreen, rounded corners=2pt, minimum width=3.4cm, minimum height=1cm, align=center, right=of b, fill=CodeBg]
-      (c) {GitHub\\\scriptsize shared, backed up, versioned};
-    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
-    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
-  \end{tikzpicture}
-  \end{center}
-  \vspace{0.5em}
-  \begin{columns}[t]
-    \begin{column}{0.31\textwidth}
-      \centering\small\textbf{A commit}\\[0.2em]
-      {\scriptsize a saved, timestamped snapshot, with a message explaining why}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \centering\small\textbf{A repository}\\[0.2em]
-      {\scriptsize the full history --- any past state is one command away}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \centering\small\textbf{GitHub}\\[0.2em]
-      {\scriptsize hosts it --- shared and backed up by construction}
-    \end{column}
-  \end{columns}
-  \vspace{0.5em}
-  \begin{center}
-    \slidepoint{Version control is a \textbf{prerequisite} that \textbf{unlocks} the rest of this talk.}
-  \end{center}
-  \vspace{1.8cm plus 1fill}
-\end{frame}
-
-\begin{frame}{Task 2 --- a chat history can't hold any of these three}
+  \begin{enumerate}\setlength\itemsep{0.7em}
+    \item \textbf{Configure version control}: initialize Git, connect GitHub, make a clean baseline commit.
+    \item \textbf{Create the computing environment}: record dependencies, installation, and the commands that reproduce current results.
+    \item \textbf{Configure the agents}: add project instructions, permissions, write boundaries, and verification commands.
+    \item \textbf{Explore before editing}: inventory the files, run the easiest result, then map the workflow from inputs to outputs.
+  \end{enumerate}
   \vfill
   \begin{center}
-    Every new chat starts from zero. Three things a project needs that a conversation can't hold on its own:
+    \slidepoint{The first deliverable is a \textbf{reproducible baseline}, not a refactor.}
   \end{center}
-  \vspace{0.5em}
-  \begin{columns}[t]
-    \begin{column}{0.31\textwidth}
-      {\color{NDBlue}\textbf{Persistent}}\\[0.4em]
-      Your data and results don't change between sessions. \\[0.4em] 
-      {\footnotesize A changing number could be a finding or a bug.} \\[0.7em]
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      {\color{NDBlue}\textbf{Authoritative}}\\[0.4em]
-      The actual code and data. \\[0.4em] {\footnotesize Point an agent at the real files under (version control!); never describe them from memory.}\\[0.7em]
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      {\color{NDBlue}\textbf{Task}}\\[0.4em]
-      What you're working on right now, defined fresh each session.\\[0.4em]
-      {\footnotesize For complex tasks, you may find it helpful to have a coordinator agent (e.g., Opus/Fable, Terra/Sol) draft and save prompts that are sent to workers, then save the text summary created by the worker(s).} \\[0.7em]
-    \end{column}
-  \end{columns}
-  \vfill
+  \vspace{1.2cm plus 1fill}
 \end{frame}
 
-\begin{frame}[fragile]{Task 2 --- write down what you'd otherwise re-explain every session}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/templates/research_log.md}{\texttt{resources/templates/research\_log.md}}}
+\begin{frame}{Branches isolate a change; pull requests invite review}
+  \ndlogonote{\scriptsize Screenshot: \href{https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop}{GitHub Docs}}
   \vfill
   \begin{columns}[c]
-    \begin{column}{0.62\textwidth}
-      \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
-# Project
-
-Membrane transport parameter estimation.
-
-## Where things are
-  src/       the model
-  results/   written by scripts; never by hand
-  configs/   every run is a config file
-## How to run
-  conda activate diafiltration
-  python -m pytest -m "not slow"
-## Conventions
-  Results are deterministic. A change in a
-  number is a finding, not noise.
-## Current state
-  Working on: replicate weighting
-  Resume at: notes/log.md, 2026-08-14
-      \end{lstlisting}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \includegraphics[width=0.94\linewidth,height=4.8cm,keepaspectratio]{figures/github_desktop_branch.png}
     \end{column}
-    \begin{column}{0.34\textwidth}
-      \small
-      Name it neutrally, such as \texttt{START\_HERE.md}. \\[0.6em] Then, add tool-specific files such as \texttt{CLAUDE.md} (Claude Code) or \texttt{AGENTS.md} (Codex, Cursor, Gemini CLI, and 20+ other tools) --- both become three-line pointers to your neutrally named file.\\[0.6em]
-      {\scriptsize Review it like any doc: stale instructions mislead. Longer-running notes belong in a separate log.}
+    \begin{column}{0.52\textwidth}
+      \begin{enumerate}\small\setlength\itemsep{0.9em}
+        \item \textbf{Branch}: work on one feature or revision separately.
+        \item \textbf{Pull request}: show collaborators the changes and checks.
+        \item \textbf{Merge}: bring reviewed work back into the shared branch.
+      \end{enumerate}
+      \vspace{0.6em}
+      \small Use separate branches for overlapping agent work. A branch isolates edits; it does not eliminate merge conflicts.
     \end{column}
   \end{columns}
-  \vspace{1.8cm plus 1fill}
+  \vspace{0.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 3 --- idea first: brainstorm, refine, then bring in the literature}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/literature_review.md}{\texttt{literature\_review.md}} + \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/literature_workflow.md}{\texttt{literature\_workflow.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/grant_proposal_writing.md}{\texttt{grant\_proposal\_writing.md}}}
+\begin{frame}{Project instructions: \texttt{CLAUDE.md} and \texttt{AGENTS.md}}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{resources/practices/working\_with\_ai\_agents.md}}}
   \vfill
-  \begin{center}
-  \resizebox{0.97\textwidth}{!}{%
-  \begin{tikzpicture}[font=\scriptsize, node distance=0.4cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center]
-      (a) {Dictate the\\loose idea to a chatbot and refine};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of a]
-      (b) {Chatbot outputs a report or \\ prompt or both};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of b]
-      (c) {Corpus-grounded\\literature review with agents};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=2.5cm, minimum height=1.3cm, align=center, right=of c, fill=CodeBg]
-      (d) {Report or\\proposal};
-    \draw[-{Stealth[length=5pt]}, thick] (a) -- (b);
-    \draw[-{Stealth[length=5pt]}, thick] (b) -- (c);
-    \draw[-{Stealth[length=5pt]}, thick] (c) -- (d);
-  \end{tikzpicture}}
+  \begin{center}\small
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{4.7cm}>{\raggedright\arraybackslash}p{4.7cm}@{}}
+    \toprule
+    & \textbf{Claude Code} & \textbf{Codex} \\
+    \midrule
+    Primary file & \texttt{CLAUDE.md} & \texttt{AGENTS.md} \\
+    When read & at session start; nested files load when needed & before work starts; root-to-working-directory hierarchy \\
+    Share one core & \texttt{CLAUDE.md} can import \texttt{AGENTS.md} & keep common rules in \texttt{AGENTS.md} \\
+    Setup help & \texttt{/init} drafts; \texttt{/memory} inspects loaded files & \texttt{/init} drafts \texttt{AGENTS.md}; review and refine it \\
+    \bottomrule
+  \end{tabular}
   \end{center}
-  \vspace{0.5em}
+  \vspace{0.35em}
   \begin{center}
-  \begin{enumerate}\small\setlength\itemsep{0.4em}
-    \item Search for literature in adjacent communities/disciplines, not just your subarea
-    \item Process PDFs in small topical batches, with a checkpoint after each batch
-    \item Propose consistent PDF names; flag probable duplicates, never delete them automatically
-    \item Maintain \texttt{ref.bib} and summarize each paper in \texttt{literature.md}
-    \item Verify relevance, metadata, and quantitative claims against the source PDFs
-  \end{enumerate}
+    \small Think of these as a \textbf{startup briefing}: project instructions added to context. They do not enforce permissions or guarantee compliance.
   \end{center}
-  \vspace{1.8cm plus 1fill}
+  \vspace{0.5cm plus 1fill}
+\end{frame}
+
+\begin{frame}[fragile]{A concise instruction file routes the agent to evidence}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/templates/project_entry_point.md}{\texttt{resources/templates/project\_entry\_point.md}}}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.61\textwidth}
+      \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+# Project
+Estimate membrane transport parameters.
+# Example: environment name is transport.
+
+## Start here
+- Model: src/
+- Generated results: results/
+- Decisions and dead ends: notes/log.md
+
+## Verify changes
+conda env create -f environment.yml
+conda run -n transport python -m pytest
+
+## Boundaries
+- Never edit generated results by hand.
+- Flag changes in numerical output.
+      \end{lstlisting}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \small
+      \textbf{Include}\par
+      project map, setup commands, tests, conventions, and boundaries.\\[0.7em]
+      \textbf{Keep elsewhere}\par
+      detailed history, long plans, and background a tool can discover.\\[0.7em]
+      \textbf{Improve from experience}\par
+      recurring correction $\rightarrow$ concise rule or automated check.
+    \end{column}
+  \end{columns}
+  \vspace{1.0cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Overnight work needs a goal and a morning handoff}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{resources/practices/working\_with\_ai\_agents.md} \S12}}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \textbf{Define before leaving}\par
+      \begin{itemize}\small\setlength\itemsep{0.4em}
+        \item objective and evidence for completion
+        \item permitted files and reversible decisions
+        \item phases, checks, budget, and stop conditions
+        \item commits and a morning review queue
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \textbf{Choose the mechanism}\par
+      \begin{itemize}\small\setlength\itemsep{0.4em}
+        \item Codex \textbf{Goal}: pursue a persistent objective
+        \item Claude Code \textbf{\texttt{/goal}}: continue until a condition is met
+        \item Claude Code \textbf{\texttt{/loop}}: repeat a prompt on an interval
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{0.6em}
+  \begin{center}\small
+    My examples: a \textbf{12-hour lecture revision} and a \textbf{24-hour feasibility study}. Both use staged checks and reserve scientific decisions for me.
+    \\[0.4em]Local work needs an awake machine, a running session, sufficient usage, and suitable permissions. Use scheduled tasks for later runs.
+  \end{center}
+  \vspace{0.8cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Claude hooks connect workflow events to checks}
+  \ndlogonote{\scriptsize\href{https://code.claude.com/docs/en/hooks-guide}{\texttt{code.claude.com/docs/en/hooks-guide}}}
+  \vfill
+  \begin{center}\small
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{@{}p{3.0cm}p{8.9cm}@{}}
+    \toprule
+    \textbf{Event} & \textbf{Example action} \\
+    \midrule
+    Before a tool runs & Check whether the proposed edit touches a protected file. \\
+    After a file edit & Run a formatter or a focused verification script. \\
+    Before stopping & Check the completion condition; return failures for another pass. \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{0.7em}
+  \begin{center}\small
+    Configure in \texttt{.claude/settings.json}; inspect with \texttt{/hooks}.\\[0.4em]
+    Instructions guide behavior. A command hook runs a defined check when its event fires.
+  \end{center}
+  \vspace{0.8cm plus 1fill}
 \end{frame}

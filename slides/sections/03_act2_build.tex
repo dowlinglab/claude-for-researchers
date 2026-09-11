@@ -1,62 +1,55 @@
-\stagedivider{3}{Act II: Build}{What's worth keeping?}
+\stagedivider{3}{Act II: Build}{Create reusable software and literature-grounded documents}
 
-\begin{frame}{Task 4 --- convert code from a published paper into a package}
+\begin{frame}{Task 2: Convert code from a published paper into a package}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/bits_for_gaps}{\texttt{github.com/dowlinglab/bits\_for\_gaps}}}
   \vfill
   \begin{center}
-    \includegraphics[width=0.56\textwidth]{figures/bits_for_gaps_graphical_abstract}\\[0.15em]
+    \includegraphics[width=0.58\textwidth]{figures/bits_for_gaps_graphical_abstract}\\[0.15em]
     {\scriptsize K.~D.~Jones and A.~W.~Dowling, \textit{Computers \& Chemical Engineering} \textbf{211} (2026) 109650}
   \end{center}
   \vspace{0.35em}
   \begin{center}
-    \slidepoint{After Kyla defended her thesis, I turned her well-organized private codebase into a \textbf{public, pip-installable package} using Claude Code!}
+    \slidepoint{After Kyla defended, I turned her well-organized private codebase into a \textbf{public, pip-installable package} using Claude Code.}
   \end{center}
-  \vspace{1.8cm plus 1fill}
+  \vspace{0.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 4 --- the recipe, final paper code $\to$ generalized, published package}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{resources/practices/scientific\_computing\_workflow.md}}\\[0.3em]\href{https://bits-for-gaps.readthedocs.io}{\texttt{bits-for-gaps.readthedocs.io}}}
-  \vspace{-0.9cm}
-  \begin{center}
-  \begin{enumerate} \normalsize \setlength\itemsep{0.28em}
-    \item Extract the paper's code into an installable package, not just scripts
-    \item Pin the paper's published numbers as a baseline to test against
-    \item Decompose, generalize, and port the paper's example
-    \item Reproduce every figure, then publish docs to ReadTheDocs
-    \item Reproduce every \textit{result} from scratch --- a discrepancy turned up
-    \item \tikz[remember picture, overlay]\coordinate(braceTop);Root-cause it: a real bug, confirmed to four decimal places
-    \item Fix that bug's root cause everywhere it could recur
-    \item A full pass on hygiene, types, and test coverage
-    \item \tikz[remember picture, overlay]\coordinate(braceBot);A last pass on docs, tests, and comments
-    \item Release
+\begin{frame}{Task 2: The package conversion recipe}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/private_code_to_public_package.md}{\texttt{resources/practices/private\_code\_to\_public\_package.md}}}
+  \vfill
+  \begin{enumerate}\setlength\itemsep{0.75em}
+    \item \textbf{Reproduce the paper} in a clean environment and save trusted outputs.
+    \item \textbf{Extract an installable package} while keeping the original results as regression tests.
+    \item \textbf{Decompose and generalize} one bounded change at a time.
+    \item \textbf{Document and test} a clean installation plus every published figure.
+    \item \textbf{Release}: choose a license, then publish to PyPI with GitHub Actions.
   \end{enumerate}
+  \vfill
+  \begin{center}
+    \slidepoint{Every step ends by comparing against the \textbf{published baseline}.}
   \end{center}
-  \begin{tikzpicture}[remember picture, overlay]
-    \coordinate (braceX) at ($(current page.west)+(11.0cm,0)$);
-    \draw[decorate, decoration={brace, amplitude=5pt}, thick, NDGold]
-      ($(braceX|-braceTop)+(0,0.85em)$) -- ($(braceX|-braceBot)+(0,-0.15em)$)
-      node[midway, anchor=west, xshift=0.35cm, align=left, font=\scriptsize\itshape, text width=3.5cm] {added on-the-fly \\ by me to the plan};
-  \end{tikzpicture}
+  \vspace{1.2cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 4 --- establish a reproducible baseline}
+\begin{frame}{Task 2: Establish a reproducible baseline}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{resources/practices/scientific\_computing\_workflow.md}}}
   \vfill
   \begin{enumerate}\setlength\itemsep{0.45em}
-    \item \textbf{Find dependency clues} in the paper, report, and codebase
-    \item \textbf{Create a clean Conda environment} from the inferred package versions
-    \item \textbf{Reproduce results systematically}, working from easiest to hardest
-    \item \textbf{Record coverage}: what reproduced, what failed, and what was not attempted
-    \item \textbf{Freeze the setup}: environment file plus instructions tested from a clean install
-    \item \textbf{Save trusted result artifacts} as golden regression baselines
+    \item \textbf{Find dependency clues} in the paper, report, and codebase.
+    \item \textbf{Create a clean Conda environment} from the inferred package versions.
+    \item \textbf{Reproduce results systematically}, working from easiest to hardest.
+    \item \textbf{Record coverage}: what reproduced, failed, or was not attempted.
+    \item \textbf{Freeze the setup}: environment file plus clean-install instructions.
+    \item \textbf{Save trusted outputs} as golden regression baselines.
   \end{enumerate}
   \vspace{0.55em}
   \begin{center}\small
-    \textit{Optional after the baseline is stable: update packages, then repeat the full reproduction.}
+    Optional after the baseline is stable: update packages, then repeat the full reproduction.
   \end{center}
   \vfill
 \end{frame}
 
-\begin{frame}[fragile]{Task 4 --- decompose, generalize, port}
+\begin{frame}[fragile]{Task 2: Decompose, generalize, then port}
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\small]
@@ -67,111 +60,172 @@
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
   \end{tikzpicture}
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    One file that does everything can't be tested in isolation, reused, or extended past the paper's own one example.
-  \end{center}
-  \vspace{0.5em}
-  \begin{center}
-    The gotcha: split, generalize, and port \textit{in that order} --- and re-run the pinned baseline after every step, so a break is caught the moment it happens, not three steps later.
-  \end{center}
-  \vspace{0.5em}
-  \begin{center}
-    \slidepoint{Same output, five files not one --- reusable now, not just readable.}
-  \end{center}
+  \vspace{0.75em}
+  \begin{itemize}\setlength\itemsep{0.55em}
+    \item Split code so each part can be tested in isolation.
+    \item Generalize the verified path before adding a second use case.
+    \item Re-run the pinned baseline after every step.
+  \end{itemize}
   \vfill
+  \begin{center}
+    \slidepoint{The package becomes reusable without losing the result that made it credible.}
+  \end{center}
+  \vspace{1.1cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 4 --- the bug the reproduction found}
+\begin{frame}{Task 3: Create a literature-grounded report or proposal}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/technical_writing.md}{\texttt{resources/practices/technical\_writing.md}}}
   \vfill
+  \begin{columns}[c]
+    \begin{column}{0.46\textwidth}
+      \textbf{What is \LaTeX?}\\[0.4em]
+      \small A plain-text document source that separates content from layout and compiles into a PDF. It handles equations, references, figures, and cross-references especially well.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Why agents work well with it}\\[0.4em]
+      \begin{itemize}\small\setlength\itemsep{0.35em}
+        \item source is searchable text
+        \item sections and figures are separate files
+        \item every edit produces a readable diff
+        \item the compiled PDF provides a visual check
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{0.8em}
   \begin{center}
-    Reproducing a paper's own figures from scratch is the strongest test there is --- strong enough to catch a bug in \textit{new} verification code, not just the ported package.
+    \slidepoint{The report grows from \textbf{curated evidence}, not generated citations.}
   \end{center}
-  \vspace{0.5em}
-  \begin{center}
-    One equilibrium column wouldn't converge. Four hypotheses tested, three rejected. The gotcha: a GP model object, mutated in place by one computation, then reused by another --- a classic silent-corruption trap, confirmed to four decimal places against a checkpoint.
-  \end{center}
-  \vspace{0.5em}
-  \begin{center}
-    \slidepoint{The published paper was never at risk --- this bug lived only in reproduction code written \textbf{during} the refactor.}
-  \end{center}
-  \vfill
+  \vspace{1.3cm plus 1fill}
 \end{frame}
 
-\begin{frame}[fragile]{Task 4 --- ship the skeleton, scrub the scaffolding}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/private_code_to_public_package.md}{\texttt{resources/practices/private\_code\_to\_public\_package.md}} \S10}
-  \vfill
-  \begin{center}
-    Releasing a package means someone else can now run your code --- a leaked long-lived credential is how that goes wrong. The fix: trusted publishing (OIDC), no password or token stored anywhere.
-  \end{center}
-  \vspace{0.7em}
-  \begin{center}
-    \texttt{HANDOFF.md}, \texttt{REFACTOR\_PLAN.md}, the bug investigation log --- don't ship your working notes either. The gotcha: move them out of the user-facing repo, not out of existence --- still recoverable from git history.
-  \end{center}
-  \vspace{0.5em}
-  \begin{center}
-    \slidepoint{A real install, from a test index, in a clean environment --- before the real one.}
-  \end{center}
-  \vspace{1.8cm plus 1fill}
-\end{frame}
-
-\begin{frame}{Task 3, continued --- one manuscript, three places, one history}
+\begin{frame}{Three repositories keep development, writing, and release separate}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/latex_overleaf_workflow.md}{\texttt{resources/practices/latex\_overleaf\_workflow.md}}}
   \vfill
+  \begin{center}\small
+  \renewcommand{\arraystretch}{1.22}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{5.1cm}>{\raggedright\arraybackslash}p{4.3cm}@{}}
+    \toprule
+    \textbf{Repository} & \textbf{What belongs there} & \textbf{History} \\
+    \midrule
+    Private code & data, experiments, analysis & rich history; my projects: 10--500 MB \\
+    Private writing & \LaTeX{}, bibliography, selected figures & compact history; sync recommendation: $<100$ MB \\
+    Public release & package and paper reproduction & near-final history for readers \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{0.55em}
+  \begin{center}\small
+    My rule: keep individual Git files below about \textbf{10 MB}. Put large PDF collections on a shared drive; keep summaries and \texttt{ref.bib} in Git.
+  \end{center}
+  \vspace{1.0cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Task 3, step 1: Search, read, and search again}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/literature_review.md}{\texttt{resources/practices/literature\_review.md}}}
+  \vfill
+  \begin{enumerate}\setlength\itemsep{0.8em}
+    \item \textbf{Frame the question with a chatbot}
+      \begin{itemize}\small
+        \item develop terminology, synonyms, and adjacent disciplines
+        \item turn the idea into several targeted search strings
+      \end{itemize}
+    \item \textbf{Search Google Scholar and disciplinary databases}
+      \begin{itemize}\small
+        \item follow review papers, citation trails, and competing terminology
+        \item download only papers you can identify and inspect
+      \end{itemize}
+    \item \textbf{Repeat after each processed batch}
+      \begin{itemize}\small
+        \item ask the agent which gaps, authors, and references should drive the next search
+      \end{itemize}
+  \end{enumerate}
+  \vspace{1.0cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Task 3, step 2: Build a literature corpus an agent can use}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/literature_workflow.md}{\texttt{resources/prompts/literature\_workflow.md}}}
+  \vfill
+  \begin{itemize}\setlength\itemsep{0.65em}
+    \item Process PDFs in small topical batches and checkpoint each batch.
+    \item Propose consistent filenames; identify likely duplicates without deleting automatically.
+    \item Maintain \texttt{ref.bib} with verified metadata and DOI information.
+    \item Summarize every paper in \texttt{literature.md}: contribution, evidence, relevance, and what it cannot support.
+    \item Keep large PDF collections in a reference manager or shared-drive folder; keep the small text artifacts in Git.
+  \end{itemize}
+  \vfill
   \begin{center}
-  \begin{tikzpicture}[font=\normalsize, node distance=1.3cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.2cm, minimum height=1.35cm, align=center]
-      (a) {Overleaf\\draft together};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=3.2cm, minimum height=1.35cm, align=center, right=of a, fill=CodeBg]
-      (b) {GitHub\\version history};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.4cm, minimum height=1.35cm, align=center, right=of b]
-      (c) {Local editor + AI\\debug and compare};
+    \slidepoint{The durable product is the \textbf{verified map of the literature}.}
+  \end{center}
+  \vspace{1.0cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Task 3, step 3: Edit the document against the curated corpus}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/grant_proposal_writing.md}{\texttt{resources/practices/grant\_proposal\_writing.md}}}
+  \vfill
+  \begin{center}
+  \begin{tikzpicture}[font=\small, node distance=0.85cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.8cm, minimum height=1.2cm, align=center]
+      (a) {Question +\\\texttt{literature.md}};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.8cm, minimum height=1.2cm, align=center, right=of a]
+      (b) {Claim and evidence\\outline};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.8cm, minimum height=1.2cm, align=center, right=of b]
+      (c) {Draft one\\section at a time};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=3.0cm, minimum height=1.2cm, align=center, right=of c, fill=CodeBg]
+      (d) {Check every claim\\against source PDFs};
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
-    \draw[{Stealth[length=6pt]}-{Stealth[length=6pt]}, thick] (b) -- (c);
+    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+    \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
   \end{tikzpicture}
   \end{center}
-  \vspace{0.7em}
-  \begin{enumerate}\setlength\itemsep{0.55em}
-    \item One manuscript = one Overleaf project + one GitHub repository
-    \item GitHub holds the history and connects Overleaf to local tools
-    \item Locally, debug \LaTeX{}, run \texttt{latexdiff}, and resolve every \texttt{todonote} before submission
-  \end{enumerate}
-  \vspace{1.8cm plus 1fill}
+  \vspace{0.8em}
+  \begin{itemize}\setlength\itemsep{0.55em}
+    \item Ask what evidence supports each paragraph before polishing its prose.
+    \item Edit the report or proposal against the local corpus, not an agent's memory.
+    \item Preserve uncertainty and conflicting evidence as part of the argument.
+  \end{itemize}
+  \vspace{1.0cm plus 1fill}
 \end{frame}
 
-\begin{frame}[fragile]{Task 3, continued --- the same discipline, on a document instead of code}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/proposal_review.md}{\texttt{resources/prompts/proposal\_review.md}}}
+
+\begin{frame}{Overleaf and local edits meet through GitHub}
+  \ndlogonote{\scriptsize\href{https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization}{Overleaf: GitHub synchronization (documentation + screenshot)}\quad\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/latex_overleaf_workflow.md}{Companion workflow}}
   \vfill
-  \begin{center}
-    A returning-sponsor proposal, drafted tersely against the sponsor's own form, then restored to its exact required wording before submission.
-  \end{center}
-  \vspace{0.6em}
-  \begin{lstlisting}
-% [FOA-COMPLIANCE] Sec. 3.2 requires a data management plan;
-% draft has none. Flagged -- not yet fixed.
-  \end{lstlisting}
-  \vfill
-  \begin{center}
-    AI as a compliance reviewer, findings written inline, not in a separate comments document: flagged, fixed, then removed --- never left in the submitted file.
-  \end{center}
-  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.46\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=4.9cm,keepaspectratio]{figures/overleaf_github_sync.png}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{enumerate}\small\setlength\itemsep{0.7em}
+        \item Sync Overleaf edits to GitHub; pull locally.
+        \item Revise on a \textbf{feature branch}.
+        \item Incorporate collaborators' latest changes; review and merge.
+        \item Pull the merged version into Overleaf.
+      \end{enumerate}
+      \vspace{0.5em}
+      \small Synchronization is \textbf{explicit}, not automatic. Coordinate with coauthors.
+    \end{column}
+  \end{columns}
+  \vspace{0.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}[fragile]{Best practices: review the diff, verify every revision}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/latexdiff_check.sh}{\texttt{resources/scripts/latexdiff\_check.sh}}}
+\begin{frame}{Review the source diff and the manuscript diff}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/examples/manuscript_revision}{Reproduce the example}\quad\href{https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop}{Screenshot: GitHub Docs}}
   \vfill
-  {\scriptsize A generic, illustrative diff --- not a real commit.}
-  \begin{lstlisting}
-- df_all = pd.concat([load(f) for f in glob("data/*.csv")])
-+ df_run = load(f"data/{run_id}.csv")
-  \end{lstlisting}
-  \vspace{0.3em}
-  \begin{center}
-    \textbf{Code:} \texttt{git diff}, GitHub Desktop, or the diff your AI CLI tool shows before you approve an edit --- an AI summary says ``refactored the pipeline''; the diff says what actually changed.
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \centering\small\textbf{GitHub Desktop: file changes}\\[0.5em]
+      \includegraphics[width=\linewidth]{figures/github_desktop_diff.png}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering\small\textbf{\texttt{latexdiff}: manuscript changes}\\[0.5em]
+      \includegraphics[width=\linewidth]{figures/manuscript_diff.pdf}
+    \end{column}
+  \end{columns}
+  \vspace{0.8em}
+  \begin{center}\small
+    Ask the agent to generate and compile \texttt{latexdiff}.\\[0.35em]
+    \textbf{You review the changed claims} before merging and syncing.
   \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    \textbf{Prose:} a line diff just marks the whole line changed, not \emph{which words} moved --- \texttt{latexdiff} compiles a colored, word-level markup PDF against the last commit instead, so a softened claim or a quietly tightened number becomes visible on the page.
-  \end{center}
-  \vspace{1.2cm plus 1fill}
+  \vspace{0.8cm plus 1fill}
 \end{frame}

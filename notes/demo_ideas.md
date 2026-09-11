@@ -1,5 +1,7 @@
 # Demo ideas — the project inventory, mapped to acts
 
+> **Historical planning record.** The task and slide numbering below predates the September 11 practice-feedback revision. Use [the current storyboard](../slides/storyboard.md) for the six-task deck and [the feedback implementation record](practice_feedback_2026-09-11.md) for the changes. The original rationale is retained below.
+
 **Supersedes the pre-restructure version of this file**, which was written for the six-stage lifecycle framing (Explore/Ground/Build/Record/Write/Verify) before the talk became a three-act story (`storyboard.md`). That framing is gone; the underlying evidence isn't — this file re-maps it.
 
 **What this file is for.** The Acts are meant to be a *collection of concrete tasks an academic actually performs*, each grounded in a real project, with a general principle extracted from it — not one flagship story per act. This is the map from raw evidence (17 projects/repos inventoried, most already generalized into `resources/practices/`) to which act each concrete task belongs in, and what principle it earns its place by demonstrating.

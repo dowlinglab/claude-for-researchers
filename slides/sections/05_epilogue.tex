@@ -32,7 +32,7 @@
   \begin{center}
     \small Claude Team accounts (free for academic labs) do not train on your data by default, but have a risk/reward conversation with your PI.
   \end{center}
-  \vspace{1.8cm plus 1fill}
+  \vspace{0.7cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Two important notes}
@@ -50,7 +50,7 @@
   \vfill
 \end{frame}
 
-\begin{frame}{The same tasks recur across projects and acts}
+\begin{frame}{The six tasks form one research workflow}
   \vfill
   \begin{center}
   \small
@@ -58,20 +58,19 @@
     \toprule
     & \textbf{Prologue} & \textbf{Act I} & \textbf{Act II} & \textbf{Act III} \\
     \midrule
-    Task 1 --- set up git & & \good{} & & \\
-    Task 2 --- inherit a project's context & & \good{} & & \\
-    Task 3 --- idea $\to$ report or proposal & & \good{} & \good{} & \\
-    Task 4 --- paper code $\to$ package & \good{} & & \good{} & \\
-    Task 5 --- audit a manuscript & & & & \good{} \\
-    Task 6 --- inherit a project $\to$ manuscript & & & & \good{} \\
-    Task 7 --- audit a course, end to end & & & & \good{} \\
+    Task 1 --- set up agents + inherit a project & & \good{} & & \\
+    Task 2 --- paper code $\to$ package & \good{} & & \good{} & \\
+    Task 3 --- idea $\to$ report or proposal & & & \good{} & \\
+    Task 4 --- audit a manuscript & & & & \good{} \\
+    Task 5 --- project $\to$ manuscript & & & & \good{} \\
+    Task 6 --- modernize a course & & & & \good{} \\
     Creating this talk & \good{} & & & \\
     \bottomrule
   \end{tabular}
   \end{center}
   \vfill
   \begin{center}
-    Tasks 1--7 form the research workflow. Task 8 is the hobby extension.
+    The later tasks reuse the repository, environment, corpus, and checks established earlier.
   \end{center}
   \vfill
 \end{frame}
@@ -87,12 +86,12 @@
   \vfill
 \end{frame}
 
-\begin{frame}{Task 8 (hobbies) --- using AI to amplify your curiosity}
-  \vfill
+\begin{frame}{Hobbies: AI can amplify your curiosity}
+  \vspace{0.15cm plus 1fill}
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \centering
-      \includegraphics[height=5.2cm]{figures/kitchen_organizer_telescope_shelf.jpeg}
+      \includegraphics[height=6.1cm]{figures/kitchen_organizer_telescope_shelf.jpeg}
     \end{column}
     \begin{column}{0.46\textwidth}
       \textbf{\small My workflow}
@@ -105,57 +104,59 @@
       \vspace{0.1em}
       \textbf{\small Projects}
       \begin{itemize}\small\setlength\itemsep{0.05em}
-        \item boot dryer, bathroom \& drawer organizers, telescope shelf \& caps
-        \item camera \& binocular mounts, CBE keychains (recruitment), tablet car mount (kids)
+        \item organizers, telescope shelf and caps
+        \item camera mounts, keychains, tablet mount
       \end{itemize}
     \end{column}
   \end{columns}
-  \vspace{0.1cm plus 1fill}
+  \vspace{0.15cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 8 (hobbies) --- create a textbook, customized for you}
+\begin{frame}{Hobbies: Create a textbook customized for you}
   \ndlogonote{\scriptsize\href{https://github.com/adowling2/radio-extra-book}{\texttt{github.com/adowling2/radio-extra-book}}}
   \vfill
   \begin{center}
-    I want to \textbf{learn} AC circuit theory rather than memorize answers for the top-level \textbf{amateur radio license exam}. With Claude, I created a \textbf{personalized textbook}.
+    I used Claude to create a \textbf{personalized textbook}: learn AC circuit theory for the \textbf{amateur radio license exam}.
   \end{center}
   \vspace{0.35em}
   \begin{columns}[c]
     \begin{column}{0.40\textwidth}
       \textbf{\small My approach}
       \begin{enumerate}\small\setlength\itemsep{0.1em}
-        \item Brainstorm with ChatGPT the connections between AC circuit theory and my background
+        \item Connect circuit theory to my background with ChatGPT
         \item Draft the source, chapter by chapter
-        \item Reorganize into a coherent part structure
+        \item Organize the chapters into parts
         \item Build a reproducible figure pipeline
-        \item Verify coverage against real exam question pools
+        \item Check coverage against the exam pool
         \item Revise in structured rounds
       \end{enumerate}
     \end{column}
     \begin{column}{0.56\textwidth}
       \centering
       \includegraphics[width=0.8\linewidth]{figures/filter_families}\\[0.05em]
-      {\scriptsize I want to understand the math behind filters on the Amerature Extra exam.}
+      {\scriptsize Example: understand how low-pass filters differ.}
     \end{column}
   \end{columns}
   \vspace{0.6cm plus 1fill}
 \end{frame}
 
-\begin{frame}[fragile]{So, what now?}
+
+\begin{frame}[fragile]{Try one useful task before tomorrow}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers}{\texttt{github.com/dowlinglab/claude-for-researchers}}}
   \vfill
-  \begin{center}
-  \begin{enumerate}\normalsize\setlength\itemsep{0.35em}
-    \item Create a \textbf{GitHub} account (use your \texttt{.edu} email and apply for a free Education, a.k.a., Pro, upgrade)
-    \item Install \textbf{GitHub Desktop}: \url{https://desktop.github.com/download/}
-    \item \textbf{Clone this repo}: \texttt{github.com/dowlinglab/claude-for-researchers}
-    \item Open an \textbf{AI agent} in the repo: Codex, Claude Code, Gemini CLI, etc.
-    \item Paste in the starter prompt from \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/getting_started.md}{\texttt{resources/prompts/getting\_started.md}}
-    \item \textbf{Have a real conversation}: your project, your pain points, ask for help
+  \begin{enumerate}\small\setlength\itemsep{0.5em}
+    \item Clone this public repo with \textbf{GitHub Desktop}.
+    \item Open the folder in \textbf{Codex or Claude Code}.
+    \item Paste this prompt and inspect the evidence it returns.
   \end{enumerate}
+  \vspace{0.4em}
+  \begin{lstlisting}[basicstyle=\ttfamily\small]
+Read resources/README.md. Run the documentation check.
+Explain one useful guide and point to its source file.
+Do not edit anything yet.
+  \end{lstlisting}
+  \begin{center}\small
+    Then use \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/getting_started.md}{\texttt{resources/prompts/getting\_started.md}} to choose a task for your own project.
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    \slidepoint{The resources in this repo provide a starting place. But remember, anything in this talk could become outdate/stale tomorrow.}
-  \end{center}
-  \vfill
+  \vspace{0.8cm plus 1fill}
 \end{frame}

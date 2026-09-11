@@ -1,76 +1,78 @@
-# Final slide storyboard
+# Current slide storyboard
 
-Status: final practice-talk deck, audited September 11, 2026. The compiled deck has 52 slides for a 40-minute talk followed by discussion. The title slide retains the requested `DRAFT` label.
+Revised after the September 11, 2026 practice talk. The deck contains 52 slides for a 40-minute talk, followed by 20 minutes of discussion. The title retains DRAFT. [Feedback implementation record](../notes/practice_feedback_2026-09-11.md).
 
-Detailed iteration notes and the editorial comments formerly embedded in the LaTeX are preserved in Git history through commit `2c55c74`. They were removed from the working sources after the final audit so the repository now describes the current deck rather than its construction process.
+Task 1 establishes the workspace. Tasks 2–3 build software and literature-grounded documents. Tasks 4–6 audit, draft, and modernize. Hobbies are an unnumbered extension.
 
 ## Prologue: Tinker (slides 1–11)
 
 1. Title and event details
-2. Graduate-visitor scheduling history and output
-3. Jupyter notebook to public Python package in about 10 hours
-4. Talk thesis: deliberate, reproducible, auditable workflows
-5. Three-act structure borrowed from *This American Life*
-6. Scope and seven research task types
-7. Model independence
-8. Desktop, terminal, and editor interfaces
-9. Frontier models and usage limits
-10. Companion repository inventory
-11. How this talk used the practices it recommends
+2. Creating faculty-visitor schedules for graduate student recruitment
+3. Jupyter Notebook → public Python package in ~10 hours
+4. Takeaway message for today
+5. Borrowed structure
+6. Today: my lessons learned and recommended practices
+7. Project context and agent actions are complementary
+8. Desktop app, terminal, or editor: choose your workspace
+9. Which model, and how much of it do you get
+10. Everything today is on GitHub
+11. This talk was built with the practices it recommends
 
-## Act I: Understand (slides 12–18)
+## Act I: Understand (slides 12–20)
 
 12. Act divider
-13. The filesystem and repository as the source of truth
-14. Chatbot versus agent
-15. Task 1: initialize version control
-16. Task 2: persistent, authoritative, and task context
-17. Task 2: durable project entry point and research log
-18. Task 3: idea-first literature workflow
+13. The filesystem is the source of truth
+14. An agent can act on a repository
+15. Task 1: Set up an agent workspace and inherit a project
+16. Branches isolate a change; pull requests invite review
+17. Project instructions: CLAUDE.md and AGENTS.md
+18. A concise instruction file routes the agent to evidence
+19. Overnight work needs a goal and a morning handoff
+20. Claude hooks connect workflow events to checks
 
-## Act II: Build (slides 19–28)
+## Act II: Build (slides 21–32)
 
-19. Act divider
-20. Task 4: published paper code to public package
-21. Task 4: complete packaging recipe
-22. Task 4: reproducible baseline
-23. Task 4: decompose, generalize, and port
-24. Task 4: reproduction exposes a bug
-25. Task 4: release engineering and repository cleanup
-26. Task 3 continued: Overleaf, GitHub, and local tools
-27. Task 3 continued: proposal compliance review
-28. Review diffs and verify revisions
+21. Act divider
+22. Task 2: Convert code from a published paper into a package
+23. Task 2: The package conversion recipe
+24. Task 2: Establish a reproducible baseline
+25. Task 2: Decompose, generalize, then port
+26. Task 3: Create a literature-grounded report or proposal
+27. Three repositories keep development, writing, and release separate
+28. Task 3, step 1: Search, read, and search again
+29. Task 3, step 2: Build a literature corpus an agent can use
+30. Task 3, step 3: Edit the document against the curated corpus
+31. Overleaf and local edits meet through GitHub
+32. Review the source diff and the manuscript diff
 
-## Act III: Challenge (slides 29–44)
+## Act III: Challenge (slides 33–44)
 
-29. Act divider
-30. Task 5: manuscript audit questions
-31. Task 5: one-question-at-a-time audit
-32. Task 5: claim-to-artifact tracing
-33. Task 5: automated DOI checks
-34. Task 5: silent failures hidden by clean builds
-35. Task 5: evidence beats recollection
-36. Task 6: inherit and reproduce before editing
-37. Task 6: verify literature and preserve group voice
-38. Task 6: manuscript self-audit
-39. Task 7: five course offerings and the applications-first pivot
-40. Task 7: Fall 2026 redesign goals
-41. Task 7: private and public repository architecture
-42. Task 7: recurring failures become repeatable tests
-43. Task 7: continuity across AI tools, computers, and sessions
-44. Task 7: four small project artifacts
+33. Act divider
+34. Task 4: Audit a manuscript before submission
+35. Task 4: Trace each claim to evidence
+36. The DOI checker has two verification modes
+37. Task 5: Draft a manuscript from the previous tasks
+38. Task 5: Figures first, then outline, sections, and revision
+39. Task 6: Modernize a course across five offerings
+40. Four goals; the sprint starts the week before class
+41. Task 6: The course uses two repositories
+42. Task 6: Each failure became a repeatable check
+43. Task 6: Git and handoffs bridge tools and computers
+44. Task 6: Coursepack sources and strategic gaps
 
 ## Epilogue: Trust (slides 45–52)
 
 45. Act divider
-46. Notre Dame data classifications and approved tools
-47. Funding and project-specific restrictions
-48. Research-task recurrence and the Task 8 hobby extension
-49. Researcher ownership and disclosure
-50. Task 8: AI-assisted design and fabrication hobbies
-51. Task 8: personalized amateur-radio textbook
-52. Concrete next steps using the companion repository
+46. Currently, Claude is approved for public data only at ND
+47. Two important notes
+48. The six tasks form one research workflow
+49. You own every claim, whatever helped you make it
+50. Hobbies: AI can amplify your curiosity
+51. Hobbies: Create a textbook customized for you
+52. Try one useful task before tomorrow
 
-## Narrative through-line
+## Narrative and pacing
 
-The talk begins with a concrete software success, then moves from repository foundations to building, verification, and trust. Tasks 1–7 form the research workflow. Task 8 is deliberately labeled as a hobby extension. Git preserves project state, handoff documents preserve context, and gates/tests make the workflow more robust as it evolves. Scientific and pedagogical judgment remain with the researcher or instructor.
+The opening software story shows a concrete payoff. Act I explains the workspace that makes those outcomes possible. Act II moves from code packaging to literature and writing. Act III reuses the same evidence to audit and draft a manuscript before the course-modernization capstone. Trust and an immediately runnable first exercise close the talk.
+
+Planning allocation, to validate in rehearsal: prologue 7 minutes; Understand 8; Build 10; Challenge 10; Trust 5. Treat the model table, hooks mechanics, and hobbies briefly so the worked research examples retain their time.

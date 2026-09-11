@@ -1,47 +1,28 @@
+\stagedivider{4}{Act III: Challenge}{Use the accumulated evidence to test and extend the work}
 
-\stagedivider{4}{Act III: Challenge}{Do you believe it?}
-
-\begin{frame}{Task 5 --- audit a manuscript before it's submitted}
-  \vfill
-  \slidepoint{
-  Let's approach these questions \textbf{systematically}:\\
-  \begin{itemize}\setlength\itemsep{0.8em}
-    \item Do the methods described match what the code actually did?
-    \item Are there arithmetic mistakes in any reported number?
-    \item Can every reported number be traced back to a results artifact?
-    \item Does rerunning the analysis reproduce it, on a different machine?
-    \item Do the manuscript's literature claims match the papers themselves?
-  \end{itemize}}
-  \vfill
-\end{frame}
-
-\begin{frame}{Task 5 --- walk it through, one question at a time}
+\begin{frame}{Task 4: Audit a manuscript before submission}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/manuscript_audit.md}{\texttt{resources/prompts/manuscript\_audit.md}}}
-  \vfill
-  \begin{center}
-    Point Claude at the manuscript source files (LaTeX in Overleaf synced via GitHub ;) and the analysis repo.
+  \vspace{0.35em}
+  \begin{center}\small
+    \textbf{Prerequisites:} the manuscript and analysis are under version control; the computational environment runs; the literature corpus from Task 3 is available to the agent.
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
-  \begin{itemize}\small\setlength\itemsep{0.4em}
-    \item Ask \textit{one} question from the list
-    \item Traceability: grep (search) the repo for the number, report the file --- or say it can't be found
-    \item Method: diff (compare) the manuscript's description against what the code actually does
-    \item Arithmetic: recompute from the underlying numbers, don't just re-read them
+  \vspace{0.65em}
+  \begin{itemize}\setlength\itemsep{0.5em}
+    \item Do the methods match what the code actually did?
+    \item Can each reported number be recomputed and traced to a results artifact?
+    \item Do figure labels, captions, and prose agree with the underlying data?
+    \item Do literature claims match the source papers?
+    \item Does the manuscript comply with the journal's current instructions for authors?
   \end{itemize}
-  \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    \slidepoint{The audit is only as good as the \textbf{files} you hand it.}
-  \end{center}
-  \vspace{1.8cm plus 1fill}
+  \vspace{1.0cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 5 --- trace every number back to the file that produced it}
+\begin{frame}{Task 4: Trace each claim to evidence}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/templates/results_manifest.md}{\texttt{resources/templates/results\_manifest.md}}}
   \vfill
   \begin{center}
-  \begin{tabular}{@{}p{5.4cm}p{2.6cm}p{2.6cm}l@{}}
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabular}{@{}p{5.1cm}p{2.5cm}p{2.7cm}l@{}}
     \toprule
     \textbf{Manuscript claim} & \textbf{Location} & \textbf{Source} & \textbf{Status} \\
     \midrule
@@ -51,140 +32,103 @@
     \bottomrule
   \end{tabular}
   \end{center}
-  \vspace{0.5em}
-  \begin{center}
-    Every claim gets a row before the reviewers make you build one.
-  \end{center}
-  \vspace{0.5em}
-  \begin{center}
-    \slidepoint{\unknown{Cannot verify} is a result you want ---\\a real \textbf{provenance gap}, not a failure of the audit.}
-  \end{center}
-  \vspace{1.8cm plus 1fill}
-\end{frame}
-
-\begin{frame}{Task 5 --- we can also automate checking references}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/scripts/doi_checker}{\texttt{resources/scripts/doi\_checker/}}}
-  \vfill
-  \begin{center}\small
-    Checks every entry in the library's own versioned \texttt{.bib} file --- the one Task 3's corpus-grounded review builds --- against Crossref: does the DOI resolve, and to \textbf{the paper the entry actually describes}. It reports, never edits, and can't tell you a citation supports the claim it's attached to --- that still needs a human.
-  \end{center}
-  \vspace{0.5em}
-  \begin{center}\small
-  \begin{itemize}\setlength\itemsep{0.3em}
-    \item A perfect title match, proposed for a completely unrelated document --- rejected by hand.
-    \item A citation one reference number off, identical until someone actually opened both papers.
-  \end{itemize}
-  \end{center}
-  \vfill
-  \begin{center}
-    \slidepoint{A citation is a \textbf{claim} too --- \textbf{verified} or \textbf{wrong}, not close enough.}
-  \end{center}
-  \vspace{1.8cm plus 1fill}
-\end{frame}
-
-\begin{frame}{Task 5 --- a clean build hid a silent failure}
-  \vfill
+  \vspace{0.65em}
   \begin{columns}[t]
-    \begin{column}{0.31\textwidth}
-      \centering
-      A manuscript's nomenclature table rendered empty.\\[0.4em]
-      {\scriptsize Build exit code: 0.}
+    \begin{column}{0.48\textwidth}
+      \small\textbf{Arithmetic}\par Recompute from the underlying values rather than rereading the displayed number.
     \end{column}
-    \begin{column}{0.31\textwidth}
-      \centering
-      A course's \texttt{.gitignore} silently dropped an artifact.\\[0.4em]
-      {\scriptsize CI stayed green for 1.5 days.}
-    \end{column}
-    \begin{column}{0.31\textwidth}
-      \centering
-      A project's own \texttt{CLAUDE.md} warned about stale paths.\\[0.4em]
-      {\scriptsize Directly above four stale paths.}
+    \begin{column}{0.48\textwidth}
+      \small\textbf{Traceability}\par Search the repository for the claim and name the exact file, or report that no source was found.
     \end{column}
   \end{columns}
   \vfill
   \begin{center}
-    \slidepoint{Ask an agent to \textbf{list every instance} --- not just \textbf{confirm} it looks fine.}
+    \slidepoint{\textbf{Cannot verify} identifies a real \textbf{provenance gap}.}
   \end{center}
-  \vfill
+  \vspace{1.0cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 5 --- my status report was wrong about eleven items}
+\begin{frame}{The DOI checker has two verification modes}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/scripts/doi_checker}{\texttt{resources/scripts/doi\_checker/}}}
   \vfill
   \begin{center}
-    \bad{\large "Everything is up to date."}
+  \begin{tikzpicture}[font=\small, node distance=0.9cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.6cm, minimum height=1.2cm, align=center]
+      (a) {Versioned\\\texttt{ref.bib}};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=4.2cm, minimum height=1.5cm, align=center, right=of a]
+      (b) {\textbf{Existing DOI}\\\scriptsize Crossref: title + first author};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=4.2cm, minimum height=1.5cm, align=center, below=0.55cm of b]
+      (c) {\textbf{Missing DOI}\\\scriptsize search Crossref and rank candidate matches};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=3.1cm, minimum height=1.5cm, align=center, right=of b, yshift=-1.02cm, fill=CodeBg]
+      (d) {Reviewable report\\\scriptsize match, check, mismatch, unresolved; candidates};
+    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+    \draw[-{Stealth[length=6pt]}, thick] (a) |- (c);
+    \draw[-{Stealth[length=6pt]}, thick] (b) -- (d);
+    \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
+  \end{tikzpicture}
   \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    That was memory, not evidence. A script that actually checked found eleven items it was wrong about.
+  \vspace{0.7em}
+  \begin{center}\small
+    The tool reports only. It never edits the bibliography, and it cannot decide whether a paper supports the sentence that cites it.
   \end{center}
-  \vfill
-  \begin{center}
-    \slidepoint{Determine status from \textbf{evidence}, never \textbf{recollection}.}
-  \end{center}
-  \vfill
+  \vspace{1.15cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 6 --- inherited a notebook, understood before it changed (Task 2)}
+\begin{frame}{Task 5: Draft a manuscript from the previous tasks}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/technical_writing.md}{\texttt{resources/practices/technical\_writing.md}}}
   \vfill
   \begin{center}
-  \begin{tikzpicture}[font=\small, node distance=1.2cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.0cm, minimum height=1.1cm, align=center]
-      (a) {Notebook + data\\\scriptsize no tests, no structure};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.4cm, minimum height=1.1cm, align=center, right=of a]
-      (b) {Understood, reproduced\\\scriptsize (Task 2)};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=3.0cm, minimum height=1.1cm, align=center, right=of b, fill=CodeBg]
-      (c) {Draft\\\scriptsize manuscript};
-    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
-    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+  \begin{tikzpicture}[font=\scriptsize, node distance=0.18cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=10.5cm, minimum height=0.68cm, align=center, fill=black!2]
+      (a) {\textbf{Task 1}: versioned workspace, environment, instructions, reproducible baseline};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=10.5cm, minimum height=0.68cm, align=center, above=of a, fill=black!2]
+      (b) {\textbf{Task 2}: trustworthy software, figures, and results};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=10.5cm, minimum height=0.68cm, align=center, above=of b, fill=black!2]
+      (c) {\textbf{Task 3}: curated literature, bibliography, and claim-evidence outline};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=10.5cm, minimum height=0.68cm, align=center, above=of c, fill=black!2]
+      (d) {\textbf{Task 4}: audit questions and traceability checks};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=5.8cm, minimum height=0.76cm, align=center, above=0.32cm of d, fill=CodeBg]
+      (e) {\textbf{Task 5}: a manuscript with evidence attached};
+    \draw[-{Stealth[length=7pt]}, thick] (d) -- (e);
   \end{tikzpicture}
   \end{center}
-  \vspace{0.6em}
+  \vspace{0.25em}
   \begin{center}
-    A one-day handoff: the last commit from the original notebook, the first from the person who'd write the paper.
+    \slidepoint{Drafting becomes an \textbf{integration task}, not a blank-page task.}
   \end{center}
-  \vspace{0.4em}
-  \begin{center}
-    The next three weeks reproduced its fifteen numbered experiments, one at a time, before anything was corrected.
-  \end{center}
-  \vfill
+  \vspace{0.65cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 6 --- verify the literature the same way you verify the code (Task 3)}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/literature_review.md}{\texttt{resources/practices/literature\_review.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/writing_style_guide.md}{\texttt{resources/practices/writing\_style\_guide.md}}}
+\begin{frame}{Task 5: Figures first, then outline, sections, and revision}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{resources/practices/scientific\_figures\_tables.md}}\quad\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/writing_style_guide.md}{\texttt{writing\_style\_guide.md}}}
   \vfill
   \begin{center}
-    Every cited paper was checked against its own PDF, not memory: seventy-six papers, six citations wrong --- one with the finding stated backwards.
+  \resizebox{0.94\textwidth}{!}{%
+  \begin{tikzpicture}[font=\small, node distance=0.75cm]
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center]
+      (a) {Develop the\\key figures};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of a]
+      (b) {Outline claims\\around figures};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of b]
+      (c) {Draft one\\section at a time};
+    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of c]
+      (d) {Edit against corpus\\and style guide};
+    \node[draw=NDGold, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of d, fill=CodeBg]
+      (e) {Audit, render,\\and revise};
+    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+    \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
+    \draw[-{Stealth[length=6pt]}, thick] (d) -- (e);
+  \end{tikzpicture}}
   \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    Once the numbers were locked, the manuscript was restyled to match the group's own established voice from an earlier paper.
+  \vspace{0.8em}
+  \begin{center}\small
+    In one inherited computational project, the agent helped reproduce the experiments, develop the figures, organize the argument, draft sections, check the literature corpus, and complete a final manuscript audit. The researcher made every scientific and editorial decision.
   \end{center}
-  \vfill
-  \begin{center}
-    \slidepoint{The same discipline as \textbf{Task 3} --- a citation is \textbf{checked}, not \textbf{assumed}.}
-  \end{center}
-  \vspace{1.8cm plus 1fill}
+  \vspace{1.1cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 6 --- the manuscript audits itself, before anyone else does}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/manuscript_audit.md}{\texttt{resources/practices/manuscript\_audit.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/templates/results_manifest.md}{\texttt{resources/templates/results\_manifest.md}}}
-  \vfill
-  \begin{center}
-    The same manuscript, one more pass before it left the group: a full self-audit checked it against its own code and data --- twenty-five discrepancies found, twenty-two fixed on the spot.
-  \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    Three were left flagged, not silently resolved --- decisions only the author could make.
-  \end{center}
-  \vfill
-  \begin{center}
-    \slidepoint{The loop \textbf{closes} on itself --- the project audits its own paper.}
-  \end{center}
-  \vspace{1.8cm plus 1fill}
-\end{frame}
-
-\begin{frame}{Task 7 --- five offerings, one evolving course}
+\begin{frame}{Task 6: Modernize a course across five offerings}
   \ndlogonote{\scriptsize retired: \href{https://ndcbe.github.io/CBE60499/}{\texttt{ndcbe.github.io/CBE60499/}}\\current: \href{https://ndcbe.github.io/optimization/}{\texttt{ndcbe.github.io/optimization/}}}
   \vfill
   \begin{center}
@@ -195,11 +139,11 @@
     offering/.style={draw=NDGold, line width=0.8pt, text=NDBlue, rounded corners=2pt, minimum width=2.4cm, minimum height=2.6cm, text width=2.1cm, align=center}
   ]
     \node[offering]
-      (y2018) {\textbf{Fall 2018}\\[0.3em]handwritten notes\\[0.22em]Sakai notebooks};
+      (y2018) {\textbf{Fall 2018}\\[0.3em]handwritten notes\\[0.22em]Jupyter notebooks};
     \node[offering, right=of y2018]
       (y2021) {\textbf{Spring 2021}\\[0.3em]\texttt{nbpages} website\\[0.22em]applications first};
     \node[offering, right=of y2021]
-      (y2023) {\textbf{Spring 2023}\\[0.3em]JupyterBook\\[0.22em]sprint rebuild};
+      (y2023) {\textbf{Spring 2023}\\[0.3em]\texttt{JupyterBook} website};
     \node[offering, right=of y2023]
       (y2024) {\textbf{Fall 2024}\\[0.3em]iterative refinement};
     \node[offering, right=of y2024]
@@ -218,122 +162,106 @@
   \vspace{1.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 7 --- four goals for Fall 2026}
+\begin{frame}{Four goals; the sprint starts the week before class}
   \vfill
-  \begin{enumerate}\setlength\itemsep{0.55em}
-    \item Catch up on \textbf{deferred maintenance} for the website and computational examples.
-    \item Build a \textbf{coursepack with strategic gaps}: less math copying, more active learning, and a reference students can keep.
-    \item Make assessment \textbf{AI-forward}: an explicit homework policy, completion-based grading with better instructor analytics, and an AI-forward project.
-    \item Use more \textbf{in-class, open-coursebook exams}.
+  \begin{enumerate}\setlength\itemsep{0.45em}
+    \item \textbf{Deferred maintenance}
+      \begin{itemize}\small\item update the website and computational examples\end{itemize}
+    \item \textbf{Coursepack with strategic gaps}
+      \begin{itemize}\small\item reduce math copying; create time for active learning\end{itemize}
+    \item \textbf{AI-forward assessment}
+      \begin{itemize}\small\item explicit AI policy and completion-based homework grading
+        \item assessment analytics and an AI-forward project\end{itemize}
+    \item \textbf{More in-class exams}
+      \begin{itemize}\small\item open coursepack; assess individual understanding\end{itemize}
   \end{enumerate}
-  \vfill
-  \begin{center}
-    \slidepoint{Four goals, one coordinated \textbf{course system}.}
-  \end{center}
   \vfill
 \end{frame}
 
-\begin{frame}{Task 7 --- two repositories, one course system}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{resources/practices/scientific\_computing\_workflow.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{resources/practices/scientific\_figures\_tables.md}}}
+\begin{frame}{Task 6: The course uses two repositories}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{resources/practices/scientific\_computing\_workflow.md}}}
   \vfill
   \begin{center}\small
-  \renewcommand{\arraystretch}{1.15}
+  \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{6.15cm}>{\raggedright\arraybackslash}p{3.0cm}@{}}
     \toprule
     \textbf{Repository} & \textbf{Authoritative sources $\longrightarrow$ derived artifacts} & \textbf{Gate/Test} \\
     \midrule
-    Private repository\par\texttt{optimization-}\par\texttt{private} & coursepack + assessment sources\par$\longrightarrow$ instructor, student + alignment PDFs & citations, clipping, pagination \\
-    Public repository\par\texttt{optimization} & notebooks + figure scripts/data\par$\longrightarrow$ published notebooks, website + figures & sync, execution, routes, freshness \\
+    Private\par\texttt{optimization-}\par\texttt{private} & lecture notes, coursepack, assessments\par$\longrightarrow$ instructor, student, and alignment PDFs & citations, clipping, pagination \\
+    Public\par\texttt{optimization} & notebooks, figure scripts, and data\par$\longrightarrow$ published notebooks, website, and figures & sync, execution, routes, freshness \\
     \bottomrule
   \end{tabular}
   \end{center}
-  \vspace{0.45em}
+  \vspace{0.55em}
   \begin{center}\small
-    \textbf{Cross-repository gate/test:} the solution-leak checker enforces the private/public boundary.
-
-    \vspace{0.45em}
-    Claude and GPT helped me map goals to artifacts and likely failures to tests.
+    A cross-repository solution-leak check enforces the private/public boundary. Claude and GPT helped map each goal to artifacts, then each likely failure to a test.
   \end{center}
-  \vfill
   \vspace{1.05cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 7 --- the workflow became more robust over time}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/manuscript_audit.md}{\texttt{resources/practices/manuscript\_audit.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/check_docs.py}{\texttt{resources/scripts/check\_docs.py}}}
+\begin{frame}{Task 6: Each failure became a repeatable check}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/check_docs.py}{\texttt{resources/scripts/check\_docs.py}}}
   \vfill
   \begin{center}\small
     \textbf{Gate/test} = a repeatable check that must pass before publishing.
   \end{center}
   \vspace{0.45em}
   \begin{center}\small
-  \renewcommand{\arraystretch}{1.18}
+  \renewcommand{\arraystretch}{1.22}
   \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.7cm}>{\raggedright\arraybackslash}p{7.0cm}@{}}
     \toprule
-    \textbf{Problem we found} & \textbf{Check we added} \\
+    \textbf{Problem found} & \textbf{Check added} \\
     \midrule
-    Documents: missing citations or broken layout & Check citations and render every page \\
-    Notebooks: code drift or public solutions & Compare source code and scan for solution leaks \\
-    Website: broken pages or stale figures & Rebuild outputs and verify published pages \\
+    Missing citations or broken layout & Check citations and render every page \\
+    Notebook code drift or public solutions & Compare source code and scan for solution leaks \\
+    Broken website routes or stale figures & Rebuild outputs and verify published pages \\
     \bottomrule
   \end{tabular}
   \end{center}
   \vfill
   \begin{center}
-    \slidepoint{Claude and GPT helped me turn each recurring problem into a \textbf{repeatable check}.}
+    \slidepoint{The workflow grew more robust because every recurring problem left a \textbf{mechanical test}.}
   \end{center}
-  \vspace{1.25cm plus 1fill}
+  \vspace{1.1cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 7 --- continuity across AI tools and computers}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{resources/practices/working\_with\_ai\_agents.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/checklists/reproducibility_and_handoff_checklist.md}{\texttt{resources/checklists/reproducibility\_and\_handoff\_checklist.md}}}
+\begin{frame}{Task 6: Git and handoffs bridge tools and computers}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/checklists/reproducibility_and_handoff_checklist.md}{\texttt{resources/checklists/reproducibility\_and\_handoff\_checklist.md}}}
   \vfill
   \begin{center}\small
-    I switch between \textbf{Claude and OpenAI tools}, between \textbf{computers}, and between work sessions.
+    I switch between Claude and OpenAI tools, between computers, and between supervised and overnight sessions.
   \end{center}
-  \vspace{0.5em}
-  \begin{center}\small
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{8.7cm}@{}}
-    \toprule
-    \textbf{Persistent record} & \textbf{What the next tool or computer receives} \\
-    \midrule
-    Git repository & current files, commit history, and exact diffs \\
-    Handoff document & verified state, unresolved decisions, and the next bounded task \\
-    \bottomrule
-  \end{tabular}
-  \end{center}
-  \vspace{0.65em}
-  \begin{enumerate}\small\setlength\itemsep{0.3em}
-    \item Commit one coherent change and update the handoff.
-    \item The next tool or computer reads both before continuing.
-    \item Rerun the relevant gate/test. I review the remaining pedagogical choices.
+  \vspace{0.35em}
+  \begin{enumerate}\setlength\itemsep{0.38em}
+    \item The \textbf{goal document} defines phases, gates, safe decisions, and decisions reserved for me.
+    \item Each agent commits a coherent change and updates the \textbf{handoff} with verified state.
+    \item The next tool or computer reads the history and handoff, then reruns the relevant gate.
+    \item I make pedagogical and scientific judgments. Agents inventory, edit, build, and check.
   \end{enumerate}
   \vfill
   \begin{center}
-    \slidepoint{Git preserves the project state. Handoff documents preserve the \textbf{context}.}
+    \slidepoint{Git preserves state. Handoff documents preserve \textbf{intent and evidence}.}
   \end{center}
-  \vspace{0.75cm plus 1fill}
+  \vspace{0.55cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 7 --- start with four small project artifacts}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources}{\texttt{github.com/dowlinglab/claude-for-researchers/resources}}}
+\begin{frame}{Task 6: Coursepack sources and strategic gaps}
   \vfill
+  \begin{columns}[c]
+    \begin{column}{0.49\textwidth}
+      \centering
+      \includegraphics[width=0.98\linewidth,height=4.9cm,keepaspectratio,trim=65bp 185bp 70bp 270bp,clip]{figures/coursepack_sources.png}\\[0.4em]
+      {\small Cross-references to literature\\and the course website}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \centering
+      \includegraphics[width=0.98\linewidth,height=4.9cm,keepaspectratio,trim=65bp 420bp 70bp 50bp,clip]{figures/coursepack_gap.png}\\[0.4em]
+      {\small Space for a derivation\\or discussion in class}
+    \end{column}
+  \end{columns}
+  \vspace{0.5em}
   \begin{center}\small
-  \renewcommand{\arraystretch}{1.2}
-  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.55cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{5.6cm}@{}}
-    \toprule
-    \textbf{Project habit} & \textbf{What it records} & \textbf{Starting resource} \\
-    \midrule
-    Source map & files, commands, boundaries & \texttt{project\_entry\_point.md} \\
-    Research log & decisions, dead ends, evidence & \texttt{research\_log.md} \\
-    One gate/test & repeatable checks before review & \texttt{check\_docs.py} + \texttt{figure\_style/} \\
-    Handoff & verified state + human decisions & reproducibility + handoff checklist \\
-    \bottomrule
-  \end{tabular}
+    Students can trace the sources and work through the missing steps.
   \end{center}
-  \vfill
-  \begin{center}
-    \slidepoint{Start with one \textbf{source map}, one \textbf{log}, one \textbf{gate/test}, and one \textbf{handoff}.}
-  \end{center}
-  \vspace{0.9cm plus 1fill}
+  \vspace{0.6cm plus 1fill}
 \end{frame}

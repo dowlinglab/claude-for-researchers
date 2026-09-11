@@ -1,9 +1,8 @@
-# Open questions
+# Remaining follow-up items
 
-The final slide audit on September 11, 2026 found no unresolved content or layout issues in the 52-slide deck. Historical questions and their resolutions remain available in Git history through commit `2c55c74`.
+The September 11 practice-feedback implementation is recorded in [the feedback map](practice_feedback_2026-09-11.md). The current deck has 52 slides and six research tasks.
 
-The remaining follow-up items are:
-
-1. **Recheck time-sensitive claims immediately before October 15.** Product names, model availability and limits, Notre Dame AI approvals, and research-security restrictions can change. Use the primary sources tracked in [references.md](references.md).
-2. **Decide when to remove the title-slide `DRAFT` label.** It remains because Alex explicitly requested it for the practice version.
-3. **Build the separate handout, if still desired.** The scope is recorded in [handout/README.md](../handout/README.md); no handout source has been created.
+1. **Rehearse timing after the restructuring.** The target remains 40 minutes; the storyboard gives a provisional act-level allocation. No live timed rehearsal was performed during editing.
+2. **Recheck time-sensitive claims before October 15.** Product names, model availability and limits, Notre Dame approvals, and sponsor restrictions may change. Use [references](references.md). Antigravity's ND-plan exclusion was confirmed by Alex's September 11 account check; it is no longer an unresolved question.
+3. **Remove DRAFT when Alex requests it.** Retained on the title slide.
+4. **Build the separate handout if desired.** The [plan](../handout/README.md) is updated to the current talk arc; no handout source has been created.

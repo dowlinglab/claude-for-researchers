@@ -1,6 +1,6 @@
 # Slides
 
-Final Beamer deck for *Claude for Research: Beyond the Chatbot*. The presentation has 52 slides and is designed for a 40-minute talk followed by discussion.
+Current Beamer draft for *Claude for Research: Beyond the Chatbot*. The presentation has 52 slides and is designed for a 40-minute talk followed by discussion.
 
 ## Build and verify
 

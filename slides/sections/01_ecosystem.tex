@@ -21,40 +21,44 @@
   \end{columns}
   \vspace{0.8em}
   \begin{center}
-    \textbf{My experience, distilled into seven research task types}\\[0.5em]
+    \textbf{My experience, distilled into six research task types}\\[0.5em]
     \small
     \begin{tabular}{@{}p{4.7cm}p{4.7cm}@{}}
-      1.~Set up git for a project & 5.~Audit a manuscript \\[0.5em]
-      2.~Inherit a project's context & 6.~Project $\to$ manuscript \\[0.5em]
-      3.~Idea $\to$ report or proposal & 7.~Audit a course, end to end \\[0.5em]
-      4.~Paper code $\to$ public package & \\
+      1.~Set up agents and inherit a project & 4.~Audit a manuscript \\[0.5em]
+      2.~Paper code $\to$ public package & 5.~Project $\to$ manuscript \\[0.5em]
+      3.~Idea $\to$ report or proposal & 6.~Modernize a course \\[0.5em]
     \end{tabular}
   \end{center}
   \vfill
 \end{frame}
 
-\begin{frame}{Don't become loyal to a model}
+\begin{frame}{Project context and agent actions are complementary}
+  \ndlogonote{\scriptsize Sources and current access notes: \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/notes/references.md}{\texttt{notes/references.md}}}
   \vfill
-  \begin{center}
-  \begin{tabular}{@{}llll@{}}
-    \toprule
-    & \textbf{Chat} & \textbf{Coding agent} & \textbf{Grounded on your files} \\
-    \midrule
-    Google    & Gemini  & ---    & NotebookLM \\
-    OpenAI    & ChatGPT & Codex  & ChatGPT Projects \\
-    Anthropic & Claude  & Claude Code & Claude Projects \\
-    \bottomrule
-  \end{tabular}
+  \begin{columns}[c]
+    \begin{column}{0.47\textwidth}
+      \textbf{Context: what can it consult?}\\[0.5em]
+      \small ChatGPT Projects and Claude Projects collect instructions, files, and conversations. NotebookLM organizes work around sources.
+      \\[0.7em]Useful for: understanding papers and developing an argument.
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \textbf{Actions: what can it change?}\\[0.5em]
+      \small Codex, Claude Code, and Antigravity can work on repositories: inspect files, edit, run checks, and use Git.
+      \\[0.7em]Useful for: reproducing a result or revising a document.
+    \end{column}
+  \end{columns}
+  \vspace{0.8em}
+  \begin{center}\small
+    Web versus desktop is not the dividing line. Agent modes such as Claude Cowork can combine project context with connected folders.
   \end{center}
-  \vfill
-  \begin{center}
-    Become good at working with models instead. Rankings
-    change every few months; the workflow habits in this talk do not.
+  \vspace{0.4em}
+  \begin{center}\small
+    \textbf{Antigravity is not included in ND\textquotesingle s Google plan.}\\[0.25em]My ND account was ineligible when checked on September 11, 2026.
   \end{center}
-  \vfill
+  \vspace{0.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Desktop app, terminal, or editor --- same engine, three doors}
+\begin{frame}{Desktop app, terminal, or editor: choose your workspace}
   \vfill
   \begin{columns}[t]
     \begin{column}{0.32\textwidth}
@@ -67,7 +71,7 @@
     \end{column}
     \begin{column}{0.32\textwidth}
       \textbf{Editor extension}\\[0.3em]
-      {\small Same engine, inline in VS Code (or similar) with cursor-aware diffs. Best for a tight edit-review loop in code you're already reading.}
+      {\small Agent assistance inline in VS Code (or similar) with cursor-aware diffs. Best for a tight edit-review loop in code you're already reading.}
     \end{column}
   \end{columns}
   \vspace{0.8em}
