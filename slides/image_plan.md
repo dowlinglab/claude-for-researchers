@@ -89,7 +89,7 @@ Task 7 was rebuilt 2026-09-11 as a six-slide course-design story. Its opening us
 | 6 | Task 7 history | five-offering horizontal timeline + applications-first pivot | B | **revised 2026-09-11** — five compact boxes run left-to-right, using one body size and small gaps between distinct ideas; dates/system changes verified against the retired/current sites and git history |
 | 7 | Task 7 redesign goals | numbered list | text | no image needed — the four goals are the visual hierarchy |
 | 8 | Task 7 repository architecture | private/public repository → authoritative sources → derived artifacts → gates/tests | A/B | native two-row table, editable and projector-readable; the cross-repository leak check and Claude/GPT's role in designing the system are called out below it |
-| 9 | Task 7 verification gates | three-mode table + check categories | A | native text/code artifact; the takeaway credits Claude/GPT with turning recurring failures into tests while reserving judgment for the instructor |
+| 9 | Task 7 workflow robustness | document/notebook/website problem → check added table | A | native two-column table; defines gate/test for a non-software audience and credits Claude/GPT with turning failures into repeatable checks |
 | 10 | Task 7 bounded autonomy | five-step audit/review sequence | A | native text sequence; evidence lives in the source comments and handoff |
 | 11 | Task 7 starter kit | project habit → purpose → distributed resource table | A | native text with real repository filenames |
 

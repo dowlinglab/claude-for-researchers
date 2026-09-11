@@ -337,44 +337,30 @@
   \vspace{1.05cm plus 1fill}
 \end{frame}
 
-\begin{frame}[fragile]{Task 7 --- every recurring failure became a check}
+\begin{frame}{Task 7 --- the workflow became more robust over time}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/manuscript_audit.md}{\texttt{manuscript\_audit.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/check_docs.py}{\texttt{resources/scripts/check\_docs.py}}}
   \vfill
-  \begin{columns}[T]
-    \begin{column}{0.43\textwidth}
-      \small
-      \begin{tabular}{@{}ll@{}}
-        \toprule
-        \textbf{Mode} & \textbf{When} \\
-        \midrule
-        \texttt{--selftest} & prove checks can fail \\
-        \texttt{--fast} & ordinary change \\
-        \texttt{--full} & release / handoff \\
-        \bottomrule
-      \end{tabular}
-      \vspace{0.55em}
-
-      \begin{beamercolorbox}[sep=0.55em,wd=\linewidth]{codeblock}
-      \ttfamily\scriptsize
-      ./scripts/verify\_all.sh --fast
-      \end{beamercolorbox}
-    \end{column}
-    \begin{column}{0.51\textwidth}
-      \small
-      \begin{itemize}\setlength\itemsep{0.38em}
-        \item citations + locators
-        \item clipping + pagination
-        \item code sync + answer leaks
-        \item notebook execution + site routes
-        \item figure freshness + greyscale
-      \end{itemize}
-    \end{column}
-  \end{columns}
+  \begin{center}\small
+    \textbf{Gate/test} = a repeatable check that must pass before publishing.
+  \end{center}
+  \vspace{0.45em}
+  \begin{center}\small
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.7cm}>{\raggedright\arraybackslash}p{7.0cm}@{}}
+    \toprule
+    \textbf{Problem we found} & \textbf{Check we added} \\
+    \midrule
+    Documents: missing citations or broken layout & Check citations and render every page \\
+    Notebooks: code drift or public solutions & Compare source code and scan for solution leaks \\
+    Website: broken pages or stale figures & Rebuild outputs and verify published pages \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
   \vfill
   \begin{center}
-    \slidepoint{Claude and GPT helped turn recurring failures into tests. Human review focuses on \textbf{judgment}.}
+    \slidepoint{Claude and GPT helped me turn each recurring problem into a \textbf{repeatable check}.}
   \end{center}
-  \vspace{1.55cm plus 1fill}
+  \vspace{1.25cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Task 7 --- bounded autonomy, followed by instructor review}
