@@ -363,3 +363,7 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 - Slide 37 now reads from Task 1 at the top to Task 5 at the bottom, with centered boxes sized to their text.
 - Plus signs between Tasks 1–4 emphasize that their outputs combine; the downward arrow leads to the manuscript.
 - Rebuilt and visually checked slide 37; no LaTeX layout warnings.
+
+### 2026-09-11: Slide 40 title
+
+- Adopted “Four Goals... Starting One Week Before the First Lecture.” The requested title fits on one line at the existing title size; rebuilt and visually checked slide 40.

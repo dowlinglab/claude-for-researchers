@@ -54,7 +54,7 @@ Task 1 establishes the workspace. Tasks 2–3 build software and literature-grou
 37. Task 5: Draft a manuscript from the previous tasks
 38. Task 5: Figures first, then outline, sections, and revision
 39. Task 6: Modernize a course across five offerings
-40. Four goals; the sprint starts the week before class
+40. Four Goals... Starting One Week Before the First Lecture
 41. Task 6: The course uses two repositories
 42. Task 6: Each failure became a repeatable check
 43. Task 6: Git and handoffs bridge tools and computers
