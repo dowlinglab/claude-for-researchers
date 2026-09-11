@@ -406,3 +406,9 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 - The editor reported missing `fontawesome5.sty`, followed by an emergency stop. The command-line TeX installation could locate the package, suggesting a different editor TeX environment.
 - Removed the dependency and replaced its check/cross/question symbols with standard LaTeX equivalents. The unused image placeholder now uses a text label.
 - Rebuilt successfully without Font Awesome in the dependency recorder and visually checked slides 35 and 46–48. No LaTeX layout warnings. The editor itself still needs a new typeset run to verify its environment.
+
+### 2026-09-11: TexpadTeX compatibility follow-up
+
+- The supplied TexpadTeX log confirms the Font Awesome error is resolved. Its older LaTeX format rejects `\textquotesingle`; replaced that command on slide 7 with an ordinary apostrophe.
+- Reduced trailing spacing on slides 37, 38, 39, 42, 44, and 46 by more than the small vertical excess reported by TexpadTeX. Preserved font sizes and content.
+- The command-line build passes without warnings, and all seven changed slides were visually checked. TexpadTeX needs another run to confirm its engine-specific warnings are resolved.
