@@ -2,6 +2,17 @@
 
 Decisions not yet made. Once resolved, move the outcome into [seminar_notes.md](seminar_notes.md) (as a dated decision) and, if it changes the plan, update [outline.md](../outline.md) or [seminar_design.md](seminar_design.md), then delete the item from this list.
 
+## Hand-off, 2026-09-11 (resuming on a different computer)
+
+Talk is **17 September 2026** — 6 days out as of this note. Last commit on this machine: `93ea871` (2026-09-04), "Clean up stale open questions; fill in vendor-doc references; document doi_checker." Working tree was clean at hand-off; `main` was up to date with `origin/main`. As of 2026-09-04, every `% TODO` comment in `slides/sections/*.tex` had been resolved except one durable sourcing note kept on purpose (`04_act3_challenge.tex:51`, "numbers are illustrative/synthetic" — not an action item). The deck compiled clean, 52 pages, zero LaTeX warnings, and every touched slide was visually re-rendered and checked (style_guide.md rule 10).
+
+Four things still genuinely open, in rough priority order:
+
+1. **NotebookLM vs. "Gemini Notebook" naming — needs a decision.** While sourcing `references.md`, found Google's help center now says "Gemini Notebook" where it used to say "NotebookLM." ND's own AI@ND page (confirmed by direct browser read 2026-09-02) still says "NotebookLM," and that's what the Epilogue's approved-tools table currently uses. Full flag: [references.md](references.md), "Google" section. Action: re-check `ai.nd.edu` close to the talk (the `WebFetch` tool can't reach it — TLS error, noted in that file; the in-app Browser tool worked on 2026-09-02) and decide which name the slide should use.
+2. **Task 7's course-site screenshot still not captured** (`ndcbe.github.io/optimization`). The opening slide ships with a typeset scope-list instead in the meantime (intentional fallback), but `slides/image_plan.md` row 6 still marks the real screenshot "not yet captured." Needs a live session with Alex present and Chrome connected — a background pass can't do this step (see that file's own capture-constraint note).
+3. **Handout not yet built.** `handout/` only has its scope `README.md` (1.5-page, front-and-back target) — no actual content. Deliberately deferred until the slides were finalized; the slides are now effectively final, so this is likely the next real body of work.
+4. **`notes/seminar_notes.md` is stale** — last touched 2026-09-02. The 2026-09-04 TODO sweep and the reference/open-questions cleanup are logged in `slides/storyboard.md`'s revision log instead, not there. Not urgent, just a gap if `seminar_notes.md` is being relied on as the master decision log.
+
 ## Logistics
 - ~~Start time and location~~ — resolved: 11:00 AM–12:00 PM, Carey Auditorium, 107 Hesburgh Library.
 - ~~Room AV / internet access~~ — resolved: Alex presents from his own laptop; room A/V is reasonable, but the room does not support audience-interactive activities (e.g., live polling). Live, presenter-driven demos are workable; no interactive exercises planned.
