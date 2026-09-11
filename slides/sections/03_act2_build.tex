@@ -74,18 +74,19 @@
   \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Task 4 --- baseline before touching anything}
+\begin{frame}{Task 4 --- establish a reproducible baseline}
   \vfill
-  \begin{center}
-    Refactoring code behind a published result, with no safety net, means you can never prove the answer didn't move.
-  \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    The gotcha: pin the \textit{original} code's exact output as a regression test \textbf{before} touching a single line of the new structure --- not partway through, once refactoring has already started.
-  \end{center}
-  \vspace{0.6em}
-  \begin{center}
-    \slidepoint{Every future change either matches the pinned value, or it doesn't --- no ``looks about right.''}
+  \begin{enumerate}\setlength\itemsep{0.45em}
+    \item \textbf{Find dependency clues} in the paper, report, and codebase
+    \item \textbf{Create a clean Conda environment} from the inferred package versions
+    \item \textbf{Reproduce results systematically}, working from easiest to hardest
+    \item \textbf{Record coverage}: what reproduced, what failed, and what was not attempted
+    \item \textbf{Freeze the setup}: environment file plus instructions tested from a clean install
+    \item \textbf{Save trusted result artifacts} as golden regression baselines
+  \end{enumerate}
+  \vspace{0.55em}
+  \begin{center}\small
+    \textit{Optional after the baseline is stable: update packages, then repeat the full reproduction.}
   \end{center}
   \vfill
 \end{frame}
