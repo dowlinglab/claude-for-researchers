@@ -25,15 +25,15 @@
     \begin{column}{0.48\textwidth}
       \textbf{This is}
       \begin{itemize}
-        \item one year of my experiences, including failures
-        \item mostly model-independent
-        \item things to change tomorrow
+        \item lessons from one year of use, including failures
+        \item mostly model-independent practices
+        \item changes you can make tomorrow
       \end{itemize}
     \end{column}
   \end{columns}
   \vspace{0.8em}
   \begin{center}
-    \textbf{My experience, distilled into seven task types}\\[0.5em]
+    \textbf{My experience, distilled into seven research task types}\\[0.5em]
     \small
     \begin{tabular}{@{}p{4.7cm}p{4.7cm}@{}}
       1.~Set up git for a project & 5.~Audit a manuscript \\[0.5em]
@@ -151,7 +151,7 @@
   \vspace{-0.75cm}
   \begin{columns}[t]
     \begin{column}{0.46\textwidth}
-      {\small\textbf{practices/} \scriptsize(10 -- the doctrine)}
+      {\small\textbf{practices/} \scriptsize(10 -- guides)}
       \begin{itemize}\scriptsize\setlength\itemsep{0.15em}
         \item grant\_proposal\_writing
         \item latex\_overleaf\_workflow
@@ -164,6 +164,11 @@
         \item working\_with\_ai\_agents
         \item writing\_style\_guide
       \end{itemize}
+      \vspace{0.25em}
+      {\small\textbf{checklists/} \scriptsize(1 -- verify + hand off)}
+      \begin{itemize}\scriptsize\setlength\itemsep{0.15em}
+        \item reproducibility\_and\_handoff\_checklist
+      \end{itemize}
     \end{column}
     \begin{column}{0.5\textwidth}
       {\small\textbf{prompts/} \scriptsize(5 -- ready to paste in)}
@@ -175,8 +180,9 @@
         \item getting\_started
       \end{itemize}
       \vspace{0.5em}
-      {\small\textbf{scripts/} \scriptsize(3 -- tools)}
+      {\small\textbf{scripts/} \scriptsize(4 -- tools)}
       \begin{itemize}\scriptsize\setlength\itemsep{0.15em}
+        \item check\_docs.py
         \item doi\_checker
         \item figure\_style
         \item latexdiff\_check.sh
@@ -198,18 +204,18 @@
 % acts without revealing their specific content. Its row in the Epilogue's
 % summary matrix completes the loop.
 
-\begin{frame}{This talk was built following the best practices I am sharing in the talk}
+\begin{frame}{This talk was built with the practices it recommends}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/ND_Beamer_Template}{\texttt{github.com/dowlinglab/ND\_Beamer\_Template}}}
   \vspace{0.3cm}
   \begin{enumerate}\setlength\itemsep{0.6em}
     \item Identified 10+ AI-accelerated projects from the past year
-    \item Dispatched agents (Claude Opus) to examine each one's full history
+    \item Dispatched agents to examine each project's full history
     \item Distilled the findings into actionable practice guides
     \item Crafted a story arc and outline
-    \item Built these slides iteratively with Claude
+    \item Built these slides iteratively with Claude and GPT
       \begin{itemize}\small\setlength\itemsep{0.2em}
-        \item Claude analyzed my own past talks to match my style
-        \item I did a lot of editing and refining
+        \item Claude analyzed my past talks to match my style
+        \item I made the editorial decisions
       \end{itemize}
   \end{enumerate}
   \vfill

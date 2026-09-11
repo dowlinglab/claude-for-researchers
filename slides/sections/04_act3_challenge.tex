@@ -205,7 +205,7 @@
 \end{frame}
 
 \begin{frame}{Task 6 --- verify the literature the same way you verify the code (Task 3)}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/literature_review.md}{\texttt{resources/practices/literature\_review.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/writing_style_guide.md}{\texttt{writing\_style\_guide.md}}}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/literature_review.md}{\texttt{resources/practices/literature\_review.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/writing_style_guide.md}{\texttt{resources/practices/writing\_style\_guide.md}}}
   \vfill
   \begin{center}
     Every cited paper was checked against its own PDF, not memory: seventy-six papers, six citations wrong --- one with the finding stated backwards.
@@ -317,7 +317,7 @@
 \end{frame}
 
 \begin{frame}{Task 7 --- two repositories, one course system}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{scientific\_computing\_workflow.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{scientific\_figures\_tables.md}}}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{resources/practices/scientific\_computing\_workflow.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{resources/practices/scientific\_figures\_tables.md}}}
   \vfill
   \begin{center}\small
   \renewcommand{\arraystretch}{1.15}
@@ -335,14 +335,14 @@
     \textbf{Cross-repository gate/test:} the solution-leak checker enforces the private/public boundary.
 
     \vspace{0.45em}
-    Claude and GPT helped me build the system: map goals to artifacts and likely failures to tests.
+    Claude and GPT helped me map goals to artifacts and likely failures to tests.
   \end{center}
   \vfill
   \vspace{1.05cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Task 7 --- the workflow became more robust over time}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/manuscript_audit.md}{\texttt{manuscript\_audit.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/check_docs.py}{\texttt{resources/scripts/check\_docs.py}}}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/manuscript_audit.md}{\texttt{resources/practices/manuscript\_audit.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/check_docs.py}{\texttt{resources/scripts/check\_docs.py}}}
   \vfill
   \begin{center}\small
     \textbf{Gate/test} = a repeatable check that must pass before publishing.
@@ -368,7 +368,7 @@
 \end{frame}
 
 \begin{frame}{Task 7 --- continuity across AI tools and computers}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{working\_with\_ai\_agents.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/checklists/reproducibility_and_handoff_checklist.md}{\texttt{reproducibility\_and\_handoff\_checklist.md}}}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{resources/practices/working\_with\_ai\_agents.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/checklists/reproducibility_and_handoff_checklist.md}{\texttt{resources/checklists/reproducibility\_and\_handoff\_checklist.md}}}
   \vfill
   \begin{center}\small
     I switch between \textbf{Claude and OpenAI tools}, between \textbf{computers}, and between work sessions.
@@ -389,7 +389,7 @@
   \begin{enumerate}\small\setlength\itemsep{0.3em}
     \item Commit one coherent change and update the handoff.
     \item The next tool or computer reads both before continuing.
-    \item Rerun the relevant gate/test, then return pedagogical choices to me.
+    \item Rerun the relevant gate/test. I review the remaining pedagogical choices.
   \end{enumerate}
   \vfill
   \begin{center}
@@ -402,21 +402,21 @@
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources}{\texttt{github.com/dowlinglab/claude-for-researchers/resources}}}
   \vfill
   \begin{center}\small
-  \renewcommand{\arraystretch}{1.4}
-  \begin{tabular}{@{}p{3.0cm}p{4.1cm}p{5.05cm}@{}}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.55cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{5.6cm}@{}}
     \toprule
     \textbf{Project habit} & \textbf{What it records} & \textbf{Starting resource} \\
     \midrule
     Source map & files, commands, boundaries & \texttt{project\_entry\_point.md} \\
     Research log & decisions, dead ends, evidence & \texttt{research\_log.md} \\
-    One verification gate & repeatable checks before review & \texttt{check\_docs.py} + \texttt{figure\_style/} \\
+    One gate/test & repeatable checks before review & \texttt{check\_docs.py} + \texttt{figure\_style/} \\
     Handoff & verified state + human decisions & reproducibility + handoff checklist \\
     \bottomrule
   \end{tabular}
   \end{center}
   \vfill
   \begin{center}
-    \slidepoint{Start with one \textbf{source map}, one \textbf{log}, one \textbf{gate}, and one \textbf{handoff}.}
+    \slidepoint{Start with one \textbf{source map}, one \textbf{log}, one \textbf{gate/test}, and one \textbf{handoff}.}
   \end{center}
-  \vspace{1.3cm plus 1fill}
+  \vspace{0.9cm plus 1fill}
 \end{frame}
