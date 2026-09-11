@@ -400,3 +400,9 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 
 - Slide 52 now explicitly offers Claude/ChatGPT for both accounts and installation. The activity explores this repository, then uses the getting-started interview to recommend resources for the participant's own research.
 - Updated the companion prompt's introductory activity to match. Rebuilt and visually checked slide 52; no layout warnings.
+
+### 2026-09-11: Editor build dependency fix
+
+- The editor reported missing `fontawesome5.sty`, followed by an emergency stop. The command-line TeX installation could locate the package, suggesting a different editor TeX environment.
+- Removed the dependency and replaced its check/cross/question symbols with standard LaTeX equivalents. The unused image placeholder now uses a text label.
+- Rebuilt successfully without Font Awesome in the dependency recorder and visually checked slides 35 and 46–48. No LaTeX layout warnings. The editor itself still needs a new typeset run to verify its environment.
