@@ -308,3 +308,11 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 **Resource integration:** Task 7 now directly names or links the scientific-computing and figure practices, manuscript audit, agent and writing-style practices, project-entry and research-log templates, documentation/figure checks, and reproducibility/handoff checklist.
 
 **Verification:** Rebuilt the full 52-page deck, ran `resources/scripts/check_docs.py` with no issues, and rendered/inspected all six revised Task 7 slides (pages 39–44). The revised frames add no overfull boxes.
+
+---
+
+## 2026-09-11 (Slide 9 model and usage re-check)
+
+**Corrections:** Added GPT-6 Astra, announced September 3, to the OpenAI model sequence. Corrected the Codex usage description from only a five-hour window to five-hour and weekly windows, with a plan-dependent qualifier.
+
+**Evidence:** OpenAI's current developer model catalog lists Astra as the flagship for the hardest end-to-end work. The signed-in EDU account's usage meter reports 300-minute and 10,080-minute windows, confirming a seven-day window alongside the five-hour window.

@@ -101,10 +101,11 @@
 % both verified via web search 2026-09-04 -- re-check before the talk,
 % this is exactly the kind of claim CLAUDE.md rule 5 warns changes fast.
 % Anthropic meters by session (5hr rolling window + weekly cap across all
-% models, no published token count); OpenAI/Codex publishes per-model-tier
-% use-count ranges on a 5hr rolling window (ChatGPT's plain text-chat caps
-% were dropped entirely Aug 2026; images/voice/Deep Research/Agent mode/
-% Codex windows remain capped). Frontier models as of Sept 2026: Anthropic
+% models, no published token count). Re-checked 2026-09-11: OpenAI/Codex
+% has both a 5-hour window and, depending on plan, a weekly window. The
+% signed-in EDU account's live meter reports 300- and 10,080-minute windows;
+% OpenAI's usage guidance also describes both windows as plan-dependent.
+% Frontier models as of Sept 2026: Anthropic
 % Haiku 4.5 / Sonnet 5 / Opus 5, plus Fable 5.1 (released 2026-09-01, three
 % days before this slide was written) -- Fable is a "Mythos-class" tier
 % ABOVE Opus, not a same-ladder step up: Anthropic's own announcement
@@ -112,10 +113,12 @@
 % generally available," with the largest lead over Opus on the longest,
 % most complex, most autonomous tasks; Mythos 5 is the same underlying
 % model with safeguards lifted for authorized users (e.g. cybersecurity
-% research). OpenAI GPT-5.6 in three sizes, Sol/Terra/Luna. Sonnet 5 is
-% 2-3x cheaper than Sol and the more practical daily default for coding/
-% writing/agents; Sol leads on the hardest agentic/tool-calling
-% benchmarks. Complements (does not repeat) "Don't become loyal to a
+% research). OpenAI announced GPT-6 Astra on 2026-09-03. The current official
+% model catalog calls Astra its flagship for the hardest end-to-end work,
+% with GPT-5.6 Terra balancing intelligence/cost and Luna serving high-volume,
+% cost-sensitive work:
+% https://developers.openai.com/api/docs/models
+% Complements (does not repeat) "Don't become loyal to a
 % model" above -- that slide is vendor/product-category; this one is
 % specific models and what they cost you to use.
 \begin{frame}{Which model, and how much of it do you get}
@@ -126,17 +129,18 @@
     & \textbf{Frontier models, small $\to$ large} & \textbf{Usage meter} \\
     \midrule
     Anthropic & Haiku 4.5, Sonnet 5, Opus 5, Fable 5.1 & 5-hour session + weekly cap \\
-    OpenAI & GPT-5.6 Luna, Terra, Sol & per-model 5-hour window \\
+    OpenAI & GPT-5.6 Luna, Terra, Sol; GPT-6 Astra & 5-hour + weekly windows* \\
     \bottomrule
   \end{tabular}
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    Neither publishes a token budget --- both meter usage as a share of a rolling window, not a number you can count down.
+    Neither publishes a token budget for these subscriptions. Both show remaining usage across time windows.\\[0.25em]
+    {\scriptsize * OpenAI limits vary by plan.}
   \end{center}
   \vspace{0.4em}
   \begin{center}
-    \slidepoint{The mid-tier model (\textbf{Sonnet}, \textbf{Terra}) is usually the \textbf{right default} --- save the largest for when it's actually the bottleneck.}
+    \slidepoint{The mid-tier model (\textbf{Sonnet}, \textbf{Terra}) is usually the \textbf{right default}. Save Astra or Fable for the hardest work.}
   \end{center}
   \vfill
 \end{frame}
