@@ -3,17 +3,22 @@
 \begin{frame}{Task 4: Audit a manuscript before submission}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/manuscript_audit.md}{\texttt{resources/prompts/manuscript\_audit.md}}}
   \vspace{0.35em}
-  \begin{center}\small
-    \textbf{Prerequisites:} the manuscript and analysis are under version control; the computational environment runs; the literature corpus from Task 3 is available to the agent.
-  \end{center}
-  \vspace{0.65em}
-  \begin{itemize}\setlength\itemsep{0.5em}
+  {\small
+    \textbf{Prerequisites}
+    \begin{itemize}\small\setlength\itemsep{0.1em}
+      \item The manuscript and analysis are under version control.
+      \item The computational environment runs.
+      \item The literature corpus from Task 3 is available to the agent.
+    \end{itemize}
+  }
+  \vspace{0.5em}
+  \begin{enumerate}\setlength\itemsep{0.35em}
     \item Do the methods match what the code actually did?
     \item Can each reported number be recomputed and traced to a results artifact?
     \item Do figure labels, captions, and prose agree with the underlying data?
     \item Do literature claims match the source papers?
     \item Does the manuscript comply with the journal's current instructions for authors?
-  \end{itemize}
+  \end{enumerate}
   \vspace{1.0cm plus 1fill}
 \end{frame}
 
@@ -52,19 +57,27 @@
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/tree/main/resources/scripts/doi_checker}{\texttt{resources/scripts/doi\_checker/}}}
   \vfill
   \begin{center}
-  \begin{tikzpicture}[font=\small, node distance=0.9cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.6cm, minimum height=1.2cm, align=center]
-      (a) {Versioned\\\texttt{ref.bib}};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=4.2cm, minimum height=1.5cm, align=center, right=of a]
-      (b) {\textbf{Existing DOI}\\\scriptsize Crossref: title + first author};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=4.2cm, minimum height=1.5cm, align=center, below=0.55cm of b]
-      (c) {\textbf{Missing DOI}\\\scriptsize search Crossref and rank candidate matches};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=3.1cm, minimum height=1.5cm, align=center, right=of b, yshift=-1.02cm, fill=CodeBg]
-      (d) {Reviewable report\\\scriptsize match, check, mismatch, unresolved; candidates};
-    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
-    \draw[-{Stealth[length=6pt]}, thick] (a) |- (c);
-    \draw[-{Stealth[length=6pt]}, thick] (b) -- (d);
-    \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
+  \begin{tikzpicture}[font=\small,
+      doi mode/.style={draw=NDBlue, rounded corners=2pt, text width=4.0cm,
+        minimum height=1.5cm, inner sep=0.1cm, align=center}]
+    \node[draw=NDBlue, rounded corners=2pt, text width=2.2cm,
+      minimum height=1.2cm, align=center] (a) at (0,0)
+      {Versioned\\\texttt{ref.bib}};
+    \node[doi mode] (b) at (4.7,1.05)
+      {\textbf{Existing DOI}\\{\scriptsize Crossref: title + first author}};
+    \node[doi mode] (c) at (4.7,-1.05)
+      {\textbf{Missing DOI}\\{\scriptsize Search Crossref and\\rank candidate matches}};
+    \node[draw=NDGold, rounded corners=2pt, text width=3.4cm,
+      minimum height=1.5cm, align=center, fill=CodeBg] (d) at (10,0)
+      {Reviewable report\\{\scriptsize match, check, mismatch,\\unresolved; candidates}};
+    \coordinate (split) at (1.9,0);
+    \coordinate (merge) at (7.55,0);
+    \draw[thick] (a.east) -- (split);
+    \draw[-{Stealth[length=6pt]}, thick] (split) |- (b.west);
+    \draw[-{Stealth[length=6pt]}, thick] (split) |- (c.west);
+    \draw[thick] (b.east) -| (merge);
+    \draw[thick] (c.east) -| (merge);
+    \draw[-{Stealth[length=6pt]}, thick] (merge) -- (d.west);
   \end{tikzpicture}
   \end{center}
   \vspace{0.7em}

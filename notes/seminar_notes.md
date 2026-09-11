@@ -351,3 +351,9 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 **Verification:** Rebuilt the 52-page PDF, rendered and inspected the complete deck, then re-rendered the final coursepack and radio-book changes. The final LaTeX log has no overfull/underfull boxes or warning messages. Confirmed the compiled slide 31 contains the direct Overleaf documentation hyperlink, slide 7 contains the ND Antigravity correction, and the submitted abstract is unchanged. The documentation checker and Git whitespace check pass. Reproduced the illustrative `latexdiff` from the distributed source pair.
 
 **Remaining:** A timed rehearsal of the revised sequence, a pre-event product/policy recheck, optional handout production, and removing DRAFT when requested. No timed rehearsal or handout build was performed. Changes are committed locally; nothing was pushed.
+
+### 2026-09-11: Audit slide layout refinements
+
+- Slide 34: split prerequisites into small-font bullets and number the five audit questions.
+- Slide 36: give Existing DOI and Missing DOI a shared fixed text width and minimum height, wrap supporting text, and use aligned right-angle branching/merging connectors.
+- Rebuilt the 52-slide deck and visually checked both affected slides; no LaTeX layout warnings.
