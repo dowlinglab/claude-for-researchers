@@ -312,30 +312,26 @@
   \vfill
 \end{frame}
 
-\begin{frame}{Task 7 --- name the authoritative source}
+\begin{frame}{Task 7 --- two repositories, one course system}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{scientific\_computing\_workflow.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{scientific\_figures\_tables.md}}}
   \vfill
   \begin{center}\small
-  \renewcommand{\arraystretch}{1.35}
-  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.25cm}>{\centering\arraybackslash}p{0.65cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{3.35cm}@{}}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{6.15cm}>{\raggedright\arraybackslash}p{3.0cm}@{}}
     \toprule
-    \textbf{Authoritative source} & & \textbf{Derived artifacts} & \textbf{Gate} \\
+    \textbf{Repository} & \textbf{Authoritative sources $\longrightarrow$ derived artifacts} & \textbf{Gates} \\
     \midrule
-    Private LaTeX & $\longrightarrow$ & instructor, student, and alignment coursepacks & citations, clipping, pagination \\
-    Development notebooks & $\longrightarrow$ & published notebooks + course website & leaks, code sync, execution, routes \\
-    Figure scripts + data & $\longrightarrow$ & coursepack + website figures & freshness, media, greyscale \\
+    Private repository\par\texttt{optimization-}\par\texttt{private} & coursepack + assessment sources\par$\longrightarrow$ instructor, student + alignment PDFs & citations, clipping, pagination \\
+    Public repository\par\texttt{optimization} & notebooks + figure scripts/data\par$\longrightarrow$ published notebooks, website + figures & sync, execution, routes, freshness \\
     \bottomrule
   \end{tabular}
   \end{center}
-  \vspace{0.55em}
+  \vspace{0.5em}
   \begin{center}\small
-    The private/public boundary is explicit; the leak checker enforces it.
+    \textbf{Cross-repository gate:} the solution-leak checker enforces the private/public boundary.
   \end{center}
   \vfill
-  \begin{center}
-    \slidepoint{Name the \textbf{source} before an agent changes its connected artifacts.}
-  \end{center}
-  \vspace{1.0cm plus 1fill}
+  \vspace{1.2cm plus 1fill}
 \end{frame}
 
 \begin{frame}[fragile]{Task 7 --- every recurring failure became a check}

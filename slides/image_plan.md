@@ -88,7 +88,7 @@ Task 7 was rebuilt 2026-09-11 as a six-slide course-design story. Its opening us
 | 5 | Status report wrong on eleven items | none | — | text only; the specific number stays but no document is shown |
 | 6 | Task 7 history | five-offering horizontal timeline + applications-first pivot | B | **revised 2026-09-11** — five compact boxes run left-to-right, using one body size and small gaps between distinct ideas; dates/system changes verified against the retired/current sites and git history |
 | 7 | Task 7 redesign goals | numbered list | text | no image needed — the four goals are the visual hierarchy |
-| 8 | Task 7 source architecture | source → derived artifact → gate table | A/B | native vector/text, editable and projector-readable |
+| 8 | Task 7 repository architecture | private/public repository → authoritative sources → derived artifacts → gates | A/B | native two-row table, editable and projector-readable; the cross-repository leak check is called out below it |
 | 9 | Task 7 verification gates | three-mode table + check categories | A | native text/code artifact; a browser screenshot would obscure the reusable pattern |
 | 10 | Task 7 bounded autonomy | five-step audit/review sequence | A | native text sequence; evidence lives in the source comments and handoff |
 | 11 | Task 7 starter kit | project habit → purpose → distributed resource table | A | native text with real repository filenames |
