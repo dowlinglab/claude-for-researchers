@@ -53,9 +53,9 @@
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\small]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.6cm, minimum height=1.1cm, align=center]
+    \node[nd box, minimum width=3.6cm, minimum height=1.1cm, align=center]
       (a) {\texttt{sampler.py}\\\scriptsize one file, everything};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=4.0cm, minimum height=1.1cm, align=center, right=1.2cm of a, fill=CodeBg]
+    \node[nd highlight, minimum width=4.0cm, minimum height=1.1cm, align=center, right=1.2cm of a]
       (b) {\texttt{gp.py}, \texttt{mixture.py}\\\texttt{acquisition.py}, \ldots};
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
   \end{tikzpicture}
@@ -164,13 +164,13 @@
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\small, node distance=0.85cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.8cm, minimum height=1.2cm, align=center]
+    \node[nd box, minimum width=2.8cm, minimum height=1.2cm, align=center]
       (a) {Question +\\\texttt{literature.md}};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.8cm, minimum height=1.2cm, align=center, right=of a]
+    \node[nd box, minimum width=2.8cm, minimum height=1.2cm, align=center, right=of a]
       (b) {Claim and evidence\\outline};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.8cm, minimum height=1.2cm, align=center, right=of b]
+    \node[nd box, minimum width=2.8cm, minimum height=1.2cm, align=center, right=of b]
       (c) {Draft one\\section at a time};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=3.0cm, minimum height=1.2cm, align=center, right=of c, fill=CodeBg]
+    \node[nd highlight, minimum width=3.0cm, minimum height=1.2cm, align=center, right=of c]
       (d) {Check every claim\\against source PDFs};
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
     \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);

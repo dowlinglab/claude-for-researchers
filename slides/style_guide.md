@@ -42,3 +42,7 @@ The May 2026 faculty seminar (a different genre — a technical research talk to
 ## Current status
 
 The earlier 52-slide deck was audited and rendered on 2026-09-11. The practice-feedback revision is tracked in `../notes/practice_feedback_2026-09-11.md`. Its detailed editorial comments were then removed from the LaTeX sources; they remain recoverable in Git history through commit `2c55c74`. Rebuild and visually inspect every affected frame after any future content, layout, or `\ndcornerlogo` change.
+
+## Box style update (2026-09-11)
+
+Use slide 39’s box treatment throughout the deck: white interiors, ND gold outlines at 0.8pt, 2pt rounded corners, and ND blue text. Highlight boxes with an ND green outline, including the active act on section dividers. Use the shared `nd box` and `nd highlight` TikZ styles; retain content-appropriate dimensions and text sizes. This supersedes earlier recommendations for filled or differently colored diagram boxes and act-strip nodes.

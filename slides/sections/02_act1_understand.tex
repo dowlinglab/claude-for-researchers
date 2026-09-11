@@ -38,11 +38,11 @@
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\normalsize, node distance=1.3cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.1cm, minimum height=1.6cm, align=center]
+    \node[nd box, minimum width=3.1cm, minimum height=1.6cm, align=center]
       (a) {\textbf{LLM}\\\small the model};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=3.9cm, minimum height=1.6cm, align=center, right=of a]
+    \node[nd box, minimum width=3.9cm, minimum height=1.6cm, align=center, right=of a]
       (b) {\textbf{Chatbot}\\\small conversation + attachments};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=4.2cm, minimum height=1.6cm, align=center, right=of b, fill=CodeBg]
+    \node[nd highlight, minimum width=4.2cm, minimum height=1.6cm, align=center, right=of b]
       (c) {\textbf{Agent}\\\small model + tools + workspace};
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
     \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);

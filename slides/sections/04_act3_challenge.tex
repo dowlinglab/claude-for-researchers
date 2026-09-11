@@ -59,17 +59,17 @@
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\small,
-      doi mode/.style={draw=NDBlue, rounded corners=2pt, text width=4.0cm,
+      doi mode/.style={nd box, text width=4.0cm,
         minimum height=1.5cm, inner sep=0.1cm, align=center}]
-    \node[draw=NDBlue, rounded corners=2pt, text width=2.2cm,
+    \node[nd box, text width=2.2cm,
       minimum height=1.2cm, align=center] (a) at (0,0)
       {Versioned\\\texttt{ref.bib}};
     \node[doi mode] (b) at (4.7,1.05)
       {\textbf{Existing DOI}\\{\scriptsize Crossref: title + first author}};
     \node[doi mode] (c) at (4.7,-1.05)
       {\textbf{Missing DOI}\\{\scriptsize Search Crossref and\\rank candidate matches}};
-    \node[draw=NDGold, rounded corners=2pt, text width=3.4cm,
-      minimum height=1.5cm, align=center, fill=CodeBg] (d) at (10,0)
+    \node[nd highlight, text width=3.4cm,
+      minimum height=1.5cm, align=center] (d) at (10,0)
       {Reviewable report\\{\scriptsize match, check, mismatch,\\unresolved; candidates}};
     \coordinate (split) at (1.9,0);
     \coordinate (merge) at (7.55,0);
@@ -93,8 +93,8 @@
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\small, node distance=0.30cm,
-      task box/.style={draw=NDBlue, rounded corners=2pt, minimum height=0.68cm,
-        inner xsep=0.18cm, align=center, fill=black!2}]
+      task box/.style={nd box, minimum height=0.68cm,
+        inner xsep=0.18cm, align=center}]
     \node[task box]
       (a) {\textbf{Task 1}: versioned workspace, environment, instructions, reproducible baseline};
     \node[task box, below=of a]
@@ -106,7 +106,7 @@
     \node[font=\small, inner sep=0pt] at ($(a.south)!0.5!(b.north)$) {$+$};
     \node[font=\small, inner sep=0pt] at ($(b.south)!0.5!(c.north)$) {$+$};
     \node[font=\small, inner sep=0pt] at ($(c.south)!0.5!(d.north)$) {$+$};
-    \node[task box, draw=NDGold, minimum height=0.76cm, below=0.38cm of d, fill=CodeBg]
+    \node[task box, draw=IrishGreen, minimum height=0.76cm, below=0.38cm of d]
       (e) {\textbf{Task 5}: a manuscript with evidence attached};
     \draw[-{Stealth[length=7pt]}, thick] (d.south) -- (e.north);
   \end{tikzpicture}
@@ -124,15 +124,15 @@
   \begin{center}
   \resizebox{0.94\textwidth}{!}{%
   \begin{tikzpicture}[font=\small, node distance=0.75cm]
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center]
+    \node[nd box, minimum width=2.7cm, minimum height=1.3cm, align=center]
       (a) {Develop the\\key figures};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of a]
+    \node[nd box, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of a]
       (b) {Outline claims\\around figures};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of b]
+    \node[nd box, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of b]
       (c) {Draft one\\section at a time};
-    \node[draw=NDBlue, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of c]
+    \node[nd box, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of c]
       (d) {Edit against corpus\\and style guide};
-    \node[draw=NDGold, rounded corners=2pt, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of d, fill=CodeBg]
+    \node[nd highlight, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of d]
       (e) {Audit, render,\\and revise};
     \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
     \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
@@ -159,7 +159,7 @@
   \vspace{0.8cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 6: Modernize a course across five offerings}
+\begin{frame}{Modernize my graduate elective}
   \ndlogonote{\scriptsize retired: \href{https://ndcbe.github.io/CBE60499/}{\texttt{ndcbe.github.io/CBE60499/}}\\current: \href{https://ndcbe.github.io/optimization/}{\texttt{ndcbe.github.io/optimization/}}}
   \vfill
   \begin{center}
@@ -167,7 +167,7 @@
   \begin{tikzpicture}[
     font=\small,
     node distance=0.32cm,
-    offering/.style={draw=NDGold, line width=0.8pt, text=NDBlue, rounded corners=2pt, minimum width=2.4cm, minimum height=2.6cm, text width=2.1cm, align=center}
+    offering/.style={nd box, minimum width=2.4cm, minimum height=2.6cm, text width=2.1cm, align=center}
   ]
     \node[offering]
       (y2018) {\textbf{Fall 2018}\\[0.3em]handwritten notes\\[0.22em]Jupyter notebooks};
@@ -188,7 +188,7 @@
   \vspace{0.8em}
   \begin{center}
     {\small Fall 2018: theory + algorithms $\longrightarrow$ applications}\\[0.45em]
-    {\small\color{NDBlue}Since Spring 2021: \textbf{applications} $\longrightarrow$ theory + algorithms}
+    {\small\color{NDBlue}Since Spring 2021: applications $\longrightarrow$ theory + algorithms}
   \end{center}
   \vspace{1.8cm plus 1fill}
 \end{frame}

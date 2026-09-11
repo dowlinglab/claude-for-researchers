@@ -21,6 +21,12 @@
 \definecolor{Muted}{HTML}{7A7A7A}
 \definecolor{CodeBg}{HTML}{F4F4F2}
 
+\tikzset{
+  nd box/.style={draw=NDGold, line width=0.8pt, text=NDBlue,
+    rounded corners=2pt, fill=white, align=center},
+  nd highlight/.style={nd box, draw=IrishGreen}
+}
+
 \setbeamertemplate{navigation symbols}{}
 
 \setbeamercolor{enumerate item}{fg=IrishGreen}
@@ -61,10 +67,10 @@
   \foreach \n [count=\i from 1] in {Tinker, Understand, Build, Challenge, Trust} {
     \pgfmathparse{int(\i == #1)}
     \ifnum\pgfmathresult=1
-      \node[fill=NDGold, text=black, rounded corners=3pt,
+      \node[nd highlight,
             inner sep=6pt, minimum width=2.6cm, align=center] at (\i,0) {\textbf{\n}};
     \else
-      \node[fill=black!6, text=Muted, rounded corners=3pt,
+      \node[nd box,
             inner sep=6pt, minimum width=2.6cm, align=center] at (\i,0) {\n};
     \fi
     \ifnum\i<5

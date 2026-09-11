@@ -10,13 +10,13 @@
       \centering
       \resizebox{!}{6.1cm}{%
       \begin{tikzpicture}[font=\scriptsize, node distance=0.5cm]
-        \node[draw=OkVermillion, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center]
+        \node[nd box, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center]
           (a) {\textbf{Before 2023}\\DGA spent \textasciitilde10 hours (re)making the schedule by hand};
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of a]
+        \node[nd box, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of a]
           (b) {\textbf{2023}\\Jeff Kantor and I built a Jupyter notebook that used discrete optimization to create the schedule.};
-        \node[draw=NDBlue, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of b]
+        \node[nd box, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of b]
           (c) {\textbf{2024--2025}\\I maintained the notebook, patching it by hand, inputting data, and creating schedules each year.};
-        \node[draw=NDGold, rounded corners=2pt, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of c, fill=CodeBg]
+        \node[nd highlight, minimum width=6.2cm, minimum height=1cm, text width=5.8cm, align=center, below=of c]
           (d) {\textbf{Feb 2026}\\Using Codex, I converted the schedule optimization code into a tested, public Python package.};
         \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
         \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
