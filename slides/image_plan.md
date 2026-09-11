@@ -90,7 +90,7 @@ Task 7 was rebuilt 2026-09-11 as a six-slide course-design story. Its opening us
 | 7 | Task 7 redesign goals | numbered list | text | no image needed — the four goals are the visual hierarchy |
 | 8 | Task 7 repository architecture | private/public repository → authoritative sources → derived artifacts → gates/tests | A/B | native two-row table, editable and projector-readable; the cross-repository leak check and Claude/GPT's role in designing the system are called out below it |
 | 9 | Task 7 workflow robustness | document/notebook/website problem → check added table | A | native two-column table; defines gate/test for a non-software audience and credits Claude/GPT with turning failures into repeatable checks |
-| 10 | Task 7 bounded autonomy | five-step audit/review sequence | A | native text sequence; evidence lives in the source comments and handoff |
+| 10 | Task 7 continuity | Git + handoff document table with a three-step resume sequence | A | native text/table; explicitly explains switching between Claude/OpenAI tools, computers, and work sessions |
 | 11 | Task 7 starter kit | project habit → purpose → distributed resource table | A | native text with real repository filenames |
 
 **Act III is deliberately image-light.** Slides 1–5 protect unpublished work with typeset reconstructions. Task 7 is the named, public exception, but only its historical handwritten artifact benefits from being shown as an image; the rest is clearer as an editable system diagram.

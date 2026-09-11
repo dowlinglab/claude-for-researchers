@@ -363,25 +363,35 @@
   \vspace{1.25cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 7 --- bounded autonomy, followed by instructor review}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{working\_with\_ai\_agents.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/writing_style_guide.md}{\texttt{writing\_style\_guide.md}}}
+\begin{frame}{Task 7 --- continuity across AI tools and computers}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{working\_with\_ai\_agents.md}}\\\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/checklists/reproducibility_and_handoff_checklist.md}{\texttt{reproducibility\_and\_handoff\_checklist.md}}}
   \vfill
-  \begin{enumerate}\small\setlength\itemsep{0.42em}
-    \item \textbf{Edit exemplars by hand} until the intended style is visible.
-    \item \textbf{Turn the diffs into rules} an agent can follow.
-    \item \textbf{Audit one bounded lecture block}; record evidence and unresolved choices.
-    \item \textbf{Run the full gate}, then repeat on the next block.
-    \item \textbf{Return pedagogical choices} to the instructor; update the handoff where the next session will read it.
-  \end{enumerate}
-  \vspace{0.45em}
   \begin{center}\small
-    This year: unconstrained optimization $\to$ constrained optimization $\to$ a cross-course style pass.
+    I switch between \textbf{Claude and OpenAI tools}, between \textbf{computers}, and between work sessions.
   \end{center}
+  \vspace{0.5em}
+  \begin{center}\small
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{8.7cm}@{}}
+    \toprule
+    \textbf{Persistent record} & \textbf{What the next tool or computer receives} \\
+    \midrule
+    Git repository & current files, commit history, and exact diffs \\
+    Handoff document & verified state, unresolved decisions, and the next bounded task \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{0.65em}
+  \begin{enumerate}\small\setlength\itemsep{0.3em}
+    \item Commit one coherent change and update the handoff.
+    \item The next tool or computer reads both before continuing.
+    \item Rerun the relevant gate/test, then return pedagogical choices to me.
+  \end{enumerate}
   \vfill
   \begin{center}
-    \slidepoint{Correctness follows \textbf{evidence}; pedagogy stays with the \textbf{instructor}.}
+    \slidepoint{Git preserves the project state. Handoff documents preserve the \textbf{context}.}
   \end{center}
-  \vspace{1.55cm plus 1fill}
+  \vspace{0.75cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Task 7 --- start with four small project artifacts}
