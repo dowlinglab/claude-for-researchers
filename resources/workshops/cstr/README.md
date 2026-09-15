@@ -97,4 +97,7 @@ in this repository. They are in the private instructor repository,
 an activity is only demonstrably answerable if it can be completed from this
 tree alone.
 
-Design rationale and the build plan: [`../cstr_two_workshop_plan.md`](../cstr_two_workshop_plan.md).
+Design rationale and the build plan are in `resources/workshops/cstr_two_workshop_plan.md`
+in the `claude-for-researchers` repository — one directory above this starter.
+It is referenced by path rather than by link because you are expected to copy
+this directory on its own, which would break a relative link pointing outside it.
