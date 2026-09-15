@@ -6,6 +6,27 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 
 ---
 
+## 2026-09-14 (later still) — slide 8 gets room for screenshots
+
+**Decisions:**
+
+- Slide 8 gains a screenshot band above each column's bullets, filling the white space Alex flagged.
+  Each image is **3.9 cm wide by 2.4 cm tall**, the largest that fits three across while leaving
+  room for the headings, bullets, and the 90 percent closer.
+- **The screenshots must be tight crops, not full application windows.** Working the projection
+  geometry: at that slide size each image occupies about 30 percent of the text width, so on a 3 m
+  screen it projects to roughly 91 cm wide. A crop showing 8 lines of text then gives about 7 cm
+  per line and reads from the back of the room; 12 lines gives 4.7 cm; a full window at 20-plus
+  lines gives 2.8 cm and is recognizable but not readable. **Budget 8-10 lines, cap at 12.**
+- Placeholders are committed rather than leaving the slide empty, so the layout is settled and only
+  the captures are outstanding. They must come from Alex's own setup — the deck's rule is that
+  screenshots are evidence, and these three are the only ones nobody else can supply.
+
+**Open questions raised:** the captures themselves. Recorded as item 5 in
+[open_questions.md](open_questions.md).
+
+---
+
 ## 2026-09-14 (later) — slide 2 schedule rebuilt at four slots
 
 **Decisions:**

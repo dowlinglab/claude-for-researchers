@@ -25,6 +25,11 @@ The Notre Dame marks come from the vendored theme under `theme/logos/`. External
 
 The act strip, agent diagram, instruction-file example, three-repository comparison, claim-tracing table, DOI capability paths, manuscript-task stack, drafting sequence, course timeline, source architecture, and policy/task tables remain editable LaTeX/TikZ objects.
 
+Slide 8 carries three placeholders awaiting capture: the Claude desktop app, the VS Code
+extension, and a terminal session, each 3.9 cm x 2.4 cm. They must be tight crops of about 8-10
+lines of text; a full application window is not legible at that size. See
+[open_questions.md](../notes/open_questions.md).
+
 Slide 40 carries a generated TikZ calendar, `figures/august_2026_calendar.tex`. Its day-by-day
 shading and the 1,452-commit total (1,084 private, 368 public, August 17–31) come from
 `git log --format=%ad --date=short` in `optimization-private` and `ndcbe/optimization`; the
