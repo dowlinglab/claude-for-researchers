@@ -7,7 +7,7 @@ Revised September 14, 2026 after Alex's annotated read-through. Slide numbers fo
 
 | Slide | Asset under `figures/` | Purpose and source |
 |---:|---|---|
-| 2 | `grad_visit_schedule_10.png` | Real package output using ten fictional visitors, regenerated September 14 to fill the slide with more characters. Inputs preserved under `figures/grad_visit_schedule_10_source/` (`faculty.yaml`, `config.yaml`, `visitors.csv`, `run.py`); produced with `grad-visitor-scheduler` from the public repository. Faculty names and buildings are real; visitors are not. The superseded six-visitor version stays in `figures/` |
+| 2 | `grad_visit_schedule_10.png` | Real package output: ten fictional visitors, four thirty-minute slots, and an enforced free slot for changing buildings. Regenerated September 14 with `grad-visitor-scheduler`. Inputs, run command, and the reasoning behind every solver setting are in [`grad_visit_schedule_10_source/README.md`](figures/grad_visit_schedule_10_source/README.md). Faculty names and buildings are real; visitors are not |
 | 3 | `grad_scheduler_screenshot_crop.png` | Public documentation; existing asset |
 | 5 | `tal_logo.png` | This American Life structural reference; existing asset |
 | 16 | `github_desktop_branch.png` | Branch selection in GitHub Desktop; [official documentation](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop), [original image](https://docs.github.com/assets/cb-38142/images/help/desktop/select-branch-from-dropdown.png), accessed September 11 |

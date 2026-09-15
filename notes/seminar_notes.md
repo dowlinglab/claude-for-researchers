@@ -6,6 +6,39 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 
 ---
 
+## 2026-09-14 (later) — slide 2 schedule rebuilt at four slots
+
+**Decisions:**
+
+- The slide 2 schedule now uses **four thirty-minute slots** (9:00–11:00) rather than eight
+  fifteen-minute ones. Ten visitors across eight narrow slots produced blocks too small to read
+  from the back of Carey Auditorium; the point of the figure is that it looks like a real
+  recruitment day, which fails if nobody can read it.
+- The schedule now enforces the **free-slot building-change constraint**
+  (`movement.policy: travel_time`, NSH↔MCH lag of one slot). Under the previous `policy: none`
+  the optimizer scheduled back-to-back NSH and MCH meetings, which is not a schedule a visitor
+  could physically walk. Every building switch in the new figure shows a visible gap, which also
+  makes the constraint something Alex can point at while narrating.
+- **How to remake the figure is now recorded next to the inputs**, in
+  [`slides/figures/grad_visit_schedule_10_source/README.md`](../slides/figures/grad_visit_schedule_10_source/README.md),
+  rather than only in this log. It gives the run command, every solver setting with its reason,
+  and the coupling between slot count, `min_faculty`, and the slide's column widths. The figure
+  stays real package output; it should be regenerated, never edited as an image.
+
+**Actions taken:**
+
+- Set `min_faculty` to 2. Four slots and six faculty give 24 one-on-one meetings for ten visitors,
+  so requiring three meetings each is infeasible once the travel lag applies.
+- Rebalanced slide 2: the four-slot figure is roughly square rather than wide and short, so the
+  figure column went from 0.60 to 0.50 and the timeline column from 0.37 to 0.46.
+- Slide 3 now reads "I used this project to test Codex."
+- Slide 6 regained a third "This is not" bullet --- *a Claude vs. Codex throw down* --- so the two
+  columns balance again after "a product comparison" was cut, and so the disclaimer names the
+  comparison people actually expect from a talk with Claude in the title.
+- Rebuilt: 53 slides, no overfull or underfull boxes.
+
+---
+
 ## 2026-09-14 — annotated read-through revisions
 
 Alex marked up the 52-slide September 11 PDF and walked through the comments in conversation.
