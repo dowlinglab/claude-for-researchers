@@ -667,3 +667,10 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 - The supplied TexpadTeX log confirms the Font Awesome error is resolved. Its older LaTeX format rejects `\textquotesingle`; replaced that command on slide 7 with an ordinary apostrophe.
 - Reduced trailing spacing on slides 37, 38, 39, 42, 44, and 46 by more than the small vertical excess reported by TexpadTeX. Preserved font sizes and content.
 - The command-line build passes without warnings, and all seven changed slides were visually checked. TexpadTeX needs another run to confirm its engine-specific warnings are resolved.
+
+### 2026-09-15: Two-workshop CSTR plan and private answer boundary
+
+- Chose one continuous nonisothermal CSTR case for two 1.75-hour workshops: first migrate an exploratory notebook into a reproducible Python project, then build a small literature corpus and draft and audit an evidence-linked LaTeX report.
+- Designated `claude-for-researchers-private` as the instructor-only repository for `activity_answers/`, reference implementations and results, rubrics, mutation tests, and teaching notes. This public repository will contain only student-facing starter material and instructions.
+- Rejected an answer folder in the student repository. An instruction not to read an accessible folder is an honor-system prompt, not an access boundary, and answer files remain recoverable if they ever enter public Git history.
+- Added a phased implementation plan, clean-room answerability checks, and a Claude Code `/goal` handoff that requires evidence from clean builds, scientific mutations, repository-boundary checks, and clean Git state before completion.

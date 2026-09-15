@@ -2,6 +2,13 @@
 
 These files turn the talk's recommendations into reusable guides, prompts, templates, checks, and examples. They are designed to be read by researchers and supplied directly to an AI agent as project context.
 
+## Workshops
+
+- [`workshops/`](workshops/README.md): design and build instructions for two
+  1.75-hour workshops using a nonisothermal CSTR case study. The public starter
+  material lives here; instructor answers belong only in the separate private
+  `claude-for-researchers-private` repository.
+
 ## Practice guides
 
 | File | Primary use in the talk |

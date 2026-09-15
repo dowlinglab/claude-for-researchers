@@ -17,6 +17,7 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 | `slides/` | Current 54-slide Beamer deck (ND theme). `storyboard.md` records the slide sequence, `style_guide.md` the design rules, and `image_plan.md` the final visual inventory |
 | `handout/` | Planned LaTeX leave-behind handout; not yet built |
 | `resources/` | Polished, reusable student takeaways (prompts, scripts, templates) |
+| `resources/workshops/` | Student-facing CSTR workshop plan, starter materials, and build handoff |
 | `notes/` | Project memory: design rationale, remaining follow-ups, references, demo ideas, and the running decision log |
 
 ## Working practices
@@ -32,6 +33,8 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 9. **Prefer a small number of polished resources over a large prompt library.** See [resources/README.md](resources/README.md) for the prioritized list — don't add low-value prompt files beyond it without discussion.
 10. **Git:** commit incrementally as coherent units of work land, rather than batching a long session into one commit (Alex's standing preference, 2026-09-02). Create new commits rather than amending. Review `git status`/diff before staging.
 11. **Keep final slide sources readable.** Detailed editorial notes were useful during refinement but were removed after the final audit on 2026-09-11. Recover them from Git history through commit `2c55c74` if needed; add new comments only when they explain durable implementation constraints.
+12. **Preserve the workshop repository boundary.** This public repository holds only student-facing starter material and instructions. The sibling `claude-for-researchers-private` repository holds instructor answers, reference results, rubrics, mutations, and teaching notes. Never move private answer material into this repository, including on another branch or in temporary history.
+13. **Test workshops without answer access.** A clean-agent validation must use only the public starter. Telling an agent not to read an accessible `activity_answers/` folder does not demonstrate that the activity is independently answerable.
 
 ## Content conventions
 

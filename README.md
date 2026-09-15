@@ -44,6 +44,10 @@ claude-for-research/
 - **[`slides/`](slides/README.md)** — the live-talk Beamer deck. Sparse text, worked examples, file trees, workflow diagrams.
 - **[`handout/`](handout/README.md)** — a denser LaTeX leave-behind: checklists, prompts, and reference material that doesn't fit in the 40-minute talk.
 - **[`resources/`](resources/README.md)** — reusable practice guides, prompts, scripts, templates, a checklist, and a repository example.
+- **[`resources/workshops/`](resources/workshops/README.md)** — the plan and
+  build handoff for two hands-on CSTR workshops. Student-facing materials belong
+  here; solutions and instructor notes live in the separate private
+  `claude-for-researchers-private` repository.
 - **`notes/`** — project memory and source tracking:
   - [notes/seminar_design.md](notes/seminar_design.md) — deeper rationale and the bank of candidate stories/examples
   - [notes/open_questions.md](notes/open_questions.md) — remaining follow-up items
