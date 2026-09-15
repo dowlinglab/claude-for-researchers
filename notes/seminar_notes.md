@@ -27,6 +27,41 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 
 ---
 
+## 2026-09-14 (layout pass) — whitespace audit of the whole deck
+
+**What prompted it:** two slides in a row (15, then 21) turned out to have the same defect — a gap
+under the title bar while the last line sat on the corner logo. That is a pattern, not two
+accidents, so the whole deck was checked rather than waiting to notice the rest by eye.
+
+**The cause, worth remembering:** a list or `center` environment as the first body element of a
+frame opens with its own `\topsep`, which reads as deliberate padding but is not. **LaTeX never
+warns about this.** An overfull `\vbox` only fires once content overflows the frame entirely,
+which is well past the point where the last line is overlapping the logo. Every slide in this pass
+compiled without a single warning before the fix and after it.
+
+**Method:** rendered all 54 slides at 100 dpi and measured, per slide, the gap between the title
+bar and the first row of body ink, and between the last row of body ink and the fixed corner-logo
+band. A slide is suspect when the first is large and the second small. Centred slides show a large
+gap at both ends, which is intentional and not a finding — the ranking is by the *difference*, not
+by the top gap alone. Two false starts are worth noting: detecting the logo by scanning for ink in
+the lower-left found body text instead, and the logo band turned out to start one row above the
+scan window, which made every slide look like it collided.
+
+**Rebalanced:** slides 20, 25, 38, 39, 50, 52, and 53. Slide 52's photo also came down from 6.1 cm
+to 5.75 cm; the others were spacing only.
+
+**Left alone, deliberately:** slides 14, 38, and 41 still measure as mildly top-heavy. On 14 and 38
+the gap belongs to the screenshot's own white margin and the TikZ diagram's bounding box, not to
+frame spacing — pushing further produced overfull boxes, which is the layout saying the content
+already fills the frame. On 41 the low content is in the right column, nowhere near the logo. The
+checker reports them; a human looked and disagreed.
+
+**Kept the check:** [`slides/check_layout.py`](../slides/check_layout.py) runs the measurement
+against `main.pdf`. This follows the deck's own Task 6 argument — every recurring problem should
+leave a mechanical test behind — and this one recurred twice in an afternoon.
+
+---
+
 ## 2026-09-14 (final round) — tool-ecosystem slide cut, workspace slides moved into Act I
 
 **Decisions:**

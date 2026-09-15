@@ -25,6 +25,7 @@ python3 resources/scripts/check_docs.py
 | `figures/` | Images used by the deck |
 | `theme/` | Vendored Notre Dame Beamer theme and logos |
 | `storyboard.md` | Current 54-slide sequence and narrative through-line |
+| `check_layout.py` | Flags slides that are top-empty and bottom-crowded; run it after layout changes |
 | `image_plan.md` | Final inventory of image and native visual assets |
 | `style_guide.md` | Typography, color, density, logo, and verification rules |
 
