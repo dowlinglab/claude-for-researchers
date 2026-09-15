@@ -1,10 +1,15 @@
 # Current slide storyboard
 
-Revised after the September 11, 2026 practice talk. The deck contains 52 slides for a 40-minute talk, followed by 20 minutes of discussion. The title retains DRAFT. [Feedback implementation record](../notes/practice_feedback_2026-09-11.md).
+Revised September 14, 2026 after Alex's annotated read-through of the September 11 deck
+(marked-up PDF walked through in conversation; changes recorded in
+[../notes/seminar_notes.md](../notes/seminar_notes.md)). The deck now contains **53 slides**
+for a 40-minute talk, followed by 20 minutes of discussion. The title retains DRAFT, now set in
+Notre Dame green rather than red.
 
-Task 1 establishes the workspace. Tasks 2–3 build software and literature-grounded documents. Tasks 4–6 audit, draft, and modernize. Hobbies are an unnumbered extension.
+Task 1 establishes the workspace. Tasks 2–3 build software and literature-grounded documents.
+Tasks 4–6 audit, draft, and modernize. Hobbies are an unnumbered extension.
 
-## Prologue: Tinker (slides 1–11)
+## Prologue: Tinker (slides 1–10)
 
 1. Title and event details
 2. Creating faculty-visitor schedules for graduate student recruitment
@@ -13,22 +18,22 @@ Task 1 establishes the workspace. Tasks 2–3 build software and literature-grou
 5. Borrowed structure
 6. Today: my lessons learned and recommended practices
 7. Project context and agent actions are complementary
-8. Desktop app, terminal, or editor: choose your workspace
+8. Desktop app, editor, or terminal: choose your workspace
 9. Which model, and how much of it do you get
 10. Everything today is on GitHub
-11. This talk was built with the practices it recommends
 
-## Act I: Understand (slides 12–20)
+## Act I: Understand (slides 11–20)
 
-12. Act divider
-13. The filesystem is the source of truth
-14. An agent can act on a repository
+11. Act divider
+12. An agent works on your file system
+13. A repository beats a folder, and a folder beats a chat
+14. Task 1 starts the way most projects start
 15. Task 1: Set up an agent workspace and inherit a project
 16. Branches isolate a change; pull requests invite review
 17. Project instructions: CLAUDE.md and AGENTS.md
 18. A concise instruction file routes the agent to evidence
-19. Overnight work needs a goal and a morning handoff
-20. Claude hooks connect workflow events to checks
+19. Ask for help writing the goal, not just the work
+20. Then draft, review, and launch
 
 ## Act II: Build (slides 21–32)
 
@@ -37,12 +42,12 @@ Task 1 establishes the workspace. Tasks 2–3 build software and literature-grou
 23. Task 2: The package conversion recipe
 24. Task 2: Establish a reproducible baseline
 25. Task 2: Decompose, generalize, then port
-26. Task 3: Create a literature-grounded report or proposal
-27. Three repositories keep development, writing, and release separate
-28. Task 3, step 1: Search, read, and search again
-29. Task 3, step 2: Build a literature corpus an agent can use
-30. Task 3, step 3: Edit the document against the curated corpus
-31. Overleaf and local edits meet through GitHub
+26. Task 3: Why LaTeX makes the agent useful
+27. Overleaf and local edits meet through GitHub
+28. Three repositories keep development, writing, and release separate
+29. Task 3, step 1: Search, read, and search again
+30. Task 3, step 2: Build a literature corpus an agent can use
+31. Task 3, step 3: Edit the document against the curated corpus
 32. Review the source diff and the manuscript diff
 
 ## Act III: Challenge (slides 33–44)
@@ -55,24 +60,39 @@ Task 1 establishes the workspace. Tasks 2–3 build software and literature-grou
 38. Task 5: Figures first, then outline, sections, and revision
 39. Modernize my graduate elective
 40. Four Goals... Starting One Week Before the First Lecture
-41. Task 6: The course uses two repositories
-42. Task 6: Each failure became a repeatable check
-43. Task 6: Git and handoffs bridge tools and computers
-44. Task 6: Coursepack sources and strategic gaps
+41. Task 6: Coursepack sources and strategic gaps
+42. Task 6: The course uses two repositories
+43. Task 6: Each failure became a repeatable test
+44. Task 6: Git and handoffs bridge tools and computers
 
-## Epilogue: Trust (slides 45–52)
+## Epilogue: Trust (slides 45–53)
 
 45. Act divider
 46. Currently, Claude is approved for public data only at ND
 47. Two important notes
 48. The six tasks form one research workflow
-49. You own every claim, whatever helped you make it
-50. Hobbies: AI can amplify your curiosity
-51. Hobbies: Create a textbook customized for you
-52. Getting started later today
+49. This talk was built with the practices it recommends
+50. You own every claim, whatever helped you make it
+51. Hobbies: AI can amplify your curiosity
+52. Hobbies: Create a textbook customized for you
+53. Getting started later today
 
 ## Narrative and pacing
 
-The opening software story shows a concrete payoff. Act I explains the workspace that makes those outcomes possible. Act II moves from code packaging to literature and writing. Act III reuses the same evidence to audit and draft a manuscript before the course-modernization capstone. Trust and an immediately runnable first exercise close the talk.
+The opening software story shows a concrete payoff. Act I now moves **agent → file system →
+repository**: slide 12 establishes that an agent works on real files, slide 13 argues that a
+versioned repository beats a bare folder, and slide 14 states the problem the rest of Act I
+solves — inheriting a zip file and a paper from a departed group member. Slides 19–20 close Act I
+on overnight work: first draft the *goal* with the agent's help, then review that planning
+document yourself before launching a Codex Goal, `/goal`, or `/loop` run.
 
-Planning allocation, to validate in rehearsal: prologue 7 minutes; Understand 8; Build 10; Challenge 10; Trust 5. Treat the model table, hooks mechanics, and hobbies briefly so the worked research examples retain their time.
+Act II moves from code packaging to literature and writing; the LaTeX case is made once (slide 26)
+and immediately followed by the Overleaf/GitHub mechanics it implies. Act III reuses the same
+evidence to audit and draft a manuscript, then the course-modernization capstone opens with its
+motivation and the August 2026 commit calendar before showing the coursepack artifact it produced.
+Trust, the talk's own provenance, and an immediately runnable first exercise close the talk.
+
+Planning allocation, to validate in rehearsal: prologue 7 minutes; Understand 8; Build 10;
+Challenge 10; Trust 5. The hooks slide was cut for time; the two new Act I slides (14, 20) and
+the relocated talk-provenance slide (49) replace it, so the deck is one slide longer than the
+practice-talk version and Act I is the segment most at risk of running over.
