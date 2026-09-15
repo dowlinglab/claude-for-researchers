@@ -56,8 +56,15 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 - NotebookLM and ChatGPT EDU still appear on the epilogue policy slide, so cutting slide 7 does not
   remove every mention of the non-Anthropic tools.
 
+**Also:** slide 27 was retitled "Task 3: Idea to a literature review, report, or proposal" so the
+frame title names the task rather than the tool it argues for, and the longer name was propagated to
+the two places that also label the six tasks — the slide 6 list and the slide 49 summary table.
+Both absorbed the longer phrase without wrapping or overflowing, so no layout compromise was needed.
+The literature corpus is most of what Task 3 actually covers, so the longer name is also the more
+accurate one.
+
 **Verification:** rebuilt at 54 slides with no overfull or underfull boxes; checked the new Act I
-transition renders cleanly.
+transition renders cleanly, and rendered slides 6, 27, and 49 after the rename.
 
 ---
 
