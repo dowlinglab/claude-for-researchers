@@ -34,7 +34,7 @@ Tasks 4–6 audit, draft, and modernize. Hobbies are an unnumbered extension.
 18. Project instructions: CLAUDE.md and AGENTS.md
 19. A concise instruction file routes the agent to evidence
 20. Ask for help writing the task, not just the work
-21. Then draft, review, and launch
+21. Then draft, review, launch, and explore
 
 ## Act II: Build (slides 22–33)
 

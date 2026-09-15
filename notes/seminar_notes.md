@@ -60,7 +60,7 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 a fourth step: use the agent to help you understand what came back, with sub-bullets split between
 the code it changed and the results it produced. The two cut sentences were prerequisites and
 anecdote; the new step is the part of the overnight loop the audience will actually repeat, and it
-puts the morning review inside the numbered sequence rather than leaving it implied.
+puts the morning review inside the numbered sequence rather than leaving it implied. The frame title became "Then draft, review, launch, and explore" so it covers all four steps.
 
 Slide 27 was retitled "Task 3: Idea to a literature review, report, or proposal" so the
 frame title names the task rather than the tool it argues for, and the longer name was propagated to
