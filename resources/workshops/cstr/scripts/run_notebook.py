@@ -11,7 +11,14 @@ the working directory explicitly and says so. Noticing the difference is part of
 Workshop 1.
 
 `--check` is the gate command: it proves the notebook still runs top to bottom
-without leaving modified outputs in your diff.
+without modifying the notebook file itself.
+
+It does still execute the notebook's code, so it rewrites whatever the notebook
+writes into `results/`. That is deliberate -- a check that skipped the file
+writes would not be checking the notebook -- but it means `--check` is not
+side-effect free. If you have committed `results/steady_states.csv` as part of
+your baseline, expect `git status` to show it as modified afterwards, and
+confirm it is byte-identical rather than assuming it is.
 """
 
 from __future__ import annotations

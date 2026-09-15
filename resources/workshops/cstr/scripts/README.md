@@ -15,11 +15,18 @@ What it has to do:
    retyped into the script.
 2. Solve the nominal condition and the sweep using the functions you extracted
    into `src/cstr_workshop/`.
-3. Write `results/baseline.json`, `results/steady_states.csv`, and
-   `results/steady_state_locus.png`.
-4. Record, in `baseline.json`, everything needed to interpret those numbers:
+3. Write `results/steady_states.csv`, `results/steady_state_locus.png`, and a
+   manifest describing the run.
+4. Record, in that manifest, everything needed to interpret those numbers:
    parameters, software versions, solver tolerances, the sweep definition, the
    residual norms, and the command that produced them.
+
+**Write the manifest to a new file — `results/reproduced.json` is a good name —
+not to `results/baseline.json`.** The baseline is the evidence you captured
+before refactoring. A reproduction script that overwrites it destroys the only
+thing you can check against, and it does so at exactly the moment you most want
+to check: when the numbers have moved. Have `reproduce.py` *compare* against
+`baseline.json` and report the differences instead.
 
 The gate is that its output matches the baseline you captured *before* you
 started refactoring, within the tolerance you stated. If it does not, the

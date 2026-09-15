@@ -63,6 +63,16 @@ session; you will compare your results against it.
 
 **Do not commit PDFs.** See the licence discussion in that README.
 
+**If you cannot get a source at all** — paywalled, no institutional access, or
+it simply does not exist in reachable form — that is a normal outcome, not a
+failure of the exercise. Record the row in `source_manifest.csv` with
+`verified: no` and a note saying the document could not be obtained, and say so
+again wherever you would otherwise have cited it. What you must not do is fill
+the gap: no citation from an abstract you skimmed, no DOI you did not see in the
+document, and no entry supplied by a tool. A corpus of one verified source with
+an honest statement of its limits is worth more than three you cannot vouch
+for.
+
 ---
 
 ## Phase 1 — Reconnect (10 min)
@@ -282,9 +292,12 @@ Also check, mechanically:
 
 - every reported number against `results/steady_states.csv` and
   `results/baseline.json`, at the precision stated;
-- every assumption in `src/cstr_workshop/` docstrings against the assumptions
-  listed in the report — an assumption the code makes and the report omits is an
-  error, not a stylistic choice;
+- every assumption the *code* makes against the assumptions listed in the
+  report — an assumption the code makes and the report omits is an error, not a
+  stylistic choice. The code's assumptions are in the docstrings in
+  `src/cstr_workshop/` if you completed Workshop 1; on the fallback path
+  `src/cstr_workshop/` is still empty, so read the assumption list in the first
+  markdown cell of `notebooks/cstr_exploration.ipynb` instead;
 - every citation against what the cited source actually says, not against what
   the sentence needs it to say.
 
@@ -305,7 +318,10 @@ computed and what would be required to say more. That sentence is more useful to
 a reader than the overclaim was.
 
 ```bash
+# your own draft
 cd report && latexmk -pdf report.tex && cd ..
+# or, if you audited the fallback
+cd report && latexmk -pdf audit_fallback.tex && cd ..
 git diff
 ```
 
@@ -388,8 +404,9 @@ If not, it is qualitative at best. If the phenomenon differs too, not comparable
 ```bash
 conda activate cstr-workshop
 pytest tests
-python scripts/reproduce.py
-cd report && latexmk -pdf report.tex && cd ..
+python scripts/reproduce.py       # or scripts/run_notebook.py on the fallback path
+cd report && latexmk -pdf report.tex && cd ..          # your own draft
+# cd report && latexmk -pdf audit_fallback.tex && cd .. # or the fallback
 git status                        # expect a clean tree
 git log --oneline main..HEAD
 ```

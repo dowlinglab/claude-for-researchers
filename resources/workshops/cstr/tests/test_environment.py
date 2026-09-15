@@ -46,5 +46,18 @@ def test_reactor_parameters_file_is_complete():
     assert expected.issubset(params), (
         f"missing parameters: {sorted(expected - set(params))}"
     )
+
+    # Every value must be a NUMBER, not a string that looks like one. PyYAML
+    # follows YAML 1.1, whose float pattern requires a decimal point and a
+    # signed exponent: `7.2e10` resolves to the string "7.2e10" while
+    # `7.2e+10` resolves to a float. Nothing complains until the value is used
+    # in arithmetic, and then it fails somewhere unrelated to the data file.
+    not_numeric = {key: value for key, value in params.items()
+                   if not isinstance(value, (int, float))}
+    assert not not_numeric, (
+        f"these parameters did not parse as numbers: {not_numeric}. "
+        "In YAML 1.1 an exponent needs a decimal point and a sign, e.g. 7.2e+10."
+    )
+
     assert params["dHr"] < 0, "dHr is the enthalpy of reaction: negative for exothermic"
     assert params["Tf"] > 100 and params["Tc"] > 100, "temperatures must be in kelvin"
