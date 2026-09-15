@@ -1,0 +1,23 @@
+# Nominal parameters for the jacketed nonisothermal CSTR, A -> B.
+#
+# Units are stated for every entry. All temperatures are absolute (K); there are
+# no Celsius values anywhere in this project, and mixing the two silently
+# produces plausible-looking wrong answers.
+#
+# Provenance: adapted from the standard textbook benchmark for a jacketed
+# exothermic CSTR. UA and Tf were lowered relative to the usual published values
+# so that three steady states exist over a coolant-temperature range wide enough
+# for a coarse sweep to resolve. Treat the numbers as a teaching case, not as a
+# measured system, and cite the source you actually verify in Workshop 2.
+
+q: 100.0        # volumetric feed flow rate, L/min
+V: 100.0        # reactor liquid volume, L
+CAf: 1.0        # feed concentration of A, mol/L
+Tf: 320.0       # feed temperature, K
+rho: 1000.0     # liquid density, g/L
+Cp: 0.239       # liquid heat capacity, J/(g K)
+dHr: -50000.0   # enthalpy of reaction, J/mol (negative = exothermic)
+EoverR: 8750.0  # activation energy divided by the gas constant, K
+k0: 7.2e10      # Arrhenius pre-exponential factor, 1/min
+UA: 35000.0     # heat-transfer coefficient times area, J/(min K)
+Tc: 300.0       # coolant temperature, K

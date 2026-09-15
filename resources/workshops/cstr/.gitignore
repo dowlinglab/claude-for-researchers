@@ -1,0 +1,25 @@
+# Generated results: regenerate with `python scripts/reproduce.py`, do not commit
+# by default. Commit a specific artifact deliberately (with `git add -f`) when it
+# is cited by the report, and say in the commit message which command made it.
+results/*
+!results/README.md
+report/figures/*
+!report/figures/.gitkeep
+
+# LaTeX build products
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.fdb_latexmk
+report/*.fls
+report/*.log
+report/*.out
+report/*.synctex.gz
+report/*.toc
+report/*.pdf
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/

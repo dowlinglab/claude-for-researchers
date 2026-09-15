@@ -7,6 +7,10 @@ continuous nonisothermal CSTR case study:
 2. use computational artifacts and a small literature corpus to draft and audit
    an evidence-linked LaTeX report.
 
+The student-facing starter project is [`cstr/`](cstr/README.md): the executable
+notebook, the environment, both activity instruction files, the literature and
+LaTeX templates, and the fallback report used by the claim audit.
+
 The detailed design and build sequence are in
 [`cstr_two_workshop_plan.md`](cstr_two_workshop_plan.md). The handoff prompt for
 building the materials with Claude Code is in
