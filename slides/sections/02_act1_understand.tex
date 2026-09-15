@@ -71,6 +71,68 @@
   \vspace{0.9cm plus 1fill}
 \end{frame}
 
+\begin{frame}{Desktop app: supervise several tasks at once}
+  \vspace{0.1cm}
+  \begin{center}\scalebox{0.86}{\workspacestrip{1}}\end{center}
+  \vspace{0.35em}
+  \begin{center}
+    \placeholderimage{9.0cm}{3.9cm}{Claude desktop app: the sidebar with several sessions, one conversation open}
+  \end{center}
+  \vspace{0.45em}
+  \begin{center}
+    \slidepoint{No setup. I use it more than \textbf{90\%} of the time.}
+  \end{center}
+  \vspace{0.6cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Editor extension: a tight edit-review loop}
+  \ndlogonote{\scriptsize Screenshot: \href{https://code.claude.com/docs/en/vs-code}{Claude Code documentation}}
+  \vspace{0.1cm}
+  \begin{center}\scalebox{0.86}{\workspacestrip{2}}\end{center}
+  \vspace{0.35em}
+  \begin{center}
+  \begin{tikzpicture}
+    \node[anchor=south west, inner sep=0] (img) at (0,0)
+      {\includegraphics[width=8.6cm]{figures/claude_vscode_extension}};
+    \begin{scope}[x={(img.south east)}, y={(img.north west)}]
+      \node[fill=white, draw=NDGold, line width=0.7pt, rounded corners=1.5pt,
+            inner sep=2.5pt, font=\scriptsize, text=NDBlue] (lbl) at (0.70,0.22)
+        {proposed edit, inline};
+      \draw[-{Stealth[length=5pt]}, NDGold, very thick] (lbl.north) -- (0.70,0.42);
+    \end{scope}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.45em}
+  \begin{center}
+    \slidepoint{Best when you are already reading the code.}
+  \end{center}
+  \vspace{0.6cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Terminal: scriptable, and the same engine underneath}
+  \ndlogonote{\scriptsize Screenshot: \href{https://code.claude.com/docs/en/agent-view}{Claude Code documentation}}
+  \vspace{0.1cm}
+  \begin{center}\scalebox{0.86}{\workspacestrip{3}}\end{center}
+  \vspace{0.35em}
+  \begin{center}
+  \begin{tikzpicture}
+    \node[anchor=south west, inner sep=0] (img) at (0,0)
+      {\includegraphics[width=8.8cm]{figures/claude_terminal_agent_view}};
+    \begin{scope}[x={(img.south east)}, y={(img.north west)}]
+      \node[fill=white, draw=NDGold, line width=0.7pt, rounded corners=1.5pt,
+            inner sep=2.5pt, font=\scriptsize, text=NDBlue] (lbl) at (0.82,0.93)
+        {sessions grouped by state};
+      \draw[-{Stealth[length=5pt]}, NDGold, very thick] (lbl.west) -- (0.49,0.86);
+    \end{scope}
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.45em}
+  \begin{center}
+    \slidepoint{The only one you can put in \textbf{cron or CI}.}
+  \end{center}
+  \vspace{0.6cm plus 1fill}
+\end{frame}
+
 \begin{frame}{Task 1 starts the way most projects start}
   \vfill
   \begin{center}

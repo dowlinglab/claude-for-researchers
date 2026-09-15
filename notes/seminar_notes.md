@@ -27,6 +27,40 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 
 ---
 
+## 2026-09-14 (final round) — tool-ecosystem slide cut, workspace slides moved into Act I
+
+**Decisions:**
+
+- **The tool-ecosystem slide is cut** (old slide 7, "Project context and agent actions are
+  complementary"). It surveyed the landscape — ChatGPT Projects, Claude Projects, NotebookLM on one
+  side; Codex, Claude Code, Antigravity on the other — before the audience had any reason to care
+  about the distinction. The deck's thesis is workflow, not product taxonomy, and the prologue was
+  the wrong place to spend a slide on it.
+- **The three workspace slides move from the prologue into Act I, after version control.** Alex's
+  reasoning, and it is the better sequence: "where do I run the agent" is only a useful question
+  once the files it will touch are under version control. Act I now reads agent works on real files
+  → put those files under version control → here are three ways to run the agent against them →
+  here is the project you just inherited.
+- **Act I now carries 13 of the deck's 54 slides against an 8-minute budget.** This is flagged
+  rather than fixed: the act has absorbed the narrative slide, the plan-review slide, and now three
+  workspace slides, while the prologue has dropped to 8. The allocation in the storyboard predates
+  all of it and should not be trusted without a timed run.
+
+**Consequences worth recording:**
+
+- **The Antigravity ND-plan finding is no longer stated anywhere in the deck.** It lived only on the
+  cut slide. The evidence screenshot and the conclusion remain in
+  [references.md](references.md) and `notes/evidence/`, and the epilogue policy slide still covers
+  what ND approves, so nothing in the deck is now unsupported — but if Alex wants that finding said
+  out loud, it needs a new home, most naturally as a line on the epilogue policy slide.
+- NotebookLM and ChatGPT EDU still appear on the epilogue policy slide, so cutting slide 7 does not
+  remove every mention of the non-Anthropic tools.
+
+**Verification:** rebuilt at 54 slides with no overfull or underfull boxes; checked the new Act I
+transition renders cleanly.
+
+---
+
 ## 2026-09-14 (later still) — workspace comparison becomes three slides
 
 **Decisions:**

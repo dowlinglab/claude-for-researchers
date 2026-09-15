@@ -33,7 +33,7 @@ This repository is the source of truth for the seminar. Decisions, rationale, an
 ```
 claude-for-research/
 ├── outline.md       current high-level talk outline
-├── slides/          current 55-slide Beamer deck and source
+├── slides/          current 54-slide Beamer deck and source
 ├── handout/         LaTeX leave-behind handout (not yet built)
 ├── resources/       companion guides, prompts, scripts, templates, and checks
 ├── notes/           decisions, source references, and planning history
@@ -52,7 +52,7 @@ claude-for-research/
 
 ## Status
 
-The 55-slide deck was revised after the September 11, 2026 practice talk and again on September 14 from Alex's annotated read-through. It now uses six research tasks, with expanded workspace setup, literature-guided writing, overnight work, and concrete review visuals. The title slide still says **DRAFT** by request. The companion resources are complete and cross-referenced from the talk; the separate handout remains unbuilt. See [notes/open_questions.md](notes/open_questions.md) for the small number of remaining follow-up items.
+The 54-slide deck was revised after the September 11, 2026 practice talk and again on September 14 from Alex's annotated read-through. It now uses six research tasks, with expanded workspace setup, literature-guided writing, overnight work, and concrete review visuals. The title slide still says **DRAFT** by request. The companion resources are complete and cross-referenced from the talk; the separate handout remains unbuilt. See [notes/open_questions.md](notes/open_questions.md) for the small number of remaining follow-up items.
 
 ## License
 
