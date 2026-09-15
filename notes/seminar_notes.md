@@ -27,6 +27,49 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 
 ---
 
+## 2026-09-14 (later still) — workspace comparison becomes three slides
+
+**Decisions:**
+
+- **The three workspace modes get one slide each** rather than three columns on one slide. Alex
+  wanted screenshots to fill the white space but was worried they would not be readable, and at
+  three-across that worry was correct: each image would have been 3.9 cm wide, which projects to
+  roughly 91 cm on a 3 m screen and only carries about 8 legible lines. One slide per mode allows a
+  9 cm image, which is comfortable. Cost: two extra slides against an already tight budget.
+- **A shared strip across the top of all three slides** — *Desktop app / Editor extension /
+  Terminal*, with the current one highlighted — keeps the three-way comparison the single slide used
+  to carry, and reuses the visual language of the act divider strip. Order runs easiest to most
+  sophisticated, as Alex asked.
+- **Slides 9 and 10 use official Claude Code documentation screenshots**, attributed in the footer
+  exactly as slides 18, 29, and 34 already do for GitHub Docs and Overleaf. The VS Code image
+  (2500x1155) and the terminal agent-view image (1772x780) are both high enough resolution to
+  survive projection. **The documentation has no desktop-app screenshot**, so slide 8 keeps a
+  placeholder; that one has to come from Alex's own machine.
+- **One gold annotation per screenshot**, not several: "proposed edit, inline" on the VS Code diff,
+  "sessions grouped by state" on the terminal. More would compete with the screenshot itself.
+- Alex's first desktop-app capture is not usable as sent: its sidebar shows private project names
+  and the pane content is a modal dialog rather than a working conversation. Recorded in
+  [open_questions.md](open_questions.md) so the next capture avoids both.
+
+**Other changes in this round:**
+
+- Slide 15 gained **good / better / best** labels under its three headings, and its title became
+  "Use version control with (almost) every agentic project" — the frame title now states the point
+  instead of describing the comparison. Its top white space was removed by replacing the `center`
+  environments in the column headings, whose `\topsep` was the actual cause, so the crowded bottom
+  could be relieved.
+- Slide 21's example prompt now asks for help developing a **task**, and lists the five steps for
+  the inherited-zip-file scenario that slide 16 sets up, rather than a generic overnight objective.
+  The prompt and the motivating story now belong to each other.
+- Slide 42's first-lecture marker changed from a green outline to an **ND blue** one. Green was
+  already carrying commit density in that calendar, so a green outline read as "many commits"
+  rather than "this is the day."
+
+**Open questions raised:** the deck is 55 slides against a 40-minute target rehearsed at 52. The
+three workspace slides are the first thing to re-merge if a timed rehearsal runs long.
+
+---
+
 ## 2026-09-14 (later) — slide 2 schedule rebuilt at four slots
 
 **Decisions:**

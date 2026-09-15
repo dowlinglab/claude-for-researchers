@@ -1,6 +1,6 @@
 # Talk outline
 
-This file originally held the lifecycle-based planning outline. The current talk uses the structure below; the complete 53-slide sequence is in [`slides/storyboard.md`](slides/storyboard.md). The superseded detailed outline remains in Git history through commit `2c55c74`.
+This file originally held the lifecycle-based planning outline. The current talk uses the structure below; the complete 55-slide sequence is in [`slides/storyboard.md`](slides/storyboard.md). The superseded detailed outline remains in Git history through commit `2c55c74`.
 
 The seminar slot is one hour: approximately 40 minutes of presentation and 20 minutes of questions.
 

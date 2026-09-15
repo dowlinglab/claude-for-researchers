@@ -42,7 +42,7 @@ for r, week in enumerate(weeks):
         if day == SPRINT_START:
             style = "draw=NDGold, line width=1.1pt"
         elif day == FIRST_LECTURE:
-            style = "draw=IrishGreen, line width=1.1pt"
+            style = "draw=NDBlue, line width=1.4pt"
         else:
             style = "draw=Muted!40, line width=0.4pt"
         shade = 0 if n == 0 else int(round(12 + 68 * (n / peak)))

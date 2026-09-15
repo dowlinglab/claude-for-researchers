@@ -79,6 +79,18 @@
   }
 \end{tikzpicture}}
 
+\newcommand{\workspacestrip}[1]{%
+\begin{tikzpicture}[x=4.0cm, font=\small\sffamily]
+  \foreach \n [count=\i from 1] in {Desktop app, Editor extension, Terminal} {
+    \pgfmathparse{int(\i == #1)}
+    \ifnum\pgfmathresult=1
+      \node[nd highlight, inner sep=4pt, minimum width=3.4cm, align=center] at (\i,0) {\textbf{\n}};
+    \else
+      \node[nd box, draw=Muted!45, text=Muted, inner sep=4pt, minimum width=3.4cm, align=center] at (\i,0) {\n};
+    \fi
+  }
+\end{tikzpicture}}
+
 \newcommand{\stagedivider}[3]{%
 \begin{frame}[plain]
   \vfill

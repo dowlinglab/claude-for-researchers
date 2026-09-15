@@ -1,6 +1,6 @@
 # Slides
 
-Current Beamer draft for *Claude for Research: Beyond the Chatbot*. The presentation has 53 slides and is designed for a 40-minute talk followed by discussion.
+Current Beamer draft for *Claude for Research: Beyond the Chatbot*. The presentation has 55 slides and is designed for a 40-minute talk followed by discussion.
 
 ## Build and verify
 
@@ -24,7 +24,7 @@ python3 resources/scripts/check_docs.py
 | `sections/` | Slide content organized by the talk's five-part structure |
 | `figures/` | Images used by the deck |
 | `theme/` | Vendored Notre Dame Beamer theme and logos |
-| `storyboard.md` | Current 53-slide sequence and narrative through-line |
+| `storyboard.md` | Current 55-slide sequence and narrative through-line |
 | `image_plan.md` | Final inventory of image and native visual assets |
 | `style_guide.md` | Typography, color, density, logo, and verification rules |
 

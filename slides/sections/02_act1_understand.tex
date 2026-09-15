@@ -25,12 +25,14 @@
   \vfill
 \end{frame}
 
-\begin{frame}{A repository beats a folder, and a folder beats a chat}
+\begin{frame}{Use version control with (almost) every agentic project}
   \ndlogonote{\scriptsize Getting started: \href{https://github.com/education}{\texttt{github.com/education}}\quad\href{https://youtu.be/a9u2yZvsqHA}{tutorial}\quad\href{https://desktop.github.com/download}{\texttt{desktop.github.com/download}}}
-  \vspace{0.2cm}
+  \vspace{-0.45cm}
   \begin{columns}[t]
     \begin{column}{0.30\textwidth}
-      \begin{center}\textbf{A conversation}\end{center}
+      {\centering\textbf{A conversation}\\[0.15em]
+        {\footnotesize\color{Muted}good}\par}
+      \vspace{0.5em}
       \begin{itemize}\footnotesize\setlength\itemsep{0.22em}
         \item you paste context in and copy results out
         \item tied to one session
@@ -39,7 +41,9 @@
       \end{itemize}
     \end{column}
     \begin{column}{0.30\textwidth}
-      \begin{center}\textbf{A file system}\end{center}
+      {\centering\textbf{A file system}\\[0.15em]
+        {\footnotesize\color{NDGold!80!black}better}\par}
+      \vspace{0.5em}
       \begin{itemize}\footnotesize\setlength\itemsep{0.22em}
         \item the agent reads and edits the real files
         \item no copy-paste step
@@ -48,7 +52,9 @@
       \end{itemize}
     \end{column}
     \begin{column}{0.30\textwidth}
-      \begin{center}\textbf{\color{IrishGreen}A repository}\end{center}
+      {\centering\textbf{\color{IrishGreen}A repository}\\[0.15em]
+        {\footnotesize\color{IrishGreen}\textbf{best}}\par}
+      \vspace{0.5em}
       \begin{itemize}\footnotesize\setlength\itemsep{0.22em}
         \item every change is saved and labeled
         \item searchable history
@@ -57,7 +63,7 @@
       \end{itemize}
     \end{column}
   \end{columns}
-  \vspace{0.45em}
+  \vspace{1.1em}
   \begin{center}\small
     \textbf{Version control} keeps a dated record of every saved change. Use it for every
     research project: when an agent breaks something, Git is how you undo it.
@@ -187,30 +193,29 @@ conda run -n transport python -m pytest
   \vspace{1.0cm plus 1fill}
 \end{frame}
 
-\begin{frame}[fragile]{Ask for help writing the goal, not just the work}
+\begin{frame}[fragile]{Ask for help writing the task, not just the work}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{resources/practices/working\_with\_ai\_agents.md} \S12}}
-  \vspace{0.35cm}
+  \vspace{0.3cm}
   \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
-I would like help developing a goal for an overnight session.
+I would like help developing a task that does the following.
 
-The work: set up the inherited project so I can reproduce Figure 3
-of the paper.
+I inherited a zip file of a former group member's code and the
+paper it produced. Reproduce Figure 3 of that paper.
 
-Draft a goal document that states:
-- the objective, and the evidence that proves it is finished
-- which files you may change, and which you may not
-- phases, each ending in a check I can verify myself
-- what to do when a check fails
-- the decisions you must leave to me
-- a commit after each phase, and a morning review queue
+  1. Put the code in Git and make a baseline commit
+  2. Infer the dependencies and build a clean environment
+  3. Inventory the files and map inputs to outputs
+  4. Run the easiest result first, then work up to Figure 3
+  5. Record what reproduced, what failed, and what you skipped
 
-Ask me questions before you write it.
+Ask me questions before you write the task. For each step, say
+what evidence proves it is finished and what you must leave to me.
   \end{lstlisting}
-  \vspace{0.3em}
+  \vspace{0.15em}
   \begin{center}
-    \slidepoint{The first overnight prompt is about the \textbf{goal}, not the work.}
+    \slidepoint{The first overnight prompt is about the \textbf{task}, not the work.}
   \end{center}
-  \vspace{0.5cm plus 1fill}
+  \vspace{0.35cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Then draft, review, and launch}
@@ -219,7 +224,7 @@ Ask me questions before you write it.
   \begin{enumerate}\setlength\itemsep{0.75em}
     \item \textbf{The agent drafts the planning document} from that prompt and its questions.
     \item \textbf{I read and edit it.} This is where the scientific decisions get made, while I am awake.
-    \item \textbf{Start the run} with the reviewed document as the goal:
+    \item \textbf{Start the run} with the reviewed document as the task:
       \begin{itemize}\small\setlength\itemsep{0.3em}
         \item Codex \textbf{Goal}: pursue a persistent objective
         \item Claude Code \textbf{\texttt{/goal}}: continue until a condition is met
