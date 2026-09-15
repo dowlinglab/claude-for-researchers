@@ -43,7 +43,7 @@ Tasks 4–6 audit, draft, and modernize. Hobbies are an unnumbered extension.
 24. Task 2: The package conversion recipe
 25. Task 2: Establish a reproducible baseline
 26. Task 2: Decompose, generalize, then port
-27. Task 3: Why LaTeX makes the agent useful
+27. Task 3: Idea to a literature review, report, or proposal
 28. Overleaf and local edits meet through GitHub
 29. Three repositories keep development, writing, and release separate
 30. Task 3, step 1: Search, read, and search again
@@ -95,8 +95,8 @@ overnight work: the example prompt asks for help writing the *task* for exactly 
 inherited-project scenario, then slide 21 covers reviewing the planning document before launching a
 Codex Goal, `/goal`, or `/loop` run.
 
-Act II moves from code packaging to literature and writing; the LaTeX case is made once (slide 26)
-and immediately followed by the Overleaf/GitHub mechanics it implies. Act III reuses the same
+Act II moves from code packaging to literature and writing. Slide 27 opens Task 3 and makes the
+LaTeX case once, and the Overleaf/GitHub mechanics it implies follow immediately. Act III reuses the same
 evidence to audit and draft a manuscript, then the course-modernization capstone opens with its
 motivation and the August 2026 commit calendar before showing the coursepack artifact it produced.
 Trust, the talk's own provenance, and an immediately runnable first exercise close the talk.
