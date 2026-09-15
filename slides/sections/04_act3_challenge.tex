@@ -120,43 +120,40 @@
 
 \begin{frame}{Task 5: Figures first, then outline, sections, and revision}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_figures_tables.md}{\texttt{resources/practices/scientific\_figures\_tables.md}}\quad\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/writing_style_guide.md}{\texttt{writing\_style\_guide.md}}}
-  \vfill
-  \begin{center}
-  \resizebox{0.94\textwidth}{!}{%
-  \begin{tikzpicture}[font=\small, node distance=0.75cm]
-    \node[nd box, minimum width=2.7cm, minimum height=1.3cm, align=center]
-      (a) {Develop the\\key figures};
-    \node[nd box, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of a]
-      (b) {Outline claims\\around figures};
-    \node[nd box, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of b]
-      (c) {Draft one\\section at a time};
-    \node[nd box, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of c]
-      (d) {Edit against corpus\\and style guide};
-    \node[nd highlight, minimum width=2.7cm, minimum height=1.3cm, align=center, right=of d]
-      (e) {Audit, render,\\and revise};
-    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
-    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
-    \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
-    \draw[-{Stealth[length=6pt]}, thick] (d) -- (e);
-  \end{tikzpicture}}
-  \end{center}
-  \vspace{0.3em}
-  {\small
-    \textbf{The agent can help...}
-    \begin{itemize}\small\setlength\itemsep{0.05em}
-      \item reproduce computational experiments
-      \item create and edit figures
-      \item organize the argument
-      \item draft sections
-      \item check the literature corpus
-      \item complete a final manuscript audit
-    \end{itemize}
-  }
-  \vspace{0.3em}
+  \vspace{0.25cm}
+  \begin{columns}[c]
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[font=\small, node distance=0.30cm,
+          flowstep/.style={nd box, minimum width=4.3cm, minimum height=0.78cm, align=center}]
+        \node[flowstep] (a) {Develop the key figures};
+        \node[flowstep, below=of a] (b) {Outline claims around figures};
+        \node[flowstep, below=of b] (c) {Draft one section at a time};
+        \node[flowstep, below=of c] (d) {Edit against corpus and style guide};
+        \node[flowstep, draw=IrishGreen, below=of d] (e) {Audit, render, and revise};
+        \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
+        \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
+        \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
+        \draw[-{Stealth[length=6pt]}, thick] (d) -- (e);
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      \textbf{The agent can help\ldots}
+      \begin{itemize}\setlength\itemsep{0.40em}
+        \item reproduce computational experiments
+        \item create and edit figures
+        \item organize the argument
+        \item draft sections
+        \item check the literature corpus
+        \item complete a final manuscript audit
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{0.9em}
   \begin{center}
     \slidepoint{The researcher made every \textbf{scientific and editorial decision}.}
   \end{center}
-  \vspace{0.45cm plus 1fill}
+  \vspace{0.35cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Modernize my graduate elective}
@@ -195,85 +192,32 @@
 
 \begin{frame}{Four Goals... Starting One Week Before the First Lecture}
   \vfill
-  \begin{enumerate}\setlength\itemsep{0.45em}
-    \item \textbf{Deferred maintenance}
-      \begin{itemize}\small\item update the website and computational examples\end{itemize}
-    \item \textbf{Coursepack with strategic gaps}
-      \begin{itemize}\small\item reduce math copying; create time for active learning\end{itemize}
-    \item \textbf{AI-forward assessment}
-      \begin{itemize}\small\item explicit AI policy and completion-based homework grading
-        \item assessment analytics and an AI-forward project\end{itemize}
-    \item \textbf{More in-class exams}
-      \begin{itemize}\small\item open coursepack; assess individual understanding\end{itemize}
-  \end{enumerate}
-  \vfill
-\end{frame}
-
-\begin{frame}{Task 6: The course uses two repositories}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{resources/practices/scientific\_computing\_workflow.md}}}
-  \vfill
-  \begin{center}\small
-  \renewcommand{\arraystretch}{1.2}
-  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{6.15cm}>{\raggedright\arraybackslash}p{3.0cm}@{}}
-    \toprule
-    \textbf{Repository} & \textbf{Authoritative sources $\longrightarrow$ derived artifacts} & \textbf{Gate/Test} \\
-    \midrule
-    Private\par\texttt{optimization-}\par\texttt{private} & lecture notes, coursepack, assessments\par$\longrightarrow$ instructor, student, and alignment PDFs & citations, clipping, pagination \\
-    Public\par\texttt{optimization} & notebooks, figure scripts, and data\par$\longrightarrow$ published notebooks, website, and figures & sync, execution, routes, freshness \\
-    \bottomrule
-  \end{tabular}
-  \end{center}
-  \vspace{0.55em}
-  \begin{center}\small
-    A cross-repository solution-leak check enforces the private/public boundary. Claude and GPT helped map each goal to artifacts, then each likely failure to a test.
-  \end{center}
-  \vspace{1.05cm plus 1fill}
-\end{frame}
-
-\begin{frame}{Task 6: Each failure became a repeatable check}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/check_docs.py}{\texttt{resources/scripts/check\_docs.py}}}
-  \vfill
-  \begin{center}\small
-    \textbf{Gate/test} = a repeatable check that must pass before publishing.
-  \end{center}
-  \vspace{0.45em}
-  \begin{center}\small
-  \renewcommand{\arraystretch}{1.22}
-  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.7cm}>{\raggedright\arraybackslash}p{7.0cm}@{}}
-    \toprule
-    \textbf{Problem found} & \textbf{Check added} \\
-    \midrule
-    Missing citations or broken layout & Check citations and render every page \\
-    Notebook code drift or public solutions & Compare source code and scan for solution leaks \\
-    Broken website routes or stale figures & Rebuild outputs and verify published pages \\
-    \bottomrule
-  \end{tabular}
-  \end{center}
-  \vfill
-  \begin{center}
-    \slidepoint{The workflow grew more robust because every recurring problem left a \textbf{mechanical test}.}
-  \end{center}
-  \vspace{0.75cm plus 1fill}
-\end{frame}
-
-\begin{frame}{Task 6: Git and handoffs bridge tools and computers}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/checklists/reproducibility_and_handoff_checklist.md}{\texttt{resources/checklists/reproducibility\_and\_handoff\_checklist.md}}}
-  \vfill
-  \begin{center}\small
-    I switch between Claude and OpenAI tools, between computers, and between supervised and overnight sessions.
-  \end{center}
-  \vspace{0.35em}
-  \begin{enumerate}\setlength\itemsep{0.38em}
-    \item The \textbf{goal document} defines phases, gates, safe decisions, and decisions reserved for me.
-    \item Each agent commits a coherent change and updates the \textbf{handoff} with verified state.
-    \item The next tool or computer reads the history and handoff, then reruns the relevant gate.
-    \item I make pedagogical and scientific judgments. Agents inventory, edit, build, and check.
-  \end{enumerate}
-  \vfill
-  \begin{center}
-    \slidepoint{Git preserves state. Handoff documents preserve \textbf{intent and evidence}.}
-  \end{center}
-  \vspace{0.55cm plus 1fill}
+  \begin{columns}[c]
+    \begin{column}{0.54\textwidth}
+      \begin{enumerate}\footnotesize\setlength\itemsep{0.45em}
+        \item \textbf{Deferred maintenance}
+          \begin{itemize}\footnotesize\item update the website and computational examples\end{itemize}
+        \item \textbf{Coursepack with strategic gaps}
+          \begin{itemize}\footnotesize\item reduce math copying; create time for active learning\end{itemize}
+        \item \textbf{AI-forward assessment}
+          \begin{itemize}\footnotesize\item explicit AI policy and completion-based homework grading
+            \item assessment analytics and an AI-forward project\end{itemize}
+        \item \textbf{More in-class exams}
+          \begin{itemize}\footnotesize\item open coursepack; assess individual understanding\end{itemize}
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      {\small\textbf{August 2026}}\\[0.25em]
+      \input{figures/august_2026_calendar}\\[0.4em]
+      {\scriptsize\textcolor{NDGold!80!black}{$\blacksquare$}~sprint starts\quad
+        \textcolor{IrishGreen}{$\blacksquare$}~lecture 1\quad
+        \textcolor{Muted}{shading: commits}}\\[0.45em]
+      {\small \textbf{1{,}452} commits, Aug 17--31\\[0.2em]
+      \textcolor{Muted}{1{,}084 private $\cdot$ 368 public}}
+    \end{column}
+  \end{columns}
+  \vspace{0.25cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Task 6: Coursepack sources and strategic gaps}
@@ -295,4 +239,79 @@
     Students can trace the sources and work through the missing steps.
   \end{center}
   \vspace{0.45cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Task 6: The course uses two repositories}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/scientific_computing_workflow.md}{\texttt{resources/practices/scientific\_computing\_workflow.md}}}
+  \vfill
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \textbf{Authoritative sources}
+      \begin{itemize}\small\setlength\itemsep{0.4em}
+        \item \texttt{optimization-private}: lecture notes, coursepack, assessments
+        \item \texttt{optimization}: notebooks, figure scripts, and data
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \textbf{Derived artifacts}
+      \begin{itemize}\small\setlength\itemsep{0.4em}
+        \item instructor, student, and alignment PDFs
+        \item published notebooks, website, and figures
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{1.0em}
+  \begin{center}\small
+    A cross-repository solution-leak check enforces the private/public boundary.\\[0.35em]
+    Claude and GPT helped map each goal to artifacts, then each likely failure to a test.
+  \end{center}
+  \vspace{1.0cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Task 6: Each failure became a repeatable test}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/scripts/check_docs.py}{\texttt{resources/scripts/check\_docs.py}}}
+  \vfill
+  \begin{center}\small
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{7.1cm}@{}}
+    \toprule
+    \textbf{Problem found} & \textbf{Test added} \\
+    \midrule
+    Missing citations & Resolve every key against \texttt{references.bib} \\
+    Broken page layout & Render every page and check for clipping \\
+    Notebook code drift & Compare notebook source across repos \\
+    Solutions leaking into public files & Scan published notebooks for solutions \\
+    Broken website routes & Rebuild the site and follow every internal link \\
+    Stale figures & Re-execute figure scripts and compare outputs \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    \slidepoint{Every recurring problem left a \textbf{mechanical test} behind.}
+  \end{center}
+  \vspace{0.45cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Task 6: Git and handoffs bridge tools and computers}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/checklists/reproducibility_and_handoff_checklist.md}{\texttt{resources/checklists/reproducibility\_and\_handoff\_checklist.md}}}
+  \vfill
+  \textbf{I switch between\ldots}
+  \begin{itemize}\setlength\itemsep{0.35em}
+    \item Claude and OpenAI tools
+    \item my laptop and my desktop
+    \item supervised and overnight sessions
+  \end{itemize}
+  \vspace{0.9em}
+  \begin{enumerate}\setlength\itemsep{0.38em}
+    \item The \textbf{goal document} defines phases, gates, safe decisions, and decisions reserved for me.
+    \item Each agent commits a coherent change and updates the \textbf{handoff} with verified state.
+    \item The next tool or computer reads the history and handoff, then reruns the relevant gate.
+    \item I make pedagogical and scientific judgments. Agents inventory, edit, build, and check.
+  \end{enumerate}
+  \vfill
+  \begin{center}
+    \slidepoint{Git preserves state. Handoff documents preserve \textbf{intent and evidence}.}
+  \end{center}
+  \vspace{0.55cm plus 1fill}
 \end{frame}

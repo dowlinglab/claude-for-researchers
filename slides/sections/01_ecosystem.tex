@@ -6,7 +6,6 @@
       \textbf{This is not}
       \begin{itemize}
         \item a Claude tutorial
-        \item a product comparison
         \item a claim that AI does research
       \end{itemize}
     \end{column}
@@ -21,12 +20,12 @@
   \end{columns}
   \vspace{0.8em}
   \begin{center}
-    \textbf{My experience, distilled into six research task types}\\[0.5em]
+    \textbf{My past year, distilled into six research task types}\\[0.6em]
     \small
-    \begin{tabular}{@{}p{4.7cm}p{4.7cm}@{}}
-      1.~Set up agents and inherit a project & 4.~Audit a manuscript \\[0.5em]
-      2.~Paper code $\to$ public package & 5.~Project $\to$ manuscript \\[0.5em]
-      3.~Idea $\to$ report or proposal & 6.~Modernize a course \\[0.5em]
+    \begin{tabular}{@{}l@{\hspace{1.3cm}}l@{}}
+      1.~Set up agents and inherit a project & 4.~Audit a manuscript \\[0.55em]
+      2.~Paper code $\to$ public package & 5.~Project $\to$ manuscript \\[0.55em]
+      3.~Idea $\to$ report or proposal & 6.~Modernize a course \\[0.55em]
     \end{tabular}
   \end{center}
   \vfill
@@ -35,48 +34,63 @@
 \begin{frame}{Project context and agent actions are complementary}
   \ndlogonote{\scriptsize Sources and current access notes: \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/notes/references.md}{\texttt{notes/references.md}}}
   \vfill
-  \begin{columns}[c]
+  \begin{columns}[t]
     \begin{column}{0.47\textwidth}
-      \textbf{Context: what can it consult?}\\[0.5em]
-      \small ChatGPT Projects and Claude Projects collect instructions, files, and conversations. NotebookLM organizes work around sources.
-      \\[0.7em]Useful for: understanding papers and developing an argument.
+      \textbf{Context: what can it consult?}
+      \begin{itemize}\small\setlength\itemsep{0.35em}
+        \item ChatGPT Projects, Claude Projects, NotebookLM
+        \item collect instructions, files, and sources
+        \item for understanding papers and developing an argument
+      \end{itemize}
     \end{column}
     \begin{column}{0.47\textwidth}
-      \textbf{Actions: what can it change?}\\[0.5em]
-      \small Codex, Claude Code, and Antigravity can work on repositories: inspect files, edit, run checks, and use Git.
-      \\[0.7em]Useful for: reproducing a result or revising a document.
+      \textbf{Actions: what can it change?}
+      \begin{itemize}\small\setlength\itemsep{0.35em}
+        \item Codex, Claude Code, Antigravity
+        \item inspect files, edit, run checks, use Git
+        \item for reproducing a result or revising a document
+      \end{itemize}
     \end{column}
   \end{columns}
-  \vspace{0.8em}
+  \vspace{1.0em}
   \begin{center}\small
-    Web versus desktop is not the dividing line. Agent modes such as Claude Cowork can combine project context with connected folders.
+    Web versus desktop is not the dividing line.\\[0.35em]
+    \textbf{Antigravity is not included in ND's Google plan} (checked September 11, 2026).
   \end{center}
-  \vspace{0.4em}
-  \begin{center}\small
-    \textbf{Antigravity is not included in ND's Google plan.}\\[0.25em]My ND account was ineligible when checked on September 11, 2026.
-  \end{center}
-  \vspace{0.8cm plus 1fill}
+  \vspace{1.0cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Desktop app, terminal, or editor: choose your workspace}
+\begin{frame}{Desktop app, editor, or terminal: choose your workspace}
   \vfill
   \begin{columns}[t]
     \begin{column}{0.32\textwidth}
-      \textbf{Desktop app}\\[0.3em]
-      {\small No setup, a chat-like window, easy to supervise several tasks at once. Best if you're new to this or juggling parallel work.}
+      \textbf{Desktop app}
+      \begin{itemize}\small\setlength\itemsep{0.4em}
+        \item no setup
+        \item chat-like window
+        \item supervise several tasks
+      \end{itemize}
     \end{column}
     \begin{column}{0.32\textwidth}
-      \textbf{Terminal (CLI)}\\[0.3em]
-      {\small Scriptable --- cron jobs, CI, non-interactive runs. Keyboard-only. Best when the terminal is already your workflow.}
+      \textbf{Editor extension}
+      \begin{itemize}\small\setlength\itemsep{0.4em}
+        \item inline in VS Code
+        \item cursor-aware diffs
+        \item tight edit-review loop
+      \end{itemize}
     \end{column}
     \begin{column}{0.32\textwidth}
-      \textbf{Editor extension}\\[0.3em]
-      {\small Agent assistance inline in VS Code (or similar) with cursor-aware diffs. Best for a tight edit-review loop in code you're already reading.}
+      \textbf{Terminal (CLI)}
+      \begin{itemize}\small\setlength\itemsep{0.4em}
+        \item keyboard-only
+        \item scriptable: cron, CI
+        \item non-interactive runs
+      \end{itemize}
     \end{column}
   \end{columns}
-  \vspace{0.8em}
+  \vspace{1.2em}
   \begin{center}
-    \slidepoint{I use the \textbf{desktop app} more than \textbf{90\%} of the time --- supervising several threads at once is the whole point.}
+    \slidepoint{I use the \textbf{desktop app} more than \textbf{90\%} of the time.}
   \end{center}
   \vfill
 \end{frame}
@@ -93,12 +107,11 @@
     \bottomrule
   \end{tabular}
   \end{center}
-  \vspace{0.6em}
+  \vspace{0.5em}
   \begin{center}
-    Neither publishes a token budget for these subscriptions. Both show remaining usage across time windows.\\[0.25em]
     {\scriptsize * OpenAI limits vary by plan.}
   \end{center}
-  \vspace{0.4em}
+  \vspace{1.0em}
   \begin{center}
     \slidepoint{The mid-tier model (\textbf{Sonnet}, \textbf{Terra}) is usually the \textbf{right default}. Save Astra or Fable for the hardest work.}
   \end{center}
@@ -157,22 +170,5 @@
     \end{column}
   \end{columns}
   \vspace{0.75cm}
-  \vfill
-\end{frame}
-
-\begin{frame}{This talk was built with the practices it recommends}
-  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/ND_Beamer_Template}{\texttt{github.com/dowlinglab/ND\_Beamer\_Template}}}
-  \vspace{0.3cm}
-  \begin{enumerate}\setlength\itemsep{0.6em}
-    \item Identified 10+ AI-accelerated projects from the past year
-    \item Dispatched agents to examine each project's full history
-    \item Distilled the findings into actionable practice guides
-    \item Crafted a story arc and outline
-    \item Built these slides iteratively with Claude and GPT
-      \begin{itemize}\small\setlength\itemsep{0.2em}
-        \item Claude analyzed my past talks to match my style
-        \item I made the editorial decisions
-      \end{itemize}
-  \end{enumerate}
   \vfill
 \end{frame}

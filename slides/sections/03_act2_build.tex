@@ -68,34 +68,61 @@
   \end{itemize}
   \vfill
   \begin{center}
-    \slidepoint{The package becomes reusable without losing the result that made it credible.}
+    \slidepoint{The package becomes reusable without losing the published case studies that made it credible.}
   \end{center}
   \vspace{1.1cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 3: Create a literature-grounded report or proposal}
+\begin{frame}{Task 3: Why \LaTeX{} makes the agent useful}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/technical_writing.md}{\texttt{resources/practices/technical\_writing.md}}}
   \vfill
-  \begin{columns}[c]
+  \begin{columns}[t]
     \begin{column}{0.46\textwidth}
-      \textbf{What is \LaTeX?}\\[0.4em]
-      \small A plain-text document source that separates content from layout and compiles into a PDF. It handles equations, references, figures, and cross-references especially well.
+      \textbf{What is \LaTeX?}
+      \begin{itemize}\small\setlength\itemsep{0.4em}
+        \item a plain-text document source
+        \item separates content from layout
+        \item compiles to a PDF
+        \item built for equations, references, and cross-references
+      \end{itemize}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \textbf{Why agents work well with it}\\[0.4em]
-      \begin{itemize}\small\setlength\itemsep{0.35em}
-        \item source is searchable text
+      \textbf{Why agents work well with it}
+      \begin{itemize}\small\setlength\itemsep{0.4em}
+        \item the source is searchable text
         \item sections and figures are separate files
         \item every edit produces a readable diff
-        \item the compiled PDF provides a visual check
+        \item the compiled PDF is a visual check
       \end{itemize}
     \end{column}
   \end{columns}
-  \vspace{0.8em}
+  \vspace{1.0em}
   \begin{center}
-    \slidepoint{The report grows from \textbf{curated evidence}, not generated citations.}
+    \slidepoint{Plain text is what lets an agent --- and Git --- work on your manuscript.}
   \end{center}
-  \vspace{1.3cm plus 1fill}
+  \vspace{1.1cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Overleaf and local edits meet through GitHub}
+  \ndlogonote{\scriptsize\href{https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization}{Overleaf: GitHub synchronization (documentation + screenshot)}\quad\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/latex_overleaf_workflow.md}{Companion workflow}}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.46\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=4.9cm,keepaspectratio]{figures/overleaf_github_sync.png}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{enumerate}\small\setlength\itemsep{0.7em}
+        \item Sync Overleaf edits to GitHub; pull locally.
+        \item Revise on a \textbf{feature branch}.
+        \item Incorporate collaborators' latest changes; review and merge.
+        \item Pull the merged version into Overleaf.
+      \end{enumerate}
+      \vspace{0.5em}
+      \small Synchronization is \textbf{explicit}, not automatic. Coordinate with coauthors.
+    \end{column}
+  \end{columns}
+  \vspace{0.8cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Three repositories keep development, writing, and release separate}
@@ -113,10 +140,12 @@
     \bottomrule
   \end{tabular}
   \end{center}
-  \vspace{0.55em}
-  \begin{center}\small
-    My rule: keep individual Git files below about \textbf{10 MB}. Put large PDF collections on a shared drive; keep summaries and \texttt{ref.bib} in Git.
-  \end{center}
+  \vspace{0.7em}
+  \begin{itemize}\small\setlength\itemsep{0.4em}
+    \item Keep individual Git files below about \textbf{10 MB}.
+    \item Put large PDF collections on a shared drive, not in Git.
+    \item Keep the summaries and \texttt{ref.bib} in Git.
+  \end{itemize}
   \vspace{1.0cm plus 1fill}
 \end{frame}
 
@@ -145,68 +174,48 @@
 \begin{frame}{Task 3, step 2: Build a literature corpus an agent can use}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/prompts/literature_workflow.md}{\texttt{resources/prompts/literature\_workflow.md}}}
   \vfill
-  \begin{itemize}\setlength\itemsep{0.65em}
-    \item Process PDFs in small topical batches and checkpoint each batch.
-    \item Propose consistent filenames; identify likely duplicates without deleting automatically.
-    \item Maintain \texttt{ref.bib} with verified metadata and DOI information.
-    \item Summarize every paper in \texttt{literature.md}: contribution, evidence, relevance, and what it cannot support.
-    \item Keep large PDF collections in a reference manager or shared-drive folder; keep the small text artifacts in Git.
-  \end{itemize}
-  \vfill
+  \begin{enumerate}\setlength\itemsep{0.8em}
+    \item \textbf{Process the PDFs in small topical batches}
+      \begin{itemize}\small
+        \item checkpoint after each batch
+        \item propose consistent filenames; flag likely duplicates without deleting
+      \end{itemize}
+    \item \textbf{Maintain \texttt{ref.bib} as you go}
+      \begin{itemize}\small
+        \item verified metadata and DOI information, one entry per paper
+      \end{itemize}
+    \item \textbf{Summarize every paper in \texttt{literature.md}}
+      \begin{itemize}\small
+        \item contribution, evidence, relevance, and what it cannot support
+        \item keep the PDFs in a reference manager; keep the text artifacts in Git
+      \end{itemize}
+  \end{enumerate}
+  \vspace{0.6em}
   \begin{center}
     \slidepoint{The durable product is the \textbf{verified map of the literature}.}
   \end{center}
-  \vspace{1.0cm plus 1fill}
+  \vspace{0.6cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Task 3, step 3: Edit the document against the curated corpus}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/grant_proposal_writing.md}{\texttt{resources/practices/grant\_proposal\_writing.md}}}
   \vfill
-  \begin{center}
-  \begin{tikzpicture}[font=\small, node distance=0.85cm]
-    \node[nd box, minimum width=2.8cm, minimum height=1.2cm, align=center]
-      (a) {Question +\\\texttt{literature.md}};
-    \node[nd box, minimum width=2.8cm, minimum height=1.2cm, align=center, right=of a]
-      (b) {Claim and evidence\\outline};
-    \node[nd box, minimum width=2.8cm, minimum height=1.2cm, align=center, right=of b]
-      (c) {Draft one\\section at a time};
-    \node[nd highlight, minimum width=3.0cm, minimum height=1.2cm, align=center, right=of c]
-      (d) {Check every claim\\against source PDFs};
-    \draw[-{Stealth[length=6pt]}, thick] (a) -- (b);
-    \draw[-{Stealth[length=6pt]}, thick] (b) -- (c);
-    \draw[-{Stealth[length=6pt]}, thick] (c) -- (d);
-  \end{tikzpicture}
-  \end{center}
-  \vspace{0.8em}
-  \begin{itemize}\setlength\itemsep{0.55em}
-    \item Ask what evidence supports each paragraph before polishing its prose.
-    \item Edit the report or proposal against the local corpus, not an agent's memory.
-    \item Preserve uncertainty and conflicting evidence as part of the argument.
-  \end{itemize}
+  \begin{enumerate}\setlength\itemsep{0.8em}
+    \item \textbf{Start from the question and \texttt{literature.md}}
+      \begin{itemize}\small
+        \item build a claim-and-evidence outline before writing prose
+      \end{itemize}
+    \item \textbf{Draft one section at a time}
+      \begin{itemize}\small
+        \item ask what evidence supports each paragraph before polishing it
+        \item preserve uncertainty and conflicting evidence as part of the argument
+      \end{itemize}
+    \item \textbf{Check every claim against the source PDFs}
+      \begin{itemize}\small
+        \item edit against the local corpus, not an agent's memory
+      \end{itemize}
+  \end{enumerate}
   \vspace{1.0cm plus 1fill}
-\end{frame}
-
-
-\begin{frame}{Overleaf and local edits meet through GitHub}
-  \ndlogonote{\scriptsize\href{https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization}{Overleaf: GitHub synchronization (documentation + screenshot)}\quad\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/latex_overleaf_workflow.md}{Companion workflow}}
-  \vfill
-  \begin{columns}[c]
-    \begin{column}{0.46\textwidth}
-      \centering
-      \includegraphics[width=\linewidth,height=4.9cm,keepaspectratio]{figures/overleaf_github_sync.png}
-    \end{column}
-    \begin{column}{0.49\textwidth}
-      \begin{enumerate}\small\setlength\itemsep{0.7em}
-        \item Sync Overleaf edits to GitHub; pull locally.
-        \item Revise on a \textbf{feature branch}.
-        \item Incorporate collaborators' latest changes; review and merge.
-        \item Pull the merged version into Overleaf.
-      \end{enumerate}
-      \vspace{0.5em}
-      \small Synchronization is \textbf{explicit}, not automatic. Coordinate with coauthors.
-    \end{column}
-  \end{columns}
-  \vspace{0.8cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Review the source diff and the manuscript diff}

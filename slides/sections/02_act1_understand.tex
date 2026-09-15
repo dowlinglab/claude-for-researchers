@@ -1,40 +1,6 @@
 \stagedivider{2}{Act I: Understand}{Set up the workspace before asking for work}
 
-\begin{frame}{The filesystem is the source of truth}
-  \vspace{0.45cm}
-  \begin{columns}[t]
-    \begin{column}{0.46\textwidth}
-      \begin{center}\textbf{A conversation}\end{center}
-      \begin{itemize}\small
-        \item tied to one session
-        \item difficult to share or search
-        \item useful context can disappear with the tool
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \begin{center}\textbf{A repository}\end{center}
-      \begin{itemize}\small
-        \item versioned and shared
-        \item searchable history
-        \item survives tools, people, and computers
-      \end{itemize}
-    \end{column}
-  \end{columns}
-  \vspace{0.7em}
-  \begin{center}\small
-    Use \textbf{version control} for every research project. When something breaks, Git lets you compare versions and recover.
-  \end{center}
-  \vfill
-  \begin{center}\small
-    Getting started: GitHub account + education upgrade\textsuperscript{1}\quad tutorial\textsuperscript{2}\quad GitHub Desktop\textsuperscript{3}
-  \end{center}
-  \vspace{0.45em}
-  \begin{center}
-    {\tiny \textsuperscript{1}~\texttt{github.com/education} \quad \textsuperscript{2}~\texttt{youtu.be/a9u2yZvsqHA} \quad \textsuperscript{3}~\texttt{desktop.github.com/download}}
-  \end{center}
-\end{frame}
-
-\begin{frame}{An agent can act on a repository}
+\begin{frame}{An agent works on your file system}
   \vfill
   \begin{center}
   \begin{tikzpicture}[font=\normalsize, node distance=1.3cm]
@@ -50,13 +16,78 @@
   \end{center}
   \vspace{0.7em}
   \begin{center}
-    An agent can inspect the real files, edit them, run code and tests, search Git history, and prepare commits.
+    An agent can \textbf{inspect the real files}, \textbf{edit them}, run code and tests, search Git history, and prepare commits.
   \end{center}
   \vspace{0.6em}
   \begin{center}
     \slidepoint{The useful shift is from \textbf{describing} a project to letting an agent \textbf{inspect} it.}
   \end{center}
   \vfill
+\end{frame}
+
+\begin{frame}{A repository beats a folder, and a folder beats a chat}
+  \ndlogonote{\scriptsize Getting started: \href{https://github.com/education}{\texttt{github.com/education}}\quad\href{https://youtu.be/a9u2yZvsqHA}{tutorial}\quad\href{https://desktop.github.com/download}{\texttt{desktop.github.com/download}}}
+  \vspace{0.2cm}
+  \begin{columns}[t]
+    \begin{column}{0.30\textwidth}
+      \begin{center}\textbf{A conversation}\end{center}
+      \begin{itemize}\footnotesize\setlength\itemsep{0.22em}
+        \item you paste context in and copy results out
+        \item tied to one session
+        \item difficult to share or search
+        \item disappears with the tool
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.30\textwidth}
+      \begin{center}\textbf{A file system}\end{center}
+      \begin{itemize}\footnotesize\setlength\itemsep{0.22em}
+        \item the agent reads and edits the real files
+        \item no copy-paste step
+        \item every change overwrites what was there
+        \item one bad edit is unrecoverable
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.30\textwidth}
+      \begin{center}\textbf{\color{IrishGreen}A repository}\end{center}
+      \begin{itemize}\footnotesize\setlength\itemsep{0.22em}
+        \item every change is saved and labeled
+        \item searchable history
+        \item compare versions and recover
+        \item survives tools, people, and computers
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{0.45em}
+  \begin{center}\small
+    \textbf{Version control} keeps a dated record of every saved change. Use it for every
+    research project: when an agent breaks something, Git is how you undo it.
+  \end{center}
+  \vspace{0.9cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Task 1 starts the way most projects start}
+  \vfill
+  \begin{center}
+  \begin{tikzpicture}
+    \node[nd box, text width=10.6cm, align=left, inner sep=0.45cm] {%
+      \small\itshape
+      Welcome to the group. You are taking over this project from a
+      student who graduated last spring.\\[0.5em]
+      Here is a zip file with what I think is the most recent code, and
+      here is our latest paper.\\[0.5em]
+      Figure out how to reproduce the results in the paper using this
+      code. Then we can extend it.};
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0.9em}
+  \begin{center}\small
+    No repository. No environment file. No record of which script made which figure.
+  \end{center}
+  \vspace{0.5em}
+  \begin{center}
+    \slidepoint{Before you can extend the work, you have to be able to \textbf{rerun} it.}
+  \end{center}
+  \vspace{0.6cm plus 1fill}
 \end{frame}
 
 \begin{frame}{Task 1: Set up an agent workspace and inherit a project}
@@ -156,55 +187,49 @@ conda run -n transport python -m pytest
   \vspace{1.0cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Overnight work needs a goal and a morning handoff}
+\begin{frame}[fragile]{Ask for help writing the goal, not just the work}
+  \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{resources/practices/working\_with\_ai\_agents.md} \S12}}
+  \vspace{0.35cm}
+  \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+I would like help developing a goal for an overnight session.
+
+The work: set up the inherited project so I can reproduce Figure 3
+of the paper.
+
+Draft a goal document that states:
+- the objective, and the evidence that proves it is finished
+- which files you may change, and which you may not
+- phases, each ending in a check I can verify myself
+- what to do when a check fails
+- the decisions you must leave to me
+- a commit after each phase, and a morning review queue
+
+Ask me questions before you write it.
+  \end{lstlisting}
+  \vspace{0.3em}
+  \begin{center}
+    \slidepoint{The first overnight prompt is about the \textbf{goal}, not the work.}
+  \end{center}
+  \vspace{0.5cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Then draft, review, and launch}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{resources/practices/working\_with\_ai\_agents.md} \S12}}
   \vfill
-  \begin{columns}[c]
-    \begin{column}{0.48\textwidth}
-      \textbf{Define before leaving}\par
-      \begin{itemize}\small\setlength\itemsep{0.4em}
-        \item objective and evidence for completion
-        \item permitted files and reversible decisions
-        \item phases, checks, budget, and stop conditions
-        \item commits and a morning review queue
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.47\textwidth}
-      \textbf{Choose the mechanism}\par
-      \begin{itemize}\small\setlength\itemsep{0.4em}
+  \begin{enumerate}\setlength\itemsep{0.75em}
+    \item \textbf{The agent drafts the planning document} from that prompt and its questions.
+    \item \textbf{I read and edit it.} This is where the scientific decisions get made, while I am awake.
+    \item \textbf{Start the run} with the reviewed document as the goal:
+      \begin{itemize}\small\setlength\itemsep{0.3em}
         \item Codex \textbf{Goal}: pursue a persistent objective
         \item Claude Code \textbf{\texttt{/goal}}: continue until a condition is met
         \item Claude Code \textbf{\texttt{/loop}}: repeat a prompt on an interval
       \end{itemize}
-    \end{column}
-  \end{columns}
-  \vspace{0.6em}
-  \begin{center}\small
-    My examples: a \textbf{12-hour lecture revision} and a \textbf{24-hour feasibility study}. Both use staged checks and reserve scientific decisions for me.
-    \\[0.4em]Local work needs an awake machine, a running session, sufficient usage, and suitable permissions. Use scheduled tasks for later runs.
-  \end{center}
-  \vspace{0.8cm plus 1fill}
-\end{frame}
-
-\begin{frame}{Claude hooks connect workflow events to checks}
-  \ndlogonote{\scriptsize\href{https://code.claude.com/docs/en/hooks-guide}{\texttt{code.claude.com/docs/en/hooks-guide}}}
-  \vfill
-  \begin{center}\small
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{@{}p{3.0cm}p{8.9cm}@{}}
-    \toprule
-    \textbf{Event} & \textbf{Example action} \\
-    \midrule
-    Before a tool runs & Check whether the proposed edit touches a protected file. \\
-    After a file edit & Run a formatter or a focused verification script. \\
-    Before stopping & Check the completion condition; return failures for another pass. \\
-    \bottomrule
-  \end{tabular}
-  \end{center}
+  \end{enumerate}
   \vspace{0.7em}
   \begin{center}\small
-    Configure in \texttt{.claude/settings.json}; inspect with \texttt{/hooks}.\\[0.4em]
-    Instructions guide behavior. A command hook runs a defined check when its event fires.
+    My examples: a \textbf{12-hour lecture revision} and a \textbf{24-hour feasibility study}.\\[0.35em]
+    Local runs need an awake machine, a live session, remaining usage, and suitable permissions.
   \end{center}
-  \vspace{0.8cm plus 1fill}
+  \vspace{0.6cm plus 1fill}
 \end{frame}
