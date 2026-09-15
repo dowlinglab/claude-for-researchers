@@ -1,0 +1,31 @@
+faculty:
+  Bergerson:
+    building: NSH
+    room: "101"
+    areas: ["Energy"]
+    status: active
+  Hicks:
+    building: MCH
+    room: "201"
+    areas: ["Biotech"]
+    status: active
+  "Colón":
+    building: NSH
+    room: "102"
+    areas: ["Biotech", "Energy"]
+    status: active
+  Dowling:
+    building: NSH
+    room: "103"
+    areas: ["Energy"]
+    status: active
+  Maginn:
+    building: NSH
+    room: "104"
+    areas: ["Energy", "Biotech"]
+    status: active
+  Bilgicer:
+    building: MCH
+    room: "202"
+    areas: ["Biotech"]
+    status: active

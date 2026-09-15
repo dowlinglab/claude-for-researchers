@@ -1,0 +1,23 @@
+buildings:
+  NSH: ["9:00 AM-9:15 AM", "9:15 AM-9:30 AM", "9:30 AM-9:45 AM", "9:45 AM-10:00 AM", "10:00 AM-10:15 AM", "10:15 AM-10:30 AM", "10:30 AM-10:45 AM", "10:45 AM-11:00 AM"]
+  MCH: ["9:00 AM-9:15 AM", "9:15 AM-9:30 AM", "9:30 AM-9:45 AM", "9:45 AM-10:00 AM", "10:00 AM-10:15 AM", "10:15 AM-10:30 AM", "10:30 AM-10:45 AM", "10:45 AM-11:00 AM"]
+building_order: ["NSH", "MCH"]
+movement:
+  policy: none
+  phase_slot:
+    NSH: 1
+    MCH: 1
+breaks: []
+
+areas: ["Energy", "Biotech"]
+area_weights:
+  Area1: 1.0
+  Area2: 0.5
+
+faculty_availability:
+  Bergerson: [1, 2, 3, 4, 5, 6, 7, 8]
+  Hicks: [1, 2, 3, 4, 5, 6, 7, 8]
+  "Colón": [1, 2, 3, 4, 5, 6, 7, 8]
+  Dowling: [1, 2, 3, 4, 5, 6, 7, 8]
+  Maginn: [1, 2, 3, 4, 5, 6, 7, 8]
+  Bilgicer: [1, 2, 3, 4, 5, 6, 7, 8]
