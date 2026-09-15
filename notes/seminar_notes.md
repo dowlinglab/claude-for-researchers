@@ -57,8 +57,8 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
   remove every mention of the non-Anthropic tools.
 
 **Also:** slide 21 dropped the 12-hour/24-hour examples and the local-run prerequisites, and gained
-a fourth step: use the agent to help you understand what came back, with sub-bullets split between
-the code it changed and the results it produced. The two cut sentences were prerequisites and
+a fourth step, "use the agent to explore": summarize the code organization, explain this result,
+show me where this number came from, hypothesize why a result was not reproduced. The two cut sentences were prerequisites and
 anecdote; the new step is the part of the overnight loop the audience will actually repeat, and it
 puts the morning review inside the numbered sequence rather than leaving it implied. The frame title became "Then draft, review, launch, and explore" so it covers all four steps.
 
