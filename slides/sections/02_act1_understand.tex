@@ -282,21 +282,23 @@ what evidence proves it is finished and what you must leave to me.
 
 \begin{frame}{Then draft, review, and launch}
   \ndlogonote{\scriptsize\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/practices/working_with_ai_agents.md}{\texttt{resources/practices/working\_with\_ai\_agents.md} \S12}}
-  \vfill
-  \begin{enumerate}\setlength\itemsep{0.75em}
+  \vspace{0.15cm}
+  \begin{enumerate}\setlength\itemsep{0.5em}
     \item \textbf{The agent drafts the planning document} from that prompt and its questions.
     \item \textbf{I read and edit it.} This is where the scientific decisions get made, while I am awake.
     \item \textbf{Start the run} with the reviewed document as the task:
-      \begin{itemize}\small\setlength\itemsep{0.3em}
+      \begin{itemize}\small\setlength\itemsep{0.2em}
         \item Codex \textbf{Goal}: pursue a persistent objective
         \item Claude Code \textbf{\texttt{/goal}}: continue until a condition is met
         \item Claude Code \textbf{\texttt{/loop}}: repeat a prompt on an interval
       \end{itemize}
+    \item \textbf{Use the agent to help you understand what came back:}
+      \begin{itemize}\small\setlength\itemsep{0.2em}
+        \item walk me through what changed in the code, and why
+        \item explain this function, this error, this dependency
+        \item show me where each number in the results came from
+        \item which results did not reproduce, and what did you skip?
+      \end{itemize}
   \end{enumerate}
-  \vspace{0.7em}
-  \begin{center}\small
-    My examples: a \textbf{12-hour lecture revision} and a \textbf{24-hour feasibility study}.\\[0.35em]
-    Local runs need an awake machine, a live session, remaining usage, and suitable permissions.
-  \end{center}
-  \vspace{0.6cm plus 1fill}
+  \vspace{0.55cm plus 1fill}
 \end{frame}

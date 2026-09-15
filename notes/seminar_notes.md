@@ -56,7 +56,13 @@ Entry format: date, decisions made, actions taken, files touched, commit (if any
 - NotebookLM and ChatGPT EDU still appear on the epilogue policy slide, so cutting slide 7 does not
   remove every mention of the non-Anthropic tools.
 
-**Also:** slide 27 was retitled "Task 3: Idea to a literature review, report, or proposal" so the
+**Also:** slide 21 dropped the 12-hour/24-hour examples and the local-run prerequisites, and gained
+a fourth step: use the agent to help you understand what came back, with sub-bullets split between
+the code it changed and the results it produced. The two cut sentences were prerequisites and
+anecdote; the new step is the part of the overnight loop the audience will actually repeat, and it
+puts the morning review inside the numbered sequence rather than leaving it implied.
+
+Slide 27 was retitled "Task 3: Idea to a literature review, report, or proposal" so the
 frame title names the task rather than the tool it argues for, and the longer name was propagated to
 the two places that also label the six tasks — the slide 6 list and the slide 49 summary table.
 Both absorbed the longer phrase without wrapping or overflowing, so no layout compromise was needed.
