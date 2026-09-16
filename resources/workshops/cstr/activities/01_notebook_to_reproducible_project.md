@@ -201,17 +201,44 @@ a deliberate exception: it is evidence, not output.)
 
 Move the science out of the notebook into `src/cstr_workshop/`.
 
-There is **no required module layout.** A reasonable one:
+Four modules are already stubbed for you — each has its docstring, signature,
+units, and a pointer to the notebook cell it came from, and a body that raises
+`NotImplementedError`:
 
-| Module | Contents |
-|---|---|
-| `model.py` | parameter loading and validation, rate constant, steady-state residuals |
-| `solve.py` | solving from one guess; finding distinct steady states from many |
-| `sweep.py` | sweeping a parameter and collecting every steady state found |
-| `plotting.py` | the figure, drawn from a dataframe |
+| Module | Contents | From cells |
+|---|---|---|
+| `model.py` | parameter loading and validation, rate constant, residuals | 3, 5 |
+| `solve.py` | solving from one guess; finding distinct steady states | 7, 9 |
+| `sweep.py` | sweeping a parameter and collecting every steady state | 11 |
+| `plotting.py` | the figure, drawn from a dataframe | 13 |
 
-What matters is that the functions are importable, take parameters as arguments
-rather than reading globals, and behave identically to the notebook.
+```bash
+python -c "import cstr_workshop.model as m; m.arrhenius_rate_constant(350.0, {})"
+# NotImplementedError: Phase 3: migrate from notebook cell 5
+```
+
+**These are scaffolding, not a specification.** There is still no required
+module layout: merge them, split them, rename them, or replace them with
+something you prefer. The gate does not change — whatever you build must
+regenerate the baseline you captured in Phase 2.
+
+### The actual work
+
+It is not retyping the formulas. Compare a notebook function with its stub:
+
+```python
+# notebook cell 5 -- reads k0 and EoverR from the surrounding cell scope
+def rate_constant(T):
+    return k0 * np.exp(-EoverR / T)
+
+# model.py -- the parameters arrive as an argument
+def arrhenius_rate_constant(T, params):
+    ...
+```
+
+Every function has to lose its hidden dependency on module-level state before
+it can move. That is what makes it callable, testable, and reasonable to trust
+in isolation — and it is most of the time this phase takes.
 
 > **Prompt.** Extract the model, solver, sweep, and plotting code from
 > `notebooks/cstr_exploration.ipynb` into modules under `src/cstr_workshop/`.

@@ -1,19 +1,27 @@
 """CSTR workshop package.
 
-This package is deliberately empty at the start of Workshop 1. The reactor model
-currently lives inside ``notebooks/cstr_exploration.ipynb``; extracting it into
-modules here is the work of that activity.
+The reactor model starts inside ``notebooks/cstr_exploration.ipynb``. Moving it
+here is the work of Workshop 1.
 
-There is no required module layout. A reasonable one is::
+Four modules are stubbed, each with the docstring, signature, and units it needs
+and no body:
 
-    cstr_workshop/
-        model.py      parameters, kinetics, steady-state residuals
-        solve.py      nonlinear solution and distinct-root detection
-        sweep.py      parameter sweeps
-        plotting.py   figures
+    model.py      parameters, kinetics, steady-state residuals   (cells 3, 5)
+    solve.py      solving, and finding distinct steady states    (cells 7, 9)
+    sweep.py      sweeping a parameter                           (cell 11)
+    plotting.py   the locus figure                               (cell 13)
 
-Whatever you choose, the test is the same: ``scripts/reproduce.py`` must
-regenerate the baseline you captured before you started refactoring.
+They are scaffolding, not a specification. Merge them, split them, rename them,
+or replace them with something you prefer -- the gate is unchanged: whatever you
+build must regenerate the baseline you captured before you started.
+
+The one real change from the notebook is in the signatures. There, the functions
+read parameters from the surrounding cell scope; here, every function takes
+``params`` explicitly. Removing that hidden dependency is most of the migration,
+and it is what makes the functions testable in isolation.
+
+Nothing is imported here on purpose, so that renaming or deleting a module
+cannot break ``import cstr_workshop``. Add re-exports if you want them.
 """
 
 __version__ = "0.1.0"
