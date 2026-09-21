@@ -667,3 +667,41 @@ Context: since the previous entry, the talk was restructured from the six-stage 
 - The supplied TexpadTeX log confirms the Font Awesome error is resolved. Its older LaTeX format rejects `\textquotesingle`; replaced that command on slide 7 with an ordinary apostrophe.
 - Reduced trailing spacing on slides 37, 38, 39, 42, 44, and 46 by more than the small vertical excess reported by TexpadTeX. Preserved font sizes and content.
 - The command-line build passes without warnings, and all seven changed slides were visually checked. TexpadTeX needs another run to confirm its engine-specific warnings are resolved.
+
+### 2026-09-21: The seminar became a two-part hands-on series
+
+**Decision.** The single 1-hour slot on October 15, 2026 in Carey Auditorium was replaced by two
+sessions: **Part 1 on Monday, September 28 and Part 2 on Monday, October 12, 2026, each
+3:30–5:15 PM in McCourtney Hall B01 Auditorium (Basement).** Part 1 covers setting up a project;
+Part 2 covers advanced features.
+
+**Why the two-week gap matters.** It is working time, not scheduling convenience — participants
+experiment on their own research between the sessions. That is also what makes the private
+repository's D10 recommendation workable: source-finding for Activity 2 moves out of the session
+and becomes a between-meetings prerequisite, and participants who do not finish Activity 1 in the
+room have two weeks to finish it on their own project.
+
+**What changed in this pass.** Event details in [../README.md](../README.md),
+[../CLAUDE.md](../CLAUDE.md), [../outline.md](../outline.md), `slides/README.md`,
+`slides/storyboard.md`, and the title slide (`slides/main.tex`: date and venue). CLAUDE.md gained
+rules 12 and 13, the two-repository boundary rules — the private repository already cited them by
+number, but they had never been written here.
+
+**What did not change, deliberately.**
+
+- *The abstract.* It was submitted against the original 40-minute format and rule 3 treats it as
+  final. It is still accurate about content but says nothing about the two-part structure or the
+  hands-on activities. Whether a corrected abstract can still be submitted is Alex's call.
+- *The deck.* All 54 slides remain in one sequence, timed for a continuous 40-minute talk. The
+  provisional split (Prologue + Act I → Part 1; Acts II–III + Epilogue → Part 2, near slide 21)
+  is recorded in `outline.md` and flagged in both slide files, but no slides were moved, cut, or
+  re-timed. The real constraint is that 1 h 45 m must now hold a presentation *and* an activity
+  that the instructor materials already estimate at 2–3 hours on its own.
+
+**Discovered while making this pass.** The public half of the workshops does not exist.
+`resources/workshops/` is absent and has never been committed — no branch, no stash, no history.
+The private repository is complete and written entirely against it, referencing
+`resources/workshops/cstr_two_workshop_plan.md` and a starter under `resources/workshops/cstr/`.
+Until that is built, three of the private repository's five release checks cannot run and
+participants have nothing to do in either session. Recorded as item 8 in
+[open_questions.md](open_questions.md); it blocks both parts and is the critical path.
