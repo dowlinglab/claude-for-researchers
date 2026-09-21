@@ -705,3 +705,27 @@ The private repository is complete and written entirely against it, referencing
 Until that is built, three of the private repository's five release checks cannot run and
 participants have nothing to do in either session. Recorded as item 8 in
 [open_questions.md](open_questions.md); it blocks both parts and is the critical path.
+
+### 2026-09-21: Session shape fixed — 55 presentation minutes total, 30-minute activities
+
+**Decision (Alex).** The presentation budget is **55 minutes across both parts**, roughly 28 and 27.
+Each part runs a **30-minute hands-on activity followed by a group recap**, and the activities are
+explicitly only meant to get participants started.
+
+**Why this resolves the timing problem rather than restating it.** D10 in the private repository
+estimated Activity 1 at 2:05–3:15 and Activity 2 at 2:45–3:30, against a 1 h 45 m session that must
+also hold a presentation. Every rebalancing attempt inside that frame fails. Scoping the in-room
+work to a 30-minute opening slice, with the rest carried into the two weeks between sessions,
+changes what the session is *for*: the room is where the habit is demonstrated and discussed, not
+where the deliverable is finished. The 54-slide deck also stops being over budget — 55 minutes is
+more than the 40 it was rehearsed against.
+
+**Consequence for the recap.** A 30-minute slice only produces a worthwhile group recap if everyone
+worked on the *same* artifact. That argues for the shared CSTR starter in both parts, and for
+making the fallback report the default path in Activity 2 rather than the exception — which is D10
+recommendation 1, now forced by the format rather than merely advised.
+
+**Prerequisites moved out of the room.** The announcement asks participants to arrive with a
+charged laptop, the ChatGPT or Claude desktop app installed (with Codex or Claude Code), a GitHub
+account, GitHub Desktop, and the repository cloned. Setup was 12–25 minutes on the reference pass
+and dominated the variance; none of it needs an instructor present.

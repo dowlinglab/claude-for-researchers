@@ -14,11 +14,19 @@ This is a **two-part series**. Both parts are in the same room, two weeks apart,
 
 | | |
 |---|---|
-| **Format** | 1 hour 45 minutes per part: presentation plus a hands-on activity participants run on their own laptops |
+| **Format** | 1 hour 45 minutes per part: about 28 minutes of presentation, a 30-minute hands-on activity on your own laptop, and a group recap |
 | **Audience** | CBE graduate students and faculty, Notre Dame (faculty from other departments welcome) |
 | **Speaker** | Alex Dowling |
 
-**Before Part 1**, participants should create Claude and GitHub accounts, install the tools, and run `conda env create` for the workshop environment — the environment build is the single largest and most variable setup step and needs no instruction.
+### Before Part 1
+
+Setup time in the room is time not spent on the activity. Please arrive having done all five:
+
+1. **Bring a laptop** with a charged battery — power at the seats is limited.
+2. **Install the ChatGPT or Claude desktop app**, including Codex or Claude Code.
+3. **Create a GitHub account.**
+4. **Install GitHub Desktop.**
+5. **Clone this repository** to get the workshop materials.
 
 *The original single 1-hour slot (October 15, 2026, Carey Auditorium) was replaced by this two-part series; the abstract below was submitted against the original format.*
 
