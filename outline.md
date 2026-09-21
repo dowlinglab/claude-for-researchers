@@ -2,7 +2,20 @@
 
 This file originally held the lifecycle-based planning outline. The current talk uses the structure below; the complete 54-slide sequence is in [`slides/storyboard.md`](slides/storyboard.md). The superseded detailed outline remains in Git history through commit `2c55c74`.
 
-The seminar slot is one hour: approximately 40 minutes of presentation and 20 minutes of questions.
+## Session structure
+
+The seminar is **two parts, two weeks apart**, each 1 hour 45 minutes (3:30–5:15 PM, McCourtney Hall B01):
+
+| | Date | Presentation | Hands-on activity |
+|---|---|---|---|
+| **Part 1** | Monday, September 28, 2026 | Prologue and Act I — set up the workspace, version control, agent instructions | Activity 1: notebook to reproducible project |
+| **Part 2** | Monday, October 12, 2026 | Acts II–III and the Epilogue — build, audit, draft, and trust | Activity 2: evidence-linked report |
+
+The two weeks between the parts are working time, not a gap: participants finish Activity 1 on their own project and gather the two literature sources Activity 2 needs.
+
+**This split is provisional.** The deck below was written and timed as one continuous 40-minute talk and has not yet been re-cut for two sessions, and the instructor materials estimate that each activity alone exceeds 1 h 45 m. Both are open items — see [notes/open_questions.md](notes/open_questions.md).
+
+## Talk structure
 
 | Section | Purpose |
 |---|---|

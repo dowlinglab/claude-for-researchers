@@ -4,7 +4,7 @@ Persistent context for any AI assistant (Claude, ChatGPT/Codex, Gemini, etc.) wo
 
 ## What this repo is
 
-Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delivered to CBE graduate students and faculty at Notre Dame on October 15, 2026 in a 1-hour slot (40-minute talk + 20 minutes of questions) — see [README.md](README.md) for event details. The seminar's thesis: the most powerful uses of GenAI in research go beyond chatbot Q&A, and come from integrating AI into a deliberate, reproducible, auditable workflow. Full charter/rationale: [notes/seminar_design.md](notes/seminar_design.md).
+Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delivered to CBE graduate students and faculty at Notre Dame as a **two-part hands-on series**: Part 1 on Monday, September 28, 2026 and Part 2 on Monday, October 12, 2026, each 3:30–5:15 PM in McCourtney Hall B01. Part 1 covers setting up a project; Part 2 covers advanced features. The two-week spacing is deliberate — participants experiment on their own work between the sessions. Each part is presentation plus a hands-on activity. See [README.md](README.md) for event details. The seminar's thesis: the most powerful uses of GenAI in research go beyond chatbot Q&A, and come from integrating AI into a deliberate, reproducible, auditable workflow. Full charter/rationale: [notes/seminar_design.md](notes/seminar_design.md).
 
 **This repository is the source of truth for the project.** Decisions, rationale, and content belong in files here, not only in chat history.
 
@@ -16,7 +16,7 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 | `outline.md` | Current act-level outline and narrative through-line |
 | `slides/` | Current 54-slide Beamer deck (ND theme). `storyboard.md` records the slide sequence, `style_guide.md` the design rules, and `image_plan.md` the final visual inventory |
 | `handout/` | Planned LaTeX leave-behind handout; not yet built |
-| `resources/` | Polished, reusable student takeaways (prompts, scripts, templates) |
+| `resources/` | Polished, reusable student takeaways (prompts, scripts, templates). `resources/workshops/` will hold the student-facing CSTR workshop starter and the two-workshop plan — **not yet built** |
 | `notes/` | Project memory: design rationale, remaining follow-ups, references, demo ideas, and the running decision log |
 
 ## Working practices
@@ -32,6 +32,8 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 9. **Prefer a small number of polished resources over a large prompt library.** See [resources/README.md](resources/README.md) for the prioritized list — don't add low-value prompt files beyond it without discussion.
 10. **Git:** commit incrementally as coherent units of work land, rather than batching a long session into one commit (Alex's standing preference, 2026-09-02). Create new commits rather than amending. Review `git status`/diff before staging.
 11. **Keep final slide sources readable.** Detailed editorial notes were useful during refinement but were removed after the final audit on 2026-09-11. Recover them from Git history through commit `2c55c74` if needed; add new comments only when they explain durable implementation constraints.
+12. **Two-repository boundary.** A private sibling repository, `claude-for-researchers-private`, holds the instructor-only half of the workshops: reference implementation, reference results, tolerances, rubrics, mutation tests, and expected outcomes. **Nothing from it may appear here** — not in a file, not in a commit message, not on a side branch. A public branch is public. Public writes are limited to student-facing material: the starter under `resources/workshops/cstr/`, activity instructions, templates, and general resources. Nothing that reveals an expected numerical answer, a rubric threshold, or the seeded defects in the fallback report.
+13. **The starter must stay independently answerable.** A participant working only from this repository must be able to complete both activities. Telling an agent not to read an accessible answer folder is not an access control; validation that needs a clean view of the starter must use a copy of the public tree only.
 
 ## Content conventions
 
