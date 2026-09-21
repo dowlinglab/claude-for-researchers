@@ -17,6 +17,7 @@ This is a **two-part series**. Both parts are in the same room, two weeks apart,
 | **Format** | 1 hour 45 minutes per part: about 28 minutes of presentation, a 30-minute hands-on activity on your own laptop, and a group recap |
 | **Audience** | CBE graduate students and faculty, Notre Dame (faculty from other departments welcome) |
 | **Speaker** | Alex Dowling |
+| **RSVP** | [forms.gle/SnyVmEQkWwvq2bk3A](https://forms.gle/SnyVmEQkWwvq2bk3A) |
 
 ### Before Part 1
 
