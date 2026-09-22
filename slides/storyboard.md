@@ -2,9 +2,15 @@
 
 Revised September 14, 2026 after Alex's annotated read-through of the September 11 deck and the
 follow-up rounds in the same session (changes recorded in
-[../notes/seminar_notes.md](../notes/seminar_notes.md)). The deck now contains **54 slides**
-for a 40-minute talk, followed by 20 minutes of discussion. The title retains DRAFT, now set in
-Notre Dame green rather than red.
+[../notes/seminar_notes.md](../notes/seminar_notes.md)). The deck contains **54 slides**. The title
+retains DRAFT, now set in Notre Dame green rather than red.
+
+> **Not yet updated for the two-part series.** The sequence below was built and timed for one
+> continuous 40-minute talk. The event is now two 1 h 45 m sessions (September 28 and October 12,
+> 2026), each presentation plus a hands-on activity. The provisional mapping in
+> [../outline.md](../outline.md) puts the Prologue and Act I in Part 1 (setting up a project) and
+> Acts II–III plus the Epilogue in Part 2 (advanced features), which would split the deck near
+> slide 21. Neither the slide sequence nor the pacing notes below reflect that yet.
 
 Task 1 establishes the workspace. Tasks 2–3 build software and literature-grounded documents.
 Tasks 4–6 audit, draft, and modernize. Hobbies are an unnumbered extension.

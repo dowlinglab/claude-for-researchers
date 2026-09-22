@@ -4,13 +4,32 @@ A seminar for graduate students and faculty in Chemical and Biomolecular Enginee
 
 ## Event details
 
+This is a **two-part series**. Both parts are in the same room, two weeks apart, and are designed to be taken together — Part 2 builds directly on the workspace and project each participant sets up in Part 1.
+
+| | Part 1 | Part 2 |
+|---|---|---|
+| **Date** | Monday, September 28, 2026 | Monday, October 12, 2026 |
+| **Time** | 3:30 – 5:15 PM | 3:30 – 5:15 PM |
+| **Location** | McCourtney Hall, B01 Auditorium (Basement) | McCourtney Hall, B01 Auditorium (Basement) |
+
 | | |
 |---|---|
-| **Date** | October 15, 2026 |
-| **Time** | 11:00 AM – 12:00 PM (40-minute talk + 20 minutes of questions) |
-| **Location** | Carey Auditorium, 107 Hesburgh Library, University of Notre Dame |
+| **Format** | 1 hour 45 minutes per part: about 28 minutes of presentation, a 30-minute hands-on activity on your own laptop, and a group recap |
 | **Audience** | CBE graduate students and faculty, Notre Dame (faculty from other departments welcome) |
 | **Speaker** | Alex Dowling |
+| **RSVP** | [forms.gle/SnyVmEQkWwvq2bk3A](https://forms.gle/SnyVmEQkWwvq2bk3A) |
+
+### Before Part 1
+
+Setup time in the room is time not spent on the activity. Please arrive having done all five:
+
+1. **Bring a laptop** with a charged battery — power at the seats is limited.
+2. **Install the ChatGPT or Claude desktop app**, including Codex or Claude Code.
+3. **Create a GitHub account.**
+4. **Install GitHub Desktop.**
+5. **Clone this repository** to get the workshop materials.
+
+*The original single 1-hour slot (October 15, 2026, Carey Auditorium) was replaced by this two-part series; the abstract below was submitted against the original format.*
 
 ## Abstract
 
@@ -32,7 +51,7 @@ This repository is the source of truth for the seminar. Decisions, rationale, an
 
 ```
 claude-for-research/
-├── outline.md       current high-level talk outline
+├── outline.md       current high-level talk outline and two-part session map
 ├── slides/          current 54-slide Beamer deck and source
 ├── handout/         LaTeX leave-behind handout (not yet built)
 ├── resources/       companion guides, prompts, scripts, templates, and checks
@@ -42,12 +61,7 @@ claude-for-research/
 
 - **[outline.md](outline.md)** — the current act-level structure and narrative through-line.
 - **[`slides/`](slides/README.md)** — the live-talk Beamer deck. Sparse text, worked examples, file trees, workflow diagrams.
-- **[`handout/`](handout/README.md)** — a denser LaTeX leave-behind: checklists, prompts, and reference material that doesn't fit in the 40-minute talk.
-- **[`resources/`](resources/README.md)** — reusable practice guides, prompts, scripts, templates, a checklist, and a repository example.
-- **[`resources/workshops/`](resources/workshops/README.md)** — the plan and
-  build handoff for two hands-on CSTR workshops. Student-facing materials belong
-  here; solutions and instructor notes live in the separate private
-  `claude-for-researchers-private` repository.
+- **[`resources/workshops/`](resources/workshops/README.md)** — the student-facing plan and build handoff for two hands-on CSTR workshops. The starter is not yet built; solutions and instructor notes stay in the separate private `claude-for-researchers-private` repository.
 - **`notes/`** — project memory and source tracking:
   - [notes/seminar_design.md](notes/seminar_design.md) — deeper rationale and the bank of candidate stories/examples
   - [notes/open_questions.md](notes/open_questions.md) — remaining follow-up items
@@ -56,7 +70,12 @@ claude-for-research/
 
 ## Status
 
-The 54-slide deck was revised after the September 11, 2026 practice talk and again on September 14 from Alex's annotated read-through. It now uses six research tasks, with expanded workspace setup, literature-guided writing, overnight work, and concrete review visuals. The title slide still says **DRAFT** by request. The companion resources are complete and cross-referenced from the talk; the separate handout remains unbuilt. See [notes/open_questions.md](notes/open_questions.md) for the small number of remaining follow-up items.
+**The event moved from a single 1-hour talk to a two-part, hands-on series (September 21, 2026).** The repository is mid-transition:
+
+- **Done.** Event details, the two-part session map in [outline.md](outline.md), and the repository-boundary rules in [CLAUDE.md](CLAUDE.md).
+- **Not done.** The 54-slide deck is still built and timed as one continuous 40-minute talk; it has not been split across the two parts. The student-facing workshop starter under `resources/workshops/` does not exist yet, even though the private instructor repository is complete and written against it. Both are tracked in [notes/open_questions.md](notes/open_questions.md).
+
+The deck itself was revised after the September 11, 2026 practice talk and again on September 14 from Alex's annotated read-through. It uses six research tasks, with expanded workspace setup, literature-guided writing, overnight work, and concrete review visuals. The title slide still says **DRAFT** by request. The companion resources are complete and cross-referenced from the talk; the separate handout remains unbuilt.
 
 ## License
 
