@@ -825,3 +825,23 @@ Policy guidance points to current source references rather than reproducing a
 tool-approval table. Both pages were rendered and visually inspected; table
 and resource-line overflows were corrected. The final build has no layout
 warnings. No new external product or policy claims were introduced.
+
+### 2026-09-22: Final overnight handoff
+
+All five release checks passed again against public `e6f8d50`: scientific tests
+(42 passed), mutation check, fallback-report check, clean-room check, and public
+boundary check. The public documentation checker also passed. The clean-room
+run includes the new session guide in an archive containing only the public
+starter. No failing step appeared in that run's log.
+
+Built and visually reviewed Part 1 (27 frames), Part 2 (31 frames), the combined
+deck (58 frames), and the two-page handout. The Act II source is preserved across
+the split. The submitted README, notebook, parameters, fallback report, and
+public stub bodies remain unchanged. Original phase budgets remain unchanged.
+
+The 35/10/45/15-minute budget and extraction-followed-by-audit sequence are
+settled. Activity completion estimates need a learner pilot; a working starter
+and an automated check cannot establish how far a median participant will get.
+Remaining work: live rehearsal, the desktop screenshot, and the scheduled
+product/policy recheck. Alex chooses when to remove DRAFT, send the announcement,
+print the handout, and authorize pushing. Both repositories remain unpushed.
