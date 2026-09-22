@@ -73,8 +73,9 @@ claude-for-research/
 
 **The event moved from a single 1-hour talk to a two-part, hands-on series (September 21, 2026).** The repository is mid-transition:
 
-- **Done.** Event details, the two-part session map in [outline.md](outline.md), and the repository-boundary rules in [CLAUDE.md](CLAUDE.md).
-- **Not done.** The 54-slide deck is still built and timed as one continuous 40-minute talk; it has not been split across the two parts. The student-facing workshop starter under `resources/workshops/` does not exist yet, even though the private instructor repository is complete and written against it. Both are tracked in [notes/open_questions.md](notes/open_questions.md).
+- **Done.** Event details and the RSVP link, the arrival prerequisites, the session shape (55 presentation minutes across both parts, a 30-minute activity and a group recap in each), the two-part session map in [outline.md](outline.md), and the repository-boundary rules in [CLAUDE.md](CLAUDE.md).
+- **Not done — blocking.** The student-facing workshop starter under `resources/workshops/` is missing. It existed and was validated on September 15, 2026, but the commit it was validated at is not reachable in this repository or on `origin`; see item 8 of [notes/open_questions.md](notes/open_questions.md). Until it is recovered or rebuilt there is nothing for participants to clone and nothing for them to do in either session.
+- **Not done.** The 54-slide deck is still one continuous sequence timed for a 40-minute talk. Splitting it is now a split rather than a cut, since the two parts together allow 55 minutes.
 
 The deck itself was revised after the September 11, 2026 practice talk and again on September 14 from Alex's annotated read-through. It uses six research tasks, with expanded workspace setup, literature-guided writing, overnight work, and concrete review visuals. The title slide still says **DRAFT** by request. The companion resources are complete and cross-referenced from the talk; the separate handout remains unbuilt.
 
