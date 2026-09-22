@@ -14,7 +14,7 @@ This is a **two-part series**. Both parts are in the same room, two weeks apart,
 
 | | |
 |---|---|
-| **Format** | 1 hour 45 minutes per part: about 28 minutes of presentation, a 30-minute hands-on activity on your own laptop, and a group recap |
+| **Format** | 1 hour 45 minutes per part: 25–35 slides, a hands-on activity on your own laptop, and time for questions and a group regroup |
 | **Audience** | CBE graduate students and faculty, Notre Dame (faculty from other departments welcome) |
 | **Speaker** | Alex Dowling |
 | **RSVP** | [forms.gle/SnyVmEQkWwvq2bk3A](https://forms.gle/SnyVmEQkWwvq2bk3A) |
@@ -73,8 +73,8 @@ claude-for-research/
 **The event moved from a single 1-hour talk to a two-part, hands-on series (September 21, 2026).** The repository is mid-transition:
 
 - **Done.** Event details and the RSVP link, the arrival prerequisites, the session shape (55 presentation minutes across both parts, a 30-minute activity and a group recap in each), the two-part session map in [outline.md](outline.md), and the repository-boundary rules in [CLAUDE.md](CLAUDE.md).
-- **Not done — blocking.** The student-facing workshop starter under `resources/workshops/` is missing. It existed and was validated on September 15, 2026, but the commit it was validated at is not reachable in this repository or on `origin`; see item 8 of [notes/open_questions.md](notes/open_questions.md). Until it is recovered or rebuilt there is nothing for participants to clone and nothing for them to do in either session.
-- **Not done.** The 54-slide deck is still one continuous sequence timed for a 40-minute talk. Splitting it is now a split rather than a cut, since the two parts together allow 55 minutes.
+- **Recovered.** The workshop starter under [`resources/workshops/`](resources/workshops/) is back — pushed from Alex's office desktop on September 22 and merged. Participants have something to clone. The merged state still needs the five release checks run against it.
+- **Not done.** The 54-slide deck is one continuous sequence. The split is settled in principle — slides 1–26 and 27–54, cutting at the Task 3 opener, which puts both parts inside the 25–35 slide budget — but has not been implemented.
 
 The deck itself was revised after the September 11, 2026 practice talk and again on September 14 from Alex's annotated read-through. It uses six research tasks, with expanded workspace setup, literature-guided writing, overnight work, and concrete review visuals. The title slide still says **DRAFT** by request. The companion resources are complete and cross-referenced from the talk; the separate handout remains unbuilt.
 
