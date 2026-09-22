@@ -1,31 +1,35 @@
-# Handout
+# Standalone reference handout
 
-**Rescoped 2026-09-02:** printed, one sheet, front and back (~1.5 pages of actual content) — Alex can get copies made for students at that length, not longer. This is a big change from the original "denser leave-behind covering everything" concept; it's now a compact reference card plus a pointer to the repo, not a standalone document that reproduces `resources/`. Not yet built.
+A two-page, US-letter reference for *Claude for Research: Beyond the Chatbot*.
+Print one sheet, double-sided, flipped on the long edge. It retains the compact
+front-and-back format chosen in September and gives enough context to use after
+the seminar without reading the slide transcript.
 
-Given the length limit, the handout's job is to be memorable and to get someone back to this repository — not to be comprehensive. Anything not listed below stays online-only in [`resources/`](../resources/README.md) and the handout links to it rather than repeating it.
+## Build
 
-## Planned contents
+From the repository root:
 
-**Front:**
-- Title, one-line thesis, event footer (title/date optional depending on final layout)
-- The current talk arc — Tinker → Understand → Build → Challenge → Trust — with the six research tasks grouped as in [outline.md](../outline.md)
-- The one callout that has to land: *"The filesystem/repository is the source of truth. The AI conversation is not."*
-- The claim-audit table (Task 4) as the single worked example — it's the most memorable image in the talk and earns the space
-
-**Back:**
-- A short "Monday morning" checklist (4–6 items, one line each): keep a project-instructions file, keep a research log, ground literature claims in real sources you've read, review every AI-generated diff before accepting it, run a claim-audit pass before submitting a paper
-- A compact Notre Dame box: the 🟢🟡🟠🔴 data-classification tiers, "Claude = Public data only (for now)," and the `researchsecurity@nd.edu` DoD/DoW contact — see [notes/references.md](../notes/references.md)
-- Links: this GitHub repo (for `resources/`, the full prompts, and the checklists), the Anthropic Team-for-Scientists application, and the Amateur Radio book repo if there's room
-
-## Explicitly cut from the handout (now online-only in `resources/`)
-
-Full literature-folder workflow, full repository-pattern write-ups and provenance-manifest example, the complete manuscript-audit toolkit (methods-vs-code, figure-vs-text, journal-guideline compliance), the reproducibility/handoff checklist in full, and the writing-style workflow. Each still gets built as a proper resource — see [resources/README.md](../resources/README.md) — they just don't fit on paper anymore.
-
-## Planned layout
-
+```bash
+make -C handout
+pdftoppm -png -r 150 handout/main.pdf /tmp/seminar-handout
 ```
-handout/
-├── main.tex
-├── sections/
-└── README.md   this file
-```
+
+`main.tex` is the editable source; `main.pdf` is a generated, Git-ignored output.
+The source uses the installed LaTeX toolchain, Latin Modern fonts, and Notre Dame
+navy/gold. No additional images or downloaded assets are needed.
+
+## Contents
+
+- Page 1: the inspect/save/change/check/handoff cycle, project artifacts, and
+  the two-session route with the approved 35/10/45/15-minute budget.
+- Page 2: how to audit a claim, a generic worked example unrelated to the CSTR
+  exercise, a reusable prompt, a stopping checklist, and repository resources.
+
+The September plan included a compact tool-approval table. This edition instead
+points readers to `notes/references.md` for current institutional and sponsor
+sources, avoiding an undated policy snapshot on a printed reference. Full
+literature, package-release, and manuscript workflows remain in
+[the companion resources](../resources/README.md).
+
+Both pages were rendered and visually reviewed. The final build has no
+LaTeX overfull/underfull-box warnings. Re-render both pages after changing text.

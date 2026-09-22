@@ -814,3 +814,14 @@ is next-session work; additional source searching is optional for the longer
 workflow. Follow-up completes the bounded exercise before any optional full
 migration or report draft. Public-only documentation links and the boundary
 check pass; public stubs remain untouched. No learner timing pilot has occurred.
+
+### 2026-09-22: Standalone handout completed
+
+Built `handout/main.tex` and its two-page PDF after the deck and activity edits
+passed their checks. Retained the existing one-sheet, double-sided print format.
+The handout explains the reusable working cycle, artifacts, claim audit, and
+session route. Its generic audit example is independent of the workshop case.
+Policy guidance points to current source references rather than reproducing a
+tool-approval table. Both pages were rendered and visually inspected; table
+and resource-line overflows were corrected. The final build has no layout
+warnings. No new external product or policy claims were introduced.

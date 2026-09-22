@@ -1,0 +1,131 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.65in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,booktabs,tabularx,enumitem,xcolor,fancyhdr}
+\usepackage[colorlinks=true,urlcolor=NDBlue,linkcolor=NDBlue]{hyperref}
+\definecolor{NDBlue}{HTML}{0C2340}
+\definecolor{NDGold}{HTML}{C99700}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.5em,itemsep=3pt,topsep=3pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{\footnotesize Notre Dame CBE \quad 28 September / 12 October 2026}
+\fancyfoot[R]{\footnotesize\thepage\ / 2}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\topic}[1]{\par\vspace{5pt}{\large\bfseries\color{NDBlue}#1}\par}
+\newcommand{\repo}{https://github.com/dowlinglab/claude-for-researchers}
+\begin{document}
+{\LARGE\bfseries\color{NDBlue}Claude for Research}\par
+{\large Beyond the Chatbot: a working reference}\par
+{\color{NDGold}\rule{\linewidth}{1pt}}
+
+\textbf{Keep the project's memory in files.} The conversation helps you work;
+your repository records the evidence, decisions, and next steps that let you
+resume. An agent's confident explanation is a proposal to inspect.
+
+\topic{A small cycle you can reuse}
+\begin{enumerate}
+  \item \textbf{Inspect before editing.} Give the agent the relevant files and a
+  bounded question. Ask for its understanding and a plan before it changes them.
+  \item \textbf{Save what currently works.} Run the existing computation. Capture
+  its outputs, parameters, units, solver settings, environment, and producing
+  command. Commit the baseline before changing the model.
+  \item \textbf{Change one thing.} Use a branch. Review the proposed scope and the
+  resulting diff. Separate restructuring from new scientific assumptions.
+  \item \textbf{Check against independent evidence.} Compare with the saved
+  output or a source you opened. A test generated from the changed code can
+  repeat the same mistake; explain where its expected value came from.
+  \item \textbf{Leave a handoff.} Record what ran, what failed or remains unchecked,
+  the evidence commit, and the next concrete action. Resume from this file.
+\end{enumerate}
+
+\topic{What belongs in the project}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\linewidth}{@{}p{1.72in}X@{}}
+\toprule
+\textbf{Artifact} & \textbf{What it should let someone do}\\
+\midrule
+Instructions file & Find the project-specific units, conventions, commands, and boundaries. Keep it short; point to detail elsewhere.\\
+Environment + README & Build the environment and run the documented command from the stated directory.\\
+Baseline + manifest & Trace a result to its inputs, settings, software versions, and original output. Preserve it when new output differs.\\
+Research log & Recover decisions, rejected approaches, and the evidence that changed your mind.\\
+Handoff & See checked and unchecked work, the branch and evidence commit, and a runnable next step.\\
+\bottomrule
+\end{tabularx}
+
+\topic{The two-session project}
+\textbf{September 28:} write project instructions, run the untouched notebook,
+and capture a baseline. Finish by saving the state you actually reached.
+
+\textbf{October 12:} resume extraction with one function, then audit selected
+claims in the shared report. Switch to the audit even if migration is incomplete;
+the unchanged notebook supplies the evidence.
+
+Each meeting: \textbf{35 min presentation / 10 Q\&A / 45 hands-on / 15 regroup}.
+Setup is pre-work. Between meetings, experiment on your own research.
+Extraction resumes in Session 2. Follow-up can finish a baseline check or a small
+claim set; the longer migration and writing workflows are extensions.
+
+\newpage
+{\Large\bfseries\color{NDBlue}A claim needs evidence you can locate}\par
+{\color{NDGold}\rule{\linewidth}{1pt}}
+
+\topic{A practical audit}
+\begin{enumerate}
+  \item Quote the claim and record its location before judging it.
+  \item State what evidence would be required. Then locate what actually exists.
+  \item Open the artifact or source yourself. For numbers, inspect the producing
+  output. For literature, check the source's conditions and what it actually says.
+  \item Choose a verdict and write the supported wording. Preserve the original
+  quotation so the revision remains reviewable.
+\end{enumerate}
+
+\textbf{Illustrative example, unrelated to the CSTR exercise:}\par
+\begin{tabularx}{\linewidth}{@{}p{1.28in}X@{}}
+\toprule
+Claim & ``All figures regenerate from a clean checkout.''\\
+Required evidence & A clean-checkout run of the commands for every figure.\\
+Actual evidence & A saved run log covers Figure A; the other figures have no run record.\\
+Verdict & Cannot verify the full claim. Figure A has evidence.\\
+Revision & ``Figure A regenerated in the recorded environment. The remaining figures have not yet been checked.''\\
+\bottomrule
+\end{tabularx}
+
+\textbf{Useful verdicts:} verified; supported with limitations; mismatch; cannot
+verify; not comparable. Missing evidence is a finding. A source about a different
+system may be relevant without supporting a numerical comparison. A sample of
+checked claims does not establish that the entire report is correct.
+
+\topic{A prompt you can adapt}
+\begin{quote}\small
+Read these files before editing: [paths]. My question is [question]. List the
+claims or changes you propose and the evidence each needs. Separate what you
+observed from what you inferred. Show exact source locations. Stop at [boundary]
+and save unresolved questions in [file]. I will review the evidence and diff.
+\end{quote}
+
+\topic{Before you stop working}
+\begin{itemize}
+  \item Inspect the diff and working tree. Commit only the changes you reviewed.
+  \item Record commands and outcomes, including failures and checks you did not run.
+  \item Keep the baseline unchanged when a comparison fails. Investigate the difference.
+  \item Write the next command or question in the handoff. Identify the evidence commit
+  it describes; commit the handoff separately.
+  \item Check current institutional and sponsor rules before sharing research data
+  with a tool. Use the seminar's references to find the authoritative guidance.
+\end{itemize}
+
+\topic{Find the reusable resources}
+\small\raggedright
+\href{\repo}{\textbf{github.com/dowlinglab/claude-for-researchers}}\\
+In the repository: \path{resources/workshops/cstr/activities/session_guide.md}
+for the in-room route; \texttt{resources/templates/} for project instructions,
+a research log, and result provenance; \texttt{resources/practices/} for the
+computing, literature, and manuscript workflows.\par
+The claim-audit template is in
+\path{resources/workshops/cstr/docs/claim_evidence_audit.md}.
+Current policy and product sources are indexed in \texttt{notes/references.md}.
+\end{document}

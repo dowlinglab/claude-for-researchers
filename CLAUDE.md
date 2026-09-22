@@ -15,7 +15,7 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 | `README.md` | Event details and the abstract (already submitted — final, no separate `abstract.md`) |
 | `outline.md` | Current act-level outline and narrative through-line |
 | `slides/` | Two Beamer decks, 27 and 31 frames, preserving the original 54-slide sequence (ND theme). `storyboard.md` records the slide sequence, `style_guide.md` the design rules, and `image_plan.md` the final visual inventory |
-| `handout/` | Planned LaTeX leave-behind handout; not yet built |
+| `handout/` | Two-page LaTeX reference handout; build with `make -C handout` |
 | `resources/` | Polished, reusable student takeaways (prompts, scripts, templates). `resources/workshops/` holds the student-facing CSTR starter, session guide, two-workshop plan, and build handoff |
 | `notes/` | Project memory: design rationale, remaining follow-ups, references, demo ideas, and the running decision log |
 

@@ -14,8 +14,8 @@ the current in-room activity scope.
    Use [references](references.md). This overnight edit preserves the existing
    slides' claims; it is not a fresh product or policy audit.
 3. **Remove DRAFT when Alex requests it.** Retained on both session titles.
-4. **Optional handout.** Alex requested a standalone reference after the required
-   work is complete and verified. Build status is recorded in seminar notes.
+4. **Handout built.** The two-page standalone reference is in `handout/`. Review
+   the final wording and print double-sided for participants if desired.
 5. **Capture the desktop app screenshot for Part 1 frame 12.** The placeholder
    remains. Use the Code tab with several sessions and one conversation visible.
    Hide private project names and keep the visible text to roughly 8–15 lines.
