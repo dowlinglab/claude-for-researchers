@@ -1,18 +1,23 @@
-# Build the seminar deck.  `make` is enough; .latexmkrc handles TEXINPUTS.
+# Two session decks share main.tex and sections/.
+MAIN ?= main
 
-MAIN := main
+.PHONY: all part1 part2 combined watch clean distclean
+all: part1 part2
 
-.PHONY: all watch clean distclean
+part1:
+	latexmk -pdf part1.tex
 
-all:
-	latexmk -pdf $(MAIN).tex
+part2:
+	latexmk -pdf part2.tex
 
-# Rebuild on save, for drafting.
+combined:
+	latexmk -pdf main.tex
+
 watch:
 	latexmk -pdf -pvc $(MAIN).tex
 
 clean:
-	latexmk -c
+	latexmk -c main.tex part1.tex part2.tex
 
 distclean:
-	latexmk -C
+	latexmk -C main.tex part1.tex part2.tex

@@ -1,16 +1,26 @@
 # Current slide storyboard
 
-Revised September 14, 2026 after Alex's annotated read-through of the September 11 deck and the
-follow-up rounds in the same session (changes recorded in
-[../notes/seminar_notes.md](../notes/seminar_notes.md)). The deck contains **54 slides**. The title
-retains DRAFT, now set in Notre Dame green rather than red.
+The original 54-slide sequence below remains intact, split at the Task 3 opener.
+Original numbers remain as stable editorial references. The shared sources build
+**Part 1: 27 frames** and **Part 2: 31 frames**, including titles and closings.
+DRAFT remains on both title slides.
 
-> **Not yet updated for the two-part series.** The sequence below was built and timed for one
-> continuous 40-minute talk. The event is now two 1 h 45 m sessions (September 28 and October 12,
-> 2026), each presentation plus a hands-on activity. The provisional mapping in
-> [../outline.md](../outline.md) puts the Prologue and Act I in Part 1 (setting up a project) and
-> Acts II–III plus the Epilogue in Part 2 (advanced features), which would split the deck near
-> slide 21. Neither the slide sequence nor the pacing notes below reflect that yet.
+| Build | Rendered frame mapping |
+|---|---|
+| Part 1, September 28 | Frames 1–26: original 1–26, with a session-specific title; frame 27: baseline closing |
+| Part 2, October 12 | Frame 1: new title; frame 2: reconnect to the saved baseline; frames 3–30: original 27–54; frame 31: evidence/handoff closing |
+
+Each session: **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**.
+The original Act II source is split before Task 3 into code and literature files,
+used by both the session builds and the combined build. Nothing is duplicated or
+cut. The title's `\part` declaration records the session boundary without an
+extra divider slide.
+
+Part 1's activity establishes project instructions and a saved baseline. Part 2
+resumes extraction, then audits the shared report. The first session's closing
+reserves extraction for October 12 and frames the fortnight as experimentation
+on participants' own research. The second session's reconnect and closing make
+that continuity explicit.
 
 Task 1 establishes the workspace. Tasks 2–3 build software and literature-grounded documents.
 Tasks 4–6 audit, draft, and modernize. Hobbies are an unnumbered extension.
@@ -107,10 +117,7 @@ evidence to audit and draft a manuscript, then the course-modernization capstone
 motivation and the August 2026 commit calendar before showing the coursepack artifact it produced.
 Trust, the talk's own provenance, and an immediately runnable first exercise close the talk.
 
-Planning allocation, to validate in rehearsal: **this allocation is now the deck's weakest
-assumption.** The original split was prologue 7 minutes; Understand 8; Build 10; Challenge 10;
-Trust 5, rehearsed against 52 slides. Since then the hooks slide and the tool-ecosystem slide were
-cut while Act I gained five slides, so the deck is 54 and the weight has moved decisively into
-Act I, which now runs 13 slides against a budget of 8 minutes. The prologue, at 8 slides, has
-slack. **Re-time before assuming this fits**; the three workspace slides are the obvious candidates
-to re-merge if it does not.
+Rehearse against 35 presentation minutes in each part. The frame counts leave
+about 78 seconds per Part 1 frame and 68 seconds per Part 2 frame on average;
+these are pacing checks, not equal allocations to every slide. Reserve the full
+45-minute hands-on block and 15-minute regroup. A live rehearsal remains open.

@@ -103,7 +103,7 @@
 \end{frame}}
 
 \title{Claude for Research}
-\subtitle{Beyond the Chatbot}
+\providecommand{\seminarpart}{0}
 \author{Prof. Alexander (Alex) Dowling}
 \institute{Chemical and Biomolecular Engineering \\ adowling@nd.edu}
 \date{28 September 2026 \quad$\vert$\quad 12 October 2026}
@@ -114,25 +114,44 @@
 
 \renewcommand{\ndlogonoteanchor}{0.518}
 
-\begin{document}
-
-{
-\setbeamertemplate{background}{\ndtitlepagelogodraw}
-\begin{frame}[plain]
-  \titlepage
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[anchor=north east, text=IrishGreen, font=\bfseries\Huge]
-      at ([xshift=-1.0cm,yshift=-1.1cm]current page.north east) {DRAFT};
-  \end{tikzpicture}
-\end{frame}
+\newcommand{\sessiontitle}[3]{%
+  \part{#1}
+  \subtitle{Beyond the Chatbot}
+  \date{#3}
+  {
+  \setbeamertemplate{background}{\ndtitlepagelogodraw}
+  \begin{frame}[plain]
+    \titlepage
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=north west, text=NDBlue, font=\large]
+        at ([xshift=0.38cm,yshift=-2.65cm]current page.north west) {#1: #2};
+      \node[anchor=north east, text=IrishGreen, font=\bfseries\Huge]
+        at ([xshift=-1.0cm,yshift=-1.1cm]current page.north east) {DRAFT};
+    \end{tikzpicture}
+  \end{frame}
+  }
 }
 
-\input{sections/00_open}
-\input{sections/00b_roadmap}
-\input{sections/01_ecosystem}
-\input{sections/02_act1_understand}
-\input{sections/03_act2_build}
-\input{sections/04_act3_challenge}
-\input{sections/05_epilogue}
+\begin{document}
+
+% 0 builds the combined deck; the two entry points select one shared part.
+\ifnum\seminarpart=2\else
+  \sessiontitle{Part 1}{Setting up a project}{28 September 2026}
+  \input{sections/00_open}
+  \input{sections/00b_roadmap}
+  \input{sections/01_ecosystem}
+  \input{sections/02_act1_understand}
+  \input{sections/03_act2_build}
+  \input{sections/06_part1_close}
+\fi
+
+\ifnum\seminarpart=1\else
+  \sessiontitle{Part 2}{Advanced features}{12 October 2026}
+  \input{sections/07_part2_reconnect}
+  \input{sections/03b_act2_literature}
+  \input{sections/04_act3_challenge}
+  \input{sections/05_epilogue}
+  \input{sections/08_part2_close}
+\fi
 
 \end{document}

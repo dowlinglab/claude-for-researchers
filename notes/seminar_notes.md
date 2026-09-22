@@ -782,3 +782,19 @@ a novice should complete a useful first fifth. These are design targets to pilot
 not measured completion rates. Progress should mean artifacts a participant can
 inspect and resume, not a fraction of pages read. Preserve the existing phase
 time tables while developing the session-level route and milestones.
+
+### Two decks from shared sources
+
+Split before the original Task 3 opener: original 1–26 in Part 1 and 27–54 in
+Part 2. Small entry points select shared sections; Act II's source is separated
+at Task 3 without duplicating or cutting frames. Session titles, a Part 1
+baseline closing, a Part 2 reconnect, and a Part 2 handoff closing produce
+27 and 31 frames. The combined build has 58. All builds succeed.
+
+Ran `slides/check_layout.py` for both session PDFs, rendered every new/changed
+frame with `pdftoppm`, and visually inspected the split boundary and all flagged
+frames. An initial title overflow was fixed by placing the session label in the
+existing title whitespace. Final builds have no overfull-box warnings. The
+heuristic still flags the title's intentional footer and three unchanged dense
+content frames (Part 1 frame 14; Part 2 frames 14 and 17); visual review found
+no new overlap. A live timing rehearsal remains necessary.
