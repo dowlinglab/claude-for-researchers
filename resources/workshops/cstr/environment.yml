@@ -1,0 +1,29 @@
+# Environment for both CSTR workshops.
+#
+#   conda env create -f environment.yml
+#   conda activate cstr-workshop
+#
+# Versions are floored, not pinned, so that the environment still solves on
+# Linux, macOS (Intel and Apple silicon), and Windows. Record the versions you
+# actually got in your baseline artifact -- that is what makes a result
+# reproducible, not the range allowed here.
+#
+# LaTeX is deliberately not a conda dependency; see README.md for the separate
+# TeX installation used in Workshop 2.
+name: cstr-workshop
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10,<3.13
+  - numpy>=1.24
+  - scipy>=1.10
+  - pandas>=2.0
+  - matplotlib>=3.7
+  - pyyaml>=6.0
+  - pytest>=7.4
+  - jupyterlab>=4.0
+  - nbconvert>=7.0
+  - nbclient>=0.8
+  - pip>=23.0
+  - pip:
+      - -e .

@@ -1,0 +1,141 @@
+% ---------------------------------------------------------------------------
+% FALLBACK REPORT FOR THE WORKSHOP 2 CLAIM AUDIT
+%
+% Use this document if you did not finish a draft of your own. Audit it exactly
+% as you would audit your own writing.
+%
+% This report contains SEVERAL EVIDENCE PROBLEMS. They are not typos, and they
+% are not marked. Each one is the kind of mistake that survives a careful read
+% and is caught only by checking a claim against a specific artifact or source.
+% Some statements in this document are entirely sound; finding fault everywhere
+% is as wrong as finding it nowhere.
+%
+% The number of problems is not stated here on purpose. Report what you can
+% support, at the confidence you can support it.
+%
+% ONE THING THAT IS NOT A SEEDED PROBLEM. This draft is written in the voice of
+% a participant who completed Workshop 1, so Section 7 refers to
+% `scripts/reproduce.py` and `results/baseline.json`. If you skipped Workshop 1
+% those files do not exist in your copy, and their absence is an artefact of
+% your starting point rather than a defect in the writing. Audit Section 7
+% against the artefacts a Workshop 1 repository would contain.
+%
+% Build:  latexmk -pdf audit_fallback.tex
+% ---------------------------------------------------------------------------
+
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\title{Steady-state multiplicity in a jacketed nonisothermal CSTR}
+\author{Workshop fallback draft}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Research question}
+\label{sec:question}
+
+Over what range of coolant temperatures does a jacketed CSTR running the
+irreversible exothermic reaction $\mathrm{A} \rightarrow \mathrm{B}$ admit more
+than one steady state, and what reactor temperatures do those states correspond
+to?
+
+\section{Model and assumptions}
+\label{sec:model}
+
+The reactor is modeled as a perfectly mixed constant-volume liquid-phase vessel
+with first-order Arrhenius kinetics. At steady state the material and energy
+balances are
+\begin{align}
+  0 &= q\,(C_{Af} - C_A) - V\,k(T)\,C_A, \label{eq:mass}\\
+  0 &= q\,\rho\,C_p\,(T_f - T) + (-\Delta H_{\mathrm{rxn}})\,V\,k(T)\,C_A
+       - UA\,(T - T_c), \label{eq:energy}
+\end{align}
+with $k(T) = k_0 \exp(-E/RT)$. We assume perfect mixing, constant density and
+heat capacity, constant reactor volume, a single irreversible reaction, and
+temperature-independent physical properties. Heat is exchanged with a cooling
+jacket through an overall coefficient $UA$.
+
+The kinetic parameters used here, $E/R = 8750$~K and
+$k_0 = 7.2 \times 10^{10}$~min$^{-1}$, are the standard values for this
+reaction system \cite{woolf2009cstr}. Feed conditions are $q = 100$~L/min,
+$C_{Af} = 1$~mol/L, and $T_f = 320$~K, with $UA = 3.5 \times 10^{4}$~J/(min~K).
+
+\section{Computational method}
+\label{sec:method}
+
+Equations~\eqref{eq:mass} and~\eqref{eq:energy} were solved simultaneously with
+\texttt{scipy.optimize.fsolve} from a grid of initial guesses spanning reactor
+temperatures from 300~K to 440~K in 5~K steps. For each starting point the
+concentration was initialized from the material balance evaluated at that
+temperature. Solutions were accepted when the residual 2-norm fell below
+$10^{-6}$, and two solutions whose temperatures differed by less than
+$10^{-2}$~K were treated as the same steady state. The coolant temperature was
+swept from 285~K to 315~K in 0.5~K increments.
+
+\section{Principal result}
+\label{sec:result}
+
+At the nominal coolant temperature $T_c = 300$~K the balances admit three
+steady states, at reactor temperatures of 311.96~K, 348.92~K, and 385.13~K.
+The corresponding conversions are 4.5\%, 48.1\%, and 93.4\%.
+
+Across the sweep, three steady states exist for coolant temperatures between
+290.5~K and 311.0~K; outside that interval the balances have a single solution.
+The resulting locus of reactor temperature against coolant temperature is
+S-shaped (Figure~\ref{fig:locus}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/steady_state_locus.png}
+  \caption{Steady-state reactor temperature against coolant temperature. Three
+  branches are present over the multiplicity interval.}
+  \label{fig:locus}
+\end{figure}
+
+Because the locus is S-shaped, the middle branch is dynamically unstable: a
+reactor operated there will depart toward either the upper or the lower branch
+following any small perturbation. Operation on the middle branch is therefore
+not achievable without feedback control.
+
+\section{Comparison with literature}
+\label{sec:comparison}
+
+Woolf et al.\ analyze an exothermic CSTR by intersecting a heat-generation curve
+with a heat-removal line and report three steady states for that
+system~\cite{woolf2009cstr}. Our computed ignition temperature agrees exactly
+with the value reported in that analysis, confirming that the present
+implementation reproduces the established result.
+
+The qualitative structure also matches: in both cases the outer two steady
+states are separated by an intermediate one, and the multiplicity disappears
+once the heat-removal line is displaced far enough in either direction.
+
+\section{Limitations}
+\label{sec:limitations}
+
+The parameter set is a teaching case rather than a measurement of a specific
+reactor, so quantitative agreement with any particular published system would be
+coincidental. The edges of the multiplicity interval are resolved only to the
+0.5~K resolution of the sweep, so the turning points lie somewhere inside those
+intervals. Only the coolant temperature was varied; the response to feed
+temperature, flow rate, and feed concentration was not examined.
+
+\section{Reproducibility}
+\label{sec:repro}
+
+All values in Section~\ref{sec:result} were produced by
+\texttt{python scripts/reproduce.py}, which writes
+\texttt{results/baseline.json} and \texttt{results/steady\_states.csv} and
+regenerates Figure~\ref{fig:locus}. The environment is specified in
+\texttt{environment.yml}.
+
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\end{document}

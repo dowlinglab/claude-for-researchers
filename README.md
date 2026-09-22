@@ -61,8 +61,7 @@ claude-for-research/
 
 - **[outline.md](outline.md)** — the current act-level structure and narrative through-line.
 - **[`slides/`](slides/README.md)** — the live-talk Beamer deck. Sparse text, worked examples, file trees, workflow diagrams.
-- **[`handout/`](handout/README.md)** — a denser LaTeX leave-behind: checklists, prompts, and reference material that doesn't fit in the presentation portions.
-- **[`resources/`](resources/README.md)** — reusable practice guides, prompts, scripts, templates, a checklist, and a repository example. The student-facing workshop starter (`resources/workshops/`) has not been built yet — see Status.
+- **[`resources/workshops/`](resources/workshops/README.md)** — the student-facing plan and build handoff for two hands-on CSTR workshops. The starter is not yet built; solutions and instructor notes stay in the separate private `claude-for-researchers-private` repository.
 - **`notes/`** — project memory and source tracking:
   - [notes/seminar_design.md](notes/seminar_design.md) — deeper rationale and the bank of candidate stories/examples
   - [notes/open_questions.md](notes/open_questions.md) — remaining follow-up items

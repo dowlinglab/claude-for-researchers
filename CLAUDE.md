@@ -16,7 +16,7 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 | `outline.md` | Current act-level outline and narrative through-line |
 | `slides/` | Current 54-slide Beamer deck (ND theme). `storyboard.md` records the slide sequence, `style_guide.md` the design rules, and `image_plan.md` the final visual inventory |
 | `handout/` | Planned LaTeX leave-behind handout; not yet built |
-| `resources/` | Polished, reusable student takeaways (prompts, scripts, templates). `resources/workshops/` will hold the student-facing CSTR workshop starter and the two-workshop plan — **not yet built** |
+| `resources/` | Polished, reusable student takeaways (prompts, scripts, templates). `resources/workshops/` will hold the student-facing CSTR workshop starter, the two-workshop plan, and the build handoff — **not yet built** |
 | `notes/` | Project memory: design rationale, remaining follow-ups, references, demo ideas, and the running decision log |
 
 ## Working practices
@@ -33,7 +33,7 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 10. **Git:** commit incrementally as coherent units of work land, rather than batching a long session into one commit (Alex's standing preference, 2026-09-02). Create new commits rather than amending. Review `git status`/diff before staging.
 11. **Keep final slide sources readable.** Detailed editorial notes were useful during refinement but were removed after the final audit on 2026-09-11. Recover them from Git history through commit `2c55c74` if needed; add new comments only when they explain durable implementation constraints.
 12. **Two-repository boundary.** A private sibling repository, `claude-for-researchers-private`, holds the instructor-only half of the workshops: reference implementation, reference results, tolerances, rubrics, mutation tests, and expected outcomes. **Nothing from it may appear here** — not in a file, not in a commit message, not on a side branch. A public branch is public. Public writes are limited to student-facing material: the starter under `resources/workshops/cstr/`, activity instructions, templates, and general resources. Nothing that reveals an expected numerical answer, a rubric threshold, or the seeded defects in the fallback report.
-13. **The starter must stay independently answerable.** A participant working only from this repository must be able to complete both activities. Telling an agent not to read an accessible answer folder is not an access control; validation that needs a clean view of the starter must use a copy of the public tree only.
+13. **The starter must stay independently answerable.** A participant working only from this repository must be able to complete both activities; a clean-agent validation must use only the public starter. Telling an agent not to read an accessible answer folder is not an access control; validation that needs a clean view of the starter must use a copy of the public tree only.
 
 ## Content conventions
 

@@ -1,0 +1,82 @@
+# Example agent instructions (Claude Code)
+
+Copy this to `CLAUDE.md` in the project root. It is byte-identical to
+`AGENTS.md.example`, which is the point: the same context should work for Claude
+Code, Codex, Cursor, and anything else. Keeping two divergent instruction files
+is how an agent ends up following the stale one.
+
+If you use more than one tool, keep one file and symlink the other:
+
+```bash
+cp CLAUDE.md.example CLAUDE.md
+ln -s CLAUDE.md AGENTS.md
+```
+
+Then **edit it**. A file of
+generic advice teaches the agent nothing it does not already do; the value is in
+the sentences that are specific to this project.
+
+Workshop 1 asks you to have an agent draft this file after inspecting the
+repository, then cut it down. Expect to delete more than half. The useful test
+for a line: *would a competent new collaborator get this wrong without being
+told?* If not, delete it.
+
+---
+
+## What this project is
+
+Steady-state analysis of a jacketed nonisothermal CSTR running the irreversible
+exothermic reaction `A -> B` with first-order Arrhenius kinetics. The question
+is over what range of coolant temperature the balances admit more than one
+steady state.
+
+This is a teaching parameter set, not a measured reactor.
+
+## Scientific conventions that are easy to get wrong
+
+- **All temperatures are absolute (K).** There are no Celsius values anywhere in
+  this project. A Celsius value substituted for a kelvin one produces a
+  plausible-looking wrong answer rather than an error.
+- **`dHr` is the enthalpy of reaction and is negative.** The heat release term
+  is `(-dHr) * V * k(T) * CA`, which is positive. If reaction ever cools the
+  reactor, the sign is wrong.
+- **The heat-exchange term is written as heat removed** and is therefore
+  subtracted. It becomes an input when `T < Tc`.
+- **There can be one, two, or three steady states at the same condition.** A
+  single `fsolve` call returns one root and tells you nothing about how many
+  exist. Never report "the" steady state from one initial guess.
+- **A steady-state locus is not a stability result.** Stability is a property of
+  the dynamic model, which this project does not implement. Do not describe a
+  branch as stable or unstable.
+
+## Working rules
+
+- **Inspect before editing.** Read the notebook, `data/reactor_parameters.yml`,
+  and `results/baseline.json` before proposing changes. Say what you found.
+- **Do not change parameter values** to make a result look better. If a value
+  seems wrong, say so and stop.
+- **Preserve the baseline.** `results/baseline.json` records what the code did
+  before refactoring. Refactoring must reproduce it within the tolerances stated
+  there. Regenerating the baseline to match new code defeats its purpose.
+- **Propose the diff, then wait.** For anything beyond a single file, describe
+  the change before making it.
+- **Never invent a citation.** A reference that has not been opened is a lead,
+  not a source. If asked for literature, return search leads and say they are
+  unverified.
+
+## Commands
+
+```bash
+conda activate cstr-workshop
+python scripts/run_notebook.py --check     # notebook still runs
+pytest tests                               # regression tests
+python scripts/reproduce.py                # regenerate results (Workshop 1)
+cd report && latexmk -pdf report.tex       # compile the report (Workshop 2)
+```
+
+## Boundaries
+
+- **Write:** `src/`, `scripts/`, `tests/`, `docs/`, `report/`, `notebooks/`.
+- **Read-only:** `data/reactor_parameters.yml`, `results/baseline.json`.
+- **Do not touch:** `literature/pdfs/` (not redistributable), `environment.yml`
+  (changing it invalidates every recorded result).

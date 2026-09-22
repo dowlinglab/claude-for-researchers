@@ -1,0 +1,11 @@
+# Downloaded PDFs stay local.
+#
+# Most journal articles are not yours to redistribute, and a private repository
+# is still redistribution when you add a collaborator or make it public later.
+# Version-control the metadata (../source_manifest.csv), the verified BibTeX
+# (../../report/ref.bib), and your own notes (../../docs/literature.md).
+#
+# If a specific source is openly licensed and you have checked the licence
+# terms, add an exception for that one file with a comment recording the licence.
+*
+!.gitignore

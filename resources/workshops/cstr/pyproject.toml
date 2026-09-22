@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cstr-workshop"
+version = "0.1.0"
+description = "Nonisothermal CSTR workshop starter"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "pandas", "matplotlib", "pyyaml"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "jupyterlab>=4.0", "nbconvert>=7.0", "nbclient>=0.8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
