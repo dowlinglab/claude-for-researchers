@@ -736,3 +736,49 @@ recommendation 1, now forced by the format rather than merely advised.
 charged laptop, the ChatGPT or Claude desktop app installed (with Codex or Claude Code), a GitHub
 account, GitHub Desktop, and the repository cloned. Setup was 12–25 minutes on the reference pass
 and dominated the variance; none of it needs an instructor present.
+
+### 2026-09-21: Merged starter verified on this machine
+
+Verified public commit `ecfaec14bc8774fbe6d7c79c7123d6a0fa080541` after the
+Copilot-assisted merge. Created `cstr-workshop` from the starter directory
+(the environment file installs that directory as an editable package).
+Python 3.12.14; NumPy 2.5.3, SciPy 1.18.1, pandas 3.0.6, Matplotlib 3.11.2,
+PyYAML 6.0.3. The check tooling now accepts an explicit public checkout path
+because this machine's two checkouts are not siblings.
+
+All five release checks passed: scientific tests (42 passed), mutation check,
+fallback-report check, clean-room check, and public-boundary check. Public
+`python3 resources/scripts/check_docs.py` also passed. No instructor answers or
+check details are reproduced here. The first clean-room attempt encountered a
+sandbox restriction opening a Jupyter kernel socket; the unrestricted rerun
+passed every step, including both report builds and documentation links.
+
+The boundary script checks current content and historical paths. A supplemental
+content-marker scan across all 179 reachable public commits found no matches.
+
+The three fixes from `e5225d5` survived: the YAML file loads `k0` as a float
+(asserted using workshop Python); plotting breaks the locus into separate
+segments when multiplicity changes; and the script README directs reproduction
+to a separate artifact, consistent with Activity 1's instruction to preserve the
+captured baseline. The parameter file, notebook, and script README are unchanged
+from that repair commit. The clean-room notebook executed successfully.
+
+The instructor compatibility record already pinned `04279b1`, rather than the
+older commit named in the handoff. Runtime verification supports updating it to
+the tested public commit above. Priority 1 is green; seminar editing may proceed.
+No push was made.
+
+### Session budget and activity-design target confirmed during the review
+
+Alex approved, for each 105-minute session: **35 minutes presentation, 10 minutes
+Q&A, 45 minutes hands-on, and 15 minutes regroup**. The deck target remains
+25–35 slides per session. Session 2 resumes extraction and then moves into the
+audit. Extraction remains next-session work. Between sessions participants
+experiment on their own research.
+
+Design each activity so a participant with some coding experience and occasional
+Git use reaches roughly halfway in the hands-on block. A power user may finish;
+a novice should complete a useful first fifth. These are design targets to pilot,
+not measured completion rates. Progress should mean artifacts a participant can
+inspect and resume, not a fraction of pages read. Preserve the existing phase
+time tables while developing the session-level route and milestones.
