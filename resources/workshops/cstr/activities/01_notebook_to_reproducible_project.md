@@ -1,12 +1,17 @@
 # Activity 1 — From a notebook to a reproducible project
 
-**Time:** 1 hour 45 minutes
+**Session:** 105 minutes including presentation and discussion; 45 minutes hands-on.
+**Route:** follow the [session guide](session_guide.md) for the bounded in-room exercise.
 **You need:** a GitHub account, Git, conda (or mamba), and an AI coding agent
 (Claude Code, Codex, Cursor, or similar) you can run against a local directory.
 
+Setup is pre-work. Session 1 covers instructions and the baseline; Phase 3
+resumes in Session 2. The phase estimates below describe the longer workflow,
+not the session timetable.
+
 ## Objectives
 
-By the end you will have a private, versioned repository containing:
+Across the full workflow you will build a private, versioned repository containing:
 
 - a documented environment that someone else can build;
 - a **baseline** — evidence of what the code computed before you changed it;
@@ -33,6 +38,8 @@ conventions is in the first cell of the notebook.
 ---
 
 ## Phase 0 — Setup (20 min)
+
+Complete this phase before Session 1.
 
 ### Create your private repository
 
@@ -199,6 +206,10 @@ a deliberate exception: it is evidence, not output.)
 
 ## Phase 3 — Extract the model (30 min)
 
+Resume here in Session 2. This is next-session work, not homework. For the
+in-room exercise, extract one function as described in the [session guide](session_guide.md);
+continue the full migration later if useful.
+
 Move the science out of the notebook into `src/cstr_workshop/`.
 
 Four modules are already stubbed for you — each has its docstring, signature,
@@ -362,9 +373,11 @@ what is still open.
 
 ---
 
-## Minimum completion
+## Minimum completion across the series
 
-If you run short of time, this is enough to have done the activity:
+The [session guide](session_guide.md) defines useful stopping points for each
+meeting. The following is the minimum for the longer migration workflow, which
+begins in Session 1 and resumes in Session 2:
 
 1. The environment builds and the untouched notebook runs.
 2. `results/baseline.json` is committed, captured before any refactoring.

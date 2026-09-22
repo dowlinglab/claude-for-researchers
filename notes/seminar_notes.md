@@ -798,3 +798,19 @@ existing title whitespace. Final builds have no overfull-box warnings. The
 heuristic still flags the title's intentional footer and three unchanged dense
 content frames (Part 1 frame 14; Part 2 frames 14 and 17); visual review found
 no new overlap. A live timing rehearsal remains necessary.
+
+### Bounded activities for the approved 45-minute blocks
+
+Added `resources/workshops/cstr/activities/session_guide.md` as the in-room
+route. Session 1 reaches instructions and a saved baseline, with full checking
+and a cold-restart handoff as the complete session exercise. Session 2 spends
+20 minutes on one-function extraction, 20 on selected-claim auditing, and five
+on saving a handoff. The unchanged notebook provides audit evidence when
+extraction is incomplete. The shared fallback report is the default route.
+
+The full activity files remain reference workflows. Their phase headings and
+budgets, and the plan's tables, are unchanged. Setup is pre-work; extraction
+is next-session work; additional source searching is optional for the longer
+workflow. Follow-up completes the bounded exercise before any optional full
+migration or report draft. Public-only documentation links and the boundary
+check pass; public stubs remain untouched. No learner timing pilot has occurred.

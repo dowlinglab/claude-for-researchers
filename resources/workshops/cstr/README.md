@@ -1,6 +1,6 @@
 # CSTR workshop starter
 
-Starter project for two 1.75-hour hands-on workshops built around one scientific
+Starter project for two 105-minute seminar sessions built around one scientific
 case: steady-state multiplicity in a jacketed nonisothermal CSTR.
 
 1. **[Activity 1](activities/01_notebook_to_reproducible_project.md)** — turn an
@@ -11,6 +11,15 @@ case: steady-state multiplicity in a jacketed nonisothermal CSTR.
 
 Copy this directory into a **new private GitHub repository** of your own and
 work there. The instructions assume you did.
+
+## In-room route
+
+Start with the [session guide](activities/session_guide.md). Each meeting has
+35 minutes presentation, 10 Q&A, 45 hands-on, and 15 regroup. Session 1 saves
+a baseline. Session 2 resumes extraction and then audits the shared report.
+Setup is pre-work; the fortnight is for experimenting on your own research.
+The full activity files provide reference steps and extensions, with their
+original phase estimates preserved.
 
 ## Quick start
 
@@ -62,7 +71,7 @@ cstr/
 ├── activities/          the two activity instruction files
 ├── notebooks/           cstr_exploration.ipynb -- the starting point
 ├── data/                reactor_parameters.yml
-├── src/cstr_workshop/   empty at the start; you fill it in Activity 1
+├── src/cstr_workshop/   documented stubs; you implement them in your copy
 ├── scripts/             run_notebook.py; you add reproduce.py
 ├── tests/               environment smoke test; you add regression tests
 ├── results/             generated artifacts (git-ignored by default)

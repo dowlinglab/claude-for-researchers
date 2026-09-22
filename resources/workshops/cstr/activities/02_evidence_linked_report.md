@@ -1,13 +1,19 @@
 # Activity 2 — From evidence to an audited report
 
-**Time:** 1 hour 45 minutes
+**Session:** 105 minutes including presentation and discussion; 45 minutes hands-on
+shared with Activity 1 extraction. Follow the [session guide](session_guide.md).
 **You need:** your repository from Activity 1, a LaTeX toolchain, and an AI
-agent. Before the session, find two literature sources (see
+agent. Open the supplied anchor before the session; two additional sources are
+optional preparation for the full workflow (see
 [Between the workshops](#between-the-workshops)).
+
+The shared fallback report is the default in-room path. Audit a small claim
+set after extraction; drafting a complete report is an extension. The original
+phase estimates below describe the full workflow and remain unchanged.
 
 ## Objectives
 
-By the end you will have:
+Across the full workflow you will have:
 
 - a small literature corpus whose metadata you verified yourself;
 - notes that separate what each source says from what you infer;
@@ -46,7 +52,10 @@ read `results/` and the `.tex` in the same tree.
 
 ## Between the workshops
 
-Find **two** sources and download them to `literature/pdfs/` (git-ignored):
+Use the fortnight to experiment on your own research. Activity 1 extraction
+resumes in Session 2, rather than becoming a homework assignment.
+
+For the optional full corpus workflow, find **two** sources and download them to `literature/pdfs/` (git-ignored):
 
 - **one for the model** — governing equations, assumptions, sign conventions, or
   parameter values;
@@ -82,8 +91,13 @@ cd ~/cstr-project
 conda activate cstr-workshop
 git switch -c workshop2
 pytest tests
-python scripts/reproduce.py
+python scripts/reproduce.py  # only if you have implemented it
+# Otherwise: python scripts/run_notebook.py
 ```
+
+If extraction is incomplete, use the unchanged notebook for current evidence.
+Record which command ran. The notebook runner does not create `baseline.json`;
+that file comes from Activity 1 Phase 2.
 
 > **Gate 1.** The tests pass and `results/` is current. You are about to write
 > claims about these numbers; they should be numbers you just regenerated, not
@@ -204,7 +218,7 @@ cd report && latexmk -pdf report.tex && cd ..
 > **Gate 4.** `report/report.pdf` builds with no undefined references or
 > citations, and is roughly two pages plus references.
 
-**Short on time?** Use [`../report/audit_fallback.tex`](../report/audit_fallback.tex)
+**Default in-room path.** Use [`../report/audit_fallback.tex`](../report/audit_fallback.tex)
 instead and go straight to Phase 5. It is a complete draft of this report,
 written to contain several evidence problems. It is otherwise a competent piece
 of writing, which is the point — these are the mistakes that survive a careful
@@ -218,7 +232,9 @@ cd report && latexmk -pdf audit_fallback.tex && cd ..
 
 ## Phase 5 — Inventory and audit every claim (25 min)
 
-This is the core of the activity. Budget the full 25 minutes.
+This is the core of the writing activity. In the session, use the selected
+claim set and switching times in the [session guide](session_guide.md). A complete
+audit of every claim belongs to the longer workflow.
 
 ### Inventory first
 

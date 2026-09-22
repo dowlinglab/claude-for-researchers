@@ -1,6 +1,7 @@
 # Build plan: two AI-assisted research workshops using a CSTR
 
-**Status:** approved design; implementation pending.
+**Status:** starter implemented and runtime-verified; session design updated after
+Alex approved the 35/10/45/15-minute budget.
 
 **Audience:** chemical engineering graduate students, postdocs, and faculty with
 mixed experience in Python, Git, LaTeX, and coding agents.
@@ -8,6 +9,20 @@ mixed experience in Python, Git, LaTeX, and coding agents.
 **Format:** two workshops, 1.75 hours each. Both workshops use the same project
 so that repository setup, computation, literature, writing, and auditing form one
 continuous workflow.
+
+## Current session route
+
+The [session guide](cstr/activities/session_guide.md) governs the in-room scope:
+35 minutes presentation, 10 Q&A, 45 hands-on, and 15 regroup per meeting.
+Session 1 covers instructions and a saved baseline. Session 2 resumes a bounded
+extraction and then audits selected claims in the fallback report. Setup is
+pre-work. The fortnight is for experimentation on participants’ own research;
+extraction is next-session work. Additional source-finding is optional for the
+longer workflow.
+
+The phase tables below remain the original full-workflow estimates, not the
+current session timetable. Full modularization and report drafting are
+extensions. The session guide defines completion of each bounded exercise.
 
 ## 1. Learning arc
 
@@ -220,6 +235,9 @@ Extensions may include full modularization, a command-line interface, stability
 analysis, continuation methods, or a Pyomo implementation.
 
 ## 6. Literature preparation between workshops
+
+For the in-room route, participants open the supplied anchor. The additional
+source search below is optional preparation for the full workflow.
 
 Provide one legally redistributable or openly accessible anchor source. Ask each
 participant to locate two more sources:
