@@ -6,6 +6,12 @@ regroup per meeting. See [seminar notes](seminar_notes.md) for verification and
 [the session guide](../resources/workshops/cstr/activities/session_guide.md) for
 the current in-room activity scope.
 
+**As of 2026-09-24, Part 1 is four days away and the announcement has not been
+sent** (item 9). Items 9, 10, and 2 are the time-critical ones; the rest improve
+a series that would already run.
+
+Resuming on another machine: read [machine_setup.md](machine_setup.md) first.
+
 1. **Rehearse both session decks.** The split is built and visually reviewed:
    Part 1 has 27 frames and Part 2 has 31. Verify each fits its 35-minute
    presentation slot while preserving the activity and regroup time.
@@ -28,10 +34,23 @@ the current in-room activity scope.
 8. **Starter recovery and runtime verification complete.** All five release
    checks and public docs passed after the merge; see seminar notes. The tools
    now support this machine's separate checkout locations.
-9. **Send the announcement and prerequisites.** This task does not send it.
+9. **Send the announcement and prerequisites. Time-critical.** It has not been
+   sent.
    Participants need accounts, installed tools, a private working copy, and a
    working environment before Part 1. Say that both meetings use one project,
    extraction resumes in Part 2, and the fortnight is for experimenting on
    their own research. Additional literature searching is optional.
+10. **Act on the September 24 PDF review.** All eight documents were rebuilt and
+    handed to Alex for review in transit: both session decks, the combined
+    58-frame build, the handout, the report template, the fallback report, and
+    the two instructor-only answer documents. **No changes have been made from
+    that review**; anything Alex marked up is still outstanding.
+11. **Give `report/` a `Makefile`.** `audit_fallback.tex` needs an explicit
+    BibTeX pass and fails quietly without one — `woolf2009cstr` renders as `[?]`
+    and the section references resolve to `??`. Participants will hit this, and
+    so will anyone building it live. See [machine_setup.md](machine_setup.md).
+12. **Decide the instructor-only questions** recorded in the private repository:
+    which regroup reveals to show, and whether the worked solutions are
+    distributed after the series. Neither blocks Part 1.
 
 No repository may be pushed without Alex's approval.

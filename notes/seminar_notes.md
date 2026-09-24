@@ -845,3 +845,41 @@ and an automated check cannot establish how far a median participant will get.
 Remaining work: live rehearsal, the desktop screenshot, and the scheduled
 product/policy recheck. Alex chooses when to remove DRAFT, send the announcement,
 print the handout, and authorize pushing. Both repositories remain unpushed.
+
+### 2026-09-24: Rebuilt every PDF for review; recorded the machine-dependent steps
+
+**Why.** Alex is reviewing the material in transit and resuming on a different
+computer, so both the artifacts and the knowledge of how to rebuild them had to
+leave this laptop.
+
+**Built and handed over**, eight documents: `slides/part1.pdf` (27 frames),
+`slides/part2.pdf` (31), `slides/main.pdf` (58, both parts in one sequence),
+`handout/main.pdf` (2 pages), the workshop `report.pdf` and
+`audit_fallback.pdf`, and the two instructor-only answer documents — the
+six-frame regroup deck and the reference report. All forced rebuilds, not cached
+output. Part 1 and Part 2 title frames were rendered and checked: "Setting up a
+project" / 28 September and "Advanced features" / 12 October, both still marked
+DRAFT.
+
+**Two build failures worth recording, because both are quiet.**
+
+1. `resources/workshops/cstr/report/audit_fallback.tex` needs an explicit BibTeX
+   pass. `latexmk -pdf` alone leaves `woolf2009cstr` undefined and the internal
+   references unresolved, and still exits successfully with a plausible-looking
+   three-page PDF. That directory has no `Makefile`. Recorded as item 11 in
+   [open_questions.md](open_questions.md) — participants will hit it too.
+2. The private `reference_report.tex` is not a self-contained project; it needs
+   a `ref.bib` copied alongside. Built in a scratch directory so the private
+   repository stayed clean.
+
+**Written down rather than rediscovered:** [machine_setup.md](machine_setup.md)
+now records the two checkout paths and the fact that they are *not* siblings,
+the per-machine conda environment, `PUBLIC_ROOT` for the private tooling, both
+LaTeX workarounds, and the pre-release checks. Every item in it cost time to
+find once.
+
+**Documentation state.** The README status section was stale — it still
+described the deck split as unimplemented and the handout as unbuilt, both of
+which the overnight run completed. Rewritten around what now exists and what is
+outstanding before September 28, with the announcement flagged as the
+time-critical item.

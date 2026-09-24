@@ -70,13 +70,30 @@ claude-for-research/
 
 ## Status
 
-**The event moved from a single 1-hour talk to a two-part, hands-on series (September 21, 2026).** The repository is mid-transition:
+**Both session decks, the activities, and the handout are built and verified.** The overnight build of September 21–22 split the deck, reworked the activities, and produced the handout; all five private release checks and the public documentation check passed against the merged starter.
 
-- **Done.** Event details and the RSVP link, the arrival prerequisites, the session shape (55 presentation minutes across both parts, a 30-minute activity and a group recap in each), the two-part session map in [outline.md](outline.md), and the repository-boundary rules in [CLAUDE.md](CLAUDE.md).
-- **Recovered.** The workshop starter under [`resources/workshops/`](resources/workshops/) is back — pushed from Alex's office desktop on September 22 and merged. Participants have something to clone. The merged state still needs the five release checks run against it.
-- **Not done.** The 54-slide deck is one continuous sequence. The split is settled in principle — slides 1–26 and 27–54, cutting at the Task 3 opener, which puts both parts inside the 25–35 slide budget — but has not been implemented.
+Per-meeting budget, approved by Alex: **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup.**
 
-The deck itself was revised after the September 11, 2026 practice talk and again on September 14 from Alex's annotated read-through. It uses six research tasks, with expanded workspace setup, literature-guided writing, overnight work, and concrete review visuals. The title slide still says **DRAFT** by request. The companion resources are complete and cross-referenced from the talk; the separate handout remains unbuilt.
+| Artifact | State |
+|---|---|
+| `slides/part1.pdf` | 27 frames — Part 1, "Setting up a project" |
+| `slides/part2.pdf` | 31 frames — Part 2, "Advanced features" |
+| `slides/main.pdf` | 58 frames — both parts in one sequence |
+| `handout/main.pdf` | 2 pages, standalone reference |
+| `resources/workshops/cstr/` | Starter, session guide, and both activities |
+
+**Outstanding before Part 1 on September 28** — see [notes/open_questions.md](notes/open_questions.md) for the full list:
+
+1. **Send the announcement.** It has not gone out. The draft content and the arrival prerequisites are above; the RSVP form is live.
+2. **Review the built PDFs.** Generated and handed to Alex for review on September 24; no changes have been made from that review yet.
+3. **Rehearse both decks** against the 35-minute slot.
+4. **Recheck time-sensitive claims** — model availability, product limits, Notre Dame approvals. The overnight edit preserved the existing claims rather than re-auditing them.
+5. **Capture the desktop-app screenshot** for Part 1 frame 12; the placeholder remains.
+6. **Decide when to remove DRAFT**, still on both title slides.
+
+Resuming on another machine: read [notes/machine_setup.md](notes/machine_setup.md) first. The conda environment is per-machine, the two checkouts are not siblings, and two LaTeX documents fail quietly without extra steps.
+
+The deck's content was revised after the September 11, 2026 practice talk and again on September 14 from Alex's annotated read-through. It uses six research tasks, with expanded workspace setup, literature-guided writing, overnight work, and concrete review visuals. The companion resources are complete and cross-referenced from the talk.
 
 ## License
 
