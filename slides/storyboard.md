@@ -101,8 +101,8 @@ landscape; it goes straight from the story to the model table and the repository
 Act I builds the workspace in order. Slide 10 establishes that an agent works on real files, slide
 11 argues good/better/best from a conversation to a file system to a repository, and **only then**
 do slides 12–14 show the three places you can run an agent — desktop app, editor extension,
-terminal — one per slide, each with a full-width screenshot, a single annotation, and a shared
-strip for orientation, ordered easiest to most sophisticated. Putting them after version control
+terminal — one per slide, each with a large screenshot and a shared vertical
+selector on the left, ordered easiest to most sophisticated. Putting them after version control
 is deliberate: the question "where do I run this" is only worth answering once the files it will
 touch are under version control. Slide 15 then states the problem the rest of Act I solves —
 inheriting a zip file and a paper from a departed group member. Slides 20–21 close Act I on

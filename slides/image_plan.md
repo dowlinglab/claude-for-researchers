@@ -25,8 +25,9 @@ The Notre Dame marks come from the vendored theme under `theme/logos/`. External
 
 The act strip, agent diagram, instruction-file example, three-repository comparison, claim-tracing table, DOI capability paths, manuscript-task stack, drafting sequence, course timeline, source architecture, and policy/task tables remain editable LaTeX/TikZ objects.
 
-The workspace comparison is three slides, 12 through 14, one per mode, each with a full-width
-screenshot and a single gold annotation. Slides 13 and 14 use official Claude Code documentation
+The workspace comparison is three slides, 12 through 14, one per mode. A vertical
+mode selector and takeaway sit on the left, leaving room for a larger screenshot
+on the right. Slides 13 and 14 use official Claude Code documentation
 screenshots, attributed in the slide footer the way slides 17, 28, and 33 already handle GitHub
 Docs and Overleaf: `claude_vscode_extension.jpg` from the
 [VS Code page](https://code.claude.com/docs/en/vs-code) and `claude_terminal_agent_view.jpg` from
