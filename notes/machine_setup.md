@@ -11,12 +11,24 @@ repository layout.
 | `claude-for-researchers` | `~/GitHub/Teaching/claude-for-researchers` | Public |
 | `claude-for-researchers-private` | `~/GitHub/DowlingLab/Teaching/claude-for-researchers-private` | Private |
 
-**They are not siblings**, and several tools originally assumed they were. The
-private release checks and the regroup deck now take an explicit path to the
-public checkout; pass it rather than moving either repository:
+**They are not siblings**, and several tools originally assumed they were.
+Since 2026-09-28 no private tool guesses. Tell the private checkout where the
+public one is, once per machine:
 
 ```bash
-make -C activity_answers/session_solutions PUBLIC_ROOT=/path/to/claude-for-researchers
+cd /path/to/claude-for-researchers-private
+echo /path/to/claude-for-researchers > .public_root     # git-ignored
+```
+
+Every private tool — the release checks, the pytest fixtures, the solution
+runner, and both instructor-deck builds — reads it through
+`scripts/public_root.py`. An explicit argument or `PUBLIC_ROOT` still takes
+precedence. If none of them points at a public checkout, the tool stops and
+prints the command above.
+
+The public docs check takes its path directly:
+
+```bash
 python /path/to/claude-for-researchers/resources/scripts/check_docs.py /path/to/claude-for-researchers
 ```
 
@@ -71,7 +83,7 @@ quiet:
    ```
 
 The private instructor decks need the public slide sources and theme. Their
-`Makefile` handles both given `PUBLIC_ROOT`.
+`Makefile` handles both, finding the public checkout from `.public_root`.
 
 ## Before calling a slide done
 
