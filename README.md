@@ -84,7 +84,7 @@ make -C slides
 make -C handout
 ```
 
-This builds the 32-slide Part 1 deck, the 36-slide Part 2 deck, and a two-page handout for each part. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
+This builds the 34-slide Part 1 deck, the 36-slide Part 2 deck, and a two-page handout for each part. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
 
 For development notes, see [open questions](notes/open_questions.md). On another machine, read the [machine setup notes](notes/machine_setup.md) first.
 

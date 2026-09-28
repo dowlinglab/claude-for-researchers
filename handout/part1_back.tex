@@ -1,18 +1,47 @@
 \heading{Workshop 1: audit, extract, extend}{Continue the numbered route \hfill Save at minute 40}
-\textbf{2 continued. Audit before editing.} Compare the notebook's parameters with \code{data/reactor_parameters.yml}. Open its equations, assumptions, units, and final limits. Check the heat-release sign, Kelvin temperatures, solver convergence and residual norm, root deduplication, starting guesses, sweep spacing, a nominal CSV row, a sweep row, and the figure. Write \code{docs/audit.md}: mark each item \textbf{checked}, \textbf{question}, or \textbf{pending}, with its source cell or file. Ask the agent to propose checks; verify at least one yourself.
+\topic{2. Audit before editing}
+\begin{itemize}
+  \item Compare notebook parameters with \code{data/reactor_parameters.yml}. Read the assumptions, units, equations, and limits.
+  \item Check the heat-release sign, Kelvin units, solver flag and residuals, starting guesses, root deduplication, and sweep spacing.
+  \item Inspect a nominal CSV row, a sweep row, and the figure.
+  \item In \code{docs/audit.md}, mark each check \textbf{checked}, \textbf{question}, or \textbf{pending}; cite its cell or file.
+  \item Save the original notebook and baseline outputs \textbf{before} changing solver code.
+\end{itemize}
+\code{conda list --export > results/conda-list.txt}\\
+\code{git add -f results/steady_states.csv results/steady_state_locus.png}\\
+\code{git add -f results/conda-list.txt}\\
+\code{git add environment.yml docs/audit.md notebooks/cstr_exploration.ipynb}\\
+\code{git commit -m "Save audited notebook baseline"}\\
+\code{git rev-parse HEAD}
 
-Commit \code{environment.yml}, audit, original notebook, and baseline outputs \emph{before} changing solver code. Record \code{python --version} and \code{conda list --export} in \code{results/conda-list.txt}. Use \code{git add -f results/steady_states.csv results/steady_state_locus.png results/conda-list.txt} to include generated evidence. Record the baseline hash with \code{git rev-parse HEAD}. \textbf{Gate 2:} a fresh run, named audit evidence, and preserved original outputs.
+\textbf{Gate 2:} Fresh run, recorded audit, and committed baseline.
 
 \topic{3. Extract Python functions and test (22--35 min)}
-Move one function at a time into \code{src/cstr_workshop/}: parameters/kinetics/residuals in \code{model.py}; solves in \code{solve.py}; parameter sweep in \code{sweep.py}; figure in \code{plotting.py}. Add \code{pyproject.toml}, then install with \code{python -m pip install -e .}. Each public function needs a NumPy-style docstring with inputs, units, return value, and meaningful errors. Change the notebook to import these functions only after you have saved its original results.
+\begin{itemize}
+  \item Extract model and residuals to \code{model.py}; roots to \code{solve.py}; sweep to \code{sweep.py}; figure to \code{plotting.py}.
+  \item Add \code{pyproject.toml} and NumPy-style docstrings with inputs, units, returns, and errors.
+  \item Test parameter loading, physical bounds, residuals, distinct roots, row count, and invalid input.
+  \item Compare extracted values with the saved notebook CSV within a stated tolerance.
+\end{itemize}
+\code{python -m pip install -e .}\quad\code{python -m pytest -q}\\
+\code{git diff --check}
 
-Ask the agent for tests, then inspect them: parameter loading, rate increasing with temperature, small accepted residuals, physical concentration/conversion bounds, sorted distinct roots, sweep row count, invalid input, and agreement with your saved notebook CSV within a stated tolerance. Run \code{python -m pytest -q} and \code{git diff --check}. \textbf{Gate 3:} tests pass and extracted values match the pre-refactor baseline. Commit code and test results; investigate a mismatch instead of replacing baseline evidence.
+\textbf{Gate 3:} Tests pass; extracted values match the pre-refactor baseline. Commit the code and tests.
 
 \topic{4. Extend one analysis (35--40 min; continue later)}
-Choose one: \textbf{A} refine coolant-temperature intervals around changes in state count; \textbf{B} vary heat transfer \code{UA}; \textbf{C} vary feed temperature \code{Tf}; \textbf{D} compare wider/denser solver starting guesses. Keep the nominal case unchanged as a control. Save a runnable script, CSV or figure in \code{results/extensions/}, a test, and a two-sentence interpretation. Full ranges and limits: \code{activities/workshop1_extensions.md}. \textbf{Gate 4:} another person can rerun the extension and see what its result does and does not establish.
+\begin{itemize}
+  \item Choose \textbf{one}: finer coolant grid; heat-transfer \code{UA}; feed temperature \code{Tf}; or denser solver guesses.
+  \item Keep the nominal case as a control. Save a runnable script and result under \code{results/extensions/}.
+  \item Add a test and a two-sentence interpretation: what the result supports, and what remains uncertain.
+\end{itemize}
+\textbf{Gate 4:} Another researcher can rerun and check the extension. \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/cstr/activities/workshop1_extensions.md}{See the extension guide for ranges and limits.}
 
-\topic{At minute 40: hand off the state you reached}
-Run \code{git status --short}. In \code{docs/handoff.md}, record baseline commit, completed gates, commands and working directory, checks you personally made, blockers, and one exact next command. Commit your draft, including pending review. At regroup, show one audit finding and your chosen extension. If stuck for five minutes, ask for help; record whose machine ran a check.
+\topic{At minute 40: hand off your work}
+\begin{itemize}
+  \item Run \code{git status --short}; commit your draft, including pending review.
+  \item In \code{docs/handoff.md}, record completed gates, baseline commit, working directory, checks, blockers, and the next exact command.
+  \item At regroup, share one audit finding and the extension you chose. Ask for help after five minutes stuck.
+\end{itemize}
 
 \vfill
 \textbf{My next command or question:}\par\vspace{8pt}\hrule\vspace{18pt}\hrule

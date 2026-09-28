@@ -35,8 +35,11 @@ the [agent view page](https://code.claude.com/docs/en/agent-view), both accessed
 Slide 12 uses Alex's Claude desktop screenshot, `claude_desktop_projects_blurred.png`.
 Other project and conversation names in the left sidebar are blurred; the radio
 textbook entry remains readable.
-Part 1 activity slide 28 uses `cstr_notebook_preview.png`, a rendered preview of
-the notebook in the downloadable Workshop 1 handoff ZIP.
+Part 1 activity slide 28 uses an editable TikZ sketch of the cooled CSTR.
+Slide 29 uses `cstr_steady_state_locus.png`, the original notebook's result
+figure generated from the teaching parameter set. Slide 30 uses
+`cstr_notebook_preview.png`, a rendered preview of the notebook in the
+downloadable Workshop 1 handoff ZIP.
 
 Slide 41 carries a generated TikZ calendar, `figures/august_2026_calendar.tex`. Its day-by-day
 shading and the 1,452-commit total (1,084 private, 368 public, August 17–31) come from

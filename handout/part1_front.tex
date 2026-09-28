@@ -1,30 +1,45 @@
 \heading{Part 1: build a project you can resume}{Summary and Workshop 1 \hfill 28 September 2026}
-\textbf{What Part 1 covered.} An agent can inspect and edit a real workspace, run checks, and use Git history. A repository preserves changes and invites review. Concise \code{AGENTS.md} or \code{CLAUDE.md} gives an agent project context; it cannot certify a result. The research workflow is \textbf{inspect $\rightarrow$ run $\rightarrow$ audit $\rightarrow$ save a baseline $\rightarrow$ refactor $\rightarrow$ test $\rightarrow$ extend}. Record the environment and commands so a colleague can resume without your chat.
+\topic{What we covered}
+\begin{itemize}
+  \item Agents can inspect files, edit code, run checks, and use Git history.
+  \item Git records changes. Short \code{AGENTS.md} or \code{CLAUDE.md} files give agents project context.
+  \item Work in order: \textbf{inspect $\rightarrow$ run $\rightarrow$ audit $\rightarrow$ save a baseline $\rightarrow$ refactor $\rightarrow$ test $\rightarrow$ extend}.
+  \item Verify the agent's claims and diffs yourself. Record commands, results, and open questions for the next researcher.
+\end{itemize}
+\topic{The reactor case}
+\begin{itemize}
+  \item An inherited cooled-reactor notebook may find several steady states at one coolant temperature.
+  \item Check solver convergence and residuals. A repeatable result does not prove model validity, stability, or that every root was found.
+\end{itemize}
 
-\textbf{Our case.} You inherit a cooled-reactor notebook and parameter file. The model may have multiple steady states at one operating condition. A solver result needs convergence and residual checks. Repeating a run checks reproducibility; it does not prove model validity, stability, or that all roots were found.
-
-\textbf{The four gates:} 1 Git repository and original commit; 2 Conda, fresh run, and audit; 3 extracted functions with docstrings and tests; 4 one new analysis with a preserved control. Save the gate you reached at minute 40. The rest is continuation work between sessions.
-
-\textbf{Ask, verify, record.} Have an agent map inputs to outputs, explain where a number came from, and propose a bounded next step. Read its cited source and inspect the diff. Save the checked result, the test command, and the open question in the repository.
-
-\vspace{0.70in}{\color{NDGold}\rule{\linewidth}{0.8pt}}\vspace{-3pt}
-\topic{Workshop 1: start from the notebook handoff}
-\textbf{1. Download and initialize (0--10 min).} Download the \href{https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip}{\textbf{notebook ZIP}} from \repourl. Unzip it and open a terminal in \code{cstr-project/}. It holds a notebook, YAML parameters, and an empty results folder. Create an empty \textbf{private} GitHub repo named \code{cstr-project}; use its URL below.
-
+\vspace{0.40in}{\color{NDGold}\rule{\linewidth}{0.8pt}}\vspace{-3pt}
+\topic{Workshop 1: start from the notebook ZIP}
+\textbf{1. Create a private repository (0--10 min)}
+\begin{itemize}
+  \item \href{https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip}{Download the ZIP}. Unzip it; open the \code{cstr-project/} folder.
+  \item Create an empty \textbf{private} GitHub repository named \code{cstr-project}. Copy its URL.
+\end{itemize}
 \code{git init}\quad\code{git branch -M main}\\
 \code{git add README.md notebooks data results/.gitkeep}\\
 \code{git commit -m "Import inherited reactor notebook"}\\
 \code{git remote add origin YOUR-PRIVATE-REPOSITORY-URL}\\
 \code{git push -u origin main}\quad\code{git switch -c workshop1}
+\begin{itemize}
+  \item Check \code{git log -1 --oneline}, \code{git remote -v}, and \code{git status --short}. If push fails, continue locally and record the blocker.
+\end{itemize}
 
-Check \code{git log -1 --oneline}, \code{git remote -v}, and \code{git status --short}. If push fails, continue locally and record the blocker.
-
-\textbf{2. Create Conda environment (10--22 min).} If \code{conda --version} fails, install Miniconda (\url{https://docs.anaconda.com/miniconda/}) and reopen the terminal. Ask your agent to read the notebook imports and draft \code{environment.yml} with Python, NumPy, SciPy, pandas, matplotlib, JupyterLab, and pytest. Check its list yourself. A fallback file is at \code{resources/workshops/cstr/environment.yml}; remove its \code{-e .} install because this handoff has no package yet.
-
+\textbf{2. Build the environment and run (10--22 min)}
+\begin{itemize}
+  \item If \code{conda --version} fails, \href{https://www.anaconda.com/download/success?reg=skipped-miniconda}{install Miniconda} and reopen the terminal.
+  \item Draft \code{environment.yml} from notebook imports. Check it for NumPy, SciPy, pandas, matplotlib, JupyterLab, and pytest.
+  \item Fallback: \code{resources/workshops/cstr/environment.yml}. Remove \code{-e .} until you have a package.
+\end{itemize}
 \code{conda env create -f environment.yml}\\
 \code{conda activate cstr-workshop}\quad\code{jupyter lab}
-
-Start Jupyter from \code{cstr-project/}. Select the environment kernel, then \textbf{Restart Kernel and Run All Cells}. Confirm \code{results/steady_states.csv} and \code{results/steady_state_locus.png}. If setup is slow, save the exact error or pending command and continue with a paired audit.
+\begin{itemize}
+  \item Open \code{cstr-project/} as the workspace. Launch Jupyter there; select its kernel and \textbf{Restart Kernel and Run All Cells}.
+  \item Check for \code{results/steady_states.csv} and \code{results/steady_state_locus.png}.
+\end{itemize}
 
 \vfill
-\small The complete four-step instructions and extension guide are in \code{resources/workshops/cstr/activities/}.
+\small Full instructions: \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md}{Workshop 1 activity and extension guide}.
