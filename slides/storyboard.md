@@ -2,12 +2,12 @@
 
 The original 54-slide sequence below remains intact, split at the Task 3 opener.
 Original numbers remain as stable editorial references. The shared sources build
-**Part 1: 31 frames** and **Part 2: 36 frames**, including activity and regroup support.
+**Part 1: 32 frames** and **Part 2: 36 frames**, including activity and regroup support.
 DRAFT remains on both title slides.
 
 | Build | Rendered frame mapping |
 |---|---|
-| Part 1, September 28 | Frames 1–26: original 1–26, with a session-specific title; frame 27: baseline closing; 28–30: activity; 31: regroup |
+| Part 1, September 28 | Frames 1–26: original 1–26, with a session-specific title; frame 27: baseline closing; 28–30: activity; 31: regroup; 32: recap |
 | Part 2, October 12 | Frame 1: new title; frame 2: reconnect to the saved baseline; frames 3–30: original 27–54; frame 31: evidence/handoff closing; 32–35: activity; 36: regroup |
 
 Each session: **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**.

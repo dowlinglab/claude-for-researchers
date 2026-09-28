@@ -80,9 +80,9 @@ Per-meeting budget, approved by Alex: **35 minutes presentation, 10 Q&A, 45 hand
 
 | Artifact | State |
 |---|---|
-| `slides/part1.pdf` | 31 frames — Part 1, "Setting up a project" |
+| `slides/part1.pdf` | 32 frames — Part 1, "Setting up a project" |
 | `slides/part2.pdf` | 36 frames — Part 2, "Advanced features" |
-| `slides/main.pdf` | 67 frames — both parts in one sequence |
+| `slides/main.pdf` | 68 frames — both parts in one sequence |
 | `handout/part1.pdf` | 2 pages — Part 1 summary and activity |
 | `handout/part2.pdf` | 2 pages — Part 2 summary and activity |
 | `handout/main.pdf` | 4 pages — optional combined handout packet |
