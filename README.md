@@ -28,7 +28,7 @@ Setup time in the room is time not spent on the activity. Before Part 1, please:
 3. Install the [Claude](https://claude.com/download) or [ChatGPT](https://chatgpt.com/download/) desktop app.
 4. Create a [GitHub account](https://github.com); you can also apply for the optional [GitHub Education upgrade](https://github.com/education).
 5. Install [GitHub Desktop](https://desktop.github.com/download/).
-6. Clone the [workshop repository](https://github.com/dowlinglab/claude-for-researchers) and [download the Workshop 1 notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip). The ZIP is for a new private repository you will create during the activity.
+6. Clone the [workshop repository](https://github.com/dowlinglab/claude-for-researchers) and [download the Workshop 1 notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip). Unzip and open its `cstr-project/` folder for the activity; the notebook in this seminar repository is only the source for the ZIP.
 7. If you do not already have Conda, [install Miniconda](https://www.anaconda.com/download/success?reg=skipped-miniconda). An existing Anaconda installation works too.
 
 You do not need to run the notebook or create its environment before the workshop.
