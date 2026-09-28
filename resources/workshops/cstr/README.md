@@ -1,115 +1,31 @@
-# CSTR workshop starter
+# CSTR workshops
 
-Starter project for two 105-minute seminar sessions built around one scientific
-case: steady-state multiplicity in a jacketed nonisothermal CSTR.
+The two sessions use one scientific case: steady-state multiplicity in a cooled, nonisothermal CSTR. The values are a teaching set, not measurements of a reactor.
 
-1. **[Activity 1](activities/01_notebook_to_reproducible_project.md)** — turn an
-   exploratory notebook into a reproducible project, without losing the result.
-2. **[Activity 2](activities/02_evidence_linked_report.md)** — turn computational
-   artifacts and a small literature corpus into a report whose every claim traces
-   to evidence.
+## Workshop 1: inherit the notebook
 
-Copy this directory into a **new private GitHub repository** of your own and
-work there. The instructions assume you did.
+Start with the small [notebook handoff zip](workshop1_notebook.zip). It contains only an exploratory notebook, a parameter file, and an empty `results/` directory. Download and unzip it, then follow the [four-step assignment](activities/01_notebook_to_reproducible_project.md): create your own private Git repository; set up Conda, run and audit the notebook; extract and test Python functions with NumPy-style docstrings; and complete one of the [four analysis extensions](activities/workshop1_extensions.md). The [session guide](activities/session_guide.md) points to the in-room route. Save a truthful checkpoint at minute 40 and continue unfinished gates between sessions.
 
-## In-room route
+The zip is generated from the source notebook and parameter file with `python build_workshop1_handoff.py`; rerun that builder after changing either input. The existing full starter below is separate from the inherited notebook handoff.
 
-Start with the [session guide](activities/session_guide.md). Each meeting has
-35 minutes presentation, 10 Q&A, 45 hands-on, and 15 regroup. Session 1 saves
-a baseline and checks a fresh rerun. Session 2 checks three claims in the shared
-report and revises one; extraction is an optional prepared-baseline extension.
-Setup is pre-work; the fortnight is for experimenting on your own research.
-The optional full activity files provide reference steps and extensions; their
-phase estimates and completion gates are not additional in-room requirements.
+## Workshop 2: evidence-linked report
 
-## Quick start
+Use the [Activity 2 instructions](activities/02_evidence_linked_report.md) and the report, literature, and evidence folders in this full starter. This project also retains a longer optional extraction workflow and utilities for notebook baseline capture. They are support material, not the initial Workshop 1 handoff.
+
+To run this full starter in its own private copy:
 
 ```bash
-cp -R path/to/cstr ~/cstr-project && cd ~/cstr-project
+cp -R /path/to/claude-for-researchers/resources/workshops/cstr ~/cstr-full-starter
+cd ~/cstr-full-starter
 conda env create -f environment.yml
 conda activate cstr-workshop
-
-python -c "import cstr_workshop; print('ok')"
-pytest tests
 python scripts/run_notebook.py --check
 ```
 
-All three should succeed before Activity 1 begins. `--check` runs in a
-temporary workspace and discards its outputs; it neither fills nor overwrites
-your baseline directory. A PDF build in Activity 2 additionally needs
-a LaTeX toolchain; the in-room source-only audit can proceed without it:
+A Workshop 2 PDF build additionally needs a LaTeX toolchain. The source-only audit can proceed without it.
 
-```bash
-latexmk -v
-cd report && latexmk -pdf report.tex && latexmk -C && cd ..
-```
+## The science and limits
 
-## The scientific case
+The steady-state material and energy balances may have more than one solution at a given coolant temperature. One nonlinear solve from one guess establishes only one root. The notebook searches from many starting points, sweeps coolant temperature, and plots the state locus. The calculation alone does not establish dynamic stability, exact fold locations, or agreement with a real reactor. Read the notebook's assumptions, units, sign conventions, and closing limits before making claims about its figure.
 
-A jacketed CSTR runs the irreversible exothermic reaction `A -> B` with
-first-order Arrhenius kinetics. At steady state a material balance and an energy
-balance hold simultaneously:
-
-```
-0 = q (C_Af - C_A) - V k(T) C_A
-0 = q rho Cp (T_f - T) + (-dH_rxn) V k(T) C_A - UA (T - T_c)
-```
-
-Heat generation rises exponentially with temperature; heat removal rises
-linearly. The two can therefore balance at more than one temperature for the
-same operating condition — so a single solver call from a single starting point
-returns *a* steady state and tells you nothing about how many exist.
-
-That is the scientific hook, and it is also the methodological one. Most of what
-both workshops teach is a response to the same problem: a computed result that
-looks completely convincing and is incomplete.
-
-All temperatures are absolute (K). The parameters are a teaching set, not a
-measured reactor — see [`data/reactor_parameters.yml`](data/reactor_parameters.yml).
-
-## Layout
-
-```
-cstr/
-├── activities/          the two activity instruction files
-├── notebooks/           cstr_exploration.ipynb -- the starting point
-├── data/                reactor_parameters.yml
-├── src/cstr_workshop/   documented stubs; you implement them in your copy
-├── scripts/             run_notebook.py, baseline.py; you add reproduce.py
-├── tests/               environment smoke test; you add regression tests
-├── results/             generated artifacts (git-ignored by default)
-├── literature/          source manifest, notes rules, git-ignored pdfs/
-├── report/              report.tex, ref.bib, audit_fallback.tex
-├── docs/                literature notes, claim audit, handoff templates
-├── environment.yml      the environment
-├── pyproject.toml       packaging
-└── AGENTS.md.example    example agent instructions (CLAUDE.md.example is identical)
-```
-
-The notebook is deliberately typical exploratory work: globals, repeated code,
-tolerances written inline, paths relative to the working directory, and no
-manifest recording what produced what. It is not, however, wrong — there is no
-hidden numerical defect. Activity 1 depends on the baseline it produces being
-trustworthy.
-
-## What you need
-
-| | |
-|---|---|
-| **Both activities** | Git, a GitHub account, conda or mamba, an AI coding agent you can run against a local directory |
-| **Optional Activity 2 PDF** | A LaTeX toolchain (`latexmk`, `pdflatex`, `bibtex`) — TeX Live, MacTeX/BasicTeX, or MiKTeX |
-
-Python, the scientific stack, and Jupyter all come from `environment.yml`.
-
-## For instructors
-
-Solutions, reference results, tolerances, rubrics, and mutation tests are **not**
-in this repository. They are in the private instructor repository,
-`claude-for-researchers-private`. This is an access boundary, not a convention:
-an activity is only demonstrably answerable if it can be completed from this
-tree alone.
-
-Design rationale and the build plan are in `resources/workshops/cstr_two_workshop_plan.md`
-in the `claude-for-researchers` repository — one directory above this starter.
-It is referenced by path rather than by link because you are expected to copy
-this directory on its own, which would break a relative link pointing outside it.
+Instructor solutions, reference results, tolerances, and rubrics are held in the private sibling repository. Nothing in this public starter requires access to them.

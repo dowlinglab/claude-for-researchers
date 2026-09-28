@@ -1,407 +1,79 @@
-# Optional full workflow: notebook to reproducible project
+# Workshop 1: inherit a notebook, build a research project
 
-**In the room:** follow only the [session guide](session_guide.md), which is
-self-contained. Session 1 ends with instructions, saved evidence, a restart
-comparison, and handoff. No extraction is required in either session.
+**Case.** A former student sends you a zip file containing an exploratory notebook and a parameter file for a cooled, nonisothermal continuous stirred-tank reactor (CSTR). The notebook appears to run, but there is no repository, environment, test suite, or record of which computation produced its figure. Make the work recoverable, audit it, extract reusable Python, and answer one new question. The notebook is a teaching model, not a measured reactor.
 
-Everything below is the optional full workflow. Its objectives, phase estimates,
-gates, and minimum completion describe that extension, not today's requirements.
-Setup can be completed before Session 1. You need Git, conda (or mamba), a private
-project, and an AI coding agent that can work against a local directory.
+**Time.** The 45-minute in-room block starts all four steps. Keep the numbered sequence and save a checkpoint at minute 40. A clean Conda install and full extraction can take longer; continue the same steps between sessions. A partial checkpoint must say which gate is pending. Work in a private repository of your own. An AI coding agent may draft files and run checks; you decide whether the scientific claims are justified.
 
-## Objectives
+## 1. Create the repository and import the handoff (0–10 min)
 
-Across the full workflow you will build a private, versioned repository containing:
-
-- a documented environment that someone else can build;
-- a **baseline** — evidence of what the code computed before you changed it;
-- reusable model functions extracted out of the notebook;
-- one command that regenerates every result without opening the notebook;
-- tests that fail when the science changes, not only when the code moves;
-- a handoff document recording the verified state.
-
-The lesson underneath all of it: **capture evidence before restructuring code.**
-A refactor is only safe if you can prove afterwards that the answers did not
-move. Most people acquire that habit by losing a result once.
-
-## The science, in one paragraph
-
-A jacketed CSTR runs the irreversible exothermic reaction `A -> B` with
-first-order Arrhenius kinetics. At steady state, a material balance and an
-energy balance must hold simultaneously. Because the heat generated rises
-exponentially with temperature while the heat removed rises linearly, the two
-balances can be satisfied at more than one temperature for the same operating
-condition. The notebook finds those steady states and sweeps the coolant
-temperature. Full statement of the equations, assumptions, units, and sign
-conventions is in the first cell of the notebook.
-
----
-
-## Phase 0 — Setup (20 min)
-
-Complete this phase before Session 1.
-
-### Create your private repository
-
-Copy the starter into a **new private GitHub repository** of your own. Do not
-fork the public one and do not work directly in it.
+Download [`workshop1_notebook.zip`](../workshop1_notebook.zip) from GitHub (use **Download raw file**), unzip it, and put the enclosed `cstr-project/` folder where you keep research projects. Open a terminal **inside that folder**. It contains `notebooks/cstr_exploration.ipynb`, `data/reactor_parameters.yml`, and an empty `results/` directory. The notebook writes results relative to this folder.
 
 ```bash
-# from wherever you keep projects
-cp -R /path/to/claude-for-researchers/resources/workshops/cstr ~/cstr-project
-cd ~/cstr-project
+cd /path/to/cstr-project
 git init
-git add .
-git commit -m "Start from the CSTR workshop starter"
-```
-
-Then create an empty **private** repository on GitHub and push to it:
-
-```bash
-git remote add origin git@github.com:YOUR-USERNAME/cstr-project.git
 git branch -M main
-git push -u origin main
+git status --short
+git add README.md notebooks data results/.gitkeep
+git commit -m "Import inherited reactor notebook"
 ```
 
-If `git push` fails on authentication, that is the first thing to fix — see
-[Common problems](#common-problems).
-
-### Work on a branch
+Create an empty **private** GitHub repository named `cstr-project`; do not initialize it with another README. Copy its URL into the next command, then push:
 
 ```bash
+git remote add origin YOUR-PRIVATE-REPOSITORY-URL
+git push -u origin main
 git switch -c workshop1
 ```
 
-Everything below happens on this branch. You will review the whole thing as one
-diff at the end, which is much easier when `main` is untouched.
+**Gate 1:** `git log -1 --oneline` shows the import, `git remote -v` points to *your* private repository, and `git status --short` is empty. If authentication fails, keep working locally and record that the push is pending. Never add an environment directory, tokens, or raw private data to Git.
 
-### Build the environment
+## 2. Build the environment, run, and audit the notebook (10–22 min)
+
+If `conda --version` fails, install [Miniconda for your operating system](https://docs.anaconda.com/miniconda/) and reopen the terminal. Ask your agent to inspect imports and draft an `environment.yml` with Python, NumPy, SciPy, pandas, matplotlib, JupyterLab, pytest, and any other packages actually needed. Compare its list with the notebook yourself. A working starting point is the [full starter's environment file](../environment.yml); remove its editable package install (`pip: - -e .`) because your new repository does not have a package yet. Add that install after Step 3.
 
 ```bash
 conda env create -f environment.yml
 conda activate cstr-workshop
+python -c "import numpy, scipy, pandas, matplotlib; print('imports OK')"
+jupyter lab
 ```
 
-This installs the project itself in editable mode, so `import cstr_workshop`
-works from anywhere once the environment is active.
+Start Jupyter from the project root. In the notebook, select the `cstr-workshop` kernel, **Restart Kernel and Run All Cells**, and confirm that the CSV and figure appear in `results/`. If Jupyter cannot see the kernel, use `conda run -n cstr-workshop jupyter lab` from the same directory. Record `python --version` and `conda list --export > results/conda-list.txt`.
 
-> **Gate 0.** All three commands succeed:
-> ```bash
-> python -c "import numpy, scipy, pandas, matplotlib, yaml, cstr_workshop; print('ok')"
-> pytest tests
-> python scripts/run_notebook.py --check
-> ```
-> The third takes a few seconds and prints the working directory it used.
-> **Do not continue until all three pass.** Everything after this point assumes
-> a working environment, and debugging science on top of a broken environment
-> wastes the rest of the session.
+**Audit before editing:** Read the opening equations, assumptions, units, and final limits. Compare every parameter typed in the notebook with `data/reactor_parameters.yml`. Check the sign of the exothermic heat term, absolute temperatures, solver convergence flag and residual norm, distinct-root tolerance, initial-guess range, coolant sweep spacing, and that a branch index is a rank at one condition rather than a continuous identity. Inspect a nominal row and a sweep row in the CSV. Look at the figure for false line connections. Record each check as **checked**, **question**, or **not yet checked**, with its source location. A rerun checks repeatability; it does not prove physical validity, root completeness, or stability.
 
----
+Preserve the original source and results before the refactor. Commit a short `docs/audit.md`, `environment.yml`, and the unchanged notebook; commit the generated CSV, PNG, and environment list as baseline evidence. A notebook with new output cells is fine, but do not alter its equations or solver settings before this commit. Record the commit hash with `git rev-parse HEAD`.
 
-## Phase 1 — Agent instructions (10 min)
+**Gate 2:** a fresh kernel runs all cells, the scientific audit has named evidence and open questions, and the baseline commit precedes any refactor. If the notebook fails, preserve the error and fix the environment first.
 
-Point your agent at the repository and ask it to write project instructions.
+## 3. Move the computation into tested Python modules (22–35 min)
 
-> **Prompt.** Inspect this repository before changing anything. Read
-> `notebooks/cstr_exploration.ipynb`, `data/reactor_parameters.yml`,
-> `pyproject.toml`, `environment.yml`, and `tests/`. Then tell me, in your own
-> words: what scientific problem this project solves, what the units and sign
-> conventions are, and what is most likely to be gotten wrong by someone
-> editing it. Do not edit any file yet.
+Ask your agent to extract **one bounded function at a time** into `src/cstr_workshop/`: parameter loading and validation, kinetics and residuals (`model.py`); initial guesses and distinct steady-state solves (`solve.py`); parameter sweeps (`sweep.py`); figure creation (`plotting.py`). Keep the notebook as a readable exploration that **imports** the extracted functions after you have compared outputs. Add a minimal `pyproject.toml` so `python -m pip install -e .` installs the project in the active environment. Ask for NumPy-style docstrings: summary, Parameters with units, Returns, and Raises where relevant. Avoid a vague “document everything” prompt; inspect one signature and docstring yourself.
 
-Read its answer critically. If it describes the sign convention on the heat of
-reaction wrongly, or claims the notebook establishes stability, you have learned
-something useful about what it will do unsupervised.
-
-Then:
-
-> **Prompt.** Based on what you found, draft `CLAUDE.md` (or `AGENTS.md`) for
-> this repository. Include only things a competent new collaborator would
-> plausibly get wrong without being told. No generic software-engineering
-> advice. Aim for under one page.
-
-`AGENTS.md.example` and `CLAUDE.md.example` in this directory are worked
-examples — compare yours against one *after* you have drafted your own.
-
-**Now cut it.** Delete every line that is true of any Python project. What is
-left is the file that actually changes the agent's behavior.
-
-> **Gate 1.** `CLAUDE.md` or `AGENTS.md` is committed, is under roughly one
-> page, and every line in it is specific to this project.
+Write meaningful `pytest` tests before trusting the extraction. At minimum, test the parameter file loads, reaction rate increases with positive absolute temperature, residuals are small at every accepted state, concentration and conversion stay in physical bounds, distinct states are sorted and deduplicated, the sweep has one row per state, and an extracted nominal/sweep result agrees with the saved notebook CSV within a stated numerical tolerance. Also test a deliberately invalid parameter. Compare numeric values, not PNG bytes. Run:
 
 ```bash
-git add CLAUDE.md
-git commit -m "Add project instructions for AI agents"
+python -m pip install -e .
+python -m pytest -q
+git diff --check
+git status --short
 ```
 
----
+**Gate 3:** tests pass and the extracted computation matches the saved baseline. Save the code, tests, and comparison in a new commit. If agreement fails, inspect the difference; never replace the pre-refactor baseline to make the test pass.
 
-## Phase 2 — Run the notebook and capture the baseline (15 min)
+## 4. Extend the analysis in one direction (35–40 min; continue later)
 
-Follow Session 1 boxes 2–3 in the [session guide](session_guide.md):
+Choose **one** question below. Keep the nominal parameters and original figure as controls. Give the agent a bounded task: state what varies, what stays fixed, the output table/figure, a test, and what claim it must *not* make. Put the new result under `results/extensions/` and record the command and environment. The [extension guide](workshop1_extensions.md) gives starting ranges, checks, and interpretation limits.
 
-```bash
-python scripts/baseline.py capture
-python scripts/baseline.py compare
-```
+1. **Coolant resolution:** refine the grid near the change from one to three steady states. Report a *bracket* for each transition; do not claim an exact fold from a grid alone.
+2. **Heat-transfer sensitivity:** vary `UA` while holding other parameters fixed. Show how the number of steady states at a fixed coolant temperature changes; label units and use the same root checks.
+3. **Feed-temperature sensitivity:** vary `Tf` while holding other parameters fixed. Compare the temperature and conversion of all distinct states, not only the first solver root.
+4. **Solver robustness:** widen and densify the initial-guess grid. Compare root sets and residuals. Agreement across grids strengthens the numerical check but does not prove that every root was found.
 
-The helper executes the original notebook, saves actual live values and an
-executed copy, then writes a separate fresh run and comparison. It refuses to
-overwrite evidence or run altered notebook code/YAML. If prior setup generated
-CSV/figure files, inspect and archive them before first capture. Preserve any
-existing baseline. A missing first snapshot can be created from untouched source;
-a post-change run cannot stand in for a pre-change baseline.
+**Gate 4:** a script reruns your extension, a test or comparison checks it against the unchanged control, and a short note states what the result supports and what remains uncertain. Save the work even if incomplete.
 
-Inspect one nominal record and one sweep record, units, assumptions, parameters,
-solver/sweep settings, software and provenance. Record each field checked or
-pending; inspect the fresh comparison. Read `results/README.md` for the field
-map. Keep the notebook code, equations, parameters and tolerances unchanged.
+## Stop, hand off, and regroup
 
-> **Extension Gate 2.** The saved baseline and supporting artifacts have been
-> checked, the restart comparison passes, and evidence is committed before model
-> edits. Agent checks do not substitute for participant confirmation.
+At minute 40, run `git status --short` and save the actual state. In `docs/handoff.md`, record the baseline commit, completed gates, commands and working directory, checks you performed personally, pending questions, and the next exact command. Commit drafts with **human review pending** where needed. At regroup, show one audit finding, one comparison, and the extension you chose. Can a partner resume from your files with the chat closed?
 
-Use the session guide's exact staging commands; preserve the JSON, CSV, figure,
-executed notebook and separate comparison artifacts. Do not transcribe rounded
-output into a new solver-derived baseline.
-
----
-
-## Phase 3 — Extract the model (30 min)
-
-This is optional extension work, not homework or a Session 2 requirement.
-The [session guide](session_guide.md) offers a one-function extension only for
-participants with checked, committed baselines. Continue full migration later.
-
-Move the science out of the notebook into `src/cstr_workshop/`.
-
-Four modules are already stubbed for you — each has its docstring, signature,
-units, and a pointer to the notebook cell it came from, and a body that raises
-`NotImplementedError`:
-
-| Module | Contents | From cells |
-|---|---|---|
-| `model.py` | parameter loading and validation, rate constant, residuals | 3, 5 |
-| `solve.py` | solving from one guess; finding distinct steady states | 7, 9 |
-| `sweep.py` | sweeping a parameter and collecting every steady state | 11 |
-| `plotting.py` | the figure, drawn from a dataframe | 13 |
-
-```bash
-python -c "import cstr_workshop.model as m; m.arrhenius_rate_constant(350.0, {})"
-# NotImplementedError: Phase 3: migrate from notebook cell 5
-```
-
-**These are scaffolding, not a specification.** There is still no required
-module layout: merge them, split them, rename them, or replace them with
-something you prefer. The gate does not change — whatever you build must
-regenerate the baseline you captured in Phase 2.
-
-### The actual work
-
-It is not retyping the formulas. Compare a notebook function with its stub:
-
-```python
-# notebook cell 5 -- reads k0 and EoverR from the surrounding cell scope
-def rate_constant(T):
-    return k0 * np.exp(-EoverR / T)
-
-# model.py -- the parameters arrive as an argument
-def arrhenius_rate_constant(T, params):
-    ...
-```
-
-Every function has to lose its hidden dependency on module-level state before
-it can move. That is what makes it callable, testable, and reasonable to trust
-in isolation — and it is most of the time this phase takes.
-
-> **Prompt.** Extract the model, solver, sweep, and plotting code from
-> `notebooks/cstr_exploration.ipynb` into modules under `src/cstr_workshop/`.
-> Requirements: no global state — every function takes the parameters it needs;
-> parameters load from `data/reactor_parameters.yml`; the distinct-root
-> tolerance and residual tolerance are named arguments with documented defaults,
-> not literals buried in a loop; docstrings state units and sign conventions.
-> Do not change any numerical value, tolerance, or initial-guess strategy. Show
-> me the proposed module layout and function signatures before writing files.
-
-Three things to insist on, because an agent will otherwise quietly drop them:
-
-- **The multi-guess strategy survives.** It is tempting to "simplify" the root
-  search to a single `fsolve` call. That deletes the entire finding.
-- **The tolerances keep their values.** `1e-2` K for distinct roots, `1e-6` for
-  the residual norm.
-- **Parameters come from the YAML file.** Retyped constants in two places drift.
-
-Add input validation while you are here — negative flow rate, zero volume, a
-positive enthalpy of reaction, a temperature that is obviously Celsius. These
-are cheap and they catch real mistakes.
-
-> **Gate 3.** `python -c "from cstr_workshop import ...; print('ok')"` imports
-> your functions, and the notebook still runs:
-> `python scripts/run_notebook.py --check`.
-
----
-
-## Phase 4 — One command, and tests (15 min)
-
-### `scripts/reproduce.py`
-
-Write the single documented command that regenerates everything without the
-notebook. Requirements are in [`../scripts/README.md`](../scripts/README.md).
-
-```bash
-python scripts/reproduce.py
-```
-
-> **Gate 4a — the one that matters.** The regenerated results match the baseline
-> you committed in Phase 2, within a tolerance you state explicitly.
->
-> Compare them. Actually compare them — open both files, or write the four-line
-> script that does it. "It looks right" is not the gate.
->
-> If they differ: the refactor changed the science. Find out why before going
-> further. Do **not** regenerate the baseline to make the comparison pass. That
-> converts your evidence into a record of your bug.
-
-### Tests
-
-Add to `tests/`:
-
-| Test | Why |
-|---|---|
-| Residuals are ~zero at each reported steady state | The solutions actually solve the equations |
-| Physical bounds: `0 <= CA <= CAf`, `0 <= X <= 1`, `T` within the no-reaction and full-conversion limits | Catches sign and unit errors that still converge |
-| Nominal values match the baseline within tolerance | The regression test proper |
-| Three distinct steady states at `Tc = 300 K` | The finding itself |
-| A single initial guess returns fewer than three | Documents the failure mode the project exists to avoid |
-| Invalid inputs raise | Negative `q`, zero `V`, positive `dHr`, Celsius-looking temperatures |
-
-Use *absolute* tolerances you can defend. `pytest.approx(x)` defaults to a
-relative tolerance of 1e-6, which is far tighter than anything you should be
-asserting about a cross-platform floating-point result — and tight enough to
-fail on a different BLAS build for no scientific reason.
-
-> **Gate 4b.** `pytest tests` passes.
->
-> Then check the tests are worth anything: **temporarily** flip the sign of the
-> heat-release term in your model, rerun, and confirm something fails. Undo it.
-> A test suite that passes with a reversed heat of reaction is testing the
-> plumbing, not the science.
->
-> ```bash
-> git diff              # confirm you actually undid it
-> ```
-
----
-
-## Phase 5 — Review and hand off (15 min)
-
-### Read the diff
-
-```bash
-git diff main...workshop1
-```
-
-Read it. All of it. This is the step that catches the parameter an agent
-"tidied", the tolerance that became `1e-8`, and the docstring that now claims
-something the code does not do.
-
-> **Prompt.** Summarize what changed in this branch relative to `main`, grouped
-> by intent. Flag anything that changes a numerical value, a tolerance, an
-> initial-guess strategy, or a physical assumption. List those separately and
-> exactly.
-
-Verify its summary against the diff yourself. That is the whole point.
-
-### Rerun every gate
-
-```bash
-pytest tests
-python scripts/reproduce.py
-python scripts/run_notebook.py --check
-```
-
-### Commit and hand off
-
-```bash
-git add -A
-git commit -m "Extract reactor model into modules with reproduction script and tests"
-```
-
-Fill in [`../docs/handoff.md`](../docs/handoff.md) with the branch, the commit
-hash, which gates you actually ran and when, the decisions you made and why, and
-what is still open.
-
-> **Gate 5.** The working tree is clean, `docs/handoff.md` records the real
-> commit hash, and the five-item handoff lists only checks you ran. Use the session guide’s final consistency check.
-
----
-
-## Minimum completion across the series
-
-The [session guide](session_guide.md) defines useful stopping points for each
-meeting. The following is the minimum for the longer migration workflow, which
-extends beyond the in-room sessions:
-
-1. The environment builds and the untouched notebook runs.
-2. `results/baseline.json` is committed, captured before any refactoring.
-3. **One** model function is extracted and importable.
-4. **One** numerical regression test passes and fails when the model changes.
-5. `docs/handoff.md` records the state.
-
-Full modularization is the nice-to-have. The baseline-before-refactor sequence
-is the thing worth taking home.
-
-## Extensions
-
-- A command-line interface for `reproduce.py` (`--parameter`, `--start`,
-  `--stop`, `--step`).
-- **Stability analysis.** Write the *dynamic* balances, form the Jacobian, and
-  compute eigenvalues along each branch. This is the calculation that would let
-  you say something about stability — which the current project cannot.
-- Continuation: track the turning points directly instead of resolving them to
-  the sweep step.
-- A second sweep parameter (feed temperature or flow rate) and a two-parameter
-  multiplicity map.
-- Reimplement the steady-state solve in Pyomo and compare.
-
-## Common problems
-
-**`git push` asks for a password and rejects it.** GitHub removed password
-authentication for Git. Use SSH keys or a personal access token.
-
-**`conda env create` hangs on solving.** Try `mamba env create -f
-environment.yml`, or `conda config --set solver libmamba`.
-
-**`ModuleNotFoundError: cstr_workshop`.** The environment is not active, or the
-editable install did not run. `conda activate cstr-workshop`, then
-`pip install -e .` from the project root.
-
-**The notebook writes files somewhere unexpected, or fails on `results/`.** Its
-paths are relative to the working directory. Start Jupyter from the project
-root, or use `python scripts/run_notebook.py`.
-
-**Your refactored code finds fewer steady states than the notebook.** Look at
-the initial guesses before you look at anything else.
-
-**Tests pass but `reproduce.py` disagrees with the baseline.** The tests are
-checking something other than the numbers you care about. That is a finding
-about your tests.
-
-**Your agent rewrote the notebook.** It was asked to extract, not to edit.
-`git checkout notebooks/` and tighten the boundary in `CLAUDE.md`.
-
-**Your agent changed a parameter so the sweep "looked better".** Revert it, and
-add an explicit line to `CLAUDE.md` forbidding it. This happens.
-
-## Final verification
-
-```bash
-conda activate cstr-workshop
-pytest tests
-python scripts/reproduce.py
-python scripts/run_notebook.py --check
-git status                       # expect a clean tree
-git log --oneline main..HEAD     # expect a small number of coherent commits
-```
-
-Bring your repository to Workshop 2. You will write about these results.
+**If stuck:** after five minutes, ask for help or pair with another participant. Record whose machine ran the computation. Continue from your own last verified gate instead of skipping evidence to reach Step 4.

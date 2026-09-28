@@ -1,11 +1,11 @@
 # Your route through the two sessions
 
-**Start here for both meetings.** This page is the complete in-room route. The
-longer activity files are optional full workflows, not extra requirements today.
+**Start here for both meetings.** Follow the linked Workshop 1 activity for the
+four-gate notebook handoff; Workshop 2 uses the report in the separate full starter.
 Each meeting has **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**.
-Work in your own private copy of the starter. Before Session 1, create/activate
-the environment in the starter README and run its setup checks. For Session 2,
-open the anchor source below; LaTeX is optional for the core exercise.
+Work in your own private repository. Build the Workshop 1 environment from the
+notebook imports. For Session 2, open the anchor source below; LaTeX is optional
+for the core exercise.
 
 Ask for help after five minutes stuck on a tool. Pair with someone whose setup
 works if necessary, and record who ran the commands. At minute 40, save your
@@ -15,134 +15,13 @@ useful. An agent can inspect evidence; it cannot claim that you reviewed it.
 preserves work; it is not approval, publication, or a claim that the exercise is
 complete. Label it “draft — human review pending.”
 
-## Session 1 — Save evidence someone else can check
+## Session 1 — Inherit the notebook and build a project
 
-Today: complete three boxes — **instructions, saved baseline, restart check** —
-and leave a short handoff. Stop there; package extraction is an extension.
-A baseline is a saved record of what the original computation produced, kept so
-that later changes can be compared against it.
-
-### 1. Project instructions (about 10 minutes)
-
-> **Prompt.** Inspect this project without changing it. Draft a short AGENTS.md
-> (or CLAUDE.md for my tool) with the model's purpose, important files, commands,
-> units, and rules for preserving evidence. Point to a notebook cell or parameter
-> file for each project-specific statement, with a short exact source excerpt.
-> Verify the location in that file; do not infer cell numbers from memory.
-> Do not implement the module stubs.
-
-List the original notebook's cells, then print a chosen cell:
-
-```bash
-python scripts/inspect_notebook.py
-python scripts/inspect_notebook.py --cell 0  # replace 0 with the index you checked
-```
-
-These are zero-based **source** cells, not execution counts or the appended
-observer cell in the saved executed copy. Cite a report's section title and an
-exact excerpt; omit section numbers unless you checked them.
-Open one named source and check one statement yourself. Remove generic advice.
-Record agent inspection and human confirmation separately in the handoff. Save
-and commit the instructions file you chose:
-
-```bash
-git add AGENTS.md  # use CLAUDE.md instead if that is your chosen file
-git commit -m "Record project instructions and source checks"
-```
-
-### 2. Save the unchanged notebook's evidence (about 15 minutes)
-
-**Unchanged** means no edits to notebook code, equations, parameters, or solver
-settings. Execution counts and outputs may change; the helper preserves an
-executed copy without editing your source notebook.
-
-The setup command `run_notebook.py --check` now discards temporary outputs, so
-it leaves this destination clear. If an older runner or interactive notebook
-already wrote a CSV/figure and there is **no baseline**, preserve those outputs:
-
-```bash
-# Run only for existing setup outputs, before your first capture:
-mkdir results/setup-archive && mv results/steady_states.csv results/steady_state_locus.png results/setup-archive/
-```
-
-If the archive name exists, choose a new name. Never move an accepted baseline's
-supporting files this way. Capture refuses existing evidence or changed source.
-
-From the project root:
-
-```bash
-python scripts/baseline.py capture
-```
-
-This runs the notebook and saves `results/baseline.json`, `steady_states.csv`,
-`steady_state_locus.png`, and `baseline.executed.ipynb`. It records the live
-values, settings, software versions, source provenance, and command. It does not
-fill the module stubs or ask the agent to reimplement the solver.
-
-If no baseline exists and the source is still the untouched starter, capture
-your first baseline now. If one exists, skip capture and inspect it, then continue to the restart
-comparison; capture refuses to replace it. If you edited the model before the first capture, record that blocker; do
-not call a new result a pre-change baseline. Use Session 2's audit route later.
-
-Open the JSON and executed notebook/CSV. Check **one nominal record and one
-sweep record**, locating CSV records by coolant temperature and branch index.
-Check their units and the model assumptions in the notebook's introductory and
-closing text. Inspect parameters against the YAML and notebook; inspect solver
-settings, sweep definition and software/provenance fields. List each item as
-checked or pending in the handoff. Printed values and CSV values may have
-fewer digits than the live values: compare at the displayed precision rather
-than inventing digits. Captured metadata is evidence to inspect, not automatic
-human approval.
-
-### 3. Restart, compare, and preserve (about 15 minutes)
-
-Close the notebook. Reopen the project using files, without relying on the chat.
-Run a fresh kernel and compare separate evidence with the saved baseline:
-
-```bash
-python scripts/baseline.py compare
-```
-
-If `results/recheck/` already exists, rename it to keep that evidence before
-running another comparison. Open `results/recheck/comparison.json`. The rerun's artifacts are in
-`results/recheck/`; the original baseline stays unchanged. Record the command
-and result. Investigate any discrepancy; never replace the baseline to make a
-comparison pass. A successful rerun checks repeatability, not model validity.
-
-Review `git diff` and `git status`, then save the actual evidence, including the
-figure and executed notebook (results are ignored by default):
-
-```bash
-git add -f results/baseline.json results/steady_states.csv results/steady_state_locus.png results/baseline.executed.ipynb
-git add -f results/recheck/
-git commit -m "Save notebook evidence and restart comparison"
-git rev-parse HEAD
-```
-
-Put that evidence commit in `docs/handoff.md`, fill its five items, then:
-
-```bash
-git add docs/handoff.md
-git commit -m "Record checks and next action in handoff"
-```
-
-Run the [final consistency check](#final-consistency-check-both-sessions) below.
-
-**Finish checklist:** instructions checked against a named source; baseline,
-CSV, figure and executed notebook preserved; fresh comparison inspected;
-evidence committed; five-item handoff committed. If a check or human review is
-pending, label the state **partial checkpoint**. If all are done, the Session 1
-exercise is complete. This does not claim the scientific model is validated.
-
-**Early finish:** exchange handoffs. Can a neighbor find the evidence and its
-producing command using only your files? At regroup, share one checked statement
-and one remaining limitation.
+Use the [four-step Workshop 1 activity](01_notebook_to_reproducible_project.md) and its [extension choices](workshop1_extensions.md). Download the small notebook handoff, initialize your own private Git repository, create a Conda environment, run and audit the notebook, extract tested Python functions, and choose one extension. The printed handout contains the in-room route. A 45-minute block may leave later gates pending; save a precise checkpoint at minute 40 and continue between sessions.
 
 ## Between sessions
 
-Try an instructions file, baseline, or handoff on your own research. Bring one
-observation. Finishing extraction is not homework. Open the supplied anchor
-source before Session 2; additional papers are optional extension work.
+Finish the extraction and one extension in your private repository. Bring the baseline commit, a test result, and one open scientific question to Session 2. The separate full CSTR starter in this public repository supplies the report and literature materials for the second workshop.
 
 ## Session 2 — Check three claims and revise one
 
