@@ -1,6 +1,8 @@
 # Talk outline
 
-This file originally held the lifecycle-based planning outline. The current talk uses the structure below; the original 54-slide sequence and its 27/31-frame session mapping is in [`slides/storyboard.md`](slides/storyboard.md). The superseded detailed outline remains in Git history through commit `2c55c74`.
+The talk uses the structure below. The original 54-slide sequence and its current
+session mapping are in [`slides/storyboard.md`](slides/storyboard.md). Earlier
+planning versions remain in Git history.
 
 ## Session structure
 
@@ -8,15 +10,15 @@ The seminar is **two parts, two weeks apart**, each 1 hour 45 minutes (3:30–5:
 
 | | Date | Presentation | Hands-on activity |
 |---|---|---|---|
-| **Part 1** | Monday, September 28, 2026 | Original slides 1–26 — workspace, instructions, reproducible baseline | Activity 1: instructions and baseline |
-| **Part 2** | Monday, October 12, 2026 | Original slides 27–54 — literature, audit, draft, and trust | Resume extraction, then audit selected report claims |
+| **Part 1** | Monday, September 28, 2026 | Workspace, instructions, reproducible baseline | Create a repository, run and audit the notebook, extract functions, extend an analysis |
+| **Part 2** | Monday, October 12, 2026 | Literature, audit, writing, and trust | Audit three report claims and revise one |
 
-Between sessions, participants experiment on their own research. Activity 1
-Phase 3 is next-session work. Additional literature sources are optional for
-the full writing workflow; the in-room audit uses the shared fallback report.
+Between sessions, participants experiment on their own research and may continue
+the Workshop 1 extension. Additional literature sources are optional for the
+full writing workflow; the in-room audit uses the shared fallback report.
 
-The split is implemented with shared slide sources: **27 frames in Part 1,
-31 in Part 2**, including session titles and closings. Each session allocates
+The split is implemented with shared slide sources: **34 frames in Part 1,
+36 in Part 2**, including activity and regroup slides. Each session allocates
 **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**. See the
 [session guide](resources/workshops/cstr/activities/session_guide.md) for the
 bounded exercises and [open questions](notes/open_questions.md) for pilot work.

@@ -16,8 +16,8 @@ private release checks and the regroup deck now take an explicit path to the
 public checkout; pass it rather than moving either repository:
 
 ```bash
-make PUBLIC_ROOT=/path/to/claude-for-researchers
-python ../claude-for-researchers/resources/scripts/check_docs.py ../claude-for-researchers
+make -C activity_answers/session_solutions PUBLIC_ROOT=/path/to/claude-for-researchers
+python /path/to/claude-for-researchers/resources/scripts/check_docs.py /path/to/claude-for-researchers
 ```
 
 ## The conda environment is per-machine
@@ -33,16 +33,16 @@ pip install -e reference_implementation          # from the private repo
 ```
 
 Budget 3–8 minutes, longer on a cold package cache. This is also the single
-largest setup cost for participants, which is why the announcement asks them to
-do it in advance.
+largest setup cost for participants. The preparation list asks participants to
+install Miniconda if needed; the activity creates its environment in the room.
 
 ## Building the PDFs
 
 From the public repository:
 
 ```bash
-make -C slides            # part1.pdf (32 frames) and part2.pdf (36 frames)
-make -C slides combined   # main.pdf, both parts in one 68-frame sequence
+make -C slides            # part1.pdf (34 frames) and part2.pdf (36 frames)
+make -C slides combined   # main.pdf, both parts in one 70-frame sequence
 make -C handout           # part1.pdf and part2.pdf, two pages each
 ```
 
@@ -70,8 +70,8 @@ quiet:
    cp resources/workshops/cstr/report/ref.bib /tmp/refrep/
    ```
 
-The private regroup deck needs the public theme on `TEXINPUTS`, which its
-`Makefile` handles given `PUBLIC_ROOT`.
+The private instructor decks need the public slide sources and theme. Their
+`Makefile` handles both given `PUBLIC_ROOT`.
 
 ## Before calling a slide done
 

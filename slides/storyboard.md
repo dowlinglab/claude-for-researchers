@@ -3,7 +3,7 @@
 The original 54-slide sequence below remains intact, split at the Task 3 opener.
 Original numbers remain as stable editorial references. The shared sources build
 **Part 1: 34 frames** and **Part 2: 36 frames**, including activity and regroup support.
-DRAFT remains on both title slides.
+The Part 1 title is ready for delivery; DRAFT remains on the Part 2 title.
 
 | Build | Rendered frame mapping |
 |---|---|
@@ -16,8 +16,9 @@ used by both the session builds and the combined build. Nothing is duplicated or
 cut. The title's `\part` declaration records the session boundary without an
 extra divider slide.
 
-Part 1's activity establishes project instructions and a saved baseline. Part 2
-checks three claims in the shared report and revises one; extraction is optional. The first session's closing frames the fortnight as experimentation
+Part 1's activity establishes a repository, runs and audits the notebook, extracts
+tested Python functions, and extends one analysis. Part 2 checks three claims in
+the shared report and revises one. The first session's closing frames the fortnight as experimentation
 on participants' own research. The second session's reconnect and closing make
 that continuity explicit.
 
@@ -124,11 +125,12 @@ these are pacing checks, not equal allocations to every slide. Reserve the full
 
 ## September 27: activity and regroup integration
 
-Append rather than insert the activity frames so the PDFs already on Alex's tablet
-retain their lecture frame numbers. New frames explain the reactor case, the
-purpose and outcome, the numbered handout route, and how to save partial work.
+Append rather than insert the activity frames so the original lecture frame
+numbers stay stable. New frames explain the reactor case, the notebook result,
+the numbered handout route, and how to save partial work.
 The public regroup asks participants to show evidence before discussion. The
 private instructor builds append the corresponding answer reveals in the same
 deck. The five new public frames belong to the 45/15-minute activity/regroup
 blocks, not additional lecture time. Handouts are the primary in-room navigation
-aid: one two-sided sheet for each part, with instructions on the back.
+aid: one two-sided sheet for each part; Part 1 instructions begin halfway down
+the front page and continue on the back.
