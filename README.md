@@ -10,7 +10,7 @@ This is a **two-part series**. Both parts are in the same room, two weeks apart,
 |---|---|---|
 | **Date** | Monday, September 28, 2026 | Monday, October 12, 2026 |
 | **Time** | 3:30 – 5:15 PM | 3:30 – 5:15 PM |
-| **Location** | McCourtney Hall, B01 Auditorium (Basement) | McCourtney Hall, B01 Auditorium (Basement) |
+| **Location** | McCourtney Hall West, B01 Auditorium (Basement) | McCourtney Hall West, B01 Auditorium (Basement) |
 
 | | |
 |---|---|
@@ -19,15 +19,19 @@ This is a **two-part series**. Both parts are in the same room, two weeks apart,
 | **Speaker** | Alex Dowling |
 | **RSVP** | [forms.gle/SnyVmEQkWwvq2bk3A](https://forms.gle/SnyVmEQkWwvq2bk3A) |
 
-### Before Part 1
+### Prepare to attend
 
-Setup time in the room is time not spent on the activity. Please arrive having done all five:
+Setup time in the room is time not spent on the activity. Before Part 1, please:
 
 1. **Bring a laptop** with a charged battery — power at the seats is limited.
-2. **Install the ChatGPT or Claude desktop app**, including Codex or Claude Code.
-3. **Create a GitHub account.**
-4. **Install GitHub Desktop.**
-5. **Download the Workshop 1 notebook ZIP** below. Cloning this whole repository is optional for the first activity.
+2. Ask your PI to [apply for Anthropic's team plan for scientists](https://claude.com/programs/team-plan-for-scientists) and add you if approved.
+3. Install the [Claude](https://claude.com/download) or [ChatGPT](https://chatgpt.com/download/) desktop app.
+4. Create a [GitHub account](https://github.com); you can also apply for the optional [GitHub Education upgrade](https://github.com/education).
+5. Install [GitHub Desktop](https://desktop.github.com/download/).
+6. Clone the [workshop repository](https://github.com/dowlinglab/claude-for-researchers) and [download the Workshop 1 notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip). The ZIP is for a new private repository you will create during the activity.
+7. If you do not already have Conda, [install Miniconda](https://www.anaconda.com/download/success?reg=skipped-miniconda). An existing Anaconda installation works too.
+
+You do not need to run the notebook or create its environment before the workshop.
 
 ## Workshop materials
 
