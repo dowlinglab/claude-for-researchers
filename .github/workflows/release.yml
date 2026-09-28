@@ -1,0 +1,76 @@
+# Build the public presentation and handouts from a version tag. The PDFs are
+# release assets, not tracked files in the repository.
+name: Release PDFs
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Build slides and handouts
+        run: |
+          make -C slides all
+          make -C handout all
+
+      - name: Verify PDFs and LaTeX references
+        run: |
+          set -eu
+          for pdf in slides/part1.pdf slides/part2.pdf handout/part1.pdf handout/part2.pdf; do
+            test -s "$pdf"
+          done
+          for log in slides/part1.log slides/part2.log handout/part1.log handout/part2.log; do
+            if grep -Eiq 'undefined references|Citation .* undefined|multiply defined' "$log"; then
+              echo "::error file=$log::LaTeX reference warning in $log"
+              exit 1
+            fi
+          done
+
+      - name: Name release assets
+        id: naming
+        run: |
+          if [ "$GITHUB_REF_TYPE" = tag ]; then
+            version="$GITHUB_REF_NAME"
+          else
+            version="manual-$GITHUB_RUN_NUMBER"
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          mkdir -p dist
+          cp slides/part1.pdf "dist/Claude-for-Research-Part-1-Slides-$version.pdf"
+          cp slides/part2.pdf "dist/Claude-for-Research-Part-2-Slides-$version.pdf"
+          cp handout/part1.pdf "dist/Claude-for-Research-Part-1-Handout-$version.pdf"
+          cp handout/part2.pdf "dist/Claude-for-Research-Part-2-Handout-$version.pdf"
+          ls -lh dist
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: workshop-pdfs-${{ steps.naming.outputs.version }}
+          path: dist/*.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish GitHub release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.pdf
+          fail_on_unmatched_files: true
+          generate_release_notes: true
+          body: |
+            Public slides and participant handouts for both parts of
+            *Claude (or Codex) for Research: Beyond the Chatbot*.
+
+            Built from this tag by GitHub Actions. Instructor materials are private.

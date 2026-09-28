@@ -86,6 +86,17 @@ make -C handout
 
 This builds the 34-slide Part 1 deck, the 36-slide Part 2 deck, and a two-page handout for each part. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
 
+To publish the four public PDFs, push a version tag such as `v1.0.0`. The
+[release workflow](.github/workflows/release.yml) compiles the sources and
+attaches the two slide decks and two handouts to a GitHub Release. It does not
+publish instructor materials. A manual run from the Actions tab builds a
+downloadable artifact without creating a release.
+
+```bash
+git tag -a v1.0.0 -m "Workshop materials v1.0.0"
+git push origin v1.0.0
+```
+
 For development notes, see [open questions](notes/open_questions.md). On another machine, read the [machine setup notes](notes/machine_setup.md) first.
 
 ## License
