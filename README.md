@@ -31,6 +31,10 @@ Setup time in the room is time not spent on the activity. Please arrive having d
 
 *The original single 1-hour slot (October 15, 2026, Carey Auditorium) was replaced by this two-part series; the abstract below was submitted against the original format.*
 
+### Workshop 1 notebook
+
+[Download the Workshop 1 notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip) and follow the [four-step activity](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md). The ZIP contains the notebook and input file you will place in your own Git repository. It downloads directly from GitHub once these commits are published.
+
 ## Abstract
 
 Generative AI is becoming part of the research environment, but its most powerful uses go far beyond asking a chatbot questions or polishing prose. This seminar will share practical lessons from a year of using GenAI tools (Gemini, ChatGPT/Codex, Claude) for literature exploration, software development, reproducible data analysis, scientific writing, and the completion of long-running research projects. We will discuss how to build effective AI-assisted workflows, organize project context, improve research code, and use AI to check papers against underlying data, code, and guidelines. The emphasis will be on concrete practices that make research more efficient, reproducible, and auditable while keeping scientific judgment and responsibility with the researcher.
@@ -76,9 +80,9 @@ Per-meeting budget, approved by Alex: **35 minutes presentation, 10 Q&A, 45 hand
 
 | Artifact | State |
 |---|---|
-| `slides/part1.pdf` | 32 frames — Part 1, "Setting up a project" |
+| `slides/part1.pdf` | 31 frames — Part 1, "Setting up a project" |
 | `slides/part2.pdf` | 36 frames — Part 2, "Advanced features" |
-| `slides/main.pdf` | 68 frames — both parts in one sequence |
+| `slides/main.pdf` | 67 frames — both parts in one sequence |
 | `handout/part1.pdf` | 2 pages — Part 1 summary and activity |
 | `handout/part2.pdf` | 2 pages — Part 2 summary and activity |
 | `handout/main.pdf` | 4 pages — optional combined handout packet |
@@ -90,8 +94,7 @@ Per-meeting budget, approved by Alex: **35 minutes presentation, 10 Q&A, 45 hand
 2. **Review the built PDFs.** Alex is reviewing copies on his tablet; marked-up slides are pending. The requested activity integration and printed handout changes are built.
 3. **Rehearse both decks** against the 35-minute slot.
 4. **Recheck time-sensitive claims** — model availability, product limits, Notre Dame approvals. The overnight edit preserved the existing claims rather than re-auditing them.
-5. **Capture the desktop-app screenshot** for Part 1 frame 12; the placeholder remains.
-6. **Decide when to remove DRAFT**, still on both title slides.
+5. **Decide when to remove DRAFT**, still on both title slides.
 
 Resuming on another machine: read [notes/machine_setup.md](notes/machine_setup.md) first. The conda environment is per-machine, the two checkouts are not siblings, and two LaTeX documents fail quietly without extra steps.
 

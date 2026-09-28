@@ -6,7 +6,7 @@
 
 ## 1. Create the repository and import the handoff (0–10 min)
 
-Download [`workshop1_notebook.zip`](../workshop1_notebook.zip) from GitHub (use **Download raw file**), unzip it, and put the enclosed `cstr-project/` folder where you keep research projects. Open a terminal **inside that folder**. It contains `notebooks/cstr_exploration.ipynb`, `data/reactor_parameters.yml`, and an empty `results/` directory. The notebook writes results relative to this folder.
+Download [`workshop1_notebook.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip), unzip it, and put the enclosed `cstr-project/` folder where you keep research projects. Open a terminal **inside that folder**. It contains `notebooks/cstr_exploration.ipynb`, `data/reactor_parameters.yml`, and an empty `results/` directory. The notebook writes results relative to this folder.
 
 ```bash
 cd /path/to/cstr-project

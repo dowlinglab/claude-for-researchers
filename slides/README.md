@@ -1,9 +1,9 @@
 # Slides
 
 Two Beamer decks for *Claude for Research: Beyond the Chatbot*, sharing all slide
-sources. Part 1 (September 28) has **32 slides**; Part 2 (October 12) has **36**.
+sources. Part 1 (September 28) has **31 slides**; Part 2 (October 12) has **36**.
 The original lecture sections retain their frame numbers: Part 1 frames 1–27,
-Part 2 frames 1–31. Each now appends four activity frames and a regroup discussion
+Part 2 frames 1–31. Part 1 appends three activity frames and a regroup discussion
 frame. Existing tablet annotations therefore retain their part-specific numbers.
 
 Each 105-minute session uses **35 minutes presentation, 10 Q&A, 45 hands-on,
@@ -23,7 +23,7 @@ make
 ```
 
 The outputs are `part1.pdf` and `part2.pdf`. `make part1` or `make part2` builds
-one session. `make combined` builds `main.pdf` with both parts (68 slides).
+one session. `make combined` builds `main.pdf` with both parts (67 slides).
 `make watch MAIN=part1` watches the first part. The shared entry point uses a
 part selector, and `\part` records each session without adding divider frames.
 
