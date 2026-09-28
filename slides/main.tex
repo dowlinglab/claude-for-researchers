@@ -125,8 +125,10 @@
     \begin{tikzpicture}[remember picture,overlay]
       \node[anchor=north west, text=NDBlue, font=\large]
         at ([xshift=0.25cm,yshift=-2.65cm]current page.north west) {\textbf{#1: #2}};
-      \node[anchor=north east, text=IrishGreen, font=\bfseries\Huge]
-        at ([xshift=-1.0cm,yshift=-1.1cm]current page.north east) {DRAFT};
+      \ifnum\pdfstrcmp{#1}{Part 2}=0
+        \node[anchor=north east, text=IrishGreen, font=\bfseries\Huge]
+          at ([xshift=-1.0cm,yshift=-1.1cm]current page.north east) {DRAFT};
+      \fi
     \end{tikzpicture}
   \end{frame}
   }

@@ -5,11 +5,11 @@
       \centering
       \resizebox{\linewidth}{!}{\begin{tikzpicture}[>=Stealth, thick, color=NDBlue, font=\small]
         \draw[rounded corners=7pt, line width=1.3pt] (0.4,0) rectangle (4.0,3.2);
-        \draw[IrishGreen, line width=2pt] (0.15,-0.22) -- (0.15,3.42) -- (4.25,3.42) -- (4.25,-0.22);
+        \draw[IrishGreen, line width=2pt] (0.15,-0.22) rectangle (4.25,3.42);
         \draw[->, line width=1.2pt] (-1.2,2.5) -- (0.4,2.5);
         \node[align=center, anchor=south] at (-0.4,2.55) {feed\\$q, C_{Af}, T_f$};
         \draw[->, line width=1.2pt] (4.0,0.7) -- (5.2,0.7);
-        \node[align=center, anchor=north] at (4.7,0.62) {outlet\\$q, C_A, T$};
+        \node[align=left, anchor=north west] at (4.35,0.62) {outlet\\$q, C_A, T$};
         \draw[->, IrishGreen, line width=1.2pt] (4.8,2.9) -- (4.25,2.9);
         \node[IrishGreen, align=left, anchor=west] at (4.3,3.3) {coolant $T_c$};
         \node[align=center] at (2.2,1.6) {well mixed\\$A\rightarrow B$};
@@ -21,7 +21,8 @@
       \begin{itemize}\setlength\itemsep{0.8em}
         \item Feed supplies A; the jacket exchanges heat with coolant.
         \item The notebook solves steady material and energy balances for $C_A$ and $T$.
-        \item It sweeps $T_c$ from 285 to 315 K in 0.5 K steps, trying many solver guesses at each point.
+        \item Sweeps $T_c$ from 285 K to 315 K in increments of 0.5 K.
+        \item Tries several solver guesses at each temperature.
       \end{itemize}
     \end{column}
   \end{columns}
