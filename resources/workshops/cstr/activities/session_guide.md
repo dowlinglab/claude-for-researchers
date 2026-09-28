@@ -11,6 +11,9 @@ Ask for help after five minutes stuck on a tool. Pair with someone whose setup
 works if necessary, and record who ran the commands. At minute 40, save your
 handoff even if unfinished. A partial checkpoint with honest missing checks is
 useful. An agent can inspect evidence; it cannot claim that you reviewed it.
+**Save and commit draft work even while human review is pending.** A local commit
+preserves work; it is not approval, publication, or a claim that the exercise is
+complete. Label it “draft — human review pending.”
 
 ## Session 1 — Save evidence someone else can check
 
@@ -24,8 +27,20 @@ that later changes can be compared against it.
 > **Prompt.** Inspect this project without changing it. Draft a short AGENTS.md
 > (or CLAUDE.md for my tool) with the model's purpose, important files, commands,
 > units, and rules for preserving evidence. Point to a notebook cell or parameter
-> file for each project-specific statement. Do not implement the module stubs.
+> file for each project-specific statement, with a short exact source excerpt.
+> Verify the location in that file; do not infer cell numbers from memory.
+> Do not implement the module stubs.
 
+List the original notebook's cells, then print a chosen cell:
+
+```bash
+python scripts/inspect_notebook.py
+python scripts/inspect_notebook.py --cell 0  # replace 0 with the index you checked
+```
+
+These are zero-based **source** cells, not execution counts or the appended
+observer cell in the saved executed copy. Cite a report's section title and an
+exact excerpt; omit section numbers unless you checked them.
 Open one named source and check one statement yourself. Remove generic advice.
 Record agent inspection and human confirmation separately in the handoff. Save
 and commit the instructions file you chose:
@@ -41,15 +56,23 @@ git commit -m "Record project instructions and source checks"
 settings. Execution counts and outputs may change; the helper preserves an
 executed copy without editing your source notebook.
 
+The setup command `run_notebook.py --check` now discards temporary outputs, so
+it leaves this destination clear. If an older runner or interactive notebook
+already wrote a CSV/figure and there is **no baseline**, preserve those outputs:
+
+```bash
+# Run only for existing setup outputs, before your first capture:
+mkdir results/setup-archive && mv results/steady_states.csv results/steady_state_locus.png results/setup-archive/
+```
+
+If the archive name exists, choose a new name. Never move an accepted baseline's
+supporting files this way. Capture refuses existing evidence or changed source.
+
 From the project root:
 
 ```bash
 python scripts/baseline.py capture
 ```
-
-If setup already produced a CSV or figure, inspect and move those existing files
-to a separate archive directory first; capture refuses to overwrite any of its
-four output files. The source guard also refuses changed notebook code or YAML.
 
 This runs the notebook and saves `results/baseline.json`, `steady_states.csv`,
 `steady_state_locus.png`, and `baseline.executed.ipynb`. It records the live
@@ -57,8 +80,8 @@ values, settings, software versions, source provenance, and command. It does not
 fill the module stubs or ask the agent to reimplement the solver.
 
 If no baseline exists and the source is still the untouched starter, capture
-your first baseline now. If one exists, preserve it: capture refuses to replace
-it. If you edited the model before the first capture, record that blocker; do
+your first baseline now. If one exists, skip capture and inspect it, then continue to the restart
+comparison; capture refuses to replace it. If you edited the model before the first capture, record that blocker; do
 not call a new result a pre-change baseline. Use Session 2's audit route later.
 
 Open the JSON and executed notebook/CSV. Check **one nominal record and one
@@ -102,6 +125,8 @@ Put that evidence commit in `docs/handoff.md`, fill its five items, then:
 git add docs/handoff.md
 git commit -m "Record checks and next action in handoff"
 ```
+
+Run the [final consistency check](#final-consistency-check-both-sessions) below.
 
 **Finish checklist:** instructions checked against a named source; baseline,
 CSV, figure and executed notebook preserved; fresh comparison inspected;
@@ -175,17 +200,24 @@ Apply one reviewed revision, or explain why all three claims can stay. Preserve
 the original quotation and proposed/applied revision in the audit. If you add
 an omitted assumption, identify it as an omission, not an original statement.
 Inspect the source diff. If human review is pending, the agent may save a
-proposed revision or a clearly labeled draft; do not claim human approval.
+proposed revision or a clearly labeled draft edit. Record **applied draft;
+human review pending** if source text changed, or **proposal only; not applied**
+if it did not. In both cases commit the evidence, audit and handoff now. Do not
+wait for approval to preserve local work or claim approval that did not occur.
 
-For an optional PDF, copy the figure from the evidence directory you used and
-build **after** editing the report:
+For an optional PDF, run this from the project root **after** editing the report.
+The helper copies the figure and runs LaTeX in the correct directory:
 
 ```bash
-cp results/steady_state_locus.png report/figures/  # use results/recheck/ if that was your evidence
-cd report
-latexmk -pdf audit_fallback.tex
-cd ..
+python scripts/build_report.py --evidence results
+# Use --evidence results/recheck if that is the evidence you audited.
+python scripts/build_report.py --check
 ```
+
+The receipt in `report/build_receipt.json` identifies the source inputs, figure,
+PDF and build command. `--check` detects later changes or failed builds; an old
+PDF alone is not proof of success. After any source edit, rebuild or explicitly
+record source-only status. A successful build does not verify report claims.
 
 Record the source filename and build command/result. A build before the edit
 does not check the revised source. If skipped or failed, write **source-only;
@@ -199,13 +231,18 @@ git add docs/claim_evidence_audit.md report/audit_fallback.tex
 # Preserve newly captured evidence if these files exist:
 git add -f results/baseline.json results/steady_states.csv results/steady_state_locus.png results/baseline.executed.ipynb
 # If you ran compare, also preserve its fresh evidence:
+# Run the next line only if results/recheck exists:
 git add -f results/recheck/
+# If you built the report, preserve its figure and receipt too:
+git add -f report/figures/steady_state_locus.png report/build_receipt.json
 git commit -m "Audit three selected claims and record revision"
 git rev-parse HEAD
 # Put this commit and the actual checks in the five-item handoff.
 git add docs/handoff.md
 git commit -m "Record audit handoff and remaining checks"
 ```
+
+Run the [final consistency check](#final-consistency-check-both-sessions) below.
 
 **Finish checklist:** three exact original claims; evidence and comparisons;
 honest verdicts; one revision or justification; diff inspected; revised build
@@ -227,3 +264,30 @@ Save a regression check, observe it fail after a small deliberate local change,
 undo that change, and confirm it passes again. Keep the source notebook and
 baseline unchanged. Record the checks, diff, and any unfinished step. The full
 activity files explain optional modularization and corpus/report extensions.
+
+## Final consistency check (both sessions)
+
+Do this after the last edit/build/commit, including for a partial checkpoint:
+
+```bash
+git status --short
+git log -2 --oneline
+git show --stat --oneline HEAD
+```
+
+- Open the audit and handoff together. Does applied/proposal status match the
+  actual source diff? Does build status match the latest receipt (or say skipped)?
+  Replace stale “not built,” “no commit,” or resolved-warning statements.
+- Open each cited source location and check the quoted excerpt. Keep one row per
+  numeric value, including values grouped in one sentence.
+- Confirm the named evidence commit contains the cited files, and the later
+  handoff commit contains `docs/handoff.md`. Empty `git status` alone does not
+  prove ignored evidence was committed; inspect the evidence commit's file list
+  with `git show --stat EVIDENCE_HASH` (replace the placeholder).
+- If files remain uncommitted, save them with the commands above or name the
+  actual blocker. Pending human review is a status to preserve, not a blocker.
+  If you correct these documents, commit the correction and check status again.
+
+Write the next action from the state that now exists. Do not ask the reader to
+repeat a completed build or commit. Keep human confirmation pending until it
+actually happens.

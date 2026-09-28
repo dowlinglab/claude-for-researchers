@@ -3,7 +3,9 @@
 | Script | What it does |
 |---|---|
 | `baseline.py capture` / `baseline.py compare` | The in-room route: preserve live notebook evidence, then execute a fresh kernel in a separate directory and compare it without replacing the original. See [session guide](../activities/session_guide.md). |
-| `run_notebook.py` | Executes `notebooks/cstr_exploration.ipynb` from the project root. `--check` discards its executed copy but still writes CSV/figure outputs. Use baseline capture/compare when preserving evidence. |
+| `run_notebook.py` | Executes `notebooks/cstr_exploration.ipynb` from the project root. `--check` executes in a temporary workspace and discards all outputs, preserving project evidence. Use baseline capture/compare to save evidence. |
+| `inspect_notebook.py` | Lists original source cells; `--cell INDEX` prints exact source without outputs. |
+| `build_report.py --evidence results` | Copies the audited figure and builds the fallback report; `--check` validates the saved build receipt against current inputs/PDF. Use `results/recheck` for fresh comparison evidence. |
 
 ## `reproduce.py` is missing on purpose
 

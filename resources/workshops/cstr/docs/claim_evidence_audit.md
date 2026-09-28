@@ -68,3 +68,16 @@ Inspect the diff. Build after the final edit, or record **source-only; revised
 PDF not built**. Name the revised source, build command/result and remaining
 human checks in `docs/handoff.md`. A three-claim sample never verifies the whole
 report.
+
+## Before handing off
+
+Use one row per numerical value; do not compress several values into one row.
+Reopen every cited location and compare a short exact excerpt. Use report section
+titles rather than guessed section numbers. For notebook cells use
+`python scripts/inspect_notebook.py --cell INDEX` with the actual zero-based index.
+
+After the final source edit/build, update each revision to **applied draft; human
+review pending** or **proposal only; not applied**. Reconcile the build status
+with `python scripts/build_report.py --check`, or record source-only if skipped.
+Commit draft evidence and this audit even when participant review is pending;
+then finish the session guide's final consistency check and commit the handoff.

@@ -226,7 +226,8 @@ of writing, which is the point — these are the mistakes that survive a careful
 read.
 
 ```bash
-cd report && latexmk -pdf audit_fallback.tex && cd ..
+python scripts/build_report.py --evidence results
+python scripts/build_report.py --check
 ```
 
 ---
@@ -338,7 +339,8 @@ a reader than the overclaim was.
 # your own draft
 cd report && latexmk -pdf report.tex && cd ..
 # or, if you audited the fallback
-cd report && latexmk -pdf audit_fallback.tex && cd ..
+python scripts/build_report.py --evidence results
+python scripts/build_report.py --check
 git diff
 ```
 
@@ -423,7 +425,9 @@ conda activate cstr-workshop
 pytest tests
 python scripts/reproduce.py       # or scripts/run_notebook.py on the fallback path
 cd report && latexmk -pdf report.tex && cd ..          # your own draft
-# cd report && latexmk -pdf audit_fallback.tex && cd .. # or the fallback
+# Or, for the fallback, replace the preceding build command with:
+# python scripts/build_report.py --evidence results
+# python scripts/build_report.py --check
 git status                        # expect a clean tree
 git log --oneline main..HEAD
 ```

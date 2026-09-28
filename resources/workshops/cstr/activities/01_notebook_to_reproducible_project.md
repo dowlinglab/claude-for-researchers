@@ -332,7 +332,7 @@ hash, which gates you actually ran and when, the decisions you made and why, and
 what is still open.
 
 > **Gate 5.** The working tree is clean, `docs/handoff.md` records the real
-> commit hash, and the gate table lists only checks you ran.
+> commit hash, and the five-item handoff lists only checks you ran. Use the session guide’s final consistency check.
 
 ---
 

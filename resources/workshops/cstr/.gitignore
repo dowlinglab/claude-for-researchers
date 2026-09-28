@@ -23,3 +23,6 @@ __pycache__/
 *.egg-info/
 .pytest_cache/
 .ipynb_checkpoints/
+
+# Generated report build provenance (preserve deliberately with git add -f)
+report/build_receipt.json

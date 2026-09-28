@@ -13,12 +13,10 @@ Workshop 1.
 `--check` is the gate command: it proves the notebook still runs top to bottom
 without modifying the notebook file itself.
 
-It does still execute the notebook's code, so it rewrites whatever the notebook
-writes into `results/`. That is deliberate -- a check that skipped the file
-writes would not be checking the notebook -- but it means `--check` is not
-side-effect free. If you have committed `results/steady_states.csv` as part of
-your baseline, expect `git status` to show it as modified afterwards, and
-confirm it is byte-identical rather than assuming it is.
+In check mode the notebook and its result files live in a temporary workspace,
+which is discarded afterwards. Setup checks therefore cannot overwrite saved
+baseline evidence or leave files that block the first baseline capture.
+Use baseline.py capture/compare to preserve execution evidence.
 """
 
 from __future__ import annotations
@@ -53,19 +51,19 @@ def main(argv=None) -> int:
         print(f"no such notebook: {args.notebook}", file=sys.stderr)
         return 2
 
-    (PROJECT_ROOT / "results").mkdir(exist_ok=True)
-
     source = args.notebook
     with tempfile.TemporaryDirectory() as tmp:
         if args.check:
             source = Path(tmp) / args.notebook.name
             shutil.copy2(args.notebook, source)
 
+        workdir = Path(tmp) if args.check else PROJECT_ROOT
+        (workdir / "results").mkdir(exist_ok=True)
         notebook = nbformat.read(source, as_version=4)
         client = NotebookClient(
             notebook, timeout=args.timeout, kernel_name="python3",
             # Everything in the notebook writes paths relative to here.
-            resources={"metadata": {"path": str(PROJECT_ROOT)}},
+            resources={"metadata": {"path": str(workdir)}},
         )
         client.execute()
 
@@ -73,8 +71,9 @@ def main(argv=None) -> int:
             nbformat.write(notebook, args.notebook)
 
     where = "a temporary copy" if args.check else args.notebook
-    print(f"executed {where} with working directory {PROJECT_ROOT}")
-    print("results/steady_states.csv and results/steady_state_locus.png are current")
+    print(f"executed {where} with working directory {workdir}")
+    print("Temporary results discarded; project evidence unchanged." if args.check else
+          "results/steady_states.csv and results/steady_state_locus.png are current")
     return 0
 
 

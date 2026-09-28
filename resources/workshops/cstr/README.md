@@ -34,7 +34,9 @@ pytest tests
 python scripts/run_notebook.py --check
 ```
 
-All three should succeed before Activity 1 begins. A PDF build in Activity 2 additionally needs
+All three should succeed before Activity 1 begins. `--check` runs in a
+temporary workspace and discards its outputs; it neither fills nor overwrites
+your baseline directory. A PDF build in Activity 2 additionally needs
 a LaTeX toolchain; the in-room source-only audit can proceed without it:
 
 ```bash
@@ -95,7 +97,7 @@ trustworthy.
 | | |
 |---|---|
 | **Both activities** | Git, a GitHub account, conda or mamba, an AI coding agent you can run against a local directory |
-| **Activity 2 also** | A LaTeX toolchain (`latexmk`, `pdflatex`, `bibtex`) — TeX Live, MacTeX/BasicTeX, or MiKTeX |
+| **Optional Activity 2 PDF** | A LaTeX toolchain (`latexmk`, `pdflatex`, `bibtex`) — TeX Live, MacTeX/BasicTeX, or MiKTeX |
 
 Python, the scientific stack, and Jupyter all come from `environment.yml`.
 

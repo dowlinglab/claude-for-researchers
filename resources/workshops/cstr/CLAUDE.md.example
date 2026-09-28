@@ -80,3 +80,12 @@ cd report && latexmk -pdf report.tex       # compile the report (Workshop 2)
 - **Read-only:** `data/reactor_parameters.yml`, `results/baseline.json`.
 - **Do not touch:** `literature/pdfs/` (not redistributable), `environment.yml`
   (changing it invalidates every recorded result).
+
+## Saving a partial checkpoint
+
+Commit local draft evidence and the handoff even while human review is pending;
+label that status explicitly. A commit is preservation, not approval. After the
+last action reconcile audit/revision/build status with the actual files and Git
+history. Reopen source locators and keep a short exact excerpt; source-cell
+indices are zero-based (use `python scripts/inspect_notebook.py`). Follow the
+session guide's final consistency check before reporting what is saved.

@@ -33,7 +33,8 @@ command produced it.
 `python scripts/baseline.py capture` runs unchanged notebook source and saves
 `baseline.json`, `steady_states.csv`, `steady_state_locus.png`, and
 `baseline.executed.ipynb`. Existing output files are never overwritten: inspect
-and archive setup outputs first. `python scripts/baseline.py compare` writes a
+and archive any older setup outputs first. Current `run_notebook.py --check`
+discards temporary outputs and does not populate this directory. `python scripts/baseline.py compare` writes a
 fresh run into `recheck/` and records `recheck/comparison.json`. Preserve/rename
 an existing `recheck/` before another comparison. Keep the original baseline.
 

@@ -896,3 +896,14 @@ separate each value, original quotations stay distinct from revisions, and sourc
 access is recorded separately from supplied notes. This reduces competing routes
 and makes pending human checks visible. The starter retains its scientific model
 and the shared report for participants to investigate.
+
+### 2026-09-27 — Harden checkpoint completion
+
+The user requested hardening after the second workshop stress test. The bounded
+scope remains unchanged. Draft commits are explicitly independent of human
+approval; both sessions end with reconciliation of audit, handoff and Git/build
+state. A source-cell inspection command supports exact locators. Setup notebook
+checks now discard all temporary outputs, avoiding collision with baseline
+capture. The optional fallback build helper copies its figure, fixes the working
+directory and records hashes so later edits cannot masquerade as a current PDF.
+Scientific notebook, parameters, stubs and fallback claims are unchanged.
