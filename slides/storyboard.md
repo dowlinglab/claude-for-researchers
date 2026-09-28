@@ -2,13 +2,13 @@
 
 The original 54-slide sequence below remains intact, split at the Task 3 opener.
 Original numbers remain as stable editorial references. The shared sources build
-**Part 1: 27 frames** and **Part 2: 31 frames**, including titles and closings.
+**Part 1: 32 frames** and **Part 2: 36 frames**, including activity and regroup support.
 DRAFT remains on both title slides.
 
 | Build | Rendered frame mapping |
 |---|---|
-| Part 1, September 28 | Frames 1–26: original 1–26, with a session-specific title; frame 27: baseline closing |
-| Part 2, October 12 | Frame 1: new title; frame 2: reconnect to the saved baseline; frames 3–30: original 27–54; frame 31: evidence/handoff closing |
+| Part 1, September 28 | Frames 1–26: original 1–26, with a session-specific title; frame 27: baseline closing; 28–31: activity; 32: regroup |
+| Part 2, October 12 | Frame 1: new title; frame 2: reconnect to the saved baseline; frames 3–30: original 27–54; frame 31: evidence/handoff closing; 32–35: activity; 36: regroup |
 
 Each session: **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**.
 The original Act II source is split before Task 3 into code and literature files,
@@ -17,8 +17,7 @@ cut. The title's `\part` declaration records the session boundary without an
 extra divider slide.
 
 Part 1's activity establishes project instructions and a saved baseline. Part 2
-checks three claims in the shared report and revises one; extraction is optional. The first session's closing
-reserves extraction for October 12 and frames the fortnight as experimentation
+checks three claims in the shared report and revises one; extraction is optional. The first session's closing frames the fortnight as experimentation
 on participants' own research. The second session's reconnect and closing make
 that continuity explicit.
 
@@ -117,7 +116,19 @@ evidence to audit and draft a manuscript, then the course-modernization capstone
 motivation and the August 2026 commit calendar before showing the coursepack artifact it produced.
 Trust, the talk's own provenance, and an immediately runnable first exercise close the talk.
 
-Rehearse against 35 presentation minutes in each part. The frame counts leave
+Rehearse the original lecture sections against 35 presentation minutes in each part.
+Their 27/31 frame counts leave
 about 78 seconds per Part 1 frame and 68 seconds per Part 2 frame on average;
 these are pacing checks, not equal allocations to every slide. Reserve the full
 45-minute hands-on block and 15-minute regroup. A live rehearsal remains open.
+
+## September 27: activity and regroup integration
+
+Append rather than insert the activity frames so the PDFs already on Alex's tablet
+retain their lecture frame numbers. New frames explain the reactor case, the
+purpose and outcome, the numbered handout route, and how to save partial work.
+The public regroup asks participants to show evidence before discussion. The
+private instructor builds append the corresponding answer reveals in the same
+deck. The five new public frames belong to the 45/15-minute activity/regroup
+blocks, not additional lecture time. Handouts are the primary in-room navigation
+aid: one two-sided sheet for each part, with instructions on the back.

@@ -52,8 +52,8 @@ This repository is the source of truth for the seminar. Decisions, rationale, an
 ```
 claude-for-research/
 ├── outline.md       current high-level talk outline and two-part session map
-├── slides/          current 54-slide Beamer deck and source
-├── handout/         LaTeX leave-behind handout (not yet built)
+├── slides/          two session decks with integrated activities and regroups
+├── handout/         two printed summary/activity sheets, two pages each
 ├── resources/       companion guides, prompts, scripts, templates, and checks
 ├── notes/           decisions, source references, and planning history
 └── README.md        this file
@@ -61,7 +61,7 @@ claude-for-research/
 
 - **[outline.md](outline.md)** — the current act-level structure and narrative through-line.
 - **[`slides/`](slides/README.md)** — the live-talk Beamer deck. Sparse text, worked examples, file trees, workflow diagrams.
-- **[`resources/workshops/`](resources/workshops/README.md)** — the student-facing plan and build handoff for two hands-on CSTR workshops. The starter is not yet built; solutions and instructor notes stay in the separate private `claude-for-researchers-private` repository.
+- **[`resources/workshops/`](resources/workshops/README.md)** — the student-facing plan and build handoff for two hands-on CSTR workshops. The starter is built; solutions and instructor notes stay in the separate private `claude-for-researchers-private` repository.
 - **`notes/`** — project memory and source tracking:
   - [notes/seminar_design.md](notes/seminar_design.md) — deeper rationale and the bank of candidate stories/examples
   - [notes/open_questions.md](notes/open_questions.md) — remaining follow-up items
@@ -70,22 +70,24 @@ claude-for-research/
 
 ## Status
 
-**Both session decks, the activities, and the handout are built and verified.** The overnight build of September 21–22 split the deck, reworked the activities, and produced the handout; all five private release checks and the public documentation check passed against the merged starter.
+**Both session decks now include activity and regroup slides.** Each part has its own two-page printed handout: summary on the front, clear activity steps on the back. The September 27 update preserves the existing lecture frame numbers for tablet annotations. Instructor answers stay in private builds.
 
 Per-meeting budget, approved by Alex: **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup.**
 
 | Artifact | State |
 |---|---|
-| `slides/part1.pdf` | 27 frames — Part 1, "Setting up a project" |
-| `slides/part2.pdf` | 31 frames — Part 2, "Advanced features" |
-| `slides/main.pdf` | 58 frames — both parts in one sequence |
-| `handout/main.pdf` | 2 pages, standalone reference |
+| `slides/part1.pdf` | 32 frames — Part 1, "Setting up a project" |
+| `slides/part2.pdf` | 36 frames — Part 2, "Advanced features" |
+| `slides/main.pdf` | 68 frames — both parts in one sequence |
+| `handout/part1.pdf` | 2 pages — Part 1 summary and activity |
+| `handout/part2.pdf` | 2 pages — Part 2 summary and activity |
+| `handout/main.pdf` | 4 pages — optional combined handout packet |
 | `resources/workshops/cstr/` | Starter, session guide, and both activities |
 
 **Outstanding before Part 1 on September 28** — see [notes/open_questions.md](notes/open_questions.md) for the full list:
 
 1. **Send the announcement.** It has not gone out. The draft content and the arrival prerequisites are above; the RSVP form is live.
-2. **Review the built PDFs.** Generated and handed to Alex for review on September 24; no changes have been made from that review yet.
+2. **Review the built PDFs.** Alex is reviewing copies on his tablet; marked-up slides are pending. The requested activity integration and printed handout changes are built.
 3. **Rehearse both decks** against the 35-minute slot.
 4. **Recheck time-sensitive claims** — model availability, product limits, Notre Dame approvals. The overnight edit preserved the existing claims rather than re-auditing them.
 5. **Capture the desktop-app screenshot** for Part 1 frame 12; the placeholder remains.

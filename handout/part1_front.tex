@@ -1,0 +1,43 @@
+\heading{Part 1: a project you can resume}{Summary \hfill 28 September 2026}
+\textbf{Keep the project's memory in files.} Ask the agent to inspect and explain;
+check its claims against the files yourself. Your goal is a small, recoverable
+checkpoint, not a finished software package.
+
+\topic{The workflow}
+\textbf{Inspect $\rightarrow$ save $\rightarrow$ restart $\rightarrow$ compare $\rightarrow$ hand off.}
+A \textbf{baseline} is a preserved record of what the original computation
+produced. Compare a fresh run against it before changing the model.
+Repeatability means the run agrees; it does not establish scientific validity.
+
+\topic{Today's case: a cooled reactor}
+The CSTR (continuous stirred-tank reactor) notebook computes steady concentration
+and temperature as coolant temperature changes. You do not need to derive the
+model today. Locate its assumptions, units, inputs, and outputs before trusting
+an agent's explanation. Keep notebook code, parameters, and solver settings unchanged.
+A \textbf{nominal} record uses the reference coolant condition; a \textbf{sweep}
+varies coolant temperature. A branch index identifies a state at one condition.
+
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\linewidth}{@{}p{2.8in}X@{}}
+\toprule
+\textbf{In your starter folder} & \textbf{Use it to find}\\
+\midrule
+\code{notebooks/cstr_exploration.ipynb} & Model, computation, assumptions\\
+\code{data/reactor_parameters.yml} & Parameter values and units\\
+\code{AGENTS.md} or \code{CLAUDE.md} & Your short project instructions\\
+\code{results/baseline.json} & Captured values, settings, provenance\\
+\code{results/steady_states.csv} & Sweep records; locate by coolant temperature and branch index\\
+\code{results/baseline.executed.ipynb} & Saved executed notebook\\
+\code{results/recheck/comparison.json} & Fresh run versus saved baseline\\
+\code{docs/handoff.md} & Checked work, pending work, next step\\
+\bottomrule
+\end{tabularx}
+
+\savework
+
+\vfill
+\textbf{Before the meeting:} use the starter README to create and activate its
+environment in your own private copy. In the full checkout, the starter is
+\code{resources/workshops/cstr/}. All activity commands run from that folder.\par
+\small\repourl\par
+\textbf{Turn over for the numbered activity.} Keep this sheet beside your keyboard.

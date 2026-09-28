@@ -132,6 +132,9 @@
   }
 }
 
+\providecommand{\partoneregroup}{}
+\providecommand{\parttworegroup}{}
+
 \begin{document}
 
 % 0 builds the combined deck; the two entry points select one shared part.
@@ -143,6 +146,9 @@
   \input{sections/02_act1_understand}
   \input{sections/03_act2_build}
   \input{sections/06_part1_close}
+  \input{sections/09_part1_activity}
+  \input{sections/10_part1_regroup}
+  \partoneregroup
 \fi
 
 \ifnum\seminarpart=1\else
@@ -152,6 +158,9 @@
   \input{sections/04_act3_challenge}
   \input{sections/05_epilogue}
   \input{sections/08_part2_close}
+  \input{sections/11_part2_activity}
+  \input{sections/12_part2_regroup}
+  \parttworegroup
 \fi
 
 \end{document}

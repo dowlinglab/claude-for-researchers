@@ -1,35 +1,35 @@
-# Standalone reference handout
+# Printed session handouts
 
-A two-page, US-letter reference for *Claude for Research: Beyond the Chatbot*.
-Print one sheet, double-sided, flipped on the long edge. It retains the compact
-front-and-back format chosen in September and gives enough context to use after
-the seminar without reading the slide transcript.
-
-## Build
-
-From the repository root:
+Print **one two-page handout per participant per meeting**: US letter, actual
+size (100%), double-sided, flip on the long edge. Each front is the part's
+summary and save/handoff reference; each back is a numbered 45-minute activity.
+The core instructions, prompts, commands, stopping checklist, and help route
+are printed. Participants do not need to navigate to the online session guide
+to follow the normal route. The guide remains available for troubleshooting.
 
 ```bash
-make -C handout
-pdftoppm -png -r 150 handout/main.pdf /tmp/seminar-handout
+make -C handout           # part1.pdf and part2.pdf, exactly two pages each
+make -C handout combined  # main.pdf, optional four-page packet of both handouts
 ```
 
-`main.tex` is the editable source; `main.pdf` is a generated, Git-ignored output.
-The source uses the installed LaTeX toolchain, Latin Modern fonts, and Notre Dame
-navy/gold. No additional images or downloaded assets are needed.
+Distribute `part1.pdf` for September 28 and `part2.pdf` for October 12. The old
+`main.pdf` filename now means the combined packet, not a single two-page sheet.
+All PDFs are generated and Git-ignored. `preamble.tex` contains shared formatting
+and checkpoint instructions; `part1_front.tex`, `part1_back.tex`,
+`part2_front.tex`, and `part2_back.tex` contain the editable content.
 
-## Contents
+## Physical use
 
-- Page 1: the inspect/save/change/check/handoff cycle, project artifacts, and
-  the two-session route with the approved 35/10/45/15-minute budget.
-- Page 2: how to audit a claim, a generic worked example unrelated to the CSTR
-  exercise, a reusable prompt, a stopping checklist, and repository resources.
+- Part 1 front: project memory, the baseline cycle, reactor context, file map,
+  and evidence/handoff saving commands. Back: inspect, capture, restart, save.
+- Part 2 front: the audit cycle, verdict definitions, evidence/source directions,
+  and saving commands. Back: open evidence, select three claims, check, revise, save.
+- Both backs have visible time checkpoints, a five-minute help rule, a minute-40
+  stopping rule, and writing space for a next action or question.
+- Keep human confirmation separate from agent work. A draft or partial checkpoint
+  is a valid saved state; completing the exercise does not validate the model.
 
-The September plan included a compact tool-approval table. This edition instead
-points readers to `notes/references.md` for current institutional and sponsor
-sources, avoiding an undated policy snapshot on a printed reference. Full
-literature, package-release, and manuscript workflows remain in
-[the companion resources](../resources/README.md).
-
-Both pages were rendered and visually reviewed. The final build has no
-LaTeX overfull/underfull-box warnings. Re-render both pages after changing text.
+The existing Notre Dame navy/gold and 11-point body text are retained. After
+changes, rebuild, confirm the separate PDFs still have two pages, and render
+all four pages to inspect line wrapping, footer clearance, and print legibility.
+No numerical answers or instructor reveals belong in these handouts.

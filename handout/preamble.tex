@@ -1,0 +1,41 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.65in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,booktabs,tabularx,enumitem,xcolor,fancyhdr,amssymb}
+\definecolor{NDBlue}{HTML}{0C2340}
+\definecolor{NDGold}{HTML}{C99700}
+\usepackage[colorlinks=true,urlcolor=NDBlue,linkcolor=NDBlue]{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyfoot[L]{\footnotesize Claude for Research \quad\handoutlabel}
+\fancyfoot[R]{\footnotesize\thepage\ / \totalpages}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\topic}[1]{\par\vspace{5pt}{\large\bfseries\color{NDBlue}#1}\par}
+\newcommand{\heading}[2]{{\LARGE\bfseries\color{NDBlue}#1}\par{\large#2}\par{\color{NDGold}\rule{\linewidth}{1pt}}}
+% Preserve literal double-hyphen command flags in print and copied PDF text.
+\newcommand{\code}[1]{{\small\ttfamily\pdfnoligatures\font\detokenize{#1}}}
+\newcommand{\checkitem}[1]{$\square$\ #1\quad}
+\newcommand{\repourl}{\href{https://github.com/dowlinglab/claude-for-researchers}{github.com/dowlinglab/claude-for-researchers}}
+\newcommand{\savework}{%
+\topic{Save a checkpoint, even if unfinished}
+Review \code{git diff} and \code{git status}. Stage only your work.
+Generated results are ignored: explicitly include the evidence you used.
+Run only the lines for files that exist; ask for help if Git fails.\par
+\code{git add -f results/baseline.json results/steady_states.csv}\\
+\code{git add -f results/steady_state_locus.png results/baseline.executed.ipynb}\\
+\code{git add -f results/recheck/}\quad (only if that folder exists)\\
+\code{git commit -m "Save workshop evidence and draft work"}\\
+\code{git rev-parse HEAD}\quad (copy this evidence commit into the handoff)\par
+Fill \code{docs/handoff.md}: \textbf{1)} evidence commit and paths;
+\textbf{2)} commands and working directory; \textbf{3)} checks actually done and by whom;
+\textbf{4)} pending checks or blockers; \textbf{5)} one next action.\par
+\code{git add docs/handoff.md}\\
+\code{git commit -m "Record workshop handoff"}\par
+Check \code{git status --short} and \code{git log -2 --oneline}.
+Use \code{git show --stat HASH} with your evidence hash to confirm the files
+were saved. Correct stale statements in the handoff and commit corrections.
+A commit preserves a draft; it does not certify human review.}

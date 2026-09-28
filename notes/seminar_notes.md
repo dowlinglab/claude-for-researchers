@@ -907,3 +907,30 @@ checks now discard all temporary outputs, avoiding collision with baseline
 capture. The optional fallback build helper copies its figure, fixes the working
 directory and records hashes so later edits cannot masquerade as a current PDF.
 Scientific notebook, parameters, stubs and fallback claims are unchanged.
+
+### 2026-09-27 — Integrated session decks and physical activity guides
+
+Alex requested activity framing and regroups inside each session deck, plus one
+two-page handout per meeting. The printed page is the participant's navigation
+aid when lost or overwhelmed. Each back now has numbered timed steps, the core
+prompt and commands, explicit human checks, completion boxes, a five-minute help
+route, a minute-40 checkpoint rule, and room to write the next action. Each front
+summarizes that part and provides evidence-saving and handoff commands.
+
+Four activity frames and one answer-free regroup frame are appended to each
+public deck. Lecture numbering is unchanged for tablet markups. Private builds
+reuse the public sources and append instructor reveals; no private content is
+copied into public files. The 35/10/45/15 schedule stays fixed; added frames
+support the activity and regroup blocks. The starter and scientific sources are
+unchanged. Separate handouts are exactly two pages; `handout/main.pdf` is now an
+optional four-page combined packet. Print the separate handouts duplex, long-edge,
+at actual size. Tablet markups and a live timing rehearsal remain pending.
+
+Validation: nine delivery/support PDFs compile with no overfull/underfull boxes
+or undefined references/citations. The two individual handouts are two pages
+each; the combined packet is four. All four printed pages and all appended
+activity/regroup frames were visually inspected. PDF text extraction checks
+literal double-hyphen flags (LaTeX ligatures are disabled in command text).
+The layout heuristic flags only pre-existing lecture frames, none of the new
+frames. Public documentation and the repository boundary checks pass. No fresh
+participant experiment or live rehearsal was performed for this layout update.

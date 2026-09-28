@@ -1,0 +1,63 @@
+\heading{Part 1 activity: save a baseline}{45 minutes \hfill Follow these steps in order}
+\textbf{Finish with:} project instructions, preserved notebook evidence, a restart
+comparison, and a handoff. \textbf{Do not extract or rewrite functions today.}
+
+\begin{enumerate}
+\item \textbf{Get oriented and write instructions (0--10 min).}
+Open your private starter folder and activate its environment. Give your agent:
+\begin{quote}\small
+Inspect this project without changing it. Draft a short AGENTS.md (or CLAUDE.md)
+with its purpose, files, commands, units, and evidence-preservation rules.
+For each project-specific statement, cite a checked source location and exact
+excerpt. Do not implement module stubs.
+\end{quote}
+List source cells, then inspect one (replace 0 with your chosen zero-based index):\\
+\code{python scripts/inspect_notebook.py}\\
+\code{python scripts/inspect_notebook.py --cell 0}\par \textbf{You:} open that cell or the YAML and check one statement.
+Save the instructions, then run:\\
+\code{git add AGENTS.md}\quad (substitute CLAUDE.md if used)\\
+\code{git commit -m "Record project instructions"}
+
+\item \textbf{Capture the unchanged computation (10--25 min).}\\
+\code{python scripts/baseline.py capture}\par
+If a baseline already exists, inspect it and skip capture. Never overwrite it.
+If capture refuses old setup outputs or changed source, keep those files and ask
+for help. Do not edit the model to make capture pass.\par
+Open \code{results/baseline.json}, the executed notebook, and CSV (front).
+Check \textbf{one nominal record and one sweep record}, units, assumptions,
+parameters against YAML, solver settings, sweep definition, and provenance.
+Use the displayed precision. Mark each check done or pending; an agent's check
+is not your own confirmation.
+
+\item \textbf{Restart and compare (25--40 min).}
+Close the notebook; reopen the project using its saved files. Run:\\
+\code{python scripts/baseline.py compare}\par
+This starts a fresh kernel and writes separate evidence in \code{results/recheck/}.
+If that folder exists, rename it to an unused archive name first; keep its files.
+Open \code{results/recheck/comparison.json} and record the outcome. Investigate
+differences; keep the original baseline unchanged.
+
+\item \textbf{Save your actual checkpoint (40--45 min).}
+Use the save commands on the front, then fill and commit \code{docs/handoff.md}.
+Keep agent checks and your confirmation separate. If anything is unfinished,
+write \textbf{partial checkpoint} and the next action. Save drafts even when human
+review is pending. Do not spend these last five minutes adding features.
+\end{enumerate}
+
+\textbf{Stop and check:}\par
+\checkitem{Instructions checked} \checkitem{Evidence saved}\par
+\checkitem{Comparison inspected} \checkitem{Evidence + handoff committed}
+
+\topic{Stuck or overwhelmed?}
+Stay on your current numbered step. After five minutes stuck, ask for help or
+pair with someone whose setup works; record who ran the commands. If you cannot
+run, inspect their saved evidence and write what you checked and what is missing.
+At minute 40, save a partial handoff anyway.
+
+\textbf{Regroup (15 min):} bring one statement you checked, its evidence location,
+and one limitation. If finished early, exchange handoffs: can a partner resume
+without your chat?\par
+\small More troubleshooting: \code{activities/session_guide.md} in the starter.
+
+\vfill
+\textbf{My next action or question:}\par\vspace{8pt}\hrule\vspace{18pt}\hrule

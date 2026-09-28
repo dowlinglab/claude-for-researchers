@@ -1,15 +1,23 @@
 # Slides
 
 Two Beamer decks for *Claude for Research: Beyond the Chatbot*, sharing all slide
-sources. Part 1 (September 28) has **27 slides**; Part 2 (October 12) has **31**.
-Both meet the 25–35-slide target without cutting any of the original 54 slides.
-The split is immediately before the Task 3 opener (original slide 27).
+sources. Part 1 (September 28) has **32 slides**; Part 2 (October 12) has **36**.
+The original lecture sections retain their frame numbers: Part 1 frames 1–27,
+Part 2 frames 1–31. Each now appends four activity frames and a regroup discussion
+frame. Existing tablet annotations therefore retain their part-specific numbers.
 
 Each 105-minute session uses **35 minutes presentation, 10 Q&A, 45 hands-on,
-and 15 regroup**. Part 1 ends with the saved baseline. Part 2 reconnects to it
-before the literature sequence; its activity resumes extraction and then audits
-evidence. Setup is pre-work. Between sessions participants experiment on their
-own research. See the [storyboard](storyboard.md) for the frame mapping.
+and 15 regroup**. The appended slides support the activity/regroup blocks;
+they do not enlarge the 35-minute lecture. Part 1 saves and checks a baseline.
+Part 2 checks three claims and revises one; extraction is optional afterward.
+Both activities follow the numbered instructions in the corresponding
+[two-page printed handout](../handout/README.md). Setup is pre-work.
+See the [storyboard](storyboard.md) for the frame mapping.
+
+The public decks contain participant-facing regroup questions. Private instructor
+builds reuse these sources and add answer reveals from the private repository;
+public builds do not read private files. The empty regroup hooks in `main.tex`
+allow this without copying instructor content into public sources.
 
 ## Build and verify
 
@@ -20,7 +28,7 @@ make
 ```
 
 The outputs are `part1.pdf` and `part2.pdf`. `make part1` or `make part2` builds
-one session. `make combined` builds `main.pdf` with both parts (58 slides).
+one session. `make combined` builds `main.pdf` with both parts (68 slides).
 `make watch MAIN=part1` watches the first part. The shared entry point uses a
 part selector, and `\part` records each session without adding divider frames.
 

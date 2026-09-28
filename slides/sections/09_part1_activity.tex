@@ -1,0 +1,51 @@
+\begin{frame}{Activity 1: save evidence someone else can check}
+  \vfill
+  \begin{center}
+    \slidepoint{Can you \textbf{resume this project} with the chat closed?}\\[1.1em]
+    {\small Our case: a cooled reactor notebook computes steady concentration and temperature.}\\[0.8em]
+    {\small Your task: inspect its sources, preserve its outputs, and check a fresh run.}\\[1.1em]
+    {\small Pick up the \textbf{Part 1 handout}. Turn to the activity on the back.}
+  \end{center}
+  \vfill
+  \ndlogonote{\scriptsize Hands-on: 45 minutes; then regroup: 15 minutes}
+\end{frame}
+
+\begin{frame}{A baseline gives the next change a reference}
+  \vfill
+  \begin{center}
+    \slidepoint{Save what the \textbf{unchanged computation} produces.}\\[1em]
+    {\small A baseline includes outputs, inputs, settings, and provenance.}\\[1em]
+    {\small Keep the notebook code, parameters, and solver settings unchanged.}\\[0.8em]
+    {\small Finish today with instructions, saved evidence, a comparison, and a handoff.}
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}[fragile]{Follow the four steps on your printed handout}
+  \vfill
+  \begin{enumerate}\small
+    \item \textbf{0--10 min: inspect and write instructions.} Check one source statement yourself.
+    \item \textbf{10--25 min: capture and inspect evidence.}
+\begin{lstlisting}
+python scripts/baseline.py capture
+\end{lstlisting}
+    \item \textbf{25--40 min: restart and compare.} Inspect the comparison file.
+\begin{lstlisting}
+python scripts/baseline.py compare
+\end{lstlisting}
+    \item \textbf{40--45 min: save evidence and handoff.} Use the commands on the front.
+  \end{enumerate}
+  \vspace{0.7cm plus 1fill}
+  \ndlogonote{\scriptsize Run commands from your private starter folder; preserve existing evidence}
+\end{frame}
+
+\begin{frame}{At minute 40, save the state you actually reached}
+  \vfill
+  \begin{center}
+    \slidepoint{A \textbf{partial checkpoint} is useful.}\\[1.1em]
+    {\small Stuck for five minutes? Ask for help or pair with someone whose setup works.}\\[0.8em]
+    {\small Record who checked what, what is still pending, and the next action.}\\[0.8em]
+    {\small Commit your evidence and handoff, including drafts awaiting human review.}
+  \end{center}
+  \vfill
+\end{frame}

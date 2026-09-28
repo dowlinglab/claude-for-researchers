@@ -1,0 +1,68 @@
+\heading{Part 2 activity: check three claims}{45 minutes \hfill Follow these steps in order}
+\textbf{Finish with:} three exact claims, evidence and verdicts, one revision,
+and a saved handoff. No package extraction, extra papers, or PDF build required.
+
+\begin{enumerate}
+\item \textbf{Open fresh evidence (0--5 min).} Read \code{docs/handoff.md}.
+If a baseline exists, preserve any \code{results/recheck/} by renaming it to an
+unused archive name, then run:\\
+\code{python scripts/baseline.py compare}\par
+Use \code{results/recheck/steady_states.csv}. If no baseline exists and the
+starter is unchanged, run:\\
+\code{python scripts/baseline.py capture}\\
+Then use \code{results/steady_states.csv}. Record your evidence path. If the source was
+changed before capture, record the limitation and ask for help; do not label new
+results a pre-change baseline.
+
+\item \textbf{Choose three claims (5--10 min).}
+Open \code{report/audit_fallback.tex}. Paste one \textbf{numerical}, one
+\textbf{citation-based}, and one \textbf{model/behavior} claim, with exact wording
+and section names, into \code{docs/claim_evidence_audit.md}.
+Ask the agent for candidates if needed, then select three before judging them.
+
+\item \textbf{Check, then judge (10--30 min).} Give your agent:
+\begin{quote}\small
+Keep the three original quotations exact. State the evidence needed, open it,
+and show its location. For every number, make a separate row: reported value,
+artifact value, unit conversion, rounded comparison, result. For citations,
+record the actual passage and what it supports, or ``notes only.'' Assign verdicts
+only after comparing evidence. Keep revisions separate from quotations.
+\end{quote}
+Open the Woolf source using the directions on the front. If inaccessible, write
+\textbf{notes only; primary-source check pending}. Do not verify from notes alone.
+\textbf{You:} open at least one cited evidence location and check it yourself.
+Record your confirmation separately. Use the verdict table on the front;
+a sentence with several facts needs every part checked.
+
+\item \textbf{Revise one claim (30--40 min).}
+Apply one reviewed revision to the report, keeping the original quote in the
+audit, or justify why all three can stay. Review \code{git diff}.
+If human review is pending, record \textbf{applied draft; human review pending}
+when the source changed, or \textbf{proposal only; not applied} otherwise.
+Default today: \textbf{source-only; revised PDF not built}.
+
+\item \textbf{Save and hand off (40--45 min).} Stage the audit and report:\\
+\code{git add docs/claim_evidence_audit.md report/audit_fallback.tex}\par
+Then use the save commands on the front for evidence and the five-item handoff.
+Stage only existing files you used. Reconcile the audit and handoff with the
+actual diff, build status, and commits. Save a \textbf{partial checkpoint} if
+checks or human review remain pending.
+\end{enumerate}
+
+\textbf{Stop and check:}\par
+\checkitem{Three quotes + verdicts} \checkitem{Evidence located}\par
+\checkitem{Revision status accurate} \checkitem{Evidence + handoff committed}
+
+\textbf{Stuck?} After five minutes, ask for help or pair up. If execution or source
+access fails, record missing evidence honestly and continue the checks you can
+do. At minute 40, save; do not start an extension.\par
+\textbf{Regroup (15 min):} show one evidence location, the verdict it supports,
+and your revision or unresolved question.\par
+{\small\textbf{Optional PDF after the core:}
+\code{python scripts/build_report.py --evidence results/recheck}
+(use \code{results} for a first capture), then
+\code{python scripts/build_report.py --check}. Save the figure and receipt;
+update build status. Details: \code{activities/session_guide.md}.}
+
+\vfill
+\textbf{My next action or question:}\par\vspace{8pt}\hrule\vspace{18pt}\hrule

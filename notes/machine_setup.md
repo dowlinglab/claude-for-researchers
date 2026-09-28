@@ -41,9 +41,9 @@ do it in advance.
 From the public repository:
 
 ```bash
-make -C slides            # part1.pdf (27 frames) and part2.pdf (31 frames)
-make -C slides combined   # main.pdf, both parts in one 58-frame sequence
-make -C handout           # main.pdf, the two-page reference
+make -C slides            # part1.pdf (32 frames) and part2.pdf (36 frames)
+make -C slides combined   # main.pdf, both parts in one 68-frame sequence
+make -C handout           # part1.pdf and part2.pdf, two pages each
 ```
 
 Two documents do **not** build with a bare `latexmk`, and both failures are
