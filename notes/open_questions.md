@@ -22,10 +22,7 @@ Resuming on another machine: read [machine_setup.md](machine_setup.md) first.
 3. **Remove DRAFT when Alex requests it.** Retained on both session titles.
 4. **Handout built.** The two-page standalone reference is in `handout/`. Review
    the final wording and print double-sided for participants if desired.
-5. **Capture the desktop app screenshot for Part 1 frame 12.** The placeholder
-   remains. Use the Code tab with several sessions and one conversation visible.
-   Hide private project names and keep the visible text to roughly 8–15 lines.
-6. **Pilot the activities with learners.** The novice/median/power-user completion
+5. **Pilot the activities with learners.** The novice/median/power-user completion
    targets are design estimates. Observe the 45-minute block with public-only
    copies and verify that participants can explain their checks. Adjust scope
    from those observations without removing the human evidence review.

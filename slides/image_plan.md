@@ -31,8 +31,9 @@ screenshots, attributed in the slide footer the way slides 17, 28, and 33 alread
 Docs and Overleaf: `claude_vscode_extension.jpg` from the
 [VS Code page](https://code.claude.com/docs/en/vs-code) and `claude_terminal_agent_view.jpg` from
 the [agent view page](https://code.claude.com/docs/en/agent-view), both accessed September 14.
-**Slide 12 is still a placeholder**: the documentation has no screenshot of the desktop app, so that
-one has to come from Alex's own setup. See [open_questions.md](../notes/open_questions.md).
+Slide 12 uses Alex's Claude desktop screenshot, `claude_desktop_projects_blurred.png`.
+Other project and conversation names in the left sidebar are blurred; the radio
+textbook entry remains readable.
 
 Slide 41 carries a generated TikZ calendar, `figures/august_2026_calendar.tex`. Its day-by-day
 shading and the 1,452-commit total (1,084 private, 368 public, August 17–31) come from
