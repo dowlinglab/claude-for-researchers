@@ -35,7 +35,7 @@ Two things about it are worth noticing before you cite it.
    source's conclusion does not transfer to your results just because both
    involve three steady states — you did not do the calculation it did.
 
-## Find two more
+## Optional full-workflow extension: find two more
 
 - **One source for the model**: governing equations, assumptions, sign
   conventions, or parameter values.

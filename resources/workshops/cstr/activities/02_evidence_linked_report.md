@@ -1,15 +1,14 @@
-# Activity 2 — From evidence to an audited report
+# Optional full workflow: evidence to audited report
 
-**Session:** 105 minutes including presentation and discussion; 45 minutes hands-on
-shared with Activity 1 extraction. Follow the [session guide](session_guide.md).
-**You need:** your repository from Activity 1, a LaTeX toolchain, and an AI
-agent. Open the supplied anchor before the session; two additional sources are
-optional preparation for the full workflow (see
-[Between the workshops](#between-the-workshops)).
+**In the room:** follow only the [session guide](session_guide.md): select three
+claims in the shared fallback report, check them, revise one, and save a handoff.
+Extraction, extra papers, a full claim inventory, and a newly drafted report are
+not required. A source-only audit is valid if LaTeX is unavailable.
 
-The shared fallback report is the default in-room path. Audit a small claim
-set after extraction; drafting a complete report is an extension. The original
-phase estimates below describe the full workflow and remain unchanged.
+Everything below is the optional full workflow. Its objectives, phase estimates,
+gates and completion criteria describe that extension. Open the supplied anchor
+source before the session. Extra sources and a LaTeX toolchain are preparation
+for this longer workflow.
 
 ## Objectives
 
@@ -52,8 +51,8 @@ read `results/` and the `.tex` in the same tree.
 
 ## Between the workshops
 
-Use the fortnight to experiment on your own research. Activity 1 extraction
-resumes in Session 2, rather than becoming a homework assignment.
+Use the fortnight to experiment on your own research. Extraction is an optional
+prepared-baseline extension, not a homework assignment.
 
 For the optional full corpus workflow, find **two** sources and download them to `literature/pdfs/` (git-ignored):
 
@@ -92,12 +91,13 @@ conda activate cstr-workshop
 git switch -c workshop2
 pytest tests
 python scripts/reproduce.py  # only if you have implemented it
-# Otherwise: python scripts/run_notebook.py
+# Otherwise: python scripts/baseline.py compare
 ```
 
-If extraction is incomplete, use the unchanged notebook for current evidence.
-Record which command ran. The notebook runner does not create `baseline.json`;
-that file comes from Activity 1 Phase 2.
+If extraction is incomplete, use the unchanged notebook capture/compare route
+in the session guide. If the baseline is absent, create the first snapshot only
+from untouched source. Preserve existing snapshots and use separate rerun files.
+Record the actual evidence path and command.
 
 > **Gate 1.** The tests pass and `results/` is current. You are about to write
 > claims about these numbers; they should be numbers you just regenerated, not
@@ -219,7 +219,8 @@ cd report && latexmk -pdf report.tex && cd ..
 > citations, and is roughly two pages plus references.
 
 **Default in-room path.** Use [`../report/audit_fallback.tex`](../report/audit_fallback.tex)
-instead and go straight to Phase 5. It is a complete draft of this report,
+and return to the self-contained [session guide](session_guide.md), which selects
+three claims rather than requiring this full inventory. It is a complete draft of this report,
 written to contain several evidence problems. It is otherwise a competent piece
 of writing, which is the point — these are the mistakes that survive a careful
 read.

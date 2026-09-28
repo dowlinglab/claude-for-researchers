@@ -2,11 +2,12 @@
 
 | Script | What it does |
 |---|---|
-| `run_notebook.py` | Executes `notebooks/cstr_exploration.ipynb` from the project root. `--check` runs a throwaway copy, so it can gate a commit without dirtying your diff. |
+| `baseline.py capture` / `baseline.py compare` | The in-room route: preserve live notebook evidence, then execute a fresh kernel in a separate directory and compare it without replacing the original. See [session guide](../activities/session_guide.md). |
+| `run_notebook.py` | Executes `notebooks/cstr_exploration.ipynb` from the project root. `--check` discards its executed copy but still writes CSV/figure outputs. Use baseline capture/compare when preserving evidence. |
 
 ## `reproduce.py` is missing on purpose
 
-Building it is the central task of Workshop 1: one documented command that
+Building it is an optional full-workflow extension: one documented command that
 regenerates every result without opening the notebook.
 
 What it has to do:
@@ -15,8 +16,8 @@ What it has to do:
    retyped into the script.
 2. Solve the nominal condition and the sweep using the functions you extracted
    into `src/cstr_workshop/`.
-3. Write `results/steady_states.csv`, `results/steady_state_locus.png`, and a
-   manifest describing the run.
+3. Write fresh CSV, figure and manifest into a separate directory such as
+   `results/reproduced/`, preserving the baseline and its supporting artifacts.
 4. Record, in that manifest, everything needed to interpret those numbers:
    parameters, software versions, solver tolerances, the sweep definition, the
    residual norms, and the command that produced them.

@@ -17,7 +17,7 @@ cut. The title's `\part` declaration records the session boundary without an
 extra divider slide.
 
 Part 1's activity establishes project instructions and a saved baseline. Part 2
-resumes extraction, then audits the shared report. The first session's closing
+checks three claims in the shared report and revises one; extraction is optional. The first session's closing
 reserves extraction for October 12 and frames the fortnight as experimentation
 on participants' own research. The second session's reconnect and closing make
 that continuity explicit.

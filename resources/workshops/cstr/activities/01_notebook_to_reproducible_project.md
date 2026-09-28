@@ -1,13 +1,13 @@
-# Activity 1 — From a notebook to a reproducible project
+# Optional full workflow: notebook to reproducible project
 
-**Session:** 105 minutes including presentation and discussion; 45 minutes hands-on.
-**Route:** follow the [session guide](session_guide.md) for the bounded in-room exercise.
-**You need:** a GitHub account, Git, conda (or mamba), and an AI coding agent
-(Claude Code, Codex, Cursor, or similar) you can run against a local directory.
+**In the room:** follow only the [session guide](session_guide.md), which is
+self-contained. Session 1 ends with instructions, saved evidence, a restart
+comparison, and handoff. No extraction is required in either session.
 
-Setup is pre-work. Session 1 covers instructions and the baseline; Phase 3
-resumes in Session 2. The phase estimates below describe the longer workflow,
-not the session timetable.
+Everything below is the optional full workflow. Its objectives, phase estimates,
+gates, and minimum completion describe that extension, not today's requirements.
+Setup can be completed before Session 1. You need Git, conda (or mamba), a private
+project, and an AI coding agent that can work against a local directory.
 
 ## Objectives
 
@@ -138,77 +138,40 @@ git commit -m "Add project instructions for AI agents"
 
 ## Phase 2 — Run the notebook and capture the baseline (15 min)
 
-### Run it untouched
+Follow Session 1 boxes 2–3 in the [session guide](session_guide.md):
 
 ```bash
-jupyter lab      # start from the PROJECT ROOT, not from notebooks/
+python scripts/baseline.py capture
+python scripts/baseline.py compare
 ```
 
-Open `notebooks/cstr_exploration.ipynb`, restart the kernel, and run all cells.
-It takes a few seconds.
+The helper executes the original notebook, saves actual live values and an
+executed copy, then writes a separate fresh run and comparison. It refuses to
+overwrite evidence or run altered notebook code/YAML. If prior setup generated
+CSV/figure files, inspect and archive them before first capture. Preserve any
+existing baseline. A missing first snapshot can be created from untouched source;
+a post-change run cannot stand in for a pre-change baseline.
 
-Read the output rather than skimming it. Three things are worth noticing:
+Inspect one nominal record and one sweep record, units, assumptions, parameters,
+solver/sweep settings, software and provenance. Record each field checked or
+pending; inspect the fresh comparison. Read `results/README.md` for the field
+map. Keep the notebook code, equations, parameters and tolerances unchanged.
 
-1. The first `fsolve` call converges to a perfectly good steady state — and
-   there are two more that it never finds.
-2. The number of steady states changes across the sweep.
-3. The final markdown cell is careful about what the result does *not* show.
-   Check whether you agree with it.
+> **Extension Gate 2.** The saved baseline and supporting artifacts have been
+> checked, the restart comparison passes, and evidence is committed before model
+> edits. Agent checks do not substitute for participant confirmation.
 
-### Capture the baseline
-
-This is the part people skip.
-
-Create `results/baseline.json` recording what the notebook just computed. It
-must contain enough that someone could tell, a year from now, whether a new
-result is the same result:
-
-- every reactor parameter, with units;
-- the nominal steady states: `CA`, conversion, `T`, and residual norm for each;
-- the sweep definition — parameter, start, stop, step;
-- the number of conditions, the number of rows, and the range over which three
-  steady states exist;
-- solver settings: residual tolerance, the distinct-root temperature tolerance,
-  the initial-guess strategy;
-- software versions — Python, numpy, scipy, pandas, matplotlib;
-- the exact command that produced it.
-
-The notebook already wrote `results/steady_states.csv` and
-`results/steady_state_locus.png`. Keep them.
-
-A reasonable prompt:
-
-> **Prompt.** Read `notebooks/cstr_exploration.ipynb` and the files in
-> `results/`. Write `results/baseline.json` capturing the nominal steady states,
-> the sweep definition and summary, solver tolerances, all reactor parameters
-> with units, the installed versions of Python and the scientific stack, and the
-> command that produced these results. Take every number from the notebook's
-> actual output or from `results/steady_states.csv` — do not recompute anything
-> and do not round.
-
-Then check it yourself against the notebook output. An agent that recomputes
-instead of reading has produced a baseline of its own code, which is worthless
-for this purpose.
-
-> **Gate 2.** `results/baseline.json` exists, its numbers match the notebook's
-> printed output, and it is committed. **The baseline must be committed before
-> you change a single line of model code.**
-
-```bash
-git add -f results/baseline.json results/steady_states.csv
-git commit -m "Capture baseline results from the untouched notebook"
-```
-
-(`-f` because `results/` is git-ignored by default. Committing the baseline is
-a deliberate exception: it is evidence, not output.)
+Use the session guide's exact staging commands; preserve the JSON, CSV, figure,
+executed notebook and separate comparison artifacts. Do not transcribe rounded
+output into a new solver-derived baseline.
 
 ---
 
 ## Phase 3 — Extract the model (30 min)
 
-Resume here in Session 2. This is next-session work, not homework. For the
-in-room exercise, extract one function as described in the [session guide](session_guide.md);
-continue the full migration later if useful.
+This is optional extension work, not homework or a Session 2 requirement.
+The [session guide](session_guide.md) offers a one-function extension only for
+participants with checked, committed baselines. Continue full migration later.
 
 Move the science out of the notebook into `src/cstr_workshop/`.
 
@@ -377,7 +340,7 @@ what is still open.
 
 The [session guide](session_guide.md) defines useful stopping points for each
 meeting. The following is the minimum for the longer migration workflow, which
-begins in Session 1 and resumes in Session 2:
+extends beyond the in-room sessions:
 
 1. The environment builds and the untouched notebook runs.
 2. `results/baseline.json` is committed, captured before any refactoring.

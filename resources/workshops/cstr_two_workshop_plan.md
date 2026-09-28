@@ -14,10 +14,10 @@ continuous workflow.
 
 The [session guide](cstr/activities/session_guide.md) governs the in-room scope:
 35 minutes presentation, 10 Q&A, 45 hands-on, and 15 regroup per meeting.
-Session 1 covers instructions and a saved baseline. Session 2 resumes a bounded
-extraction and then audits selected claims in the fallback report. Setup is
+Session 1 covers instructions, a saved baseline, and a fresh comparison. Session 2
+checks three selected claims and revises one in the fallback report. Setup is
 pre-work. The fortnight is for experimentation on participants’ own research;
-extraction is next-session work. Additional source-finding is optional for the
+extraction is an optional prepared-baseline extension. Additional source-finding is optional for the
 longer workflow.
 
 The phase tables below remain the original full-workflow estimates, not the
@@ -26,7 +26,7 @@ extensions. The session guide defines completion of each bounded exercise.
 
 ## 1. Learning arc
 
-### Workshop 1: notebook to reproducible project
+### Optional full workflow: Workshop 1: notebook to reproducible project
 
 Participants establish an agent-ready private repository, reproduce a supplied
 nonisothermal CSTR notebook, record a numerical baseline, extract reusable Python
@@ -37,7 +37,7 @@ The central lesson is to capture evidence before restructuring code. The
 activity is complete only when the refactored project reproduces the recorded
 scientific result.
 
-### Workshop 2: evidence to an audited report
+### Optional full workflow: Workshop 2: evidence to an audited report
 
 Participants curate a small literature corpus, compare the implemented model and
 computed behavior with those sources, draft a short LaTeX report, inventory its
@@ -185,7 +185,7 @@ The instructor repository should contain:
 Do not require exact image equality or unnecessarily precise floating-point
 matches.
 
-## 5. Workshop 1 activity specification
+## 5. Optional full-workflow specification: Workshop 1
 
 ### Outcomes
 
@@ -260,7 +260,7 @@ URL, source type, and verification status. Each literature note should state the
 relevant equation or finding, its conditions, its exact location in the source,
 and what the source cannot support.
 
-## 7. Workshop 2 activity specification
+## 7. Optional full-workflow specification: Workshop 2
 
 ### Outcomes
 

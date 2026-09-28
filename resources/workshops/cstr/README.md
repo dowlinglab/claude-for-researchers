@@ -16,10 +16,11 @@ work there. The instructions assume you did.
 
 Start with the [session guide](activities/session_guide.md). Each meeting has
 35 minutes presentation, 10 Q&A, 45 hands-on, and 15 regroup. Session 1 saves
-a baseline. Session 2 resumes extraction and then audits the shared report.
+a baseline and checks a fresh rerun. Session 2 checks three claims in the shared
+report and revises one; extraction is an optional prepared-baseline extension.
 Setup is pre-work; the fortnight is for experimenting on your own research.
-The full activity files provide reference steps and extensions, with their
-original phase estimates preserved.
+The optional full activity files provide reference steps and extensions; their
+phase estimates and completion gates are not additional in-room requirements.
 
 ## Quick start
 
@@ -33,8 +34,8 @@ pytest tests
 python scripts/run_notebook.py --check
 ```
 
-All three should succeed before Activity 1 begins. Activity 2 additionally needs
-a LaTeX toolchain:
+All three should succeed before Activity 1 begins. A PDF build in Activity 2 additionally needs
+a LaTeX toolchain; the in-room source-only audit can proceed without it:
 
 ```bash
 latexmk -v
@@ -72,7 +73,7 @@ cstr/
 ├── notebooks/           cstr_exploration.ipynb -- the starting point
 ├── data/                reactor_parameters.yml
 ├── src/cstr_workshop/   documented stubs; you implement them in your copy
-├── scripts/             run_notebook.py; you add reproduce.py
+├── scripts/             run_notebook.py, baseline.py; you add reproduce.py
 ├── tests/               environment smoke test; you add regression tests
 ├── results/             generated artifacts (git-ignored by default)
 ├── literature/          source manifest, notes rules, git-ignored pdfs/

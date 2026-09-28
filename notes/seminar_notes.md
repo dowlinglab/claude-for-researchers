@@ -883,3 +883,16 @@ described the deck split as unimplemented and the handout as unbuilt, both of
 which the overnight run completed. Rewritten around what now exists and what is
 outstanding before September 28, with the announcement flagged as the
 time-critical item.
+
+
+### 2026-09-27 — Simplify the in-room workshop route
+
+The participant session guide now contains the complete required steps. Session 1
+uses supplied capture/compare commands, preserves an executed notebook and a
+separate restart comparison, and ends with a five-item handoff. Session 2 selects
+three claims before checking them and revises one. Extraction is optional for a
+checked baseline; the longer activity files describe extensions. Numeric checks
+separate each value, original quotations stay distinct from revisions, and source
+access is recorded separately from supplied notes. This reduces competing routes
+and makes pending human checks visible. The starter retains its scientific model
+and the shared report for participants to investigate.
