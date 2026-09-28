@@ -20,16 +20,15 @@ and checkpoint instructions; `part1_front.tex`, `part1_back.tex`,
 
 ## Physical use
 
-- Part 1 front: project memory, the baseline cycle, reactor context, file map,
-  and evidence/handoff saving commands. Back: inspect, capture, restart, save.
-- Part 2 front: the audit cycle, verdict definitions, evidence/source directions,
-  and saving commands. Back: open evidence, select three claims, check, revise, save.
-- Both backs have visible time checkpoints, a five-minute help rule, a minute-40
-  stopping rule, and writing space for a next action or question.
-- Keep human confirmation separate from agent work. A draft or partial checkpoint
-  is a valid saved state; completing the exercise does not validate the model.
+- Part 1 page 1: a concise lecture recap occupies the upper half; the lower
+  half begins the notebook handoff with Git and Conda. Page 2 covers the audit,
+  Python extraction and tests, four extension choices, and the handoff.
+- Part 2 retains its report audit instructions. Both handouts are two pages on
+  US letter paper, double-sided with a long-edge flip.
+- A participant may reach only an early gate during the 45-minute block,
+  particularly if installing Conda. Record the completed gate and next command;
+  finish the same assignment between sessions.
 
-The existing Notre Dame navy/gold and 11-point body text are retained. After
-changes, rebuild, confirm the separate PDFs still have two pages, and render
-all four pages to inspect line wrapping, footer clearance, and print legibility.
-No numerical answers or instructor reveals belong in these handouts.
+After changes, rebuild and inspect both rendered pages for line wrapping, footer
+clearance, and print legibility. No numerical answers or instructor reveals belong
+in public handouts.

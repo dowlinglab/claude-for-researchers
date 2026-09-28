@@ -1,4 +1,4 @@
-\stagedivider{2}{Act I: Understand}{Set up the workspace before asking for work}
+\stagedivider{2}{Act I: Understand}{Set up the workspace for reproducible work}
 
 \begin{frame}{An agent works on your file system}
   \vfill
@@ -16,11 +16,11 @@
   \end{center}
   \vspace{0.7em}
   \begin{center}
-    An agent can \textbf{inspect the real files}, \textbf{edit them}, run code and tests, search Git history, and prepare commits.
+    An agent can inspect the real files, edit them, \textbf{run code and tests}, search Git history, and \textbf{commit and push to Git}.
   \end{center}
   \vspace{0.6em}
   \begin{center}
-    \slidepoint{The useful shift is from \textbf{describing} a project to letting an agent \textbf{inspect} it.}
+    \slidepoint{The useful shift is from describing a project to letting an agent inspect it.}
   \end{center}
   \vfill
 \end{frame}
@@ -66,7 +66,7 @@
   \vspace{1.1em}
   \begin{center}\small
     \textbf{Version control} keeps a dated record of every saved change. Use it for every
-    research project: when an agent breaks something, Git is how you undo it.
+    research project you share: when an agent breaks something, Git is how you undo it.
   \end{center}
   \vspace{0.9cm plus 1fill}
 \end{frame}
@@ -133,7 +133,7 @@
   \vspace{0.7cm plus 1fill}
 \end{frame}
 
-\begin{frame}{Task 1 starts the way most projects start}
+\begin{frame}{Task 1: inherit a project from a colleague}
   \vfill
   \begin{center}
   \begin{tikzpicture}
@@ -288,9 +288,8 @@ what evidence proves it is finished and what you must leave to me.
     \item \textbf{I read and edit it.} This is where the scientific decisions get made, while I am awake.
     \item \textbf{Start the run} with the reviewed document as the task:
       \begin{itemize}\small\setlength\itemsep{0.2em}
-        \item Codex \textbf{Goal}: pursue a persistent objective
-        \item Claude Code \textbf{\texttt{/goal}}: continue until a condition is met
-        \item Claude Code \textbf{\texttt{/loop}}: repeat a prompt on an interval
+        \item Give the agent the reviewed document as its task.
+        \item State what evidence marks each step complete and what needs your review.
       \end{itemize}
     \item \textbf{Use the agent to explore:}
       \begin{itemize}\small\setlength\itemsep{0.2em}

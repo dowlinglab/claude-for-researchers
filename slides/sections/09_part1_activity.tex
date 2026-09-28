@@ -1,51 +1,45 @@
-\begin{frame}{Activity 1: save evidence someone else can check}
+\begin{frame}{Activity 1: inherit a notebook and make it reusable}
   \vfill
   \begin{center}
-    \slidepoint{Can you \textbf{resume this project} with the chat closed?}\\[1.1em]
-    {\small Our case: a cooled reactor notebook computes steady concentration and temperature.}\\[0.8em]
-    {\small Your task: inspect its sources, preserve its outputs, and check a fresh run.}\\[1.1em]
-    {\small Pick up the \textbf{Part 1 handout}. Turn to the activity on the back.}
+    \slidepoint{You receive a reactor notebook in a zip file. Can a colleague run, check, and extend it with the chat closed?}\\[1.1em]
+    {\small We will walk through both pages of the Part 1 handout now.}\\[0.8em]
+    {\small The handoff has a notebook, a parameter file, and no repository, environment, package, or tests.}
   \end{center}
   \vfill
-  \ndlogonote{\scriptsize Hands-on: 45 minutes; then regroup: 15 minutes}
+  \ndlogonote{\scriptsize Hands-on: 45 minutes; regroup: 15 minutes}
 \end{frame}
 
-\begin{frame}{A baseline gives the next change a reference}
+\begin{frame}{First, preserve what the inherited notebook does}
   \vfill
-  \begin{center}
-    \slidepoint{Save what the \textbf{unchanged computation} produces.}\\[1em]
-    {\small A baseline includes outputs, inputs, settings, and provenance.}\\[1em]
-    {\small Keep the notebook code, parameters, and solver settings unchanged.}\\[0.8em]
-    {\small Finish today with instructions, saved evidence, a comparison, and a handoff.}
-  \end{center}
-  \vfill
-\end{frame}
-
-\begin{frame}[fragile]{Follow the four steps on your printed handout}
-  \vfill
-  \begin{enumerate}\small
-    \item \textbf{0--10 min: inspect and write instructions.} Check one source statement yourself.
-    \item \textbf{10--25 min: capture and inspect evidence.}
-\begin{lstlisting}
-python scripts/baseline.py capture
-\end{lstlisting}
-    \item \textbf{25--40 min: restart and compare.} Inspect the comparison file.
-\begin{lstlisting}
-python scripts/baseline.py compare
-\end{lstlisting}
-    \item \textbf{40--45 min: save evidence and handoff.} Use the commands on the front.
+  \begin{enumerate}\setlength\itemsep{1em}
+    \item Download the handoff, initialize your private Git repository, and commit the original files.
+    \item Create a Conda environment. Run all notebook cells from a fresh kernel.
+    \item Audit equations, parameters, units, solver checks, CSV, and figure.
+    \item Commit the audited outputs \emph{before} moving code into modules.
   \end{enumerate}
-  \vspace{0.7cm plus 1fill}
-  \ndlogonote{\scriptsize Run commands from your private starter folder; preserve existing evidence}
+  \vfill
 \end{frame}
 
-\begin{frame}{At minute 40, save the state you actually reached}
+\begin{frame}{Then extract, test, and extend one question}
+  \vfill
+  \begin{enumerate}\setlength\itemsep{1em}
+    \setcounter{enumi}{2}
+    \item Move model, solver, sweep, and plotting functions into Python files. Add NumPy-style docstrings and tests; compare with the saved notebook results.
+    \item Choose one extension: finer coolant sweep, heat-transfer sensitivity, feed-temperature sensitivity, or solver-guess robustness.
+  \end{enumerate}
+  \vspace{0.5em}
+  \begin{center}\small
+    At minute 40, save the gate you reached and its next command. Continue unfinished gates between sessions.
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{The handout is the route through the activity}
   \vfill
   \begin{center}
-    \slidepoint{A \textbf{partial checkpoint} is useful.}\\[1.1em]
-    {\small Stuck for five minutes? Ask for help or pair with someone whose setup works.}\\[0.8em]
-    {\small Record who checked what, what is still pending, and the next action.}\\[0.8em]
-    {\small Commit your evidence and handoff, including drafts awaiting human review.}
+    \slidepoint{First page: Part 1 recap, then download, Git, and Conda.}\\[1.1em]
+    {\small Second page: audit, extraction, tests, extension choices, and handoff.}\\[1.1em]
+    {\small Ask for help after five minutes stuck. At regroup, bring one checked claim and one open question.}
   \end{center}
   \vfill
 \end{frame}

@@ -1,43 +1,30 @@
-\heading{Part 1: a project you can resume}{Summary \hfill 28 September 2026}
-\textbf{Keep the project's memory in files.} Ask the agent to inspect and explain;
-check its claims against the files yourself. Your goal is a small, recoverable
-checkpoint, not a finished software package.
+\heading{Part 1: build a project you can resume}{Summary and Workshop 1 \hfill 28 September 2026}
+\textbf{What Part 1 covered.} An agent can inspect and edit a real workspace, run checks, and use Git history. A repository preserves changes and invites review. Concise \code{AGENTS.md} or \code{CLAUDE.md} gives an agent project context; it cannot certify a result. The research workflow is \textbf{inspect $\rightarrow$ run $\rightarrow$ audit $\rightarrow$ save a baseline $\rightarrow$ refactor $\rightarrow$ test $\rightarrow$ extend}. Record the environment and commands so a colleague can resume without your chat.
 
-\topic{The workflow}
-\textbf{Inspect $\rightarrow$ save $\rightarrow$ restart $\rightarrow$ compare $\rightarrow$ hand off.}
-A \textbf{baseline} is a preserved record of what the original computation
-produced. Compare a fresh run against it before changing the model.
-Repeatability means the run agrees; it does not establish scientific validity.
+\textbf{Our case.} You inherit a cooled-reactor notebook and parameter file. The model may have multiple steady states at one operating condition. A solver result needs convergence and residual checks. Repeating a run checks reproducibility; it does not prove model validity, stability, or that all roots were found.
 
-\topic{Today's case: a cooled reactor}
-The CSTR (continuous stirred-tank reactor) notebook computes steady concentration
-and temperature as coolant temperature changes. You do not need to derive the
-model today. Locate its assumptions, units, inputs, and outputs before trusting
-an agent's explanation. Keep notebook code, parameters, and solver settings unchanged.
-A \textbf{nominal} record uses the reference coolant condition; a \textbf{sweep}
-varies coolant temperature. A branch index identifies a state at one condition.
+\textbf{The four gates:} 1 Git repository and original commit; 2 Conda, fresh run, and audit; 3 extracted functions with docstrings and tests; 4 one new analysis with a preserved control. Save the gate you reached at minute 40. The rest is continuation work between sessions.
 
-\renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\linewidth}{@{}p{2.8in}X@{}}
-\toprule
-\textbf{In your starter folder} & \textbf{Use it to find}\\
-\midrule
-\code{notebooks/cstr_exploration.ipynb} & Model, computation, assumptions\\
-\code{data/reactor_parameters.yml} & Parameter values and units\\
-\code{AGENTS.md} or \code{CLAUDE.md} & Your short project instructions\\
-\code{results/baseline.json} & Captured values, settings, provenance\\
-\code{results/steady_states.csv} & Sweep records; locate by coolant temperature and branch index\\
-\code{results/baseline.executed.ipynb} & Saved executed notebook\\
-\code{results/recheck/comparison.json} & Fresh run versus saved baseline\\
-\code{docs/handoff.md} & Checked work, pending work, next step\\
-\bottomrule
-\end{tabularx}
+\textbf{Ask, verify, record.} Have an agent map inputs to outputs, explain where a number came from, and propose a bounded next step. Read its cited source and inspect the diff. Save the checked result, the test command, and the open question in the repository.
 
-\savework
+\vspace{0.70in}{\color{NDGold}\rule{\linewidth}{0.8pt}}\vspace{-3pt}
+\topic{Workshop 1: start from the notebook handoff}
+\textbf{1. Download and initialize (0--10 min).} Open \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/cstr/workshop1_notebook.zip}{\texttt{workshop1\_notebook.zip}} at \repourl. Choose \textbf{Download raw file}, unzip, and open a terminal in \code{cstr-project/}. It holds a notebook, YAML parameters, and an empty results folder. Create an empty \textbf{private} GitHub repo named \code{cstr-project}; use its URL below.
+
+\code{git init}\quad\code{git branch -M main}\\
+\code{git add README.md notebooks data results/.gitkeep}\\
+\code{git commit -m "Import inherited reactor notebook"}\\
+\code{git remote add origin YOUR-PRIVATE-REPOSITORY-URL}\\
+\code{git push -u origin main}\quad\code{git switch -c workshop1}
+
+Check \code{git log -1 --oneline}, \code{git remote -v}, and \code{git status --short}. If push fails, continue locally and record the blocker.
+
+\textbf{2. Create Conda environment (10--22 min).} If \code{conda --version} fails, install Miniconda (\url{https://docs.anaconda.com/miniconda/}) and reopen the terminal. Ask your agent to read the notebook imports and draft \code{environment.yml} with Python, NumPy, SciPy, pandas, matplotlib, JupyterLab, and pytest. Check its list yourself. A fallback file is at \code{resources/workshops/cstr/environment.yml}; remove its \code{-e .} install because this handoff has no package yet.
+
+\code{conda env create -f environment.yml}\\
+\code{conda activate cstr-workshop}\quad\code{jupyter lab}
+
+Start Jupyter from \code{cstr-project/}. Select the environment kernel, then \textbf{Restart Kernel and Run All Cells}. Confirm \code{results/steady_states.csv} and \code{results/steady_state_locus.png}. If setup is slow, save the exact error or pending command and continue with a paired audit.
 
 \vfill
-\textbf{Before the meeting:} use the starter README to create and activate its
-environment in your own private copy. In the full checkout, the starter is
-\code{resources/workshops/cstr/}. All activity commands run from that folder.\par
-\small\repourl\par
-\textbf{Turn over for the numbered activity.} Keep this sheet beside your keyboard.
+\small The complete four-step instructions and extension guide are in \code{resources/workshops/cstr/activities/}.

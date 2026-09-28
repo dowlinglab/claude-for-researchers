@@ -1,63 +1,18 @@
-\heading{Part 1 activity: save a baseline}{45 minutes \hfill Follow these steps in order}
-\textbf{Finish with:} project instructions, preserved notebook evidence, a restart
-comparison, and a handoff. \textbf{Do not extract or rewrite functions today.}
+\heading{Workshop 1: audit, extract, extend}{Continue the numbered route \hfill Save at minute 40}
+\textbf{2 continued. Audit before editing.} Compare the notebook's parameters with \code{data/reactor_parameters.yml}. Open its equations, assumptions, units, and final limits. Check the heat-release sign, Kelvin temperatures, solver convergence and residual norm, root deduplication, starting guesses, sweep spacing, a nominal CSV row, a sweep row, and the figure. Write \code{docs/audit.md}: mark each item \textbf{checked}, \textbf{question}, or \textbf{pending}, with its source cell or file. Ask the agent to propose checks; verify at least one yourself.
 
-\begin{enumerate}
-\item \textbf{Get oriented and write instructions (0--10 min).}
-Open your private starter folder and activate its environment. Give your agent:
-\begin{quote}\small
-Inspect this project without changing it. Draft a short AGENTS.md (or CLAUDE.md)
-with its purpose, files, commands, units, and evidence-preservation rules.
-For each project-specific statement, cite a checked source location and exact
-excerpt. Do not implement module stubs.
-\end{quote}
-List source cells, then inspect one (replace 0 with your chosen zero-based index):\\
-\code{python scripts/inspect_notebook.py}\\
-\code{python scripts/inspect_notebook.py --cell 0}\par \textbf{You:} open that cell or the YAML and check one statement.
-Save the instructions, then run:\\
-\code{git add AGENTS.md}\quad (substitute CLAUDE.md if used)\\
-\code{git commit -m "Record project instructions"}
+Commit \code{environment.yml}, audit, original notebook, and baseline outputs \emph{before} changing solver code. Record \code{python --version} and \code{conda list --export} in \code{results/conda-list.txt}. Use \code{git add -f results/steady_states.csv results/steady_state_locus.png results/conda-list.txt} to include generated evidence. Record the baseline hash with \code{git rev-parse HEAD}. \textbf{Gate 2:} a fresh run, named audit evidence, and preserved original outputs.
 
-\item \textbf{Capture the unchanged computation (10--25 min).}\\
-\code{python scripts/baseline.py capture}\par
-If a baseline already exists, inspect it and skip capture. Never overwrite it.
-If capture refuses old setup outputs or changed source, keep those files and ask
-for help. Do not edit the model to make capture pass.\par
-Open \code{results/baseline.json}, the executed notebook, and CSV (front).
-Check \textbf{one nominal record and one sweep record}, units, assumptions,
-parameters against YAML, solver settings, sweep definition, and provenance.
-Use the displayed precision. Mark each check done or pending; an agent's check
-is not your own confirmation.
+\topic{3. Extract Python functions and test (22--35 min)}
+Move one function at a time into \code{src/cstr_workshop/}: parameters/kinetics/residuals in \code{model.py}; solves in \code{solve.py}; parameter sweep in \code{sweep.py}; figure in \code{plotting.py}. Add \code{pyproject.toml}, then install with \code{python -m pip install -e .}. Each public function needs a NumPy-style docstring with inputs, units, return value, and meaningful errors. Change the notebook to import these functions only after you have saved its original results.
 
-\item \textbf{Restart and compare (25--40 min).}
-Close the notebook; reopen the project using its saved files. Run:\\
-\code{python scripts/baseline.py compare}\par
-This starts a fresh kernel and writes separate evidence in \code{results/recheck/}.
-If that folder exists, rename it to an unused archive name first; keep its files.
-Open \code{results/recheck/comparison.json} and record the outcome. Investigate
-differences; keep the original baseline unchanged.
+Ask the agent for tests, then inspect them: parameter loading, rate increasing with temperature, small accepted residuals, physical concentration/conversion bounds, sorted distinct roots, sweep row count, invalid input, and agreement with your saved notebook CSV within a stated tolerance. Run \code{python -m pytest -q} and \code{git diff --check}. \textbf{Gate 3:} tests pass and extracted values match the pre-refactor baseline. Commit code and test results; investigate a mismatch instead of replacing baseline evidence.
 
-\item \textbf{Save your actual checkpoint (40--45 min).}
-Use the save commands on the front, then fill and commit \code{docs/handoff.md}.
-Keep agent checks and your confirmation separate. If anything is unfinished,
-write \textbf{partial checkpoint} and the next action. Save drafts even when human
-review is pending. Do not spend these last five minutes adding features.
-\end{enumerate}
+\topic{4. Extend one analysis (35--40 min; continue later)}
+Choose one: \textbf{A} refine coolant-temperature intervals around changes in state count; \textbf{B} vary heat transfer \code{UA}; \textbf{C} vary feed temperature \code{Tf}; \textbf{D} compare wider/denser solver starting guesses. Keep the nominal case unchanged as a control. Save a runnable script, CSV or figure in \code{results/extensions/}, a test, and a two-sentence interpretation. Full ranges and limits: \code{activities/workshop1_extensions.md}. \textbf{Gate 4:} another person can rerun the extension and see what its result does and does not establish.
 
-\textbf{Stop and check:}\par
-\checkitem{Instructions checked} \checkitem{Evidence saved}\par
-\checkitem{Comparison inspected} \checkitem{Evidence + handoff committed}
-
-\topic{Stuck or overwhelmed?}
-Stay on your current numbered step. After five minutes stuck, ask for help or
-pair with someone whose setup works; record who ran the commands. If you cannot
-run, inspect their saved evidence and write what you checked and what is missing.
-At minute 40, save a partial handoff anyway.
-
-\textbf{Regroup (15 min):} bring one statement you checked, its evidence location,
-and one limitation. If finished early, exchange handoffs: can a partner resume
-without your chat?\par
-\small More troubleshooting: \code{activities/session_guide.md} in the starter.
+\topic{At minute 40: hand off the state you reached}
+Run \code{git status --short}. In \code{docs/handoff.md}, record baseline commit, completed gates, commands and working directory, checks you personally made, blockers, and one exact next command. Commit your draft, including pending review. At regroup, show one audit finding and your chosen extension. If stuck for five minutes, ask for help; record whose machine ran a check.
 
 \vfill
-\textbf{My next action or question:}\par\vspace{8pt}\hrule\vspace{18pt}\hrule
+\textbf{My next command or question:}\par\vspace{8pt}\hrule\vspace{18pt}\hrule

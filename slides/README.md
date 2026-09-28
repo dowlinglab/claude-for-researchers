@@ -7,17 +7,12 @@ Part 2 frames 1–31. Each now appends four activity frames and a regroup discus
 frame. Existing tablet annotations therefore retain their part-specific numbers.
 
 Each 105-minute session uses **35 minutes presentation, 10 Q&A, 45 hands-on,
-and 15 regroup**. The appended slides support the activity/regroup blocks;
-they do not enlarge the 35-minute lecture. Part 1 saves and checks a baseline.
-Part 2 checks three claims and revises one; extraction is optional afterward.
-Both activities follow the numbered instructions in the corresponding
-[two-page printed handout](../handout/README.md). Setup is pre-work.
-See the [storyboard](storyboard.md) for the frame mapping.
-
-The public decks contain participant-facing regroup questions. Private instructor
-builds reuse these sources and add answer reveals from the private repository;
-public builds do not read private files. The empty regroup hooks in `main.tex`
-allow this without copying instructor content into public sources.
+and 15 regroup**. Part 1 now starts from a notebook handoff: students create a
+private Git repository, set up Conda, audit the notebook, extract tested Python
+functions, and choose a bounded extension. The four gates may continue between
+sessions. Part 2 checks three report claims and revises one. The public decks
+contain participant-facing activity and regroup frames; private instructor builds
+add answer reveals from the private repository.
 
 ## Build and verify
 
