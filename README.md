@@ -29,8 +29,6 @@ Setup time in the room is time not spent on the activity. Please arrive having d
 4. **Install GitHub Desktop.**
 5. **Download the Workshop 1 notebook ZIP** below. Cloning this whole repository is optional for the first activity.
 
-*The original single 1-hour slot (October 15, 2026, Carey Auditorium) was replaced by this two-part series; the abstract below was submitted against the original format.*
-
 ## Workshop materials
 
 For **Workshop 1**, [download the notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip). It contains an exploratory notebook and a YAML parameter file; the CSV and figure are generated when you run the notebook. Unzip it and follow the [four-step activity](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md) to create your own private Git repository, reproduce and audit the result, extract tested Python functions, and choose [one analysis extension](resources/workshops/cstr/activities/workshop1_extensions.md). The [session guide](resources/workshops/cstr/activities/session_guide.md) explains the in-room route and how to save a partial checkpoint.
