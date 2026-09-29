@@ -1,0 +1,11 @@
+name: penguin-audit
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - scipy>=1.11
+  - matplotlib
+  - jupyterlab
+  - ipykernel

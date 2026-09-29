@@ -1,0 +1,3 @@
+# Reference texts are downloaded locally and not committed.
+*
+!.gitignore
