@@ -1,81 +1,103 @@
-# Workshop 1: inherit a notebook, build a research project
+# Activity 1: turn an inherited folder into a GitHub repository
 
-**Case.** A former student sends you a zip file containing an exploratory notebook and a parameter file for a cooled, nonisothermal continuous stirred-tank reactor (CSTR). The notebook appears to run, but there is no repository, environment, test suite, or record of which computation produced its figure. Make the work recoverable, audit it, extract reusable Python, and answer one new question. The notebook is a teaching model, not a measured reactor.
+**The case.** A former student sends you a zip file containing an exploratory notebook and a parameter file for a cooled, nonisothermal continuous stirred-tank reactor (CSTR). The notebook appears to run, but there is no repository, no record of the environment, and no way to tell which computation produced its figure. The notebook is a teaching model, not a measured reactor.
 
-**Time.** The 45-minute in-room block starts all four steps. Keep the numbered sequence and save a checkpoint at minute 40. A clean Conda install and full extraction can take longer; continue the same steps between sessions. A partial checkpoint must say which gate is pending. Work in a private repository of your own. An AI coding agent may draft files and run checks; you decide whether the scientific claims are justified.
+**The goal.** End with a well-organized repository for this folder, on your computer and on GitHub, that you can explain to someone else. You do not need to know Git. Claude will teach you as it works.
 
-## 1. Create the repository and import the handoff (0–10 min)
+**How to work.** You are collaborating with Claude, not following a tutorial. The pattern is **ask, inspect, verify, iterate**:
 
-Download [`workshop1_notebook.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip), unzip it, and put the enclosed `cstr-project/` folder where you keep research projects. Open a terminal **inside that folder**. It contains `notebooks/cstr_exploration.ipynb`, `data/reactor_parameters.yml`, and an empty `results/` directory. The notebook writes results relative to this folder.
+- *Ask* Claude to explain each major step before it does it.
+- *Inspect* what happened: read what Claude says it did, and look at the result.
+- *Verify* the parts you can check yourself. Ask Claude how.
+- *Iterate*: ask again when something is unclear or does not look right.
 
-```bash
-cd /path/to/cstr-project
-git init
-git branch -M main
-git status --short
-git add README.md notebooks data results/.gitkeep
-git commit -m "Import inherited reactor notebook"
-```
+There is no single correct sequence of commands. Claude can generate whichever commands are needed. Your job is to understand what each step is for, and to decide whether it is a good idea.
 
-Create an empty **private** GitHub repository named `cstr-project`; do not initialize it with another README. Copy its URL into the next command, then push:
+**Time.** The in-room block is 45 minutes. Most people finish the first goal and start the next. Save a note about where you stopped at minute 40 (see the end of this page).
 
-```bash
-git remote add origin YOUR-PRIVATE-REPOSITORY-URL
-git push -u origin main
-git switch -c workshop1
-```
+## Get started
 
-**Gate 1:** `git log -1 --oneline` shows the import, `git remote -v` points to *your* private repository, and `git status --short` is empty. If authentication fails, keep working locally and record that the push is pending. Never add an environment directory, tokens, or raw private data to Git.
+1. Download [`workshop1_notebook.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip) and unzip it. Put the enclosed `cstr-project/` folder where you keep research projects.
+2. Open that folder in Claude (desktop app, editor extension, or terminal). Open the folder itself, not a single file inside it.
+3. Have a GitHub account ready. GitHub Desktop is optional; Claude can guide either route.
 
-## 2. Build the environment, run, and audit the notebook (10–22 min)
+## A starter prompt
 
-If `conda --version` fails, install [Miniconda for your operating system](https://docs.anaconda.com/miniconda/) and reopen the terminal. Ask your agent to inspect imports and draft an `environment.yml` with Python, NumPy, SciPy, pandas, matplotlib, JupyterLab, pytest, and any other packages actually needed. Compare its list with the notebook yourself. A working starting point is the [full starter's environment file](../environment.yml); remove its editable package install (`pip: - -e .`) because your new repository does not have a package yet. Add that install after Step 3.
+Change the wording to fit you.
 
-```bash
-conda env create -f environment.yml
-conda activate cstr-workshop
-python -c "import numpy, scipy, pandas, matplotlib; print('imports OK')"
-jupyter lab
-```
+> I want to turn this folder into a clean GitHub repository. I am new to Git and GitHub. Please walk me through the process step by step using good practices. Start by inspecting the folder. Before each major step, explain what it accomplishes, and stop periodically so I can inspect what happened and ask questions.
 
-Start Jupyter from the project root. In the notebook, select the `cstr-workshop` kernel, **Restart Kernel and Run All Cells**, and confirm that the CSV and figure appear in `results/`. If Jupyter cannot see the kernel, use `conda run -n cstr-workshop jupyter lab` from the same directory. Record `python --version` and `conda list --export > results/conda-list.txt`.
+## The mental model
 
-If you use VS Code, open the **`cstr-project/` folder** as your workspace, not just the `.ipynb` file. Before running all cells, run `from pathlib import Path; print(Path.cwd()); print(Path('results').is_dir())` in a scratch cell. The working directory must be `cstr-project/` and the second value must be `True`. If either check is wrong, launch `jupyter lab` from a terminal in `cstr-project/` as shown above. If you see `OSError: Cannot save file into a non-existent directory: 'results'`, correct the working directory and rerun from a fresh kernel; the inline plot alone does not mean the CSV and PNG were saved.
+Three things, in a chain:
 
-**Audit before editing:** Read the opening equations, assumptions, units, and final limits. Compare every parameter typed in the notebook with `data/reactor_parameters.yml`. Check the sign of the exothermic heat term, absolute temperatures, solver convergence flag and residual norm, distinct-root tolerance, initial-guess range, coolant sweep spacing, and that a branch index is a rank at one condition rather than a continuous identity. Inspect a nominal row and a sweep row in the CSV. Look at the figure for false line connections. Record each check as **checked**, **question**, or **not yet checked**, with its source location. A rerun checks repeatability; it does not prove physical validity, root completeness, or stability.
+1. **A folder of files.** What you have now.
+2. **A repository on your computer.** The same folder, plus a history of saved checkpoints that Git keeps.
+3. **A copy on GitHub.** A second copy of that repository on the web, for backup and sharing.
 
-Preserve the original source and results before the refactor. Commit a short `docs/audit.md`, `environment.yml`, and the unchanged notebook; commit the generated CSV, PNG, and environment list as baseline evidence. A notebook with new output cells is fine, but do not alter its equations or solver settings before this commit. Record the commit hash with `git rev-parse HEAD`.
+You are building that chain, one explained step at a time. The order in which Claude does things can vary. What matters is that you understand why each step happens.
 
-**Gate 2:** a fresh kernel runs all cells, the scientific audit has named evidence and open questions, and the baseline commit precedes any refactor. If the notebook fails, preserve the error and fix the environment first.
+## Questions worth asking Claude
 
-## 3. Move the computation into tested Python modules (22–35 min)
+Use these when you are stuck, or before you agree to something. They are examples, not a sequence.
 
-Ask your agent to extract **one bounded function at a time** into `src/cstr_workshop/`: parameter loading and validation, kinetics and residuals (`model.py`); initial guesses and distinct steady-state solves (`solve.py`); parameter sweeps (`sweep.py`); figure creation (`plotting.py`). Keep the notebook as a readable exploration that **imports** the extracted functions after you have compared outputs. Add a minimal `pyproject.toml` so `python -m pip install -e .` installs the project in the active environment. Ask for NumPy-style docstrings: summary, Parameters with units, Returns, and Raises where relevant. Avoid a vague “document everything” prompt; inspect one signature and docstring yourself.
+- "Before changing anything, inspect this folder and tell me what you think should and should not be tracked in Git."
+- "Explain what `.gitignore` is and recommend what this project should ignore."
+- "Explain what a commit represents in plain language."
+- "Show me how to check what Git thinks has changed before we commit anything."
+- "I don't understand the last command. Explain it without assuming I know Git."
+- "Before making this change, tell me how I could undo it if something goes wrong."
 
-Write meaningful `pytest` tests before trusting the extraction. At minimum, test the parameter file loads, reaction rate increases with positive absolute temperature, residuals are small at every accepted state, concentration and conversion stay in physical bounds, distinct states are sorted and deduplicated, the sweep has one row per state, and an extracted nominal/sweep result agrees with the saved notebook CSV within a stated numerical tolerance. Also test a deliberately invalid parameter. Compare numeric values, not PNG bytes. Run:
+## You are done when
 
-```bash
-python -m pip install -e .
-python -m pytest -q
-git diff --check
-git status --short
-```
+- [ ] I know which folder is the repository root.
+- [ ] Git is set up in that folder, and not inside another repository.
+- [ ] I understand broadly which files Git is tracking.
+- [ ] Large or inappropriate files are left out where appropriate. That includes environments, credentials, and private data.
+- [ ] I have a first commit that records the starting point.
+- [ ] I can say how my local repository differs from GitHub.
+- [ ] The repository is connected to GitHub, if I am ready for that.
+- [ ] I can ask Claude to explain the current state of the repository, and the answer makes sense to me.
 
-**Gate 3:** tests pass and the extracted computation matches the saved baseline. Save the code, tests, and comparison in a new commit. If agreement fails, inspect the difference; never replace the pre-refactor baseline to make the test pass.
+If the push to GitHub fails because of authentication, a local repository with the push pending is an acceptable checkpoint. Write down that it is pending.
 
-## 4. Extend the analysis in one direction (35–40 min; continue later)
+## Words you will hear
 
-Choose **one** question below. Keep the nominal parameters and original figure as controls. Give the agent a bounded task: state what varies, what stays fixed, the output table/figure, a test, and what claim it must *not* make. Put the new result under `results/extensions/` and record the command and environment. The [extension guide](workshop1_extensions.md) gives starting ranges, checks, and interpretation limits.
+| Word | Meaning |
+|---|---|
+| Repository | A project folder plus the history Git keeps about it |
+| Root | The folder that contains the repository's `.git` folder. Git tracks the project relative to it |
+| Commit | A labeled checkpoint of the project, with a message. Not the same as saving a file |
+| `.gitignore` | A list of files Git should skip, such as caches, environments, and regenerable output |
+| GitHub | A website that hosts a copy of your repository |
+| Push, pull | Send your commits to GitHub, or bring changes from GitHub back |
 
-1. **Coolant resolution:** refine the grid near the change from one to three steady states. Report a *bracket* for each transition; do not claim an exact fold from a grid alone.
-2. **Heat-transfer sensitivity:** vary `UA` while holding other parameters fixed. Show how the number of steady states at a fixed coolant temperature changes; label units and use the same root checks.
-3. **Feed-temperature sensitivity:** vary `Tf` while holding other parameters fixed. Compare the temperature and conversion of all distinct states, not only the first solver root.
-4. **Solver robustness:** widen and densify the initial-guess grid. Compare root sets and residuals. Agreement across grids strengthens the numerical check but does not prove that every root was found.
+## If something goes wrong
 
-**Gate 4:** a script reruns your extension, a test or comparison checks it against the unchanged control, and a short note states what the result supports and what remains uncertain. Save the work even if incomplete.
+- "The push failed. Explain the error and my options."
+- "I think I opened the wrong folder. How do I check where the repository root is?"
+- "Show me what changed since the last commit, and whether anything unexpected is included."
+- "Undo the last step and tell me exactly what state we are back to."
 
-## Stop, hand off, and regroup
+If you have been stuck on a tool for five minutes, ask for help or pair up with someone whose setup works.
 
-At minute 40, run `git status --short` and save the actual state. In `docs/handoff.md`, record the baseline commit, completed gates, commands and working directory, checks you performed personally, pending questions, and the next exact command. Commit drafts with **human review pending** where needed. At regroup, show one audit finding, one comparison, and the extension you chose. Can a partner resume from your files with the chat closed?
+## Keep going
 
-**If stuck:** after five minutes, ask for help or pair with another participant. Record whose machine ran the computation. Continue from your own last verified gate instead of skipping evidence to reach Step 4.
+If you finish early, or between sessions, stay in the same conversation and ask Claude to help with the next things, described here by purpose rather than by step:
+
+- **Run and audit the notebook.** Ask for a recorded environment and a fresh run from the project folder. Before changing anything, read the equations, assumptions, and units; compare the parameters typed in the notebook with `data/reactor_parameters.yml`; check the sign of the heat term, absolute temperatures, the solver's convergence flag and residuals, and how distinct steady states are identified; and look at the figure for false connections. A rerun checks repeatability. It does not prove physical validity, root completeness, or stability.
+- **Save the starting point before refactoring.** Ask Claude to explain why the original notebook and its results should be committed before the code changes, and how you would later compare the new code with them.
+- **Turn the code into tested Python functions.** One bounded function at a time, with tests you understand, and a comparison against the saved results.
+- **Extend the analysis in one direction.** See the [extension guide](workshop1_extensions.md) for starting ranges and limits.
+
+At each of these, keep asking Claude to explain, and keep checking its work.
+
+## At minute 40, leave a note
+
+Ask Claude to help you write a short note in the repository, such as `docs/handoff.md`, that records where you are: what is done, what you checked yourself, what is pending, and the next step. Someone else, or you in two weeks, should be able to resume from your files with the chat closed.
+
+## Reflect
+
+- What did Claude explain that you would not have known to ask?
+- Where did you accept a step you did not understand? What would you ask now?
+- What did you verify yourself?

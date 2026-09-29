@@ -1,14 +1,15 @@
 # Optional full workflow: evidence to audited report
 
-**In the room:** follow only the [session guide](session_guide.md): select three
-claims in the shared fallback report, check them, revise one, and save a handoff.
-Extraction, extra papers, a full claim inventory, and a newly drafted report are
-not required. A source-only audit is valid if LaTeX is unavailable.
+**This is an optional take-home.** The in-room Part 2 activity is now the
+[statistics audit](../../stats_audit/activity.md). This longer reactor workflow uses
+the same habits, ask, inspect, verify, iterate, on a different kind of artifact:
+a report checked against computed results and a source. The
+[session guide](session_guide.md) has a shorter three-claim route through it.
+A source-only audit is valid if LaTeX is unavailable.
 
-Everything below is the optional full workflow. Its objectives, phase estimates,
-gates and completion criteria describe that extension. Open the supplied anchor
-source before the session. Extra sources and a LaTeX toolchain are preparation
-for this longer workflow.
+Everything below is the full workflow. Its objectives, phase estimates, gates and
+completion criteria describe the longer version. Open the supplied anchor source
+first. Extra sources and a LaTeX toolchain are preparation for it.
 
 ## Objectives
 
@@ -85,14 +86,7 @@ for.
 
 ## Phase 1 — Reconnect (10 min)
 
-```bash
-cd ~/cstr-project
-conda activate cstr-workshop
-git switch -c workshop2
-pytest tests
-python scripts/reproduce.py  # only if you have implemented it
-# Otherwise: python scripts/baseline.py compare
-```
+Activate your Workshop 1 environment and work on a fresh branch for this workshop. If you are not sure how, ask Claude to explain and do it. Rerun the tests and, if you implemented it, the reproduction script. Otherwise use the baseline helper (`scripts/baseline.py compare`).
 
 If extraction is incomplete, use the unchanged notebook capture/compare route
 in the session guide. If the baseline is absent, create the first snapshot only
@@ -335,14 +329,7 @@ unsupported stability claim is not silence — it is a sentence saying what was
 computed and what would be required to say more. That sentence is more useful to
 a reader than the overclaim was.
 
-```bash
-# your own draft
-cd report && latexmk -pdf report.tex && cd ..
-# or, if you audited the fallback
-python scripts/build_report.py --evidence results
-python scripts/build_report.py --check
-git diff
-```
+Rebuild the report: `latexmk` for your own draft, or the `scripts/build_report.py` helper for the fallback (build with `--evidence results`, then check with `--check`). Then ask Claude to show you what changed in the source.
 
 Read the diff of the `.tex`. The revision *is* the deliverable — it is the
 visible record that the audit changed something.
@@ -354,10 +341,7 @@ pytest tests
 python scripts/reproduce.py
 ```
 
-```bash
-git add -A
-git commit -m "Draft report and narrow claims the evidence audit could not support"
-```
+Ask Claude to explain what a commit would record, then commit the revised report with a message that says what the audit changed. A commit preserves a draft. It does not certify review.
 
 > **Gate 6.** The report compiles, the diff shows revisions traceable to audit
 > rows, and the tests still pass.
@@ -420,17 +404,7 @@ If not, it is qualitative at best. If the phenomenon differs too, not comparable
 
 ## Final verification
 
-```bash
-conda activate cstr-workshop
-pytest tests
-python scripts/reproduce.py       # or scripts/run_notebook.py on the fallback path
-cd report && latexmk -pdf report.tex && cd ..          # your own draft
-# Or, for the fallback, replace the preceding build command with:
-# python scripts/build_report.py --evidence results
-# python scripts/build_report.py --check
-git status                        # expect a clean tree
-git log --oneline main..HEAD
-```
+Reactivate the environment, rerun the tests and the reproduction script (or `scripts/run_notebook.py` on the fallback path), and rebuild the report. Then ask Claude to summarize the state of the repository, and check that it is what you expect: your work committed, and the audit, the report, and the handoff consistent with each other.
 
 Your repository now contains the result, the evidence for it, the record of what
 the evidence did not support, and enough context to resume cold. That is the
