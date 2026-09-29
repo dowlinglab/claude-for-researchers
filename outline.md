@@ -17,8 +17,8 @@ Between sessions, participants experiment on their own research and may continue
 the Part 1 "keep going" paths. The in-room audit uses a statistical analysis of
 the public Palmer Penguins data; the reactor-report audit is an optional take-home.
 
-The split is implemented with shared slide sources: **34 frames in Part 1,
-42 in Part 2**, including activity and regroup slides. Each session allocates
+The split is implemented with shared slide sources, including the activity and
+regroup slides. Each session allocates
 **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**. See the
 [session guide](resources/workshops/cstr/activities/session_guide.md) for the
 bounded exercises and [open questions](notes/open_questions.md) for pilot work.

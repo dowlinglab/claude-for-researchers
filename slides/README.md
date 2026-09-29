@@ -1,12 +1,10 @@
 # Slides
 
 Two Beamer decks for *Claude for Research: Beyond the Chatbot*, sharing all slide
-sources. Part 1 (September 28) has **34 slides**; Part 2 (October 12) has **42**.
-Part 1's lecture frames keep their numbers (1–27), and it appends activity
-frames, a regroup, and a recap. Part 2 opens with the Part 1 recap (frame 2), a bridge frame (3), and five Git and
-GitHub recap frames (4–8), so its later lecture frames moved by six: the
-original frames 27–54 are now frames 9–36. Tablet annotations made
-for the earlier Part 2 numbering no longer line up.
+sources. Part 1 is September 28 and Part 2 is October 12. Part 1 appends activity
+frames, a regroup, and a recap to the lecture. Part 2 opens with the Part 1 recap and a
+Git and GitHub recap before the rest of the lecture. [`storyboard.md`](storyboard.md)
+maps the frame numbers, which change whenever frames are added or cut.
 
 Each 105-minute session uses **35 minutes presentation, 10 Q&A, 45 hands-on,
 and 15 regroup**. Part 1's activity starts from a notebook handoff: students use

@@ -14,7 +14,7 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 |---|---|
 | `README.md` | Event details and the abstract (already submitted — final, no separate `abstract.md`) |
 | `outline.md` | Current act-level outline and narrative through-line |
-| `slides/` | Two Beamer decks, 34 and 42 frames, built from shared sources (ND theme). `storyboard.md` records the slide sequence, `style_guide.md` the design rules, and `image_plan.md` the visual inventory |
+| `slides/` | Two Beamer decks built from shared sources (ND theme). `storyboard.md` records the slide sequence, `style_guide.md` the design rules, and `image_plan.md` the visual inventory |
 | `handout/` | Two LaTeX handouts, two pages each (summary front, activity back); build with `make -C handout` |
 | `resources/` | Polished, reusable student takeaways (prompts, scripts, templates). `resources/workshops/` holds the student-facing CSTR starter (Part 1 and an optional report audit), the Part 2 statistics-audit exercise (`stats_audit/`), session guide, two-workshop plan, and build handoff |
 | `notes/` | Project memory: design rationale, remaining follow-ups, references, demo ideas, the running decision log, and [machine_setup.md](notes/machine_setup.md) for rebuilding on a new machine |
@@ -36,6 +36,8 @@ Source material for a seminar, *Claude for Research: Beyond the Chatbot*, delive
 13. **The starter must stay independently answerable.** A participant working only from this repository must be able to complete both activities; a clean-agent validation must use only the public starter. Telling an agent not to read an accessible answer folder is not an access control; validation that needs a clean view of the starter must use a copy of the public tree only.
 
 14. **Activities teach the mental model, not a command recipe.** Part 1 showed that a public step-by-step command sequence lets an agent reproduce the expected solution instead of reasoning, and leaves beginners copying syntax they do not understand (2026-09-28). Activity handouts give the objective, the mental model, a few starter prompts, questions to ask, conceptual checkpoints, and troubleshooting prompts. Claude generates commands when they are needed. Do not add long runs of shell or Git commands to student-facing material.
+
+15. **Keep top-level docs from going stale.** The README, this file, and the outline should not state slide or frame counts, page counts of built PDFs, or step-by-step activity detail. Point to the file that owns the detail instead: frame numbers live in `slides/storyboard.md`, activity steps in the activity guides, and the release contents in the release workflow.
 
 ## Content conventions
 

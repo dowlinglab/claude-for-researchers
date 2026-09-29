@@ -1,8 +1,8 @@
 # Current slide storyboard
 
 The original 54-slide sequence below remains intact, split at the Task 3 opener.
-Original numbers remain as stable editorial references. The shared sources build
-**Part 1: 34 frames** and **Part 2: 42 frames**, including activity and regroup support.
+Original numbers remain as stable editorial references. The shared sources build two
+decks, including activity and regroup support; the table below maps their frames.
 The Part 1 title is ready for delivery; DRAFT remains on the Part 2 title.
 
 | Build | Rendered frame mapping |

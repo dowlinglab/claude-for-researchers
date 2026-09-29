@@ -53,7 +53,7 @@ install Miniconda if needed; the activity creates its environment in the room.
 From the public repository:
 
 ```bash
-make -C slides   # part1_slides.pdf (34 frames) and part2_slides.pdf (42 frames)
+make -C slides   # part1_slides.pdf and part2_slides.pdf
 make -C handout  # part1_handout.pdf and part2_handout.pdf, two pages each
 ```
 

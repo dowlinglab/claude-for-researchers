@@ -28,16 +28,21 @@ Setup time in the room is time not spent on the activity. Before Part 1, please:
 3. Install the [Claude](https://claude.com/download) or [ChatGPT](https://chatgpt.com/download/) desktop app.
 4. Create a [GitHub account](https://github.com); you can also apply for the optional [GitHub Education upgrade](https://github.com/education).
 5. Install [GitHub Desktop](https://desktop.github.com/download/).
-6. Clone the [workshop repository](https://github.com/dowlinglab/claude-for-researchers) and [download the Workshop 1 notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_activity.zip). Unzip and open its `cstr-project/` folder for the activity; the notebook in this seminar repository is only the source for the ZIP.
+6. Clone the [workshop repository](https://github.com/dowlinglab/claude-for-researchers) and download the Part 1 activity ZIP (see [Workshop materials](#workshop-materials)).
 7. If you do not already have Conda, [install Miniconda](https://www.anaconda.com/download/success?reg=skipped-miniconda). An existing Anaconda installation works too.
 
-You do not need to run the notebook or create its environment before the workshop.
+You do not need to run the activity notebook or create its environment before the workshop.
 
 ## Workshop materials
 
-For **Part 1**, [download the notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_activity.zip). It contains an exploratory notebook and a YAML parameter file. Unzip it, open the folder in Claude, and follow the [Activity 1 guide](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md): ask Claude to walk you through turning the folder into a clean GitHub repository, explaining each step. The guide gives starter prompts, questions, and checkpoints rather than commands. The optional "keep going" paths lead to running and auditing the notebook, extracting tested functions, and one [analysis extension](resources/workshops/cstr/activities/workshop1_extensions.md). The [session guide](resources/workshops/cstr/activities/session_guide.md) explains the two sessions.
+Each part has one downloadable activity and one guide. Open the unzipped folder in Claude and follow the guide.
 
-For **Part 2**, [download the audit project ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_activity.zip) and follow the [Activity 2 guide](resources/workshops/stats_audit/activity.md). You audit a colleague's statistical analysis of the public Palmer Penguins data against open statistics references, verify a sample of what Claude reports, and judge the quality of the audit. The [exercise overview](resources/workshops/stats_audit/README.md) explains the files. The longer [reactor-report audit](resources/workshops/cstr/activities/02_evidence_linked_report.md) remains as an optional take-home.
+| | Download | Guide |
+|---|---|---|
+| **Part 1** | [`workshop1_activity.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_activity.zip) | [Activity 1 guide](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md) |
+| **Part 2** | [`workshop2_activity.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_activity.zip) | [Activity 2 guide](resources/workshops/stats_audit/activity.md) |
+
+The [session guide](resources/workshops/cstr/activities/session_guide.md) explains how the two sessions fit together. The slides and handouts are attached to each [release](https://github.com/dowlinglab/claude-for-researchers/releases), with the two ZIPs, so the activities match the slides they accompany.
 
 ## Abstract
 
@@ -59,16 +64,16 @@ This repository is the source of truth for the seminar. Decisions, rationale, an
 claude-for-researchers/
 ├── outline.md       current high-level talk outline and two-part session map
 ├── slides/          sources for two session decks and their activities
-├── handout/         sources for two two-page summary/activity sheets
+├── handout/         sources for two printed handouts
 ├── resources/       companion guides, prompts, scripts, templates, and checks
 ├── notes/           decisions, source references, and planning history
 └── README.md        this file
 ```
 
 - **[outline.md](outline.md)** — the current act-level structure and narrative through-line.
-- **[`slides/`](slides/README.md)** — Beamer sources for the two decks. Sparse text, worked examples, file trees, workflow diagrams.
-- **[`handout/`](handout/README.md)** — LaTeX sources for the two-page session handouts.
-- **[`resources/workshops/`](resources/workshops/README.md)** — the student-facing plan and build handoff for two hands-on CSTR workshops. The starter is built; solutions and instructor notes stay in the separate private `claude-for-researchers-private` repository.
+- **[`slides/`](slides/README.md)** — Beamer sources for the two decks, and the facilitator run sheets.
+- **[`handout/`](handout/README.md)** — LaTeX sources for the two printed handouts.
+- **[`resources/workshops/`](resources/workshops/README.md)** — the activity materials for the two parts and the downloads they use. Solutions and instructor notes stay in the separate private `claude-for-researchers-private` repository.
 - **`notes/`** — project memory and source tracking:
   - [notes/seminar_design.md](notes/seminar_design.md) — deeper rationale and the bank of candidate stories/examples
   - [notes/open_questions.md](notes/open_questions.md) — remaining follow-up items
@@ -77,25 +82,16 @@ claude-for-researchers/
 
 ## Build the slides and handouts
 
-The PDF decks and handouts are generated locally and are not tracked in Git. With a LaTeX toolchain installed, run:
+The PDFs are generated and are not tracked in Git. With a LaTeX toolchain installed, run:
 
 ```bash
 make -C slides
 make -C handout
 ```
 
-This builds `part1_slides.pdf` (34 slides), `part2_slides.pdf` (42 slides), `part1_handout.pdf`, and `part2_handout.pdf` (two pages each). `make -C slides runsheets` builds a one-page facilitator run sheet for each part. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
+This builds one deck and one handout for each part. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details, including the facilitator run sheets. Instructor answers stay in a separate private repository.
 
-To publish the release bundle, push a version tag such as `v1.0.0`. The
-[release workflow](.github/workflows/release.yml) compiles the sources and
-attaches six files to a GitHub Release: `part1_slides.pdf`, `part2_slides.pdf`,
-`part1_handout.pdf`, `part2_handout.pdf`, and the two activity downloads,
-`workshop1_activity.zip` and `workshop2_activity.zip`. The two ZIPs are tagged with the
-same release as the slides, so the activities match the slides they accompany. The
-workflow first checks that each committed ZIP matches a rebuild from its source
-folder. It does not publish
-instructor materials. A manual run from the Actions tab builds a downloadable
-artifact without creating a release.
+To publish a release, push a version tag such as `v1.0.0`. The [release workflow](.github/workflows/release.yml) builds the slides and handouts and attaches them to a GitHub Release together with the two activity ZIPs. It does not publish instructor materials. A manual run from the Actions tab builds the same files as a downloadable artifact without creating a release.
 
 ```bash
 git tag -a v1.0.0 -m "Workshop materials v1.0.0"
