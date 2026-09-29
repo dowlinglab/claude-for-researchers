@@ -1,10 +1,10 @@
-# Claude for Research: Beyond the Chatbot
+# Claude (or Codex) for Research: Beyond the Chatbot
 
 A seminar for graduate students and faculty in Chemical and Biomolecular Engineering at the University of Notre Dame, on integrating generative AI into a deliberate, reproducible, and auditable research workflow — not just asking a chatbot questions or polishing prose.
 
 ## Event details
 
-This is a **two-part series**. Both parts are in the same room, two weeks apart, and are designed to be taken together — Part 2 builds directly on the workspace and project each participant sets up in Part 1.
+This is a **two-part series**. Both parts are in the same room, two weeks apart. Part 2 opens with a recap of Part 1, and each part has its own activity download, so someone who misses one session can still follow the other.
 
 | | Part 1 | Part 2 |
 |---|---|---|
@@ -33,6 +33,8 @@ Setup time in the room is time not spent on the activity. Before Part 1, please:
 
 You do not need to run the activity notebook or create its environment before the workshop.
 
+For Part 2, bring the same laptop and accounts and download the Part 2 activity ZIP.
+
 ## Workshop materials
 
 Each part has one downloadable activity, taken from the latest release, and one guide. Open the unzipped folder in Claude and follow the guide.
@@ -48,11 +50,11 @@ The [session guide](resources/workshops/cstr/activities/session_guide.md) explai
 
 Generative AI is becoming part of the research environment, but its most powerful uses go far beyond asking a chatbot questions or polishing prose. This seminar will share practical lessons from a year of using GenAI tools (Gemini, ChatGPT/Codex, Claude) for literature exploration, software development, reproducible data analysis, scientific writing, and the completion of long-running research projects. We will discuss how to build effective AI-assisted workflows, organize project context, improve research code, and use AI to check papers against underlying data, code, and guidelines. The emphasis will be on concrete practices that make research more efficient, reproducible, and auditable while keeping scientific judgment and responsibility with the researcher.
 
-**Why Claude?** Anthropic just announced free or heavily discounted Team plans for academic researchers. PIs can apply [here](https://claude.com/programs/team-plan-for-scientists) for their research groups. While aspects of this seminar are Claude-centric, the overall themes and recommendations apply across current AI tools.
+**Why Claude?** Anthropic offers free or heavily discounted Team plans for academic researchers. PIs can apply [here](https://claude.com/programs/team-plan-for-scientists) for their research groups. While aspects of this seminar are Claude-centric, the overall themes and recommendations apply across current AI tools.
 
 ## What this seminar is — and isn't
 
-Claude is the hook — Anthropic's new academic Team plan is the immediate reason this talk exists — but this is **not** a Claude product tutorial. The content is drawn from a year of using Claude, ChatGPT/Codex, and Gemini across real research projects, and most of the recommendations are model-independent.
+Claude is the hook (Anthropic's academic Team plan is the immediate reason this talk exists), but this is **not** a Claude product tutorial. The content is drawn from a year of using Claude, ChatGPT/Codex, and Gemini across real research projects, and most of the recommendations are model-independent.
 
 > The goal is not to have AI "do your research." The goal is to build a research workflow in which AI makes it easier to think deeply, work reproducibly, preserve context, and catch mistakes.
 
@@ -62,12 +64,14 @@ This repository is the source of truth for the seminar. Decisions, rationale, an
 
 ```
 claude-for-researchers/
-├── outline.md       current high-level talk outline and two-part session map
-├── slides/          sources for two session decks and their activities
-├── handout/         sources for two printed handouts
-├── resources/       companion guides, prompts, scripts, templates, and checks
-├── notes/           decisions, source references, and planning history
-└── README.md        this file
+├── outline.md       act-level outline of the talk
+├── slides/          sources for the two decks and facilitator run sheets
+├── handout/         sources for the two printed handouts
+├── resources/       practice guides, prompts, scripts, templates, and the two activities
+├── notes/           design rationale, open questions, sources, and machine setup
+├── .github/         the release workflow
+├── CLAUDE.md        working instructions for AI assistants in this repository
+└── LICENSE
 ```
 
 - **[outline.md](outline.md)** — the current act-level structure and narrative through-line.
@@ -75,10 +79,9 @@ claude-for-researchers/
 - **[`handout/`](handout/README.md)** — LaTeX sources for the two printed handouts.
 - **[`resources/workshops/`](resources/workshops/README.md)** — the activity materials for the two parts and the downloads they use. Solutions and instructor notes stay in the separate private `claude-for-researchers-private` repository.
 - **`notes/`** — project memory and source tracking:
-  - [notes/seminar_design.md](notes/seminar_design.md) — deeper rationale and the bank of candidate stories/examples
+  - [notes/seminar_design.md](notes/seminar_design.md) — why the seminar is built the way it is
   - [notes/open_questions.md](notes/open_questions.md) — remaining follow-up items
   - [notes/references.md](notes/references.md) — authoritative sources for claims about Anthropic/OpenAI/Google products and Notre Dame policy
-  - [notes/demo_ideas.md](notes/demo_ideas.md) — candidate live-demo material, including personal examples this talk draws on
 
 ## Build the slides and handouts
 
@@ -91,11 +94,11 @@ make -C handout
 
 This builds one deck and one handout for each part. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details, including the facilitator run sheets. Instructor answers stay in a separate private repository.
 
-To publish a release, push a version tag such as `v1.0.0`. The [release workflow](.github/workflows/release.yml) builds the slides and handouts and attaches them to a GitHub Release together with the two activity ZIPs. It does not publish instructor materials. A manual run from the Actions tab builds the same files as a downloadable artifact without creating a release.
+To publish a release, push a version tag such as `v1.1.0`. The [release workflow](.github/workflows/release.yml) builds the slides and handouts and attaches them to a GitHub Release together with the two activity ZIPs. It does not publish instructor materials. A manual run from the Actions tab builds the same files as a downloadable artifact without creating a release.
 
 ```bash
-git tag -a v1.0.0 -m "Workshop materials v1.0.0"
-git push origin v1.0.0
+git tag -a v1.1.0 -m "Workshop materials v1.1.0"
+git push origin v1.1.0
 ```
 
 For development notes, see [open questions](notes/open_questions.md). On another machine, read the [machine setup notes](notes/machine_setup.md) first.

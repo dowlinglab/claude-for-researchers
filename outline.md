@@ -1,8 +1,7 @@
 # Talk outline
 
-The talk uses the structure below. The original 54-slide sequence and its current
-session mapping are in [`slides/storyboard.md`](slides/storyboard.md). Earlier
-planning versions remain in Git history.
+The talk uses the structure below. The frame-by-frame sequence for each session is in
+[`slides/storyboard.md`](slides/storyboard.md).
 
 ## Session structure
 
@@ -17,11 +16,10 @@ Between sessions, participants experiment on their own research and may continue
 the Part 1 "keep going" paths. The in-room audit uses a statistical analysis of
 the public Palmer Penguins data; the reactor-report audit is an optional take-home.
 
-The split is implemented with shared slide sources, including the activity and
-regroup slides. Each session allocates
+The two decks share slide sources. Each session allocates
 **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**. See the
-[session guide](resources/workshops/cstr/activities/session_guide.md) for the
-bounded exercises and [open questions](notes/open_questions.md) for pilot work.
+[session guide](resources/workshops/cstr/activities/session_guide.md) for how the
+sessions fit together and [open questions](notes/open_questions.md) for pilot work.
 
 ## Talk structure
 

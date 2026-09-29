@@ -1,26 +1,7 @@
-# Current follow-ups
+# Open questions
 
-Updated September 28, 2026. Earlier planning and resolved items remain in Git
-history and in [seminar notes](seminar_notes.md).
-
-1. **Rehearse the session timing.** Each meeting allows 35 minutes for slides,
-   10 for Q&A, 45 for the activity, and 15 for regroup. The decks contain 34
-   and 36 frames, respectively; the activity and regroup frames are outside the
-   35-minute lecture block.
-2. **Recheck time-sensitive claims before Part 2.** Model names and limits, Notre
-   Dame data policy, and sponsor restrictions can change. Record current sources
-   in [references](references.md).
-3. **Pilot the participant route.** Observe how far newcomers get in 45 minutes,
-   especially with Conda setup, and whether they can explain an audit finding.
-4. **Review Part 2 materials for delivery.** The Part 2 title still says DRAFT.
-   Confirm the slides and two-page handout before printing or presenting. The
-   September 28 revision added recap frames and a new activity; redo tablet
-   markups for Part 2 and decide which lecture frames to cut (see
-   [Part 2 run sheet](../slides/run_sheets/part2_run_sheet.tex)).
-5. **Decide instructor-only distribution.** Choose which regroup reveals to show
-   and whether worked solutions will be shared after the series. The private
-   repository records the options.
-6. **Run a participant pilot of the statistics audit.** The worker tests observe
-   how an agent behaves on the exercise; they do not show how a human with mixed
-   Git and Python experience uses the handout, or whether 45 minutes is enough
-   with an optional Step 0.
+1. **Recheck time-sensitive claims before Part 2.** Model names and limits, Notre Dame data policy and tool approvals, sponsor restrictions (DoD/DoW), Claude Team plan terms, and vendor documentation URLs can change. Record current sources with access dates in [references](references.md). The claims live on the "Currently, Claude is approved for public data only at ND", "Two important notes", "You own every claim", and model-comparison slides.
+2. **Finish Part 2 for delivery.** The Part 2 title still says DRAFT. Decide which lecture frames to cut (the [Part 2 run sheet](../slides/run_sheets/part2_run_sheet.tex) lists candidates) and redo any tablet markups.
+3. **Rehearse the timing.** Each session allows 35 minutes for slides, 10 for Q&A, 45 for the activity, and 15 for regroup. The lecture is longer than that after the Git recap was added unless frames are cut.
+4. **Pilot the activities with people.** Agent tests exist. Observe how far newcomers get in 45 minutes, whether they can explain an audit finding, and whether the optional Step 0 fits.
+5. **Decide instructor-only distribution.** Choose which regroup reveals to show, and whether worked solutions are shared after the series. The private repository records the options.

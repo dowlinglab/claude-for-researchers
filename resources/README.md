@@ -4,10 +4,8 @@ These files turn the talk's recommendations into reusable guides, prompts, templ
 
 ## Workshops
 
-- [`workshops/`](workshops/README.md): design and build instructions for two
-  1.75-hour workshops using a nonisothermal CSTR case study. The public starter
-  material lives here; instructor answers belong only in the separate private
-  `claude-for-researchers-private` repository.
+- [`workshops/`](workshops/README.md): the two hands-on activities and the
+  boundary with the separate private instructor repository.
 - [`workshops/cstr/`](workshops/cstr/README.md): the Part 1 starter project and
   the optional reactor-report audit: executable notebook, environment, activity
   files, literature and LaTeX templates, and the fallback report.
@@ -58,8 +56,6 @@ See [`practices/README.md`](practices/README.md) for a shorter “which guide sh
 ### Checklist and examples
 
 - [`reproducibility_and_handoff_checklist.md`](checklists/reproducibility_and_handoff_checklist.md): receive or hand off a computational project.
-- [`single_repo.md`](examples/repository_patterns/single_repo.md): a worked single-repository pattern.
-
 - [`manuscript_revision/`](examples/manuscript_revision/README.md): two short LaTeX files for a real tracked-changes demonstration.
 
 ## Official tool documentation
@@ -69,5 +65,3 @@ See [`practices/README.md`](practices/README.md) for a shorter “which guide sh
 ## Design principles
 
 Inspect before editing. Distinguish facts from inferences. Preserve provenance. Make small auditable changes. Verify after changing anything. Record unresolved decisions rather than guessing.
-
-All ten practice guides are named on the repository inventory slide. The six-task mapping above follows the September 11 practice-feedback revision.

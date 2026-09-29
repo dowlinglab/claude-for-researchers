@@ -343,3 +343,8 @@ venv/
 .DS_Store
 .vscode/
 .idea/
+
+# Regenerable outputs of resources/scripts/figure_style/example.py
+resources/scripts/figure_style/example.pdf
+resources/scripts/figure_style/example_grayscale.png
+resources/scripts/figure_style/example.provenance.json

@@ -21,8 +21,6 @@ Authoritative sources for claims made in this seminar about AI vendors' products
 
 ## Notre Dame — AI access and policy
 
-**Tooling note:** the `WebFetch` tool cannot reach `ai.nd.edu` (TLS "unable to get issuer certificate" error, reproduced on multiple pages). The in-app Browser tool (real browser engine) loads it fine. If revisiting these pages in a future session, use the browser, not `WebFetch`.
-
 Confirmed by direct browser read on 2026-09-02 (superseding the earlier search-snippet-only version of this section):
 
 - [AI@ND hub](https://ai.nd.edu/) — Notre Dame's central AI resource site (AI Enablement team).
@@ -41,32 +39,21 @@ Confirmed by direct browser read on 2026-09-02 (superseding the earlier search-s
 - [Faculty and Staff Resources — AI: Usage, Policies, and Resources](https://alresources.nd.edu/all-resources/artificial-intelligence-ai-usage-policies-and-resources/) — not re-verified directly; consistent with the above, not yet re-checked against the primary page.
 - [Undergraduate Academic Code of Honor — Statement on Generative AI (May 2023)](https://honorcode.nd.edu/official-statement-regarding-generative-ai-may-2023/) — student academic-integrity policy; background context only, not directly about research use, but useful for framing "authority to define appropriate use rests with the faculty."
 
-**Bottom line for the talk (now confirmed, not just flagged):** under current ND policy, put non-public research data into Gemini, ChatGPT EDU, or NotebookLM, not into Claude — Claude is approved for Public data only until an Enterprise license lands. This is a genuinely useful, concrete, ND-specific slide (see [seminar_design.md](seminar_design.md) and [demo_ideas.md](demo_ideas.md)) and slightly complicates the "Why Claude?" framing in the abstract — worth a direct, honest acknowledgment on the ecosystem slide rather than glossing over it.
+**Bottom line for the talk:** under current ND policy (checked 2026-09-02), put non-public research data into Gemini, ChatGPT EDU, or NotebookLM, not into Claude. Claude is approved for Public data only until an Enterprise license is available.
 
 ## Tools referenced in this seminar
 
 - [Crossref REST API documentation](https://www.crossref.org/documentation/retrieve-metadata/rest-api/) — official Crossref docs, fetched 2026-09-04: the API "exposes the scholarly metadata that members and trusted sources deposit with Crossref" (bibliographic data, ORCID/ROR identifiers, etc.). This is the external service `resources/scripts/doi_checker/` queries. **What `doi_checker` itself does** (from its own `README.md`, not Crossref's docs — Crossref exposes the metadata, the matching logic is this repo's own code): two passes, kept apart because they fail differently. (1) For entries that already have a DOI: does it resolve, and does the title/first-author on Crossref match the `.bib` entry (`MATCH` ≥0.90 similarity, `CHECK` 0.55–0.90, `MISMATCH` below, `UNRESOLVED` if Crossref doesn't know the DOI). (2) For entries with no DOI: search Crossref by title/author and propose one only above a stricter 0.92 threshold. It only ever reports — it never edits the `.bib` file, and it explicitly does not check whether a citation is used to support the right claim (that's a human/audit-pass question, `manuscript_audit.md` §12) or validate non-Crossref identifiers (arXiv IDs, ISBNs). Adapted from a script Alex had already built in a recent project, not written from scratch.
 
-## Not yet investigated
+## Agent instruction files, GitHub, and Overleaf (accessed 2026-09-11)
 
-- Journal/publisher AI-use policies (relevant to Section 7 of the outline — audit-before-submission). No specific journals identified yet; add if a concrete example is chosen for the audit demo.
-- ND-specific data governance / export-control guidance beyond the general "no confidential data in unapproved tools" line above.
-
-
-## September 11 practice-feedback verification
-
-The following checks support the revised deck and companion guides (accessed 2026-09-11):
-
-- [Codex AGENTS.md discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md): startup hierarchy, overrides, and default combined-size limit. [Developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli): `/init` scaffold and `/goal` support. The installed Codex app also exposes a persistent-goal tool; no goal was started during this presentation edit.
+- [Codex AGENTS.md discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md): startup hierarchy, overrides, and default combined-size limit. [Developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli): `/init` scaffold and `/goal` support.
 - [Claude project memory/instructions](https://code.claude.com/docs/en/memory): startup versus nested instructions, imports, `/init`, `/memory`, concise files. [Hooks](https://code.claude.com/docs/en/hooks-guide): event-triggered command/prompt checks and their blocking semantics. [Goals](https://code.claude.com/docs/en/goal) and [scheduling](https://code.claude.com/docs/en/scheduled-tasks): completion-driven continuation differs from interval polling and later scheduled work.
 - [ChatGPT Projects](https://help.openai.com/en/articles/10169521-projects-in-chatgpt) and [Claude Projects](https://support.claude.com/en/articles/9517075-what-are-projects): project instructions and reference context. [Claude Cowork across surfaces](https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile) demonstrates why web/desktop and context/action cannot be treated as mutually exclusive product bins. The slide uses capabilities as the distinction.
-- **Antigravity is not included in Notre Dame's Google plan.** Alex confirmed this during the revision. His ND-account sign-in returned an ineligibility message; see the [supplied screenshot](evidence/antigravity_account_ineligible_2026-09-11.png). This replaces the earlier unconfirmed-access note. [Google's enterprise documentation](https://antigravity.google/docs/enterprise) describes separate licensing; it does not establish ND entitlement. Recheck near the event if the plan changes.
 - [Overleaf GitHub synchronization](https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization): explicit push/pull, linking, conflicts, and recommendations below 100 MB / fewer than 100 changed files per commit. [Plan limits](https://docs.overleaf.com/getting-started/free-and-premium-plans/plan-limits) distinguish recommendations from enforced limits. [GitHub large files](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github): 50 MiB warning and 100 MiB ordinary-Git file limit. The approximately 10 MB convention is Alex's preference, not a platform limit.
 - [GitHub Desktop diff and branch documentation](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop) and the Overleaf guide above supply the attributed screenshots; see [visual inventory](../slides/image_plan.md).
 
-Local examples were inspected read-only. The optimization-course 12-hour revision plan and null-space project's 24-hour feasibility plan both define phases, verification, reversible decisions, and review boundaries. The manuscript case is presented generically: no student name, project topic, or private scientific result was added. The coursepack excerpts were already present in the working tree.
-
-## September 28 statistics-audit exercise references (accessed 2026-09-28)
+## Statistics audit exercise (accessed 2026-09-28)
 
 - [Palmer Penguins data](https://allisonhorst.github.io/palmerpenguins/): the package site states the data are available under a CC0 license and gives the citation used in the exercise (Horst, Hill, and Gorman, 2020). Original study: Gorman, Williams, and Fraser (2014), *PLoS ONE* 9(3): e90081. The CSV was retrieved from the [package repository](https://github.com/allisonhorst/palmerpenguins/blob/main/inst/extdata/penguins.csv) (344 rows, 8 columns).
 - [*Introduction to Modern Statistics*, 2nd ed.](https://openintro-ims.netlify.app/) (Çetinkaya-Rundel and Hardin): the contents page states CC BY-SA 3.0 US. A free PDF is offered through the [OpenIntro book page](https://www.openintro.org/book/ims/) at a set-your-own price. The instructor's section-level citations, kept in the private repository, were checked against downloaded chapter text.
