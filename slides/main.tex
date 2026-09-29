@@ -144,7 +144,8 @@
 
 \begin{document}
 
-% 0 builds the combined deck; the two entry points select one shared part.
+% part1_slides.tex and part2_slides.tex select one part. A part number of 0 would
+% build both in one sequence; no make target uses it.
 \ifnum\seminarpart=2\else
   \sessiontitle{Part 1}{Setting up a project}{28 September 2026}
   \input{sections/00_open}
@@ -162,6 +163,8 @@
 
 \ifnum\seminarpart=1\else
   \sessiontitle{Part 2}{Advanced features}{12 October 2026}
+  \input{sections/10b_part1_recap}
+  \note{Part 2 opens by repeating the Part 1 recap so that people who missed the first session, or have forgotten it, can place today. Thirty seconds: name the two Part 1 tasks, then ask for a show of hands on who reached a repository and who kept going. Then move straight to the bridge frame.}
   \input{sections/07_part2_reconnect}
   \input{sections/07b_part2_git_recap}
   \input{sections/03b_act2_literature}
