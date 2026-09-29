@@ -17,7 +17,7 @@ There is no single correct sequence of commands. Claude can generate whichever c
 
 ## Get started
 
-1. Download [`workshop1_activity.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_activity.zip) and unzip it. Put the enclosed `cstr-project/` folder where you keep research projects.
+1. Download [`workshop1_activity.zip`](https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop1_activity.zip) and unzip it. Put the enclosed `cstr-project/` folder where you keep research projects.
 2. Open that folder in Claude (desktop app, editor extension, or terminal). Open the folder itself, not a single file inside it.
 3. Have a GitHub account ready. GitHub Desktop is optional; Claude can guide either route.
 

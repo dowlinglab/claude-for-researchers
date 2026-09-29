@@ -35,12 +35,12 @@ You do not need to run the activity notebook or create its environment before th
 
 ## Workshop materials
 
-Each part has one downloadable activity and one guide. Open the unzipped folder in Claude and follow the guide.
+Each part has one downloadable activity, taken from the latest release, and one guide. Open the unzipped folder in Claude and follow the guide.
 
 | | Download | Guide |
 |---|---|---|
-| **Part 1** | [`workshop1_activity.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_activity.zip) | [Activity 1 guide](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md) |
-| **Part 2** | [`workshop2_activity.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_activity.zip) | [Activity 2 guide](resources/workshops/stats_audit/activity.md) |
+| **Part 1** | [`workshop1_activity.zip`](https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop1_activity.zip) | [Activity 1 guide](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md) |
+| **Part 2** | [`workshop2_activity.zip`](https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip) | [Activity 2 guide](resources/workshops/stats_audit/activity.md) |
 
 The [session guide](resources/workshops/cstr/activities/session_guide.md) explains how the two sessions fit together. The slides and handouts are attached to each [release](https://github.com/dowlinglab/claude-for-researchers/releases), with the two ZIPs, so the activities match the slides they accompany.
 

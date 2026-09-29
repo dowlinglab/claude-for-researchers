@@ -10,7 +10,7 @@ Work in the pattern the whole workshop uses: **ask, inspect, verify, iterate.** 
 
 ## Get the materials
 
-Download [`workshop2_activity.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_activity.zip) and unzip it. Its README lists the files. Then get at least one reference text into `references/pdfs/` by following `references/README.md`. Open the unzipped `audit-project/` folder in Claude. If Claude cannot find the reference files, tell it their exact names.
+Download [`workshop2_activity.zip`](https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip) and unzip it. Its README lists the files. Then get at least one reference text into `references/pdfs/` by following `references/README.md`. Open the unzipped `audit-project/` folder in Claude. If Claude cannot find the reference files, tell it their exact names.
 
 ## Optional Step 0: make the changes easy to review
 

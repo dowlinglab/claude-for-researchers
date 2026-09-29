@@ -989,3 +989,11 @@ anything that appeared only in the agent tests is labeled "seen in agent tests, 
 in the room". Times are the approved 35/10/45/15 budget plus suggestions that have not
 been tried. The earlier entry above that mentions speaker notes is superseded.
 
+### 2026-09-28 (later) — Activity downloads link to the latest release
+
+The two activity ZIPs are linked through `releases/latest/download/` instead of the `main`
+branch, in the README, the guides, the handouts, and the Part 1 slide, so participants get
+the version tagged with the slides. A release must exist before the slides or handouts are
+distributed. The v1.0.0 PDFs were built before this change and still contain the older
+links to `main`; the next tag rebuilds them with the release links.
+
