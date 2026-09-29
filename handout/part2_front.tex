@@ -1,42 +1,47 @@
-\heading{Part 2: claims you can check}{Summary \hfill 12 October 2026}
-\textbf{A plausible claim is a starting point.} Preserve its exact wording,
-identify the evidence it needs, open that evidence, and only then choose a verdict.
-Today's goal is three checked claims and one defensible revision.
+\heading{Part 2: audit an analysis you did not write}{Summary \hfill 12 October 2026}
+\textbf{An AI reads faster than you do, which makes it a useful auditor and an unreliable one.} Your job is to direct the audit and then to check it. Repeat the pattern: \textbf{ask $\rightarrow$ inspect $\rightarrow$ verify $\rightarrow$ iterate}, not prompt $\rightarrow$ trust $\rightarrow$ done.
 
-\topic{A small audit you can reuse}
-\textbf{Quote $\rightarrow$ locate $\rightarrow$ compare $\rightarrow$ judge $\rightarrow$ revise.}
-For each claim, record: original quotation and section; evidence needed; evidence
-actually opened and its location; comparison; verdict and reason; proposed or
-applied revision. Checking three claims does not validate the whole report.
-
+\topic{Give every claim a status}
 \renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\linewidth}{@{}p{1.65in}X@{}}
+\begin{tabularx}{\linewidth}{@{}p{1.55in}X@{}}
 \toprule
-\textbf{Verdict} & \textbf{When to use it}\\
+\textbf{Status} & \textbf{When to use it}\\
 \midrule
-Mismatch & Opened evidence contradicts the claim.\\
-Cannot verify & Required evidence is missing or has not been opened.\\
-Not comparable & Conditions differ, so a direct comparison is inappropriate.\\
-Supported with limitations & Evidence supports narrower wording. State the limit.\\
-Verified & All parts are directly supported by inspected evidence.\\
+Supported & The evidence and a cited reference agree with the claim.\\
+Questionable & The claim may hold, but the wording or method is doubtful.\\
+Incorrect & The evidence or a cited reference contradicts the claim.\\
+Insufficient evidence & These files cannot show it either way. Not the same as wrong.\\
 \bottomrule
 \end{tabularx}
 
-\topic{Where to look today}
-\textbf{Report:} \code{report/audit_fallback.tex} (read as text; no LaTeX needed).
-\textbf{Audit:} \code{docs/claim_evidence_audit.md}. For numerical evidence, use the
-CSV from today's capture or comparison, plus the notebook and YAML. Locate rows
-by coolant temperature and branch index, not guessed line numbers.\par
-\textbf{Citation source:} open the Woolf et al. link in \code{docs/literature.md}:
-section 11.6, \emph{Common Control Loops and Model for Temperature Control},
-then ``CSTR Temperature Control'' $\rightarrow$ ``Exothermic Reactor Temperature
-Control Loops,'' Figure 2. Record the passage you actually used. The supplied
-notes are a navigation aid, not evidence that you opened the source.
+\topic{How to judge the audit itself}
+\begin{itemize}
+  \item Which problems did it find? Which did it miss? Did it report anything that was not a problem?
+  \item Are its citations accurate? Open the section it names and read it.
+  \item Could you check each explanation yourself? Verify at least three findings.
+  \item What change to the prompt or the context improved the result?
+  \item Which kinds of problems were easy for it, and which were hard?
+\end{itemize}
 
-\savework
+\topic{Git and GitHub, in one box}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{@{}p{1.35in}X@{}}
+\textbf{Git, GitHub} & Git keeps a project's history on your computer. GitHub hosts a copy for backup and sharing. \textbf{Push} sends commits there; \textbf{pull} brings changes back.\\
+\textbf{Commit} & A labeled checkpoint of the project, with a message. Not the same as saving a file.\\
+\textbf{Root} & The folder that contains \code{.git}. Git tracks the project relative to it.\\
+\textbf{Never nest} & Do not put one Git repository inside another. The outer one does not track the inner one's files, and tools can disagree about which history applies.\\
+\textbf{.gitignore} & Lists files Git should skip: caches, environments, and large or regenerable output.\\
+\textbf{What goes where} & Code, scripts, text, Markdown, configuration, documentation, and small data files belong in GitHub. Large raw data, PDFs, images, and binaries belong in cloud or institutional storage, such as Google Drive, OneDrive, shared lab storage, or a research data repository. A README can say where things live. My working limit is about 10 MB per Git file. Notebooks are the awkward middle case.\\
+\end{tabularx}
+
+\topic{Reference texts to give Claude}
+\begin{itemize}
+  \item \href{https://openintro-ims.netlify.app/}{\emph{Introduction to Modern Statistics}} (open textbook), free PDF from \href{https://www.openintro.org/book/ims/}{OpenIntro}.
+  \item \href{https://www.itl.nist.gov/div898/handbook/}{NIST/SEMATECH \emph{e-Handbook of Statistical Methods}}, Chapters 1 and 7.
+  \item \href{https://doi.org/10.1080/00031305.2016.1154108}{The ASA statement on p-values} (2016), two pages of principles.
+\end{itemize}
+Save copies in \code{references/pdfs/}. Check every citation Claude gives by opening the section it names.
 
 \vfill
 \small\repourl\par
-\textbf{Turn over for the activity.} Use your private starter folder with its
-environment active. All commands run from that folder
-(\code{resources/workshops/cstr/} in the full checkout).
+\textbf{Turn over for the activity.}

@@ -1,47 +1,37 @@
-\heading{Workshop 1: audit, extract, extend}{Continue the numbered route \hfill Save at minute 40}
-\topic{2. Audit before editing}
+\heading{Activity 1: ask, inspect, verify, iterate}{Work with Claude \hfill Save your work at minute 40}
+\topic{Questions worth asking Claude}
 \begin{itemize}
-  \item Compare notebook parameters with \code{data/reactor_parameters.yml}. Read the assumptions, units, equations, and limits.
-  \item Check the heat-release sign, Kelvin units, solver flag and residuals, starting guesses, root deduplication, and sweep spacing.
-  \item Inspect a nominal CSV row, a sweep row, and the figure.
-  \item In \code{docs/audit.md}, mark each check \textbf{checked}, \textbf{question}, or \textbf{pending}; cite its cell or file.
-  \item Save the original notebook and baseline outputs \textbf{before} changing solver code.
+  \item ``Before changing anything, inspect this folder and tell me what you think should and should not be tracked in Git.''
+  \item ``Explain what \code{.gitignore} is and recommend what this project should ignore.''
+  \item ``Explain what a commit represents in plain language.''
+  \item ``Show me how to check what Git thinks has changed before we commit anything.''
+  \item ``I don't understand the last command. Explain it without assuming I know Git.''
+  \item ``Before making this change, tell me how I could undo it if something goes wrong.''
 \end{itemize}
-\code{conda list --export > results/conda-list.txt}\\
-\code{git add -f results/steady_states.csv results/steady_state_locus.png}\\
-\code{git add -f results/conda-list.txt}\\
-\code{git add environment.yml docs/audit.md notebooks/cstr_exploration.ipynb}\\
-\code{git commit -m "Save audited notebook baseline"}\\
-\code{git rev-parse HEAD}
 
-\textbf{Gate 2:} Fresh run, recorded audit, and committed baseline.
+\topic{You are done when}
+\checkitem{I know which folder is the repository root.}\par
+\checkitem{Git is set up in that folder, and not inside another repository.}\par
+\checkitem{I understand broadly which files Git tracks.}\par
+\checkitem{Large or inappropriate files are left out where appropriate.}\par
+\checkitem{I have a first commit that records the starting point.}\par
+\checkitem{I can say how my local repository differs from GitHub.}\par
+\checkitem{The repository is connected to GitHub, if you are ready.}\par
+\checkitem{I can ask Claude to explain the current state of the repository.}
 
-\topic{3. Extract Python functions and test (22--35 min)}
+\topic{If something goes wrong}
 \begin{itemize}
-  \item Extract model and residuals to \code{model.py}; roots to \code{solve.py}; sweep to \code{sweep.py}; figure to \code{plotting.py}.
-  \item Add \code{pyproject.toml} and NumPy-style docstrings with inputs, units, returns, and errors.
-  \item Test parameter loading, physical bounds, residuals, distinct roots, row count, and invalid input.
-  \item Compare extracted values with the saved notebook CSV within a stated tolerance.
+  \item ``The push failed. Explain the error and my options.''
+  \item ``I think I opened the wrong folder. How do I check where the repository root is?''
+  \item ``Show me what changed since the last commit, and whether anything unexpected is included.''
 \end{itemize}
-\code{python -m pip install -e .}\quad\code{python -m pytest -q}\\
-\code{git diff --check}
+Ask for help after five minutes stuck. A local repository with the push pending is an acceptable checkpoint.
 
-\textbf{Gate 3:} Tests pass; extracted values match the pre-refactor baseline. Commit the code and tests.
+\topic{Finished early?}
+Stay in the same conversation. Ask Claude to help you run the notebook in a recorded environment, check its results, and explain what a reproducible baseline is. Then choose: extract tested functions, or extend the analysis in one direction (\href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/cstr/activities/workshop1_extensions.md}{extension ideas}).
 
-\topic{4. Extend one analysis (35--40 min; continue later)}
-\begin{itemize}
-  \item Choose \textbf{one}: finer coolant grid; heat-transfer \code{UA}; feed temperature \code{Tf}; or denser solver guesses.
-  \item Keep the nominal case as a control. Save a runnable script and result under \code{results/extensions/}.
-  \item Add a test and a two-sentence interpretation: what the result supports, and what remains uncertain.
-\end{itemize}
-\textbf{Gate 4:} Another researcher can rerun and check the extension. \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/cstr/activities/workshop1_extensions.md}{See the extension guide for ranges and limits.}
-
-\topic{At minute 40: hand off your work}
-\begin{itemize}
-  \item Run \code{git status --short}; commit your draft, including pending review.
-  \item In \code{docs/handoff.md}, record completed gates, baseline commit, working directory, checks, blockers, and the next exact command.
-  \item At regroup, share one audit finding and the extension you chose. Ask for help after five minutes stuck.
-\end{itemize}
+\topic{Reflect}
+What did Claude explain that you would not have known to ask? Where did you accept a step you did not understand? What did you check yourself?
 
 \vfill
-\textbf{My next command or question:}\par\vspace{8pt}\hrule\vspace{18pt}\hrule
+\textbf{My next question or step:}\par\vspace{8pt}\hrule\vspace{18pt}\hrule

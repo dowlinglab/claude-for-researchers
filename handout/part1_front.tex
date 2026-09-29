@@ -1,10 +1,10 @@
-\heading{Part 1: build a project you can resume}{Summary and Workshop 1 \hfill 28 September 2026}
+\heading{Part 1: build a project you can resume}{Summary and Activity 1 \hfill 28 September 2026}
 \topic{What we covered}
 \begin{itemize}
   \item Agents can inspect files, edit code, run checks, and use Git history.
   \item Git records changes. Short \code{AGENTS.md} or \code{CLAUDE.md} files give agents project context.
   \item Work in order: \textbf{inspect $\rightarrow$ run $\rightarrow$ audit $\rightarrow$ save a baseline $\rightarrow$ refactor $\rightarrow$ test $\rightarrow$ extend}.
-  \item Verify the agent's claims and diffs yourself. Record commands, results, and open questions for the next researcher.
+  \item \textbf{Ask $\rightarrow$ inspect $\rightarrow$ verify $\rightarrow$ iterate}, not prompt $\rightarrow$ trust $\rightarrow$ done. Check the agent's claims and diffs yourself.
 \end{itemize}
 \topic{The reactor case}
 \begin{itemize}
@@ -12,34 +12,32 @@
   \item Check solver convergence and residuals. A repeatable result does not prove model validity, stability, or that every root was found.
 \end{itemize}
 
-\vspace{0.40in}{\color{NDGold}\rule{\linewidth}{0.8pt}}\vspace{-3pt}
-\topic{Workshop 1: start from the notebook ZIP}
-\textbf{1. Create a private repository (0--10 min)}
+\vspace{0.22in}{\color{NDGold}\rule{\linewidth}{0.8pt}}\vspace{-3pt}
+\topic{Activity 1: turn a folder into a GitHub repository}
+\textbf{Goal.} End with a well-organized repository for the inherited notebook, on your computer and on GitHub, that you can explain. You do not need to know Git. Claude will teach you as it works. Your job is to ask, inspect, and verify.
+
+\textbf{Get started}
 \begin{itemize}
-  \item \href{https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip}{Download the ZIP}. Unzip it; open the \code{cstr-project/} folder.
-  \item Create an empty \textbf{private} GitHub repository named \code{cstr-project}. Copy its URL.
-\end{itemize}
-\code{git init}\quad\code{git branch -M main}\\
-\code{git add README.md notebooks data results/.gitkeep}\\
-\code{git commit -m "Import inherited reactor notebook"}\\
-\code{git remote add origin YOUR-PRIVATE-REPOSITORY-URL}\\
-\code{git push -u origin main}\quad\code{git switch -c workshop1}
-\begin{itemize}
-  \item Check \code{git log -1 --oneline}, \code{git remote -v}, and \code{git status --short}. If push fails, continue locally and record the blocker.
+  \item \href{https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip}{Download the ZIP} and unzip it. Open the \code{cstr-project/} folder itself in Claude, not a single file.
+  \item Have a GitHub account ready. GitHub Desktop is optional; Claude can guide either route.
 \end{itemize}
 
-\textbf{2. Build the environment and run (10--22 min)}
-\begin{itemize}
-  \item If \code{conda --version} fails, \href{https://www.anaconda.com/download/success?reg=skipped-miniconda}{install Miniconda} and reopen the terminal.
-  \item Draft \code{environment.yml} from notebook imports. Check it for NumPy, SciPy, pandas, matplotlib, JupyterLab, and pytest.
-  \item Fallback: \code{resources/workshops/cstr/environment.yml}. Remove \code{-e .} until you have a package.
-\end{itemize}
-\code{conda env create -f environment.yml}\\
-\code{conda activate cstr-workshop}\quad\code{jupyter lab}
-\begin{itemize}
-  \item Open \code{cstr-project/} as the workspace. Launch Jupyter there; select its kernel and \textbf{Restart Kernel and Run All Cells}.
-  \item Check for \code{results/steady_states.csv} and \code{results/steady_state_locus.png}.
-\end{itemize}
+\textbf{A starter prompt} (change the wording freely)
+\promptbox{I want to turn this folder into a clean GitHub repository. I am new to Git and GitHub. Please walk me through the process step by step using good practices. Start by inspecting the folder. Before each major step, explain what it accomplishes, and stop periodically so I can inspect what happened and ask questions.}
+
+\textbf{The mental model.} A folder of files $\rightarrow$ a repository that records its history on your computer $\rightarrow$ a copy of that repository on GitHub. You are building that chain, one explained step at a time.
+
+\topic{Words you will hear}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{@{}p{1.15in}X@{}}
+\textbf{Repository} & A project folder plus the history Git keeps about it.\\
+\textbf{Root} & The folder that contains the repository's \code{.git} folder.\\
+\textbf{Commit} & A labeled checkpoint of the project, with a message.\\
+\textbf{.gitignore} & A list of files Git should skip.\\
+\textbf{GitHub} & A website that hosts a copy of your repository.\\
+\textbf{Push, pull} & Send commits to GitHub, or bring them back.\\
+\end{tabularx}
+
 
 \vfill
-\small Full instructions: \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md}{Workshop 1 activity and extension guide}.
+\small Full guide: \href{https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md}{Activity 1}.

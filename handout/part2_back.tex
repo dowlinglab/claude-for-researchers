@@ -1,68 +1,41 @@
-\heading{Part 2 activity: check three claims}{45 minutes \hfill Follow these steps in order}
-\textbf{Finish with:} three exact claims, evidence and verdicts, one revision,
-and a saved handoff. No package extraction, extra papers, or PDF build required.
+\heading{Part 2 activity: audit an analysis}{45 minutes \hfill Save your log at minute 40}
+\textbf{Set up (about 5 min).} Download \href{https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_audit_project.zip}{\code{workshop2_audit_project.zip}} and unzip it. Save at least one reference text in \code{references/pdfs/} (see \code{references/README.md}). Open the \code{audit-project/} folder in Claude. The write-up and notebook contain deliberate problems of different difficulty. Finding every one is not the goal.
 
-\begin{enumerate}
-\item \textbf{Open fresh evidence (0--5 min).} Read \code{docs/handoff.md}.
-If a baseline exists, preserve any \code{results/recheck/} by renaming it to an
-unused archive name, then run:\\
-\code{python scripts/baseline.py compare}\par
-Use \code{results/recheck/steady_states.csv}. If no baseline exists and the
-starter is unchanged, run:\\
-\code{python scripts/baseline.py capture}\\
-Then use \code{results/steady_states.csv}. Record your evidence path. If the source was
-changed before capture, record the limitation and ask for help; do not label new
-results a pre-change baseline.
+\promptbox{\textbf{OPTIONAL Step 0. If you are already comfortable with Git and Python.} Otherwise skip it. You are not behind. A notebook is awkward for an agent to edit and for you to review, because its diffs mix code, outputs, and images. Commit a clean baseline first, then move the analysis code into Python files, then commit that separately, then audit. \emph{Starter prompt:} ``Before we audit this analysis, I want to make it easier to review changes. First inspect the project and establish a clean Git baseline. Then help me refactor the notebook so that the substantive analysis lives in readable Python files while preserving the notebook's behavior and outputs. Explain the proposed structure before changing anything. Keep the refactor separate from any statistical corrections so that I can review the changes independently.'' Give it at most 15 minutes. The right format depends on the task.}
 
-\item \textbf{Choose three claims (5--10 min).}
-Open \code{report/audit_fallback.tex}. Paste one \textbf{numerical}, one
-\textbf{citation-based}, and one \textbf{model/behavior} claim, with exact wording
-and section names, into \code{docs/claim_evidence_audit.md}.
-Ask the agent for candidates if needed, then select three before judging them.
-
-\item \textbf{Check, then judge (10--30 min).} Give your agent:
-\begin{quote}\small
-Keep the three original quotations exact. State the evidence needed, open it,
-and show its location. For every number, make a separate row: reported value,
-artifact value, unit conversion, rounded comparison, result. For citations,
-record the actual passage and what it supports, or ``notes only.'' Assign verdicts
-only after comparing evidence. Keep revisions separate from quotations.
-\end{quote}
-Open the Woolf source using the directions on the front. If inaccessible, write
-\textbf{notes only; primary-source check pending}. Do not verify from notes alone.
-\textbf{You:} open at least one cited evidence location and check it yourself.
-Record your confirmation separately. Use the verdict table on the front;
-a sentence with several facts needs every part checked.
-
-\item \textbf{Revise one claim (30--40 min).}
-Apply one reviewed revision to the report, keeping the original quote in the
-audit, or justify why all three can stay. Review \code{git diff}.
-If human review is pending, record \textbf{applied draft; human review pending}
-when the source changed, or \textbf{proposal only; not applied} otherwise.
-Default today: \textbf{source-only; revised PDF not built}.
-
-\item \textbf{Save and hand off (40--45 min).} Stage the audit and report:\\
-\code{git add docs/claim_evidence_audit.md report/audit_fallback.tex}\par
-Then use the save commands on the front for evidence and the five-item handoff.
-Stage only existing files you used. Reconcile the audit and handoff with the
-actual diff, build status, and commits. Save a \textbf{partial checkpoint} if
-checks or human review remain pending.
+\topic{The audit, in order}
+\begin{enumerate}[itemsep=2pt]
+\item \textbf{Inspect, change nothing.} Skim the write-up yourself, then ask Claude to read everything and summarize what was done and concluded.
+\item \textbf{List the claims.} Ask for every substantive claim, with its location. Check the list for gaps.
+\item \textbf{Audit against the references.} Ask for a status on each claim, a citation to the specific chapter, section, or principle, and what it says. Keep the reference separate from Claude's own reasoning.
+\item \textbf{Audit the code too.} Ask whether the code does what the prose says, and whether every number in the write-up matches the output.
+\item \textbf{Propose, do not apply.} Ask for each correction with its reason.
+\item \textbf{Verify at least three findings yourself.} Open the reference, find the cell or sentence, and recompute.
+\item \textbf{Iterate.} If the audit looks shallow, change the prompt or add context. Try a fresh conversation and compare.
+\item \textbf{Revise and review.} Apply corrections you accept, on a copy or a branch, and read the changes yourself.
 \end{enumerate}
 
-\textbf{Stop and check:}\par
-\checkitem{Three quotes + verdicts} \checkitem{Evidence located}\par
-\checkitem{Revision status accurate} \checkitem{Evidence + handoff committed}
+\topic{Ideas for a second pass}
+\begin{itemize}
+  \item ``Recompute every number in the write-up independently and report mismatches.''
+  \item ``List the assumptions behind each test and say whether the data support them.''
+  \item ``Which conclusions go beyond what these data can show? What could you not check, and why?''
+\end{itemize}
 
-\textbf{Stuck?} After five minutes, ask for help or pair up. If execution or source
-access fails, record missing evidence honestly and continue the checks you can
-do. At minute 40, save; do not start an extension.\par
-\textbf{Regroup (15 min):} show one evidence location, the verdict it supports,
-and your revision or unresolved question.\par
-{\small\textbf{Optional PDF after the core:}
-\code{python scripts/build_report.py --evidence results/recheck}
-(use \code{results} for a first capture), then
-\code{python scripts/build_report.py --check}. Save the figure and receipt;
-update build status. Details: \code{activities/session_guide.md}.}
+\topic{Findings log}
+\renewcommand{\arraystretch}{2.05}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{1.25in}|X|X|p{0.6in}|p{0.6in}|}
+\hline
+\small\textbf{Finding} & \small\textbf{What Claude cited} & \small\textbf{How I checked it} & \small\textbf{Real?} & \small\textbf{Cite OK?}\\
+\hline
+ & & & & \\ \hline
+ & & & & \\ \hline
+ & & & & \\ \hline
+ & & & & \\ \hline
+ & & & & \\ \hline
+\end{tabularx}
+
+\textbf{Stuck?} Ask Claude: ``Explain the last step without assuming I know Git,'' or ``Before you change anything, tell me how I could undo it.'' After five minutes stuck on a tool, ask for help or pair up.
 
 \vfill
-\textbf{My next action or question:}\par\vspace{8pt}\hrule\vspace{18pt}\hrule
+\textbf{At regroup:} Which did Claude find, which did it miss, and which of its findings were not real?
