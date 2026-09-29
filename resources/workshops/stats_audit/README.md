@@ -8,7 +8,7 @@ The exercise is domain-neutral. It needs no chemical engineering, no special sof
 |---|---|
 | [`activity.md`](activity.md) | The participant instructions for Activity 2, including the optional Step 0 for people comfortable with Git and Python |
 | [`audit-project/`](audit-project/README.md) | The project participants work in: a write-up, a notebook with saved outputs, the data, and a reference guide |
-| [`workshop2_activity.zip`](https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip) | The same project as a download. Rebuild it with `python build_audit_zip.py` after any change to `audit-project/` |
+| [`workshop2_activity.zip`](https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip) | The same project as a download. The release workflow builds it from `audit-project/`; run `python build_audit_zip.py` to make one locally |
 
 The write-up and notebook contain deliberate problems. The instructor's list of them, with the correct reasoning, is kept in the separate private repository, so nothing in this folder answers the exercise.
 

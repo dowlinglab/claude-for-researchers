@@ -1,5 +1,6 @@
-# Build the public presentation and handouts from a version tag, and attach the
-# two activity downloads. These are release assets, not tracked build outputs.
+# Build the public presentation and handouts from a version tag, and build and
+# attach the two activity downloads. All of them are release assets, not tracked
+# build outputs.
 name: Release
 
 on:
@@ -38,34 +39,18 @@ jobs:
             fi
           done
 
-      - name: Verify the activity ZIPs match their sources
-        # Each committed ZIP is rebuilt from its source and compared by file contents.
-        # The committed bytes are restored afterwards, so the release carries exactly
-        # the files the documentation links to.
+      - name: Build the activity ZIPs
+        # The ZIPs are not tracked in Git. They are built here from their sources,
+        # so a release always carries downloads that match its slides.
         run: |
           set -eu
           command -v python3 >/dev/null || (apt-get update -qq && apt-get install -y -qq python3)
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          python3 - <<'EOF'
-          import io, subprocess, sys, zipfile
-          pairs = [
-              ("resources/workshops/cstr/workshop1_activity.zip",
-               "resources/workshops/cstr/build_workshop1_handoff.py"),
-              ("resources/workshops/stats_audit/workshop2_activity.zip",
-               "resources/workshops/stats_audit/build_audit_zip.py"),
-          ]
-          def listing(data):
-              z = zipfile.ZipFile(io.BytesIO(data))
-              return {name: z.read(name) for name in z.namelist()}
-          for zip_path, builder in pairs:
-              committed = subprocess.check_output(["git", "show", f"HEAD:{zip_path}"])
-              subprocess.check_call([sys.executable, builder])
-              rebuilt = open(zip_path, "rb").read()
-              if listing(committed) != listing(rebuilt):
-                  sys.exit(f"::error::{zip_path} is out of date; run {builder} and commit the result")
-              open(zip_path, "wb").write(committed)
-              print(f"ok  {zip_path}")
-          EOF
+          python3 resources/workshops/cstr/build_workshop1_handoff.py
+          python3 resources/workshops/stats_audit/build_audit_zip.py
+          for zip in resources/workshops/cstr/workshop1_activity.zip resources/workshops/stats_audit/workshop2_activity.zip; do
+            test -s "$zip"
+            python3 -m zipfile -l "$zip"
+          done
 
       - name: Collect release assets
         id: naming

@@ -348,3 +348,7 @@ venv/
 resources/scripts/figure_style/example.pdf
 resources/scripts/figure_style/example_grayscale.png
 resources/scripts/figure_style/example.provenance.json
+
+# Built by the release workflow; run the builders next to them to make one locally
+resources/workshops/cstr/workshop1_activity.zip
+resources/workshops/stats_audit/workshop2_activity.zip

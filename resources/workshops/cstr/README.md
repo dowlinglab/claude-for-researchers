@@ -6,7 +6,7 @@ The reactor case study is steady-state multiplicity in a cooled, nonisothermal C
 
 Start with the small [notebook handoff ZIP](https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop1_activity.zip). It contains only an exploratory notebook, a parameter file, and an empty `results/` directory. Download and unzip it, open the folder in Claude, and follow the [Activity 1 guide](activities/01_notebook_to_reproducible_project.md): ask Claude to walk you through turning the folder into a clean GitHub repository. Optional paths lead on to running and auditing the notebook, extracting tested Python functions, and one of the [four analysis extensions](activities/workshop1_extensions.md). The [session guide](activities/session_guide.md) points to the in-room route.
 
-The ZIP is generated from the source notebook and parameter file with `python build_workshop1_handoff.py`. Rerun that builder after changing either input.
+The release workflow builds the ZIP from the source notebook and parameter file. Run `python build_workshop1_handoff.py` to make one locally.
 
 ## Optional: evidence-linked report
 
