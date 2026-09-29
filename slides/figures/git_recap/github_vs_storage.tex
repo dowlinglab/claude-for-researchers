@@ -1,0 +1,14 @@
+% Figure 3: which kinds of artifacts tend to belong in GitHub and which in other storage.
+\begin{tikzpicture}[font=\small\sffamily, >=Stealth]
+  \node[nd highlight, text width=6.2cm, inner sep=8pt, align=left, minimum height=4.1cm, anchor=north west] (git) at (0,0)
+    {\centering\textbf{GitHub (Git repository)}\\[4pt]
+     \footnotesize\raggedright
+     source code and scripts\\ text, Markdown, LaTeX\\ configuration files\\ documentation and notes\\ small data files\\ notebooks (with caveats)};
+  \node[nd box, text width=6.9cm, inner sep=8pt, align=left, minimum height=4.1cm, anchor=north west] (store) at (7.4,0)
+    {\centering\textbf{Cloud or institutional storage}\\[4pt]
+     \footnotesize\raggedright
+     large raw datasets\\ PDFs, images, and slide decks\\ instrument output\\ large binary files\\ archives you rarely change\\[3pt]
+     {\scriptsize e.g. Google Drive, OneDrive, shared lab storage, or a research data repository}};
+  \node[nd box, minimum width=14.3cm, anchor=north west, inner sep=6pt] at (0,-4.5)
+    {\footnotesize One project can span both. A README or data note says where each large file lives and how to get it.};
+\end{tikzpicture}

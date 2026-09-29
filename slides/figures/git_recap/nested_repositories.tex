@@ -1,0 +1,20 @@
+% Figure 4: a good repository layout beside the nested-repository problem.
+\begin{tikzpicture}[font=\small\sffamily, >=Stealth]
+  \node[nd highlight, anchor=north west, inner sep=8pt, align=left, text width=6.2cm] (good) at (0,0) {%
+    \good{\textbf{One repository}}\\[4pt]
+    {\ttfamily\footnotesize
+    research-project/\hfill\textcolor{IrishGreen}{$\leftarrow$ Git repo}\\
+    \hspace*{1em}code/\\
+    \hspace*{1em}notebooks/\\
+    \hspace*{1em}data-small/\\
+    \hspace*{1em}README.md\\
+    \hspace*{1em}.gitignore}};
+  \node[nd box, draw=OkVermillion, anchor=north west, inner sep=8pt, align=left, text width=7.2cm] (bad) at (7.2,0) {%
+    \bad{\textbf{A repository inside another}}\\[4pt]
+    {\ttfamily\footnotesize
+    research-project/\hfill\textcolor{OkVermillion}{$\leftarrow$ Git repo}\\
+    \hspace*{1em}analysis/\\
+    \hspace*{2em}another-project/\hfill\textcolor{OkVermillion}{$\leftarrow$ another Git repo}\\
+    \hspace*{1em}README.md\\
+    \hspace*{1em}.gitignore}};
+\end{tikzpicture}

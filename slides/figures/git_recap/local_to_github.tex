@@ -1,0 +1,15 @@
+% Figure 1: local folder -> local Git repository -> GitHub remote.
+% Uses the nd box / nd highlight styles from main.tex.
+\begin{tikzpicture}[font=\small\sffamily, >=Stealth]
+  \node[nd box, minimum width=4.4cm, minimum height=2.3cm] (folder) at (0,0)
+    {\textbf{Project folder}\\[3pt]{\footnotesize the files you edit:}\\{\footnotesize code, notebooks, text}};
+  \node[nd highlight, minimum width=4.8cm, minimum height=2.3cm] (repo) at (6.6,0)
+    {\textbf{Local Git repository}\\[3pt]{\footnotesize the history of your project,}\\{\footnotesize kept on your computer}};
+  \node[nd box, minimum width=4.4cm, minimum height=2.3cm] (gh) at (13.2,0)
+    {\textbf{GitHub}\\[3pt]{\footnotesize a copy of the repository}\\{\footnotesize on the web}};
+  \draw[->, very thick, NDBlue] ([yshift=0.25cm]folder.east) -- node[above, font=\footnotesize\bfseries] {commit} ([yshift=0.25cm]repo.west);
+  \draw[->, very thick, NDBlue] ([yshift=0.25cm]repo.east) -- node[above, font=\footnotesize\bfseries] {push} ([yshift=0.25cm]gh.west);
+  \draw[<-, very thick, NDBlue] ([yshift=-0.25cm]repo.east) -- node[below, font=\footnotesize\bfseries] {pull} ([yshift=-0.25cm]gh.west);
+  \draw[decorate, decoration={brace, amplitude=7pt, mirror}, NDBlue, thick] (-2.2,-1.5) -- node[below=9pt, font=\footnotesize] {on your computer} (9.0,-1.5);
+  \draw[decorate, decoration={brace, amplitude=7pt, mirror}, NDBlue, thick] (11.0,-1.5) -- node[below=9pt, font=\footnotesize] {on the web} (15.4,-1.5);
+\end{tikzpicture}

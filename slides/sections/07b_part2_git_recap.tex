@@ -1,0 +1,80 @@
+\begin{frame}{Git keeps history locally; GitHub hosts a copy}
+  \vfill
+  \begin{center}
+    \resizebox{0.94\linewidth}{!}{\input{figures/git_recap/local_to_github}}
+  \end{center}
+  \vspace{0.9em}
+  \begin{center}\small
+    \textbf{Git} is the version-control tool. \textbf{GitHub} hosts a copy and helps people collaborate.
+  \end{center}
+  \vspace{1.6cm plus 1fill}
+\end{frame}
+\note{Point at each box in turn. The repository lives on the participant's own computer; GitHub is a second copy. Commit, push and pull are the three arrows and nothing else. Do not type commands. If someone did not finish pushing in Part 1, that is normal and fixable: ask Claude why the push failed.}
+
+\begin{frame}{A commit is a labeled checkpoint, not a save}
+  \vfill
+  \begin{center}
+    \resizebox{0.94\linewidth}{!}{\input{figures/git_recap/commit_history}}
+  \end{center}
+  \vspace{0.9em}
+  \begin{center}\small
+    Commit when the project is in a state you would want to return to, with a message that says why.
+  \end{center}
+  \vspace{1.6cm plus 1fill}
+\end{frame}
+\note{Saving a file overwrites it. A commit adds a named point to the history. The hashes at the bottom are the labels Git uses internally; nobody needs to read them. Ask: if Claude breaks something tonight, which commit would you go back to?}
+
+\begin{frame}[fragile]{The repository root, and what Git ignores}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.50\textwidth}
+      \begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+research-project/  <- root
+  .git/            <- history
+  .gitignore       <- skip list
+  code/
+  notebooks/
+  results/         <- ignored
+      \end{lstlisting}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}\setlength\itemsep{0.8em}
+        \item The \textbf{root} is the folder that contains \texttt{.git}. Git tracks the project relative to it.
+        \item \texttt{.gitignore} lists files Git should skip: caches, environments, and regenerable output.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{0.9em}
+  \begin{center}\small
+    Ask Claude: ``What should this project ignore, and why?''
+  \end{center}
+  \vspace{1.4cm plus 1fill}
+\end{frame}
+\note{The most common Part 1 confusion was which folder is the root. Open the root folder as the workspace, not a subfolder or a single file. Ask the room where their .git folder lives.}
+
+\begin{frame}{Never nest one Git repository inside another}
+  \vfill
+  \begin{center}
+    \resizebox{0.94\linewidth}{!}{\input{figures/git_recap/nested_repositories}}
+  \end{center}
+  \vspace{0.9em}
+  \begin{center}\small
+    The outer repository does not track the inner one's files, and tools can disagree about which history applies.
+    Submodules exist for advanced cases; we do not use them.
+  \end{center}
+  \vspace{1.2cm plus 1fill}
+\end{frame}
+\note{This is the mistake that costs the most time. Typical cause: unzipping a project into a folder that is already a repository, or creating a repository inside a folder you cloned. If a participant has two .git folders, stop and ask Claude to inspect before doing anything else. We are deliberately not teaching submodules.}
+
+\begin{frame}{Track text in GitHub; keep big files elsewhere}
+  \vfill
+  \begin{center}
+    \resizebox{0.86\linewidth}{!}{\input{figures/git_recap/github_vs_storage}}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}\small
+    My working limit is about \textbf{10 MB} per Git file. GitHub blocks ordinary files over 100 MiB.
+  \end{center}
+  \vspace{1.6cm plus 1fill}
+\end{frame}
+\note{The 10 MB limit is my own working convention, not a GitHub rule; the GitHub numbers are in notes/references.md and resources/practices/latex\_overleaf\_workflow.md. It is a rule of thumb, not a policy: the point is that a project can reference files that live somewhere else. Notebooks are the awkward middle case, which is exactly what today's optional Step 0 is about. STOP HERE: one question at most, then go on. POSSIBLE CUT: shorten or drop this frame if the lecture is behind.}

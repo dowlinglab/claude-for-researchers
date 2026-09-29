@@ -1,0 +1,13 @@
+% Figure 2: commit history as a series of checkpoints, with what is on GitHub.
+\begin{tikzpicture}[font=\small\sffamily, >=Stealth]
+  \foreach \x/\msg/\hash [count=\i] in {0/{Import\\inherited notebook}/a3f9c1e, 3.9/{Record the\\environment}/7b21d04, 7.8/{Save baseline\\results}/e90c5a2, 11.7/{Extract tested\\functions}/4d18b7f} {
+    \node[circle, draw=NDGold, line width=1.2pt, fill=white, minimum size=0.9cm, inner sep=0pt] (c\i) at (\x,0) {};
+    \node[text=NDBlue, align=center, text width=3.4cm] at (\x,1.25) {\textbf{\msg}};
+    \node[text=NDBlue, font=\ttfamily\footnotesize] at (\x,-0.95) {\hash};
+  }
+  \foreach \a/\b in {1/2, 2/3, 3/4} { \draw[->, very thick, NDBlue] (c\a) -- (c\b); }
+  \node[circle, draw=IrishGreen, line width=2pt, fill=white, minimum size=0.9cm, inner sep=0pt] at (11.7,0) {};
+  \draw[decorate, decoration={brace, amplitude=6pt, mirror}, NDBlue, thick] (-0.6,-1.55) -- node[below=8pt, font=\footnotesize] {also on GitHub (pushed)} (8.4,-1.55);
+  \node[text=NDBlue, font=\footnotesize, align=center] at (11.7,-2.4) {newest commit,\\not pushed yet};
+  \draw[->, NDBlue] (14.1,0) -- node[above, font=\footnotesize] {time} (15.4,0);
+\end{tikzpicture}

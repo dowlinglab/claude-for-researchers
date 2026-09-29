@@ -28,6 +28,11 @@
 
 \setbeamertemplate{navigation symbols}{}
 
+% Build the instructor notes (make notes) with \def\shownotes{1} before this file is read.
+\ifdefined\shownotes
+  \setbeameroption{show notes on second screen=right}
+\fi
+
 \setbeamercolor{enumerate item}{fg=IrishGreen}
 \setbeamercolor{enumerate subitem}{fg=IrishGreen}
 \setbeamercolor{item projected}{bg=IrishGreen}
@@ -158,6 +163,7 @@
 \ifnum\seminarpart=1\else
   \sessiontitle{Part 2}{Advanced features}{12 October 2026}
   \input{sections/07_part2_reconnect}
+  \input{sections/07b_part2_git_recap}
   \input{sections/03b_act2_literature}
   \input{sections/04_act3_challenge}
   \input{sections/05_epilogue}
