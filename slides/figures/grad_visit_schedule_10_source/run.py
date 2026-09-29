@@ -1,4 +1,4 @@
-"""Regenerate the slide 2 visitor schedule.
+"""Regenerate the visitor schedule figure.
 
 Needs the `grad-visitor-scheduler` package. Install it for the metadata, and set
 GVS_SRC to a checkout of https://github.com/dowlinglab/grad-visit-scheduler to
