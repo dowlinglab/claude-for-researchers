@@ -10,7 +10,7 @@ Work in the pattern the whole workshop uses: **ask, inspect, verify, iterate.** 
 
 ## Get the materials
 
-Download [`workshop2_audit_project.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_audit_project.zip) and unzip it. Its README lists the files. Then get at least one reference text into `references/pdfs/` by following `references/README.md`. Open the unzipped `audit-project/` folder in Claude.
+Download [`workshop2_audit_project.zip`](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_audit_project.zip) and unzip it. Its README lists the files. Then get at least one reference text into `references/pdfs/` by following `references/README.md`. Open the unzipped `audit-project/` folder in Claude. If Claude cannot find the reference files, tell it their exact names.
 
 ## Optional Step 0: make the changes easy to review
 
@@ -99,7 +99,7 @@ Apply the corrections you accept, either to a copy of the write-up and notebook 
 
 ## Judge the audit
 
-Keep a short log as you go. Use a table like the one on your handout, with these columns:
+Keep a short log as you go, and write down which Claude model and setup you used (for example, whether it could run code and open the reference files). How much to trust an audit depends on that. Use a table like the one on your handout, with these columns:
 
 | Finding | What Claude cited | How I checked it | Real problem? | Reference cited correctly? |
 |---|---|---|---|---|

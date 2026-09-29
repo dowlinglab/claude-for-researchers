@@ -14,6 +14,7 @@ Save the files you want to use into `references/pdfs/`. Git ignores that folder,
 
 - For the web editions, use your browser's **Print → Save as PDF** on the chapters you want, or download the PDF versions above.
 - If you are short on time, one reference is enough. Two make cross-checking possible.
+- If Claude says it cannot find the files, tell it their exact names. Some setups cannot list a folder.
 - If Claude can browse the web in your setup, you can instead give it the links. A local file is easier to verify.
 
 Check any citation Claude gives you by opening the section it names. A finding that cites a section that does not say what Claude claims is a finding about Claude.

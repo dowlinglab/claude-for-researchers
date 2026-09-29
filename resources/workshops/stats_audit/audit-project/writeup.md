@@ -4,7 +4,7 @@
 
 ## 1. Data and methods
 
-We analysed body measurements of Adelie, Chinstrap, and Gentoo penguins sampled at Palmer Station, Antarctica, in 2007–2009 (Gorman et al., 2014; data distributed by Horst et al., 2020). The file lists 344 penguins with bill length, bill depth, flipper length, body mass, sex, island, and sampling year. Every penguin has a complete set of measurements, so all 344 were used in the analyses below.
+We analysed body measurements of Adelie, Chinstrap, and Gentoo penguins sampled at Palmer Station, Antarctica, in 2007–2009 (Gorman et al., 2014; data distributed by Horst et al., 2020). The file lists 344 penguins with bill length, bill depth, flipper length, body mass, sex, island, and sampling year. Body mass was recorded to the nearest gram, flipper length to the nearest millimeter, and bill measurements to 0.1 mm. Every penguin has a complete set of measurements, so all 344 were used in the analyses below.
 
 Groups were compared with two-sample t-tests and 95% confidence intervals unless stated otherwise. All tests are two-sided with α = 0.05.
 
@@ -25,6 +25,8 @@ Adelie males were 675 g heavier than females on average (Welch's t-test, p < 0.0
 ## 5. Island effects
 
 We also asked whether Adelie penguins differ among the three islands. Adelie penguins on Torgersen Island had significantly longer flippers than those on Biscoe Island (mean difference 2.7 mm, p = 0.047), suggesting that conditions on Torgersen promote longer flippers.
+
+Island differences in body mass were tested with a one-way ANOVA. Because the groups are large, we followed IMS Section 22.3.4 and did not check the equal-variance condition.
 
 Across all species, mean body mass was 4,719 g on Biscoe, 3,719 g on Dream, and 3,709 g on Torgersen Island (one-way ANOVA, p < 10⁻³⁵). Penguins on Biscoe Island are therefore about 1,000 g heavier than penguins elsewhere, which indicates that Biscoe's environment promotes larger body size.
 
