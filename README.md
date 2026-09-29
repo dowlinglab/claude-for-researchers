@@ -71,7 +71,8 @@ claude-for-researchers/
 ├── notes/           design rationale, open questions, sources, and machine setup
 ├── .github/         the release workflow
 ├── CLAUDE.md        working instructions for AI assistants in this repository
-└── LICENSE
+├── LICENSE          BSD 3-Clause
+└── NOTICE.md        material the license does not cover
 ```
 
 - **[outline.md](outline.md)** — the current act-level structure and narrative through-line.
@@ -105,4 +106,4 @@ For development notes, see [open questions](notes/open_questions.md). On another
 
 ## License
 
-BSD 3-Clause — see [LICENSE](LICENSE).
+The code, slide and handout sources, guides, prompts, and templates are released under the BSD 3-Clause license (see [LICENSE](LICENSE)). The University of Notre Dame logos and marks, and the screenshots and images from other sources, are not covered by that license and stay subject to their owners' terms. See [NOTICE.md](NOTICE.md).

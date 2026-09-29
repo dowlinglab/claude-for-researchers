@@ -20,6 +20,7 @@ The thesis: the most powerful uses of GenAI in research go beyond chatbot Q&A an
 | `handout/` | Two LaTeX handouts (summary front, activity back) |
 | `resources/` | Reusable student takeaways: practice guides, prompts, templates, scripts, and the two activities under `resources/workshops/` (`cstr/` for Part 1 and an optional report audit, `stats_audit/` for Part 2) |
 | `notes/` | Design rationale, open questions, sources with access dates, and machine setup |
+| `LICENSE`, `NOTICE.md` | BSD 3-Clause for the code and presentation sources, and the third-party material it does not cover |
 
 ## Working practices
 

@@ -92,3 +92,7 @@ jobs:
             slides, so the activities match the slides they accompany.
 
             Built from this tag by GitHub Actions. Instructor materials are private.
+
+            The source is released under the BSD 3-Clause license. The Notre Dame logos and
+            the screenshots and images from other sources are not covered by it; see
+            [NOTICE.md](https://github.com/dowlinglab/claude-for-researchers/blob/main/NOTICE.md).
