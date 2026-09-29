@@ -1,4 +1,4 @@
-\begin{frame}{Activity 2: audit an analysis against references}
+\begin{frame}{Activity 2: check a teammate's analysis with an LLM}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
@@ -13,14 +13,89 @@
       \end{tikzpicture}}
     \end{column}
     \begin{column}{0.46\textwidth}
-      \slidepoint{Claude can help you \textbf{check} an analysis. You check \textbf{Claude}.}\\[0.9em]
-      {\small A colleague's draft contains deliberate problems, some easy and some subtle. We will not say how many.}\\[0.7em]
+      \slidepoint{A member of your team gives you \textbf{this notebook} with a statistical analysis.}\\[0.9em]
+      {\small How can you use an LLM to \textbf{augment your critical thinking} and check the analysis?}\\[0.9em]
+      {\small It contains deliberate problems, some easy and some subtle. We will not say how many.}\\[0.7em]
       {\small Pick up the \textbf{Part 2 handout} and turn to the activity on the back.}
     \end{column}
   \end{columns}
   \vfill
   \ndlogonote{\scriptsize Hands-on: 45 minutes; regroup: 15 minutes}
 \end{frame}
+
+\begin{frame}{The setup: the data, the questions, and what to check against}
+  \vfill
+  \begin{center}
+    \begin{tikzpicture}[font=\small\sffamily]
+      \node[nd box, text width=0.27\textwidth, minimum height=4.3cm, align=left, inner sep=8pt, anchor=north] at (-0.325\textwidth,0)
+        {\textbf{\normalsize The data}\\[0.4em]
+         Palmer Penguins\\
+         344 penguins, 3 species, 3 islands, 2007--2009\\[0.4em]
+         {\footnotesize Bill length and depth, flipper length, body mass, sex\\[0.2em] Public, CC0}};
+      \node[nd box, text width=0.27\textwidth, minimum height=4.3cm, align=left, inner sep=8pt, anchor=north] at (0,0)
+        {\textbf{\normalsize The questions}\\[0.4em]
+         How do the species differ in size?\\[0.3em]
+         Do males and females differ?\\[0.3em]
+         Do the islands matter?\\[0.3em]
+         How are bill length and depth related?};
+      \node[nd highlight, text width=0.27\textwidth, minimum height=4.3cm, align=left, inner sep=8pt, anchor=north] at (0.325\textwidth,0)
+        {\textbf{\normalsize To check against}\\[0.4em]
+         Three open references:\\
+         {\footnotesize a statistics textbook, the NIST e-Handbook, the ASA statement on p-values}\\[0.4em]
+         The raw data file and its documentation};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{0.6em}
+  \begin{center}
+    \slidepoint{Decide which claims you would let \textbf{stand}.}
+  \end{center}
+  \vspace{1.6cm plus 1fill}
+\end{frame}
+
+\begin{frame}[fragile]{Get the materials and open the folder in Claude}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \begin{enumerate}\small\setlength\itemsep{0.6em}
+        \item \href{https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip}{\textbf{Download the ZIP}} and unzip it.
+        \item Save at least one \textbf{reference text} in \texttt{references/pdfs/}.
+        \item Open the \texttt{audit-project} folder itself in Claude.
+        \item If Claude cannot find the references, \textbf{tell it their names}.
+      \end{enumerate}
+      \vspace{0.6em}
+      {\small One reference is enough. Two allow cross-checking.}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+audit-project/
+  writeup.md         the claims
+  notebooks/         the analysis
+  data/              data and README
+  figures/           two figures
+  references/pdfs/   your references
+  environment.yml    optional
+      \end{lstlisting}
+    \end{column}
+  \end{columns}
+  \vspace{1.6cm plus 1fill}
+\end{frame}
+
+\begin{frame}{Start with a prompt that reads before it judges}
+  \vfill
+  \begin{center}
+    \begin{tikzpicture}
+      \node[nd box, text width=0.86\linewidth, inner sep=10pt, align=left, font=\normalsize] {\hyphenpenalty=10000\relax
+        A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then check each claim against the reference texts in \texttt{references/pdfs/}, give it a status, cite the section you relied on, and tell me what you could not check.};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{0.9em}
+  \begin{center}
+    \slidepoint{Ask for the \textbf{evidence} and its \textbf{location}, not just a verdict.}\\[0.6em]
+    {\small You can edit the wording. Ask what any unfamiliar term means.}
+  \end{center}
+  \vspace{1.6cm plus 1fill}
+\end{frame}
+
 \begin{frame}{Ask, inspect, verify, iterate}
   \vfill
   \begin{center}
@@ -39,6 +114,29 @@
   \end{center}
   \vspace{1.4cm plus 1fill}
 \end{frame}
+\begin{frame}{Give every claim one of four statuses}
+  \vfill
+  \renewcommand{\arraystretch}{1.5}
+  \begin{center}
+    \small
+    \begin{tabular}{@{}p{3.2cm}p{9.2cm}@{}}
+      \toprule
+      \textbf{Status} & \textbf{Use it when}\\
+      \midrule
+      Supported & The evidence and a cited reference agree with the claim.\\
+      Questionable & The claim may hold, but the wording or method is doubtful.\\
+      Incorrect & The evidence or a cited reference contradicts the claim.\\
+      Insufficient evidence & These files cannot show it either way. This is not the same as wrong.\\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \vspace{0.8em}
+  \begin{center}
+    \slidepoint{\textbf{Insufficient evidence} is a result, not a failure.}
+  \end{center}
+  \vspace{1.6cm plus 1fill}
+\end{frame}
+
 \begin{frame}[fragile]{Optional Step 0: make agent changes easy to review}
   \vfill
   \begin{columns}[c]

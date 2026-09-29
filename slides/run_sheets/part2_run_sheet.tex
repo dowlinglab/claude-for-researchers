@@ -2,18 +2,21 @@
 \newcommand{\sheetlabel}{Part 2}
 \begin{document}\small
 \heading{Part 2: Advanced features}{Facilitator run sheet}
-\textbf{Budget:} 35 min presentation, 10 min Q\&A, 45 min hands-on, 15 min regroup. Part 2 has 42 frames; the recap is new, so the lecture is longer than the budget allows unless you cut.
+\textbf{Budget:} 35 min presentation, 10 min Q\&A, 45 min hands-on, 15 min regroup. Part 2 has 46 frames. The recap and the activity framing make the lecture longer than the budget allows unless you cut.
 
 \topic{Where to stop talking}
 \begin{tabularx}{\linewidth}{@{}p{1.45in}X@{}}
 \toprule
 \textbf{Frame} & \textbf{What to do}\\
 \midrule
-38 Activity 2 intro & Two minutes of setup, then stop talking. The 45-minute work block starts.\\
-39 Ask, inspect, verify & One minute. Then back to the work.\\
-40 Optional Step 0 & Say it is optional. Time-box it to 15 minutes.\\
-41 Judge the audit & Leave it up while people work.\\
-42 Regroup & Participants speak first.\\
+38 Scenario & Read it aloud. The question is the point.\\
+39 The setup & Data, questions, what to check against. Say nothing about what is wrong.\\
+40--41 Materials, prompt & Download, save a reference, open the folder, paste the prompt.\\
+42 Ask, inspect, verify & One minute. The verify step is the one people skip.\\
+43 Four statuses & Thirty seconds.\\
+44 Optional Step 0 & Say it is optional. Time-box it to 15 minutes.\\
+45 Judge the audit & Leave it up while people work. The 45-minute block starts.\\
+46 Regroup & Participants speak first.\\
 \bottomrule
 \end{tabularx}
 
@@ -28,22 +31,22 @@ Frame 2 (Part 1 recap): about 30 seconds. Name the two Part 1 tasks and ask for 
 4 & Git keeps history locally & Three arrows: commit, push, pull.\\
 5 & A commit is a checkpoint & Not the same as saving. Ask: if Claude breaks something, which commit would you go back to?\\
 6 & Root and \code{.gitignore} & The root is the folder containing \code{.git}. Open the root as the workspace.\\
-7 & Never nest & A repository inside another causes confusion in the workflows we teach: the outer one does not track the inner one's files, and tools can disagree about which history applies. Submodules exist; we do not teach them. If someone has two \code{.git} folders, stop and ask Claude to inspect before doing anything else.\\
+7 & Never nest & The outer one does not track the inner one's files, and tools can disagree about which history applies. Submodules exist; we do not teach them. If someone has two \code{.git} folders, ask Claude to inspect first.\\
 8 & GitHub and storage & Text and small files in GitHub. Large raw data, PDFs, and images elsewhere. The 10 MB limit is your own working convention; GitHub warns at 50 MiB and blocks at 100 MiB. Notebooks are the awkward middle case, which is what Step 0 is about.\\
 \bottomrule
 \end{tabularx}
 One question at most after frame 8, then continue.
 
 \topic{Lecture, frames 9--37}
-The frames carry their own content. Possible cuts, in order of how little the activity depends on them: frames 22--27 (Task 6, six frames), 34--35 (hobbies), 11 (three repositories, overlaps the recap), 10 (Overleaf and GitHub, overlaps push and pull), and 8 (shorten if the recap runs long). Cutting Task 6 alone brings the deck to 36 frames.
+The frames carry their own content. Possible cuts, in order of how little the activity depends on them: frames 22--27 (Task 6, six frames), 34--35 (hobbies), 11 (three repositories, overlaps the recap), 10 (Overleaf and GitHub, overlaps push and pull), and 8 (shorten if the recap runs long). Cutting Task 6 alone brings the deck to 40 frames.
 
-\topic{Activity 2 setup, frames 38--40}
-Download the ZIP, open the folder in Claude, and save at least one reference text in \code{references/pdfs/}. If Claude cannot find the files, name them. Say once that finding every problem is not the goal. Frame 39: the verify step is the one people skip. Each participant checks at least three findings themselves.
+\topic{Activity 2 setup, frames 38--45 (keep them short)}
+Frames 38--39 mirror Activity 1: a teammate hands you an analysis, and here is what it is about. If Claude cannot find the reference files, name them. Say once that finding every problem is not the goal. Each participant checks at least three findings themselves.
 \textbf{Step 0} is for people comfortable with Git and Python. Beginners skip it with no penalty. Baseline first, so later changes show against a known start. Refactor before the audit, so corrections land in files whose diffs are readable. If it is unfinished, start the audit anyway. The diff excerpt on the slide is from a real test on the exercise notebook, where one plotting parameter changed a line of about 35,000 characters of image data. It is not a rule: exploration is often better in a notebook.
 
 \topic{Work block, 45 min: walk the room}
 Look for: findings accepted unread; no reference section opened; people who cannot say which model and setup they used (it is a line on the log, because it changes the audit a great deal in agent tests). Do not explain the statistics. Ask what Claude said and how they checked it. Stuck on setup for five minutes: pair people up.
 
-\topic{Regroup, frame 42 (15 min), suggested plan}
+\topic{Regroup, frame 46 (15 min), suggested plan}
 Participants speak first. Sort by model and setup (3 min), then prompts and findings Claude got wrong (3 min), then the reveal (4 min), then the comparison with a weaker model (4 min), then close (1 min). The reveal and the comparison are in the private instructor deck, not in this repository. The point is calibration: verifying a few findings yourself beats accepting a long list unread.
 \end{document}

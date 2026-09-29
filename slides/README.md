@@ -11,7 +11,7 @@ and 15 regroup**. Part 1's activity starts from a notebook handoff: students use
 Claude as a tutor to turn the folder into a clean GitHub repository, with
 optional paths that continue into a reproducible project. Part 2 recaps Git and
 GitHub with figures, then runs a statistics audit: participants check a
-colleague's analysis against open references and judge the audit. The public
+teammate's analysis against open references and judge the audit. The public
 decks contain participant-facing activity and regroup frames; private instructor
 builds add answer reveals from the private repository.
 
@@ -63,3 +63,5 @@ python3 resources/scripts/check_docs.py
 | `style_guide.md` | Typography, color, density, logo, and verification rules |
 
 The deck uses the [Dowling Lab ND Beamer Template](https://github.com/dowlinglab/ND_Beamer_Template).
+
+The slide sources are released under the BSD 3-Clause license. The Notre Dame logos and the screenshots and images from other sources are not, so read [`NOTICE.md`](../NOTICE.md) before reusing the slides or figures.

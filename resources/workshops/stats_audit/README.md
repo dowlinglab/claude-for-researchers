@@ -1,6 +1,6 @@
 # Statistical audit workshop
 
-A short, self-contained exercise for Part 2. Participants audit a colleague's statistical analysis of the public Palmer Penguins data against open statistics references, then judge the quality of the audit they got.
+A short, self-contained exercise for Part 2. A member of your team gives you a statistical analysis of the public Palmer Penguins data. Participants audit it against open statistics references, using an LLM to augment their critical thinking, then judge the quality of the audit they got.
 
 The exercise is domain-neutral. It needs no chemical engineering, no special software beyond an AI assistant, and no prior Git or Python experience for the core route.
 

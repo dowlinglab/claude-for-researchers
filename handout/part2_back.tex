@@ -1,7 +1,11 @@
 \heading{Part 2 activity: audit an analysis}{45 minutes \hfill Save your log at minute 40}
-{\emergencystretch=3em\textbf{Set up (about 5 min).} Download \href{https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip}{\code{workshop2_activity.zip}} and unzip it. Save at least one reference text in \code{references/pdfs/} (see \code{references/README.md}). Open the \code{audit-project/} folder in Claude. The write-up and notebook contain deliberate problems of different difficulty. Finding every one is not the goal.\par}
+{\emergencystretch=3em\textbf{The case.} A member of your team gives you this notebook and write-up of a statistical analysis of the public Palmer Penguins data (344 penguins, three species, three islands). How can you use an LLM to augment your critical thinking and check the analysis? It contains deliberate problems of different difficulty. Finding every one is not the goal.\par}
 
-\promptbox{\textbf{OPTIONAL Step 0. If you are already comfortable with Git and Python.} Otherwise skip it. You are not behind. A notebook is awkward for an agent to edit and for you to review, because its diffs mix code, outputs, and images. Commit a clean baseline first, then move the analysis code into Python files, then commit that separately, then audit. \emph{Starter prompt:} ``Before we audit this analysis, I want to make it easier to review changes. First inspect the project and establish a clean Git baseline. Then help me refactor the notebook so that the substantive analysis lives in readable Python files while preserving the notebook's behavior and outputs. Explain the proposed structure before changing anything. Keep the refactor separate from any statistical corrections so that I can review the changes independently.'' Give it at most 15 minutes. The right format depends on the task.}
+{\emergencystretch=3em\textbf{Set up (about 5 min).} Download \href{https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip}{\code{workshop2_activity.zip}} and unzip it. Save at least one reference text in \code{references/pdfs/} (see \code{references/README.md}). Open the \code{audit-project/} folder in Claude.\par}
+
+\promptbox{\textbf{Starter prompt.} ``A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then check each claim against the reference texts in \code{references/pdfs/}, give it a status, cite the section you relied on, and tell me what you could not check.''}
+
+\promptbox{\textbf{OPTIONAL Step 0. If you are comfortable with Git and Python; otherwise skip it. You are not behind.} A notebook is awkward for an agent to edit and for you to review, because its diffs mix code, outputs, and images. Commit a clean baseline first, then move the analysis code into Python files and commit that separately, then audit. Ask Claude to inspect the project, propose the structure before changing anything, and keep the refactor separate from any statistical corrections. Give it at most 15 minutes.}
 
 \topic{The audit, in order}
 \begin{enumerate}[itemsep=2pt]
@@ -19,17 +23,15 @@
 \begin{itemize}
   \item ``Recompute every number in the write-up independently and report mismatches.''
   \item ``List the assumptions behind each test and say whether the data support them.''
-  \item ``Which conclusions go beyond what these data can show? What could you not check, and why?''
 \end{itemize}
 
 \topic{Findings log}
 Model and setup I used (can it run code? can it open the references?): \rule[-2pt]{2.6in}{0.4pt}\par\vspace{2pt}
-\renewcommand{\arraystretch}{1.75}
+\renewcommand{\arraystretch}{1.6}
 \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{1.25in}|X|X|p{0.6in}|p{0.6in}|}
 \hline
 \small\textbf{Finding} & \small\textbf{What Claude cited} & \small\textbf{How I checked it} & \small\textbf{Real?} & \small\textbf{Cite OK?}\\
 \hline
- & & & & \\ \hline
  & & & & \\ \hline
  & & & & \\ \hline
  & & & & \\ \hline

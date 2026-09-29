@@ -1,12 +1,18 @@
 # Activity 2: audit an analysis against trusted references
 
-**The case.** A colleague sends you a Jupyter notebook and a short write-up of a statistical analysis of penguin body measurements, along with a few open statistics references. Before anyone builds on it, audit it. The materials contain deliberate problems of different kinds and difficulty. We do not say how many.
+**The case.** A member of your team gives you this notebook, with a short write-up of a statistical analysis. How can you use an LLM to augment your critical thinking and check the analysis? Before anyone builds on it, audit it. The materials contain deliberate problems of different kinds and difficulty. We do not say how many.
 
 **The goal is not that Claude finds every problem.** The goal is to learn how to audit an analysis with an AI assistant, and how to judge the audit you get back. You are the reviewer of the audit as well as of the analysis.
 
 Work in the pattern the whole workshop uses: **ask, inspect, verify, iterate.** Do not work in the pattern that goes prompt, trust, done.
 
 **Time.** The in-room block is 45 minutes. You will probably finish the first pass and part of the verification. That is a good outcome. Save the checkpoint at minute 40 and continue afterward if you like.
+
+## The setup
+
+- **The data.** Palmer Penguins, a public data set (CC0): 344 penguins of three species (Adelie, Chinstrap, and Gentoo) on three islands, sampled in 2007 to 2009. Each row has bill length and depth, flipper length, body mass, and sex. See `data/README.md`.
+- **The questions the write-up answers.** How do the species differ in size? Do males and females differ? Do the islands matter? How are bill length and depth related?
+- **What you can check against.** Three open references (an introductory statistics textbook, the NIST e-Handbook, and the ASA statement on p-values), the raw data file and its documentation, and the notebook's saved outputs, which show what the code produced.
 
 ## Get the materials
 
@@ -40,6 +46,12 @@ Give Step 0 at most 15 minutes. If it is unfinished, start the audit anyway. The
 ## The audit, step by step
 
 This is a thinking workflow, not a script. Change the wording to fit what you see.
+
+A starter prompt that reads before it judges:
+
+> A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then check each claim against the reference texts in `references/pdfs/`, give it a status, cite the section you relied on, and tell me what you could not check.
+
+The steps below take the same audit one part at a time.
 
 ### 1. Inspect before changing anything
 

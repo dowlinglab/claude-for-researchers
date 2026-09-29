@@ -22,7 +22,7 @@ and shared macros; `part1_handout.tex` and `part2_handout.tex` are the entry poi
   a vocabulary box. Page 2 has questions to ask Claude, conceptual checkpoints,
   troubleshooting prompts, and reflection. There is no command sequence.
 - Part 2 page 1 is the audit summary, claim statuses, how to judge an audit, a
-  Git and GitHub recap box, and reference links. Page 2 is the audit workflow,
+  Git and GitHub recap box, and reference links. Page 2 is the case, a starter prompt, the audit workflow,
   the optional Step 0, and a findings log. Both handouts are two pages on
   US letter paper, double-sided with a long-edge flip.
 - A participant may finish only part of the activity in the 45-minute block. The

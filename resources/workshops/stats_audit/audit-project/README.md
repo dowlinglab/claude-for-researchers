@@ -1,6 +1,6 @@
 # A draft analysis to audit
 
-A colleague sent you a Jupyter notebook and a short write-up of a statistical analysis of body measurements from three penguin species. Before anyone builds on it, audit it: check the write-up and the code against trusted statistics references, and decide which claims you would let stand.
+A member of your team gave you a Jupyter notebook and a short write-up of a statistical analysis of body measurements from three penguin species. How can you use an LLM to augment your critical thinking and check it? Before anyone builds on it, audit it: check the write-up and the code against trusted statistics references, and decide which claims you would let stand.
 
 This is a teaching exercise. The notebook and the write-up contain deliberate problems of different kinds and difficulty. The number is not stated. Some are easy to spot and some are subtle, so finding every one is not the goal. The goal is to learn how to audit an analysis with an AI assistant, and how to judge the quality of the audit it gives you.
 

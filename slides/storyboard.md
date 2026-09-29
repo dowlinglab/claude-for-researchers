@@ -26,10 +26,10 @@ Both decks are built from the same sources (`main.tex` and `sections/*.tex`). Th
 | 3–8 | Git and GitHub recap | A bridge from Part 1; local history versus the hosted copy; commits as checkpoints; the repository root and `.gitignore`; nested repositories; what belongs in GitHub and what belongs in cloud storage |
 | 9–15 | Act II: Build (Task 3) | LaTeX; Overleaf and GitHub; three repositories; literature search, corpus, and editing; source and manuscript diffs |
 | 16–27 | Act III: Challenge (Tasks 4–6) | Manuscript audit and claim tracing; the DOI checker; drafting a manuscript; the graduate elective and coursepack; failures as tests; handoffs |
-| 28–36 | Epilogue: Trust | Data policy at Notre Dame; two notes; the six tasks as one workflow; how the talk was built; ownership of claims; hobbies; getting started |
+| 28–36 | Epilogue: Trust | Data policy at Notre Dame; two notes; the six tasks as one workflow; how the talk was built; ownership of claims; hobbies; from workshop activities to research workflows |
 | 37 | Closing | The handoff preserves what you checked |
-| 38–41 | Activity 2 | The statistics audit; ask, inspect, verify, iterate; optional Step 0; judging the audit |
-| 42 | Regroup | How good was the audit? |
+| 38–45 | Activity 2 | The scenario (a teammate hands you an analysis); the setup (data, questions, what to check against); getting the materials; the starter prompt; ask, inspect, verify, iterate; the four claim statuses; optional Step 0; judging the audit |
+| 46 | Regroup | How good was the audit? |
 
 ## Sequencing rationale
 
