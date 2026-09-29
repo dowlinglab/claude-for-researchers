@@ -3,7 +3,7 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
 root = Path(__file__).resolve().parent
-out = root / "workshop1_notebook.zip"
+out = root / "workshop1_activity.zip"
 files = {
     "README.md": root / "workshop1_handoff/README.md",
     "notebooks/cstr_exploration.ipynb": root / "notebooks/cstr_exploration.ipynb",

@@ -4,7 +4,7 @@ The two sessions use one scientific case: steady-state multiplicity in a cooled,
 
 ## Workshop 1: inherit the notebook
 
-Start with the small [notebook handoff zip](workshop1_notebook.zip). It contains only an exploratory notebook, a parameter file, and an empty `results/` directory. Download and unzip it, open the folder in Claude, and follow the [Activity 1 guide](activities/01_notebook_to_reproducible_project.md): ask Claude to walk you through turning the folder into a clean GitHub repository. Optional paths lead on to running and auditing the notebook, extracting tested Python functions, and one of the [four analysis extensions](activities/workshop1_extensions.md). The [session guide](activities/session_guide.md) points to the in-room route.
+Start with the small [notebook handoff zip](workshop1_activity.zip). It contains only an exploratory notebook, a parameter file, and an empty `results/` directory. Download and unzip it, open the folder in Claude, and follow the [Activity 1 guide](activities/01_notebook_to_reproducible_project.md): ask Claude to walk you through turning the folder into a clean GitHub repository. Optional paths lead on to running and auditing the notebook, extracting tested Python functions, and one of the [four analysis extensions](activities/workshop1_extensions.md). The [session guide](activities/session_guide.md) points to the in-room route.
 
 The zip is generated from the source notebook and parameter file with `python build_workshop1_handoff.py`; rerun that builder after changing either input. The existing full starter below is separate from the inherited notebook handoff.
 

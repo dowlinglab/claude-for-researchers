@@ -28,16 +28,16 @@ Setup time in the room is time not spent on the activity. Before Part 1, please:
 3. Install the [Claude](https://claude.com/download) or [ChatGPT](https://chatgpt.com/download/) desktop app.
 4. Create a [GitHub account](https://github.com); you can also apply for the optional [GitHub Education upgrade](https://github.com/education).
 5. Install [GitHub Desktop](https://desktop.github.com/download/).
-6. Clone the [workshop repository](https://github.com/dowlinglab/claude-for-researchers) and [download the Workshop 1 notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip). Unzip and open its `cstr-project/` folder for the activity; the notebook in this seminar repository is only the source for the ZIP.
+6. Clone the [workshop repository](https://github.com/dowlinglab/claude-for-researchers) and [download the Workshop 1 notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_activity.zip). Unzip and open its `cstr-project/` folder for the activity; the notebook in this seminar repository is only the source for the ZIP.
 7. If you do not already have Conda, [install Miniconda](https://www.anaconda.com/download/success?reg=skipped-miniconda). An existing Anaconda installation works too.
 
 You do not need to run the notebook or create its environment before the workshop.
 
 ## Workshop materials
 
-For **Part 1**, [download the notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip). It contains an exploratory notebook and a YAML parameter file. Unzip it, open the folder in Claude, and follow the [Activity 1 guide](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md): ask Claude to walk you through turning the folder into a clean GitHub repository, explaining each step. The guide gives starter prompts, questions, and checkpoints rather than commands. The optional "keep going" paths lead to running and auditing the notebook, extracting tested functions, and one [analysis extension](resources/workshops/cstr/activities/workshop1_extensions.md). The [session guide](resources/workshops/cstr/activities/session_guide.md) explains the two sessions.
+For **Part 1**, [download the notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_activity.zip). It contains an exploratory notebook and a YAML parameter file. Unzip it, open the folder in Claude, and follow the [Activity 1 guide](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md): ask Claude to walk you through turning the folder into a clean GitHub repository, explaining each step. The guide gives starter prompts, questions, and checkpoints rather than commands. The optional "keep going" paths lead to running and auditing the notebook, extracting tested functions, and one [analysis extension](resources/workshops/cstr/activities/workshop1_extensions.md). The [session guide](resources/workshops/cstr/activities/session_guide.md) explains the two sessions.
 
-For **Part 2**, [download the audit project ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_audit_project.zip) and follow the [Activity 2 guide](resources/workshops/stats_audit/activity.md). You audit a colleague's statistical analysis of the public Palmer Penguins data against open statistics references, verify a sample of what Claude reports, and judge the quality of the audit. The [exercise overview](resources/workshops/stats_audit/README.md) explains the files. The longer [reactor-report audit](resources/workshops/cstr/activities/02_evidence_linked_report.md) remains as an optional take-home.
+For **Part 2**, [download the audit project ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_activity.zip) and follow the [Activity 2 guide](resources/workshops/stats_audit/activity.md). You audit a colleague's statistical analysis of the public Palmer Penguins data against open statistics references, verify a sample of what Claude reports, and judge the quality of the audit. The [exercise overview](resources/workshops/stats_audit/README.md) explains the files. The longer [reactor-report audit](resources/workshops/cstr/activities/02_evidence_linked_report.md) remains as an optional take-home.
 
 ## Abstract
 
@@ -84,14 +84,16 @@ make -C slides
 make -C handout
 ```
 
-This builds `part1_slides.pdf` (34 slides), `part2_slides.pdf` (42 slides), `part1_handout.pdf`, and `part2_handout.pdf` (two pages each). `make -C slides notes` builds instructor copies with speaker notes. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
+This builds `part1_slides.pdf` (34 slides), `part2_slides.pdf` (42 slides), `part1_handout.pdf`, and `part2_handout.pdf` (two pages each). `make -C slides runsheets` builds a one-page facilitator run sheet for each part. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
 
 To publish the release bundle, push a version tag such as `v1.0.0`. The
 [release workflow](.github/workflows/release.yml) compiles the sources and
 attaches six files to a GitHub Release: `part1_slides.pdf`, `part2_slides.pdf`,
 `part1_handout.pdf`, `part2_handout.pdf`, and the two activity downloads,
-`workshop1_notebook.zip` and `workshop2_audit_project.zip`. It first checks that
-each committed ZIP matches a rebuild from its source folder. It does not publish
+`workshop1_activity.zip` and `workshop2_activity.zip`. The two ZIPs are tagged with the
+same release as the slides, so the activities match the slides they accompany. The
+workflow first checks that each committed ZIP matches a rebuild from its source
+folder. It does not publish
 instructor materials. A manual run from the Actions tab builds a downloadable
 artifact without creating a release.
 

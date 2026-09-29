@@ -49,9 +49,9 @@ jobs:
           python3 - <<'EOF'
           import io, subprocess, sys, zipfile
           pairs = [
-              ("resources/workshops/cstr/workshop1_notebook.zip",
+              ("resources/workshops/cstr/workshop1_activity.zip",
                "resources/workshops/cstr/build_workshop1_handoff.py"),
-              ("resources/workshops/stats_audit/workshop2_audit_project.zip",
+              ("resources/workshops/stats_audit/workshop2_activity.zip",
                "resources/workshops/stats_audit/build_audit_zip.py"),
           ]
           def listing(data):
@@ -80,8 +80,8 @@ jobs:
           mkdir -p dist
           cp slides/part1_slides.pdf slides/part2_slides.pdf dist/
           cp handout/part1_handout.pdf handout/part2_handout.pdf dist/
-          cp resources/workshops/cstr/workshop1_notebook.zip dist/
-          cp resources/workshops/stats_audit/workshop2_audit_project.zip dist/
+          cp resources/workshops/cstr/workshop1_activity.zip dist/
+          cp resources/workshops/stats_audit/workshop2_activity.zip dist/
           ls -lh dist
 
       - name: Upload build artifact
@@ -102,7 +102,8 @@ jobs:
           body: |
             Public slides and participant handouts for both parts of
             *Claude (or Codex) for Research: Beyond the Chatbot*, plus the two
-            downloads the activities use: `workshop1_notebook.zip` (Part 1) and
-            `workshop2_audit_project.zip` (Part 2).
+            downloads the activities use: `workshop1_activity.zip` (Part 1) and
+            `workshop2_activity.zip` (Part 2). They are built from the same tag as the
+            slides, so the activities match the slides they accompany.
 
             Built from this tag by GitHub Actions. Instructor materials are private.

@@ -4,7 +4,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 root = Path(__file__).resolve().parent
 project = root / "audit-project"
-out = root / "workshop2_audit_project.zip"
+out = root / "workshop2_activity.zip"
 skip = {".DS_Store"}
 with ZipFile(out, "w", ZIP_DEFLATED) as archive:
     for path in sorted(project.rglob("*")):
