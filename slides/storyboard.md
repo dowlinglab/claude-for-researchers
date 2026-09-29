@@ -1,162 +1,41 @@
-# Current slide storyboard
+# Slide storyboard
 
-The original 54-slide sequence below remains intact, split at the Task 3 opener.
-Original numbers remain as stable editorial references. The shared sources build two
-decks, including activity and regroup support; the table below maps their frames.
-The Part 1 title is ready for delivery; DRAFT remains on the Part 2 title.
+Frame numbers refer to the rendered PDFs and change whenever frames are added or cut. This file is their only home, so update it when the decks change. Each session runs **35 minutes of presentation, 10 Q&A, 45 hands-on, and 15 regroup**.
 
-| Build | Rendered frame mapping |
-|---|---|
-| Part 1, September 28 | Frames 1–26: original 1–26, with a session-specific title; frame 27: best practices and research tasks; 28–29: reactor model and notebook result; 30–32: activity; 33: regroup; 34: recap |
-| Part 2, October 12 | Frame 1: new title; frame 2: Part 1 recap; frame 3: bridge from Part 1; frames 4–8: Git and GitHub recap; frames 9–36: original 27–54; frame 37: closing; 38–41: activity (audit, workflow, optional Step 0, judging the audit); 42: regroup |
+Both decks are built from the same sources (`main.tex` and `sections/*.tex`). The title slide's `\part` declaration records the session without adding a divider frame. Task 1 establishes the workspace. Tasks 2 and 3 build software and literature-grounded documents. Tasks 4 to 6 audit, draft, and modernize. Hobbies are an unnumbered extension. Tasks 1 and 2 are Part 1, and Tasks 3 to 6 are Part 2.
 
-Each session: **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**.
-The original Act II source is split before Task 3 into code and literature files,
-used by both session builds. Nothing is duplicated or
-cut. The title's `\part` declaration records the session boundary without an
-extra divider slide.
+## Part 1
 
-Part 1's activity uses Claude as a tutor to turn the notebook folder into a
-repository, with optional paths that continue into a reproducible project. Part 2
-recaps Git and GitHub, then audits a statistical analysis against open references. The first session's closing frames the fortnight as experimentation
-on participants' own research. The second session's reconnect and closing make
-that continuity explicit.
+| Frames | Section | Content |
+|---|---|---|
+| 1 | Title | Session title and event details |
+| 2–8 | Prologue: Tinker | The faculty-visitor scheduler and the notebook-to-package story; the takeaway; borrowed structure; the roadmap; which model and how much of it you get; everything is on GitHub |
+| 9–21 | Act I: Understand | An agent works on your file system; version control; desktop app, editor extension, and terminal; Task 1 (inherit a project); branches and pull requests; `CLAUDE.md` and `AGENTS.md`; asking for help writing the task; drafting, reviewing, and launching overnight work |
+| 22–26 | Act II: Build | Task 2: convert code from a published paper into a package |
+| 27 | Best practices | Best practices and the research tasks |
+| 28–29 | Activity case | The reactor model and the notebook result |
+| 30–32 | Activity 1 | Turn a folder into a GitHub repository; the tutor-style starter prompt; conceptual checkpoints and troubleshooting |
+| 33 | Regroup | Show evidence before discussion |
+| 34 | Recap | Part 1 recap: ask, inspect, verify, iterate |
 
-Task 1 establishes the workspace. Tasks 2–3 build software and literature-grounded documents.
-Tasks 4–6 audit, draft, and modernize. Hobbies are an unnumbered extension.
+## Part 2
 
-## Prologue: Tinker (slides 1–8)
+| Frames | Section | Content |
+|---|---|---|
+| 1–2 | Title and Part 1 recap | Session title; the Part 1 recap |
+| 3–8 | Git and GitHub recap | A bridge from Part 1; local history versus the hosted copy; commits as checkpoints; the repository root and `.gitignore`; nested repositories; what belongs in GitHub and what belongs in cloud storage |
+| 9–15 | Act II: Build (Task 3) | LaTeX; Overleaf and GitHub; three repositories; literature search, corpus, and editing; source and manuscript diffs |
+| 16–27 | Act III: Challenge (Tasks 4–6) | Manuscript audit and claim tracing; the DOI checker; drafting a manuscript; the graduate elective and coursepack; failures as tests; handoffs |
+| 28–36 | Epilogue: Trust | Data policy at Notre Dame; two notes; the six tasks as one workflow; how the talk was built; ownership of claims; hobbies; getting started |
+| 37 | Closing | The handoff preserves what you checked |
+| 38–41 | Activity 2 | The statistics audit; ask, inspect, verify, iterate; optional Step 0; judging the audit |
+| 42 | Regroup | How good was the audit? |
 
-1. Title and event details
-2. Creating faculty-visitor schedules for graduate student recruitment
-3. Jupyter Notebook → public Python package in ~10 hours
-4. Takeaway message for today
-5. Borrowed structure
-6. Today: my lessons learned and recommended practices
-7. Which model, and how much of it do you get
-8. Everything today is on GitHub
+## Sequencing rationale
 
-## Act I: Understand (slides 9–21)
-
-9. Act divider
-10. An agent works on your file system
-11. Use version control with (almost) every agentic project
-12. Desktop app: supervise several tasks at once
-13. Editor extension: a tight edit-review loop
-14. Terminal: scriptable, and the same engine underneath
-15. Task 1 starts the way most projects start
-16. Task 1: Set up an agent workspace and inherit a project
-17. Branches isolate a change; pull requests invite review
-18. Project instructions: CLAUDE.md and AGENTS.md
-19. A concise instruction file routes the agent to evidence
-20. Ask for help writing the task, not just the work
-21. Then draft, review, launch, and explore
-
-## Act II: Build (slides 22–33)
-
-22. Act divider
-23. Task 2: Convert code from a published paper into a package
-24. Task 2: The package conversion recipe
-25. Task 2: Establish a reproducible baseline
-26. Task 2: Decompose, generalize, then port
-27. Task 3: Idea to a literature review, report, or proposal
-28. Overleaf and local edits meet through GitHub
-29. Three repositories keep development, writing, and release separate
-30. Task 3, step 1: Search, read, and search again
-31. Task 3, step 2: Build a literature corpus an agent can use
-32. Task 3, step 3: Edit the document against the curated corpus
-33. Review the source diff and the manuscript diff
-
-## Act III: Challenge (slides 34–45)
-
-34. Act divider
-35. Task 4: Audit a manuscript before submission
-36. Task 4: Trace each claim to evidence
-37. The DOI checker has two verification modes
-38. Task 5: Draft a manuscript from the previous tasks
-39. Task 5: Figures first, then outline, sections, and revision
-40. Modernize my graduate elective
-41. Four Goals... Starting One Week Before the First Lecture
-42. Task 6: Coursepack sources and strategic gaps
-43. Task 6: The course uses two repositories
-44. Task 6: Each failure became a repeatable test
-45. Task 6: Git and handoffs bridge tools and computers
-
-## Epilogue: Trust (slides 46–54)
-
-46. Act divider
-47. Currently, Claude is approved for public data only at ND
-48. Two important notes
-49. The six tasks form one research workflow
-50. This talk was built with the practices it recommends
-51. You own every claim, whatever helped you make it
-52. Hobbies: AI can amplify your curiosity
-53. Hobbies: Create a textbook customized for you
-54. Getting started later today
-
-## Narrative and pacing
-
-The opening software story shows a concrete payoff. The prologue no longer surveys the tool
-landscape; it goes straight from the story to the model table and the repository.
-
-Act I builds the workspace in order. Slide 10 establishes that an agent works on real files, slide
-11 argues good/better/best from a conversation to a file system to a repository, and **only then**
-do slides 12–14 show the three places you can run an agent — desktop app, editor extension,
-terminal — one per slide, each with a large screenshot and a shared vertical
-selector on the left, ordered easiest to most sophisticated. Putting them after version control
-is deliberate: the question "where do I run this" is only worth answering once the files it will
-touch are under version control. Slide 15 then states the problem the rest of Act I solves —
-inheriting a zip file and a paper from a departed group member. Slides 20–21 close Act I on
-overnight work: the example prompt asks for help writing the *task* for exactly that
-inherited-project scenario, then slide 21 covers reviewing the planning document before launching a
-Codex Goal, `/goal`, or `/loop` run.
-
-Act II moves from code packaging to literature and writing. Slide 27 opens Task 3 and makes the
-LaTeX case once, and the Overleaf/GitHub mechanics it implies follow immediately. Act III reuses the same
-evidence to audit and draft a manuscript, then the course-modernization capstone opens with its
-motivation and the August 2026 commit calendar before showing the coursepack artifact it produced.
-Trust, the talk's own provenance, and an immediately runnable first exercise close the talk.
-
-Rehearse the original lecture sections against 35 presentation minutes in each part.
-Their 27/31 frame counts leave
-about 78 seconds per Part 1 frame and 68 seconds per Part 2 frame on average;
-these are pacing checks, not equal allocations to every slide. Reserve the full
-45-minute hands-on block and 15-minute regroup. A live rehearsal remains open.
-
-## September 27: activity and regroup integration
-
-Append rather than insert the activity frames so the original lecture frame
-numbers stay stable. New frames explain the reactor case, the notebook result,
-the numbered handout route, and how to save partial work.
-The public regroup asks participants to show evidence before discussion. The
-private instructor builds append the corresponding answer reveals in the same
-deck. The five new public frames belong to the 45/15-minute activity/regroup
-blocks, not additional lecture time. Handouts are the primary in-room navigation
-aid: one two-sided sheet for each part; Part 1 instructions begin halfway down
-the front page and continue on the back.
-
-## September 28: revisions after teaching Part 1
-
-Part 1's activity handout was too prescriptive, and the public command sequence
-let an agent reproduce the expected solution. The Part 1 activity frames now
-show a tutor-style starter prompt and conceptual checkpoints, and the Part 1
-recap adds ask, inspect, verify, iterate. Part 2 gained five recap frames
-(frames 3–7) explaining Git, GitHub, commits, the repository root, `.gitignore`,
-nested repositories, and what belongs in GitHub versus cloud storage. Its
-activity frames now cover the statistics audit and the optional Step 0. The
-lecture frames after the recap moved by five in Part 2. The
-facilitator run sheets (`run_sheets/`) mark where to stop talking. Tablet markups for
-Part 2 need to be redone.
-
-### September 28, later: recap and task labels
-
-Part 2 now opens with the Part 1 recap (frame 2), so the deck is 42 frames and every
-later Part 2 frame moved by one more. The recap and the opening roadmap show which
-task each act covers, and each list of the six tasks labels Tasks 1–2 as Part 1 and
-Tasks 3–6 as Part 2. The four PDFs are named `part1_slides.pdf`, `part2_slides.pdf`,
-`part1_handout.pdf`, and `part2_handout.pdf`. The combined deck and packet are gone.
-
-The speaker notes added earlier that day were replaced by the run sheets, and the
-`make notes` build and `pacing_notes.md` were removed. The run sheet for each part lists
-the stop-talking frames, the live demo (Part 1), the recap and Step 0 points (Part 2),
-what to watch during the work block, the regroup plan, and the possible cuts.
+- **Version control comes before where to run an agent.** The question "desktop app, editor, or terminal?" is only worth answering once the files the agent touches are under version control. The three interfaces follow, one per frame, ordered from easiest to most sophisticated.
+- **Act I ends on overnight work.** The example prompt asks for help writing the *task* for the inherited-project scenario, and the next frame covers reviewing the planning document before launching a long-running run.
+- **Task 3 makes the LaTeX case once,** and the Overleaf and GitHub mechanics it implies follow immediately. Act III reuses the same evidence to audit and draft a manuscript, and the course-modernization capstone opens with its motivation and the commit calendar before showing the coursepack it produced.
+- **Trust and the talk's own provenance close the lecture,** and an immediately runnable exercise follows.
+- **Pacing.** Rehearse each lecture against its 35 minutes. Frames are not allocated equal time. The facilitator run sheets in [`run_sheets/`](run_sheets/) mark where to stop talking and list candidate cuts.
+- **The public regroup asks participants to show evidence before discussion.** Private instructor builds append the corresponding answer reveals to the same deck. Handouts are the primary in-room navigation aid: one two-sided sheet per part.

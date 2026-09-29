@@ -1,10 +1,10 @@
 # Slides
 
-Two Beamer decks for *Claude for Research: Beyond the Chatbot*, sharing all slide
-sources. Part 1 is September 28 and Part 2 is October 12. Part 1 appends activity
-frames, a regroup, and a recap to the lecture. Part 2 opens with the Part 1 recap and a
-Git and GitHub recap before the rest of the lecture. [`storyboard.md`](storyboard.md)
-maps the frame numbers, which change whenever frames are added or cut.
+Two Beamer decks for *Claude (or Codex) for Research: Beyond the Chatbot*, sharing
+all slide sources. Part 1 appends activity frames, a regroup, and a recap to the
+lecture. Part 2 opens with the Part 1 recap and a Git and GitHub recap before the
+rest of the lecture. [`storyboard.md`](storyboard.md) maps the frame numbers, which
+change whenever frames are added or cut.
 
 Each 105-minute session uses **35 minutes presentation, 10 Q&A, 45 hands-on,
 and 15 regroup**. Part 1's activity starts from a notebook handoff: students use
@@ -29,8 +29,9 @@ one session. There is no combined deck. `make runsheets` builds
 facilitator sheets: where to stop talking, the live demo, what to watch for during
 the work block, the regroup plan, and possible cuts. They are for printing and are
 not part of the release.
-`make watch MAIN=part1` watches the first part. The shared entry point uses a
-part selector, and `\part` records each session without adding divider frames.
+`make watch` rebuilds Part 1 on every save; `make watch MAIN=part2_slides` watches Part 2.
+Each entry file sets `\seminarpart` before including `main.tex`, and `\part` records
+each session without adding divider frames.
 
 After layout changes, run from the repository root:
 
@@ -55,14 +56,10 @@ python3 resources/scripts/check_docs.py
 | `sections/` | Slide content organized by the talk's five-part structure |
 | `figures/` | Images used by the deck. `figures/git_recap/` holds the TikZ sources for the Git and GitHub recap |
 | `theme/` | Vendored Notre Dame Beamer theme and logos |
-| `storyboard.md` | Two-part mapping of the original 54 slides plus session opening/closing frames |
+| `storyboard.md` | Frame-by-frame map of each session |
 | `check_layout.py` | Flags slides that are top-empty and bottom-crowded; run it after layout changes |
-| `image_plan.md` | Final inventory of image and native visual assets |
+| `image_plan.md` | Inventory of image and native visual assets |
 | `run_sheets/` | LaTeX sources for the two facilitator run sheets |
 | `style_guide.md` | Typography, color, density, logo, and verification rules |
 
 The deck uses the [Dowling Lab ND Beamer Template](https://github.com/dowlinglab/ND_Beamer_Template).
-
-## Source-comment decision
-
-After the September 11, 2026 final audit, the detailed editorial and historical comments were removed from `main.tex` and `sections/*.tex`. The comments were valuable during refinement but made the final source harder to scan. Their full rationale remains available in Git history through commit `2c55c74`; future durable decisions should be recorded concisely in the relevant Markdown file and commit message.

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Flag slides whose vertical whitespace is unbalanced.
 
-Renders a deck PDF (default part1_slides.pdf) and, for each slide, measures the gap between the bottom of the
-navy title bar and the first row of body ink, and between the last row of body
+Renders a deck PDF (default part1_slides.pdf) and, for each slide, measures the
+gap between the bottom of the navy title bar and the first row of body ink, and between the last row of body
 ink and the top of the fixed ND corner logo. A slide wants attention when the
 first gap is large while the second is small: it looks top-empty and
 bottom-crowded, and at the back of a room the crowding reads as a mistake.
@@ -11,10 +11,9 @@ LaTeX will not warn about this. An overfull \\vbox only fires once content
 overflows the frame entirely, which is well past the point where the last line
 is sitting on the logo.
 
-    python3 check_layout.py [--dpi 100]
+    python3 check_layout.py [--pdf part2_slides.pdf] [--dpi 100]
 
-Requires pdftoppm (poppler) and Pillow. Written 2026-09-14 after a full-deck
-whitespace pass; see notes/seminar_notes.md.
+Requires pdftoppm (poppler) and Pillow.
 """
 import argparse
 import glob

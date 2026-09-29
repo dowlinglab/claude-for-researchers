@@ -16,7 +16,6 @@
 
 \definecolor{OkGreen}{HTML}{009E73}
 \definecolor{OkVermillion}{HTML}{D55E00}
-\definecolor{OkSky}{HTML}{56B4E9}
 \definecolor{Muted}{HTML}{7A7A7A}
 \definecolor{CodeBg}{HTML}{F4F4F2}
 
@@ -35,16 +34,6 @@
 \newcommand{\good}[1]{\textcolor{OkGreen}{\ensuremath{\checkmark}~#1}}
 \newcommand{\bad}[1]{\textcolor{OkVermillion}{\ensuremath{\times}~#1}}
 \newcommand{\unknown}[1]{\textcolor{Muted}{?~#1}}
-\newcommand{\keyterm}[1]{\textcolor{NDBlue}{\textbf{#1}}}
-
-\newcommand{\placeholderimage}[3]{%
-  \begin{tikzpicture}
-    \node[draw=Muted, dashed, thick, rounded corners=3pt,
-          minimum width=#1, minimum height=#2, align=center,
-          text width=#1-1cm, color=Muted]
-      {Image\\[0.4em]\scriptsize\itshape #3};
-  \end{tikzpicture}%
-}
 
 \newcommand{\slidepoint}[1]{{\large\color{NDBlue}#1}}
 

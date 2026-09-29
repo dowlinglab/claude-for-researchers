@@ -2,7 +2,7 @@
 
 Print **one two-page handout per participant per meeting**: US letter, actual
 size (100%), double-sided, flip on the long edge. Each front is the part's
-summary and save/handoff reference; each back is a numbered 45-minute activity.
+summary and save/handoff reference; each back is the 45-minute activity.
 The core instructions, prompts, checkpoints, and help route are printed. Participants do not need to navigate to the online session guide
 to follow the normal route. The guide remains available for troubleshooting.
 
@@ -10,7 +10,7 @@ to follow the normal route. The guide remains available for troubleshooting.
 make -C handout   # part1_handout.pdf and part2_handout.pdf, exactly two pages each
 ```
 
-Distribute `part1_handout.pdf` for September 28 and `part2_handout.pdf` for October 12.
+Distribute `part1_handout.pdf` at Part 1 and `part2_handout.pdf` at Part 2.
 There is no combined packet. All PDFs are generated and Git-ignored. `preamble.tex` contains shared formatting
 and shared macros; `part1_handout.tex` and `part2_handout.tex` are the entry points; `part1_front.tex`, `part1_back.tex`,
 `part2_front.tex`, and `part2_back.tex` contain the editable content.
@@ -25,9 +25,8 @@ and shared macros; `part1_handout.tex` and `part2_handout.tex` are the entry poi
   Git and GitHub recap box, and reference links. Page 2 is the audit workflow,
   the optional Step 0, and a findings log. Both handouts are two pages on
   US letter paper, double-sided with a long-edge flip.
-- A participant may reach only an early gate during the 45-minute block,
-  particularly if installing Conda. Record the completed gate and next command;
-  finish the same assignment between sessions.
+- A participant may finish only part of the activity in the 45-minute block. The
+  checkpoints say what to save, and the same assignment continues between sessions.
 
 After changes, rebuild and inspect both rendered pages for line wrapping, footer
 clearance, and print legibility. No numerical answers or instructor reveals belong
