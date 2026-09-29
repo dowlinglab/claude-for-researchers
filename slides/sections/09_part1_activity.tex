@@ -1,10 +1,10 @@
-\begin{frame}{Activity 1: put an inherited notebook in Git}
+\begin{frame}{Activity 1: turn a folder into a GitHub repository}
   \vfill
   \begin{columns}[c]
     \begin{column}{0.42\textwidth}
       \textbf{Start with the reactor notebook.}\\[0.8em]
-      {\small Put its inputs, environment, changes, and results in Git so someone else can rerun and extend the work.}\\[1em]
-      {\small The ZIP contains the notebook and parameter file. The handout walks through the steps.}\\[1em]
+      {\small Your goal is a well-organized GitHub repository for this folder.}\\[1em]
+      {\small You do not need to know Git. Claude will explain each step as it works.}\\[1em]
       {\small\href{https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip}{\textbf{Download the notebook ZIP}}}
     \end{column}
     \begin{column}{0.54\textwidth}
@@ -16,53 +16,49 @@
   \vfill
   \ndlogonote{\scriptsize Hands-on: 45 minutes; regroup: 15 minutes}
 \end{frame}
+\note{LIVE DEMO, about 5--7 minutes, then STOP TALKING. Unzip the download, open the folder in Claude, paste the starter prompt from the next frame. Let Claude inspect the folder, then ask it a beginner question live (for example: what is a .gitignore?). Stop it before the first commit and ask what it would commit and why. The point to make: Claude is a tutor here, not a command generator. Do not read the prompt aloud in full and do not explain Git yourself.}
 
-\begin{frame}{First, preserve what the inherited notebook does}
+\begin{frame}{Ask Claude to teach you as it works}
   \vfill
-  \begin{enumerate}\setlength\itemsep{1em}
-    \item \textbf{Create a private repository}
-      \begin{itemize}\small
-        \item If needed, create a GitHub account and install GitHub Desktop.
-        \item Download the ZIP file (notebook and YAML parameter data).
-        \item Initialize Git.
-        \item Commit the original files.
-        \item Connect your private GitHub repository.
-      \end{itemize}
-    \item \textbf{Run and audit the notebook}
-      \begin{itemize}\small
-        \item Build the Conda environment.
-        \item Run all notebook cells in a fresh kernel.
-        \item Check the equations and input parameters.
-        \item Check solver convergence and residuals.
-        \item Check the saved CSV and figure.
-        \item Commit the baseline before refactoring.
-      \end{itemize}
-  \end{enumerate}
-  \vfill
-  \ndlogonote{\scriptsize See the Part 1 handout for commands and full instructions}
+  \begin{center}
+    \begin{tikzpicture}
+      \node[nd box, text width=0.86\linewidth, inner sep=10pt, align=left, font=\normalsize] {\hyphenpenalty=10000\relax
+        I want to turn this folder into a clean GitHub repository. I am new to Git and GitHub. Please walk me through the process step by step using good practices. Start by inspecting the folder. Before each major step, explain what it accomplishes, and stop periodically so I can inspect what happened and ask questions.};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{0.9em}
+  \begin{center}
+    \slidepoint{\textbf{Ask} $\rightarrow$ \textbf{inspect} $\rightarrow$ \textbf{verify} $\rightarrow$ \textbf{iterate}}\\[0.6em]
+    {\small Ask questions whenever a word is new. Ask how to undo a step before you take it.}
+  \end{center}
+  \vspace{1.6cm plus 1fill}
 \end{frame}
+\note{Adapt the wording; it is a starting point, not a script. STOP TALKING now. The 45-minute work block is the main event of the session. Walk the room, look at screens, and ask what Claude just explained rather than answering the Git question yourself. Watch for two things: someone who opened the wrong folder as the workspace, and someone who accepts every step without reading it. Do not present a command sequence.}
 
-\begin{frame}{Then extract, test, and extend one question}
+\begin{frame}{You are done when you can explain what happened}
   \vfill
-  \begin{enumerate}\setlength\itemsep{1em}
-    \setcounter{enumi}{2}
-    \item \textbf{Extract and verify functions}
-      \begin{itemize}\small
-        \item Extract the model equations into a Python file.
-        \item Extract the steady-state solver.
-        \item Extract the operating-condition sweep.
-        \item Extract the plotting code.
-        \item Add NumPy-style docstrings.
-        \item Test against the saved baseline.
+  \begin{columns}[c]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}\small\setlength\itemsep{0.55em}
+        \item I know which folder is the repository root.
+        \item I understand what Git tracks and what it ignores.
+        \item I have a first commit that records the starting point.
+        \item I can say how my local repository differs from GitHub.
+        \item The repository is on GitHub.
+        \item I can ask Claude to explain the current state.
       \end{itemize}
-    \item \textbf{Explore one new question}
-      \begin{itemize}\small
-        \item Choose one of the four extension questions.
-        \item Save a runnable command.
-        \item Save its result.
-        \item Add a test.
-        \item Write a short interpretation.
+    \end{column}
+    \begin{column}{0.41\textwidth}
+      \textbf{Stuck? Ask Claude:}
+      \begin{itemize}\small\setlength\itemsep{0.45em}
+        \item ``Explain the last step without assuming I know Git.''
+        \item ``How could I undo this?''
+        \item ``Show me what Git thinks has changed.''
       \end{itemize}
-  \end{enumerate}
-  \vfill
+      \vspace{0.6em}
+      {\small\textbf{Finished early?} Stay in the same conversation and ask Claude to run and check the notebook.}
+    \end{column}
+  \end{columns}
+  \vspace{1.6cm plus 1fill}
 \end{frame}
+\note{Leave this frame up while people work. After five minutes stuck on a tool, pair people up. Authentication failures are common: a local repository with the push pending is an acceptable checkpoint. The early-finisher path is the old steps two to four (run and audit the notebook, extract functions, try an extension), which we now leave to the conversation instead of a recipe.}
