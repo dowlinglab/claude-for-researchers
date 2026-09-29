@@ -1,8 +1,7 @@
-# Built deck: regenerate with `make`. Not tracked while the deck is in flux;
-# we can start committing it once the content settles, so attendees can grab a PDF.
-main.pdf
-part1.pdf
-part2.pdf
+# Built decks: regenerate with `make`. Release PDFs are built from a version tag
+# by GitHub Actions, so they are not tracked.
+part1_slides.pdf
+part2_slides.pdf
 
 # Instructor copies with speaker notes (make notes)
 *_notes.pdf

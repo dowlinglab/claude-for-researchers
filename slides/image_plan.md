@@ -13,11 +13,11 @@ variants have been removed; original captures and regeneration sources remain.
 | Part 1, 17 | `github_desktop_branch.png` | GitHub Desktop branch selection; [source](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop) |
 | Part 1, 23 | `bits_for_gaps_graphical_abstract.png` | Published software case study |
 | Part 1, 28–30 | `cstr_steady_state_locus.png`, `cstr_notebook_preview.png` | Reactor diagram is editable TikZ; the plot is original notebook output and the preview shows the downloadable notebook |
-| Part 2, 3–7 | `figures/git_recap/*.tex` | Native TikZ diagrams for the Git and GitHub recap: local folder to GitHub, commit history, repository layout, and storage. See [`figures/git_recap/README.md`](figures/git_recap/README.md) |
-| Part 2, 9 | `overleaf_github_sync.png` | Overleaf GitHub synchronization dialog; [source](https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization) |
-| Part 2, 14 | `github_desktop_diff.png`, `manuscript_diff.pdf` | Source diff and compiled manuscript diff; [GitHub source](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop) and [illustrative LaTeX source pair](../resources/examples/manuscript_revision/README.md) |
-| Part 2, 22–23 | `august_2026_calendar.tex`, `coursepack_sources.png`, `coursepack_gap.png` | Course sprint calendar and coursepack excerpts; calendar generator in [`august_2026_calendar_source/`](figures/august_2026_calendar_source/make_calendar.py) |
-| Part 2, 33–34 | `kitchen_organizer_telescope_shelf.jpeg`, `filter_families.pdf` | Hobby design and personalized textbook figure |
+| Part 2, 4–8 | `figures/git_recap/*.tex` | Native TikZ diagrams for the Git and GitHub recap: local folder to GitHub, commit history, repository layout, and storage. See [`figures/git_recap/README.md`](figures/git_recap/README.md) |
+| Part 2, 10 | `overleaf_github_sync.png` | Overleaf GitHub synchronization dialog; [source](https://docs.overleaf.com/integrations-and-add-ons/git-integration-and-github-synchronization/github-synchronization) |
+| Part 2, 15 | `github_desktop_diff.png`, `manuscript_diff.pdf` | Source diff and compiled manuscript diff; [GitHub source](https://docs.github.com/en/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop) and [illustrative LaTeX source pair](../resources/examples/manuscript_revision/README.md) |
+| Part 2, 23–24 | `august_2026_calendar.tex`, `coursepack_sources.png`, `coursepack_gap.png` | Course sprint calendar and coursepack excerpts; calendar generator in [`august_2026_calendar_source/`](figures/august_2026_calendar_source/make_calendar.py) |
+| Part 2, 34–35 | `kitchen_organizer_telescope_shelf.jpeg`, `filter_families.pdf` | Hobby design and personalized textbook figure |
 
 The Notre Dame marks come from the vendored theme under `theme/logos/`.
 Screenshots retain their interface colors; native content uses the deck palette.

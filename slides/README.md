@@ -1,11 +1,11 @@
 # Slides
 
 Two Beamer decks for *Claude for Research: Beyond the Chatbot*, sharing all slide
-sources. Part 1 (September 28) has **34 slides**; Part 2 (October 12) has **41**.
+sources. Part 1 (September 28) has **34 slides**; Part 2 (October 12) has **42**.
 Part 1's lecture frames keep their numbers (1–27), and it appends activity
-frames, a regroup, and a recap. Part 2 gained five Git and GitHub recap frames
-after its title and bridge frame (frames 3–7), so its later lecture frames moved
-by five: the original frames 27–54 are now frames 8–35. Tablet annotations made
+frames, a regroup, and a recap. Part 2 opens with the Part 1 recap (frame 2), a bridge frame (3), and five Git and
+GitHub recap frames (4–8), so its later lecture frames moved by six: the
+original frames 27–54 are now frames 9–36. Tablet annotations made
 for the earlier Part 2 numbering no longer line up.
 
 Each 105-minute session uses **35 minutes presentation, 10 Q&A, 45 hands-on,
@@ -25,9 +25,9 @@ From this directory:
 make
 ```
 
-The outputs are `part1.pdf` and `part2.pdf`. `make part1` or `make part2` builds
-one session. `make combined` builds `main.pdf` with both parts (75 slides). `make notes`
-builds `part1_notes.pdf` and `part2_notes.pdf`, instructor copies with each
+The outputs are `part1_slides.pdf` and `part2_slides.pdf`. `make part1` or `make part2` builds
+one session. There is no combined deck. `make notes`
+builds `part1_slides_notes.pdf` and `part2_slides_notes.pdf`, instructor copies with each
 frame's speaker notes beside it. The notes mark where to stop talking and let
 participants work. See [`pacing_notes.md`](pacing_notes.md) for possible cuts.
 `make watch MAIN=part1` watches the first part. The shared entry point uses a
@@ -36,8 +36,8 @@ part selector, and `\part` records each session without adding divider frames.
 After layout changes, run from the repository root:
 
 ```bash
-python3 slides/check_layout.py --pdf slides/part1.pdf
-python3 slides/check_layout.py --pdf slides/part2.pdf
+python3 slides/check_layout.py --pdf slides/part1_slides.pdf
+python3 slides/check_layout.py --pdf slides/part2_slides.pdf
 ```
 
 Render and inspect each touched frame with `pdftoppm`; the checker is a heuristic,
@@ -52,7 +52,7 @@ python3 resources/scripts/check_docs.py
 | Path | Purpose |
 |---|---|
 | `main.tex` | Shared theme, macros, session titles, and conditional section includes |
-| `part1.tex`, `part2.tex` | Small entry points selecting one session |
+| `part1_slides.tex`, `part2_slides.tex` | Small entry points selecting one session |
 | `sections/` | Slide content organized by the talk's five-part structure |
 | `figures/` | Images used by the deck. `figures/git_recap/` holds the TikZ sources for the Git and GitHub recap |
 | `theme/` | Vendored Notre Dame Beamer theme and logos |

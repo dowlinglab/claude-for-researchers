@@ -1,6 +1,6 @@
-# Build the public presentation and handouts from a version tag. The PDFs are
-# release assets, not tracked files in the repository.
-name: Release PDFs
+# Build the public presentation and handouts from a version tag, and attach the
+# two activity downloads. These are release assets, not tracked build outputs.
+name: Release
 
 on:
   push:
@@ -28,19 +28,49 @@ jobs:
       - name: Verify PDFs and LaTeX references
         run: |
           set -eu
-          for pdf in slides/part1.pdf slides/part2.pdf handout/part1.pdf handout/part2.pdf; do
+          for pdf in slides/part1_slides.pdf slides/part2_slides.pdf handout/part1_handout.pdf handout/part2_handout.pdf; do
             test -s "$pdf"
           done
-          for log in slides/part1.log slides/part2.log handout/part1.log handout/part2.log; do
+          for log in slides/part1_slides.log slides/part2_slides.log handout/part1_handout.log handout/part2_handout.log; do
             if grep -Eiq 'undefined references|Citation .* undefined|multiply defined' "$log"; then
               echo "::error file=$log::LaTeX reference warning in $log"
               exit 1
             fi
           done
 
-      - name: Name release assets
+      - name: Verify the activity ZIPs match their sources
+        # Each committed ZIP is rebuilt from its source and compared by file contents.
+        # The committed bytes are restored afterwards, so the release carries exactly
+        # the files the documentation links to.
+        run: |
+          set -eu
+          command -v python3 >/dev/null || (apt-get update -qq && apt-get install -y -qq python3)
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          python3 - <<'EOF'
+          import io, subprocess, sys, zipfile
+          pairs = [
+              ("resources/workshops/cstr/workshop1_notebook.zip",
+               "resources/workshops/cstr/build_workshop1_handoff.py"),
+              ("resources/workshops/stats_audit/workshop2_audit_project.zip",
+               "resources/workshops/stats_audit/build_audit_zip.py"),
+          ]
+          def listing(data):
+              z = zipfile.ZipFile(io.BytesIO(data))
+              return {name: z.read(name) for name in z.namelist()}
+          for zip_path, builder in pairs:
+              committed = subprocess.check_output(["git", "show", f"HEAD:{zip_path}"])
+              subprocess.check_call([sys.executable, builder])
+              rebuilt = open(zip_path, "rb").read()
+              if listing(committed) != listing(rebuilt):
+                  sys.exit(f"::error::{zip_path} is out of date; run {builder} and commit the result")
+              open(zip_path, "wb").write(committed)
+              print(f"ok  {zip_path}")
+          EOF
+
+      - name: Collect release assets
         id: naming
         run: |
+          set -eu
           if [ "$GITHUB_REF_TYPE" = tag ]; then
             version="$GITHUB_REF_NAME"
           else
@@ -48,17 +78,17 @@ jobs:
           fi
           echo "version=$version" >> "$GITHUB_OUTPUT"
           mkdir -p dist
-          cp slides/part1.pdf "dist/Claude-for-Research-Part-1-Slides-$version.pdf"
-          cp slides/part2.pdf "dist/Claude-for-Research-Part-2-Slides-$version.pdf"
-          cp handout/part1.pdf "dist/Claude-for-Research-Part-1-Handout-$version.pdf"
-          cp handout/part2.pdf "dist/Claude-for-Research-Part-2-Handout-$version.pdf"
+          cp slides/part1_slides.pdf slides/part2_slides.pdf dist/
+          cp handout/part1_handout.pdf handout/part2_handout.pdf dist/
+          cp resources/workshops/cstr/workshop1_notebook.zip dist/
+          cp resources/workshops/stats_audit/workshop2_audit_project.zip dist/
           ls -lh dist
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: workshop-pdfs-${{ steps.naming.outputs.version }}
-          path: dist/*.pdf
+          name: workshop-files-${{ steps.naming.outputs.version }}
+          path: dist/*
           if-no-files-found: error
           retention-days: 30
 
@@ -66,11 +96,13 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/*.pdf
+          files: dist/*
           fail_on_unmatched_files: true
           generate_release_notes: true
           body: |
             Public slides and participant handouts for both parts of
-            *Claude (or Codex) for Research: Beyond the Chatbot*.
+            *Claude (or Codex) for Research: Beyond the Chatbot*, plus the two
+            downloads the activities use: `workshop1_notebook.zip` (Part 1) and
+            `workshop2_audit_project.zip` (Part 2).
 
             Built from this tag by GitHub Actions. Instructor materials are private.

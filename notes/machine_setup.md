@@ -53,9 +53,8 @@ install Miniconda if needed; the activity creates its environment in the room.
 From the public repository:
 
 ```bash
-make -C slides            # part1.pdf (34 frames) and part2.pdf (36 frames)
-make -C slides combined   # main.pdf, both parts in one 70-frame sequence
-make -C handout           # part1.pdf and part2.pdf, two pages each
+make -C slides   # part1_slides.pdf (34 frames) and part2_slides.pdf (42 frames)
+make -C handout  # part1_handout.pdf and part2_handout.pdf, two pages each
 ```
 
 Two documents do **not** build with a bare `latexmk`, and both failures are

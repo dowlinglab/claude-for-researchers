@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Flag slides whose vertical whitespace is unbalanced.
 
-Renders main.pdf and, for each slide, measures the gap between the bottom of the
+Renders a deck PDF (default part1_slides.pdf) and, for each slide, measures the gap between the bottom of the
 navy title bar and the first row of body ink, and between the last row of body
 ink and the top of the fixed ND corner logo. A slide wants attention when the
 first gap is large while the second is small: it looks top-empty and
@@ -66,7 +66,7 @@ def measure(path):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--pdf", default="main.pdf")
+    ap.add_argument("--pdf", default="part1_slides.pdf")
     ap.add_argument("--dpi", type=int, default=100)
     args = ap.parse_args()
 

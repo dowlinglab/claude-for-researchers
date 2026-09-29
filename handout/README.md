@@ -7,14 +7,12 @@ The core instructions, prompts, checkpoints, and help route are printed. Partici
 to follow the normal route. The guide remains available for troubleshooting.
 
 ```bash
-make -C handout           # part1.pdf and part2.pdf, exactly two pages each
-make -C handout combined  # main.pdf, optional four-page packet of both handouts
+make -C handout   # part1_handout.pdf and part2_handout.pdf, exactly two pages each
 ```
 
-Distribute `part1.pdf` for September 28 and `part2.pdf` for October 12. The old
-`main.pdf` filename now means the combined packet, not a single two-page sheet.
-All PDFs are generated and Git-ignored. `preamble.tex` contains shared formatting
-and shared macros; `part1_front.tex`, `part1_back.tex`,
+Distribute `part1_handout.pdf` for September 28 and `part2_handout.pdf` for October 12.
+There is no combined packet. All PDFs are generated and Git-ignored. `preamble.tex` contains shared formatting
+and shared macros; `part1_handout.tex` and `part2_handout.tex` are the entry points; `part1_front.tex`, `part1_back.tex`,
 `part2_front.tex`, and `part2_back.tex` contain the editable content.
 
 ## Physical use

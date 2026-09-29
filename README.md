@@ -84,13 +84,16 @@ make -C slides
 make -C handout
 ```
 
-This builds the 34-slide Part 1 deck, the 41-slide Part 2 deck, and a two-page handout for each part. `make -C slides notes` builds instructor copies with speaker notes. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
+This builds `part1_slides.pdf` (34 slides), `part2_slides.pdf` (42 slides), `part1_handout.pdf`, and `part2_handout.pdf` (two pages each). `make -C slides notes` builds instructor copies with speaker notes. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
 
-To publish the four public PDFs, push a version tag such as `v1.0.0`. The
+To publish the release bundle, push a version tag such as `v1.0.0`. The
 [release workflow](.github/workflows/release.yml) compiles the sources and
-attaches the two slide decks and two handouts to a GitHub Release. It does not
-publish instructor materials. A manual run from the Actions tab builds a
-downloadable artifact without creating a release.
+attaches six files to a GitHub Release: `part1_slides.pdf`, `part2_slides.pdf`,
+`part1_handout.pdf`, `part2_handout.pdf`, and the two activity downloads,
+`workshop1_notebook.zip` and `workshop2_audit_project.zip`. It first checks that
+each committed ZIP matches a rebuild from its source folder. It does not publish
+instructor materials. A manual run from the Actions tab builds a downloadable
+artifact without creating a release.
 
 ```bash
 git tag -a v1.0.0 -m "Workshop materials v1.0.0"

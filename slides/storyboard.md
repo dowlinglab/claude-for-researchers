@@ -2,17 +2,17 @@
 
 The original 54-slide sequence below remains intact, split at the Task 3 opener.
 Original numbers remain as stable editorial references. The shared sources build
-**Part 1: 34 frames** and **Part 2: 41 frames**, including activity and regroup support.
+**Part 1: 34 frames** and **Part 2: 42 frames**, including activity and regroup support.
 The Part 1 title is ready for delivery; DRAFT remains on the Part 2 title.
 
 | Build | Rendered frame mapping |
 |---|---|
 | Part 1, September 28 | Frames 1–26: original 1–26, with a session-specific title; frame 27: best practices and research tasks; 28–29: reactor model and notebook result; 30–32: activity; 33: regroup; 34: recap |
-| Part 2, October 12 | Frame 1: new title; frame 2: bridge from Part 1; frames 3–7: Git and GitHub recap; frames 8–35: original 27–54; frame 36: closing; 37–40: activity (audit, workflow, optional Step 0, judging the audit); 41: regroup |
+| Part 2, October 12 | Frame 1: new title; frame 2: Part 1 recap; frame 3: bridge from Part 1; frames 4–8: Git and GitHub recap; frames 9–36: original 27–54; frame 37: closing; 38–41: activity (audit, workflow, optional Step 0, judging the audit); 42: regroup |
 
 Each session: **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**.
 The original Act II source is split before Task 3 into code and literature files,
-used by both the session builds and the combined build. Nothing is duplicated or
+used by both session builds. Nothing is duplicated or
 cut. The title's `\part` declaration records the session boundary without an
 extra divider slide.
 
@@ -146,3 +146,11 @@ nested repositories, and what belongs in GitHub versus cloud storage. Its
 activity frames now cover the statistics audit and the optional Step 0. The
 lecture frames after the recap moved by five in Part 2. Speaker notes mark where
 to stop talking. Tablet markups for Part 2 need to be redone.
+
+### September 28, later: recap and task labels
+
+Part 2 now opens with the Part 1 recap (frame 2), so the deck is 42 frames and every
+later Part 2 frame moved by one more. The recap and the opening roadmap show which
+task each act covers, and each list of the six tasks labels Tasks 1–2 as Part 1 and
+Tasks 3–6 as Part 2. The four PDFs are named `part1_slides.pdf`, `part2_slides.pdf`,
+`part1_handout.pdf`, and `part2_handout.pdf`. The combined deck and packet are gone.
