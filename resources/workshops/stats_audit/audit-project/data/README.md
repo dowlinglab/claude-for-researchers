@@ -12,7 +12,7 @@
 | `sex` | female or male |
 | `year` | Sampling year, 2007 to 2009 |
 
-Missing values are empty fields. The file is unchanged from the source.
+Missing values are written as the literal `NA` (pandas reads them as missing). The file is unchanged from the source.
 
 ## Source and license
 
