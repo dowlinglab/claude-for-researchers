@@ -2,10 +2,10 @@
 
 This is the only test that ships with the starter. It does not test the reactor
 model -- there is no reactor model outside the notebook yet. It exists so that
-``pytest`` is a working command from the first minute of Workshop 1, and so that
+``pytest`` is a working command from the first minute of Part 1, and so that
 a broken environment is diagnosed before it is blamed on the science.
 
-The regression tests you add in Workshop 1 belong beside this file.
+The regression tests you add in Part 1 belong beside this file.
 """
 
 from __future__ import annotations

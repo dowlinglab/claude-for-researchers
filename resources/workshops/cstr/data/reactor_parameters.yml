@@ -8,7 +8,7 @@
 # exothermic CSTR. UA and Tf were lowered relative to the usual published values
 # so that three steady states exist over a coolant-temperature range wide enough
 # for a coarse sweep to resolve. Treat the numbers as a teaching case, not as a
-# measured system, and cite the source you actually verify in Workshop 2.
+# measured system, and cite the source you actually verify.
 
 q: 100.0        # volumetric feed flow rate, L/min
 V: 100.0        # reactor liquid volume, L

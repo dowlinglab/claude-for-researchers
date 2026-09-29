@@ -1,4 +1,4 @@
-# Environment for both CSTR workshops.
+# Environment for the CSTR starter.
 #
 #   conda env create -f environment.yml
 #   conda activate cstr-workshop
@@ -9,7 +9,7 @@
 # reproducible, not the range allowed here.
 #
 # LaTeX is deliberately not a conda dependency; see README.md for the separate
-# TeX installation used in Workshop 2.
+# TeX installation used to build the report.
 name: cstr-workshop
 channels:
   - conda-forge

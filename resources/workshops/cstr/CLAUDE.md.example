@@ -16,7 +16,7 @@ Then **edit it**. A file of
 generic advice teaches the agent nothing it does not already do; the value is in
 the sentences that are specific to this project.
 
-Workshop 1 asks you to have an agent draft this file after inspecting the
+Part 1 asks you to have an agent draft this file after inspecting the
 repository, then cut it down. Expect to delete more than half. The useful test
 for a line: *would a competent new collaborator get this wrong without being
 told?* If not, delete it.
@@ -70,8 +70,8 @@ This is a teaching parameter set, not a measured reactor.
 conda activate cstr-workshop
 python scripts/run_notebook.py --check     # notebook still runs
 pytest tests                               # regression tests
-python scripts/reproduce.py                # regenerate results (Workshop 1)
-cd report && latexmk -pdf report.tex       # compile the report (Workshop 2)
+python scripts/reproduce.py                # regenerate results
+cd report && latexmk -pdf report.tex       # compile the report
 ```
 
 ## Boundaries

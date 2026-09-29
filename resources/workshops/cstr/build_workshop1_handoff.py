@@ -1,4 +1,4 @@
-"""Build the small Workshop 1 handoff without including later-workshop answers."""
+"""Build workshop1_activity.zip, the small Part 1 handoff, from its source files."""
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 

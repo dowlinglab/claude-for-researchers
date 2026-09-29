@@ -61,7 +61,7 @@ Search phrases that work: `nonisothermal CSTR multiple steady states`,
    redistribution — and even then, prefer not to. `pdfs/` is ignored for this
    reason. Commit the metadata and your notes.
 4. **Record what a source cannot support**, not only what it says. That column
-   is what makes the claim audit in Workshop 2 possible.
+   is what makes the claim audit possible.
 
 ## Filling in the manifest
 

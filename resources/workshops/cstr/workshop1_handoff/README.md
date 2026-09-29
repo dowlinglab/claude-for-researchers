@@ -4,4 +4,4 @@ A former student left this notebook and a parameter file. Your job is to make a 
 
 Read `notebooks/cstr_exploration.ipynb` before editing it. It describes a teaching model of a cooled, nonisothermal CSTR. The values in `data/reactor_parameters.yml` are a second copy of the parameters, useful for an audit; the notebook currently types them in directly. No environment, package, or tests are supplied in this handoff.
 
-Follow the [Workshop 1 activity](https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md). Keep the notebook and this parameter file as the original evidence until you have recorded and checked a baseline.
+Follow the [Activity 1 guide](https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md). Keep the notebook and this parameter file as the original evidence until you have recorded and checked a baseline.

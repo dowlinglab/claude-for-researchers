@@ -4,7 +4,7 @@ Generated artifacts go here. Do not edit their numbers by hand. The saved
 baseline is historical evidence: preserve it even though you can generate a
 fresh run elsewhere. Never replace it to make a comparison pass.
 
-Workshop 1 preserves these artifacts before any optional refactoring:
+Part 1 preserves these artifacts before any optional refactoring:
 
 | File | What it is |
 |---|---|

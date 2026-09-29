@@ -8,7 +8,7 @@ The notebook writes to `results/` using paths relative to the working directory,
 which is fine when you launch JupyterLab from the project root and wrong the
 moment anything else executes it. Rather than paper over that, this script sets
 the working directory explicitly and says so. Noticing the difference is part of
-Workshop 1.
+Part 1.
 
 `--check` is the gate command: it proves the notebook still runs top to bottom
 without modifying the notebook file itself.

@@ -1,6 +1,6 @@
 # Optional full workflow: evidence to audited report
 
-**This is an optional take-home.** The in-room Part 2 activity is now the
+**This is an optional take-home.** The in-room Part 2 activity is the
 [statistics audit](../../stats_audit/activity.md). This longer reactor workflow uses
 the same habits, ask, inspect, verify, iterate, on a different kind of artifact:
 a report checked against computed results and a source. The
@@ -50,7 +50,7 @@ read `results/` and the `.tex` in the same tree.
 
 ---
 
-## Between the workshops
+## Between the sessions
 
 Use the fortnight to experiment on your own research. Extraction is an optional
 prepared-baseline extension, not a homework assignment.
@@ -86,7 +86,7 @@ for.
 
 ## Phase 1 — Reconnect (10 min)
 
-Activate your Workshop 1 environment and work on a fresh branch for this workshop. If you are not sure how, ask Claude to explain and do it. Rerun the tests and, if you implemented it, the reproduction script. Otherwise use the baseline helper (`scripts/baseline.py compare`).
+Activate your Part 1 environment and work on a fresh branch for this activity. If you are not sure how, ask Claude to explain and do it. Rerun the tests and, if you implemented it, the reproduction script. Otherwise use the baseline helper (`scripts/baseline.py compare`).
 
 If extraction is incomplete, use the unchanged notebook capture/compare route
 in the session guide. If the baseline is absent, create the first snapshot only
@@ -307,8 +307,8 @@ Also check, mechanically:
 - every assumption the *code* makes against the assumptions listed in the
   report — an assumption the code makes and the report omits is an error, not a
   stylistic choice. The code's assumptions are in the docstrings in
-  `src/cstr_workshop/` if you completed Workshop 1; on the fallback path
-  `src/cstr_workshop/` is still empty, so read the assumption list in the first
+  `src/cstr_workshop/` if you completed Part 1; on the fallback path
+  `src/cstr_workshop/` holds only stubs, so read the assumption list in the first
   markdown cell of `notebooks/cstr_exploration.ipynb` instead;
 - every citation against what the cited source actually says, not against what
   the sentence needs it to say.

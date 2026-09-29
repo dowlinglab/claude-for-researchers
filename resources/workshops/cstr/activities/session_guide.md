@@ -6,7 +6,7 @@ You do not need to memorize commands. When you need one, ask Claude to explain w
 
 Ask for help after five minutes stuck on a tool. Pair with someone whose setup works if necessary. At minute 40, save where you are, even if unfinished. A partial checkpoint with honest missing checks is useful. An agent can inspect evidence. It cannot claim that you reviewed it.
 
-## Session 1: turn a folder into a GitHub repository
+## Part 1: turn a folder into a GitHub repository
 
 Follow the [Activity 1 guide](01_notebook_to_reproducible_project.md). Download the inherited notebook, open its folder in Claude, and ask Claude to walk you through creating a clean GitHub repository, explaining each major step. The guide has a starter prompt, questions to ask, checkpoints, and troubleshooting prompts. It has no command sequence, on purpose.
 
@@ -14,7 +14,7 @@ Follow the [Activity 1 guide](01_notebook_to_reproducible_project.md). Download 
 
 Use the two weeks to experiment on your own research. If you like, continue the "keep going" paths in the Activity 1 guide: run and audit the notebook, extract tested functions, or try one [extension](workshop1_extensions.md). None of it is homework.
 
-## Session 2: audit an analysis against references
+## Part 2: audit an analysis against references
 
 Follow the [Activity 2 guide](../../stats_audit/activity.md). You receive a colleague's notebook and write-up, and open statistics references. You ask Claude to audit them, verify a sample of what it reports, and judge the quality of the audit. There is an optional Step 0 for people who are comfortable with Git and Python; skip it freely.
 
@@ -24,7 +24,7 @@ A longer, chemical-engineering audit is available for practice after the session
 
 Use `report/audit_fallback.tex` in this folder. Read the `.tex` file as text. A PDF is optional.
 
-1. **Open fresh evidence.** Ask Claude to regenerate the notebook's results with the baseline helper (`scripts/baseline.py`) and to record where the evidence is saved. If you kept a baseline from Session 1, compare against it and preserve the earlier evidence rather than overwriting it. If the notebook was changed before any results were saved, say so, and use only evidence whose origin you can explain.
+1. **Open fresh evidence.** Ask Claude to regenerate the notebook's results with the baseline helper (`scripts/baseline.py`) and to record where the evidence is saved. If you kept a baseline from Part 1, compare against it and preserve the earlier evidence rather than overwriting it. If the notebook was changed before any results were saved, say so, and use only evidence whose origin you can explain.
 2. **Choose three claims** before asking for any verdict: one numerical, one citation-based, and one about model behavior. Copy each exact quotation and its section name into `docs/claim_evidence_audit.md`.
 3. **Open the cited source.** For the citation claim, open [Woolf et al., section 11.6, Common Control Loops and Model for Temperature Control](https://eng.libretexts.org/Bookshelves/Industrial_and_Systems_Engineering/Chemical_Process_Dynamics_and_Controls_(Woolf)/11:_Control_Architectures/11.06:_Common_control_loops_and_model_for_temperature_control), **CSTR Temperature Control → Exothermic Reactor Temperature Control Loops**, Figure 2. Record the passage you used. The supplied notes in `docs/literature.md` help you navigate; they are not proof that you opened the source. If access fails, record **notes only; primary-source check pending**.
 4. **Check, then judge.**

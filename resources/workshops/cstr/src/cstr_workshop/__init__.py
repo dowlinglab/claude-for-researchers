@@ -1,7 +1,7 @@
 """CSTR workshop package.
 
 The reactor model starts inside ``notebooks/cstr_exploration.ipynb``. Moving it
-here is the work of Workshop 1.
+here is the work of Part 1.
 
 Four modules are stubbed, each with the docstring, signature, and units it needs
 and no body:
