@@ -54,7 +54,7 @@ Use these when you are stuck, or before you agree to something. They are example
 - [ ] Git is set up in that folder, and not inside another repository.
 - [ ] I understand broadly which files Git is tracking.
 - [ ] Large or inappropriate files are left out where appropriate. That includes environments, credentials, and private data.
-- [ ] I have a first commit that records the starting point.
+- [ ] I have a first commit that records the original files as received, before any change.
 - [ ] I can say how my local repository differs from GitHub.
 - [ ] The repository is connected to GitHub, if I am ready for that.
 - [ ] I can ask Claude to explain the current state of the repository, and the answer makes sense to me.
@@ -78,6 +78,8 @@ If the push to GitHub fails because of authentication, a local repository with t
 - "I think I opened the wrong folder. How do I check where the repository root is?"
 - "Show me what changed since the last commit, and whether anything unexpected is included."
 - "Undo the last step and tell me exactly what state we are back to."
+- If Claude stops to ask permission at every step, tell it how much to do at once: "Do the next three steps, then stop and summarize."
+- If Claude did many things at once, ask: "Explain each thing you just did, in order, and how I would undo each one."
 
 If you have been stuck on a tool for five minutes, ask for help or pair up with someone whose setup works.
 

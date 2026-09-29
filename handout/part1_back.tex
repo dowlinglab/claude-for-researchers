@@ -14,7 +14,7 @@
 \checkitem{Git is set up in that folder, and not inside another repository.}\par
 \checkitem{I understand broadly which files Git tracks.}\par
 \checkitem{Large or inappropriate files are left out where appropriate.}\par
-\checkitem{I have a first commit that records the starting point.}\par
+\checkitem{I have a first commit with the original files as received, before any change.}\par
 \checkitem{I can say how my local repository differs from GitHub.}\par
 \checkitem{The repository is connected to GitHub, if you are ready.}\par
 \checkitem{I can ask Claude to explain the current state of the repository.}
@@ -24,6 +24,8 @@
   \item ``The push failed. Explain the error and my options.''
   \item ``I think I opened the wrong folder. How do I check where the repository root is?''
   \item ``Show me what changed since the last commit, and whether anything unexpected is included.''
+  \item If Claude asks permission at every step: ``Do the next three steps, then stop and summarize.''
+  \item If it did a lot at once: ``Explain each thing you just did, in order, and how I would undo each one.''
 \end{itemize}
 Ask for help after five minutes stuck. A local repository with the push pending is an acceptable checkpoint.
 
