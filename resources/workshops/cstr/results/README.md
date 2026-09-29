@@ -54,4 +54,4 @@ The baseline's field map (structure only, no expected answers):
 Inspect one nominal record and one sweep record, then mark remaining field
 checks as done or pending in the handoff. The compare helper checks repeatability
 in the same environment; exact equality is not a claim that the model is valid.
-Use the session guide's `git add -f` commands to preserve ignored evidence.
+Generated results are ignored by Git. Ask Claude to explain how to preserve the evidence you rely on, and check that it is actually in your commit.
