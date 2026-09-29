@@ -934,3 +934,40 @@ literal double-hyphen flags (LaTeX ligatures are disabled in command text).
 The layout heuristic flags only pre-existing lecture frames, none of the new
 frames. Public documentation and the repository boundary checks pass. No fresh
 participant experiment or live rehearsal was performed for this layout update.
+
+### 2026-09-28 — Revisions after teaching Part 1
+
+Alex taught Part 1 and asked for targeted revisions. **What happened:** the
+presentation worked; the Activity 1 handout was too technical and prescriptive.
+Beginners fixated on Git syntax, there are many valid routes, and the public
+command sequence let an agent read the instructions and reproduce the expected
+solution. The live demonstration worked much better: Claude acted as a tutor
+that explained each step and paused for questions.
+
+**Decisions.**
+
+- Activity 1 (handout, guide, session guide, slide frames) now gives the
+  objective, a mental model, a tutor-style starter prompt, questions, conceptual
+  checkpoints, vocabulary, and troubleshooting prompts, with no command
+  sequence. The old steps 2–4 (run and audit, extract, extend) became "keep
+  going" paths described by purpose. Rationale: the workshop should teach the
+  mental model and questions to ask, not a recipe an agent can copy.
+- Git and GitHub fundamentals moved to a five-frame recap at the start of Part 2,
+  after participants have used them. Alex approved Part 2 growing by four to ten
+  frames; it grew by five.
+- The in-room Part 2 activity is a statistics audit of the public Palmer Penguins
+  data, chosen for a general audience over the reactor domain. Participants audit
+  a colleague's notebook and write-up against open references and judge the
+  audit. The goal is calibration, not detection. The reactor-report audit stays
+  as an optional take-home. The instructor key, generator, and rubric are in the
+  private repository only.
+- Optional Step 0 (baseline commit, refactor the notebook into Python files,
+  commit separately, then audit) is marked skippable. The right representation
+  depends on the task.
+- Speaker notes (`make -C slides notes`) mark where to stop talking, and
+  `slides/pacing_notes.md` lists possible cuts without applying them.
+- Every student-facing page reinforces ask, inspect, verify, iterate.
+
+**Consequences to review.** Tablet markups for Part 2 no longer match frame
+numbers. Part 2's lecture is now longer; cuts are Alex's call. The private
+instructor decks and `STARTER_VERSION.md` needed updating alongside.

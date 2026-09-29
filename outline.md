@@ -10,15 +10,15 @@ The seminar is **two parts, two weeks apart**, each 1 hour 45 minutes (3:30–5:
 
 | | Date | Presentation | Hands-on activity |
 |---|---|---|---|
-| **Part 1** | Monday, September 28, 2026 | Workspace, instructions, reproducible baseline | Create a repository, run and audit the notebook, extract functions, extend an analysis |
-| **Part 2** | Monday, October 12, 2026 | Literature, audit, writing, and trust | Audit three report claims and revise one |
+| **Part 1** | Monday, September 28, 2026 | Workspace, instructions, reproducible baseline | Use Claude as a tutor to turn a notebook folder into a GitHub repository, then keep going |
+| **Part 2** | Monday, October 12, 2026 | Git and GitHub recap, literature, audit, writing, and trust | Audit a statistical analysis against open references and judge the audit |
 
 Between sessions, participants experiment on their own research and may continue
-the Workshop 1 extension. Additional literature sources are optional for the
-full writing workflow; the in-room audit uses the shared fallback report.
+the Part 1 "keep going" paths. The in-room audit uses a statistical analysis of
+the public Palmer Penguins data; the reactor-report audit is an optional take-home.
 
 The split is implemented with shared slide sources: **34 frames in Part 1,
-36 in Part 2**, including activity and regroup slides. Each session allocates
+41 in Part 2**, including activity and regroup slides. Each session allocates
 **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**. See the
 [session guide](resources/workshops/cstr/activities/session_guide.md) for the
 bounded exercises and [open questions](notes/open_questions.md) for pilot work.

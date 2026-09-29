@@ -2,13 +2,13 @@
 
 The original 54-slide sequence below remains intact, split at the Task 3 opener.
 Original numbers remain as stable editorial references. The shared sources build
-**Part 1: 34 frames** and **Part 2: 36 frames**, including activity and regroup support.
+**Part 1: 34 frames** and **Part 2: 41 frames**, including activity and regroup support.
 The Part 1 title is ready for delivery; DRAFT remains on the Part 2 title.
 
 | Build | Rendered frame mapping |
 |---|---|
 | Part 1, September 28 | Frames 1–26: original 1–26, with a session-specific title; frame 27: best practices and research tasks; 28–29: reactor model and notebook result; 30–32: activity; 33: regroup; 34: recap |
-| Part 2, October 12 | Frame 1: new title; frame 2: reconnect to the saved baseline; frames 3–30: original 27–54; frame 31: evidence/handoff closing; 32–35: activity; 36: regroup |
+| Part 2, October 12 | Frame 1: new title; frame 2: bridge from Part 1; frames 3–7: Git and GitHub recap; frames 8–35: original 27–54; frame 36: closing; 37–40: activity (audit, workflow, optional Step 0, judging the audit); 41: regroup |
 
 Each session: **35 minutes presentation, 10 Q&A, 45 hands-on, 15 regroup**.
 The original Act II source is split before Task 3 into code and literature files,
@@ -16,9 +16,9 @@ used by both the session builds and the combined build. Nothing is duplicated or
 cut. The title's `\part` declaration records the session boundary without an
 extra divider slide.
 
-Part 1's activity establishes a repository, runs and audits the notebook, extracts
-tested Python functions, and extends one analysis. Part 2 checks three claims in
-the shared report and revises one. The first session's closing frames the fortnight as experimentation
+Part 1's activity uses Claude as a tutor to turn the notebook folder into a
+repository, with optional paths that continue into a reproducible project. Part 2
+recaps Git and GitHub, then audits a statistical analysis against open references. The first session's closing frames the fortnight as experimentation
 on participants' own research. The second session's reconnect and closing make
 that continuity explicit.
 
@@ -134,3 +134,15 @@ deck. The five new public frames belong to the 45/15-minute activity/regroup
 blocks, not additional lecture time. Handouts are the primary in-room navigation
 aid: one two-sided sheet for each part; Part 1 instructions begin halfway down
 the front page and continue on the back.
+
+## September 28: revisions after teaching Part 1
+
+Part 1's activity handout was too prescriptive, and the public command sequence
+let an agent reproduce the expected solution. The Part 1 activity frames now
+show a tutor-style starter prompt and conceptual checkpoints, and the Part 1
+recap adds ask, inspect, verify, iterate. Part 2 gained five recap frames
+(frames 3–7) explaining Git, GitHub, commits, the repository root, `.gitignore`,
+nested repositories, and what belongs in GitHub versus cloud storage. Its
+activity frames now cover the statistics audit and the optional Step 0. The
+lecture frames after the recap moved by five in Part 2. Speaker notes mark where
+to stop talking. Tablet markups for Part 2 need to be redone.

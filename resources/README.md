@@ -8,9 +8,12 @@ These files turn the talk's recommendations into reusable guides, prompts, templ
   1.75-hour workshops using a nonisothermal CSTR case study. The public starter
   material lives here; instructor answers belong only in the separate private
   `claude-for-researchers-private` repository.
-- [`workshops/cstr/`](workshops/cstr/README.md): the starter project students
-  copy — executable notebook, environment, both activity files, literature and
-  LaTeX templates, and the fallback report for the claim audit.
+- [`workshops/cstr/`](workshops/cstr/README.md): the Part 1 starter project and
+  the optional reactor-report audit: executable notebook, environment, activity
+  files, literature and LaTeX templates, and the fallback report.
+- [`workshops/stats_audit/`](workshops/stats_audit/README.md): the Part 2
+  activity. Participants audit a statistical analysis of the public Palmer
+  Penguins data against open references.
 
 ## Practice guides
 

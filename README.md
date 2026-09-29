@@ -35,9 +35,9 @@ You do not need to run the notebook or create its environment before the worksho
 
 ## Workshop materials
 
-For **Workshop 1**, [download the notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip). It contains an exploratory notebook and a YAML parameter file; the CSV and figure are generated when you run the notebook. Unzip it and follow the [four-step activity](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md) to create your own private Git repository, reproduce and audit the result, extract tested Python functions, and choose [one analysis extension](resources/workshops/cstr/activities/workshop1_extensions.md). The [session guide](resources/workshops/cstr/activities/session_guide.md) explains the in-room route and how to save a partial checkpoint.
+For **Part 1**, [download the notebook ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/cstr/workshop1_notebook.zip). It contains an exploratory notebook and a YAML parameter file. Unzip it, open the folder in Claude, and follow the [Activity 1 guide](resources/workshops/cstr/activities/01_notebook_to_reproducible_project.md): ask Claude to walk you through turning the folder into a clean GitHub repository, explaining each step. The guide gives starter prompts, questions, and checkpoints rather than commands. The optional "keep going" paths lead to running and auditing the notebook, extracting tested functions, and one [analysis extension](resources/workshops/cstr/activities/workshop1_extensions.md). The [session guide](resources/workshops/cstr/activities/session_guide.md) explains the two sessions.
 
-For **Workshop 2**, use the [session guide](resources/workshops/cstr/activities/session_guide.md) and the [evidence-linked report activity](resources/workshops/cstr/activities/02_evidence_linked_report.md). The [CSTR workshop overview](resources/workshops/cstr/README.md) explains how the two activities connect.
+For **Part 2**, [download the audit project ZIP](https://raw.githubusercontent.com/dowlinglab/claude-for-researchers/main/resources/workshops/stats_audit/workshop2_audit_project.zip) and follow the [Activity 2 guide](resources/workshops/stats_audit/activity.md). You audit a colleague's statistical analysis of the public Palmer Penguins data against open statistics references, verify a sample of what Claude reports, and judge the quality of the audit. The [exercise overview](resources/workshops/stats_audit/README.md) explains the files. The longer [reactor-report audit](resources/workshops/cstr/activities/02_evidence_linked_report.md) remains as an optional take-home.
 
 ## Abstract
 
@@ -84,7 +84,7 @@ make -C slides
 make -C handout
 ```
 
-This builds the 34-slide Part 1 deck, the 36-slide Part 2 deck, and a two-page handout for each part. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
+This builds the 34-slide Part 1 deck, the 41-slide Part 2 deck, and a two-page handout for each part. `make -C slides notes` builds instructor copies with speaker notes. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details. Instructor answers stay in a separate private repository.
 
 To publish the four public PDFs, push a version tag such as `v1.0.0`. The
 [release workflow](.github/workflows/release.yml) compiles the sources and

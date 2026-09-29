@@ -16,7 +16,7 @@ Download [`workshop2_audit_project.zip`](https://raw.githubusercontent.com/dowli
 
 *Optional. If you are already comfortable with Git and Python.* If you are new to either, skip this step. You are not behind, and the audit works the same way without it.
 
-**Why it exists.** A notebook is convenient for interactive work, but it is awkward for an AI agent to edit and for a person to review. A notebook file is one large block of JSON that holds code, outputs, and images together. When Claude changes a few cells and reruns them, the diff in GitHub can show hundreds of changed lines that are not changes to the analysis. Plain-text Python files produce small diffs that show exactly what changed. That friction is a lesson in itself.
+**Why it exists.** A notebook is convenient for interactive work, but it is awkward for an AI agent to edit and for a person to review. A notebook file is one large block of JSON that holds code, saved outputs, and images together. When Claude edits a cell and reruns it, the diff shows the code with escaped quotation marks, every changed output, and any figure as one enormous line of image data. Changing one number in a plotting cell changed a line of about 35,000 characters in our own test. Plain-text Python files produce diffs that show only the code that changed. That friction is a lesson in itself.
 
 The right representation depends on the task. For substantial agentic editing and review, plain-text source files often make changes easier to understand and to audit. For exploration, a notebook is often the better tool. This is a trade-off, not a rule.
 

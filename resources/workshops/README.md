@@ -1,11 +1,15 @@
 # Workshop materials
 
-The seminar is being expanded into two 1.75-hour workshops built around one
-continuous nonisothermal CSTR case study:
+The seminar has two 1.75-hour hands-on sessions:
 
-1. convert an exploratory reactor notebook into a reproducible Python project;
-2. use computational artifacts and a small literature corpus to draft and audit
-   an evidence-linked LaTeX report.
+1. **Part 1:** use Claude as a tutor to turn an inherited reactor notebook folder
+   into a clean GitHub repository, with optional paths that continue into a
+   reproducible Python project (a nonisothermal CSTR case study);
+2. **Part 2:** audit a colleague's statistical analysis of the public Palmer
+   Penguins data against open statistics references, and judge the quality of
+   the audit ([`stats_audit/`](stats_audit/README.md)).
+
+The reactor case also supports a longer, optional evidence-linked report audit.
 
 The student-facing starter project is [`cstr/`](cstr/README.md): the executable
 notebook, the environment, both activity instruction files, the literature and

@@ -4,13 +4,13 @@ The two sessions use one scientific case: steady-state multiplicity in a cooled,
 
 ## Workshop 1: inherit the notebook
 
-Start with the small [notebook handoff zip](workshop1_notebook.zip). It contains only an exploratory notebook, a parameter file, and an empty `results/` directory. Download and unzip it, then follow the [four-step assignment](activities/01_notebook_to_reproducible_project.md): create your own private Git repository; set up Conda, run and audit the notebook; extract and test Python functions with NumPy-style docstrings; and complete one of the [four analysis extensions](activities/workshop1_extensions.md). The [session guide](activities/session_guide.md) points to the in-room route. Save a truthful checkpoint at minute 40 and continue unfinished gates between sessions.
+Start with the small [notebook handoff zip](workshop1_notebook.zip). It contains only an exploratory notebook, a parameter file, and an empty `results/` directory. Download and unzip it, open the folder in Claude, and follow the [Activity 1 guide](activities/01_notebook_to_reproducible_project.md): ask Claude to walk you through turning the folder into a clean GitHub repository. Optional paths lead on to running and auditing the notebook, extracting tested Python functions, and one of the [four analysis extensions](activities/workshop1_extensions.md). The [session guide](activities/session_guide.md) points to the in-room route.
 
 The zip is generated from the source notebook and parameter file with `python build_workshop1_handoff.py`; rerun that builder after changing either input. The existing full starter below is separate from the inherited notebook handoff.
 
-## Workshop 2: evidence-linked report
+## Optional: evidence-linked report
 
-Use the [Activity 2 instructions](activities/02_evidence_linked_report.md) and the report, literature, and evidence folders in this full starter. This project also retains a longer optional extraction workflow and utilities for notebook baseline capture. They are support material, not the initial Workshop 1 handoff.
+The in-room Part 2 activity is now the [statistics audit](../stats_audit/README.md). This reactor-report workflow is an optional take-home that uses the same audit habits on a different artifact. Use the [instructions](activities/02_evidence_linked_report.md) and the report, literature, and evidence folders in this full starter. This project also retains a longer optional extraction workflow and utilities for notebook baseline capture. They are support material, not the initial Workshop 1 handoff.
 
 To run this full starter in its own private copy:
 

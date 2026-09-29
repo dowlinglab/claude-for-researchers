@@ -1,7 +1,12 @@
 # Build plan: two AI-assisted research workshops using a CSTR
 
 **Status:** starter implemented and runtime-verified; session design updated after
-Alex approved the 35/10/45/15-minute budget.
+Alex approved the 35/10/45/15-minute budget. **Revised 2026-09-28 after teaching
+Part 1:** Activity 1 now teaches the mental model with Claude as a tutor instead
+of a Git command recipe, and the in-room Part 2 activity is a statistics audit
+([`stats_audit/`](stats_audit/README.md)). The reactor-report audit described
+below is an optional take-home. The phase tables and session estimates in this
+plan predate that change.
 
 **Audience:** chemical engineering graduate students, postdocs, and faculty with
 mixed experience in Python, Git, LaTeX, and coding agents.
