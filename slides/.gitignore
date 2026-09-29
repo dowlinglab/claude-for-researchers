@@ -3,5 +3,5 @@
 part1_slides.pdf
 part2_slides.pdf
 
-# Instructor copies with speaker notes (make notes)
-*_notes.pdf
+# Facilitator run sheets (make runsheets)
+run_sheets/*.pdf

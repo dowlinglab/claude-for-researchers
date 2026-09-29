@@ -26,10 +26,11 @@ make
 ```
 
 The outputs are `part1_slides.pdf` and `part2_slides.pdf`. `make part1` or `make part2` builds
-one session. There is no combined deck. `make notes`
-builds `part1_slides_notes.pdf` and `part2_slides_notes.pdf`, instructor copies with each
-frame's speaker notes beside it. The notes mark where to stop talking and let
-participants work. See [`pacing_notes.md`](pacing_notes.md) for possible cuts.
+one session. There is no combined deck. `make runsheets` builds
+`run_sheets/part1_run_sheet.pdf` and `run_sheets/part2_run_sheet.pdf`, one-page
+facilitator sheets: where to stop talking, the live demo, what to watch for during
+the work block, the regroup plan, and possible cuts. They are for printing and are
+not part of the release.
 `make watch MAIN=part1` watches the first part. The shared entry point uses a
 part selector, and `\part` records each session without adding divider frames.
 
@@ -59,7 +60,7 @@ python3 resources/scripts/check_docs.py
 | `storyboard.md` | Two-part mapping of the original 54 slides plus session opening/closing frames |
 | `check_layout.py` | Flags slides that are top-empty and bottom-crowded; run it after layout changes |
 | `image_plan.md` | Final inventory of image and native visual assets |
-| `pacing_notes.md` | Where the lecture is long relative to hands-on time, and possible cuts |
+| `run_sheets/` | LaTeX sources for the two facilitator run sheets |
 | `style_guide.md` | Typography, color, density, logo, and verification rules |
 
 The deck uses the [Dowling Lab ND Beamer Template](https://github.com/dowlinglab/ND_Beamer_Template).

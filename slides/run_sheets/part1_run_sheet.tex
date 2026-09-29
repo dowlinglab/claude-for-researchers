@@ -1,0 +1,58 @@
+\input{run_sheets/preamble}
+\newcommand{\sheetlabel}{Part 1}
+\begin{document}\small
+\heading{Part 1: Setting up a project}{Facilitator run sheet}
+\textbf{Budget:} 35 min presentation, 10 min Q\&A, 45 min hands-on, 15 min regroup. The hands-on block is the point of the session. Stay out of the way of it.
+
+\topic{Where to stop talking}
+\begin{tabularx}{\linewidth}{@{}p{1.45in}X@{}}
+\toprule
+\textbf{Frame} & \textbf{What to do}\\
+\midrule
+30 Activity 1 intro & Live demo (below), then stop talking.\\
+31 Starter prompt & Stop talking. The 45-minute work block starts.\\
+32 Checkpoints & Leave it up while people work.\\
+33 Regroup & Participants speak first.\\
+\bottomrule
+\end{tabularx}
+
+\topic{Before you start}
+\begin{itemize}
+  \item Have the ZIP link (frame 30) and the starter prompt (frame 31) ready to paste.
+  \item Have a spare unzipped copy of the notebook folder open in Claude for the demo.
+\end{itemize}
+
+\topic{Lecture, frames 1--29 (35 min)}
+The frames carry their own content. If you are behind, shorten frames 28--29 (the reactor case) first: the activity no longer depends on the reactor science.
+
+\topic{Live demo, frames 30--31 (suggested 5 to 7 min)}
+\begin{enumerate}
+  \item Unzip the download and open the folder itself in Claude.
+  \item Paste the starter prompt. Change the wording if you like.
+  \item Let Claude inspect the folder. Read its plan aloud.
+  \item Ask it a beginner question live, for example: what is a \code{.gitignore}?
+  \item Stop it before the first commit. Ask what it would commit, and why.
+\end{enumerate}
+The point: Claude is the tutor, not a command generator. Do not present a command sequence, and do not explain Git yourself. Say once that the goal is understanding each step, not producing a particular result.
+
+\topic{Work block, 45 min: walk the room}
+\textit{Look for these (from the guide's checkpoints):}
+\begin{itemize}
+  \item The workspace is the project folder itself, not one file or a parent folder.
+  \item Claude explains before it acts, and the participant reads the explanation.
+  \item The repository is not inside another repository.
+  \item The first commit holds the original files as received.
+\end{itemize}
+\textit{Seen in agent tests, not yet in the room:}
+\begin{itemize}
+  \item A cautious model paused for confirmation at every step. Tell it how much to do at once: ``Do the next three steps, then stop and summarize.''
+  \item A weaker model committed the original files together with its own additions, so there was no untouched starting point.
+\end{itemize}
+Stuck on a tool for five minutes: pair people up. Pushing to GitHub is optional. A local repository with the push pending is an acceptable checkpoint.
+
+\topic{Regroup, frame 33 (15 min)}
+Participants speak first. The questions are on the slide: how far did you get, what did you ask Claude that helped, what surprised you, what will you do next in your research. Ask for a question they would not have known to search for. Note any repository mishaps, so Part 2's recap can address them. Close with ask, inspect, verify, iterate (frame 34).
+
+\vfill
+\textbf{After the session:} nothing is required between sessions. The ``keep going'' paths in the Activity 1 guide are optional.
+\end{document}

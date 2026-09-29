@@ -9,8 +9,6 @@
   \end{center}
   \vspace{1.6cm plus 1fill}
 \end{frame}
-\note{Point at each box in turn. The repository lives on the participant's own computer; GitHub is a second copy. Commit, push and pull are the three arrows and nothing else. Do not type commands. If someone did not finish pushing in Part 1, that is normal and fixable: ask Claude why the push failed.}
-
 \begin{frame}{A commit is a labeled checkpoint, not a save}
   \vfill
   \begin{center}
@@ -22,8 +20,6 @@
   \end{center}
   \vspace{1.6cm plus 1fill}
 \end{frame}
-\note{Saving a file overwrites it. A commit adds a named point to the history. The hashes at the bottom are the labels Git uses internally; nobody needs to read them. Ask: if Claude breaks something tonight, which commit would you go back to?}
-
 \begin{frame}[fragile]{The repository root, and what Git ignores}
   \vfill
   \begin{columns}[c]
@@ -50,8 +46,6 @@ research-project/  <- root
   \end{center}
   \vspace{1.4cm plus 1fill}
 \end{frame}
-\note{The most common Part 1 confusion was which folder is the root. Open the root folder as the workspace, not a subfolder or a single file. Ask the room where their .git folder lives.}
-
 \begin{frame}{Never nest one Git repository inside another}
   \vfill
   \begin{center}
@@ -64,8 +58,6 @@ research-project/  <- root
   \end{center}
   \vspace{1.2cm plus 1fill}
 \end{frame}
-\note{This is the mistake that costs the most time. Typical cause: unzipping a project into a folder that is already a repository, or creating a repository inside a folder you cloned. If a participant has two .git folders, stop and ask Claude to inspect before doing anything else. We are deliberately not teaching submodules.}
-
 \begin{frame}{Track text in GitHub; keep big files elsewhere}
   \vfill
   \begin{center}
@@ -77,4 +69,3 @@ research-project/  <- root
   \end{center}
   \vspace{1.6cm plus 1fill}
 \end{frame}
-\note{The 10 MB limit is my own working convention, not a GitHub rule; the GitHub numbers are in notes/references.md and resources/practices/latex\_overleaf\_workflow.md. It is a rule of thumb, not a policy: the point is that a project can reference files that live somewhere else. Notebooks are the awkward middle case, which is exactly what today's optional Step 0 is about. STOP HERE: one question at most, then go on. POSSIBLE CUT: shorten or drop this frame if the lecture is behind.}

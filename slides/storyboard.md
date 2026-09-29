@@ -144,8 +144,9 @@ recap adds ask, inspect, verify, iterate. Part 2 gained five recap frames
 (frames 3–7) explaining Git, GitHub, commits, the repository root, `.gitignore`,
 nested repositories, and what belongs in GitHub versus cloud storage. Its
 activity frames now cover the statistics audit and the optional Step 0. The
-lecture frames after the recap moved by five in Part 2. Speaker notes mark where
-to stop talking. Tablet markups for Part 2 need to be redone.
+lecture frames after the recap moved by five in Part 2. The
+facilitator run sheets (`run_sheets/`) mark where to stop talking. Tablet markups for
+Part 2 need to be redone.
 
 ### September 28, later: recap and task labels
 
@@ -154,3 +155,8 @@ later Part 2 frame moved by one more. The recap and the opening roadmap show whi
 task each act covers, and each list of the six tasks labels Tasks 1–2 as Part 1 and
 Tasks 3–6 as Part 2. The four PDFs are named `part1_slides.pdf`, `part2_slides.pdf`,
 `part1_handout.pdf`, and `part2_handout.pdf`. The combined deck and packet are gone.
+
+The speaker notes added earlier that day were replaced by the run sheets, and the
+`make notes` build and `pacing_notes.md` were removed. The run sheet for each part lists
+the stop-talking frames, the live demo (Part 1), the recap and Step 0 points (Part 2),
+what to watch during the work block, the regroup plan, and the possible cuts.

@@ -28,11 +28,6 @@
 
 \setbeamertemplate{navigation symbols}{}
 
-% Build the instructor notes (make notes) with \def\shownotes{1} before this file is read.
-\ifdefined\shownotes
-  \setbeameroption{show notes on second screen=right}
-\fi
-
 \setbeamercolor{enumerate item}{fg=IrishGreen}
 \setbeamercolor{enumerate subitem}{fg=IrishGreen}
 \setbeamercolor{item projected}{bg=IrishGreen}
@@ -164,7 +159,6 @@
 \ifnum\seminarpart=1\else
   \sessiontitle{Part 2}{Advanced features}{12 October 2026}
   \input{sections/10b_part1_recap}
-  \note{Part 2 opens by repeating the Part 1 recap so that people who missed the first session, or have forgotten it, can place today. Thirty seconds: name the two Part 1 tasks, then ask for a show of hands on who reached a repository and who kept going. Then move straight to the bridge frame.}
   \input{sections/07_part2_reconnect}
   \input{sections/07b_part2_git_recap}
   \input{sections/03b_act2_literature}

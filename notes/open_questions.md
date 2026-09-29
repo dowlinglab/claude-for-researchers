@@ -16,7 +16,7 @@ history and in [seminar notes](seminar_notes.md).
    Confirm the slides and two-page handout before printing or presenting. The
    September 28 revision added recap frames and a new activity; redo tablet
    markups for Part 2 and decide which lecture frames to cut (see
-   [pacing notes](../slides/pacing_notes.md)).
+   [Part 2 run sheet](../slides/run_sheets/part2_run_sheet.tex)).
 5. **Decide instructor-only distribution.** Choose which regroup reveals to show
    and whether worked solutions will be shared after the series. The private
    repository records the options.

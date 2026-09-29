@@ -971,3 +971,21 @@ that explained each step and paused for questions.
 **Consequences to review.** Tablet markups for Part 2 no longer match frame
 numbers. Part 2's lecture is now longer; cuts are Alex's call. The private
 instructor decks and `STARTER_VERSION.md` needed updating alongside.
+
+### 2026-09-28 (later) — Speaker notes replaced by facilitator run sheets
+
+Alex asked whether the speaker notes were worth keeping. Sixteen notes covered 4 of
+Part 1's 34 frames and 12 of Part 2's 42, so the notes decks were mostly blank note
+pages; several restated their slide; and the stop points and cuts were also kept in
+`slides/pacing_notes.md`. Some sentences were also unsupported. The Part 2 recap notes
+said the root folder was the most common Part 1 confusion and that nesting repositories
+"costs the most time", and a Part 1 note said authentication failures are common. None of
+that came from Alex's debrief. It was inferred, and it has been removed.
+
+**Decision.** All notes, the `make notes` build, and `pacing_notes.md` are gone. Each part
+has a one-page facilitator run sheet (`slides/run_sheets/`, `make -C slides runsheets`).
+Claims on the sheets are limited to what the Activity guides and the design require, and
+anything that appeared only in the agent tests is labeled "seen in agent tests, not yet
+in the room". Times are the approved 35/10/45/15 budget plus suggestions that have not
+been tried. The earlier entry above that mentions speaker notes is superseded.
+
