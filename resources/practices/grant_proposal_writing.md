@@ -36,7 +36,7 @@ Ask an assistant to check a draft against the funding call's actual requirements
 \newcommand{\foacomment}[1]{\textcolor{blue}{\textbf{[Compliance note:} #1\textbf{]}}}
 ```
 
-This is the same principle as `manuscript_audit.md` §5, applied before a result exists rather than after: findings are visible where they matter, and each one is either resolved (fix the text, remove the comment) or explicitly deferred — but never lost in a chat transcript that won't exist by the time you need to remember what was flagged. The loop is: flag → fix → remove. Every comment that survives to the next commit is a finding that hasn't been addressed yet, which makes "any comments left?" a real pre-submission check rather than a question you have to reconstruct from memory.
+This is the same principle as `manuscript_audit.md` §5 and §6, applied before a result exists rather than after: findings are visible where they matter, and each one is either resolved (fix the text, remove the comment) or explicitly deferred — but never lost in a chat transcript that won't exist by the time you need to remember what was flagged. The loop is: flag → fix → remove. Every comment that survives to the next commit is a finding that hasn't been addressed yet, which makes "any comments left?" a real pre-submission check rather than a question you have to reconstruct from memory.
 
 ## 5. Verify every revision with a word-level diff before committing
 
@@ -104,11 +104,11 @@ A proposal often moves through a collaborative editor (which auto-commits), a lo
 **Before every commit**
 
 - [ ] `latexdiff` run against the last committed version and the diff actually read
-- [ ] The sponsor's exact wording restored above each answer
 - [ ] All inline decision/compliance markers resolved and removed
 
 **Before submission**
 
+- [ ] The sponsor's exact wording restored above each answer
 - [ ] AI-use policy for this specific program checked
 - [ ] Tool use disclosed, consistently, wherever the program or convention requires it
 - [ ] If this is a recurring program: template split out for next cycle

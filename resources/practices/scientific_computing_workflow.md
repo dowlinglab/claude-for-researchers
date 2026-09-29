@@ -19,7 +19,7 @@ The most common bad advice in AI-assisted development is "write more tests." For
 | **Refactor / extension** — changing code that works | That baseline as a gate; cross-method agreement; invariants | Adding new science mid-refactor (§4) |
 | **Publication / handoff** — someone else must rerun it | Invariants, reproduction scripts, environment pinning, run manifests | Brittle full-assignment assertions that break on any harmless change |
 
-Two rules follow, and both are load-bearing:
+Three rules follow, and all are load-bearing:
 
 - **A green test suite is evidence only about the code it executes.** A real case: a suite covering 24 of 29 analysis directories reported all-green while the four changes that mattered landed in the five directories it never ran. "All tests pass" was true and carried no information.
 - **A physical-plausibility check outperforms a plausible-looking guess.** A parameter stuck at its bound looked like a bounds problem; relaxing the bound moved the fit just enough to look plausible. Resimulating at the value already known to be true — instead of guessing why the fit avoided it — showed the bound was fine and an internal scaling constant was wrong by orders of magnitude. The guess would have shipped a confidently wrong answer that ran without complaint.
@@ -114,7 +114,7 @@ Every result that reaches a manuscript should be traceable to the exact thing th
 
 **Quarantine invalid runs; don't delete them.** Rename the directory with the reason encoded — `..._invalid_seed_collision`, `..._invalid_truncated` — so the record shows what was excluded and why.
 
-**Keep one results manifest as the single source of truth** for every number that reaches prose. When someone asks where a number came from, exactly one file should be the answer, and figure directories should record the configuration that produced them (§8, and the `results_manifest.md` template).
+**Keep one results manifest as the single source of truth** for every number that reaches prose. When someone asks where a number came from, exactly one file should be the answer, and figure directories should record the configuration that produced them (`scientific_figures_tables.md` §5, and the `results_manifest.md` template).
 
 ## 8. Structure that survives
 

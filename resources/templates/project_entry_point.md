@@ -10,7 +10,7 @@ The one file an AI assistant reads first — and the one a collaborator or a fut
 
 ---
 
-```markdown
+````markdown
 # <Project name>
 
 <One to three sentences: what this project is and what question it answers.>
@@ -88,7 +88,7 @@ In flight:  <long-running job, where its output lands, when it started>
 Resume:     <the first thing the next session should do>
 For me:     <anything needing a human decision before work continues>
 ```
-```
+````
 
 ---
 

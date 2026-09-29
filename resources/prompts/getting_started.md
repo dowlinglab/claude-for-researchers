@@ -4,7 +4,7 @@ For right after you clone this repo. Point any chatbot or coding assistant at it
 
 **What it does not do:** hand you a one-size-fits-all checklist. It asks about your project first, then points at the specific practice files that match where you actually are — a student six months from a defense needs different pages than one who just inherited a folder of scripts.
 
-**Companion reading:** [`../README.md`](../README.md) has the full map of what's in this repo, if you want to browse first instead of asking.
+**Companion reading:** [`../README.md`](../README.md) has the full map of the resources in this repo, if you want to browse first instead of asking.
 
 ---
 
@@ -37,7 +37,7 @@ to my own project, not a generic tour of the folder.
 ## How we work
 
 1. If you can browse or read files directly, start with `resources/README.md`
-   — it maps every file to what it's for. If you can't read files (a plain
+   — it maps each resource to what it's for. If you can't read files (a plain
    chat window with no attachments), ask me to paste in `resources/README.md`
    and whichever specific file ends up being relevant, once we know which
    one that is.

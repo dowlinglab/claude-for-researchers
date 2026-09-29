@@ -4,7 +4,7 @@
 
 **Two directions, one test.** Task 1's problem ("inherit a messy project, reconstruct its context") is Task 2's problem in reverse ("release something someone else can pick up"). The checklist is the same either way; only which end of it you're standing on changes. Use the **Receiving** half when you're the one inheriting; use the **Leaving** half before you hand something off, archive it, or release it.
 
-This is a checklist, not a practice file — it doesn't re-argue the reasoning. Each item cites the practice file that does: [`../practices/working_with_ai_agents.md`](../practices/working_with_ai_agents.md), [`../practices/scientific_computing_workflow.md`](../practices/scientific_computing_workflow.md), [`../practices/private_code_to_public_package.md`](../practices/private_code_to_public_package.md).
+This is a checklist, not a practice file — it doesn't re-argue the reasoning. Most items cite the practice file that does: [`../practices/working_with_ai_agents.md`](../practices/working_with_ai_agents.md), [`../practices/scientific_computing_workflow.md`](../practices/scientific_computing_workflow.md), [`../practices/private_code_to_public_package.md`](../practices/private_code_to_public_package.md).
 
 ---
 

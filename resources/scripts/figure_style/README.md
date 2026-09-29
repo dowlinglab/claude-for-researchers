@@ -6,7 +6,7 @@ One publication-figure style for a whole project, plus automatic figure provenan
 
 Drop `figure_style.py` into your project, import it wherever you plot, and stop setting font sizes in analysis scripts.
 
-The point is not tidiness. **Once styling is scattered across dozens of scripts, any later standard becomes unenforceable** — "update every figure to the new guideline" turns into a week of edits instead of a one-line change. Two separate projects learned this the hard way before this module existed.
+The point is not tidiness. **Once styling is scattered across dozens of scripts, any later standard becomes unenforceable** — "update every figure to the new guideline" turns into a week of edits instead of a one-line change. Two separate projects learned this the hard way.
 
 Implements the [NDCBE publication-quality figure guidelines](https://ndcbe.github.io/data-and-computing/notebooks/01/Publication-Quality-Figures.html).
 
@@ -88,7 +88,7 @@ not sit on top of the data. Move it outside the axes (bbox_to_anchor), extend
 the axis limits to make room, or label the series directly.
 ```
 
-This is a correctness issue rather than a matter of taste — a legend over the curves hides the evidence the figure exists to show. Note that **`loc="best"` does not save you**: it minimises overlap and then gives up silently when the axes are full. On a five-series damped oscillation it still covered 131 points in testing.
+This is a correctness issue rather than a matter of taste — a legend over the curves hides the evidence the figure exists to show. Note that **`loc="best"` does not save you**: it minimises overlap and then gives up silently when the axes are full. On a five-series damped oscillation it still covered well over a hundred points in testing.
 
 **Legend width (`check_layout`)** — warns if the legend is *wider than the axes it labels*. A full-width legend over a narrower plot reads as unbalanced even though nothing is clipped. Fix by using fewer columns so it wraps, or by widening the figure.
 

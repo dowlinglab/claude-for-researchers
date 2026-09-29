@@ -76,7 +76,7 @@ A style guide is a **living document** in the sense of `working_with_ai_agents.m
 
 *Binding for group manuscripts. Useful to everyone else as a worked example of what Part I produces.*
 
-This section merges two earlier derivations: one built empirically from the group manual plus a large corpus of the group's own papers, one anchored to named exemplar documents. Where they agreed, the rule is stated plainly. Confidence is **high** for argument structure, paragraph design, and terminology handling; **moderate** for individual word choice, punctuation, and sentence rhythm — treat the moderate items as defaults, not law.
+This section was derived two ways: empirically from the group manual plus a large corpus of the group's own papers, and from named exemplar documents. Where the two agreed, the rule is stated plainly. Confidence is **high** for argument structure, paragraph design, and terminology handling; **moderate** for individual word choice, punctuation, and sentence rhythm — treat the moderate items as defaults, not law.
 
 **The priority order, when rules conflict:** scientific accuracy and reproducibility first, then clarity for the reader, then consistency with this guide, then style preference. A sentence that is more elegant and less precise is the wrong sentence.
 
@@ -93,7 +93,7 @@ This section merges two earlier derivations: one built empirically from the grou
 - **One idea per sentence.** Moderate length. Active voice by default.
 - **Topic sentence first; one point per paragraph.** If a paragraph has two points, it is two paragraphs.
 - **Vary the rhythm.** A long qualified sentence followed by a short flat one reads as human; uniform mid-length sentences read as generated.
-- **Build the argument before polishing the sentences.** This is the register's governing rule, and it is why Part I §1 exists.
+- **Build the argument before polishing the sentences.** This is the register's governing rule; `technical_writing.md` §1 develops it.
 - **Past tense** for what was done, **present tense** for what results show, future tense only in future-work.
 
 ## 8. Terminology and definitions

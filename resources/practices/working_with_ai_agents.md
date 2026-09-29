@@ -180,7 +180,7 @@ Use [Anthropic's hooks guide](https://code.claude.com/docs/en/hooks-guide) for t
 
 Before leaving, save an execution plan in the repository. A usable plan names the intended artifact, completion evidence, source authority, permitted edits, reversible decisions, checks between phases, resource/time budget, and conditions that require your judgment. Agree on the review point before starting. “Work for 12 hours” alone does not define success.
 
-The seminar's examples use a 12-hour lecture revision plan and a 24-hour feasibility-study plan. The lecture plan reserves ambiguous annotations and major teaching changes for instructor review. The study plan reserves changes to the scientific question and baseline discrepancies for researcher review. These are planning budgets, not claims that a service guarantees uninterrupted runtime.
+Decide what the plan reserves for your review. A lecture revision might reserve ambiguous annotations and major teaching changes for the instructor. A feasibility study might reserve changes to the scientific question and baseline discrepancies for the researcher. A time budget is a planning budget, not a claim that a service guarantees uninterrupted runtime.
 
 An adaptable task brief:
 

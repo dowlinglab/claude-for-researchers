@@ -20,7 +20,7 @@ These files turn the talk's recommendations into reusable guides, prompts, templ
 | [`grant_proposal_writing.md`](practices/grant_proposal_writing.md) | Task 3: proposal development and compliance |
 | [`latex_overleaf_workflow.md`](practices/latex_overleaf_workflow.md) | Task 3: one manuscript across Overleaf, GitHub, and local tools |
 | [`literature_review.md`](practices/literature_review.md) | Task 3: idea-first search and source verification |
-| [`manuscript_audit.md`](practices/manuscript_audit.md) | Tasks 4–6: evidence-based audits |
+| [`manuscript_audit.md`](practices/manuscript_audit.md) | Task 4: evidence-based audits |
 | [`private_code_to_public_package.md`](practices/private_code_to_public_package.md) | Task 2: packaging and release hygiene |
 | [`scientific_computing_workflow.md`](practices/scientific_computing_workflow.md) | Tasks 2 and 6: reproducibility and automated checks |
 | [`scientific_figures_tables.md`](practices/scientific_figures_tables.md) | Tasks 5 and 6: reproducible figures and tables |
@@ -35,7 +35,7 @@ See [`practices/README.md`](practices/README.md) for a shorter “which guide sh
 ### Prompts
 
 - [`getting_started.md`](prompts/getting_started.md): select useful resources for a real project.
-- [`literature_workflow.md`](prompts/literature_workflow.md): process and verify a literature corpus.
+- [`literature_workflow.md`](prompts/literature_workflow.md): process a folder of literature PDFs and flag uncertain metadata.
 - [`manuscript_audit.md`](prompts/manuscript_audit.md): audit claims, methods, figures, and guidelines.
 - [`organize_research_repo.md`](prompts/organize_research_repo.md): place a project under version control and organize it.
 - [`proposal_review.md`](prompts/proposal_review.md): check a proposal against sponsor requirements.

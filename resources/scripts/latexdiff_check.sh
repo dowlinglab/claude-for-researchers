@@ -11,13 +11,14 @@
 # Usage:
 #   latexdiff_check.sh main.tex                  # diff against HEAD
 #   latexdiff_check.sh -r v1-submitted main.tex   # diff against a tag/ref
-#   latexdiff_check.sh -o review main.tex         # name the output review-*
+#   latexdiff_check.sh -o review main.tex         # name the output review.pdf
 #   latexdiff_check.sh -k main.tex                # keep the diff .tex source
 #
-# Writes <basename>-diff.pdf next to MAIN_TEX (plus build byproducts, unless
-# -k). Never modifies MAIN_TEX or touches git state -- read-only against the
-# repository. Requires: git, latexdiff, and latexmk (or pdflatex as a
-# fallback). Exits non-zero on any failure, so it can gate a commit hook.
+# Writes <basename>-diff.pdf next to MAIN_TEX (plus the diff .tex source with
+# -k; build byproducts are removed). Never modifies MAIN_TEX or touches git
+# state -- read-only against the repository. Requires: git, latexdiff, and
+# latexmk (or pdflatex as a fallback). Exits non-zero on any failure, so it
+# can gate a commit hook.
 
 set -euo pipefail
 
@@ -26,7 +27,7 @@ out_base=""
 keep_tex=0
 
 usage() {
-  sed -n '2,17p' "$0" | sed 's/^# \{0,1\}//'
+  sed -n '2,21p' "$0" | sed 's/^# \{0,1\}//'
   exit "${1:-0}"
 }
 
@@ -71,10 +72,17 @@ tex_name=$(basename "$main_tex")
 tex_base="${tex_name%.tex}"
 : "${out_base:=${tex_base}-diff}"
 
+# The diff is written to ${out_base}.tex and later deleted, so a name that
+# matches the input would overwrite and then remove MAIN_TEX itself.
+if [ "$out_base" = "$tex_base" ]; then
+  echo "error: -o '$out_base' would overwrite '$tex_name'. Choose another name." >&2
+  exit 2
+fi
+
 rel_path=$(git -C "$repo_root" ls-files --full-name "$tex_dir/$tex_name" 2>/dev/null | head -1)
 if [ -z "$rel_path" ]; then
   echo "error: '$main_tex' is not tracked by git, so there is nothing to diff" \
-       "against. Commit it first, or pass -r to compare two committed refs." >&2
+       "against. Commit it first." >&2
   exit 2
 fi
 

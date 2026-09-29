@@ -42,7 +42,7 @@ Push from Overleaf to GitHub every time you create a real new version of a file,
 - **Asynchronous work.** A collaborator without Overleaf access at that moment — no internet, or between institutions — can still get the current source from GitHub.
 - **Survival past graduation.** A student's university email eventually stops working, and Overleaf projects tied to it can become orphaned. A GitHub repo owned by the group (not an individual's account) keeps the manuscript's full history accessible after anyone graduates.
 
-Keep an `archive/` (or `graveyard/`) folder inside the project for superseded source files and figures, rather than deleting them — the same instinct as `scientific_computing_workflow.md`'s "correct in place, don't silently delete."
+Keep an `archive/` (or `graveyard/`) folder inside the project for superseded source files and figures, rather than deleting them — the same instinct as `scientific_computing_workflow.md` §4's "Archive rather than delete."
 
 ## 3. Editing locally on a branch
 
@@ -69,7 +69,7 @@ This does real work beyond just "leaving a note":
 - **Sending a draft implicitly asserts "this is ready except for what's marked."** If you know something is unfinished and don't mark it, a collaborator has no way to know that from the PDF alone.
 - **The draft is ready to submit once every open note is resolved** — a concrete, checkable stopping condition, not a feeling.
 - **Feedback you're not addressing immediately still needs a note.** If a collaborator's comment isn't going into the next revision, say so *in the document*, or they'll repeat it next round because nothing shows it was heard.
-- **When you circulate a new draft, every previous open item should be either resolved or still explicitly marked.** A comment that silently disappeared between drafts reads as ignored, even if you actually addressed it — this is the same "correct in place, don't silently delete" discipline as §2's archive folder, applied to feedback instead of source files.
+- **When you circulate a new draft, every previous open item should be either resolved or still explicitly marked.** A comment that silently disappeared between drafts reads as ignored, even if you actually addressed it — this is the same discipline as `literature_review.md` §6 ("Correct in place; never silently delete") and §2's archive folder, applied to feedback instead of source files.
 
 ## 5. What to send when you share a draft
 

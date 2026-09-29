@@ -1,12 +1,12 @@
 # Practices
 
-Ten best-practice files distilled from a year of AI-assisted research work — refactors, package releases, manuscript audits, method development — including the parts that did not work.
+Best-practice files distilled from a year of AI-assisted research work — refactors, package releases, manuscript audits, method development — including the parts that did not work.
 
-They are written to be **used with an AI assistant**, not just read. Each has stable numbered sections so a prompt can cite one (`follow §4 of manuscript_audit.md`), a checklist, a list of anti-patterns, and paste-ready invocations at the end.
+They are written to be **used with an AI assistant**, not just read. Each has stable numbered sections so a prompt can cite one (`follow §4 of manuscript_audit.md`) and paste-ready invocations for an assistant; most also have a checklist and a list of anti-patterns.
 
 ## Which file do I want?
 
-"Used live as" points at the seminar task where the talk actually demonstrates this file (`../../slides/storyboard.md`'s Task 1–6); a file with no live task is still real, checklist-usable doctrine — see `../README.md` for the full status note.
+"Used live as" points at the seminar task where the talk actually demonstrates this file (`../../slides/storyboard.md`'s Task 1–6).
 
 | I need to… | Read | Used live as |
 |---|---|---|
@@ -46,7 +46,7 @@ technical_writing ──► writing_style_guide                           │
 - **Tool-agnostic**, with tool-specific mechanics marked and dated. Vendor conventions drift; share instruction content explicitly rather than assuming every tool discovers the same files.
 - **Every rule carries its reason.** Rules without reasons get discarded the first time they are inconvenient.
 - **Rules that must hold have a way to fail.** Written instructions are advisory; see `working_with_ai_agents.md` §9. The tools in [`../scripts/`](../scripts/) exist to turn some of these into gates.
-- **Practices, not projects.** These are generalized. Nothing here identifies a specific paper, repository, or person.
+- **Practices, not projects.** These are generalized. Nothing here identifies a specific paper, repository, or student.
 
 ## Using them in your own repository
 
@@ -59,4 +59,4 @@ Follow `practices/working_with_ai_agents.md` §5 (standing rules) and §6
 `practices/technical_writing.md` and `practices/writing_style_guide.md`.
 ```
 
-Each file's closing section has more specific invocations for one-off tasks and audits.
+Each file has a section of more specific invocations for one-off tasks and audits.

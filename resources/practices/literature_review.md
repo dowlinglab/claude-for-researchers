@@ -4,7 +4,7 @@
 
 **When to reach for it.** Starting a new project and want to know what's already been tried. Have a research idea and want to pressure-test it against an adjacent field. Inherited or collected a folder of PDFs and need to make sense of it, for yourself or for someone taking the project over.
 
-**Companion resources.** [`../prompts/literature_workflow.md`](../prompts/literature_workflow.md) operationalizes §3–§5 below as a ready-to-run prompt. [`../scripts/doi_checker/`](../scripts/doi_checker/) verifies the bibliography this produces.
+**Companion resources.** [`../prompts/literature_workflow.md`](../prompts/literature_workflow.md) operationalizes §3–§4 below as a ready-to-run prompt. [`../scripts/doi_checker/`](../scripts/doi_checker/) verifies the bibliography this produces.
 
 **How to read it.** Sections are numbered and stable, so a prompt can cite one (`follow §5`).
 

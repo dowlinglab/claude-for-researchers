@@ -12,7 +12,7 @@ Turns it into: consistent filenames, a notes file organized by paper, and BibTeX
 
 ## The prompt
 
-```markdown
+````markdown
 # Task: organize a literature folder
 
 Folder: <absolute path to the PDFs>
@@ -97,7 +97,7 @@ Then stop for approval.
 - Everything left unrenamed, and what would resolve each case.
 - Any paper whose DOI you could not find in the document — I will check those
   against Crossref separately.
-```
+````
 
 ---
 

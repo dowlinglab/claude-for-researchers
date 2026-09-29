@@ -38,7 +38,7 @@ Two passes, kept separate **because they fail differently**:
 | Verdict | Meaning |
 |---|---|
 | `MATCH` | Resolves, title similarity ≥ 0.90, author consistent |
-| `CHECK` | Resolves, similarity 0.55–0.90 — a human needs to look |
+| `CHECK` | Resolves, similarity 0.55–0.90, or similarity ≥ 0.90 with an inconsistent first author — a human needs to look |
 | `MISMATCH` | Resolves to something else entirely |
 | `UNRESOLVED` | Crossref does not know this DOI |
 
@@ -69,8 +69,8 @@ So it can gate a commit hook or a CI job:
 
 ## Notes on the implementation
 
-- **The BibTeX parser counts braces rather than matching a regex.** Titles routinely contain nested braces (`{CO$_2$} {Capture}`), and a regex that stops at the first `}` truncates the entry to its title — silently, and in a way that makes everything downstream look like a mismatch. This was a real bug in an earlier version.
-- **Network failures degrade the report; they do not abort the run.** A request that fails is reported as `UNRESOLVED`, so a flaky connection does not throw away fifty successful lookups.
+- **The BibTeX parser counts braces rather than matching a regex.** Titles routinely contain nested braces (`{CO$_2$} {Capture}`), and a regex that stops at the first `}` truncates the entry to its title — silently, and in a way that makes everything downstream look like a mismatch.
+- **Network failures degrade the report; they do not abort the run.** A request that fails is reported as `UNRESOLVED` (or, for an entry without a DOI, as no candidate), so a flaky connection does not throw away fifty successful lookups.
 - **Crossref responses are treated as data**, never as instructions and never as ground truth. The tool tells you what Crossref said; you decide.
 
 ## What it does not do

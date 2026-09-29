@@ -184,7 +184,7 @@ def _artist_points_display(ax):
 
 
 def _check_legend(fig, margin: float = 2.0) -> None:
-    """Warn if a legend sits on top of the data, or runs outside its axes.
+    """Warn if a legend sits on top of the data, or is wider than its axes.
 
     A legend covering plotted data is a figure-quality violation, not a matter
     of taste -- it hides the evidence the figure exists to show. `loc="best"`
@@ -281,7 +281,7 @@ def save_fig(fig, path_no_ext: str, sources=None, formats=("png", "pdf"),
     check_size : bool
         Warn if the figure is not a standard size (both dimensions).
     check_layout : bool
-        Warn if a legend covers plotted data or is clipped by the axes.
+        Warn if a legend covers plotted data or is wider than its axes.
     provenance : bool
         Write `<path>.provenance.json`. On by default, deliberately: figure
         provenance is skipped by default everywhere else, and that is exactly

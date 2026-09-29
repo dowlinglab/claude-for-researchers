@@ -84,7 +84,7 @@ So write the standards down as files and point the assistant at them:
 - a nomenclature file for notation
 - the target journal's author instructions, saved into the repo
 
-Then the task becomes checkable: *"Review every figure against the figure guidelines. Report each violation with the specific rule it breaks."* This is the same move as §5 of `manuscript_audit.md`, applied to writing, and it is the difference between an assistant that edits and an assistant that reviews.
+Then the task becomes checkable: *"Review every figure against the figure guidelines. Report each violation with the specific rule it breaks."* This is the same move as §12 of `manuscript_audit.md`, applied to writing, and it is the difference between an assistant that edits and an assistant that reviews.
 
 ## 6. Recognizing AI drift in prose
 
@@ -102,7 +102,7 @@ The goal is **not** to make AI-assisted writing undetectable. It is to keep your
 Two structural safeguards matter more than any of the individual tells:
 
 - **Protect the inconvenient results.** The default drift of AI-assisted revision is toward a cleaner, more one-sided story than your evidence supports. State explicitly, in the task: *the honest caveats must survive; do not sand them into a "our method wins" narrative.*
-- **Carry integrity constraints in the style file itself**, so a later prose pass cannot quietly undo a verified finding. See `writing_style_guide.md` §4.
+- **Carry integrity constraints in the style file itself**, so a later prose pass cannot quietly undo a verified finding. See `writing_style_guide.md` §3.
 
 ## 7. Capture review comments as a work list before acting
 
