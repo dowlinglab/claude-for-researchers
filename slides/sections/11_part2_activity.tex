@@ -1,3 +1,123 @@
+\begin{frame}{Part 2 Activity: A teammate hands you a folder}
+  \vfill
+  \begin{center}
+    \resizebox{0.98\linewidth}{!}{\begin{tikzpicture}[font=\large\sffamily, >=Stealth]
+      \node[nd box, minimum width=4.2cm, minimum height=1.6cm] (d) at (0,0) {\textbf{Data}\\{\small \texttt{data/penguins.csv}}};
+      \node[nd box, minimum width=4.2cm, minimum height=1.6cm] (n) at (5.4,0) {\textbf{Notebook}\\{\small code and saved outputs}};
+      \node[nd highlight, minimum width=4.2cm, minimum height=1.6cm] (w) at (10.8,0) {\textbf{Write-up}\\{\small \texttt{writeup.md}: the claims}};
+      \node[nd box, minimum width=4.2cm, minimum height=1.6cm] (f) at (5.4,-2.3) {\textbf{Figures}\\{\small two PNG files}};
+      \node[nd box, minimum width=4.2cm, minimum height=1.6cm] (r) at (10.8,-2.3) {\textbf{References}\\{\small open texts to check against}};
+      \draw[->, very thick, NDBlue] (d) -- (n);
+      \draw[->, very thick, NDBlue] (n) -- (w);
+      \draw[->, very thick, NDBlue] (n) -- (f);
+      \draw[->, very thick, NDBlue] (f) -- (w);
+      \draw[->, very thick, NDBlue, dashed] (r) -- (w);
+    \end{tikzpicture}}
+  \end{center}
+  \vspace{0.8em}
+  \begin{center}
+    \slidepoint{Every claim in the write-up should trace back to the \textbf{data}, the \textbf{notebook}, or a \textbf{reference}.}
+  \end{center}
+  \vspace{1.6cm plus 1fill}
+\end{frame}
+
+\begin{frame}[fragile]{The data: Palmer Penguins}
+  \vfill
+  \begin{lstlisting}[basicstyle=\ttfamily\scriptsize, breaklines=false]
+species,island,bill_length_mm,bill_depth_mm,flipper_length_mm,body_mass_g,sex,year
+Adelie,Torgersen,39.1,18.7,181,3750,male,2007
+Adelie,Torgersen,39.5,17.4,186,3800,female,2007
+Adelie,Torgersen,40.3,18,195,3250,female,2007
+...
+  \end{lstlisting}
+  {\small \texttt{data/penguins.csv}: one row per penguin, with bill, flipper, body mass, and sex measurements}\\[1.0em]
+  \begin{center}
+    \begin{tikzpicture}[font=\sffamily]
+      \node[nd box, minimum width=3.1cm, minimum height=1.7cm] at (-4.8,0) {{\LARGE\textbf{344}}\\{\small penguins}};
+      \node[nd box, minimum width=3.1cm, minimum height=1.7cm] at (-1.6,0) {{\LARGE\textbf{3}}\\{\small species}};
+      \node[nd box, minimum width=3.1cm, minimum height=1.7cm] at (1.6,0) {{\LARGE\textbf{3}}\\{\small islands}};
+      \node[nd box, minimum width=3.1cm, minimum height=1.7cm] at (4.8,0) {{\LARGE\textbf{2007--09}}\\{\small public data (CC0)}};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{1.5cm plus 1fill}
+\end{frame}
+
+\begin{frame}{The notebook: text, code, and saved outputs}
+  \vfill
+  \begin{center}
+    \fbox{\includegraphics[width=0.78\linewidth]{figures/penguin_notebook_excerpt.png}}\\[0.7em]
+    \begin{tikzpicture}[font=\small\sffamily]
+      \node[nd box, text width=3.9cm, minimum height=1.4cm, inner sep=5pt] at (-4.4,0) {\textbf{Text cells}\\explain the analysis};
+      \node[nd box, text width=3.9cm, minimum height=1.4cm, inner sep=5pt] at (0,0) {\textbf{Code cells}\\numbered, like \texttt{In [5]}};
+      \node[nd highlight, text width=3.9cm, minimum height=1.4cm, inner sep=5pt] at (4.4,0) {\textbf{Saved outputs}\\like \texttt{Out [5]}: no need to run};
+    \end{tikzpicture}
+  \end{center}
+  \vspace{1.5cm plus 1fill}
+\end{frame}
+
+\begin{frame}{The notebook's analysis, section by section}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.58\textwidth}
+      \begin{enumerate}\large\setlength\itemsep{0.5em}
+        \item Load and clean
+        \item Species differences in body size
+        \item Flipper length: Adelie vs Chinstrap
+        \item Body mass and sex in Adelie penguins
+        \item Differences among islands
+        \item Bill length and bill depth
+        \item Figure 1
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.38\textwidth}
+      \slidepoint{Summary tables, \textbf{statistical tests}, and two figures.}
+    \end{column}
+  \end{columns}
+  \vspace{1.5cm plus 1fill}
+\end{frame}
+
+\begin{frame}[fragile]{The write-up: the claims you will check}
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.62\textwidth}
+      \begin{lstlisting}[basicstyle=\ttfamily\footnotesize, breaklines=false]
+# Body size in three Palmer Archipelago
+  penguin species
+## 1. Data and methods
+## 2. Species differ in body mass
+## 3. Flipper length differs between
+     Adelie and Chinstrap penguins
+## 4. Sex differences in Adelie body mass
+## 5. Island effects
+## 6. Bill shape
+## 7. Figure
+## 8. Conclusions
+## References
+      \end{lstlisting}
+      {\small \texttt{writeup.md}: draft results for a group meeting}
+    \end{column}
+    \begin{column}{0.34\textwidth}
+      \textbf{It makes claims:}
+      \begin{itemize}\large\setlength\itemsep{0.5em}
+        \item numbers
+        \item comparisons
+        \item interpretations
+        \item conclusions
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{1.5cm plus 1fill}
+\end{frame}
+
+\begin{frame}{The figures saved by the notebook}
+  \vfill
+  \begin{center}
+    \includegraphics[height=4.9cm]{figures/penguin_body_mass_by_species.png}\hspace{0.8cm}\includegraphics[height=4.9cm]{figures/penguin_bill_length_vs_depth.png}\\[0.5em]
+    {\small \texttt{figures/}: two PNG files, one used in the write-up}
+  \end{center}
+  \vspace{1.5cm plus 1fill}
+\end{frame}
+
 \begin{frame}{Activity 2: check a teammate's analysis with an LLM}
   \vfill
   \begin{columns}[c]
@@ -57,13 +177,11 @@
   \begin{columns}[c]
     \begin{column}{0.48\textwidth}
       \begin{enumerate}\small\setlength\itemsep{0.6em}
-        \item \href{https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip}{\textbf{Download the ZIP}} and unzip it.
-        \item Save at least one \textbf{reference text} in \texttt{references/pdfs/}.
-        \item Open the \texttt{audit-project} folder itself in Claude.
-        \item If Claude cannot find the references, \textbf{tell it their names}.
+        \item \href{https://github.com/dowlinglab/claude-for-researchers/releases/latest}{\textbf{Download the ZIP}} (address below) and unzip it.
+        \item Open the \texttt{audit-project} folder itself in Claude. In a chat app, attach \texttt{writeup.md}, the notebook, and \texttt{data/README.md}.
+        \item Paste the \textbf{starter prompt} on the next slide. It includes the reference links.
+        \item \textbf{Optional:} save a reference copy in \texttt{references/pdfs/}. If Claude cannot find it, tell it the file name.
       \end{enumerate}
-      \vspace{0.6em}
-      {\small One reference is enough. Two allow cross-checking.}
     \end{column}
     \begin{column}{0.50\textwidth}
       \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
@@ -72,11 +190,15 @@ audit-project/
   notebooks/         the analysis
   data/              data and README
   figures/           two figures
-  references/pdfs/   your references
+  references/pdfs/   optional copies
   environment.yml    optional
       \end{lstlisting}
     \end{column}
   \end{columns}
+  \vspace{0.4em}
+  \begin{center}
+    {\small\href{https://github.com/dowlinglab/claude-for-researchers/releases/latest}{\texttt{github.com/dowlinglab/claude-for-researchers/releases/latest}}, under \textbf{Assets}}
+  \end{center}
   \vspace{1.6cm plus 1fill}
 \end{frame}
 
@@ -84,14 +206,14 @@ audit-project/
   \vfill
   \begin{center}
     \begin{tikzpicture}
-      \node[nd box, text width=0.86\linewidth, inner sep=10pt, align=left, font=\normalsize] {\hyphenpenalty=10000\relax
-        A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then check each claim against the reference texts in \texttt{references/pdfs/}, give it a status, cite the section you relied on, and tell me what you could not check.};
+      \node[nd box, text width=0.92\linewidth, inner sep=8pt, align=left, font=\small] {\hyphenpenalty=10000\relax
+        A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then give each claim a status (supported, questionable, incorrect, or insufficient evidence). Say whether you checked it against the notebook's output, the raw data, or a reference, cite the section you relied on, and tell me what you could not open or check. References: the files in \texttt{references/pdfs/}, or these links: \texttt{openintro-ims.netlify.app}, \texttt{itl.nist.gov/div898/handbook}, \texttt{amstat.org/asa/files/pdfs/p-valuestatement.pdf}.};
     \end{tikzpicture}
   \end{center}
-  \vspace{0.9em}
+  \vspace{0.5em}
   \begin{center}
-    \slidepoint{Ask for the \textbf{evidence} and its \textbf{location}, not just a verdict.}\\[0.6em]
-    {\small You can edit the wording. Ask what any unfamiliar term means.}
+    \slidepoint{Ask for the \textbf{evidence} and its \textbf{location}, not just a verdict.}\\[0.4em]
+    {\small One message covers Steps 1 to 3. Edit it freely, and ask what any unfamiliar term means.}
   \end{center}
   \vspace{1.6cm plus 1fill}
 \end{frame}
@@ -123,7 +245,7 @@ audit-project/
       \toprule
       \textbf{Status} & \textbf{Use it when}\\
       \midrule
-      Supported & The evidence and a cited reference agree with the claim.\\
+      Supported & The notebook's output, the data, or a cited reference agrees. Ask which.\\
       Questionable & The claim may hold, but the wording or method is doubtful.\\
       Incorrect & The evidence or a cited reference contradicts the claim.\\
       Insufficient evidence & These files cannot show it either way. This is not the same as wrong.\\
@@ -176,7 +298,7 @@ audit-project/
   \begin{columns}[c]
     \begin{column}{0.50\textwidth}
       \slidepoint{Keep a \textbf{log}: finding, evidence, how you checked it.}\\[0.9em]
-      {\small Verify at least \textbf{three} findings yourself.}\\[0.6em]
+      {\small Verify at least \textbf{three} findings yourself: a number, a citation, and a claim marked \emph{Supported}.}\\[0.6em]
       {\small Note which model and setup you used.}\\[0.6em]
       {\small Save your log at minute 40.}
     \end{column}
