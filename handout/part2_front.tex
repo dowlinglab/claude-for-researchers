@@ -7,7 +7,7 @@
 \toprule
 \textbf{Status} & \textbf{When to use it}\\
 \midrule
-Supported & The evidence and a cited reference agree with the claim.\\
+Supported & The notebook's output, the data, or a cited reference agrees. Ask Claude which.\\
 Questionable & The claim may hold, but the wording or method is doubtful.\\
 Incorrect & The evidence or a cited reference contradicts the claim.\\
 Insufficient evidence & These files cannot show it either way. Not the same as wrong.\\
@@ -18,7 +18,7 @@ Insufficient evidence & These files cannot show it either way. Not the same as w
 \begin{itemize}
   \item Which problems did it find? Which did it miss? Did it report anything that was not a problem?
   \item Are its citations accurate? Open the section it names and read it.
-  \item Could you check each explanation yourself? Verify at least three findings.
+  \item Could you check each explanation yourself? Verify at least three findings, of different kinds.
   \item What change to the prompt or the context improved the result?
   \item Which kinds of problems were easy for it, and which were hard?
 \end{itemize}
@@ -36,11 +36,11 @@ Insufficient evidence & These files cannot show it either way. Not the same as w
 
 \topic{Reference texts to give Claude}
 \begin{itemize}
-  \item \href{https://openintro-ims.netlify.app/}{\emph{Introduction to Modern Statistics}} (open textbook), free PDF from \href{https://www.openintro.org/book/ims/}{OpenIntro}.
-  \item \href{https://www.itl.nist.gov/div898/handbook/}{NIST/SEMATECH \emph{e-Handbook of Statistical Methods}}, Chapters 1 and 7.
-  \item \href{https://doi.org/10.1080/00031305.2016.1154108}{The ASA statement on p-values} (2016), two pages of principles.
+  \item \href{https://openintro-ims.netlify.app/}{\emph{Introduction to Modern Statistics}} (open textbook): \code{openintro-ims.netlify.app}
+  \item \href{https://www.itl.nist.gov/div898/handbook/}{NIST/SEMATECH \emph{e-Handbook of Statistical Methods}}, Chapters 1 and 7: \code{itl.nist.gov/div898/handbook}
+  \item \href{https://www.amstat.org/asa/files/pdfs/p-valuestatement.pdf}{The ASA statement on p-values} (2016), two pages: \code{amstat.org/asa/files/pdfs/p-valuestatement.pdf}
 \end{itemize}
-Save copies in \code{references/pdfs/}. Check every citation Claude gives by opening the section it names.
+The starter prompt on the back gives Claude these addresses, so saving a copy in \code{references/pdfs/} is optional (it lets you open the text Claude cites). Check every citation by opening the section it names.
 
 \vfill
 \small\repourl\par

@@ -19,8 +19,12 @@ You do not need to run the notebook to audit it, because its outputs are saved. 
 
 ## How to start
 
-1. Put this folder where you keep your projects. Open it in Claude (desktop app, editor extension, or terminal).
-2. Save the reference texts into `references/pdfs/`, following the [reference guide](references/README.md). That folder is ignored by Git.
+1. Put this folder where you keep your projects. Open it in Claude (desktop app, editor extension, or terminal). In a chat app, attach `writeup.md`, the notebook, and `data/README.md` instead.
+2. Paste the starter prompt below. It gives Claude the links to the reference texts, so you do not need to save any. A copy saved in `references/pdfs/` is optional; see the [reference guide](references/README.md). That folder is ignored by Git.
 3. Follow the [Activity 2 guide](https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/stats_audit/activity.md) or the Part 2 handout.
+
+**Starter prompt**
+
+> A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then give each claim a status (supported, questionable, incorrect, or insufficient evidence). Say whether you checked it against the notebook's output, the raw data, or a reference, cite the section you relied on, and tell me what you could not open or check. References: the files in `references/pdfs/`, or these links: `openintro-ims.netlify.app`, `itl.nist.gov/div898/handbook`, `amstat.org/asa/files/pdfs/p-valuestatement.pdf`.
 
 Keep the original files as they are until you have reviewed Claude's findings. If you want Claude to edit anything, ask it to work on a copy or a branch.

@@ -1,33 +1,29 @@
-\heading{Part 2 activity: audit an analysis}{45 minutes \hfill Save your log at minute 40}
+\heading{Part 2 activity: audit an analysis}{45 minutes \hfill At minute 40, finish your log (paper is fine)}
 {\emergencystretch=3em\textbf{The case.} A member of your team gives you this notebook and write-up of a statistical analysis of the public Palmer Penguins data (344 penguins, three species, three islands). How can you use an LLM to augment your critical thinking and check the analysis? It contains deliberate problems of different difficulty. Finding every one is not the goal.\par}
 
-{\emergencystretch=3em\textbf{Set up (about 5 min).} Download \href{https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip}{\code{workshop2_activity.zip}} and unzip it. Save at least one reference text in \code{references/pdfs/} (see \code{references/README.md}). Open the \code{audit-project/} folder in Claude.\par}
+{\emergencystretch=3em\textbf{Set up (5 to 10 min).} Get \code{workshop2_activity.zip} from \href{https://github.com/dowlinglab/claude-for-researchers/releases/latest}{\code{github.com/dowlinglab/}\allowbreak\code{claude-for-researchers/}\allowbreak\code{releases/latest}} (under Assets) and unzip it. Open \code{audit-project/} in Claude; in a chat app, attach \code{writeup.md}, the notebook, and \code{data/README.md}. No references to save: the prompt links to them.\par}
 
-\promptbox{\textbf{Starter prompt.} ``A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then check each claim against the reference texts in \code{references/pdfs/}, give it a status, cite the section you relied on, and tell me what you could not check.''}
+\promptbox{\textbf{Starter prompt.} ``A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then give each claim a status (supported, questionable, incorrect, or insufficient evidence). Say whether you checked it against the notebook's output, the raw data, or a reference, cite the section you relied on, and tell me what you could not open or check. References: the files in \code{references/pdfs/}, or these links: \code{openintro-ims.netlify.app}, \code{itl.nist.gov/div898/handbook}, \code{amstat.org/asa/files/pdfs/p-valuestatement.pdf}.''}
 
 \promptbox{\textbf{OPTIONAL Step 0. If you are comfortable with Git and Python; otherwise skip it. You are not behind.} A notebook is awkward for an agent to edit and for you to review, because its diffs mix code, outputs, and images. Commit a clean baseline first, then move the analysis code into Python files and commit that separately, then audit. Ask Claude to inspect the project, propose the structure before changing anything, and keep the refactor separate from any statistical corrections. Give it at most 15 minutes.}
 
-\topic{The audit, in order}
-\begin{enumerate}[itemsep=2pt]
-\item \textbf{Inspect, change nothing.} Skim the write-up yourself, then ask Claude to read everything and summarize what was done and concluded.
+\par\vspace{5pt}{\large\bfseries\color{NDBlue}The audit, in order}\hfill{\small The starter prompt does Steps 1 to 3. Read the reply, then continue at Step 4.}\par
+\begin{enumerate}[itemsep=1pt]
+\item \textbf{Inspect, change nothing.} Skim the write-up yourself, then ask Claude to summarize what was done and concluded.
 \item \textbf{List the claims.} Ask for every substantive claim, with its location. Check the list for gaps.
 \item \textbf{Audit against the references.} Ask for a status on each claim, a citation to the specific chapter, section, or principle, and what it says. Keep the reference separate from Claude's own reasoning.
-\item \textbf{Audit the code too.} Ask whether the code does what the prose says, and whether every number in the write-up matches the output.
+\item \textbf{Audit the code too.} Ask whether the code does what the prose says and every number matches the output.
 \item \textbf{Propose, do not apply.} Ask for each correction with its reason.
-\item \textbf{Verify at least three findings yourself.} Open the reference, find the cell or sentence, and recompute.
+\item \textbf{Verify at least three findings yourself, of different kinds:} a number you recompute (a calculator or Excel is fine; ask Claude to quote the notebook cell), a citation you open, and one claim marked Supported that you try to break.
 \item \textbf{Iterate.} If the audit looks shallow, change the prompt or add context. Try a fresh conversation and compare.
 \item \textbf{Revise and review.} Apply corrections you accept, on a copy or a branch, and read the changes yourself.
 \end{enumerate}
 
-\topic{Ideas for a second pass}
-\begin{itemize}
-  \item ``Recompute every number in the write-up independently and report mismatches.''
-  \item ``List the assumptions behind each test and say whether the data support them.''
-\end{itemize}
+\textbf{Second pass:} ``Recompute every number independently.'' ``List each test's assumptions; do the data meet them?''
 
 \topic{Findings log}
 Model and setup I used (can it run code? can it open the references?): \rule[-2pt]{2.6in}{0.4pt}\par\vspace{2pt}
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{1.25in}|X|X|p{0.6in}|p{0.6in}|}
 \hline
 \small\textbf{Finding} & \small\textbf{What Claude cited} & \small\textbf{How I checked it} & \small\textbf{Real?} & \small\textbf{Cite OK?}\\
@@ -37,6 +33,8 @@ Model and setup I used (can it run code? can it open the references?): \rule[-2p
  & & & & \\ \hline
  & & & & \\ \hline
 \end{tabularx}
+
+\footnotesize\textbf{Real?} Y = you confirmed it, N = you showed it is not a problem, ? = not checked. \textbf{Cite OK?} The section says what Claude says, or ``none cited.'' You cannot know what Claude missed until regroup, so write one thing you would still check: \rule[-2pt]{1.3in}{0.4pt}\par\normalsize
 
 \textbf{Stuck?} Ask Claude: ``Explain the last step without assuming I know Git,'' or ``Before you change anything, tell me how I could undo it.'' After five minutes stuck on a tool, ask for help or pair up.
 

@@ -16,7 +16,9 @@ Work in the pattern the whole workshop uses: **ask, inspect, verify, iterate.** 
 
 ## Get the materials
 
-Download [`workshop2_activity.zip`](https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip) and unzip it. Its README lists the files. Then get at least one reference text into `references/pdfs/` by following `references/README.md`. Open the unzipped `audit-project/` folder in Claude. If Claude cannot find the reference files, tell it their exact names.
+Download [`workshop2_activity.zip`](https://github.com/dowlinglab/claude-for-researchers/releases/latest/download/workshop2_activity.zip) (it is also under Assets on the [Releases page](https://github.com/dowlinglab/claude-for-researchers/releases/latest)) and unzip it. Its README lists the files. Open the unzipped `audit-project/` folder in Claude. In a chat app, attach `writeup.md`, the notebook, and `data/README.md` instead.
+
+You do not need to save any references: the starter prompt below gives Claude the links. If you want a copy to open yourself, follow `references/README.md` and save it in `references/pdfs/`. If Claude cannot find a saved file, tell it the exact file name.
 
 ## Optional Step 0: make the changes easy to review
 
@@ -49,9 +51,9 @@ This is a thinking workflow, not a script. Change the wording to fit what you se
 
 A starter prompt that reads before it judges:
 
-> A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then check each claim against the reference texts in `references/pdfs/`, give it a status, cite the section you relied on, and tell me what you could not check.
+> A teammate sent me this notebook and write-up. I want to audit the analysis, not fix it. Read the write-up, the notebook, and the data documentation, and change nothing. List each substantive claim and where it appears. Then give each claim a status (supported, questionable, incorrect, or insufficient evidence). Say whether you checked it against the notebook's output, the raw data, or a reference, cite the section you relied on, and tell me what you could not open or check. References: the files in `references/pdfs/`, or these links: `openintro-ims.netlify.app`, `itl.nist.gov/div898/handbook`, `amstat.org/asa/files/pdfs/p-valuestatement.pdf`.
 
-The steps below take the same audit one part at a time.
+This one message already does steps 1 to 3 below. Send it first, read what comes back, and continue at step 4. Use steps 1 to 3 for follow-up questions.
 
 ### 1. Inspect before changing anything
 
@@ -71,7 +73,7 @@ Read the list. Is anything you noticed missing?
 
 > For each claim, check it against the reference texts in `references/pdfs/`. Classify it as supported, questionable, incorrect, or insufficient evidence. Cite the specific chapter, section, or principle you relied on and say what it states. Keep what the reference says separate from your own reasoning.
 
-Insist on the four categories. "Insufficient evidence" is a legitimate answer. A claim that Claude cannot verify from these files is different from a claim it has shown to be wrong.
+Insist on the four categories. "Insufficient evidence" is a legitimate answer. A claim that Claude cannot verify from these files is different from a claim it has shown to be wrong. "Supported" means the notebook's output, the raw data, or a cited reference agrees with the claim, so ask Claude which one it used.
 
 ### 4. Audit the code as well as the prose
 
@@ -85,11 +87,11 @@ If your setup allows it, let Claude rerun the notebook and compare the new outpu
 
 ### 6. Verify a sample of the findings yourself
 
-This is the step that most separates auditing from accepting. Choose at least three findings, including one you are inclined to believe and one that surprised you. For each:
+This is the step that most separates auditing from accepting. Choose at least three findings, of different kinds: a number you recompute, a citation you open, and one claim Claude marked supported that you try to break. Do not pick only the findings Claude flagged as wrong, because those are the easy ones. For each:
 
 - open the reference at the location Claude cited and read what it says;
-- find the notebook cell or write-up sentence Claude points to;
-- recompute the number, or rerun the check, yourself.
+- find the notebook cell or write-up sentence Claude points to (Claude can quote the cell for you if you cannot open the notebook);
+- recompute the number, or rerun the check, yourself. A calculator or a spreadsheet is fine.
 
 Record what you did. "Claude said so" is not verification.
 
@@ -115,6 +117,8 @@ Keep a short log as you go, and write down which Claude model and setup you used
 
 | Finding | What Claude cited | How I checked it | Real problem? | Reference cited correctly? |
 |---|---|---|---|---|
+
+Write **Y** under "Real problem?" if you confirmed it, **N** if you showed it is not a problem, and **?** if you did not check. Under "Reference cited correctly?", note whether the section says what Claude says, or write "none cited". You cannot know what Claude missed until the regroup, so also write one thing you would still check.
 
 At the end, look at the whole log and ask:
 
