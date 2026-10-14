@@ -95,11 +95,11 @@ make -C handout
 
 This builds one deck and one handout for each part. The [slide build guide](slides/README.md) and [handout print guide](handout/README.md) have details, including the facilitator run sheets. Instructor answers stay in a separate private repository.
 
-To publish a release, push a version tag such as `v1.2.0`. The [release workflow](.github/workflows/release.yml) builds the slides, the handouts, and the two activity ZIPs, and attaches them to a GitHub Release. It does not publish instructor materials. A manual run from the Actions tab builds the same files as a downloadable artifact without creating a release.
+To publish a release, push a version tag such as `v1.3.0`. The [release workflow](.github/workflows/release.yml) builds the slides, the handouts, and the two activity ZIPs, and attaches them to a GitHub Release. It does not publish instructor materials. A manual run from the Actions tab builds the same files as a downloadable artifact without creating a release.
 
 ```bash
-git tag -a v1.2.0 -m "Workshop materials v1.2.0"
-git push origin v1.2.0
+git tag -a v1.3.0 -m "Workshop materials v1.3.0"
+git push origin v1.3.0
 ```
 
 For development notes, see [open questions](notes/open_questions.md). On another machine, read the [machine setup notes](notes/machine_setup.md) first.
