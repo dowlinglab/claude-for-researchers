@@ -9,8 +9,8 @@ The seminar is **two parts, two weeks apart**, each 1 hour 45 minutes (3:30–5:
 
 | | Date | Presentation | Hands-on activity |
 |---|---|---|---|
-| **Part 1** | Monday, September 28, 2026 | Workspace, instructions, reproducible baseline | Use Claude as a tutor to turn a notebook folder into a GitHub repository, then keep going |
-| **Part 2** | Monday, October 12, 2026 | Git and GitHub recap, literature, audit, writing, and trust | Audit a statistical analysis against open references and judge the audit |
+| **Part 1** | Monday, September 28, 2026 | Workspace, Git and GitHub basics, instructions, reproducible baseline | Use Claude as a tutor to turn a notebook folder into a GitHub repository, then keep going |
+| **Part 2** | Monday, October 12, 2026 | Literature, audit, writing, and trust | Audit a statistical analysis against open references and judge the audit |
 
 Between sessions, participants experiment on their own research and may continue
 the Part 1 "keep going" paths. The in-room audit uses a statistical analysis of

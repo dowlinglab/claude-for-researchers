@@ -1,6 +1,6 @@
-# Git and GitHub recap figures
+# Git and GitHub basics figures
 
-TikZ sources for the Part 2 recap slides in [`sections/07b_part2_git_recap.tex`](../../sections/07b_part2_git_recap.tex). Each file is a single `tikzpicture` that `\input`s into a frame. They depend on the `nd box` and `nd highlight` styles and the `\good` and `\bad` macros in [`main.tex`](../../main.tex), so build them by compiling the deck (`make -C slides part2`) rather than on their own.
+TikZ sources for the Part 1 Git and GitHub slides in [`sections/02_act1_understand.tex`](../../sections/02_act1_understand.tex). Each file is a single `tikzpicture` that `\input`s into a frame. They depend on the `nd box` and `nd highlight` styles and the `\good` and `\bad` macros in [`main.tex`](../../main.tex), so build them by compiling the deck (`make -C slides part1`) rather than on their own.
 
 | File | Shows |
 |---|---|

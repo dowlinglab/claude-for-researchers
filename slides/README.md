@@ -1,16 +1,16 @@
 # Slides
 
 Two Beamer decks for *Claude (or Codex) for Research: Beyond the Chatbot*, sharing
-all slide sources. Part 1 appends activity frames, a regroup, and a recap to the
-lecture. Part 2 opens with the Part 1 recap and a Git and GitHub recap before the
-rest of the lecture. [`storyboard.md`](storyboard.md) maps the frame numbers, which
+all slide sources. Part 1 teaches Git and GitHub basics with figures and appends
+activity frames, a regroup, and a recap to the lecture. Part 2 opens with the
+Part 1 recap before the rest of the lecture. [`storyboard.md`](storyboard.md) maps the frame numbers, which
 change whenever frames are added or cut.
 
 Each 105-minute session uses **35 minutes presentation, 10 Q&A, 45 hands-on,
 and 15 regroup**. Part 1's activity starts from a notebook handoff: students use
 Claude as a tutor to turn the folder into a clean GitHub repository, with
-optional paths that continue into a reproducible project. Part 2 recaps Git and
-GitHub with figures, then runs a statistics audit: participants check a
+optional paths that continue into a reproducible project. Part 2 runs a
+statistics audit: participants check a
 teammate's analysis against open references and judge the audit. The public
 decks contain participant-facing activity and regroup frames; private instructor
 builds add answer reveals from the private repository.
@@ -54,7 +54,7 @@ python3 resources/scripts/check_docs.py
 | `main.tex` | Shared theme, macros, session titles, and conditional section includes |
 | `part1_slides.tex`, `part2_slides.tex` | Small entry points selecting one session |
 | `sections/` | Slide content organized by the talk's five-part structure |
-| `figures/` | Images used by the deck. `figures/git_recap/` holds the TikZ sources for the Git and GitHub recap |
+| `figures/` | Images used by the deck. `figures/git_basics/` holds the TikZ sources for the Part 1 Git and GitHub figures |
 | `theme/` | Vendored Notre Dame Beamer theme and logos |
 | `storyboard.md` | Frame-by-frame map of each session |
 | `check_layout.py` | Flags slides that are top-empty and bottom-crowded; run it after layout changes |
