@@ -17,7 +17,6 @@ Both decks are built from the same sources (`main.tex` and `sections/*.tex`). Th
 | 32–34 | Activity 1 | Turn a folder into a GitHub repository; the tutor-style starter prompt; conceptual checkpoints and troubleshooting |
 | 35 | Regroup | How far did you get? |
 | 36 | Recap | Part 1 recap: ask, inspect, verify, iterate |
-| 37 | Feedback | The workshop feedback survey and the SAI Sparks tutorials, each with a QR code |
 
 ## Part 2
 
