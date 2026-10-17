@@ -1,7 +1,7 @@
 # Optional full workflow: evidence to audited report
 
 **This is an optional take-home.** The in-room Part 2 activity is the
-[statistics audit](../../stats_audit/activity.md). This longer reactor workflow uses
+[statistics audit](https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/stats_audit/activity.md). This longer reactor workflow uses
 the same habits, ask, inspect, verify, iterate, on a different kind of artifact:
 a report checked against computed results and a source. The
 [session guide](session_guide.md) has a shorter three-claim route through it.

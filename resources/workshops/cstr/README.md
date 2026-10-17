@@ -10,7 +10,7 @@ The release workflow builds the ZIP from the source notebook and parameter file.
 
 ## Optional: evidence-linked report
 
-The in-room Part 2 activity is the [statistics audit](../stats_audit/README.md). The reactor-report workflow is an optional take-home that applies the same audit habits to a different artifact. Use the [instructions](activities/02_evidence_linked_report.md) with the report, literature, and evidence folders in this full starter. The starter also holds a longer optional extraction workflow and utilities for notebook baseline capture, which are support material rather than part of the Part 1 handoff.
+The in-room Part 2 activity is the [statistics audit](https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/stats_audit/README.md). The reactor-report workflow is an optional take-home that applies the same audit habits to a different artifact. Use the [instructions](activities/02_evidence_linked_report.md) with the report, literature, and evidence folders in this full starter. The starter also holds a longer optional extraction workflow and utilities for notebook baseline capture, which are support material rather than part of the Part 1 handoff.
 
 To run the full starter in its own private copy:
 

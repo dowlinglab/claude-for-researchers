@@ -16,7 +16,7 @@ Use the two weeks to experiment on your own research. If you like, continue the 
 
 ## Part 2: audit an analysis against references
 
-Follow the [Activity 2 guide](../../stats_audit/activity.md). You receive a colleague's notebook and write-up, and open statistics references. You ask Claude to audit them, verify a sample of what it reports, and judge the quality of the audit. There is an optional Step 0 for people who are comfortable with Git and Python; skip it freely.
+Follow the [Activity 2 guide](https://github.com/dowlinglab/claude-for-researchers/blob/main/resources/workshops/stats_audit/activity.md). You receive a colleague's notebook and write-up, and open statistics references. You ask Claude to audit them, verify a sample of what it reports, and judge the quality of the audit. There is an optional Step 0 for people who are comfortable with Git and Python; skip it freely.
 
 ## Optional second audit: the reactor report
 
